@@ -15,7 +15,8 @@ AI agents write the documents; the owner reviews and approves them.
 | `research/spikes/` | Reports on throwaway experiments | |
 | `requirements/` | One requirement per file | |
 | `adr/` | Architecture decision records | |
-| `superpowers/` | Designs and plans for work on the repository itself | [superpowers/README.md](superpowers/README.md) |
+| `designs/` | Designs for work on the repository itself: what to build and why | [designs/README.md](designs/README.md) |
+| `plans/` | Implementation plans that carry out a design | [plans/README.md](plans/README.md) |
 
 A folder gets a guide when its first document is added.
 
@@ -26,7 +27,7 @@ A folder gets a guide when its first document is added.
 Every document under `docs/` must match the structure contract for its type.
 A contract fixes the folder, the filename pattern, the frontmatter fields, and the order of the sections.
 The contracts live in `.config/mdschema/`, and `mise run lint:contracts` checks them.
-`docs/superpowers/` is the one exemption.
+`docs/designs/` and `docs/plans/` are exempt, apart from their guides.
 
 ### Status
 

@@ -12,17 +12,17 @@ fail() {
 
 # Prints the contract name for a path, "exempt", or "none".
 contract_for() {
-  case "$1" in
-    docs/superpowers/*)
-      echo exempt
-      return
-      ;;
-  esac
   base=$(basename "$1")
   if [ "$base" = README.md ]; then
     echo folder-guide
     return
   fi
+  case "$1" in
+    docs/designs/* | docs/plans/*)
+      echo exempt
+      return
+      ;;
+  esac
   case "$(dirname "$1")" in
     docs/research/emulators | docs/research/topics | docs/research/spikes)
       case "$base" in

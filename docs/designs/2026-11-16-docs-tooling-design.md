@@ -117,7 +117,8 @@ and GitHub secret scanning with push protection on the server.
 │   ├── requirements/
 │   ├── research/
 │   ├── roadmap/
-│   └── superpowers/specs/   design documents such as this one
+│   ├── designs/             design documents such as this one
+│   └── plans/               implementation plans
 ├── .editorconfig            must be in root
 ├── .gitattributes           must be in root
 ├── .gitignore
@@ -156,7 +157,8 @@ This stops a document escaping its contract through a different folder or a wron
 mdschema cannot check this, so a small shell script does.
 It is a mise file task, linted by shellcheck and formatted by shfmt.
 
-The exemption list starts with `docs/superpowers/**` only.
+The exemption list is `docs/designs/**` and `docs/plans/**`.
+Both lived under `docs/superpowers/` until 2026-11-17.
 
 ### Research notes
 
@@ -222,7 +224,7 @@ Headings, in order: Purpose, Layout, Conventions.
 ### Not under contract
 
 `README.md` and `.claude/**` are outside `docs/` and have no contract.
-`docs/superpowers/**` is exempt.
+`docs/designs/**` and `docs/plans/**` are exempt.
 Any other document type needs a contract in the same change that adds its first document;
 the coverage check enforces this.
 

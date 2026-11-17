@@ -21,8 +21,10 @@ The [documentation guide](docs/README.md) explains the document types, their str
 | `docs/requirements/` | One requirement per file, named `REQ-NNNN-<slug>.md` |
 | `docs/adr/` | Architecture decision records, named `NNNN-<slug>.md` |
 | `docs/roadmap/` | Roadmaps, starting with the [research roadmap](docs/roadmap/research.md) |
-| `docs/superpowers/` | Design documents and implementation plans for the repository itself |
+| `docs/designs/` | Designs for work on the repository itself |
+| `docs/plans/` | Implementation plans that carry out a design |
 | `.config/` | Tool versions, tasks, git hooks, and every tool's configuration |
+| `.claude/` | Project instructions for Claude Code |
 | `.github/` | CI workflows, Dependabot, issue and pull request templates, and contributor policies |
 
 ## Development
@@ -76,7 +78,7 @@ No line in a tracked text file may be longer than 120 characters.
 ### Document structure
 
 Every Markdown file under `docs/` must match a structure contract.
-The one exemption is `docs/superpowers/`, which holds free-form design documents and plans.
+The exemptions are `docs/designs/` and `docs/plans/`, which hold free-form design documents and plans.
 A contract fixes the folder, the frontmatter fields, and the order of the sections for one type of document.
 The contracts live in `.config/mdschema/`.
 
@@ -105,6 +107,22 @@ docs: add research note on cycle-accurate timing
 
 Changes reach `main` through pull requests.
 Pull requests are squash-merged, so the title becomes the commit on `main`.
+
+### Working with Claude Code
+
+AI agents write most of this repository, driven and reviewed by the owner.
+Project instructions for Claude are in [`.claude/CLAUDE.md`](.claude/CLAUDE.md).
+
+Recommended plugins:
+
+| Plugin | Why |
+|---|---|
+| Superpowers | The brainstorm, plan, and build workflow behind `docs/designs/` and `docs/plans/` |
+| Context7 | Current documentation for libraries and tools, used during technology research |
+| GitHub | Pull requests, review threads, and repository settings from inside a session |
+
+Superpowers is the one the repository's process depends on.
+Install plugins with the `/plugin` command in Claude Code.
 
 ### Continuous integration
 
