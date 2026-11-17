@@ -20,6 +20,9 @@ AI agents write the documents; the owner reviews and approves them.
 
 A folder gets a guide when its first document is added.
 
+Every document folder has a `_template.md`.
+Copy it to start a new document; it explains each field and section and gives an example of each.
+
 ## Conventions
 
 ### Structure contracts

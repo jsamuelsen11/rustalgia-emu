@@ -12,6 +12,7 @@ Read `README.md` and `docs/README.md` before writing anything.
   Do not use the skill's default, `docs/superpowers/plans/`.
 - Every other document under `docs/` must match a structure contract.
   `docs/README.md` lists the types.
+- Start every new document from the `_template.md` in its folder, and follow its guidance for each section.
 - A new type of document needs a contract in `.config/mdschema/` and an entry in `.config/mise/tasks/lint/contracts`,
   in the same change.
 

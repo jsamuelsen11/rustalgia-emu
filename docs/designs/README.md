@@ -20,6 +20,7 @@ The plan that carries it out is in [`docs/plans/`](../plans/README.md).
   The date is the day the design was started.
 - Designs are exempt from structure contracts, because their shape follows the workflow that produces them.
   Every other check still applies: formatting, line length, spelling, prose, and links.
+- A change to a design's intent or goals is a new design; the old one is marked as superseded.
 - A design is kept current.
   When the thing it describes changes, the design is updated in the same pull request.
 - An item marked **(call)** was decided by the author.
