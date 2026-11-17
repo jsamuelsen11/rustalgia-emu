@@ -35,7 +35,7 @@ pre-commit:
             glob: "**/*.md"
             run: mise run lint:merman -- {staged_files}
           - name: contracts
-            glob: "docs/**/*.md"
+            glob: "docs/**/*"
             run: mise run lint:contracts -- {staged_files}
           - name: links
             glob: "**/*.md"
@@ -67,6 +67,9 @@ pre-commit:
             run: mise run security:zizmor -- {staged_files}
 
 commit-msg:
+  # Git writes merge messages itself; pull requests are squash-merged, so they never reach main.
+  skip:
+    - merge
   jobs:
     - name: committed
       run: mise run commit-msg -- {1}

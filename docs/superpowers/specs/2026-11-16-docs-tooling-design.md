@@ -251,10 +251,14 @@ Rules are added only when a real document shows the need.
 
 No line in any tracked text file is longer than 120 characters.
 
-- rumdl enforces it in Markdown, including tables and code blocks, and reflows prose to fit.
-- editorconfig-checker enforces it everywhere else through `max_line_length` in `.editorconfig`.
-- **(call)** The only exemptions are a line that is a single unbreakable URL, `LICENSE`, and lockfiles.
-- **(call)** If rumdl can break at sentence ends and still cap at 120, it does; otherwise it wraps at 120.
+- rumdl owns the limit in Markdown, including tables and code blocks, and reflows prose to fit.
+  It exempts a line that is a single unbreakable URL.
+- editorconfig-checker owns the limit everywhere else, through `max_line_length` in `.editorconfig`.
+  Markdown is switched off there so the two tools do not both enforce it.
+  Outside Markdown there is no URL exemption;
+  a line that cannot be shortened takes an inline `editorconfig-checker-disable-line` comment.
+- **(call)** `LICENSE` and lockfiles are exempt.
+- **(call)** rumdl puts one sentence on each line and breaks a longer sentence at its clauses.
 
 The tooling pull request reformats this document and `README.md` to match.
 

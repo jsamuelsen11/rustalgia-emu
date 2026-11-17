@@ -12,9 +12,11 @@ indent_style = space
 indent_size = 2
 max_line_length = 120
 
-# Markdown: indentation follows list markers and is owned by rumdl.
+# Markdown: rumdl owns indentation (it follows list markers) and line length
+# (120, with an exemption for a line that is one unbreakable URL).
 [*.{md,markdown}]
 indent_size = unset
+max_line_length = off
 
 # Data and config formats, formatted by dprint.
 [*.{yml,yaml}]

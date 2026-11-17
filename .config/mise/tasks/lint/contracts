@@ -39,13 +39,14 @@ contract_for() {
 }
 
 # Prints the top-level keys of a file's YAML frontmatter, one per line, without quotes.
+# Any unindented line with a colon counts, so keys with spaces or slashes are caught too.
 frontmatter_keys() {
   awk '
     NR == 1 && $0 != "---" { exit }
     NR > 1 && $0 == "---" { exit }
-    NR > 1 && match($0, /^["\047]?[A-Za-z0-9_.-]+["\047]?[ \t]*:/) {
-      key = substr($0, 1, RLENGTH - 1)
-      gsub(/["\047 \t]/, "", key)
+    NR > 1 && /^[^ \t#-]/ && index($0, ":") > 0 {
+      key = substr($0, 1, index($0, ":") - 1)
+      gsub(/^["\047 \t]+|["\047 \t]+$/, "", key)
       print key
     }
   ' "$1"
@@ -67,6 +68,10 @@ check() {
   file=${1#./}
   case "$file" in
     docs/*.md) ;;
+    docs/*.[mM][dD] | docs/*.[mM][aA][rR][kK][dD][oO][wW][nN] | docs/*.[mM][dD][xX])
+      fail "$file" "documents under docs/ must use the lower-case .md extension"
+      return 0
+      ;;
     *) return 0 ;;
   esac
 
@@ -85,25 +90,28 @@ docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an
   mdschema check "$file" --schema "$schema" || status=1
 
   allowed=$(sed -n 's/^ *- name: *//p' "$schema")
-  for key in $(frontmatter_keys "$file"); do
-    if ! printf '%s\n' "$allowed" | grep -qx -- "$key"; then
+  keys=$(mktemp)
+  frontmatter_keys "$file" >"$keys"
+  while IFS= read -r key; do
+    if ! printf '%s\n' "$allowed" | grep -qxF -- "$key"; then
       fail "$file" "frontmatter field '$key' is not part of the $contract contract"
     fi
-  done
+  done <"$keys"
+  rm -f "$keys"
 
   if [ "$contract" = requirement ]; then
     id=$(frontmatter_value "$file" id)
-    case "$(basename "$file")" in
-      "$id"-*) ;;
-      *) fail "$file" "frontmatter id '$id' does not match the filename" ;;
-    esac
+    expected=$(basename "$file" | cut -c1-8)
+    if [ "$id" != "$expected" ]; then
+      fail "$file" "frontmatter id '$id' does not match the filename; expected '$expected'"
+    fi
   fi
 }
 
 if [ "$#" -eq 0 ]; then
   files=$(mktemp)
   trap 'rm -f "$files"' EXIT
-  git ls-files -- 'docs/*.md' >"$files"
+  git ls-files -- 'docs/' >"$files"
   while IFS= read -r file; do
     check "$file"
   done <"$files"
