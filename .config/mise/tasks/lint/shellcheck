@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#MISE description="Lint shell scripts"
+set -eu
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z -- '.config/mise/tasks' '*.sh' | xargs -0 -r shellcheck --
+else
+  shellcheck -- "$@"
+fi

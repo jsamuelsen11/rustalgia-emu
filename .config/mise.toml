@@ -18,12 +18,19 @@ shfmt = "latest"
 
 [tasks.fmt]
 description = "Rewrite files with every formatter"
-depends = ["fmt:rumdl", "fmt:dprint"]
+depends = ["fmt:rumdl", "fmt:dprint", "fmt:shfmt"]
 
 [tasks."fmt:check"]
 description = "Fail if any formatter would change a file"
-depends = ["fmt:rumdl --check", "fmt:dprint --check"]
+depends = ["fmt:rumdl --check", "fmt:dprint --check", "fmt:shfmt --check"]
 
 [tasks.lint]
 description = "Run every linter"
-depends = ["lint:rumdl", "lint:merman", "lint:typos", "lint:editorconfig"]
+depends = [
+  "lint:rumdl",
+  "lint:merman",
+  "lint:contracts",
+  "lint:typos",
+  "lint:editorconfig",
+  "lint:shellcheck",
+]

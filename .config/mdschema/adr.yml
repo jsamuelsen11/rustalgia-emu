@@ -1,0 +1,25 @@
+# Contract: Architecture decision record.
+# Unknown frontmatter fields and the single-title rule are enforced by `mise run lint:contracts`.
+frontmatter:
+  fields:
+    - name: title
+      type: string
+    - name: status
+      type: string
+      enum: [proposed, accepted, rejected, deprecated, superseded]
+    - name: date
+      type: date
+      format: date
+structure:
+  - heading:
+      pattern: '^# .+$'
+      regex: true
+    children:
+      - heading: '## Context'
+        allow_additional: true
+      - heading: '## Options considered'
+        allow_additional: true
+      - heading: '## Decision'
+        allow_additional: true
+      - heading: '## Consequences'
+        allow_additional: true

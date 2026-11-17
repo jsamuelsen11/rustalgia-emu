@@ -1,0 +1,27 @@
+# Contract: Roadmap.
+# Unknown frontmatter fields and the single-title rule are enforced by `mise run lint:contracts`.
+frontmatter:
+  fields:
+    - name: title
+      type: string
+    - name: status
+      type: string
+      enum: [draft, active, completed, superseded]
+    - name: date
+      type: date
+      format: date
+structure:
+  - heading:
+      pattern: '^# .+$'
+      regex: true
+    children:
+      - heading: '## Goal'
+        allow_additional: true
+      - heading: '## Scope'
+        allow_additional: true
+      - heading: '## Milestones'
+        allow_additional: true
+      - heading: '## Out of scope'
+        allow_additional: true
+      - heading: '## Risks and open questions'
+        allow_additional: true

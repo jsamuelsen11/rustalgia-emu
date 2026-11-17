@@ -1,0 +1,37 @@
+# Contract: Requirement.
+# Unknown frontmatter fields and the single-title rule are enforced by `mise run lint:contracts`.
+frontmatter:
+  fields:
+    - name: id
+      type: string
+    - name: title
+      type: string
+    - name: level
+      type: string
+      enum: [high, low]
+    - name: priority
+      type: string
+      enum: [must, should, could]
+    - name: status
+      type: string
+      enum: [proposed, accepted, rejected, superseded]
+    - name: date
+      type: date
+      format: date
+structure:
+  - heading:
+      pattern: '^# .+$'
+      regex: true
+    children:
+      - heading: '## Statement'
+        allow_additional: true
+      - heading: '## Rationale'
+        allow_additional: true
+      - heading: '## Acceptance criteria'
+        allow_additional: true
+      - heading: '## Dependencies'
+        optional: true
+        allow_additional: true
+      - heading: '## Notes'
+        optional: true
+        allow_additional: true

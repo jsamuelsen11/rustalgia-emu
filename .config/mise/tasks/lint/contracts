@@ -1,0 +1,111 @@
+#!/usr/bin/env sh
+#MISE description="Check every document under docs/ against its structure contract"
+set -eu
+
+schemas=".config/mdschema"
+status=0
+
+fail() {
+  echo "$1: $2" >&2
+  status=1
+}
+
+# Prints the contract name for a path, "exempt", or "none".
+contract_for() {
+  case "$1" in
+  docs/superpowers/*)
+    echo exempt
+    return
+    ;;
+  esac
+  base=$(basename "$1")
+  case "$(dirname "$1")" in
+  docs/research) echo research ;;
+  docs/roadmap) echo roadmap ;;
+  docs/adr)
+    case "$base" in
+    [0-9][0-9][0-9][0-9]-?*.md) echo adr ;;
+    *) echo none ;;
+    esac
+    ;;
+  docs/requirements)
+    case "$base" in
+    REQ-[0-9][0-9][0-9][0-9]-?*.md) echo requirement ;;
+    *) echo none ;;
+    esac
+    ;;
+  *) echo none ;;
+  esac
+}
+
+# Prints the top-level keys of a file's YAML frontmatter, one per line.
+frontmatter_keys() {
+  awk '
+    NR == 1 && $0 != "---" { exit }
+    NR > 1 && $0 == "---" { exit }
+    NR > 1 && match($0, /^[A-Za-z0-9_-]+:/) { print substr($0, 1, RLENGTH - 1) }
+  ' "$1"
+}
+
+frontmatter_value() {
+  awk -v key="$2" '
+    NR == 1 && $0 != "---" { exit }
+    NR > 1 && $0 == "---" { exit }
+    NR > 1 && index($0, key ":") == 1 {
+      value = substr($0, length(key) + 2)
+      gsub(/^[ \t"\047]+|[ \t"\047]+$/, "", value)
+      print value
+    }
+  ' "$1"
+}
+
+check() {
+  file=${1#./}
+  case "$file" in
+  docs/*.md) ;;
+  *) return 0 ;;
+  esac
+
+  contract=$(contract_for "$file")
+  case "$contract" in
+  exempt) return 0 ;;
+  none)
+    fail "$file" "no structure contract covers this path. Valid locations: \
+docs/research/<name>.md, docs/requirements/REQ-NNNN-<slug>.md, docs/adr/NNNN-<slug>.md, \
+docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an entry in this script."
+    return 0
+    ;;
+  esac
+
+  schema="$schemas/$contract.yml"
+  mdschema check "$file" --schema "$schema" || status=1
+
+  allowed=$(sed -n 's/^ *- name: *//p' "$schema")
+  for key in $(frontmatter_keys "$file"); do
+    if ! printf '%s\n' "$allowed" | grep -qx -- "$key"; then
+      fail "$file" "frontmatter field '$key' is not part of the $contract contract"
+    fi
+  done
+
+  if [ "$contract" = requirement ]; then
+    id=$(frontmatter_value "$file" id)
+    case "$(basename "$file")" in
+    "$id"-*) ;;
+    *) fail "$file" "frontmatter id '$id' does not match the filename" ;;
+    esac
+  fi
+}
+
+if [ "$#" -eq 0 ]; then
+  files=$(mktemp)
+  trap 'rm -f "$files"' EXIT
+  git ls-files -- 'docs/*.md' >"$files"
+  while IFS= read -r file; do
+    check "$file"
+  done <"$files"
+else
+  for file in "$@"; do
+    check "$file"
+  done
+fi
+exit "$status"
