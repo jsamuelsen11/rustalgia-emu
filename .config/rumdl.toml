@@ -12,3 +12,11 @@ front-matter = true
 stern = true
 reflow = true
 reflow-mode = "semantic-line-breaks"
+
+# Contracts require both a `title` frontmatter field and one title heading,
+# so the frontmatter title must not count as a heading.
+[MD025]
+front-matter-title = ""
+
+[MD041]
+front-matter-title = ""
