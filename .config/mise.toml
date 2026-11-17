@@ -49,3 +49,6 @@ depends = ["security:betterleaks", "security:zizmor"]
 [tasks.check]
 description = "Run everything CI runs, without changing files"
 depends = ["fmt:check", "lint", "links", "security"]
+
+[hooks]
+postinstall = "lefthook install"
