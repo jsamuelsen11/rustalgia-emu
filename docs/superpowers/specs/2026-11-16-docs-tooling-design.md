@@ -48,10 +48,11 @@ Everything else was decided by the owner in conversation.
 
 ## Tools
 
-All tools install through mise and are pinned in `.config/mise.toml`, with a
-committed lockfile at `.config/mise.lock`.
-Versions below were current on 2026-11-16; the builder pins the latest release
-that is at least 24 hours old.
+All tools install through mise from `.config/mise.toml`, with a committed
+lockfile at `.config/mise.lock`.
+The builder sets every version to `latest`; the owner pins exact versions
+afterwards.
+Versions below were current on 2026-11-16.
 
 | Job | Tool | Version | Config |
 |---|---|---|---|
