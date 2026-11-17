@@ -23,3 +23,7 @@ depends = ["fmt:rumdl", "fmt:dprint"]
 [tasks."fmt:check"]
 description = "Fail if any formatter would change a file"
 depends = ["fmt:rumdl --check", "fmt:dprint --check"]
+
+[tasks.lint]
+description = "Run every linter"
+depends = ["lint:rumdl", "lint:merman", "lint:typos", "lint:editorconfig"]

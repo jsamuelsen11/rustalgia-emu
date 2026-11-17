@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+#MISE description="Check that Mermaid blocks in Markdown parse"
+set -eu
+
+status=0
+check() {
+  case "$1" in
+    *.md) merman-cli lint --markdown "$1" || status=1 ;;
+  esac
+}
+
+if [ "$#" -eq 0 ]; then
+  files=$(mktemp)
+  trap 'rm -f "$files"' EXIT
+  git ls-files -- '*.md' >"$files"
+  while IFS= read -r file; do
+    check "$file"
+  done <"$files"
+else
+  for file in "$@"; do
+    check "$file"
+  done
+fi
+exit "$status"

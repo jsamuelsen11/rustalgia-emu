@@ -22,7 +22,7 @@ Everything else was decided by the owner in conversation.
 - Every check has one definition, used identically by local hooks and CI.
 - Every tool version is pinned and locked.
 - A document that breaks its type's structure cannot reach `main`.
-- A broken link, an unparseable Mermaid block, a misspelling, or a leaked secret cannot reach `main`.
+- A broken link, an unparsable Mermaid block, a misspelling, or a leaked secret cannot reach `main`.
 - Configuration lives in `.config/` wherever the tool allows it.
 - `main` accepts changes only through pull requests with passing checks.
 
@@ -381,7 +381,7 @@ For every check, the builder feeds it a deliberately broken sample and records t
 - a filler word under `docs/`
 - a misspelling
 - a broken relative link and a broken heading anchor
-- a mis-indented YAML file
+- a badly indented YAML file
 - a workflow with an unpinned action and one with a syntax error
 - a fake secret
 - a non-conventional commit message

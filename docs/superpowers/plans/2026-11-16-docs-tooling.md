@@ -221,8 +221,8 @@ If an `aqua:` entry does not resolve, use the `github:` backend with the same ow
 
 - [ ] **Step 1: Write proof samples.**
   A Markdown file with a skipped heading level;
-  one with a Mermaid block containing `graph TD; A-->` and nothing after the arrow; one containing `recieve`;
-  a text file with a tab indent and a 130-character line;
+  one with a Mermaid block containing `graph TD; A-->` and nothing after the arrow;
+  one containing a common misspelling of "receive"; a text file with a tab indent and a 130-character line;
   a copy of the first sample placed under a `.claude/` directory inside a throwaway git repository.
 
 - [ ] **Step 2: Add `lint:rumdl`.** `rumdl check` with no fixing.

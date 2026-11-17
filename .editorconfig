@@ -9,5 +9,9 @@ indent_style = space
 indent_size = 2
 max_line_length = 120
 
+# Markdown indentation follows list markers and is owned by rumdl.
+[*.md]
+indent_size = unset
+
 [{LICENSE,*.lock}]
 max_line_length = off
