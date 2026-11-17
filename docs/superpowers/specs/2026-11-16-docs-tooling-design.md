@@ -158,17 +158,20 @@ It is a mise file task, linted by shellcheck and formatted by shfmt.
 
 The exemption list starts with `docs/superpowers/**` only.
 
-### Research note: `docs/research/*.md`
+### Research notes
 
-| Frontmatter | Rule |
-|---|---|
-| `title` | string |
-| `subject` | string: the emulator or topic studied |
-| `status` | `draft` or `reviewed` |
-| `date` | ISO date |
+Three types replaced the single research note on 2026-11-17, before any note was written.
+Each lives in its own folder under `docs/research/` and is named `RN-NN-<slug>.md` for its roadmap item.
 
-Headings, in order: Summary, Scope, What works well, What works poorly, Implications for Rustalgia, Open questions,
-Sources.
+- **Emulator study**, in `emulators/`: Summary, Scope, Architecture, What works well, What works poorly,
+  Implications for Rustalgia, Open questions, Sources.
+- **Topic study**, in `topics/`: Summary, Scope, Findings, Options and trade-offs, Implications for Rustalgia,
+  Open questions, Sources.
+- **Spike report**, in `spikes/`: Summary, Question, Method, Results, Implications for Rustalgia, Open questions.
+
+Frontmatter for all three: `title`, `roadmap_item` (matching the filename), `status` (`draft` or `reviewed`), `date`.
+An emulator study also has `subject`.
+A roadmap item belongs to one note.
 
 ### Requirement: `docs/requirements/REQ-NNNN-<slug>.md`
 
@@ -251,10 +254,10 @@ Rules are added only when a real document shows the need.
 
 No line in any tracked text file is longer than 120 characters.
 
-- rumdl owns the limit in Markdown, including tables and code blocks, and reflows prose to fit.
-  It exempts a line that is a single unbreakable URL.
+- In Markdown, rumdl reflows prose to fit, and the `lint:line-length` task measures every line, including tables,
+  code blocks, and headings, which rumdl skips in its sentence-based reflow mode.
+  A line that is one unbreakable token is exempt, and so is length that comes only from a link destination.
 - editorconfig-checker owns the limit everywhere else, through `max_line_length` in `.editorconfig`.
-  Markdown is switched off there so the two tools do not both enforce it.
   Outside Markdown there is no URL exemption;
   a line that cannot be shortened takes an inline `editorconfig-checker-disable-line` comment.
 - **(call)** `LICENSE` and lockfiles are exempt.

@@ -1,10 +1,11 @@
-# Contract: Research note.
-# Unknown frontmatter fields and the single-title rule are enforced by `mise run lint:contracts`.
+# Contract: Topic study.
+# Unknown frontmatter fields, the single-title rule, and roadmap_item matching the filename
+# are enforced by `mise run lint:contracts`.
 frontmatter:
   fields:
     - name: title
       type: string
-    - name: subject
+    - name: roadmap_item
       type: string
     - name: status
       type: string
@@ -21,9 +22,9 @@ structure:
         allow_additional: true
       - heading: "## Scope"
         allow_additional: true
-      - heading: "## What works well"
+      - heading: "## Findings"
         allow_additional: true
-      - heading: "## What works poorly"
+      - heading: "## Options and trade-offs"
         allow_additional: true
       - heading: "## Implications for Rustalgia"
         allow_additional: true

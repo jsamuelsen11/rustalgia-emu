@@ -20,7 +20,18 @@ contract_for() {
   esac
   base=$(basename "$1")
   case "$(dirname "$1")" in
-    docs/research) echo research ;;
+    docs/research/emulators | docs/research/topics | docs/research/spikes)
+      case "$base" in
+        R[0-9]-[0-9][0-9]-?*.md)
+          case "$(dirname "$1")" in
+            docs/research/emulators) echo emulator-study ;;
+            docs/research/topics) echo topic-study ;;
+            *) echo spike-report ;;
+          esac
+          ;;
+        *) echo none ;;
+      esac
+      ;;
     docs/roadmap) echo roadmap ;;
     docs/adr)
       case "$base" in
@@ -80,8 +91,9 @@ check() {
     exempt) return 0 ;;
     none)
       fail "$file" "no structure contract covers this path. Valid locations: \
-docs/research/<name>.md, docs/requirements/REQ-NNNN-<slug>.md, docs/adr/NNNN-<slug>.md, \
-docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an entry in this script."
+docs/research/{emulators,topics,spikes}/RN-NN-<slug>.md, docs/requirements/REQ-NNNN-<slug>.md, \
+docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md. \
+A new document type needs a contract in $schemas/ and an entry in this script."
       return 0
       ;;
   esac
@@ -99,12 +111,22 @@ docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an
   done <"$keys"
   rm -f "$keys"
 
-  if [ "$contract" = requirement ]; then
-    id=$(frontmatter_value "$file" id)
-    expected=$(basename "$file" | cut -c1-8)
-    if [ "$id" != "$expected" ]; then
-      fail "$file" "frontmatter id '$id' does not match the filename; expected '$expected'"
-    fi
+  # The id in the frontmatter must equal the id at the start of the filename.
+  case "$contract" in
+    requirement)
+      field=id
+      width=8
+      ;;
+    emulator-study | topic-study | spike-report)
+      field=roadmap_item
+      width=5
+      ;;
+    *) return 0 ;;
+  esac
+  id=$(frontmatter_value "$file" "$field")
+  expected=$(basename "$file" | cut -c1-"$width")
+  if [ "$id" != "$expected" ]; then
+    fail "$file" "frontmatter $field '$id' does not match the filename; expected '$expected'"
   fi
 }
 
@@ -121,11 +143,17 @@ else
   done
 fi
 
-# A requirement id must belong to one file.
+# A requirement id or roadmap item must belong to one file.
 duplicates=$(git ls-files -- 'docs/requirements/REQ-*.md' \
   | sed -n 's|^docs/requirements/\(REQ-[0-9][0-9][0-9][0-9]\)-.*|\1|p' | sort | uniq -d)
 for id in $duplicates; do
   fail "docs/requirements" "more than one requirement uses the id $id"
+done
+
+duplicates=$(git ls-files -- 'docs/research/*.md' \
+  | sed -n 's|^docs/research/[a-z]*/\(R[0-9]-[0-9][0-9]\)-.*|\1|p' | sort | uniq -d)
+for id in $duplicates; do
+  fail "docs/research" "more than one research note uses the roadmap item $id"
 done
 
 exit "$status"

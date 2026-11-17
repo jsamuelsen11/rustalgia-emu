@@ -13,10 +13,12 @@ The repository holds documentation and the tooling that checks it; there is no e
 
 | Path | Holds |
 |---|---|
-| `docs/research/` | Notes on existing emulators and related topics |
+| `docs/research/emulators/` | Studies of existing emulators |
+| `docs/research/topics/` | Studies of hardware, techniques, platforms, and policy |
+| `docs/research/spikes/` | Reports on throwaway experiments |
 | `docs/requirements/` | One requirement per file, named `REQ-NNNN-<slug>.md` |
 | `docs/adr/` | Architecture decision records, named `NNNN-<slug>.md` |
-| `docs/roadmap/` | Roadmaps |
+| `docs/roadmap/` | Roadmaps, starting with the [research roadmap](docs/roadmap/research.md) |
 | `docs/superpowers/` | Design documents and implementation plans for the repository itself |
 | `.config/` | Tool versions, tasks, git hooks, and every tool's configuration |
 | `.github/` | CI workflows, Dependabot, issue and pull request templates, and contributor policies |
@@ -54,6 +56,7 @@ Run `mise tasks` to list them.
 | Check | Tool |
 |---|---|
 | Markdown formatting and lint | rumdl |
+| Markdown line length, including tables and code blocks | `lint:line-length` |
 | Mermaid diagrams parse | merman |
 | Document structure | mdschema, through `lint:contracts` |
 | Prose | Vale |

@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+#MISE description="Check that no Markdown line is longer than 120 characters"
+set -eu
+
+# rumdl reflows prose, but in its sentence-based reflow mode it does not measure tables, code blocks,
+# or headings, and editorconfig-checker cannot exempt URLs. This measures every Markdown line.
+# Two exemptions: a line that is one unbreakable token, and length that comes only from a link destination.
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z -- '*.md' | xargs -0 -r "$0"
+  exit
+fi
+
+perl -CSD -ne '
+  BEGIN { $limit = 120; $bad = 0 }
+  END { exit $bad }
+  chomp;
+  if (length($_) > $limit) {
+    my $text = $_;
+    $text =~ s/^\s*(?:[-*+]|\d+[.)]|>)?\s*//;       # list and quote markers
+    my $token = $text !~ /\s/;                      # one unbreakable token
+    my $reference = $text =~ /^\[[^\]]+\]:\s+\S+$/; # reference link definition
+    (my $short = $_) =~ s/\]\([^)\s]+\)/]/g;        # inline link destinations
+    if (!$token && !$reference && length($short) > $limit) {
+      printf "%s:%d: line is %d characters; the limit is %d\n", $ARGV, $., length($_), $limit;
+      $bad = 1;
+    }
+  }
+  close ARGV if eof;
+' "$@"
