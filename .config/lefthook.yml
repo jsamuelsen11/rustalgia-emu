@@ -9,11 +9,11 @@ pre-commit:
         parallel: true
         jobs:
           - name: rumdl
-            glob: "**/*.md"
+            glob: ["*.md", "**/*.md"]
             run: mise run fmt:rumdl -- {staged_files}
             stage_fixed: true
           - name: dprint
-            glob: "**/*.{yml,yaml,json,jsonc,toml}"
+            glob: ["*.{yml,yaml,json,jsonc,toml}", "**/*.{yml,yaml,json,jsonc,toml}"]
             run: mise run fmt:dprint -- {staged_files}
             stage_fixed: true
           - name: shfmt
@@ -26,20 +26,21 @@ pre-commit:
         parallel: true
         jobs:
           - name: rumdl
-            glob: "**/*.md"
+            glob: ["*.md", "**/*.md"]
             run: mise run lint:rumdl -- {staged_files}
           - name: merman
-            glob: "**/*.md"
+            glob: ["*.md", "**/*.md"]
             run: mise run lint:merman -- {staged_files}
           - name: contracts
             glob: "docs/**/*.md"
             run: mise run lint:contracts -- {staged_files}
           - name: links
-            glob: "**/*.md"
+            glob: ["*.md", "**/*.md"]
             run: mise run links -- --offline {staged_files}
           - name: vale
             exclude:
               - LICENSE
+              - "*.lock"
               - "**/*.lock"
             run: mise run lint:vale -- {staged_files}
           - name: typos
