@@ -1,0 +1,89 @@
+name: Bug report
+description: Something behaves incorrectly, crashes, or differs from real hardware.
+title: "bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues before opening a new one.
+        Never attach or link ROMs, BIOS files, firmware, or keys. Identify a game by title, region, and hash.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The shortest sequence that triggers the problem every time.
+      placeholder: |
+        1. Start with ...
+        2. Load ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often it happens
+      options:
+        - Every time
+        - Often
+        - Rarely
+        - Once
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Rustalgia version or commit
+      placeholder: "v0.1.0 or a commit SHA"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Host platform
+      multiple: true
+      options:
+        - Linux
+        - Windows
+        - Android
+        - iOS
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: Host details
+      description: OS version, device or CPU, GPU, and driver version where relevant.
+  - type: input
+    id: system
+    attributes:
+      label: Emulated system
+      placeholder: "Game Boy Advance"
+  - type: input
+    id: game
+    attributes:
+      label: Game and dump
+      description: Title, region, revision, and a SHA-1 or CRC32 of the dump. Not the file.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, or save states
+      description: Paste logs as text. Remove personal paths and anything secret.
+      render: text
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched for an existing issue.
+          required: true
+        - label: This report contains no ROMs, BIOS files, firmware, keys, or links to them.
+          required: true

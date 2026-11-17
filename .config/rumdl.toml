@@ -20,3 +20,7 @@ front-matter-title = ""
 
 [MD041]
 front-matter-title = ""
+
+# GitHub inserts the pull request template into the description box, which has its own title field.
+[per-file-ignores]
+".github/PULL_REQUEST_TEMPLATE.md" = ["MD041"]

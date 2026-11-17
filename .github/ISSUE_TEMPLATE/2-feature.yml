@@ -1,0 +1,54 @@
+name: Feature request
+description: Propose a capability Rustalgia does not have.
+title: "feat: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Who needs this, and what can they not do today? Describe the need before the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should happen, from the user's point of view.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches, including how other emulators handle it, and why they fall short.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Emulation core
+        - Frontend and user interface
+        - Input
+        - Audio
+        - Video and rendering
+        - Save data and states
+        - Platform support
+        - Developer tooling
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable conditions that show the feature is done.
+      placeholder: |
+        - Given ..., when ..., then ...
+  - type: input
+    id: related
+    attributes:
+      label: Related requirements, ADRs, or issues
+      placeholder: "REQ-0012, ADR 0004, #31"
