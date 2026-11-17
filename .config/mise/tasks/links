@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+#MISE description="Check links. Pass --offline first to check only internal links and anchors."
+set -eu
+
+offline=""
+if [ "${1:-}" = "--offline" ]; then
+  offline="--offline"
+  shift
+fi
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z -- '*.md' | xargs -0 -r lychee --config .config/lychee.toml $offline --
+else
+  lychee --config .config/lychee.toml $offline -- "$@"
+fi

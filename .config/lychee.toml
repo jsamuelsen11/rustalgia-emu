@@ -1,0 +1,10 @@
+# Internal links, heading anchors, and external URLs.
+include_fragments = "anchor-only"
+hidden = true
+no_progress = true
+
+# External requests.
+cache = true
+max_cache_age = "1d"
+max_retries = 3
+accept = ["200..=299", "429"]

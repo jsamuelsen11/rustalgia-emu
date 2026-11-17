@@ -34,4 +34,9 @@ depends = [
   "lint:typos",
   "lint:editorconfig",
   "lint:shellcheck",
+  "links:offline",
 ]
+
+[tasks."links:offline"]
+description = "Check internal links and heading anchors only"
+run = "mise run links -- --offline"
