@@ -34,6 +34,8 @@ To use this template:
 | `status` | `draft` when you open the pull request. Only the owner sets `approved`. |
 | `date` | The day the status last changed, as `YYYY-MM-DD`. |
 
+The other status values, and who sets each one, are defined under "Status" in `docs/README.md`.
+
 Every claim says how it was checked: read in the project's documentation, observed by running the emulator,
 read in its source, or recalled from memory.
 A claim from memory is marked "(from memory)".
@@ -97,8 +99,9 @@ Opinion goes in the next two sections.
 
 **Example:**
 
-> The core is a library that knows nothing about windows, files, or audio devices.
-> A frontend gives it input and receives finished frames and audio samples through a small set of callbacks.
+> The core is a library that knows nothing about windows, files, or audio devices (documentation, "Design").
+> A frontend gives it input and receives finished frames and audio samples through a small set of callbacks
+> (observed by embedding the core in a test program).
 > The processor is interpreted; there is no recompiler (documentation, "Design").
 
 ## What works well

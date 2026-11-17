@@ -22,6 +22,7 @@ To use this template:
 
 The status line has three values: "Draft, awaiting owner approval", "Approved", and "Superseded by" with a path.
 A design is kept current: when the thing it describes changes, the design changes in the same pull request.
+A change to the Intent or the Goals is a new design, and the old one is marked "Superseded by" with the new path.
 
 ## Intent
 

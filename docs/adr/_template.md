@@ -28,6 +28,8 @@ To use this template:
 | `status` | `draft` when you open the pull request. Only the owner sets `approved` or `rejected`. |
 | `date` | The day the status last changed, as `YYYY-MM-DD`. |
 
+The other status values, and who sets each one, are defined under "Status" in `docs/README.md`.
+
 One ADR records one decision.
 If you are deciding two things, write two ADRs.
 An approved ADR is never rewritten.

@@ -30,6 +30,8 @@ To use this template:
 | `status` | `draft` when you open the pull request. Only the owner sets `approved`. |
 | `date` | The day the status last changed, as `YYYY-MM-DD`. |
 
+The other status values, and who sets each one, are defined under "Status" in `docs/README.md`.
+
 Spike code is thrown away.
 It is never merged into the product, and it uses only freely licensed test software.
 Write the question before you start the experiment, not after.

@@ -30,6 +30,8 @@ To use this template:
 | `status` | `draft` when you open the pull request. Only the owner sets `approved`. |
 | `date` | The day the status last changed, as `YYYY-MM-DD`. |
 
+The other status values, and who sets each one, are defined under "Status" in `docs/README.md`.
+
 Every claim says how it was checked.
 A claim from memory is marked "(from memory)".
 A note on law or policy says that it is not legal advice.

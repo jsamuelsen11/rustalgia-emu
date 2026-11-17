@@ -31,6 +31,8 @@ To use this template:
 | `status` | `draft` when you open the pull request. Only the owner sets `approved`. |
 | `date` | The day the status last changed, as `YYYY-MM-DD`. |
 
+The other status values, and who sets each one, are defined under "Status" in `docs/README.md`.
+
 ## Goal
 
 **Purpose:** say what is true when the roadmap is finished.
@@ -94,7 +96,7 @@ An item that needs a paragraph is too big; split it.
 
 ### Phase 1: core requirements
 
-Done when all three items are done.
+Done when every item that has not been dropped is done.
 
 - [ ] **D1-01** Requirements for save states.
 - [ ] **D1-02** Requirements for rewind.
