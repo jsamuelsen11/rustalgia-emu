@@ -19,7 +19,7 @@ The repository holds documentation and the tooling that checks it; there is no e
 | `docs/roadmap/` | Roadmaps |
 | `docs/superpowers/` | Design documents and implementation plans for the repository itself |
 | `.config/` | Tool versions, tasks, git hooks, and every tool's configuration |
-| `.github/` | CI workflows and Dependabot |
+| `.github/` | CI workflows, Dependabot, issue and pull request templates, and contributor policies |
 
 ## Development
 

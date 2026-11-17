@@ -1,0 +1,37 @@
+name: Documentation problem
+description: A document is wrong, unclear, outdated, or missing.
+title: "docs: "
+labels: ["documentation", "needs-triage"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Document
+      description: Path or link, with the section heading if it helps.
+      placeholder: "docs/adr/0003-renderer-backend.md, Consequences"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options:
+        - Incorrect
+        - Outdated
+        - Unclear or hard to follow
+        - Missing
+        - Contradicts another document
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Quote the text where possible, and say what a reader would get wrong because of it.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
+      description: The correct information, or where to find it.
