@@ -9,3 +9,6 @@
 *.webp binary
 *.ico binary
 *.pdf binary
+
+# Generated files: collapsed by default in GitHub pull request diffs.
+.config/mise.lock linguist-generated
