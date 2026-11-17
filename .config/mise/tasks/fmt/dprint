@@ -9,8 +9,8 @@ if [ "${1:-}" = "--check" ]; then
 fi
 
 if [ "$#" -eq 0 ]; then
-  git ls-files -z -- '*.yml' '*.yaml' '*.json' '*.jsonc' '*.toml' |
-    xargs -0 -r dprint "$mode" --config .config/dprint.json --
+  git ls-files -z -- '*.yml' '*.yaml' '*.json' '*.jsonc' '*.toml' \
+    | xargs -0 -r dprint "$mode" --config .config/dprint.json --
 else
   dprint "$mode" --config .config/dprint.json -- "$@"
 fi

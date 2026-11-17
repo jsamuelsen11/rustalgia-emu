@@ -13,28 +13,28 @@ fail() {
 # Prints the contract name for a path, "exempt", or "none".
 contract_for() {
   case "$1" in
-  docs/superpowers/*)
-    echo exempt
-    return
-    ;;
+    docs/superpowers/*)
+      echo exempt
+      return
+      ;;
   esac
   base=$(basename "$1")
   case "$(dirname "$1")" in
-  docs/research) echo research ;;
-  docs/roadmap) echo roadmap ;;
-  docs/adr)
-    case "$base" in
-    [0-9][0-9][0-9][0-9]-?*.md) echo adr ;;
+    docs/research) echo research ;;
+    docs/roadmap) echo roadmap ;;
+    docs/adr)
+      case "$base" in
+        [0-9][0-9][0-9][0-9]-?*.md) echo adr ;;
+        *) echo none ;;
+      esac
+      ;;
+    docs/requirements)
+      case "$base" in
+        REQ-[0-9][0-9][0-9][0-9]-?*.md) echo requirement ;;
+        *) echo none ;;
+      esac
+      ;;
     *) echo none ;;
-    esac
-    ;;
-  docs/requirements)
-    case "$base" in
-    REQ-[0-9][0-9][0-9][0-9]-?*.md) echo requirement ;;
-    *) echo none ;;
-    esac
-    ;;
-  *) echo none ;;
   esac
 }
 
@@ -62,19 +62,19 @@ frontmatter_value() {
 check() {
   file=${1#./}
   case "$file" in
-  docs/*.md) ;;
-  *) return 0 ;;
+    docs/*.md) ;;
+    *) return 0 ;;
   esac
 
   contract=$(contract_for "$file")
   case "$contract" in
-  exempt) return 0 ;;
-  none)
-    fail "$file" "no structure contract covers this path. Valid locations: \
+    exempt) return 0 ;;
+    none)
+      fail "$file" "no structure contract covers this path. Valid locations: \
 docs/research/<name>.md, docs/requirements/REQ-NNNN-<slug>.md, docs/adr/NNNN-<slug>.md, \
 docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an entry in this script."
-    return 0
-    ;;
+      return 0
+      ;;
   esac
 
   schema="$schemas/$contract.yml"
@@ -90,8 +90,8 @@ docs/roadmap/<name>.md. A new document type needs a contract in $schemas/ and an
   if [ "$contract" = requirement ]; then
     id=$(frontmatter_value "$file" id)
     case "$(basename "$file")" in
-    "$id"-*) ;;
-    *) fail "$file" "frontmatter id '$id' does not match the filename" ;;
+      "$id"-*) ;;
+      *) fail "$file" "frontmatter id '$id' does not match the filename" ;;
     esac
   fi
 }
