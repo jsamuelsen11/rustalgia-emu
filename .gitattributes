@@ -1,1 +1,14 @@
+# Normalise line endings to LF for every file git detects as text.
 * text=auto eol=lf
+
+# Binary files: never convert line endings, never diff as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+
+# Generated files: collapsed by default in GitHub pull request diffs.
+.config/mise.lock linguist-generated
