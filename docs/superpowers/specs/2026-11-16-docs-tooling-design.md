@@ -232,7 +232,7 @@ The builder must make sure `.claude/`, `.config/`, and `.github/` are included.
 **(call)** No off-the-shelf style guide.
 One small custom style with three error-level rules:
 
-- **Filler:** words that add nothing ("basically", "simply", "in order to").
+- **Filler:** words that add nothing (`basically`, `simply`, `in order to`).
 - **Wordiness:** phrases with a shorter equivalent.
 - **Terms:** preferred glossary terms.
   Empty until the glossary exists.

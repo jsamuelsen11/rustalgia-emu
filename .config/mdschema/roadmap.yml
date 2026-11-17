@@ -12,16 +12,16 @@ frontmatter:
       format: date
 structure:
   - heading:
-      pattern: '^# .+$'
+      pattern: "^# .+$"
       regex: true
     children:
-      - heading: '## Goal'
+      - heading: "## Goal"
         allow_additional: true
-      - heading: '## Scope'
+      - heading: "## Scope"
         allow_additional: true
-      - heading: '## Milestones'
+      - heading: "## Milestones"
         allow_additional: true
-      - heading: '## Out of scope'
+      - heading: "## Out of scope"
         allow_additional: true
-      - heading: '## Risks and open questions'
+      - heading: "## Risks and open questions"
         allow_additional: true

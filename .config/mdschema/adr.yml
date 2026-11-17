@@ -12,14 +12,14 @@ frontmatter:
       format: date
 structure:
   - heading:
-      pattern: '^# .+$'
+      pattern: "^# .+$"
       regex: true
     children:
-      - heading: '## Context'
+      - heading: "## Context"
         allow_additional: true
-      - heading: '## Options considered'
+      - heading: "## Options considered"
         allow_additional: true
-      - heading: '## Decision'
+      - heading: "## Decision"
         allow_additional: true
-      - heading: '## Consequences'
+      - heading: "## Consequences"
         allow_additional: true

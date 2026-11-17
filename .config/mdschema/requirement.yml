@@ -20,18 +20,18 @@ frontmatter:
       format: date
 structure:
   - heading:
-      pattern: '^# .+$'
+      pattern: "^# .+$"
       regex: true
     children:
-      - heading: '## Statement'
+      - heading: "## Statement"
         allow_additional: true
-      - heading: '## Rationale'
+      - heading: "## Rationale"
         allow_additional: true
-      - heading: '## Acceptance criteria'
+      - heading: "## Acceptance criteria"
         allow_additional: true
-      - heading: '## Dependencies'
+      - heading: "## Dependencies"
         optional: true
         allow_additional: true
-      - heading: '## Notes'
+      - heading: "## Notes"
         optional: true
         allow_additional: true

@@ -347,7 +347,7 @@ Field values and heading order are copied from the spec.
 - Produces: `lint:vale`, joined to `lint`.
 
 - [ ] **Step 1: Write proof samples.**
-  A Markdown file containing "basically" and "in order to"; a YAML file with the same words in a comment.
+  A Markdown file containing `basically` and `in order to`; a YAML file with the same words in a comment.
 
 - [ ] **Step 2: Write `.config/vale.ini`.**
   `StylesPath = vale/styles`, `MinAlertLevel = error`, `Vocab = Rustalgia`.
@@ -356,12 +356,9 @@ Field values and heading order are copied from the spec.
 
 - [ ] **Step 3: Write the three rules, all `level: error`.**
   - `Filler.yml`: `existence` rule.
-    Tokens: basically, simply, just, very, really, actually, quite, obviously, clearly, of course, needless to say,
-    it should be noted that, it is important to note that.
+    Tokens: the list in `.config/vale/styles/Rustalgia/Filler.yml`.
   - `Wordiness.yml`: `substitution` rule.
-    Pairs: in order to → to; due to the fact that → because; at this point in time → now; in the event that → if;
-    a number of → several; is able to → can; has the ability to → can; with regard to → about; for the purpose of → for;
-    prior to → before.
+    Pairs: the map in `.config/vale/styles/Rustalgia/Wordiness.yml`.
   - `Terms.yml`: `substitution` rule with an empty swap map and a comment saying the glossary fills it.
 
 - [ ] **Step 4: Add `lint:vale`.**

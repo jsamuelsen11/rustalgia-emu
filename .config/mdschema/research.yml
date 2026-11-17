@@ -14,20 +14,20 @@ frontmatter:
       format: date
 structure:
   - heading:
-      pattern: '^# .+$'
+      pattern: "^# .+$"
       regex: true
     children:
-      - heading: '## Summary'
+      - heading: "## Summary"
         allow_additional: true
-      - heading: '## Scope'
+      - heading: "## Scope"
         allow_additional: true
-      - heading: '## What works well'
+      - heading: "## What works well"
         allow_additional: true
-      - heading: '## What works poorly'
+      - heading: "## What works poorly"
         allow_additional: true
-      - heading: '## Implications for Rustalgia'
+      - heading: "## Implications for Rustalgia"
         allow_additional: true
-      - heading: '## Open questions'
+      - heading: "## Open questions"
         allow_additional: true
-      - heading: '## Sources'
+      - heading: "## Sources"
         allow_additional: true

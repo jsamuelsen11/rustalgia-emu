@@ -1,0 +1,6 @@
+# Preferred glossary terms. The glossary fills this map: "discouraged term: preferred term".
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+ignorecase: true
+swap: {}
