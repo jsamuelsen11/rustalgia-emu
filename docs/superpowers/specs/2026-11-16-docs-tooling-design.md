@@ -169,7 +169,8 @@ Each lives in its own folder under `docs/research/` and is named `RN-NN-<slug>.m
   Open questions, Sources.
 - **Spike report**, in `spikes/`: Summary, Question, Method, Results, Implications for Rustalgia, Open questions.
 
-Frontmatter for all three: `title`, `roadmap_item` (matching the filename), `status` (`draft` or `reviewed`), `date`.
+Frontmatter for all three: `title`, `roadmap_item` (matching the filename), `status`
+(`draft`, `approved`, or `superseded`), `date`.
 An emulator study also has `subject`.
 A roadmap item belongs to one note.
 
@@ -183,7 +184,7 @@ One requirement per file.
 | `title` | string |
 | `level` | `high` or `low` |
 | `priority` | `must`, `should`, or `could` |
-| `status` | `proposed`, `accepted`, `rejected`, or `superseded` |
+| `status` | `draft`, `approved`, `rejected`, `superseded`, or `retired` |
 | `date` | ISO date |
 
 Headings, in order: Statement, Rationale, Acceptance criteria.
@@ -194,7 +195,7 @@ Optional, after those: Dependencies, Notes.
 | Frontmatter | Rule |
 |---|---|
 | `title` | string |
-| `status` | `proposed`, `accepted`, `rejected`, `deprecated`, or `superseded` |
+| `status` | `draft`, `approved`, `rejected`, `superseded`, or `retired` |
 | `date` | ISO date |
 
 Headings, in order: Context, Options considered, Decision, Consequences.
@@ -204,10 +205,16 @@ Headings, in order: Context, Options considered, Decision, Consequences.
 | Frontmatter | Rule |
 |---|---|
 | `title` | string |
-| `status` | `draft`, `active`, `completed`, or `superseded` |
+| `status` | `draft`, `approved`, `completed`, or `superseded` |
 | `date` | ISO date |
 
 Headings, in order: Goal, Scope, Milestones, Out of scope, Risks and open questions.
+
+### Folder guide: `README.md` in any folder under `docs/`
+
+No frontmatter.
+Headings, in order: Purpose, Layout, Conventions.
+`docs/README.md` defines the status values shared by every document type.
 
 ### Not under contract
 

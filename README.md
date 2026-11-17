@@ -11,6 +11,8 @@ The repository holds documentation and the tooling that checks it; there is no e
 
 ## Repository layout
 
+The [documentation guide](docs/README.md) explains the document types, their structure, and their status values.
+
 | Path | Holds |
 |---|---|
 | `docs/research/emulators/` | Studies of existing emulators |

@@ -19,6 +19,10 @@ contract_for() {
       ;;
   esac
   base=$(basename "$1")
+  if [ "$base" = README.md ]; then
+    echo folder-guide
+    return
+  fi
   case "$(dirname "$1")" in
     docs/research/emulators | docs/research/topics | docs/research/spikes)
       case "$base" in
@@ -92,7 +96,7 @@ check() {
     none)
       fail "$file" "no structure contract covers this path. Valid locations: \
 docs/research/{emulators,topics,spikes}/RN-NN-<slug>.md, docs/requirements/REQ-NNNN-<slug>.md, \
-docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md. \
+docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md, and a README.md in any folder. \
 A new document type needs a contract in $schemas/ and an entry in this script."
       return 0
       ;;

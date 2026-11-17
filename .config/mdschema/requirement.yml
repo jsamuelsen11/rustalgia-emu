@@ -14,7 +14,7 @@ frontmatter:
       enum: [must, should, could]
     - name: status
       type: string
-      enum: [proposed, accepted, rejected, superseded]
+      enum: [draft, approved, rejected, superseded, retired]
     - name: date
       type: date
       format: date

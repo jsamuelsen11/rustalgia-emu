@@ -1,6 +1,6 @@
 ---
 title: Research roadmap
-status: draft
+status: approved
 date: 2026-11-17
 ---
 
@@ -35,7 +35,7 @@ Every system, platform, and technique stays an option until the synthesis phase.
   The phase number is the first digit.
 - Each item produces one research note, named for its ID, in `docs/research/`.
   Emulator studies go in `emulators/`, topic studies in `topics/`, and spike reports in `spikes/`.
-- An item is done when its note is merged with its status set to `reviewed`.
+- An item is done when its note is merged with its status set to `approved`.
   The same pull request ticks the item here.
 - An item starts only when the items it depends on are done.
   Every item in phases 1 to 5 depends on R0-01.

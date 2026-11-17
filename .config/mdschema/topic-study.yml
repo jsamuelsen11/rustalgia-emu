@@ -9,7 +9,7 @@ frontmatter:
       type: string
     - name: status
       type: string
-      enum: [draft, reviewed]
+      enum: [draft, approved, superseded]
     - name: date
       type: date
       format: date
