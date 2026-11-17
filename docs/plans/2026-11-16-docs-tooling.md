@@ -15,7 +15,7 @@ A single `gate` job is the only required check on `main`.
 **Tech Stack:** mise, lefthook, rumdl, merman-cli, mdschema, Vale, typos, lychee, dprint, actionlint, zizmor, pinact,
 betterleaks, committed, editorconfig-checker, shellcheck, shfmt, GitHub Actions, GitHub rulesets.
 
-**Spec:** `docs/superpowers/specs/2026-11-16-docs-tooling-design.md`
+**Spec:** `docs/designs/2026-11-16-docs-tooling-design.md`
 
 ## Global Constraints
 

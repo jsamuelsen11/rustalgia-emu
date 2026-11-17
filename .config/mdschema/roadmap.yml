@@ -6,7 +6,7 @@ frontmatter:
       type: string
     - name: status
       type: string
-      enum: [draft, active, completed, superseded]
+      enum: [draft, approved, completed, superseded]
     - name: date
       type: date
       format: date

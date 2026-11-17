@@ -1,14 +1,17 @@
-# Contract: Research note.
-# Unknown frontmatter fields and the single-title rule are enforced by `mise run lint:contracts`.
+# Contract: Emulator study.
+# Unknown frontmatter fields, the single-title rule, and roadmap_item matching the filename
+# are enforced by `mise run lint:contracts`.
 frontmatter:
   fields:
     - name: title
       type: string
     - name: subject
       type: string
+    - name: roadmap_item
+      type: string
     - name: status
       type: string
-      enum: [draft, reviewed]
+      enum: [draft, approved, superseded]
     - name: date
       type: date
       format: date
@@ -20,6 +23,8 @@ structure:
       - heading: "## Summary"
         allow_additional: true
       - heading: "## Scope"
+        allow_additional: true
+      - heading: "## Architecture"
         allow_additional: true
       - heading: "## What works well"
         allow_additional: true

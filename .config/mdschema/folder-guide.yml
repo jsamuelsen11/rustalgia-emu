@@ -1,0 +1,13 @@
+# Contract: Folder guide. A README.md that explains what a docs folder holds.
+# It has no frontmatter; `mise run lint:contracts` rejects any frontmatter field.
+structure:
+  - heading:
+      pattern: "^# .+$"
+      regex: true
+    children:
+      - heading: "## Purpose"
+        allow_additional: true
+      - heading: "## Layout"
+        allow_additional: true
+      - heading: "## Conventions"
+        allow_additional: true

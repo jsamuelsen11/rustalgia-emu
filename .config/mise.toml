@@ -28,6 +28,7 @@ depends = ["fmt:rumdl --check", "fmt:dprint --check", "fmt:shfmt --check"]
 description = "Run every linter"
 depends = [
   "lint:rumdl",
+  "lint:line-length",
   "lint:merman",
   "lint:contracts",
   "lint:vale",

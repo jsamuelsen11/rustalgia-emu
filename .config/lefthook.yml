@@ -31,6 +31,9 @@ pre-commit:
           - name: rumdl
             glob: "**/*.md"
             run: mise run lint:rumdl -- {staged_files}
+          - name: line-length
+            glob: "**/*.md"
+            run: mise run lint:line-length -- {staged_files}
           - name: merman
             glob: "**/*.md"
             run: mise run lint:merman -- {staged_files}

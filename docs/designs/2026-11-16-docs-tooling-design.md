@@ -117,7 +117,8 @@ and GitHub secret scanning with push protection on the server.
 │   ├── requirements/
 │   ├── research/
 │   ├── roadmap/
-│   └── superpowers/specs/   design documents such as this one
+│   ├── designs/             design documents such as this one
+│   └── plans/               implementation plans
 ├── .editorconfig            must be in root
 ├── .gitattributes           must be in root
 ├── .gitignore
@@ -156,19 +157,27 @@ This stops a document escaping its contract through a different folder or a wron
 mdschema cannot check this, so a small shell script does.
 It is a mise file task, linted by shellcheck and formatted by shfmt.
 
-The exemption list starts with `docs/superpowers/**` only.
+The exemption list is `docs/designs/**` and `docs/plans/**`.
+Both lived under `docs/superpowers/` until 2026-11-17.
 
-### Research note: `docs/research/*.md`
+### Research notes
 
-| Frontmatter | Rule |
-|---|---|
-| `title` | string |
-| `subject` | string: the emulator or topic studied |
-| `status` | `draft` or `reviewed` |
-| `date` | ISO date |
+Three types replaced the single research note on 2026-11-17, before any note was written.
+Each lives in its own folder under `docs/research/` and is named for its roadmap item: `R<phase>-<nn>-<slug>.md`,
+for example `R1-32-mgba.md`.
 
-Headings, in order: Summary, Scope, What works well, What works poorly, Implications for Rustalgia, Open questions,
-Sources.
+- **Emulator study**, in `emulators/`: Summary, Scope, Architecture, What works well, What works poorly,
+  Implications for Rustalgia, Open questions, Sources.
+- **Topic study**, in `topics/`: Summary, Scope, Findings, Options and trade-offs, Implications for Rustalgia,
+  Open questions, Sources.
+- **Spike report**, in `spikes/`: Summary, Question, Method, Results, Implications for Rustalgia, Open questions.
+
+Frontmatter for all three: `title`, `roadmap_item` (matching the filename), `status`
+(`draft`, `approved`, or `superseded`), `date`.
+An emulator study also has `subject`.
+A roadmap item belongs to one note.
+An item is ticked in the research roadmap exactly when its note is `approved` or `superseded`;
+the check fails otherwise.
 
 ### Requirement: `docs/requirements/REQ-NNNN-<slug>.md`
 
@@ -180,7 +189,7 @@ One requirement per file.
 | `title` | string |
 | `level` | `high` or `low` |
 | `priority` | `must`, `should`, or `could` |
-| `status` | `proposed`, `accepted`, `rejected`, or `superseded` |
+| `status` | `draft`, `approved`, `rejected`, `superseded`, or `retired` |
 | `date` | ISO date |
 
 Headings, in order: Statement, Rationale, Acceptance criteria.
@@ -191,7 +200,7 @@ Optional, after those: Dependencies, Notes.
 | Frontmatter | Rule |
 |---|---|
 | `title` | string |
-| `status` | `proposed`, `accepted`, `rejected`, `deprecated`, or `superseded` |
+| `status` | `draft`, `approved`, `rejected`, `superseded`, or `retired` |
 | `date` | ISO date |
 
 Headings, in order: Context, Options considered, Decision, Consequences.
@@ -201,15 +210,21 @@ Headings, in order: Context, Options considered, Decision, Consequences.
 | Frontmatter | Rule |
 |---|---|
 | `title` | string |
-| `status` | `draft`, `active`, `completed`, or `superseded` |
+| `status` | `draft`, `approved`, `completed`, or `superseded` |
 | `date` | ISO date |
 
 Headings, in order: Goal, Scope, Milestones, Out of scope, Risks and open questions.
 
+### Folder guide: `README.md` in any folder under `docs/`
+
+No frontmatter.
+Headings, in order: Purpose, Layout, Conventions.
+`docs/README.md` defines the status values shared by every document type.
+
 ### Not under contract
 
 `README.md` and `.claude/**` are outside `docs/` and have no contract.
-`docs/superpowers/**` is exempt.
+`docs/designs/**` and `docs/plans/**` are exempt.
 Any other document type needs a contract in the same change that adds its first document;
 the coverage check enforces this.
 
@@ -251,10 +266,10 @@ Rules are added only when a real document shows the need.
 
 No line in any tracked text file is longer than 120 characters.
 
-- rumdl owns the limit in Markdown, including tables and code blocks, and reflows prose to fit.
-  It exempts a line that is a single unbreakable URL.
+- In Markdown, rumdl reflows prose to fit, and the `lint:line-length` task measures every line, including tables,
+  code blocks, and headings, which rumdl skips in its sentence-based reflow mode.
+  A line that is one unbreakable token is exempt, and so is length that comes only from a link destination.
 - editorconfig-checker owns the limit everywhere else, through `max_line_length` in `.editorconfig`.
-  Markdown is switched off there so the two tools do not both enforce it.
   Outside Markdown there is no URL exemption;
   a line that cannot be shortened takes an inline `editorconfig-checker-disable-line` comment.
 - **(call)** `LICENSE` and lockfiles are exempt.

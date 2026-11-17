@@ -1,0 +1,32 @@
+# Contract: Spike report.
+# Unknown frontmatter fields, the single-title rule, and roadmap_item matching the filename
+# are enforced by `mise run lint:contracts`.
+frontmatter:
+  fields:
+    - name: title
+      type: string
+    - name: roadmap_item
+      type: string
+    - name: status
+      type: string
+      enum: [draft, approved, superseded]
+    - name: date
+      type: date
+      format: date
+structure:
+  - heading:
+      pattern: "^# .+$"
+      regex: true
+    children:
+      - heading: "## Summary"
+        allow_additional: true
+      - heading: "## Question"
+        allow_additional: true
+      - heading: "## Method"
+        allow_additional: true
+      - heading: "## Results"
+        allow_additional: true
+      - heading: "## Implications for Rustalgia"
+        allow_additional: true
+      - heading: "## Open questions"
+        allow_additional: true
