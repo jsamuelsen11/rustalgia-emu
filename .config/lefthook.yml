@@ -1,0 +1,84 @@
+# Every job calls a mise task. Tool flags and config paths live in the tasks, not here.
+# pre-commit runs three groups in order; the members of each group run in parallel.
+
+# With doublestar, "**/" also matches files at the top level of the pattern.
+glob_matcher: doublestar
+
+pre-commit:
+  piped: true
+  jobs:
+    - name: format
+      group:
+        parallel: true
+        jobs:
+          - name: rumdl
+            glob: "**/*.md"
+            run: mise run fmt:rumdl -- {staged_files}
+            stage_fixed: true
+          - name: dprint
+            glob: "**/*.{yml,yaml,json,jsonc,toml}"
+            run: mise run fmt:dprint -- {staged_files}
+            stage_fixed: true
+          - name: shfmt
+            glob: ".config/mise/tasks/**/*"
+            run: mise run fmt:shfmt -- {staged_files}
+            stage_fixed: true
+
+    - name: lint
+      group:
+        parallel: true
+        jobs:
+          - name: rumdl
+            glob: "**/*.md"
+            run: mise run lint:rumdl -- {staged_files}
+          - name: merman
+            glob: "**/*.md"
+            run: mise run lint:merman -- {staged_files}
+          - name: contracts
+            glob: "docs/**/*"
+            run: mise run lint:contracts -- {staged_files}
+          - name: links
+            glob: "**/*.md"
+            run: mise run links -- --offline {staged_files}
+          - name: vale
+            exclude:
+              - LICENSE
+              - "**/*.lock"
+            run: mise run lint:vale -- {staged_files}
+          - name: typos
+            run: mise run lint:typos -- {staged_files}
+          - name: editorconfig
+            run: mise run lint:editorconfig -- {staged_files}
+          - name: actionlint
+            glob: ".github/workflows/*.{yml,yaml}"
+            run: mise run lint:actionlint -- {staged_files}
+          - name: shellcheck
+            glob: ".config/mise/tasks/**/*"
+            run: mise run lint:shellcheck -- {staged_files}
+
+    - name: security
+      group:
+        parallel: true
+        jobs:
+          - name: betterleaks
+            run: mise run security:betterleaks -- {staged_files}
+          - name: zizmor
+            glob: ".github/**/*.{yml,yaml}"
+            run: mise run security:zizmor -- {staged_files}
+
+commit-msg:
+  # Git writes merge messages itself; pull requests are squash-merged, so they never reach main.
+  skip:
+    - merge
+  jobs:
+    - name: committed
+      run: mise run commit-msg -- {1}
+
+pre-push:
+  jobs:
+    - name: check
+      run: mise run check
+    - name: secrets in pushed commits
+      use_stdin: true
+      run: mise run security:betterleaks -- --pushed
+    # Reserved for the application phase: unit tests, dependency vulnerability scan.

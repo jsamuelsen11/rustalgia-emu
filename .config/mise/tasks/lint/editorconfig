@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#MISE description="Check whitespace, line endings, and line length against .editorconfig"
+set -eu
+
+exec editorconfig-checker -config .config/editorconfig-checker.json "$@"

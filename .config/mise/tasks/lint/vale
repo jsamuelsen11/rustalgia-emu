@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#MISE description="Lint prose"
+set -eu
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z -- ':!LICENSE' ':!*.lock' | xargs -0 -r vale --config .config/vale.ini --
+else
+  vale --config .config/vale.ini -- "$@"
+fi

@@ -1,0 +1,74 @@
+# EditorConfig: https://editorconfig.org
+# Enforced on every tracked file by `mise run lint:editorconfig`.
+root = true
+
+# Fallback for every file type not listed below.
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# Markdown: rumdl owns indentation (it follows list markers) and line length
+# (120, with an exemption for a line that is one unbreakable URL).
+[*.{md,markdown}]
+indent_size = unset
+max_line_length = off
+
+# Data and config formats, formatted by dprint.
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.{json,jsonc}]
+indent_size = 2
+
+[*.toml]
+indent_size = 2
+
+[*.ini]
+indent_size = 2
+
+# Shell scripts and mise file tasks, formatted by shfmt, which reads these keys.
+[{*.sh,*.bash,.config/mise/tasks/**}]
+indent_size = 2
+shell_variant = posix
+switch_case_indent = true
+binary_next_line = true
+
+# Rust, formatted by rustfmt: four spaces is the language convention.
+[*.rs]
+indent_size = 4
+
+# Makefiles require tabs.
+[{Makefile,makefile,GNUmakefile,*.mk}]
+indent_style = tab
+indent_size = unset
+
+# Git's own files.
+[{.gitattributes,.gitignore,.gitmodules}]
+indent_size = 2
+
+[.gitmodules]
+indent_style = tab
+indent_size = unset
+
+# Windows scripts need CRLF line endings to run.
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+
+# Patches must keep their whitespace exactly.
+[*.{diff,patch}]
+trim_trailing_whitespace = false
+insert_final_newline = unset
+indent_style = unset
+indent_size = unset
+max_line_length = off
+
+# Files this project does not write by hand.
+[{LICENSE,*.lock}]
+indent_style = unset
+indent_size = unset
+max_line_length = off

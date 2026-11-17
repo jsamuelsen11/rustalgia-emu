@@ -1,0 +1,18 @@
+extends: existence
+message: "Remove '%s': it adds nothing."
+level: error
+ignorecase: true
+tokens:
+  - basically
+  - simply
+  - just
+  - very
+  - really
+  - actually
+  - quite
+  - obviously
+  - clearly
+  - of course
+  - needless to say
+  - it should be noted that
+  - it is important to note that

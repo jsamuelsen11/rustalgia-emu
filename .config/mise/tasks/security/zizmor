@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#MISE description="Audit GitHub Actions workflows for security problems"
+set -eu
+
+if [ "$#" -eq 0 ]; then
+  [ -d .github/workflows ] || exit 0
+  set -- .github
+fi
+zizmor --no-online-audits --persona pedantic -- "$@"

@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+#MISE description="Format Markdown. Pass --check first to fail instead of writing."
+set -eu
+
+check=""
+if [ "${1:-}" = "--check" ]; then
+  check="--check"
+  shift
+fi
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z -- '*.md' | xargs -0 -r rumdl fmt $check --
+else
+  rumdl fmt $check -- "$@"
+fi

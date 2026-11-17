@@ -1,0 +1,54 @@
+[tools]
+rumdl = "latest"
+lefthook = "latest"
+lychee = "latest"
+vale = "latest"
+typos = "latest"
+dprint = "latest"
+actionlint = "latest"
+zizmor = "latest"
+pinact = "latest"
+betterleaks = "latest"
+committed = "latest"
+"github:editorconfig-checker/editorconfig-checker" = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+"aqua:Latias94/merman" = "latest"
+"aqua:jackchuka/mdschema" = "latest"
+
+[tasks.fmt]
+description = "Rewrite files with every formatter"
+depends = ["fmt:rumdl", "fmt:dprint", "fmt:shfmt"]
+
+[tasks."fmt:check"]
+description = "Fail if any formatter would change a file"
+depends = ["fmt:rumdl --check", "fmt:dprint --check", "fmt:shfmt --check"]
+
+[tasks.lint]
+description = "Run every linter"
+depends = [
+  "lint:rumdl",
+  "lint:merman",
+  "lint:contracts",
+  "lint:vale",
+  "lint:typos",
+  "lint:editorconfig",
+  "lint:actionlint",
+  "lint:shellcheck",
+  "links:offline",
+]
+
+[tasks."links:offline"]
+description = "Check internal links and heading anchors only"
+run = "mise run links -- --offline"
+
+[tasks.security]
+description = "Run every security scan"
+depends = ["security:betterleaks", "security:zizmor"]
+
+[tasks.check]
+description = "Run every CI check except the pull request title, without changing files"
+depends = ["fmt:check", "lint", "links", "security"]
+
+[hooks]
+postinstall = "lefthook install"

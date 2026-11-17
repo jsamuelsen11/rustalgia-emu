@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#MISE description="Check spelling"
+set -eu
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z | xargs -0 -r typos --config .config/typos.toml --force-exclude --
+else
+  typos --config .config/typos.toml --force-exclude -- "$@"
+fi

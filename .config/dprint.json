@@ -1,0 +1,13 @@
+{
+  "lineWidth": 120,
+  "indentWidth": 2,
+  "json": {},
+  "toml": {},
+  "yaml": {},
+  "excludes": ["**/*.lock"],
+  "plugins": [
+    "npm:@dprint/json@0.26.0",
+    "npm:@dprint/toml@0.10.0",
+    "npm:dprint-plugin-yaml@0.6.0"
+  ]
+}

@@ -1,0 +1,22 @@
+[global]
+flavor = "gfm"
+line-length = 120
+# Owned by other tools: MD043 (mdschema), MD051 and MD057 (lychee).
+disable = ["MD043", "MD051", "MD057"]
+
+[MD013]
+line-length = 120
+tables = true
+code-blocks = true
+front-matter = true
+stern = true
+reflow = true
+reflow-mode = "semantic-line-breaks"
+
+# Contracts require both a `title` frontmatter field and one title heading,
+# so the frontmatter title must not count as a heading.
+[MD025]
+front-matter-title = ""
+
+[MD041]
+front-matter-title = ""

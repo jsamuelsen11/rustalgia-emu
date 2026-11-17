@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+#MISE description="Lint GitHub Actions workflows"
+set -eu
+
+if [ "$#" -eq 0 ] && [ ! -d .github/workflows ]; then
+  exit 0
+fi
+actionlint "$@"
