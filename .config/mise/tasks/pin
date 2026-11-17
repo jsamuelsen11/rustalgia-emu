@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#MISE description="Pin GitHub Actions to commit SHAs and update them"
+set -eu
+
+exec pinact run "$@"

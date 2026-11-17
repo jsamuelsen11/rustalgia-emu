@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#MISE description="Check a commit message file against Conventional Commits"
+set -eu
+
+committed --config .config/committed.toml --commit-file "$1"

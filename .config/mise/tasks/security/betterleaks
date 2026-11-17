@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+#MISE description="Scan for secrets. Pass --range <git-range> to scan commits instead of files."
+set -eu
+
+config=".config/betterleaks.toml"
+
+if [ "${1:-}" = "--range" ]; then
+  exec betterleaks git --config "$config" --no-banner --redact --log-opts "$2" .
+fi
+
+if [ "$#" -eq 0 ]; then
+  git ls-files -z | xargs -0 -r betterleaks dir --config "$config" --no-banner --redact --
+else
+  betterleaks dir --config "$config" --no-banner --redact -- "$@"
+fi

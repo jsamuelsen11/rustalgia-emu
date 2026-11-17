@@ -33,6 +33,7 @@ depends = [
   "lint:vale",
   "lint:typos",
   "lint:editorconfig",
+  "lint:actionlint",
   "lint:shellcheck",
   "links:offline",
 ]
@@ -40,3 +41,11 @@ depends = [
 [tasks."links:offline"]
 description = "Check internal links and heading anchors only"
 run = "mise run links -- --offline"
+
+[tasks.security]
+description = "Run every security scan"
+depends = ["security:betterleaks", "security:zizmor"]
+
+[tasks.check]
+description = "Run everything CI runs, without changing files"
+depends = ["fmt:check", "lint", "links", "security"]

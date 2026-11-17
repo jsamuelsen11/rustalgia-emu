@@ -1,0 +1,3 @@
+# Default rules, no allowlist.
+[extend]
+useDefault = true
