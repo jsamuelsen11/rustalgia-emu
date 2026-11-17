@@ -100,6 +100,10 @@ and GitHub secret scanning with push protection on the server.
   If a contract needs one, a custom script replaces mdschema for that type.
 - **Editor plugins** for typos, lychee, betterleaks, and committed will not find a config in `.config/`.
   The mise tasks are the source of truth.
+- **The `gate` job** is defined in a workflow file that a pull request can edit.
+  A pull request could weaken the gate and still report it as passing.
+  GitHub offers protected required workflows to organisations only,
+  so this repository relies on the owner reviewing every change under `.github/` and `.config/` before merging.
 
 ## Repository layout
 

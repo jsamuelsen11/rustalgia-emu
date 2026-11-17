@@ -1,6 +1,9 @@
 # Every job calls a mise task. Tool flags and config paths live in the tasks, not here.
 # pre-commit runs three groups in order; the members of each group run in parallel.
 
+# With doublestar, "**/" also matches files at the top level of the pattern.
+glob_matcher: doublestar
+
 pre-commit:
   piped: true
   jobs:
@@ -9,11 +12,11 @@ pre-commit:
         parallel: true
         jobs:
           - name: rumdl
-            glob: ["*.md", "**/*.md"]
+            glob: "**/*.md"
             run: mise run fmt:rumdl -- {staged_files}
             stage_fixed: true
           - name: dprint
-            glob: ["*.{yml,yaml,json,jsonc,toml}", "**/*.{yml,yaml,json,jsonc,toml}"]
+            glob: "**/*.{yml,yaml,json,jsonc,toml}"
             run: mise run fmt:dprint -- {staged_files}
             stage_fixed: true
           - name: shfmt
@@ -26,21 +29,20 @@ pre-commit:
         parallel: true
         jobs:
           - name: rumdl
-            glob: ["*.md", "**/*.md"]
+            glob: "**/*.md"
             run: mise run lint:rumdl -- {staged_files}
           - name: merman
-            glob: ["*.md", "**/*.md"]
+            glob: "**/*.md"
             run: mise run lint:merman -- {staged_files}
           - name: contracts
             glob: "docs/**/*.md"
             run: mise run lint:contracts -- {staged_files}
           - name: links
-            glob: ["*.md", "**/*.md"]
+            glob: "**/*.md"
             run: mise run links -- --offline {staged_files}
           - name: vale
             exclude:
               - LICENSE
-              - "*.lock"
               - "**/*.lock"
             run: mise run lint:vale -- {staged_files}
           - name: typos
@@ -74,5 +76,6 @@ pre-push:
     - name: check
       run: mise run check
     - name: secrets in pushed commits
-      run: mise run security:betterleaks -- --range origin/main..HEAD
+      use_stdin: true
+      run: mise run security:betterleaks -- --pushed
     # Reserved for the application phase: unit tests, dependency vulnerability scan.

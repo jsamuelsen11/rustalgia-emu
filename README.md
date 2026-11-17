@@ -43,7 +43,7 @@ This installs every tool at the version recorded in `.config/mise.lock` and inst
 | `mise run lint` | Runs every linter, including internal link checks |
 | `mise run links` | Checks internal and external links |
 | `mise run security` | Scans for secrets and audits the CI workflows |
-| `mise run check` | Runs everything CI runs, without changing files |
+| `mise run check` | Runs every CI check except the pull request title, without changing files |
 | `mise run pin` | Pins GitHub Actions to commit SHAs |
 
 Each tool also has its own task, such as `mise run lint:vale`.
@@ -71,6 +71,7 @@ No line in a tracked text file may be longer than 120 characters.
 ### Document structure
 
 Every Markdown file under `docs/` must match a structure contract.
+The one exemption is `docs/superpowers/`, which holds free-form design documents and plans.
 A contract fixes the folder, the frontmatter fields, and the order of the sections for one type of document.
 The contracts live in `.config/mdschema/`.
 
