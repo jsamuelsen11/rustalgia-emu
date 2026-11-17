@@ -28,3 +28,14 @@ rustc-ice-*.txt
 
 # Plan execution scratch
 .superpowers/
+
+# Editors and operating systems
+.openidea/
+.idea/
+.DS_Store
+
+# Personal, uncommitted overrides for mise and lefthook
+mise.local.toml
+.config/mise.local.toml
+.config/mise/config.local.toml
+.config/lefthook-local.yml
