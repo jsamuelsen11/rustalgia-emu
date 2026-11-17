@@ -215,6 +215,12 @@ Headings, in order: Context, Options considered, Decision, Consequences.
 
 Headings, in order: Goal, Scope, Milestones, Out of scope, Risks and open questions.
 
+### Templates
+
+Each document folder holds a `_template.md` that explains every field and section and gives an example of each.
+A template is checked against its own folder's contract, so it cannot drift from the rules it shows.
+It is exempt only from the filename pattern and the id checks.
+
 ### Folder guide: `README.md` in any folder under `docs/`
 
 No frontmatter.
