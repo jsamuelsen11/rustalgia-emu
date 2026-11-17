@@ -13,7 +13,8 @@ Most contributions right now are documents: research, requirements, architecture
 
 These protect the project and are not negotiable.
 
-- Never commit, attach, or link ROMs, BIOS files, firmware, encryption keys, or other copyrighted material.
+- Never commit, attach, or link ROMs, BIOS files, firmware, encryption keys, save states, memory dumps,
+  or other copyrighted material.
 - Never copy code from another emulator or from leaked sources.
   Describe behaviour from public documentation, hardware tests, and your own observation.
 - Cite your sources in research notes.
