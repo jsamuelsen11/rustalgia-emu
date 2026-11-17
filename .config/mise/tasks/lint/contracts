@@ -95,7 +95,8 @@ check() {
     exempt) return 0 ;;
     none)
       fail "$file" "no structure contract covers this path. Valid locations: \
-docs/research/{emulators,topics,spikes}/RN-NN-<slug>.md, docs/requirements/REQ-NNNN-<slug>.md, \
+docs/research/{emulators,topics,spikes}/R<phase>-<nn>-<slug>.md (for example R1-32-mgba.md), \
+docs/requirements/REQ-NNNN-<slug>.md, \
 docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md, and a README.md in any folder. \
 A new document type needs a contract in $schemas/ and an entry in this script."
       return 0
@@ -159,5 +160,41 @@ duplicates=$(git ls-files -- 'docs/research/*.md' \
 for id in $duplicates; do
   fail "docs/research" "more than one research note uses the roadmap item $id"
 done
+
+# A research roadmap item is ticked exactly when its note is approved or superseded.
+roadmap="docs/roadmap/research.md"
+if [ -f "$roadmap" ]; then
+  notes=$(mktemp)
+  git ls-files -- 'docs/research/*.md' >"$notes"
+  while IFS= read -r note; do
+    id=$(basename "$note" | cut -c1-5)
+    case "$id" in
+      R[0-9]-[0-9][0-9]) ;;
+      *) continue ;;
+    esac
+    [ -f "$note" ] || continue
+    if ! grep -q "^- \[[ x]\] \*\*$id\*\*" "$roadmap"; then
+      fail "$note" "the research roadmap has no item $id"
+      continue
+    fi
+    ticked=no
+    grep -q "^- \[x\] \*\*$id\*\*" "$roadmap" && ticked=yes
+    case "$(frontmatter_value "$note" status)" in
+      approved | superseded)
+        [ "$ticked" = yes ] || fail "$note" "the note is approved but item $id is not ticked in $roadmap"
+        ;;
+      *)
+        [ "$ticked" = no ] || fail "$note" "item $id is ticked in $roadmap but the note is not approved"
+        ;;
+    esac
+  done <"$notes"
+  ticked_ids=$(mktemp)
+  sed -n 's/^- \[x\] \*\*\(R[0-9]-[0-9][0-9]\)\*\*.*/\1/p' "$roadmap" >"$ticked_ids"
+  while IFS= read -r id; do
+    grep -q "/$id-" "$notes" || fail "$roadmap" "item $id is ticked but has no research note"
+  done <"$ticked_ids"
+  rm -f "$ticked_ids"
+  rm -f "$notes"
+fi
 
 exit "$status"

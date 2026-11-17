@@ -18,10 +18,10 @@ perl -CSD -ne '
   if (length($_) > $limit) {
     my $text = $_;
     $text =~ s/^\s*(?:[-*+]|\d+[.)]|>)?\s*//;       # list and quote markers
-    my $token = $text !~ /\s/;                      # one unbreakable token
-    my $reference = $text =~ /^\[[^\]]+\]:\s+\S+$/; # reference link definition
-    (my $short = $_) =~ s/\]\([^)\s]+\)/]/g;        # inline link destinations
-    if (!$token && !$reference && length($short) > $limit) {
+    my $token = $text !~ /\s/;                             # one unbreakable token
+    (my $short = $_) =~ s/\]\(\S+?((?:\s+"[^"]*")?)\)/]($1)/g; # inline link destinations, keeping titles
+    $short =~ s/^(\s*\[[^\]]+\]:\s+)\S+/$1/;               # reference link destinations
+    if (!$token && length($short) > $limit) {
       printf "%s:%d: line is %d characters; the limit is %d\n", $ARGV, $., length($_), $limit;
       $bad = 1;
     }

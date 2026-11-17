@@ -161,7 +161,8 @@ The exemption list starts with `docs/superpowers/**` only.
 ### Research notes
 
 Three types replaced the single research note on 2026-11-17, before any note was written.
-Each lives in its own folder under `docs/research/` and is named `RN-NN-<slug>.md` for its roadmap item.
+Each lives in its own folder under `docs/research/` and is named for its roadmap item: `R<phase>-<nn>-<slug>.md`,
+for example `R1-32-mgba.md`.
 
 - **Emulator study**, in `emulators/`: Summary, Scope, Architecture, What works well, What works poorly,
   Implications for Rustalgia, Open questions, Sources.
@@ -173,6 +174,8 @@ Frontmatter for all three: `title`, `roadmap_item` (matching the filename), `sta
 (`draft`, `approved`, or `superseded`), `date`.
 An emulator study also has `subject`.
 A roadmap item belongs to one note.
+An item is ticked in the research roadmap exactly when its note is `approved` or `superseded`;
+the check fails otherwise.
 
 ### Requirement: `docs/requirements/REQ-NNNN-<slug>.md`
 

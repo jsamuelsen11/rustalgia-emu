@@ -54,6 +54,8 @@ For a roadmap they mean:
 - An item names the items it depends on.
   It starts only when they are done.
 - An item is ticked in the same pull request that delivers its output.
+  For the research roadmap the contract check enforces this:
+  an item is ticked exactly when its note is `approved` or `superseded`.
 
 ### Changing an approved roadmap
 
