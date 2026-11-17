@@ -1,0 +1,14 @@
+[global]
+flavor = "gfm"
+line-length = 120
+# Owned by other tools: MD043 (mdschema), MD051 and MD057 (lychee).
+disable = ["MD043", "MD051", "MD057"]
+
+[MD013]
+line-length = 120
+tables = true
+code-blocks = true
+front-matter = true
+stern = true
+reflow = true
+reflow-mode = "semantic-line-breaks"

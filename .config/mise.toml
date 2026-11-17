@@ -15,3 +15,11 @@ shellcheck = "latest"
 shfmt = "latest"
 "aqua:Latias94/merman" = "latest"
 "aqua:jackchuka/mdschema" = "latest"
+
+[tasks.fmt]
+description = "Rewrite files with every formatter"
+depends = ["fmt:rumdl", "fmt:dprint"]
+
+[tasks."fmt:check"]
+description = "Fail if any formatter would change a file"
+depends = ["fmt:rumdl --check", "fmt:dprint --check"]

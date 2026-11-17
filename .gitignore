@@ -25,3 +25,6 @@ rustc-ice-*.txt
 
 # Documentation tooling
 .lycheecache
+
+# Plan execution scratch
+.superpowers/
