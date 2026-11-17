@@ -17,6 +17,7 @@ AI agents write the documents; the owner reviews and approves them.
 | `adr/` | Architecture decision records | |
 | `designs/` | Designs for work on the repository itself: what to build and why | [designs/README.md](designs/README.md) |
 | `plans/` | Implementation plans that carry out a design | [plans/README.md](plans/README.md) |
+| `assets/` | Images used by the README and the documents | |
 
 A folder gets a guide when its first document is added.
 

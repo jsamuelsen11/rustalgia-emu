@@ -1,5 +1,9 @@
 # Rustalgia-EMU
 
+<!-- Badges go here, above the banner. -->
+
+![Rustalgia: a multi-console emulator written in Rust](docs/assets/banner.webp)
+
 🦀 Rustalgia is an open-source, Rust-powered, multi-console emulator bringing generations of gaming back to life.
 Built with a focus on accuracy, performance, modular architecture, and cross-platform support.
 Relive the classics, rewritten in Rust. 🎮
