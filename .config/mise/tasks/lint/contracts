@@ -23,6 +23,19 @@ contract_for() {
       return
       ;;
   esac
+  # A template is checked against its folder's contract, but not against the filename and id rules.
+  if [ "$base" = _template.md ]; then
+    case "$(dirname "$1")" in
+      docs/research/emulators) echo emulator-study ;;
+      docs/research/topics) echo topic-study ;;
+      docs/research/spikes) echo spike-report ;;
+      docs/roadmap) echo roadmap ;;
+      docs/adr) echo adr ;;
+      docs/requirements) echo requirement ;;
+      *) echo none ;;
+    esac
+    return
+  fi
   case "$(dirname "$1")" in
     docs/research/emulators | docs/research/topics | docs/research/spikes)
       case "$base" in
@@ -115,6 +128,8 @@ A new document type needs a contract in $schemas/ and an entry in this script."
     fi
   done <"$keys"
   rm -f "$keys"
+
+  [ "$(basename "$file")" = _template.md ] && return 0
 
   # The id in the frontmatter must equal the id at the start of the filename.
   case "$contract" in
