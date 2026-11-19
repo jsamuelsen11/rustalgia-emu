@@ -40,3 +40,22 @@ Read `README.md` and `docs/README.md` before writing anything.
 - State how each claim was checked, and mark a claim that comes from memory.
 - Never read leaked source code or documents.
   Never obtain, use, or store copyrighted games, firmware, or keys.
+
+## Sources
+
+`docs/adr/0001-restrict-reading-by-licence-tier.md` decides what may be read.
+Read it before opening any emulator's repository.
+
+- Open tier, a licence compatible with GPL-3.0: read anything, including code.
+- Walled tier, an incompatible or unresolved licence: read prose only,
+  unless the owner started the session as a reader with `RUSTALGIA_SOURCE_ROLE=reader`.
+  A reader writes functional descriptions, with no code and no listings.
+- Closed tier, not open source, plus decompilations and firmware reimplementations: read prose only.
+- Tainted references, such as psx-spx: do not open.
+- A source with no tier is walled until its family survey gives it one.
+- Never copy or port code from any tier.
+  Cite what was learned and write Rustalgia's code independently.
+- `.claude/hooks/source-guard.sh` blocks tool calls to the sources listed in `.claude/hooks/restricted-sources.txt`.
+  Do not work around a block.
+  Add a source to the list in the same change that gives it a tier.
+- Give every subagent these rules in its brief.

@@ -1,8 +1,8 @@
 ---
 title: Clean-room policy
 roadmap_item: R0-01
-status: draft
-date: 2026-11-17
+status: approved
+date: 2026-11-19
 ---
 
 # Clean-room policy

@@ -46,16 +46,19 @@ Every system, platform, and technique stays an option until the synthesis phase.
 
 ### Phase 0: ground rules
 
-Done when all five items are done.
+Done when all six items are done.
 Nothing else starts before R0-01.
 
-- [ ] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
+- [x] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
 - [ ] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history.
 - [ ] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
       Depends on R0-02.
 - [ ] **R0-04** Glossary and research conventions.
       Adds the glossary and its structure contract.
 - [ ] **R0-05** Source map: the documentation hubs and essential reading for each system.
+      Records each hub's licence, stated origin, rule on confidential material, and tier.
+- [ ] **R0-06** Provenance controls for agent-written work: logging, walls, similarity checks, and authorship.
+      Depends on R0-01.
 
 ### Phase 1: landscape
 

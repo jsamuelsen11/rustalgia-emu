@@ -1,3 +1,7 @@
 [files]
 extend-exclude = ["LICENSE", "*.lock"]
 ignore-hidden = false
+
+[default]
+# Skip words made only of capitals and digits. They are acronyms, licence codes, and statute numbers, not prose.
+extend-ignore-words-re = ["^[A-Z0-9]+$"]
