@@ -32,6 +32,7 @@ contract_for() {
       docs/roadmap) echo roadmap ;;
       docs/adr) echo adr ;;
       docs/requirements) echo requirement ;;
+      docs/glossary) echo glossary ;;
       *) echo none ;;
     esac
     return
@@ -50,6 +51,7 @@ contract_for() {
       esac
       ;;
     docs/roadmap) echo roadmap ;;
+    docs/glossary) echo glossary ;;
     docs/adr)
       case "$base" in
         [0-9][0-9][0-9][0-9]-?*.md) echo adr ;;
@@ -110,7 +112,7 @@ check() {
       fail "$file" "no structure contract covers this path. Valid locations: \
 docs/research/{emulators,topics,spikes}/R<phase>-<nn>-<slug>.md (for example R1-32-mgba.md), \
 docs/requirements/REQ-NNNN-<slug>.md, \
-docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md, and a README.md in any folder. \
+docs/adr/NNNN-<slug>.md, docs/roadmap/<name>.md, docs/glossary/<name>.md, and a README.md in any folder. \
 A new document type needs a contract in $schemas/ and an entry in this script."
       return 0
       ;;
@@ -128,6 +130,26 @@ A new document type needs a contract in $schemas/ and an entry in this script."
     fi
   done <"$keys"
   rm -f "$keys"
+
+  # The terms of a glossary are in alphabetical order, ignoring case, and each is defined once.
+  if [ "$contract" = glossary ]; then
+    problems=$(LC_ALL=C awk '
+      /^### / {
+        term = tolower(substr($0, 5))
+        if (term in seen) {
+          printf "%s: the term \"%s\" is defined more than once\n", FILENAME, term
+        } else if (term < last) {
+          printf "%s: the term \"%s\" is out of alphabetical order; it follows \"%s\"\n", FILENAME, term, last
+        }
+        seen[term] = 1
+        last = term
+      }
+    ' "$file")
+    if [ -n "$problems" ]; then
+      printf '%s\n' "$problems" >&2
+      status=1
+    fi
+  fi
 
   [ "$(basename "$file")" = _template.md ] && return 0
 

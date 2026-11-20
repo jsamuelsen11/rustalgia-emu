@@ -93,6 +93,8 @@ tainted | psx-spx.consoledev.net | none obtained | maintainers say it copies sec
 tainted | psx-spx/psx-spx.github.io | none obtained | repository of the same reference | 2026-11-17 | home page
 tainted | psx-spx.github.io | none obtained | the Pages address of the same repository | 2026-11-19 | R0-05
 tainted | problemkaputt.de/psx-spx | copyright notice | the document that statement is about | 2026-11-17 | R0-01
+# The same two references at addresses the lines above do not match: the guard needs a separator before a pattern,
+# so a "www." prefix escapes it, and the per-chapter pages are named "psxspx" without the hyphen.
 tainted | www.psx-spx.consoledev.net | none obtained | same reference with the www prefix | 2026-11-19 | R0-05
 tainted | www.problemkaputt.de/psx-spx | copyright notice | same document with the www prefix | 2026-11-19 | R0-05
 tainted | problemkaputt.de/psxspx | copyright notice | the same document's per-chapter pages | 2026-11-19 | R0-05
@@ -115,7 +117,7 @@ open | wiibrew.org | none stated | bars leaked kit content; origin not stated | 
 # The address ending in "/" of a closed site's home page is blocked; the address with no "/" passes.
 
 # Game Boy and Game Boy Advance: references and research, open tier.
-open | gbdev/pandocs | CC0-1.0 | repository of Pan Docs; origin of its facts not stated | 2026-11-19 | README
+open | gbdev/pandocs | CC0-1.0 | Pan Docs repository; no origin or source rule | 2026-11-19 | README, CONTRIBUTING
 open | gbdev.io | GPL-3.0 site and list | community site, a lead; no rule on leaks | 2026-11-19 | home, AI policy
 open | gbdev/awesome-gbdev | GPL-3.0 | list, a lead; links disassemblies and boot ROM pages | 2026-11-19 | README
 open | gbdev/gbdev.github.io | GPL-3.0 | source of gbdev.io | 2026-11-19 | licence metadata
@@ -235,7 +237,7 @@ closed | www.6502.org/documents/datasheets | none | same folder, www prefix | 20
 open | westerndesigncenter.com | all rights reserved | chip maker's own datasheets | 2026-11-19 | datasheet page 1
 open | archive.ares-emu.net/near.sh | none stated | mirror of Near's articles, a lead | 2026-11-19 | index pages
 open | perfectkiosk.net/stsvb | "Unlicensed" by a catalogue | NEC manuals, sites, own research | 2026-11-19 | About
-open | tasvideos.org | CC BY 2.0 | emulator test results; lists maker test programs | 2026-11-19 | SiteLicense page
+open | tasvideos.org | CC BY 2.0 | community wiki and test results; origin not stated | 2026-11-19 | Site License page
 open | n64.dev | none stated | link list, a lead; links closed material | 2026-11-19 | page
 open | n64dev.org | none stated | link list, a lead; hosts a copy of an NEC manual | 2026-11-19 | page
 open | dragonminded.com/n64dev | none stated | original libdragon author's research notes | 2026-11-19 | page
@@ -551,13 +553,13 @@ open | image-ppubs.uspto.gov | patent office | patents filed by the makers | 202
 open | diglib.eg.org | catalogue record | paper by the 3DS GPU maker's staff; not read | 2026-11-19 | record page
 
 # Cross-system sources: references and leads, open tier.
-open | emulation.gametechwiki.com | none stated | user wiki, a lead; BIOS link pages never opened | 2026-11-19 | wiki
+open | emulation.gametechwiki.com | none named | user wiki, a lead; BIOS pages unread | 2026-11-19 | Copyrights page
 open | stackexchange.com | CC BY-SA 2.5, 3.0, or 4.0 by date | forum, a lead | 2026-11-19 | licensing help page
 open | wikipedia.org | CC BY-SA 4.0 and GFDL | tertiary reference; cites its sources | 2026-11-19 | terms of use
 open | media.ccc.de | per talk; CC BY 4.0 is its example | conference talks, leads | 2026-11-19 | about page
 open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies page
-open | no-intro.org | none stated | database of hashes; no games | 2026-11-19 | home page
-open | redump.org | none stated | disc hash database; front page reports a staff dispute | 2026-11-19 | home page
+open | no-intro.org | own data licence, 2026-09-11 | database of hashes; no games | 2026-11-19 | home, terms pages
+open | redump.org | none; bare copyright notice | disc hash database; staff dispute | 2026-11-19 | front, downloads
 open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
 open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-19 | FAQ, refused on re-check
 open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | required-files page
@@ -574,7 +576,7 @@ walled | consolemods.org/wiki | not determined | modification wiki | 2026-11-19 
 walled | www.consolemods.org/wiki | not determined | same wiki, www prefix | 2026-11-19 | refused access
 walled | siliconpr0n.org | not determined | decap image archive | 2026-11-19 | refused access
 walled | www.siliconpr0n.org | not determined | same archive, www prefix | 2026-11-19 | refused access
-walled | libretro/libretro-database | CC-BY-SA-4.0 | hash catalogues; licence not on the open list | 2026-11-19 | README
+walled | libretro/libretro-database | CC BY-SA 4.0 | hash catalogues; not on open list | 2026-11-19 | README, LICENSE
 walled | mister-devel/ | per core | FPGA cores; licences and methods not surveyed | 2026-11-19 | documentation home
 
 # Cross-system sources: closed tier.
@@ -598,5 +600,12 @@ closed | singlesteptests/tlcs900h | none found | experimental; results usable | 
 # Cross-system tests: author's own copy, closed for want of a licence. The guard cannot match "~", so the host is named.
 closed | slack.net | none | blargg's own copy of his tests, under ~ant; whole host | 2026-11-19 | index, one readme
 closed | www.slack.net | none | same host, www prefix | 2026-11-19 | index, one readme
+# Sources first cited by R0-04, the note on the glossary and research conventions.
+other | jackchuka/mdschema | MIT | structure checker used here | 2026-11-19 | README, licence file
+other | lycheeverse/lychee | Apache-2.0 OR MIT | link checker used here | 2026-11-19 | README
+open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as input | 2026-11-19 | README, licence file
+open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
+closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
+walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page

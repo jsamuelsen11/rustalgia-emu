@@ -748,7 +748,7 @@ Every document below is served by the maker or its successor, unless the row say
 | Stack Exchange sites | CC BY-SA by date | forum | none | open, lead |
 | Wikipedia | CC BY-SA 4.0 and GFDL | cites sources (from memory) | none | open |
 | Conference talk archives | per talk | talks | none | open, lead |
-| No-Intro; Redump | none | catalogues of hashes | No-Intro: no help to download; Redump: none | open |
+| No-Intro; Redump | No-Intro: own data licence; Redump: none | hash catalogues | No-Intro: no download help | open |
 | TCRF; Data Crystal | not determined; GFDL 1.2, by a summary | game binaries (from memory) | not read | walled |
 | Repair and modification wikis | not read | not read | not read | walled |
 | siliconpr0n | not read | decap photographs (from memory) | not read | walled |
@@ -785,6 +785,13 @@ Every document below is served by the maker or its successor, unless the row say
 - No-Intro and Redump are none of the kinds that ADR 0001 lists; this note treats them as community references.
   No-Intro says "We do NOT help or encourage users to download or otherwise obtain any of the listed dumps";
   Redump's home page states no such rule.
+- No-Intro's data has its own licence, which this note's pages did not show: R0-04 read its Data Usage License,
+  last updated on 11 September 2026, under
+  which the data "may be freely used" to the extent the operator controls the rights (R0-04).
+- R0-04 registered Redump as walled, because the facts could not be established.
+  This note proposes open: the two notes record the same facts, no licence and a bare copyright notice,
+  and ADR 0001 says that "no stated licence, does not close a reference".
+  The difference is one of reading the ADR, and the owner settles it by merging or rejecting the register line.
 
 ### Test suites and test vectors
 

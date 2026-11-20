@@ -10,6 +10,8 @@ AI agents write the documents; the owner reviews and approves them.
 | Folder | Holds | Guide |
 |---|---|---|
 | `roadmap/` | What we plan to do, and in what order | [roadmap/README.md](roadmap/README.md) |
+| `glossary/` | What the documents mean by their terms of art | [glossary/README.md](glossary/README.md) |
+| `research/` | The conventions that every research note follows | [research/README.md](research/README.md) |
 | `research/emulators/` | Studies of existing emulators | |
 | `research/topics/` | Studies of hardware, techniques, platforms, and policy | [research/topics/README.md](research/topics/README.md) |
 | `research/spikes/` | Reports on throwaway experiments | |
@@ -54,11 +56,14 @@ Which statuses a type may use:
 | Requirement | yes | yes | yes | | yes | yes |
 | ADR | yes | yes | yes | | yes | yes |
 | Roadmap | yes | yes | | yes | yes | |
+| Glossary | yes | yes | | | | |
 
 A document moves forward only: `draft` to `approved`, then to an end state.
 An approved document that needs a material change is replaced by a new one, and the old one becomes `superseded`.
 Small corrections to an approved document are made in place.
+The glossary is the exception: it is edited in place as terms are added, and the owner approves each change by merging.
 
 ### Dates
 
 The `date` field is the day the document was last given its current status, written as `YYYY-MM-DD`.
+For the glossary, which is edited in place, it is the day of the last change.

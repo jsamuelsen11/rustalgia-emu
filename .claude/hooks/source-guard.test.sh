@@ -49,6 +49,11 @@ check 2 writer "$(github zeldaret oot)"
 check 2 writer "$(fetch https://psx-spx.consoledev.net/)"
 check 2 reader "$(fetch https://psx-spx.consoledev.net/cpuspecifications/)"
 check 2 writer "$(bash 'curl -sL https://problemkaputt.de/psx-spx.htm')"
+check 2 writer "$(fetch https://psx-spx.github.io/)"
+check 2 writer "$(fetch https://www.psx-spx.consoledev.net/)"
+check 2 writer "$(fetch https://www.problemkaputt.de/psx-spx.htm)"
+check 2 writer "$(fetch https://problemkaputt.de/psxspx-spu-overview.htm)"
+check 2 reader "$(fetch https://www.problemkaputt.de/psxspx-spu-overview.htm)"
 check 0 writer "$(fetch https://problemkaputt.de/gbatek.htm)"
 
 # Tainted: the www prefix and the per-chapter pages need their own register lines, and have them.
