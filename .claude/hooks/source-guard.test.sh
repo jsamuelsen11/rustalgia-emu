@@ -56,6 +56,82 @@ check 2 writer "$(fetch https://problemkaputt.de/psxspx-spu-overview.htm)"
 check 2 reader "$(fetch https://www.problemkaputt.de/psxspx-spu-overview.htm)"
 check 0 writer "$(fetch https://problemkaputt.de/gbatek.htm)"
 
+# Tainted: the www prefix and the per-chapter pages need their own register lines, and have them.
+check 2 writer "$(fetch https://www.problemkaputt.de/psx-spx.htm)"
+check 2 writer "$(fetch https://www.psx-spx.consoledev.net/)"
+check 2 writer "$(fetch https://problemkaputt.de/psxspx-spu-overview.htm)"
+check 2 reader "$(fetch https://www.problemkaputt.de/psxspx-spu-overview.htm)"
+check 2 writer "$(fetch https://web.archive.org/web/2024/https://problemkaputt.de/psx-spx.htm)"
+
+# Web sites: a closed path beside open pages on the same host, and a closed host with and without www.
+check 0 writer "$(fetch https://www.smspower.org/Development/Documents)"
+check 2 writer "$(fetch https://www.smspower.org/Development/OfficialDocumentation)"
+check 2 writer "$(fetch https://smspower.org/Development/OfficialDocumentation)"
+check 0 writer "$(fetch https://problemkaputt.de/gbatek-gba-memory-map.htm)"
+check 2 writer "$(fetch https://problemkaputt.de/gbatek-dsi-teak-misc.htm)"
+check 2 writer "$(fetch https://ultra64.ca/resources/)"
+check 2 writer "$(fetch https://www.ultra64.ca/resources/)"
+check 2 writer "$(bash 'curl -sL https://archive.org/details/SNESDevManual/')"
+check 2 writer "$(fetch https://archive.org/details/SNESDevManual)"
+check 0 writer "$(fetch https://archive.org/details/some-other-item)"
+check 0 writer "$(fetch https://segaretro.org/Sega_Mega_Drive)"
+check 2 writer "$(fetch https://segaretro.org/images/a/a2/manual.pdf)"
+check 0 writer "$(fetch https://segaretro.org/Images_of_the_Mega_Drive)"
+check 2 writer "$(fetch https://problemkaputt.de/gbatek-dsi-i2c-device-4ah-bptwl-chip.htm)"
+check 2 reader "$(fetch https://www.problemkaputt.de/gbatek-dsi-i2c-device-4ah-bptwl-chip.htm)"
+
+# Repositories this change moved between tiers.
+check 2 reader "$(fetch https://github.com/gbadev-org/tonc/blob/master/code/basic/hello/hello.c)"
+check 0 writer "$(fetch https://github.com/gbadev-org/tonc/blob/master/README.md)"
+check 2 writer "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
+check 0 reader "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
+
+# Web sites: a walled site is closed to a writer and open to a reader.
+check 2 writer "$(fetch https://tcrf.net/Help:Contents)"
+check 0 reader "$(fetch https://tcrf.net/Help:Contents)"
+
+# Web sites, from the verification pass: www forms, download paths, and file pages of closed items.
+check 2 writer "$(fetch https://www.segaretro.org/images/a/a2/manual.pdf)"
+check 2 writer "$(fetch https://www.archive.org/details/SNESDevManual/)"
+check 2 writer "$(bash 'curl -sL https://archive.org/download/SNESDevManual/manual.pdf -o m.pdf')"
+check 2 writer "$(fetch https://segaretro.org/File:Genesis_Software_Manual.pdf)"
+check 2 writer "$(bash 'curl -sL https://segaretro.org/Special:Redirect/file/Genesis_Software_Manual.pdf')"
+check 2 writer "$(fetch https://www.psx.arthus.net/sdk/)"
+check 2 writer "$(fetch https://psx-spx.github.io/)"
+
+# A closed file inside an open path, and a cut-short pattern before a query string.
+check 2 writer "$(fetch https://hitmen.c02.at/files/docs/psx/3467.pdf)"
+check 0 writer "$(fetch https://hitmen.c02.at/files/docs/psx/psx.pdf)"
+check 2 writer "$(fetch http://www.6502.org/documents/datasheets/mos/)"
+check 0 writer "$(fetch http://www.6502.org/documents/)"
+check 2 writer "$(fetch 'https://psx.amidog.se/lib/exe/fetch.php?media=psx:download:cpu.zip')"
+check 0 writer "$(fetch 'https://psx.amidog.se/doku.php?id=psx:download')"
+check 2 writer "$(fetch https://www.mamedev.org/roms/)"
+check 0 writer "$(fetch https://www.mamedev.org/legal.html)"
+
+# A host named in place of a path with "~", which a pattern cannot hold.
+check 2 writer "$(fetch https://cgi.cse.unsw.edu.au/~cs3231/doc/R3000.pdf)"
+check 2 writer "$(fetch https://www.slack.net/~ant/old/gb-tests/)"
+
+# Closed or walled folders inside open repositories, in page and raw form.
+check 2 writer "$(fetch https://github.com/wheremyfoodat/Panda3DS/blob/master/third_party/duckstation/window_info.cpp)"
+check 0 writer "$(fetch https://github.com/wheremyfoodat/Panda3DS/tree/master/third_party/teakra)"
+check 2 reader "$(fetch https://github.com/dolphin-emu/dolphin/blob/master/docs/DSP/free_dsp_rom/dsp_rom.ds)"
+check 2 writer "$(fetch https://raw.githubusercontent.com/dolphin-emu/dolphin/master/Data/Sys/GC/dsp_rom.bin)"
+check 0 writer "$(fetch https://github.com/dolphin-emu/dolphin/blob/master/Source/Core/Core/HW/DSP.cpp)"
+check 2 writer "$(fetch https://github.com/KallistiOS/KallistiOS/tree/master/utils/dc-chain)"
+check 0 writer "$(fetch https://github.com/KallistiOS/KallistiOS/tree/master/kernel)"
+
+# A walled emulator's web site: its prose is open, its source archives are not.
+check 0 writer "$(fetch https://mednafen.github.io/documentation/)"
+check 2 writer "$(fetch https://mednafen.github.io/releases/files/mednafen-1.32.1.tar.xz)"
+
+# Tiers this verification moved.
+check 0 writer "$(fetch https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/README.md)"
+check 2 writer "$(fetch https://github.com/LIJI32/SameSuite/tree/master/apu)"
+check 0 writer "$(fetch https://github.com/mgba-emu/gbatek/blob/master/gbatek.htm)"
+check 2 writer "$(fetch https://github.com/skyline-emu/skyline/tree/master/app)"
+
 # Walled: closed to a writer, open to a reader.
 check 2 writer "$(fetch https://github.com/flyinghead/flycast/blob/master/core/hw/sh4/sh4_core.h)"
 check 0 writer "$(fetch https://github.com/flyinghead/flycast/blob/master/README.md)"
@@ -96,6 +172,14 @@ bad=$(grep -Ev '^[[:space:]]*(#|$)' "$register" |
 if [ -n "$bad" ]; then
   echo "FAIL: malformed register lines:"
   echo "$bad"
+  failed=1
+fi
+
+# No restricted pattern holds "~" or "?": the guard's matching cannot take them, and "~" stops the guard.
+special=$(grep -E '^(walled|closed|tainted) \| [^ |]*[~?]' "$register" || true)
+if [ -n "$special" ]; then
+  echo "FAIL: restricted patterns with characters the guard cannot match:"
+  echo "$special"
   failed=1
 fi
 
