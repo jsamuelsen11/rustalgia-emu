@@ -66,3 +66,4 @@ The glossary is the exception: it is edited in place as terms are added, and the
 ### Dates
 
 The `date` field is the day the document was last given its current status, written as `YYYY-MM-DD`.
+For the glossary, which is edited in place, it is the day of the last change.

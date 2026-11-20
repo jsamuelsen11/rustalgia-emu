@@ -24,14 +24,14 @@ and delete everything between the title and the first section heading.
 | Field | Rule |
 |---|---|
 | `title` | The name of the glossary. The same text as the heading above. |
-| `status` | `draft` when you open the pull request. Only the owner sets `approved`. |
+| `status` | `draft` until the owner first approves it; then `approved`, with each change approved by merging. |
 | `date` | The day the glossary last changed, as `YYYY-MM-DD`. |
 
 The status values, and who sets each one, are defined under "Status" in `docs/README.md`.
 
 | Line | Rule |
 |---|---|
-| The definition | One or two sentences in the project's own words, first in the entry. It does not repeat the term. |
+| The definition | One or two sentences in the project's own words, first in the entry; the first omits the term. |
 | **Also:** | Optional. Other forms that documents may use, such as an abbreviation. |
 | **Avoid:** | Optional. Forms that documents do not use, each in a code span. |
 | **Elsewhere:** | Optional. How sources use the term differently, and the note that records it. |
@@ -52,7 +52,7 @@ and how a definition here relates to usage elsewhere.
 **Example:**
 
 > This glossary fixes what Rustalgia's documents mean by the terms below.
-> Legal terms are not defined here; `R0-02` records them.
+> Legal terms are not defined here; `R0-02` will record them.
 
 ## Terms
 

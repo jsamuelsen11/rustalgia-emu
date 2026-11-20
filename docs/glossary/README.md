@@ -26,16 +26,17 @@ An entry is the definition, then a list of labelled lines:
 
 ## Conventions
 
-- A definition is written in the project's own words, in one or two sentences, and does not repeat the term.
-  It is not copied from a source; a definition that an ADR or a guide already gives is repeated as
-  that document gives it.
+- A definition is written in the project's own words, in one or two sentences,
+  and its first sentence does not repeat the term.
+  It is not copied from a source; a definition that an ADR or a guide already gives follows that document's wording
+  and leaves out none of its conditions.
 - A term is defined once.
   A term with two senses in this repository gets one entry that states both, or two entries with qualified names.
 - An entry defines how this repository uses a term; it does not rule on anyone else's usage.
-- Legal terms are left to the statutes: `R0-02` records them, and the glossary does not restate them.
+- Legal terms are left to the statutes: `R0-02` will record them, and the glossary does not restate them.
 - Terms are added and changed by pull request, in the same change as the document that first needs them.
   The glossary is edited in place and is not replaced by a new document; the owner approves each change by merging,
-  and `date` is the day of the last change.
+  and `date` is the day of the last change, as the documentation guide allows for the glossary.
 - Renaming a term changes its link address.
   The same change updates every link to it; the link check finds them.
 - A form listed under **Avoid** may be added to `.config/vale/styles/Rustalgia/Terms.yml` only

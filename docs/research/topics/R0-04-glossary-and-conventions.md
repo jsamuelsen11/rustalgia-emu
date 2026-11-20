@@ -10,14 +10,16 @@ date: 2026-11-19
 ## Summary
 
 This note asks what vocabulary the research needs, and what a note may quote, tabulate, and describe.
-The central emulation terms are used in conflicting senses by the sources the project will read,
-and the standard vocabularies lack most of them,
+The central emulation terms are used in conflicting senses by the sources the project will read.
+The standard vocabulary read defines some of them, such as emulator, firmware, and ROM, in general computing senses,
+and lacks others, such as BIOS, JIT, and save state,
 so a glossary has to choose its own wording and say whose usage differs.
-No source gives a count of words that may be quoted, a length of byte sequence that may be recorded,
+No source read gives a count of words that may be quoted, a length of byte sequence that may be recorded,
 or a level of detail at which a description of an algorithm becomes a copy of a program; the law gives conditions,
 and any limit the project sets is its own.
 Two points matter most to Rustalgia: a detailed enough description can carry a program's expression across a wall,
-and the tools that agents fetch with paraphrase quotations unless each one is checked against the raw page.
+and the tools that agents fetch with paraphrase quotations unless each one is checked against the raw page
+(research log).
 This note is not legal advice.
 
 ## Scope
@@ -27,27 +29,33 @@ This note is not legal advice.
 - Covered: the law and licences on quotation, on data and tables, and on descriptions of programs;
   how peer projects and standards bodies handle each; contested vocabulary; glossary practice;
   and what this repository's checks can enforce.
-- Left to other items: the substance of anti-circumvention, firmware, keys, patents, and trade marks (`R0-02`);
+- Left to other items: the substance of emulation case law, anti-circumvention, firmware, and keys (`R0-02`),
+  and patents, which `R0-01` assigns to it; trade marks are this note's assignment to `R0-02`;
   what the repository's licence means for quoted and agent-written text (`R0-03`); the tier of each hub (`R0-05`);
   logging and similarity checks (`R0-06`).
   Conventions for code are not set here.
 - Researched on 2026-11-19, with Vale 3.27.0, mdschema 0.16.0, lychee 0.24.2, rumdl 0.3.4, and typos 1.52.2.
   Japanese statutes were read in unofficial English translations;
   one Japanese judgment and one agency text were read in Japanese.
-- How claims were checked: each finding names its source,
-  and research agents fetched every source on 2026-11-19 and copied quotations from the raw page text,
-  not from a summarising tool.
+- How claims were checked: each finding names its source.
+  Research agents fetched every source in the Sources list on 2026-11-19 and copied quotations from the raw page text,
+  not from a summarising tool; sources that could not be fetched or read raw are named where they are mentioned.
   A second, independent pass fetched the sources again and tested each claim and quotation.
+  Its corrections were applied, after the sources it relied on were fetched once more;
+  the claims it could not check are listed in the pull request, and are weakened or marked here.
   A claim marked "(secondary)" rests on commentary, "(from memory)" was not confirmed by any fetched page,
   "(inference)" is reasoning, and "(tested locally)" was run with the repository's tools on scratch files. "(research
-  log)" is an observation an agent made while gathering the evidence.
+  log)" is an observation an agent made while gathering the evidence, and "(observed)" or "(read locally)" marks what an
+  agent saw in a fetched page or a repository file.
   Statements that nothing was found record a search, not proof of absence.
   Quotation marks, apostrophes, and line breaks inside quotations are normalised; nothing else is.
   No emulator source code, decompilation, or leaked material was opened, and no tainted source.
-  From emulator and decompilation projects, only README files, licence files, and documentation sites were read.
+  From emulator and decompilation projects, only README files, licence files, documentation, FAQs,
+  and blog posts were read.
 
 The glossary and the conventions that this change adds beside the note are a proposal.
-The note maps the options; the owner accepts or changes the proposal by merging.
+The note maps the options and does not choose among them; the proposal is one combination of them,
+the pull request lists each choice it makes, and the owner accepts or changes it by merging.
 
 ## Findings
 
@@ -71,13 +79,17 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   operative part).
   United States registration rules exclude "Words and short phrases such as names, titles, and slogans"
   (37 C.F.R. § 202.1(a)).
-  That is a rule about registration; it does not say that a short quotation from a longer work is free (inference).
+  The regulation lists them as examples of works "not subject to copyright",
+  for which "applications for registration of such works cannot be entertained".
+  It concerns standalone short phrases and does not say that a short quotation from a longer work is free (inference).
 - The United Kingdom allows quotation "(whether for criticism or review or otherwise)" on four conditions:
   the work "has been made available to the public", the use is "fair dealing",
   "the extent of the quotation is no more than is required by the specific purpose for which it is used",
   and there is "a sufficient acknowledgement (unless this would be impossible for reasons of practicality or otherwise)"
   (CDPA section 30(1ZA)).
-  An acknowledgement identifies the work "by its title or other description" and its author (section 178).
+  An acknowledgement identifies the work "by its title or other description" and its author,
+  unless a published work is anonymous or an unpublished work's author cannot be found by reasonable inquiry
+  (section 178).
   A contract term that restricts the exception "is unenforceable"
   (section 30(4)),
   and in deciding whether a work has been made available "no account shall be taken of any unauthorised act"
@@ -92,15 +104,19 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   The Court of Justice describes a quotation as use of an extract "for the purposes of illustrating an assertion,
   of defending an opinion or of allowing an intellectual comparison between that work and the assertions of that user"
   (Pelham, para 71),
-  and says the quoted work "must be secondary in relation to the assertions of that user" (Spiegel Online, para 79).
+  and says that the use of the quoted work must be secondary to the user's own assertions
+  (Spiegel Online, para 79; paraphrased, because the second pass could not fetch the judgment again).
   Pelham concerned music sampling and Spiegel Online a news site.
 - Japan permits quoting a work that has been made public where the quotation is "consistent with fair practices
   and within a scope that is justified" by its purpose, such as news reporting, critique, or study
-  (Copyright Act Article 32(1), unofficial translation), with the source indicated (Article 48(1)).
+  (Copyright Act Article 32(1), unofficial translation).
+  The source must be indicated when the work is reproduced,
+  and for other uses where "it is common practice to indicate the source" (Article 48(1)(i) and (iii)).
   Translation of a quoted work is also permitted (Article 47-6(1)(ii)).
   The Supreme Court required, under the old Copyright Act,
   that the quoting and the quoted work can be told apart and that the quoting work is the main part
-  and the quoted work subordinate (judgment of 28 March 1980, read in Japanese; this rendering is the research agent's).
+  and the quoted work subordinate (judgment of 28 March 1980, read in Japanese; this rendering is the research agent's;
+  the PDF prints no date, so the date is from memory).
   The Agency for Cultural Affairs lists the same points and adds, as examples,
   that the amount quoted stays within the minimum necessary
   (Copyright Textbook, fiscal 2026 edition, page 75; non-binding, read in Japanese).
@@ -120,6 +136,9 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   and a newspaper's abstracts of analysts' reports "appropriated almost verbatim the most creative
   and original aspects of the reports" (Wainwright, also on a preliminary injunction).
   The statute lists a "translation", an "abridgment", and a "condensation" as derivative works (17 U.S.C. § 101).
+- One appeals court suggested, of a standard incorporated by reference that does not govern conduct,
+  that "perhaps the copier's purpose could be achieved with only a paraphrase or a summary"
+  (ASTM v Public.Resource.Org, D.C. Circuit 2018, slip opinion at 25 to 26; guidance on remand, not a holding).
 - Facts stay free.
   "The biographer who copies only facts incurs no risk of an injunction; he has not taken copyrighted material"
   (Salinger, para 19).
@@ -133,16 +152,19 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - Quotation marks make a claim about the words.
   "In general, quotation marks around a passage indicate to the reader
   that the passage reproduces the speaker's words verbatim",
-  and an alteration matters legally when it "results in a material change in the meaning conveyed by the statement"
-  (Masson; a defamation case, not a copyright rule).
+  and a deliberate alteration counts as knowing falsity for libel only
+  when it "results in a material change in the meaning conveyed by the statement"
+  (Masson; a public-figure defamation case, not a copyright rule).
   The Berne Convention gives authors a right to object to "any distortion,
   mutilation or other modification" that would prejudice their honour or reputation
   (Article 6bis(1), paraphrased in its last clause).
 - A summary of a free text can be a separate protected work.
   A publisher's short headnotes that summarise judicial opinions were held original,
   and copying them to train a competing legal-research tool was not fair use
-  (Thomson Reuters v Ross, Third Circuit, 29 September 2026).
+  (Thomson Reuters v Ross, Third Circuit, 29 September 2026;
+  an interlocutory appeal from partial summary judgment on 2,243 headnotes).
   The court left open headnotes that copy opinion text verbatim (footnote 5).
+  Whether rehearing was sought was not checked.
 - No decision was found on quoting a hardware or software manual into commentary.
   The nearest authority read is SAS v WPL, on manuals copied into a manual, which `R0-01` records.
   One web search was run; no case-law database was searched.
@@ -152,13 +174,15 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - Works of the United States federal government have no United States copyright
   (17 U.S.C. § 105(a)),
   and "no reporter has or can have any copyright in the written opinions delivered by this court" (Wheaton v Peters).
-  The rule covers judges' own "non-binding works
+  A separate, judge-made rule, the government edicts doctrine, also reaches state judges and legislators.
+  It covers judges' "non-binding works
   (such as headnotes and syllabi)",
-  but not works by people "who lack the authority to make or interpret the law, such as court reporters"
+  but not works by those "who lack the authority to make or interpret the law, such as court reporters"
   (Georgia v Public.Resource.Org).
 - In the United Kingdom, Acts and Crown works are in copyright (CDPA sections 163 and 164) and are licensed openly.
   The Open Government Licence version 3.0 asks reusers to "acknowledge the source of the Information",
-  and legislation.gov.uk states that its content is under that licence.
+  and legislation.gov.uk states that its content is under that licence "except where otherwise stated",
+  with content derived from EUR-Lex reused under Commission Decision 2011/833/EU.
 - Judgments on the National Archives' Find Case Law service, which `R0-01` used for English cases,
   are under the Open Justice Licence version 2.0.
   It requires that a reuser "do not mislead others or misrepresent the Information or its source" and remove documents
@@ -173,9 +197,9 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - The Court of Justice says "Editorial content and the case-law can be reproduced provided the source is acknowledged",
   and that "Only the versions of these documents that are published in the Reports of Cases
   or the EU Official Journal are authentic" (Court of Justice, copyright and legal notices).
-  Commission documents may be reused on conditions that include "the obligation not to distort the original meaning
-  or message of the documents" (Commission Decision 2011/833/EU Article 6(2)).
-  The EUR-Lex legal notice could not be fetched.
+  For Commission documents, the conditions of reuse "may include" "the obligation not to distort the original meaning
+  or message of the documents" (Commission Decision 2011/833/EU Article 6(2)(b)).
+  The EUR-Lex legal notice was not read for this note.
 - Japan's Copyright Act excludes laws and court judgments from protection,
   and translations of them "made by a national or local government agency" (Article 13, unofficial translation).
   The Ministry of Justice says of its translations that they "are not official texts" and
@@ -183,10 +207,12 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - Canada lets anyone reproduce federal enactments
   and federal court decisions "provided due diligence is exercised in ensuring the accuracy of the materials reproduced
   and the reproduction is not represented as an official version" (Reproduction of Federal Law Order).
-  Australia's Federal Register of Legislation is under the Creative Commons Attribution 4.0 licence (terms of use).
+  Australia's Federal Register of Legislation is under the Creative Commons Attribution 4.0 licence,
+  except the Commonwealth Coat of Arms and where otherwise noted (terms of use).
   The terms for Australian court judgments were not obtained.
 - Several of these permissions are conditional on accuracy.
-  A cut or stale quotation of such a text breaches the reuse terms as well as a note's own standard (inference).
+  A cut or stale quotation of a text reused under the Open Justice Licence
+  or the Canadian order can breach its reuse terms as well as a note's own standard (inference).
 
 ### Quoting: licences on the source
 
@@ -204,10 +230,12 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - "Adapted Material" is material in which the licensed work is "translated, altered, arranged, transformed,
   or otherwise modified in a manner requiring permission" (CC BY 4.0 section 1(a)).
 - Text under CC BY-SA 4.0 can be adapted into a GPLv3 work, one way only; `R0-01` records the bare fact.
-  The compatibility was declared on 8 October 2015,
-  and when it is used "both licenses apply and downstream users must comply with both licenses"
+  The compatibility was declared on 8 October 2015 (Creative Commons, compatible licences).
+  When it is used "both licenses apply and downstream users must comply with both licenses",
+  though a downstream user may meet the conditions of both "in the manner dictated by the GPLv3"
   (Creative Commons, ShareAlike compatibility: GPLv3).
-  The GNU licence list confirms it for "GNU GPL version 3".
+  The GNU licence list was also cited for the point, but gnu.org did not answer the second pass,
+  so that citation was not re-checked.
   For BY-SA 3.0, "Currently, no non-CC licenses have been designated as compatible"
   (Creative Commons, compatible licences).
   No page read says whether 3.0 text can reach GPLv3 in two steps through 4.0.
@@ -215,7 +243,8 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   Creative Commons says that "Generally,
   no derivative work is made of the original from which the excerpt was taken
   when the excerpt is used to illuminate an idea or provide an example in another larger work" (FAQ; not the licence).
-  A translated or reworded excerpt of such a source would be adapted material (inference from section 1(a)).
+  A translated excerpt of such a source, or a rewording close enough to need permission, would be adapted material
+  (inference from section 1(a)).
 - "NonCommercial means not primarily intended for or directed towards commercial advantage or monetary compensation"
   (BY-NC 4.0 section 1(i)).
   GPL-3.0 lets recipients use the notes commercially,
@@ -228,17 +257,21 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   Creative Commons makes its legal code available under CC0 (Creative Commons policies).
 - Standards bodies license excerpts on conditions.
   The IETF allows copying "unmodified portions" of RFCs if each is "attributed to IETF and identifies the RFC",
-  with all legends included "where more than one-fifth of such text" is reproduced
+  with all legends included "where any substantial portion of the text of an IETF RFC,
+  and in any event where more than one-fifth of such text, is reproduced"
   (Trust Legal Provisions 5.0 section 3(c)(iii)).
-  The W3C allows copying its documents "or portions thereof" with a link, the copyright notice, and the status,
-  and grants no right to make derivatives (W3C Document License, 2023).
+  The W3C allows copying its documents "or portions thereof" with a link, the copyright notice, and the status.
+  It grants no right to make derivatives, except derivatives in software, in supporting materials,
+  and "in documentation of software" made to implement the specification, with a notice (W3C Document License, 2023).
 - A source with a bare copyright notice, or one that forbids reproduction, such as the Arm manuals in `R0-01`,
   can be quoted only under an exception (inference).
 - Site terms are a separate layer.
-  In the United States a contract can remove what copyright allows
-  (`R0-01`, Bowers),
-  and after hiQ v LinkedIn "other causes of action, such as copyright infringement, misappropriation, unjust enrichment,
-  conversion, breach of contract, or breach of privacy, may also lie" for scraping a public site.
+  In the United States a contract has been held to waive the reverse-engineering latitude that copyright allows
+  (`R0-01`, Bowers, the Federal Circuit applying First Circuit law); other circuits may differ (`R0-01`, from memory).
+  In affirming a preliminary injunction for a scraper of a public site,
+  the Ninth Circuit remarked that "other causes of action, such as copyright infringement, misappropriation,
+  unjust enrichment, conversion, breach of contract, or breach of privacy, may also lie"
+  (hiQ v LinkedIn, 2022; a remark, not a holding).
   Whether terms bind a reader who never agrees to them was not settled by any source read.
 
 ### Quoting: what careful publishers do
@@ -257,16 +290,18 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   (Close paraphrasing, an explanatory supplement).
 - For sources in other languages, "Translations published by reliable sources are preferred over translations by
   Wikipedians, but translations by Wikipedians are preferred over machine translations" (Verifiability policy).
-- Legal citation practice marks every change: "Any substitutions into quoted material should be bracketed",
+- Legal citation practice marks changes: "Any substitutions into quoted material should be bracketed",
   a significant mistake in the original is kept and followed by "[sic]",
   and an omission inside a sentence takes an ellipsis (The Indigo Book, rules 38 and 39).
+  Some changes are exempt, such as dropping a footnote call number that follows a quotation (rule 38).
   It sets quotations of 50 or more words as a block (rule 40.1).
-  A Wikipedia essay uses "about 40 words" for the same purpose.
+  Wikipedia's Manual of Style sets a block at "more than about forty words or a few hundred characters".
   These are formatting thresholds, not permission limits.
 - Research-integrity guidance says "Any verbatim text taken from another source must be enclosed in quotation marks
   and be accompanied by a citation", and that a paraphrase must use "our own syntactical structure"
-  (United States Office of Research Integrity, guidelines 2 and 4; about plagiarism, not copyright).
-- The research for this note met the failure modes that the `R0-01` verification pass found.
+  (Miguel Roig's guide, guidelines 2 and 4, as published by the United States Office of Research Integrity;
+  about plagiarism, not copyright).
+- The research for this note met these failure modes.
   Pages print a summary before the authoritative text: the syllabus before a Supreme Court opinion,
   a headnote before a Canadian judgment, a staff summary at the head of a Ninth Circuit opinion.
   The agent's first draft quoted a syllabus as the opinion and caught it by position.
@@ -304,29 +339,35 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   that a particular code sequence be included in the component device to permit its use,
   the merger and scènes à faire doctrines generally preclude the code sequence from obtaining copyright protection"
   (Lexmark, Sixth Circuit, para 36).
-  That program was 55 bytes and fed a checksum, and the ruling vacated a preliminary injunction "On this record"
-  (paras 9 and 56).
+  That program came in two versions, of 37 and 55 bytes (para 9), and fed a checksum.
+  The court vacated a preliminary injunction, and held only that "On this record,
+  pure compatibility requirements justified SCC's copying" (para 56).
 - No court fixed a length.
   The examples read are Sega's "20 bytes of initialization code plus the letters S-E-G-A", doubted in a footnote
-  (`R0-01`), the 55 bytes in Lexmark, and nine-digit part numbers in Southco.
+  (`R0-01`), the 37 and 55 bytes in Lexmark, and nine-digit part numbers in Southco.
   The same Sega footnote contrasts a key-generating program in which "Creativity and originality went into the design"
   (Sega v Accolade, note 7, describing Atari v Nintendo).
-- The names of data structures and the order of their fields, copied to read a file format,
-  were held unprotected because the organisation "is dictated mainly by external factors"
-  (Baystate v Bentley, District of Massachusetts 1996; one district court).
+- The names of data structures and the order of their fields, copied to read a file format, were held unprotected:
+  the names because a name such as "color" "merges with the idea or function of the file",
+  and their organisation because it "is dictated mainly by external factors"
+  (Baystate v Bentley, District of Massachusetts 1996, after a bench trial; one district court).
 - Where a required sequence makes a console display its maker's mark,
   the Ninth Circuit held the maker "primarily responsible for any resultant confusion",
-  on a record with no known alternative way to gain access (Sega v Accolade, part IV; a preliminary-injunction appeal).
+  on a record with no alternative way to gain access known to competitors
+  (Sega v Accolade, part IV; a preliminary-injunction appeal).
   `R0-02` covers trademarks.
 - Typefaces are a separate rule in the United States.
   "Typeface as typeface" is not subject to copyright (37 C.F.R. § 202.1(e)).
   In 1988 the Copyright Office concluded
   that "typefaces created by a computerized-digital process are also uncopyrightable"
   (policy decision, 53 Federal Register 38110; an agency decision, read from a scanned text).
-  It adds that "Pictorial or graphic elements that are incorporated into uncopyrightable characters
+  Since 1992 the Office registers a program that generates a typeface if the program has enough original authorship,
+  but not the typeface it produces (Compendium, section 723, citing 57 Federal Register 6201).
+  The Compendium adds that "Pictorial or graphic elements that are incorporated into uncopyrightable characters
   or used to represent an entire letter or number may be registrable" (Compendium, section 906.4).
   One district court held outline font software protectable
-  (Adobe v Southern Software; read in a transcription with visible errors, and not quoted for that reason).
+  (Adobe v Southern Software, Northern District of California 1998, on summary judgment;
+  read in a transcription with visible errors, and not quoted for that reason).
   No case on a console's character ROM or on a logo bitmap in a cartridge header was found,
   and typeface law outside the United States was not researched.
 - No court decision was found on whether a hash of a copyrighted file is protected or infringes.
@@ -337,23 +378,28 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - European Union law protects a database by copyright only where "the selection
   or arrangement" is "the author's own intellectual creation" (Directive 96/9/EC Article 3(1)).
   That is not met "when the setting up of the database is dictated by technical considerations,
-  rules or constraints which leave no room for creative freedom", and "significant labour and skill" cannot justify it
-  (Football Dataco, paras 39 and 46).
+  rules or constraints which leave no room for creative freedom" (Football Dataco, para 39).
+  The labour and skill of setting up a database cannot by themselves justify that protection
+  if they express no originality in the selection or arrangement
+  (para 46; paraphrased, because the second pass could not fetch the judgment again).
 - A second right protects investment, not creativity.
   The maker of a database made with "substantial investment in either the obtaining,
   verification or presentation of the contents" may prevent "extraction and/or re-utilization of the whole
   or of a substantial part" (Article 7(1)).
   "The repeated and systematic extraction and/or re-utilization of insubstantial parts" is also barred
-  where it conflicts with normal exploitation (Article 7(5)).
+  where it conflicts with normal exploitation or unreasonably prejudices the maker's legitimate interests
+  (Article 7(5)).
   A lawful user may take "insubstantial parts of its contents" "for any purposes whatsoever"
   (Article 8(1)), and a contract term to the contrary is "null and void" (Article 15).
 - That right does not cover resources "used for the creation of materials which make up the contents of a database",
   and extraction does "not imply direct access to the database concerned" (British Horseracing Board, paras 42 and 53).
-  Whether measuring hardware is obtaining existing data
-  or creating it has not been decided in any source read (inference).
-- The right belongs only to makers who are nationals of, or habitually resident in, a member state,
-  or companies established there (Article 11).
-  The United Kingdom has its own right on the same test, limited since 31 December 2020 to United Kingdom makers
+  No source read decides whether measuring hardware is obtaining existing data or creating it.
+  A later European Union act may bear on data generated by connected products (from memory; not researched).
+- The right applies to databases whose makers or rightholders are nationals of, or habitually resident in,
+  a member state, or companies with their registered office, central administration,
+  or principal place of business there; agreements can extend it to databases made in third countries (Article 11).
+  The United Kingdom has its own right on the same test,
+  limited since 31 December 2020 to makers from the United Kingdom and the Isle of Man
   (Copyright and Rights in Databases Regulations 1997, regulations 13, 16, and 18).
   Who the "maker" of a wiki's tables is, no source read says.
 - Japan protects a database "that, by reason of the selection
@@ -362,20 +408,22 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - A collection can be a trade secret although each entry is public.
   "Even if quotes aren't trade secrets,
   taking enough of them must amount to misappropriation of the underlying secret at some point"
-  (Compulife v Newman, Eleventh Circuit 2020, slip opinion at 45;
-  about an insurer's database that its owner kept encrypted).
+  (Compulife v Newman, Eleventh Circuit 2020, slip opinion at 45; about a database of insurance quotes,
+  built from insurers' public rate tables, that its owner sold to agents in encrypted form).
   `R0-01` records that reverse engineering is not an improper means.
 
 ### Constants: how references and projects treat them
 
-- Asahi Linux, a project's own view: "you can take inspiration from register names
+- Asahi Linux, a project's own view, of Apple's open-source code under the APSL,
+  which it does not allow to be used directly: "you can take inspiration from register names
   (since those are effectively hardware documentation;
   we do not consider mere last-level register names to be copyrightable),
   but do not copy whole #define blocks or include files".
   "Register values and command buffers are usually not considered copyrightable",
-  with an exception "where code or large blobs of data are uploaded to the hardware" (Asahi copyright policy).
+  with an exception "where code or large blobs of data are uploaded to the hardware",
+  and firmware blobs uploaded to the hardware "cannot be copied as-is" (Asahi copyright policy).
 - The ReactOS audit page lists, under "Proposed standards for the audit", signs that a function was not written cleanly:
-  among them arguments given "unknown" values, "functions for which there is NO DOCUMENTATION",
+  among them "'unknown' arguments given values", "functions for which there is NO DOCUMENTATION",
   and "functions with undocumented magic numbers" (archived copy).
   The test is whether a public source or a test exists for the value, not whether numbers are protected (inference).
   The page does not say that the standards were adopted.
@@ -389,31 +437,37 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   The page makes no statement about copyright or trade mark in the logo.
   This note does not record the bytes.
 - Registries of constants state their status in three ways.
-  IANA dedicates its registries under CC0 and says they "consist primarily of factual information
-  that is unlikely to be protectable as a matter of copyright law" (IANA licensing terms).
+  IANA and the IETF dedicate any rights they hold in the registries under CC0,
+  and say they "believe" the registries "consist primarily of factual information that is unlikely to be protectable
+  as a matter of copyright law" (IANA licensing terms).
   The PCI ID Repository offers a licence and says "The database is a compilation of factual data,
   and as such the copyright only covers the aggregation and formatting".
-  The Linux kernel requires a licence identifier on every file, headers of definitions included,
+  The Linux kernel requires a licence identifier in all source files, headers of definitions included,
   and no rule was found that treats register headers as unprotected facts (kernel licensing rules).
 - An identifier can be restricted without a copyright claim.
-  USB-IF says its vendor identifiers "may not be sold, transferred, or used by others" without its written approval
+  USB-IF says its vendor identifiers "may not be sold, transferred,
+  or used by others" except in special circumstances and then only with its prior written approval
   (USB-IF, Getting a Vendor ID); the page names no legal basis.
 - Catalogues publish hashes of copyrighted images as identifiers.
-  No-Intro says "We do NOT help or encourage users to download or otherwise obtain any of the listed dumps",
-  and since 11 September 2026 its data "may be freely used" "to the extent that the website operator owns
-  or controls the applicable rights" (No-Intro, Data Usage License).
-  Redump's front and download pages state no licence.
+  No-Intro says "We do NOT help or encourage users to download or otherwise obtain any of the listed dumps"
+  (No-Intro, home page).
+  Its Data Usage License, last updated on 11 September 2026, says that, unless the website states otherwise,
+  its data "may be freely used" "to the extent that the website operator owns or controls the applicable rights"
+  (No-Intro, Data Usage License).
+  Redump's front and download pages state no licence and carry a bare copyright notice;
+  the front page also reports a 2026 dispute with former staff over the project's forum and wiki.
   The libretro database imports both under CC BY-SA 4.0, and its README names no permission from them.
   MAME's documentation says "software list items should represent the original media",
   and its command reference prints checksums for images, including ones labelled as a BIOS.
-- No dispute about hash lists was found (three web searches).
-  The reported disputes concern keys and the distribution of games, which `R0-02` covers.
+- No dispute about the legal status of hash lists was found (three web searches).
+  The searches returned only disputes about keys and the distribution of games (research log), which `R0-02` covers.
 - Keys are never recorded.
   That is the project's standing rule (ADR 0001, "Already decided").
 
 ### Pseudo-code and algorithm descriptions: the law
 
-- Courts place algorithms between a program's purpose and its code, where no general rule holds.
+- One court of appeals placed algorithms between a program's purpose and its code,
+  at a level it called less prone to generalizations.
   A program "can often be parsed into at least six levels of generally declining abstraction: (i) the main purpose,
   (ii) the program structure or architecture, (iii) modules, (iv) algorithms and data structures, (v) source code,
   and (vi) object code" (Gates Rubber, Tenth Circuit 1993).
@@ -426,10 +480,10 @@ The note maps the options; the owner accepts or changes the proposal by merging.
 - The Second Circuit said of this area: "To be frank,
   the exact contours of copyright protection for non-literal program structure are not completely clear"
   (Altai; a remark, not a holding).
-- One district court ruled on descriptions of the same calculation at two levels of detail.
-  A plain-language account of the method "merged with the algorithm itself" and was unprotected.
+- One district court ruled on two exhibits, both titled "Plain Language Level", describing the same calculation.
+  A data-flow and control-flow account of the method "merged with the algorithm itself" and was unprotected.
   A flow chart of "the particular steps taken" was protectable, though "close to the merger line"
-  (Harbor Software, Southern District of New York 1996).
+  (Harbor Software, Southern District of New York 1996, adopting an expert's recommendations).
   The exhibits were the claimant's own summaries of its program,
   and "protectable" there meant only that the element went on to be compared.
 - Two older district-court statements treat programming from a detailed description
@@ -439,10 +493,11 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   A program written from a step-by-step trading manual infringed the manual
   (Williams v Arndt, District of Massachusetts 1985).
   Both predate Altai, and their later treatment was not researched.
-- The United States Copyright Office registers descriptions of programs as their own kind of work.
+- The United States Copyright Office registers descriptions of programs, but not as programs.
   "Diagrams, models, outlines, pseudocode,
   or other types of works that illustrate or describe the structure or order of operation
-  for a computer program may be registered", but "may not be claimed as computer programs"
+  for a computer program may be registered ..., provided that they contain a sufficient amount of original authorship",
+  but they "may not be claimed as computer programs"; the Office accepts them as text or as artwork
   (Compendium, section 724; the Office's manual, not binding on courts).
   This is the only primary source found that names pseudo-code in a statement of legal status.
 - European Union law counts design material
@@ -456,8 +511,13 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   But the functions themselves do not" (Nova v Mazooma, para 51).
   Copyright "extends to protecting the design of the program", which is distinct from "protecting its functionality"
   (SAS v WPL, High Court 2010, para 232).
-- The English cases that favour reimplementation rest on no access to the code. "none of the code was read
-  or copied by the defendants" (Navitaire v easyJet, para 129).
+- In the English cases that favour reimplementation, the defendants had not seen the code.
+  In Navitaire the judge said that what was left was the business function,
+  "because none of the code was read or copied by the defendants"
+  (Navitaire v easyJet, para 129);
+  in SAS there was "no suggestion" of access to the source code
+  (SAS v WPL, 2010, para 3),
+  and that judgment rests on functionality falling "on the wrong side of the line" (para 236).
   They do not decide what follows when the person who writes the description has read the code.
 - A description can carry a work across.
   A work "may be indirectly copied where the defendant's work is created through the intermediary of a verbal
@@ -489,17 +549,20 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   (PC Magazine 1984, secondary; `R0-01`).
   Altai's programmers were given "a description of the ZEKE operating system services";
   the opinion says no more about its form.
-- Asahi Linux has the reverse-engineering side write "clean documentation of the hardware",
-  and tells contributors not to "reimplement identical code flows or algorithms" (Asahi copyright policy).
+- Asahi Linux has the reverse-engineering side write "clean documentation of the hardware".
+  For Apple's open-source code under the APSL,
+  it lets contributors use the code as a reference but tells them not to "reimplement identical code flows
+  or algorithms" (Asahi copyright policy).
   The page does not define clean documentation and does not mention pseudo-code.
 - One law-firm article lists what to remove from a clean-room specification: "code, pseudocode, data structures,
   naming and anything else that carries the original's expression" (Marks & Clerk, 29 October 2026, secondary).
   It cites no authority for the list.
-  No project policy was found that names pseudo-code (three web searches).
-- Standards bodies treat pseudo-code as code.
-  ITU-T defines software to include "A set of instructions written in any programming language
+  No clean-room or contribution policy was found that says whether pseudo-code may cross a wall (three web searches).
+- One standards body treats pseudo-code as software; two others license code apart from prose without naming it.
+  The ITU's guidelines for its Recommendations define software, "For purposes of these Guidelines",
+  to include "A set of instructions written in any programming language
   (including pseudo code and reference implementations)",
-  and also "data flow charts" (Software Copyright Guidelines, issue 3.0, 2011).
+  and also "data flow charts" (ITU Software Copyright Guidelines, edition 3.0, 7 December 2011).
   The IETF licenses "components intended to be directly processed by a computer" under the Revised BSD licence,
   apart from its prose; its list of such components includes "tables of values" and "classical programming code"
   and does not name pseudo-code (Trust Legal Provisions 5.0, section 4).
@@ -514,7 +577,9 @@ The note maps the options; the owner accepts or changes the proposal by merging.
   `R0-05` covers processor manuals.
 - Community references mix prose, code, and pseudo-code under one licence.
   Pan Docs releases "everything (content, sources, code, figures) under the CC0 license",
-  and its contributing guide gives a notation for pseudo-code (Pan Docs, History and `CONTRIBUTING.md`).
+  and its contributing guide gives a notation for pseudo-code, such as `:=` for assignment
+  (Pan Docs, History and `CONTRIBUTING.md`).
+  Whether Pan Docs pages themselves hold pseudo-code was not checked.
 - Tests are the alternative to description.
   `R0-01` records Wine's practice and the test-vector projects.
   They describe behaviour by input and output, the level that Navitaire, SAS,
@@ -538,17 +603,21 @@ Each row records usage in the sources named; the conflicts are this note's readi
 | core, frontend | A library behind an interface; per-system code in one program; a launcher |
 | JIT, dynarec, recompiler | Synonyms; or "recompiler" as the class and JIT as one kind |
 | BIOS, boot ROM, firmware | Any maker code needed; code that only boots; code in a chip; all system software |
-| ROM, image, dump | A chip; a file copied from one; any game file; the act of copying |
+| ROM, image, dump | A chip; a file copied from one; a copy of a disc; the act of copying |
 | save state, save data | Mostly kept apart, under several spellings |
 | cycle | A clock period; a machine cycle; a CPU cycle of several master clocks |
 | decompilation, disassembly | Two techniques in engineering; one heading in European Union law |
 
 - The standard vocabulary defines an emulator as a "device, computer program,
   or system that accepts the same inputs and produces the same outputs as a given system"
-  and cross-refers it to simulator (SEVOCAB, attributed there to ISO/IEC/IEEE 24765:2017;
-  the standard itself is paywalled).
-  It has no entry for a JIT compiler, dynamic recompilation, a hypervisor, or a clean room.
-- TASVideos reverses the common usage:
+  and cross-refers it to simulator (SEVOCAB, attributed there to ISO/IEC/IEEE 24765:2017; the standard itself is sold,
+  not free to read, from memory).
+  It has no entry for a JIT compiler, dynamic recompilation, a hypervisor, or a clean room, nor for BIOS, frontend,
+  or save state.
+  It does define an interpreter, firmware, a dump, a core, and pseudocode, in general computing senses: a dump,
+  for instance, is a "display of some aspect of a computer program's execution state",
+  and decompile and disassemble are entries of their own (SEVOCAB, re-queried by the second pass).
+- TASVideos treats a simulation as the more exact:
   an emulator "does not attempt to precisely model the state of the device being emulated;
   it only attempts to reproduce its behavior", unlike a simulation (TASVideos glossary).
   PPSSPP says it "simulates the BIOS and the entire internal operating system" (PPSSPP FAQ).
@@ -559,23 +628,29 @@ Each row records usage in the sources named; the conflicts are this note's readi
   The same article separates "cycle-count accuracy",
   in which "each component acts atomically and takes the correct amount of time" (mGBA blog, 2017).
 - Projects qualify the word by component.
-  SameBoy claims "T-cycle accurate emulation of LCD timing effects"; MartyPC calls one processor core "Cycle-based,
-  but not fully cycle-accurate" and reports a pass rate against a test suite (project READMEs).
+  SameBoy claims "T-cycle accurate emulation of LCD timing effects"; MartyPC calls its NEC V20 core "Cycle-based,
+  but not fully cycle-accurate", and says its 8088 core passes a test suite "with 99.9997% cycle-accuracy"
+  (project READMEs).
 - The Emulation General Wiki offers a ladder from low accuracy to transistor level and classes bsnes
   as "partially cycle-accurate"; mGBA's article calls higan "(formerly bsnes)" "the most well-known example of a
   cycle-accurate emulator".
   The wiki is anonymous and names no licence.
   "Cycle-exact", "pixel-accurate", and "hardware-accurate" were found only undefined;
-  "instruction-level" and "scanline-based" were not found as accuracy labels (search of the saved pages).
+  "instruction-level" and "scanline-based" were not found as accuracy labels (research log: search of the saved pages).
 - mGBA's author applies high-level and low-level emulation to "programmable components
   that are not part of the emulated software itself", such as "system software (as on the PSP and 3DS)".
   It adds that "LLE implementations, however, require copies of the code to be emulated" (mGBA blog).
-  Dolphin uses the pair as names of two back ends for one component (Dolphin performance guide).
+  Dolphin uses the pair as names of two back ends for one component
+  (Dolphin performance guide; not re-checked, because the page refused the second pass).
+  The Emulation General Wiki applies the words to whole emulators:
+  "An HLE emulator would take the data to be processed", and "An LLE emulator (e.g., cycle-accurate SNES emulation)"
+  (High and low-level emulation).
 - libretro defines its terms by an interface: a program "gets turned into a single library file
   (called a 'libretro core')",
   and the frontend's responsibility "is to provide all the implementation-specific details,
   such as video/audio/input drivers" (libretro API page).
-  MAME uses "front-ends" for third-party tools "to make system and software selection simpler" (MAME documentation).
+  MAME uses "front-ends" for third-party tools "to make system and software selection simpler"
+  (MAME documentation). ares calls the per-system parts of one program "emulator cores" (ares README).
 - Dolphin treats a JIT as one kind of recompiler: "There are many different types of recompilers",
   and a JIT "recompiles small blocks of code while the program is running".
   Its cached interpreter collects code into blocks "exactly like a JIT" but keeps decoded instructions,
@@ -587,13 +662,19 @@ Each row records usage in the sources named; the conflicts are this note's readi
   WiiBrew: "Fixed low-level code written directly into a programmable chip.
   The Wii's system menu software is NOT firmware". libretro:
   "A BIOS file is a copy of the operating system used by the hardware that a Core is emulating".
-  Pan Docs says "boot ROM" for the Game Boy's built-in program and "the SGB BIOS" for another on the same page.
+  Pan Docs says "boot ROM" for the Game Boy's built-in program and "SGB BIOS" for another on the same page
+  (Power-Up Sequence).
+  GBATEK lists a "BIOS ROM" of the Game Boy Advance.
   A maker's consumer pages say "system software" (PlayStation support).
   ADR 0001's closed tier names "a console's BIOS, boot ROM, or system software" and defines none of the three.
 - "ROM" names a device in the standard vocabulary and a file in emulation: "In emulation,
   ROM is a copy of the contents (data) of the program chip inside a game cartridge",
   and "An image may be a ROM or a copy of disc/disk contents" (TASVideos glossary).
   MAME's documentation says "images of the original ROMs, CDs, hard disks or other media".
+- Save states and a game's own saves are kept apart.
+  PPSSPP keeps "SAVEDATA (for real PSP saves)" apart from "PPSSPP_STATE (save states)" (PPSSPP FAQ).
+  TASVideos heads an entry `Savestate` and defines it as "A snapshot of the system state at given moment",
+  and says a "saved game is sometimes also called SRAM" (TASVideos glossary).
 - Community words carry legal assumptions.
   3dbrew defines a dump as extracting "the protected contents" of a chip or disc;
   WiiBrew defines a backup as a dump kept against damage and adds that "it is officially considered piracy by Nintendo"
@@ -603,11 +684,12 @@ Each row records usage in the sources named; the conflicts are this note's readi
 - Legal terms are fixed by statute and differ by jurisdiction.
   17 U.S.C. § 1201 defines circumvention twice, for access controls and for copy controls.
   European Union law heads Article 6 "Decompilation", for acts United States cases call disassembly.
-  "Fair use" is a United States doctrine with no European Union counterpart of that name.
+  "Fair use" is a United States doctrine
+  (17 U.S.C. § 107); Directive 2001/29/EC Article 5 lists specific exceptions and does not use the term.
   `R0-02` covers the law.
 - The words "taint" and "provenance" are used in more than one sense inside this repository.
-  ADR 0001's tainted tier attaches to a reference document; Asahi's "taint" attaches to code and people;
-  `R0-01` also calls Altai's first program tainted.
+  ADR 0001's tainted tier attaches to a reference document; Asahi's "taint" attaches to code
+  ("taint the resulting code", Asahi LLM policy); `R0-01` also calls Altai's first program tainted.
   "Provenance" is used for the origin of a fact and for the origin of code, and is defined in neither place.
 - Game decompilation projects describe rebuilding source that reproduces a specific ROM, identified by a hash
   (READMEs of three closed-tier projects, prose only).
@@ -615,12 +697,13 @@ Each row records usage in the sources named; the conflicts are this note's readi
 
 ### Vocabulary: numbers, units, and names
 
-- Hexadecimal notation differs by hub: a `$` prefix in Pan Docs, an `h` suffix in GBATEK, and `0x` in 3dbrew
+- Hexadecimal notation differs by hub: a `$` prefix in Pan Docs and an `h` suffix in GBATEK
   (observed in the fetched text; no hub page read states its convention as a rule).
 - Binary sizes are written three ways: "KiB" in Pan Docs, "KBytes" and bare "K" in GBATEK, and "KB" in melonDS's FAQ.
-  NIST records that "most manufacturers use megabyte to mean 2^20 = 1 048 576 bytes,
-  but the manufacturers of computer storage devices usually use the term to mean 1 000 000 bytes",
-  and that the IEC binary prefixes "are not part of the International System of Units (SI)"
+  A passage on NIST's page, adapted from an IEEE newsletter article of 1997, says that "When discussing computer memory,
+  most manufacturers use megabyte to mean 2^20 = 1 048 576 bytes,
+  but the manufacturers of computer storage devices usually use the term to mean 1 000 000 bytes".
+  NIST itself says the IEC binary prefixes "are not part of the International System of Units (SI)"
   (NIST, Prefixes for binary multiples; the page prints the power as a superscript).
   Google's style guide says "Don't use MB if you mean MiB".
 - A bare "cycle" is ambiguous.
@@ -636,8 +719,9 @@ Each row records usage in the sources named; the conflicts are this note's readi
   The roadmap uses North American names; one open-tier emulator lists both, as in "Sega Genesis / Mega Drive";
   hardware references use maker model codes, as in "Game Boy (DMG)" and "Game Boy Color (CGB)"
   (jgenesis README; Pan Docs).
-- No quotation from the NESdev wiki is given in this section: the wiki refused direct fetches,
-  and the summarising fetch tool returned two wordings for one glossary entry.
+- No quotation from the NESdev wiki is given in this section:
+  the wiki refused fetches made with a browser's identification,
+  and the summarising fetch tool returned two wordings for one glossary entry (research log).
 
 ### How projects structure and enforce a glossary
 
@@ -645,15 +729,17 @@ Each row records usage in the sources named; the conflicts are this note's readi
   One page with a heading for each term: the Rust Reference, TASVideos, and 3dbrew.
   One table: the rustc development guide.
   One file for each term: Kubernetes, where "The raw data for glossary terms is stored at the glossary directory,
-  with a content file for each glossary term"; the CNCF glossary; and MDN.
-- Projects that give each term a file also give it its own metadata.
-  The CNCF glossary gives each entry a status of "Completed", "Feedback Appreciated", or "Not Started"
-  (CNCF style guide).
+  with a content file for each glossary term"; the CNCF glossary,
+  where "Each glossary term is stored in a markdown file"; and MDN, where each term is its own page
+  (MDN glossary guide).
+- The CNCF glossary gives each entry its own frontmatter, including a status of "Completed", "Feedback Appreciated",
+  or "Not Started" (CNCF style guide).
   MDN handles a term with several meanings through a disambiguation page (MDN glossary guide).
-- Glossary rules forbid copied definitions.
+- Glossary rules restrict copied definitions.
   MDN: "Don't copy and paste from other definitions or content on the internet", and "Don't use generated text either."
-  CNCF: "If you like a particular section of a definition, paraphrase it in your own words."
-  MDN keeps the first paragraph to "no more than two sentences" and ends each entry with a "See also" section.
+  CNCF forbids copying "unless you are quoting and contributing it to them", and adds:
+  "If you like a particular section of a definition, paraphrase it in your own words."
+  MDN prefers a first paragraph of "no more than two sentences" and ends each entry with a "See also" section.
 - The ISO/IEC drafting rules give a checkable form,
   read here in a third-party rendering of the 2018 edition (secondary).
   A definition "shall be written in such a form that it can replace the term in its context";
@@ -662,11 +748,16 @@ Each row records usage in the sources named; the conflicts are this note's readi
   admitted, and deprecated terms.
   They prefer systematic order: "Alphabetical order is the least preferred order."
   A borrowed entry must cite its source and say what was changed.
-- The standards vocabulary allows its definitions to be copied "providing that its source is cited"
-  (SEVOCAB results page).
-- Google separates a word list of usage rulings from definitions, and advises:
-  "If your document is introducing many terms, collect the definitions into a glossary" (Google, Technical Writing One).
-- A community glossary can limit its own authority: "this definition is strictly for TASVideos,
+  Whether a later edition changed these rules was not checked.
+- The standards vocabulary has three permission layers (SEVOCAB results page).
+  ISO/IEC definitions may be copied "providing that its source is cited";
+  IEEE definitions only if the statement "Copyright©, 2026, IEEE.
+  Used by permission." stays with them; and the PMI definitions carry "Copyright and all rights reserved."
+- Google separates a word list of usage rulings from definitions: "If you're looking for a technical definition,
+  then it's often a good idea to check the authoritative documentation on the topic" (Google, word list).
+  It advises: "If your document is introducing the term, define the term.
+  If your document is introducing many terms, collect the definitions into a glossary" (Google, Technical Writing One).
+- A community glossary can limit the authority of an entry: its definition of a video game "is strictly for TASVideos,
   and is not meant to objectively define a video game in all contexts" (TASVideos glossary).
 - This repository already expects a glossary.
   The Vale rule `Terms.yml` is an empty substitution map whose comment says "The glossary fills this map",
@@ -675,26 +766,36 @@ Each row records usage in the sources named; the conflicts are this note's readi
   A contract with a repeatable heading pattern, required labelled text in each entry,
   and unique headings reported a missing field and a duplicate term on a sample file
   (tested locally with mdschema 0.16.0).
-  For a table it can check only the header row, and a link to a table row has no anchor to check.
+  Its table rule checks the number of tables, their columns, and their header names;
+  its text rules apply to a section as a whole, so no rule checks each row (tested locally with mdschema 0.16.0).
+  A link to a table row has no anchor to check.
   Its README documents no rule for the order of repeated sections and no rule that compares two files.
 - The link checker verifies links from a note to a glossary heading, and fails on a term that does not exist
   (tested locally with lychee 0.24.2).
-  A term's spelling is therefore its address, and renaming a term breaks every link to it (inference).
+  It also resolves explicit heading identifiers, which it calls "Custom ID fragments" (lychee documentation).
+  Without such an identifier a term's spelling is its address, and renaming the term breaks every link to it
+  (inference; whether GitHub honours explicit heading identifiers was not checked).
 - Vale can map a discouraged term to a preferred one: "`substitution` associates a string with a preferred form"
   (Vale documentation).
   The rule does not fire inside a code span
-  (tested locally),
+  (tested locally with Vale 3.27.0),
   and the repository's rule runs at error level,
-  so it would fail a note that quotes a source using the discouraged word outside a code span (inference).
-- Vale's vocabulary files would not enforce terms here.
-  The generated rules need the built-in `Vale` style, and this repository's configuration lists only its own style
-  (Vale documentation; tested locally with Vale 3.27.0).
-- A first-use rule for abbreviations flags letter-only hexadecimal values such as `BFFF` written outside a code span
-  (tested locally).
-- The glossary fits no existing contract and has no row in the status table (read locally).
-  The status rules say "A document moves forward only" and
-  that an approved document needing a material change is replaced;
-  a glossary that every later note extends strains both (inference).
+  so it would fail a note that quotes a source using the discouraged word outside a code span,
+  unless the passage is wrapped in a Vale comment that switches the rule off
+  (inference; the comment switch was tested locally with Vale 3.27.0).
+  Vale documents that it "supports comment-based configuration in Markdown files" (Vale documentation).
+  Whether project rules allow that switch is a policy question, not a limit of the tool.
+- The repository names a vocabulary, `Rustalgia`, with an empty accept list, at the top level of its Vale configuration.
+  Named there, its generated rules need the built-in `Vale` style, which the configuration does not list,
+  so it enforces nothing.
+  "A vocabulary named in `[*]` applies to every file, with rules of its own that are on everywhere"
+  (Vale documentation; both cases tested locally with Vale 3.27.0).
+- Vale's documented example of a first-use rule for abbreviations flags letter-only hexadecimal values such
+  as `BFFF` written outside a code span (tested locally with Vale 3.27.0); the repository has no such rule.
+- Before this change, a glossary fitted no contract and had no row in the status table (read locally).
+  The status rules say "A document moves forward only", that an approved document needing a material change is replaced,
+  and that small corrections are made in place; a glossary
+  that every later note extends strains the first two (inference).
 
 ### Citations: link rot and pinning
 
@@ -706,15 +807,18 @@ Each row records usage in the sources named; the conflicts are this note's readi
   That study found that "more than 70% of the URLs" in three Harvard law journals "and 50% of the URLs within U.S.
   Supreme Court opinions suffer reference rot".
 - A page that answers is not proof.
-  Of 353 Supreme Court links that returned a success code, "only 76% still led to the cited material" (same study).
-  This repository's link checker accepts any success code, so it cannot detect that kind of change (inference).
+  Of 353 Supreme Court links that returned a success code, "only 76% still led to the cited material"
+  (same study; its own table gives 277 of 353, 78.5%).
+  This repository's link checker accepts any success code, and 429 as well, so it cannot detect
+  that kind of change (inference).
 - "A quarter of all webpages that existed at one point between 2013 and 2023 are no longer accessible,
   as of October 2023" (Pew Research Center 2024; the measure counts dead pages only, not changed ones).
 - Four official addresses used for this note had moved or died on the day of research,
   among them the United States plain-language guidance and an intelligence-community directive (research log).
 - Addresses in code spans are not link-checked, so their rot is silent
-  (inference; that the checker skips code spans is from memory).
-  `R0-01` holds 117 such addresses and one archive address (counted on 2026-11-19).
+  (tested locally: lychee 0.24.2 skips an address in a code span unless `--include-verbatim` is set,
+  and this repository does not set it).
+  `R0-01` holds 117 such addresses, one of them an archive capture (counted on 2026-11-19).
 - Sources offer version pins of different kinds.
   GitHub: "instead of using a branch name in the URL", "put a commit ID.
   This will permanently link to the exact version of the file in that commit"
@@ -725,16 +829,17 @@ Each row records usage in the sources named; the conflicts are this note's readi
 - `R0-01` cites GitHub files by branch, arXiv papers without a version, and one archive copy by year only
   (observed in the note).
 - Published law comes in versions that are not all official.
-  European Union: "Consolidated texts have no legal effect.
-  They are intended for use as documentation only" (EUR-Lex).
+  European Union: "Consolidated texts have no legal effect" (EUR-Lex); the same page calls them documentation,
+  with a further qualification that the second pass could not fetch again.
   United Kingdom: revised legislation incorporates later amendments,
   with an aim to update "within a maximum of three months" (legislation.gov.uk help).
   United States: "The eCFR is not an official legal edition of the CFR",
   and a Supreme Court slip opinion "is subject to formal revision before publication" (eCFR; slip opinion notice).
 - Paragraph numbers survive re-pagination and slip-opinion page numbers do not (inference).
-  An English practice direction tells advocates to cite the official report or transcript,
-  "not the handed-down text of the judgment, as this may have been subject to late revision"
-  (Practice Direction: Citation of Authorities 2012; it does not bind a research note).
+  An English practice direction requires the Official Law Reports where a judgment is reported there,
+  and for an unreported judgment allows the official transcript, "not the handed-down text of the judgment,
+  as this may have been subject to late revision"
+  (Practice Direction: Citation of Authorities 2012, paras 6 and 10; it does not bind a research note).
 
 ### Citations: archives
 
@@ -744,7 +849,9 @@ Each row records usage in the sources named; the conflicts are this note's readi
 - A capture can be withheld or removed.
   "Pages may not be archived due to robots exclusions and some sites are excluded by direct site owner request",
   and on removal requests "We do not make any guarantees beforehand about the outcome" (Internet Archive help).
-  The Archive reports that some news publishers began blocking it in 2026 (its own account of a dispute it is party to).
+  The Archive's FAQ relays a Nieman Lab report
+  that some news publishers have begun blocking the Wayback Machine over concerns about AI scraping
+  (Internet Archive, FAQ first published 15 May 2026; an account by a party to the dispute).
   Its terms of use could not be read.
 - A capture address holds a 14-digit time stamp;
   an address with only a year resolves to the nearest capture and is not a pin
@@ -753,16 +860,18 @@ Each row records usage in the sources named; the conflicts are this note's readi
   citing "the site using editors' and readers' computers to run a denial-of-service attack and evidence
   that the website has tampered with some archived pages"
   (Wikipedia, Archive.today guidance; the underlying facts are that community's findings and were not checked).
-  The service's own FAQ names no operator and says it does not save PDF files.
+  The service's own FAQ names no operator and says PDF files are not saved reliably:
+  "Most of them are not saved or saved as blank page".
 - Perma.cc refused every fetch.
-  Harvard-hosted posts from 2019 and 2021 describe ten free links and paid plans for users without a sponsoring library;
-  current terms were not confirmed.
+  Harvard-hosted posts from 2019 and 2021 describe ten free links and paid plans for users without a sponsoring library
+  (read through a summarising tool only, because the posts refused raw fetches); current terms were not confirmed.
 - WebCite, a service built for citations, says "We are currently not accepting archiving requests" (WebCite home page).
 - A software hash identifier is computed "directly from the digital objects they refer to,
   by anyone that has access to a copy of those objects",
   and its durability "depends on the artifact it identifies being permanently archived"
   (SWHID specification 1.2; SWHID FAQ).
-  Computing one for a walled or closed repository would need the copy that ADR 0001 restricts (inference).
+  Computing a directory or revision identifier for a walled or closed repository would need a copy of its code,
+  which ADR 0001 restricts; an identifier for one prose file needs only that file (inference).
 - The United States Supreme Court keeps its own copies:
   "an attempt is made to capture in PDF format the material cited in an opinion"
   (Supreme Court, Online Sources Cited in Opinions).
@@ -770,13 +879,17 @@ Each row records usage in the sources named; the conflicts are this note's readi
   and optionally the supporting quotation stored in the citation,
   which "can also provide insurance against failure of the chosen web archiving service"
   (Wikipedia, Link rot; a how-to page).
-- A capture that the project requests is a copy on a third party's servers that the project cannot recall.
-  If the page were later classed as tainted or leaked, the copy and its address would remain (inference).
+- A capture that the project requests is a copy on a third party's servers.
+  The project can ask for its removal, but "We do not make any guarantees beforehand about the outcome of a request"
+  (Internet Archive, removal requests).
+  If the page were later classed as tainted or leaked, the copy and its address could remain (inference).
   `R0-01` records that the rule lacks a procedure for a source later found to be tainted; none was found.
 - The source guard blocks a tool call that pairs an archive address with a restricted or unregistered repository,
   because "archive" is one of its trigger words
   (read in `.claude/hooks/source-guard.sh`; met once during this research).
-  An agent session therefore cannot re-check an archived README of such a repository.
+  A writer session therefore cannot re-check an archived README of such a repository,
+  and no session can for a closed or unregistered one
+  (read in the script: a reader session is not blocked for a walled repository).
 
 ### Claim status and verification
 
@@ -786,13 +899,13 @@ Each row records usage in the sources named; the conflicts are this note's readi
   and records verification once, in its Scope.
 - Other vocabularies record different things.
   Wikipedia's tags record a later reviewer's result:
-  "Failed verification" is used when "the source does not support what is contained in the article"
-  (template documentation).
+  "Failed verification" is used only when an editor has checked a cited source and found
+  that "the source does not support what is contained in the article" (template documentation).
   The United States intelligence standard and the IPCC grade likelihood in fixed words with numeric bands,
   and the bands differ: "likely" is 55 to 80% in one and 66 to 100% in the other (ICD 203; IPCC guidance note 2010).
-  ICD 203 also requires that products "distinguish statements
+  ICD 203 also says that products should "distinguish statements
   that convey underlying intelligence information used in analysis from statements that convey assumptions or judgments"
-  (section D.6.e).
+  (section D.6.e(3); the second pass could not fetch the directive again).
   GRADE rates a body of evidence at four levels (Cochrane Handbook, chapter 14).
   None has a class for a claim made from memory (inference).
 - Wikipedia's policy says "A source may be considered primary for one statement but secondary for a different one"
@@ -801,17 +914,22 @@ Each row records usage in the sources named; the conflicts are this note's readi
   so the word matches and the preference is reversed (inference).
 - The fact-checking code asks for "the best available primary, not secondary,
   sources of evidence wherever suitable primary sources are available",
-  and for sources identified "in such a way that users can replicate their work" (IFCN Code of Principles, principle 2).
+  and for sources identified "in such a way that users can replicate their work".
+  Its applicants check "all key elements of claims against more than one named source of evidence"
+  unless one source is the only relevant one (IFCN Code of Principles, principle 2).
 - Cochrane requires "(at least) two people working independently" to extract outcome data,
   and reports one study in which that "resulted in fewer errors than data extraction by a single author followed by
   verification by a second" (Cochrane Handbook, chapter 5; the study itself was not read).
   This project's second pass is the weaker of those two designs (inference).
+  The Handbook prints its own version line: chapters are cited as "[last updated October 2019]" in "version 6.5"
+  (chapter 5).
 - Tools that write with citations misattribute.
   A study of commercial legal research tools defines a hallucination as "a response
   that contains either incorrect information or a false assertion that a source supports a proposition",
   and found that the tools "each hallucinate between 17% and 33% of the time" (Magesh and others 2024, version 1).
   A broadcaster found that "13% of the quotes sourced from BBC articles were either altered from the original source
-  or not present in the article cited", from 8 of 62 responses (BBC 2025; the BBC is an interested party).
+  or not present in the article cited": eight such quotes, divided by the 62 responses that included BBC quotes
+  (BBC 2025; the BBC is an interested party).
   A preprint on research agents reports "citation accuracy ranging from 40--80% across systems"
   (DeepTRACE 2025, abstract only; its definition was not read).
 - A court sanctioned lawyers who "submitted non-existent judicial opinions with fake quotes
@@ -823,14 +941,16 @@ Each row records usage in the sources named; the conflicts are this note's readi
 
 ### The tooling a convention must fit
 
-All read in this repository's configuration or tested locally on 2026-11-19.
+Read in this repository's configuration or tested locally on 2026-11-19, except where marked.
 
-- The prose checker rejects thirteen filler words and ten wordy phrases at error level,
+- The prose checker rejects thirteen filler words and phrases and ten wordy phrases at error level,
   and applies them inside quotation marks and block quotations but not inside code spans.
-  Several standard scales cannot be reproduced in running text for that reason,
-  and the rule also rejects the first word of the term `just-in-time` (met while writing this note).
+  Several standard scales, whose grades include a filler word,
+  fail the check in running text unless the rule is switched off around them with a Vale comment
+  (tested locally), and the rule also rejects the first word of the term `just-in-time` (research log).
 - The formatter puts each sentence on its own line and breaks after some abbreviations followed by a capital or a digit.
-  It broke after "v." and "Art." and not after "Cir." or "pp." in a test.
+  In a test it broke after "v." and "Art." before a capital or a digit, after "Cir." in running text,
+  and after "pp." before a capital but not before a digit (tested locally with rumdl 0.3.4).
 - No line may exceed 120 characters.
   A long address passes alone on its line or as a link destination; a long table row fails and is not reflowed.
 - The topic-study contract allows four frontmatter fields,
@@ -853,8 +973,10 @@ and 18 to 21 citations and verification.
 ### 1. One glossary file with a heading for each term
 
 - **What:** a single document in which each term is a heading, with its definition and labelled lines beneath.
-- **Costs:** one file that many later changes touch; a term's spelling becomes its link address;
-  the file's status has to be reconciled with the rule that approved documents are replaced, not edited.
+- **Costs:** one file that many later changes touch; without explicit heading identifiers,
+  a term's spelling becomes its link address;
+  the file's status has to be reconciled with the rule that an approved document needing a material change is replaced
+  (small corrections are made in place).
 - **Gains:** the structure checker can require fields in each entry and reject duplicates,
   and the link checker verifies links from notes to terms (tested locally).
 - **Used by:** the Rust Reference, TASVideos, and 3dbrew.
@@ -862,10 +984,10 @@ and 18 to 21 citations and verification.
 ### 2. One glossary file holding a table
 
 - **What:** a single table of terms and meanings.
-- **Costs:** rows have no anchors, so notes cannot link to a term; the 120-character limit caps each definition;
-  the checker sees only the header row.
+- **Costs:** rows have no anchors, so a link can reach only the table and the link checker cannot verify a term;
+  the 120-character limit caps each definition; the structure checker has no rule for each row.
 - **Gains:** compact, and quick to scan.
-- **Used by:** the rustc development guide; Microsoft's term collections.
+- **Used by:** the rustc development guide.
 
 ### 3. One file for each term
 
@@ -877,19 +999,21 @@ and 18 to 21 citations and verification.
 ### 4. Definitions inside each note, with an index
 
 - **What:** every note defines its terms at first use, and a glossary page only lists terms and links to the notes.
-- **Costs:** two notes can define one term differently with nothing to detect it; approved notes are not rewritten,
-  so a later change of preferred term leaves them inconsistent.
+- **Costs:** two notes can define one term differently with nothing to detect it;
+  a change of preferred term is more than a small correction, so approved notes stay inconsistent.
 - **Gains:** a definition sits beside its evidence; no shared file to maintain.
-- **Used by:** ISO documents, each of which defines the terms it uses; Google's advice for documents with few terms.
+- **Used by:** ISO documents, whose drafting rules provide a terms and definitions clause (secondary);
+  Google's advice for documents with few terms.
 
 ### 5. A word list enforced by the prose checker
 
 - **What:** rulings of the form "use this, not that", applied by a substitution rule; it can accompany any option above.
 - **Costs:** at error level the rule also fires on quotations that contain the discouraged word,
   and research notes quote sources that say `savestate`, `dynarec`, and `BIOS`;
-  the vocabulary files enforce nothing under the present configuration.
+  the vocabulary files enforce nothing under the present configuration, though a vocabulary named in `[*]` would;
+  a Vale comment can switch a rule off around a quotation, if project rules allow it.
 - **Gains:** consistent spelling without review effort; the rule file already exists and is empty.
-- **Used by:** Google's word list and Microsoft's A to Z list, as guidance; this repository's `Terms.yml`, unfilled.
+- **Used by:** Google's word list, as guidance; this repository's `Terms.yml`, unfilled.
 
 ### 6. No quotations
 
@@ -904,7 +1028,7 @@ and 18 to 21 citations and verification.
 ### 7. Short attributed quotations under a numeric cap
 
 - **What:** a quotation may run to a set number of words, or a set share of the note, and no further.
-- **Costs:** no law supplies the number, so the cap is a project rule that may be read as a guarantee;
+- **Costs:** no source read supplies the number, so the cap is a project rule that may be read as a guarantee;
   a cap tempts cutting a quotation at the point where its limit is stated.
 - **Gains:** a reviewer or a script can check it; the note's own text stays dominant.
 - **Used by:** nobody as a permission rule.
@@ -917,8 +1041,8 @@ and 18 to 21 citations and verification.
   and never from unpublished, leaked, or tainted material.
 - **Costs:** the class of a legal text differs by country;
   a publisher's summary of a free text is a different class from the text; each source's terms must be recorded.
-- **Gains:** follows the statutory condition of lawful availability and the cases on unpublished works;
-  agrees with ADR 0001.
+- **Gains:** follows the condition of lawful availability in the Berne, United Kingdom, and European Union texts;
+  it is stricter than United States law on unpublished works; agrees with ADR 0001.
 - **Used by:** Wikipedia, which treats public-domain and compatibly licensed text differently from non-free text.
 
 ### 9. Exact text, marked changes, and a named part
@@ -928,8 +1052,10 @@ and 18 to 21 citations and verification.
   and the citation says which part of the document the words come from.
 - **Costs:** tooling and time; raw text has artefacts, so a normalisation rule must be stated;
   the prose checker rejects some words even inside quotations, which pushes authors toward other passages.
-- **Gains:** addresses the three failures found on `R0-01`: cut quotations, wrong attribution,
-  and a summary's words presented as the source's; meets the accuracy conditions in several reuse licences.
+- **Gains:** addresses the failures met while researching and checking this note
+  (research log):
+  cut quotations, wrong attribution, and a summary's words presented as the source's;
+  meets the accuracy conditions in several reuse licences.
 - **Used by:** Wikipedia's "principle of minimal change"; legal citation practice
   (The Indigo Book); the second pass on `R0-01`.
 
@@ -938,7 +1064,8 @@ and 18 to 21 citations and verification.
 - **What:** a note may state any address, size, bit position, timing, or identifier if it names where it was found.
 - **Costs:** the cited reference may not say where its own values came from; a cited source can be wrong.
 - **Gains:** every value can be re-checked; fits the cases on facts and short identifiers.
-- **Used by:** Xenia's provenance comments (`R0-01`); the test in the ReactOS audit page.
+- **Used by:** Xenia's provenance comments (`R0-01`); the test proposed, and not shown to be adopted,
+  in the ReactOS audit page.
 
 ### 11. Values only with a second source or a test
 
@@ -954,8 +1081,9 @@ and 18 to 21 citations and verification.
   the note compiles its own, with a source for each row.
 - **Costs:** needs judgement about when a set of values becomes the source's table; where hardware dictates the order,
   an independent arrangement may be identical anyway.
-- **Gains:** addresses compilation copyright and the database rights at once; keeps provenance for each row.
-- **Used by:** Asahi Linux, which forbids copying "whole #define blocks or include files".
+- **Gains:** addresses compilation copyright; keeps provenance for each row.
+  The database rights still turn on how much of a protected database's contents is taken.
+- **Used by:** Asahi Linux, which forbids copying "whole #define blocks or include files" from Apple's APSL code.
 
 ### 13. No bytes of firmware, with or without an exception for short identifiers
 
@@ -976,8 +1104,10 @@ and 18 to 21 citations and verification.
 - **Costs:** long prose for exact behaviour, and room for ambiguity;
   prose that follows a source's steps one by one can still carry its sequence.
 - **Gains:** matches the recorded accounts of clean-room specifications and the wording of ADR 0001.
-- **Used by:** Phoenix by its press account; Accolade's manual; the specification
-  that one law-firm article describes (secondary).
+- **Used by:** Phoenix by its press account; the specification that one law-firm article describes (secondary),
+  for its exclusion of code and pseudo-code.
+  Accolade's manual held "only functional descriptions" by its authors' account,
+  but a 20 to 25 byte header file of Sega's code was added to it (Sega v Accolade).
 
 ### 15. Pseudo-code only from maker documents or the note-taker's own tests
 
@@ -987,15 +1117,15 @@ and 18 to 21 citations and verification.
   the rule does not reach what a model recalls from training.
 - **Gains:** rests on the fact that decided the favourable English cases, namely no access to the code.
 - **Used by:** no project was found that states it.
-  It combines the facts of Navitaire and SAS with documentation practice at Pan Docs.
+  It combines the facts of Navitaire and SAS with the pseudo-code notation in Pan Docs' contributing guide.
 
 ### 16. Pseudo-code in a neutral notation, from any source
 
 - **What:** pseudo-code is allowed everywhere, in a notation and a structure that the note-taker chooses.
 - **Costs:** a changed notation leaves sequence and organisation intact, and translation is the classic infringing act;
-  standards bodies treat pseudo-code as code and license it apart from prose.
+  the ITU counts pseudo-code as software, and the IETF and W3C license code apart from prose without naming it.
 - **Gains:** precise and readable.
-- **Used by:** Arm, in its own defined language; Pan Docs in places.
+- **Used by:** Arm, in its own defined language; Pan Docs, whose contributing guide sets a notation for it.
 
 ### 17. Tests in place of descriptions
 
@@ -1018,18 +1148,19 @@ and 18 to 21 citations and verification.
 
 - **What:** each source also carries the address and date of a copy in a web archive,
   made by the project or already there.
-- **Costs:** every archive examined has a recorded weakness: removal on request, blocking by publishers, outage,
-  closure, or doubt about its integrity; a capture the project requests cannot be recalled;
+- **Costs:** every third-party archive examined has a recorded weakness: removal on request, blocking by publishers,
+  closure, or doubt about its integrity; the removal of a capture the project requests is not guaranteed;
   the source guard blocks archive addresses of restricted repositories.
 - **Gains:** the citation survives link rot.
-- **Used by:** Wikipedia; law reviews and courts through Perma.cc; the United States Supreme Court with its own copies.
+- **Used by:** Wikipedia; law reviews through Perma.cc
+  (Zittrain 2014); the United States Supreme Court with its own copies.
 
 ### 20. The supporting quotation stored with the citation
 
 - **What:** the words that support a claim are kept in the note, so that a reader can compare them with any copy.
 - **Costs:** more third-party text in a GPL-3.0 repository, against options 6 and 7; the prose checker's filler rule.
 - **Gains:** the claim stays checkable if every copy of the page disappears.
-- **Used by:** Wikipedia's quotation field; the evidence files behind this note, which are not published.
+- **Used by:** Wikipedia's quotation field; the evidence files behind this note, which are not published (research log).
 
 ### 21. A verification record for each claim, or one statement for the note
 
@@ -1043,23 +1174,24 @@ and 18 to 21 citations and verification.
 ## Implications for Rustalgia
 
 - Notes that grade emulators as "cycle-accurate" will not be comparable, because sources mean different things by it.
-  This feeds the functional-area map (`R1-90`) and the quality targets (`R6-02`),
-  and is a reason for the glossary to require a qualifier.
+  This feeds the functional-area map (`R1-90`) and the quality targets (`R6-02`); a glossary could require a qualifier,
+  as option 1's labelled lines allow.
 - ADR 0001's closed tier turns on "BIOS, boot ROM, or system software", which it does not define,
   and its line between prose and code does not place pseudo-code.
-  The glossary proposed with this note defines the first; the second is the owner's choice,
-  and would become a small correction to the ADR or a new one.
+  The glossary proposed with this note offers definitions of the first.
+  Because they change the reach of the closed tier, accepting them is the owner's choice, as is the second.
+  Either would become a small correction to the ADR or a new one.
 - A description written by a session that read an implementation is the case the favourable rulings leave open.
-  The convention for reader sessions, and any provenance control in `R0-06`,
-  should treat the level of detail of a functional description as a control, not as style.
-- No legal number exists for quotation length or for the length of a recorded byte sequence.
+  The findings bear on whether the convention for reader sessions, and any provenance control in `R0-06`,
+  treat the level of detail of a functional description as a control or as style.
+- No source read gives a legal number for quotation length or for the length of a recorded byte sequence.
   Any cap in the conventions is a project rule; it feeds a requirement on note content,
   and `R0-03` decides what the repository's licence notice says about quoted passages.
 - Whole tables carry risks that single values do not,
   and the European and United Kingdom database rights depend on facts the project cannot see.
   This feeds the source map (`R0-05`), which records each hub's licence, and the hardware primers,
   which will be full of tables.
-- Citations in approved notes are already unpinned, and addresses in code spans rot silently.
+- Citations in `R0-01` are already unpinned, and addresses in code spans rot silently.
   Pinning and any archive rule feed a requirement on research notes;
   whether `R0-01` is pinned in place is the owner's choice.
 
@@ -1068,23 +1200,25 @@ and 18 to 21 citations and verification.
 - Is pseudo-code prose or code for ADR 0001, both for what may be read and for what a reader session may write?
   A decision by the owner.
 - Does the prose checker's filler rule apply inside quotations by intent?
-  A decision by the owner; the alternatives are code spans, an exemption, or the present practice.
+  A decision by the owner; the alternatives are code spans, an exemption, a Vale comment around the passage,
+  or the present practice.
 - Is a value that designers chose freely, such as a waveform or palette table, a fact once it is fixed in silicon?
   No source read says; the hardware primers will meet the question.
 - Is measuring hardware "obtaining" or "creating" data for the database rights, and who is the maker of a wiki's tables?
   No ruling was found; `R0-05` can record each hub's makers and location.
+  Whether later European Union law on data from connected products bears on it was not researched.
 - Do agent sessions that fetch English judgments fall under the "computational analysis" exclusion?
-  The licence gives no number; `R0-02` fetches the most judgments and can record the risk.
+  The licence gives no number; `R0-02` is likely to fetch the most judgments (inference) and can record the risk.
 - Can CC BY-SA 3.0 text reach a GPL-3.0 note through version 4.0?
   No page read says; `R0-03`.
-- What do Cantor Fitzgerald, Ibcos, and John Richardson say in their own words, and was Edozo v Valos appealed?
+- What does Ibcos say in its own words, and was Edozo v Valos appealed?
   A law-report source that answers a script would settle the first.
 - Does a model asked for pseudo-code of a named system reproduce a particular implementation's structure?
   No study was found; `R0-06`.
 - What do Wine's guidelines say today about tables, constants, and headers?
-  The page refused every fetch; a later attempt.
-- Does the link checker skip code spans, and does the spelling checker read identifiers inside them?
-  A local test in a later change.
+  The page refused every fetch (research log); a later attempt.
+- Does the spelling checker read identifiers inside code spans?
+  A local test in a later change; the link checker's half of this question was answered by a local test.
 - What notation do the NESdev wiki and other hubs state for numbers and bits?
   `R0-05` can check when it surveys each hub.
 - Do the conventions for notes also govern tables and constants in code?
@@ -1092,7 +1226,8 @@ and 18 to 21 citations and verification.
 
 ## Sources
 
-Every source below was read on 2026-11-19.
+Every source below was read on 2026-11-19; the second pass re-read them on the same day,
+except where a finding says it could not.
 Repository files named in the findings were read in the working tree on the same day.
 
 Statutes, treaties, regulations, and official guidance:
@@ -1113,11 +1248,15 @@ Statutes, treaties, regulations, and official guidance:
   `https://www.legislation.gov.uk/ukpga/1988/48/section/30` and sibling pages.
 - Copyright and Rights in Databases Regulations 1997, regulations 13, 16, 18:
   `https://www.legislation.gov.uk/uksi/1997/3032/regulation/18` and sibling pages.
-- Directive 2001/29/EC, read from the Publications Office: `http://publications.europa.eu/resource/celex/32001L0029`.
+- Directive 2001/29/EC, read from the Publications Office: `http://publications.europa.eu/resource/celex/32001L0029`;
+  Article 5 re-read by the second pass at `https://www.legislation.gov.uk/eudr/2001/29/article/5/adopted`.
 - Directive 2009/24/EC: `https://www.legislation.gov.uk/eudr/2009/24/adopted`
   and `https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32009L0024:EN:HTML`.
-- Directive 96/9/EC, as published in 1996: `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:31996L0009`.
-- Commission Decision 2011/833/EU: `http://publications.europa.eu/resource/celex/32011D0833`.
+- Directive 96/9/EC, as published in 1996: `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:31996L0009`;
+  Articles 7 and 11 re-read by the second pass at `https://www.legislation.gov.uk/eudr/1996/9/article/7/adopted`
+  and sibling pages.
+- Commission Decision 2011/833/EU: `http://publications.europa.eu/resource/celex/32011D0833`;
+  Article 6 re-read by the second pass at `https://www.legislation.gov.uk/eudn/2011/833/article/6/adopted`.
 - EUR-Lex, Consolidated texts: `https://eur-lex.europa.eu/collection/eu-law/consleg.html`.
 - Japan, Copyright Act, unofficial translation: `https://www.japaneselawtranslation.go.jp/en/laws/view/4207`.
 - Japan, Ministry of Justice, Japanese Law Translation, notice on the home page:
@@ -1138,7 +1277,7 @@ Statutes, treaties, regulations, and official guidance:
 - Practice Direction: Citation of Authorities (2012):
   `https://www.judiciary.uk/wp-content/uploads/JCO/Documents/Practice+Directions/lcj-pract-dir-citation-authorities-2012.pdf`.
 - Intelligence Community Directive 203, Analytic Standards
-  (2 January 2015): `https://archive.dni.gov/files/documents/ICD/ICD-203.pdf`.
+  (2 January 2015, as amended): `https://archive.dni.gov/files/documents/ICD/ICD-203.pdf`.
 - RFC 2119: `https://www.rfc-editor.org/rfc/rfc2119.txt`.
 
 Court decisions:
@@ -1176,6 +1315,10 @@ Court decisions:
   (D. Mass. 1996): `https://static.case.law/f-supp/946/cases/1079-01.json`.
 - American Dental Association v Delta Dental Plans Association, 126 F.3d 977
   (7th Cir. 1997): `https://law.resource.org/pub/us/case/reporter/F3/126/126.F3d.977.96-4140.html`.
+- Adobe Systems v Southern Software, case C 95-20710 RMW
+  (N.D. Cal. 2 February 1998),
+  order on summary judgment, in a transcription with visible errors:
+  `https://luc.devroye.org/SSi-vs-Adobe-February-2-1998.html`.
 - Mitel v Iqtel, 124 F.3d 1366 (10th Cir. 1997):
   `https://law.resource.org/pub/us/case/reporter/F3/124/124.F3d.1366.95-1394.html`.
 - Lexmark International v Static Control Components, 387 F.3d 522
@@ -1235,7 +1378,8 @@ Licences and reuse terms:
   `https://trustee.ietf.org/documents/trust-legal-provisions/tlp-5/`
   and `https://trustee.ietf.org/documents/trust-legal-provisions/code-components-list-3/`.
 - W3C Document License, 2023 version: `https://www.w3.org/copyright/document-license-2023/`.
-- ITU-T Software Copyright Guidelines, issue 3.0 (2011):
+- ITU Software Copyright Guidelines, edition 3.0
+  (7 December 2011, applicable from 13 April 2012):
   `https://www.itu.int/dms_pub/itu-t/oth/04/04/T04040000040004MSWE.docx`.
 - IANA, licensing terms: `https://www.iana.org/help/licensing-terms`.
 - PCI ID Repository: `https://pci-ids.ucw.cz/`.
@@ -1252,8 +1396,10 @@ Licences and reuse terms:
 
 Project policies, documentation, and glossaries:
 
-- Asahi Linux, Copyright and Reverse Engineering Policy: `https://asahilinux.org/copyright/`.
-- ReactOS wiki, Audit, archived copy: `https://web.archive.org/web/2024/https://reactos.org/wiki/Audit`.
+- Asahi Linux, Copyright and Reverse Engineering Policy, and LLM policy:
+  `https://asahilinux.org/copyright/` and `https://asahilinux.org/llm-policy/`.
+- ReactOS wiki, Audit, archived copy of 23 April 2025:
+  `https://web.archive.org/web/20250423130230/https://reactos.org/wiki/Audit`.
 - Linux kernel, licensing rules: `https://docs.kernel.org/process/license-rules.html`.
 - Pan Docs, About, History, The Cartridge Header, Power-Up Sequence, Rendering, and Specifications:
   `https://gbdev.io/pandocs/History.html` and sibling pages.
@@ -1295,8 +1441,9 @@ Project policies, documentation, and glossaries:
 - SEVOCAB, the IEEE Computer Society and ISO/IEC JTC 1/SC 7 vocabulary, term searches:
   `https://pascal.computer.org/sev_display/search.action`.
 - NIST, Prefixes for binary multiples: `https://physics.nist.gov/cuu/Units/binary.html`.
-- Google developer documentation style guide, units of measurement; Technical Writing One, "Words":
-  `https://developers.google.com/style/units-of-measure` and `https://developers.google.com/tech-writing/one/words`.
+- Google developer documentation style guide, units of measurement and word list; Technical Writing One, "Words":
+  `https://developers.google.com/style/units-of-measure`, `https://developers.google.com/style/word-list`,
+  and `https://developers.google.com/tech-writing/one/words`.
 - Kubernetes documentation, custom Hugo shortcodes
   (27 November 2025): `https://kubernetes.io/docs/contribute/style/hugo-shortcodes/`.
 - CNCF Cloud Native Glossary, style guide: `https://glossary.cncf.io/style-guide/`.
@@ -1306,8 +1453,8 @@ Project policies, documentation, and glossaries:
 - The Rust Reference, glossary, and the rustc development guide, glossary:
   `https://doc.rust-lang.org/reference/glossary.html`
   and `https://rustc-dev-guide.rust-lang.org/appendix/glossary.html`.
-- Vale documentation, vocabularies, substitution, and conditional:
-  `https://docs.vale.sh/keys/vocabularies.md` and sibling pages.
+- Vale documentation, vocabularies, substitution, conditional, and Markdown comments:
+  `https://docs.vale.sh/keys/vocabularies.md`, `https://docs.vale.sh/formats/markdown.md`, and sibling pages.
 - mdschema, README: `https://raw.githubusercontent.com/jackchuka/mdschema/main/README.md`.
 - lychee documentation, checking anchor links: `https://lychee.cli.rs/recipes/anchors/`.
 
@@ -1332,7 +1479,9 @@ Publishing, citation, and verification practice:
   `https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files`.
 - arXiv help, identifier scheme: `https://info.arxiv.org/help/arxiv_identifier.html`.
 - Internet Archive help, saving pages, general information, and removal requests:
-  `https://help.archive.org/help/save-pages-in-the-wayback-machine/` and sibling pages.
+  `https://help.archive.org/help/save-pages-in-the-wayback-machine/`,
+  `https://help.archive.org/help/wayback-machine-general-information/`,
+  and `https://help.archive.org/help/how-do-i-request-to-remove-something-from-archive-org/`.
 - Internet Archive, Save Page Now 2 public API documentation
   (updated 22 July 2026):
   `https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA/export?format=txt`.
@@ -1362,7 +1511,8 @@ Publishing, citation, and verification practice:
 
 Secondary sources:
 
-- ISO/IEC Directives, Part 2, eighth edition (2018), clause 16, in a third-party rendering:
+- ISO/IEC Directives, Part 2, eighth edition (2018), clauses 6 and 16, in a third-party rendering
+  (whether a later edition is current was not checked):
   `https://metanorma.github.io/mn-samples-iso/documents/directives/part2/document.html`.
 - J. Langdell, "Phoenix Says Its BIOS May Foil IBM's Lawsuits", PC Magazine, 10 July 1984:
   `https://archive.org/stream/PC-Mag-1984-07-10/PC-Mag-1984-07-10_djvu.txt`.
