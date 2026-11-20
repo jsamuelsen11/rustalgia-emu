@@ -66,13 +66,22 @@ Done when every survey, study, and synthesis item is done.
 
 #### Hardware primers
 
-Topic studies.
-Each explains how the machines of one era work, and what that asks of an emulator.
+Topic studies, two for each era.
+A primer explains how the machines of one era work, and what that asks of an emulator,
+using the systems that have a family survey as its examples.
+A catalogue lists every dedicated console and handheld sold in the era, with its hardware and its best sources.
+PC and Android handhelds, microconsoles, FPGA devices, and retro "mini" consoles are listed as emulator hosts,
+which `R3-07` and `R3-12` cover, not as systems to emulate.
+An era holds the systems whose family survey depends on its primer.
 
-- [ ] **R1-01** 8-bit and 16-bit consoles and handhelds.
-- [ ] **R1-02** The 32-bit and 64-bit era.
-- [ ] **R1-03** The sixth generation and the move to programmable graphics.
-- [ ] **R1-04** Modern consoles and handhelds, including systems on sale today.
+- [ ] **R1-01** 8-bit and 16-bit consoles and handhelds: primer.
+- [ ] **R1-02** The 32-bit and 64-bit era: primer.
+- [ ] **R1-03** The sixth generation and the move to programmable graphics: primer.
+- [ ] **R1-04** Modern consoles and handhelds, including systems on sale today: primer.
+- [ ] **R1-05** 8-bit and 16-bit consoles and handhelds: catalogue.
+- [ ] **R1-06** The 32-bit and 64-bit era: catalogue.
+- [ ] **R1-07** The sixth generation and the move to programmable graphics: catalogue.
+- [ ] **R1-08** Modern consoles and handhelds, including systems on sale today: catalogue.
 
 #### System family surveys
 
@@ -88,7 +97,7 @@ It also records the family's legal exposure and how hard it is to emulate.
 - [ ] **R1-12** Nintendo DS and DSi.
       Depends on R1-02.
 - [ ] **R1-13** Nintendo 3DS.
-      Depends on R1-03.
+      Depends on R1-02, R1-03.
 - [ ] **R1-14** Nintendo Switch and Switch 2.
       Depends on R1-04, R0-02.
 - [ ] **R1-15** NES and SNES.
@@ -99,15 +108,15 @@ It also records the family's legal exposure and how hard it is to emulate.
 - [ ] **R1-18** PlayStation 1.
       Depends on R1-02.
 - [ ] **R1-19** PlayStation 2.
-      Depends on R1-03.
+      Depends on R1-02, R1-03.
 - [ ] **R1-20** PSP and Vita.
       Depends on R1-03.
 - [ ] **R1-21** PlayStation 3, 4, and 5.
       Depends on R1-04, R0-02.
 - [ ] **R1-22** Sega: Master System, Game Gear, Genesis, Saturn, Dreamcast.
-      Depends on R1-01, R1-02.
+      Depends on R1-01, R1-02, R1-03.
 - [ ] **R1-23** Xbox, Xbox 360, and later.
-      Depends on R1-03, R1-04.
+      Depends on R1-03, R1-04, R0-02.
 - [ ] **R1-24** Arcade hardware.
       Depends on R1-01.
 - [ ] **R1-25** Other handhelds and home computers.
@@ -313,6 +322,8 @@ Each depends on every item in phases 1 to 5.
 - **No Rust emulator for several systems appears to ship on both iOS and Android.**
   Phase 5 is where that gap is tested.
 - **Is one note for each item the right size?**
-  Hardware primers and platform notes may need splitting once written.
+  Each hardware primer was split into a primer and a catalogue before writing,
+  because one note per era was estimated at two to three times the size of `R0-01`.
+  Platform notes may need splitting once written.
 - **Which items can run at the same time?**
   The dependencies allow much of phase 1 to run in parallel.
