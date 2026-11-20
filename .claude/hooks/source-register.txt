@@ -88,6 +88,13 @@ closed | devkitpro/libogc | zlib-style | accused of copying a maker's kit and RT
 tainted | psx-spx.consoledev.net | none obtained | maintainers say it copies secret material | 2026-11-17 | home page
 tainted | psx-spx/psx-spx.github.io | none obtained | repository of the same reference | 2026-11-17 | home page
 tainted | problemkaputt.de/psx-spx | copyright notice | the document that statement is about | 2026-11-17 | R0-01
+# The same two references at addresses the lines above do not match: the guard needs a separator before a pattern,
+# so a "www." prefix escapes it, and the per-chapter pages are named "psxspx" without the hyphen.
+tainted | psx-spx.github.io | none obtained | the Pages address of the same repository | 2026-11-19 | R0-05
+tainted | www.psx-spx.consoledev.net | none obtained | same reference with the www prefix | 2026-11-19 | R0-05
+tainted | www.problemkaputt.de/psx-spx | copyright notice | same document with the www prefix | 2026-11-19 | R0-05
+tainted | problemkaputt.de/psxspx | copyright notice | the same document's per-chapter pages | 2026-11-19 | R0-05
+tainted | www.problemkaputt.de/psxspx | copyright notice | per-chapter pages, www prefix | 2026-11-19 | R0-05
 
 # References: open tier.
 open | gbdev.io/pandocs | CC0 | origin of its facts not stated | 2026-11-17 | History page
