@@ -11,17 +11,19 @@ date: 2026-11-20
 
 This note asks which dedicated consoles and handhelds were sold from the seventh generation to 2026-11-20,
 and what hardware, protection, system software, and sources each has.
-It lists the 20 models and revisions of the three surveyed families
+It lists the models and revisions of the three surveyed families in 20 rows
 (PlayStation 3, 4, and 5 with the PlayStation Portal; Xbox One and Xbox Series; Switch and Switch 2),
 11 minor dedicated consoles, about 50 devices that the owner's rule makes emulator hosts
-(36 rows), 12 devices whose class the rule does not settle, and 3 announced systems not yet sold.
+(35 rows),
+about 20 devices in 12 rows whose class the rule does not settle, and 3 systems announced or planned but not yet sold.
 For the surveyed families, SwitchBrew and psdevwiki give model-level data beyond Wikipedia;
 for the Xbox One and Xbox Series, and for every other row, Wikipedia is the only hardware source cited.
-Two facts matter most to Rustalgia: every surveyed family is still sold or supported as of 2026-11-20,
-and the PlayStation and Nintendo families had system software releases in 2026
-(from the rows below),
-and the rule for emulator hosts leaves the class of the Evercade, Atari VCS, open Linux handhelds,
-and similar devices to the owner.
+Two facts matter most to Rustalgia.
+First, every surveyed family is still sold or supported as of 2026-11-20, and each had a system software release in 2026
+(from the findings below).
+Second, on this note's reading, the rule for emulator hosts leaves the class of the Evercade, Atari VCS,
+open Linux handhelds, and similar devices to the owner (inference);
+`R1-07` reads the same rule as making the Linux handhelds hosts.
 This note is not legal advice.
 
 ## Scope
@@ -30,25 +32,28 @@ This note is not legal advice.
   what are its maker, release, processor, graphics, media, protection, system software, survey, and sources?
 - Covered: every model and revision of the systems whose family surveys depend on `R1-04`
   (`R1-14`, `R1-21`, `R1-23`, as "How the catalogue is built" sets out),
-  other dedicated game devices first sold from 2005, emulator hosts as a list, and systems announced but not sold.
+  from the PlayStation 3, Xbox One, and Switch onward, other dedicated game devices first sold from 2005,
+  emulator hosts as a list, and systems announced but not sold.
   How the hardware works is left to the primer (`R1-04`); each family's emulators to its survey;
   the law on encryption and keys to `R0-02`; each hub's evaluation to `R0-05`;
   emulator hosts as platforms to `R3-07` and `R3-12`.
-  The Xbox 360, Wii, Wii U, 3DS, and Vita are in the previous era's catalogue (`R1-07`), by their surveys.
+  The Wii, Wii U, 3DS, and Vita are in the previous era's catalogue (`R1-07`), by their surveys;
+  the Xbox 360 is there by a placement the two catalogues share (inference; `R1-07`, "Boundary cases").
 - Researched on 2026-11-20 against the Wikipedia revisions, wiki revisions, and archived copies listed in Sources.
   Every statement about a system on sale is as of 2026-11-20.
 - How claims were checked: two research agents each covered a share
   (the surveyed families; every other device)
   and read every page as raw text, Wikipedia through its raw wikitext, SwitchBrew through its raw wikitext,
-  and psdevwiki through existing web archive captures, because the live site served a challenge page.
-  A second, independent pass fetched the sources again and tested each claim and quotation;
-  its corrections were checked against the sources and applied,
-  and the claims it could not check are listed in the pull request.
+  and psdevwiki through existing web archive captures, because the live site served a challenge page (research log).
+  One second, independent verification pass, split among six verifiers by section,
+  fetched the sources again on 2026-11-20 and tested 274 claims and every quotation;
+  one fix pass checked each of its findings against the raw sources and applied those that held.
+  The claims it could not check are weakened, marked, or dropped here, and listed in the pull request.
   Wikipedia is a tertiary source: a value with no hub named rests on the article's own text,
   whose citations were not followed. "(inference)" marks reasoning,
-  and "(from memory)" a claim no fetched page confirmed.
+  and "(research log)" an event while gathering the evidence.
   A statement that nothing was found records the searches made, not proof of absence.
-- No firmware, key, game, development kit, exploit, or emulator code was opened.
+- No firmware, key, game, development kit, exploit, or emulator code was opened (research log).
 
 ## Findings
 
@@ -57,22 +62,28 @@ This note is not legal advice.
 - An era holds the systems whose family survey depends on its primer (roadmap, "Hardware primers").
   `R1-14` (Switch and Switch 2), `R1-21` (PlayStation 3, 4, and 5), and `R1-23`
   (Xbox, Xbox 360, and later)
-  depend on `R1-04`; `R1-23` also depends on `R1-03`, which holds the original Xbox and the Xbox 360.
+  depend on `R1-04`; `R1-23` also depends on `R1-03`, so the rule places its systems in both eras.
+  The two catalogues place the original Xbox and the Xbox 360 in `R1-07` and start this one at the Xbox One
+  (inference; `R1-07`, "Boundary cases").
 - Other devices are placed by date: those first sold in 2005 or later,
-  the year the seventh generation began with the Xbox 360, are listed here,
-  a rule this note adds because no survey places them (inference).
-  The previous catalogue's share runs to 2012 for minor handhelds, so the two overlap;
-  "Boundary cases" lists the overlap.
+  the year the seventh generation of home consoles began with the Xbox 360
+  ("Seventh generation of video game consoles", lead),
+  are listed here, a rule this note adds because no survey places them (inference).
+  The same article says the handheld seventh generation began earlier, with the Nintendo DS in 2004.
+  `R1-07` places unsurveyed systems by years of sale from 1998 to 2013
+  (`R1-07`, "How the catalogue is built"), so the two overlap from 2005 to 2013; "Boundary cases" lists the overlap.
 - The roadmap lists "PC and Android handhelds, microconsoles, FPGA devices,
-  and retro "mini" consoles" as emulator hosts, not systems to emulate (roadmap, "Hardware primers").
+  and retro 'mini' consoles" as emulator hosts, not systems to emulate (roadmap, "Hardware primers").
   Devices the rule names are listed as hosts; devices it does not name are flagged, with the two readings,
   for the owner.
 - A row is one model, or a model with its revisions where they run the same software.
-  "Hub" names the best registered source other than Wikipedia; a dash means Wikipedia was the only source cited.
+  "Hub" names the best registered hardware source other than Wikipedia;
+  a dash means no hardware source other than Wikipedia was cited.
 - Regions: NA North America, EU Europe, UK United Kingdom, JP Japan, KR South Korea, AU Australia, NZ New Zealand,
   HK Hong Kong, TW Taiwan, CN mainland China, BR Brazil.
-- Wikipedia's model pages for the PlayStation 3 and its articles on each console give dates that differ in month
-  for several models; where they differ, the row gives the article on the console and the finding names the other.
+- Release dates are Wikipedia's: the article on the console,
+  or "PlayStation 3 models" for the PS3 Slim and Super Slim. psdevwiki's dates differ in month for several PS3 models;
+  the finding below names them.
 
 ### PlayStation family
 
@@ -91,7 +102,7 @@ This note is not legal advice.
 
 | Model | CPU | Graphics | Memory | Media and storage |
 |---|---|---|---|---|
-| PlayStation 3 | Cell, 3.2 GHz: 1 PPE, 7 SPEs | RSX | 256 MB XDR, 256 MB GDDR3 | BD, DVD, CD; HDD 20 to 160 GB |
+| PlayStation 3 | Cell 3.2 GHz: 1 PPE, 7 SPEs | RSX 500 MHz | 256 MB XDR, 256 MB GDDR3 | BD, DVD, CD; HDD 20 to 160 GB |
 | PS3 Slim | Cell, 45 nm | RSX, 65 then 40 nm | as PS3 | BD, DVD, CD; HDD 120 to 320 GB |
 | PS3 Super Slim | Cell, 45 nm | RSX, 40 or 28 nm | as PS3 | BD, DVD, CD; flash or HDD |
 | PlayStation 4 | 8 Jaguar cores, 1.6 GHz | GCN, 18 CUs, 800 MHz | 8 GB GDDR5, 256 MB DDR3 | BD, DVD; HDD |
@@ -103,65 +114,78 @@ This note is not legal advice.
 - Every value in the two tables rests on the Wikipedia articles "PlayStation 3", "PlayStation 3 models",
   "PlayStation 4", "PlayStation 5", and "PlayStation Portal"
   (infoboxes and "Technical specifications" or "Hardware" sections),
-  with process sizes and model codes from psdevwiki's "SKU Models" pages for the PS3, PS4, and PS5,
-  except where a bullet below names another source.
+  with model codes from psdevwiki's "SKU Models" pages for the PS3, PS4,
+  and PS5 and process sizes from its PS3 page only, except where a bullet below names another source.
 - The PS3's Cell has one PowerPC-based PPE and seven working SPEs,
   of which six are available to games and one is reserved for the operating system
   ("PlayStation 3", "Technical specifications").
-  The RSX's clock is given as 500 MHz in that article's infobox and as 550 MHz in "RSX Reality Synthesizer",
-  so the table gives none.
-- PS2 compatibility differs by model: CECHA and CECHB do it in hardware, CECHC and CECHE in part by software,
+  The RSX's core clock is 500 MHz in that article's infobox and in "RSX Reality Synthesizer", "Specifications";
+  the latter's 550 MHz is the clock at which pre-release figures were measured (same article).
+- PS2 compatibility differs by model: CECHA and CECHB do it in hardware, CECHC and CECHE by software,
   and later models not at all (psdevwiki, PS3 "SKU Models", column "PS2 mode").
   Of the CECHC and CECHE units, Wikipedia says "it retains the "Graphics Synthesizer" GPU resulting in a hybrid hardware
   and software emulation" ("PlayStation 3 models", "Original model").
   Every model runs original PlayStation games in software (same article).
 - psdevwiki's "SKU Release date" column differs from Wikipedia's "First available" dates in month
-  for several original models; the PS3 page's dates reflect firmware batches, not first retail sale
-  (psdevwiki, PS3 "SKU Models").
-  The Super Slim's flash model is "12 GB" in "PlayStation 3 models" and 16 GB of eMMC, 12 GB of it counted,
-  in psdevwiki; the physical part is 16 GB by psdevwiki's row (inference).
+  for several original models, for example 8/2006 for CECHA and CECHB against Wikipedia's November 2006
+  (psdevwiki, PS3 "SKU Models"; "PlayStation 3 models").
+  The page does not say what its dates mean; that they track manufacture rather than first retail sale is an inference.
+  The Super Slim's flash model is "12 GB" in "PlayStation 3 models" and 16 GB of eMMC in "PlayStation 3"
+  (infobox and "Super Slim model"); psdevwiki's row gives 16 GB of eMMC, 12 GB total and 8.9 GB usable.
+  The row's NA date of 2012-09-25 is the 250 GB bundle; the 500 GB model's NA date is 2012-10-30
+  ("PlayStation 3 models", comparison table).
 - The PS3's system software was at version 4.93, dated 2026-03-18,
   and Wikipedia says it "continues to be updated as of 2026 for performance and security enhancements,
   and to renew the Blu-ray encryption key" ("PlayStation 3 system software", lead and infobox).
   Purchased PlayStation Network content is limited to two activated consoles per account,
   the OtherOS feature was removed by firmware 3.21 of 2010-04-01, and every PS3 game but one is region-free
-  ("PlayStation 3", "Digital rights management"; "Region lock", "Sony").
-- The PS4's APU has two quad-core Jaguar modules, seven cores of which are for games, a secondary low-power processor,
-  an audio module, and a hardware zlib decompression unit ("PlayStation 4", "Technical specifications").
+  ("PlayStation 3", "Digital rights management" and "OtherOS support"; "Region lock", "Sony").
+- The PS4's APU has two quad-core Jaguar modules, seven cores of which are for games;
+  the infobox adds a secondary low-power processor for background tasks,
+  and the console also has secondary custom chips for downloads, uploads, and social features, an audio module,
+  and a hardware zlib decompression module ("PlayStation 4", infobox and "Technical specifications").
   Its system software, Orbis OS, is a fork of FreeBSD 9, at version 14.02 dated 2026-11-04
   ("PlayStation 4 system software").
   "Games are not region-locked, so games purchased in one region can be played on consoles in all regions"
   ("PlayStation 4"), though downloadable content needs an account of its region ("Region lock", "Sony").
 - The PS4 Slim and Pro were both announced on 2016-09-07; the Pro added checkerboard-rendering hardware and 4K output
   ("PlayStation 4", "PlayStation 4 Slim", "PlayStation 4 Pro").
-  Later Pro revisions are CUH-71xx (late 2017) and CUH-72xx (November 2018) (psdevwiki, PS4 "SKU Models").
+  Later Pro revisions are CUH-71xx (late 2017) and CUH-72xx (November 2018)
+  (psdevwiki, PS4 "SKU Models"); "PlayStation 4", "PlayStation 4 Pro", gives October 2018 for the CUH-7200.
   The PS4's mainland China release date is not given in "PlayStation 4"; the row leaves it out.
 - The PS5's storage is an 825 GB soldered SSD with a hardware decompression unit for zlib and Oodle Kraken,
-  and an M.2 slot added by an update in September 2021; PS5 games cannot run from USB storage
-  ("PlayStation 5", "Storage architecture").
+  and an M.2 slot for user-installed drives, whose support a system update added in September 2021;
+  PS5 games cannot run from USB storage ("PlayStation 5", "Storage architecture").
   Its audio is the "Tempest Engine", and its graphics interface is Sony's "AGC" ("PlayStation 5", "Hardware").
-- psdevwiki describes a custom hypervisor on the PS5: "In the PS5 case,
+- psdevwiki describes what it calls a "presumably custom" hypervisor on the PS5: "In the PS5 case,
   it is used primarily for Virtualization Based Security (VBS) to protect the kernel integrity"
   (psdevwiki, PS5 "Hypervisor", lead).
-  PS5 discs and downloadable content carry no region codes ("Region lock", "Sony").
-- Later PS5 models: the 1100 series of August 2021, the 1200 series of August 2022,
-  the CFI-2000 Slim of November 2023 with 1 TB, and a Slim Digital reduced to 825 GB from September 2025,
-  which a citation in the article names CFI-2116
+  PS5 games, on disc or downloaded, carry no region codes,
+  though region-locked games remain possible and downloadable content still needs an account of its region
+  ("Region lock", "Sony").
+- Later PS5 models: the 1100 series of August 2021, the 1200 series of August 2022, the Slim of November 2023 with 1 TB,
+  and a Slim Digital reduced to 825 GB from September 2025, which a citation in the article names CFI-2116
   ("PlayStation 5", "Standard model", "PlayStation 5 Slim", "Internal storage reduction").
-  psdevwiki's capture of 2026-03-12 lists no 825 GB Slim Digital model.
-  The last digits of each CFI code encode the region, for example 00 for Japan and 15 for the United States, Canada,
-  and Mexico (psdevwiki, PS5 "SKU Models", column "Region").
+  psdevwiki lists the Slim as CFI-20xx, from CFI-2000;
+  its capture of 2026-03-12 has no storage column and no CFI-2116 row.
+  In the standard and Slim models the last two digits encode the region,
+  for example 00 for Japan and 15 for the United States, Canada, and Mexico; the Pro uses other digits for some regions
+  (psdevwiki, PS5 "SKU Models", column "Region").
 - The PS5 Pro has a 60-CU GPU that the article calls a mix of RDNA 2 and RDNA 3 with RDNA 4 ray-tracing units,
   machine-learning upscaling called "PSSR", and no disc drive; a second chassis, CFI-7100, followed in September 2025
   ("PlayStation 5", "PlayStation 5 Pro"; psdevwiki, PS5 "SKU Models").
 - As of 2026-11-20 the PS5 had system software update 14 of 2026-09-16 and Sony's figure of 100 million units
   as of 2026-11-10 ("PlayStation 5", "Software updates" and infobox).
-  In July 2026 Sony announced it would stop producing physical PlayStation game discs from January 2028
-  ("PlayStation 5", "Marketing and release").
-- The PlayStation Portal streams games from a PS5, "although it does not run any games or media natively on its own"
-  ("PlayStation Portal", lead).
+  The article carries a banner, dated October 2026, saying parts of it may be outdated.
+  In July 2026 Sony announced it would stop producing physical PlayStation game discs from January 2028,
+  and later that it would handle the transition "cautiously" ("PlayStation 5", "Marketing and release").
+- The PlayStation Portal streams games from a PS5 and, since November 2025,
+  from Sony's cloud service for PlayStation Plus Premium,
+  "although it does not run any games or media natively on its own"
+  ("PlayStation Portal", lead and "Hardware and technicals").
   It runs a modified Android 13 on a Snapdragon part that the article's text calls "662"
-  while linking the article on the Snapdragon 660; Sony's open-source page lists its system software releases
+  while linking the article on the Snapdragon 660;
+  Sony's open-source page lists the system software versions whose source it publishes
   ("PlayStation Portal", "Hardware and technicals"; Sony, open-source software, PlayStation Portal).
   It has a row here because it is sold as part of the family;
   whether a streaming client belongs in the catalogue is open (Open questions).
@@ -187,33 +211,42 @@ This note is not legal advice.
 
 - Every value rests on the Wikipedia articles "Xbox One" and "Xbox Series X and Series S"
   (infoboxes, "Internals", "Hardware comparison", and the sections on each model), unless a bullet names another source.
-  No registered source beyond Wikipedia was found for any Xbox One or Series model; the Microsoft developer pages,
-  conference talks, and journal papers that might hold one are unregistered and were not searched.
+  No registered source beyond Wikipedia was cited for any Xbox One or Series model.
+  The article's external links name a Microsoft talk on the Xbox One's main SoC at Hot Chips 25 (2013),
+  and Hot Chips' archive at `old.hotchips.org` is registered as open; the talk was not read.
+  Microsoft's developer pages and journal papers are unregistered and were not searched.
 - Xbox One release: 13 markets on 2013-11-22, then 26 more in September 2014 including Japan;
   the article gives mainland China as 2014-09-29 in its infobox and as July 2014 in its sales text ("Xbox One").
   Production of the family ended in 2020 (same article).
 - The Xbox One's system software runs games and apps in two partitions under a hypervisor:
   "The Xbox System Software contains a heavily modified Hyper-V hypervisor
   (known as NanoVisor) as its host OS and two partitions" ("Xbox system software").
-  Its current version was 10.0.25398.2923 ("Xbox One", infobox).
+  Its current version is 10.0.25398.2923 in the "Xbox One" infobox,
+  and 10.0.26100.9662 of 2026-11-11 for every Xbox One and Series model in "Xbox system software" (infobox);
+  the articles disagree.
 - The Xbox One shipped region-free after plans for a region lock; Xbox Series X and Series S are region-free
   ("Region lock", "Xbox One and Xbox Series X/S").
 - The One X's processor is compatible with Jaguar and, by the article, unrelated to Ryzen ("Xbox One", "Xbox One X").
 - The Series X has one CPU core for the operating system and two memory pools of different bandwidth;
   the Series S's GPU clock is 1.565 GHz in the infobox and 1.55 GHz in the text, so the table gives none
   ("Xbox Series X and Series S", "Xbox Series X", "Xbox Series S").
-- Series storage is a custom NVMe SSD with a decompression block for zlib and Microsoft's "BCPack" texture format,
-  expansion through proprietary cards, and no running of native games from USB
+- Series storage is a custom NVMe SSD with a decompression block for zlib and a proprietary "BCPack" algorithm
+  for textures, expansion through proprietary cards, and no running of native games from USB
   ("Xbox Series X and Series S", "Xbox Velocity Architecture").
   "The console has dedicated audio hardware acceleration" (same article, "Video and audio rendering technologies").
 - Every retail Series console can enter "Dev mode", a sandbox for testing software (same article, "Software").
   Its scope was not read; whether it is a lawful route to hardware tests is an inference left open.
 - Series models as of 2026-11-20: a 1 TB Series S of 2023-09-01; on 2024-10-15 a white 1 TB Series S,
-  a white all-digital Series X, and a 2 TB Series X; the 2 TB Series X discontinued on 2026-08-01;
+  a white all-digital Series X, and a 2 TB Series X; with a price rise on 2026-08-01,
+  Microsoft said it was discontinuing the 2 TB Series X;
   and the Series X25 limited edition of 25,000 units released on 2026-11-12
-  ("Xbox Series X and Series S", "Mid-generation refreshes and Limited Editions" and "Sales").
-- Model numbers for the Series X and Series S are not on the pages read; the table leaves them out.
-  An audio block in the Xbox One, and a security processor in either family, are not described in the articles read
+  ("Xbox Series X and Series S", "History" and "Mid-generation refreshes and Limited Editions").
+- Model numbers: 1882 for the 1 TB Series X with a disc drive, 1881 for the 512 GB Series S,
+  and 1883 for the 1 TB Series S; the 2 TB and all-digital Series X have none in the table
+  ("Xbox Series X and Series S", "Comparison").
+- An audio block in the Xbox One is described only as hardware support for the Xbox 360's XMA format
+  ("Xbox One", "Xbox 360 compatibility").
+  No security processor in either family is described in the articles read
   (searches of "Xbox One", "Xbox Series X and Series S", and "Xbox system software" for "SHAPE", "audio processor",
   "Pluton", and "security").
 
@@ -240,12 +273,13 @@ This note is not legal advice.
   one of them for the operating system, with a 1.785 GHz boost mode for loading added by firmware in April 2019;
   its GPU runs at 307.2, 384, or 460 MHz undocked ("Nintendo Switch", "SoC, CPU, GPU and RAM").
 - In April 2018 two groups found a flaw in the Tegra X1's boot ROM that software cannot patch;
-  Nintendo fixed it in units from about July 2018 and in the Tegra X1+
+  Nintendo reportedly fixed it in units from about July 2018, and the Tegra X1+ fixes it
   ("Nintendo Switch", "Security"; "Tegra", Tegra X1 section).
   The revised HAC-001(-01), with the X1+, followed in August 2019 ("Nintendo Switch", "Later revisions").
 - Switch game cards hold 1 to 32 GB, are not writable, and connect through a game-card ASIC on the console
   ("Nintendo Game Card", "Nintendo Switch"; SwitchBrew, "Gamecard", "Protocol"; SwitchBrew, "Hardware").
-  The Switch is region-free except that the Tencent model plays only Chinese content
+  The Switch is region-free, except that Tencent's Chinese cartridges play only on the Tencent model,
+  which plays any region's cartridges but reaches only Chinese online services
   ("Nintendo Switch", "Distribution"; "Region lock", "Nintendo").
 - The Switch's system software, Horizon, is shared by the Switch and Switch 2; SwitchBrew lists version 23.5.0 for both,
   released on 2026-11-10 (UTC) ("Nintendo Switch system software", lead; SwitchBrew, "System Versions" and "Switch 2:
@@ -262,10 +296,11 @@ This note is not legal advice.
 - Switch 2 game cards come in 16, 32, and 64 GB; "Nintendo Switch 2 Edition" cards work in both consoles;
   and Game-Key Cards hold only a licence: "they contain no data on them other than a digital license for the game,
   which requires the software to be downloaded" ("Nintendo Game Card", "Nintendo Switch 2" and "Game-Key Card").
-- SwitchBrew says the T239 appears to support pointer authentication,
-  and "Memory within certain carveout regions is encrypted"
+- SwitchBrew says the T239's A78C cores support pointer authentication,
+  and that the T239 "appears to support memory encryption": "Memory within certain carveout regions is encrypted"
   (SwitchBrew, "Switch 2: Tegra T239", "Notable Security Features").
-  Nintendo ties a unique identifier to each game card and has banned consoles that used flash carts
+  By Engadget's account, as the article reports it, Nintendo ties a unique identifier to each game card,
+  and consoles that used flash carts have been banned from Nintendo Switch Online
   ("Nintendo Switch 2", "Hardware protections").
 - Nintendo's hardware director called the Switch 2's way of running Switch games "somewhere in between a software
   emulator and hardware compatibility" ("Nintendo Switch 2", "Backward compatibility").
@@ -284,31 +319,32 @@ Each row rests on the Wikipedia article on the device, unless it names another s
 | Device | Maker | First release | CPU | Media |
 |---|---|---|---|---|
 | Game Wave | ZAPiT Games | 2005-10 | Mediamatics 8611 | DVD-ROM |
-| Gizmondo | Tiger Telematics | 2005-03-19 | Samsung S3C2440, ARM9 | SD and MMC cards |
+| Gizmondo | Tiger Telematics | UK 2005-03-19 | Samsung S3C2440, ARM9 | SD and MMC cards |
 | Advanced Pico Beena | Sega Toys | JP 2005 | ARM7TDMI, 81 MHz | cartridges |
 | V.Smile Baby | VTech | 2006 | not stated | not stated |
 | V.Flash | VTech | 2006-09 | ARM9 from LSI Logic | CD-ROM "V.Discs" |
 | HyperScan | Mattel | NA 2006-10-23 | Sunplus SPG290, 108 MHz | CD-ROM and RFID cards |
 | Zeebo | Zeebo Inc. | BR 2009-05-25 | ARM11-based, 528 MHz | download over 3G |
 | Playdate | Panic | 2022-04-19 | STM32F746, Cortex-M7F | downloads |
-| Arduboy | Kevin Bates | 2016 | ATmega32U4 | flash |
-| Thumby | TinyCircuits | 2022 | RP2040, 2 Cortex-M0+ cores | flash |
+| Arduboy | Kevin Bates | 2016 | ATmega32U4 | downloads |
+| Thumby | TinyCircuits | 2022 | RP2040, 2 Cortex-M0+ cores | downloads |
 | Nex Playground | Nex Team | 2023-12 | Amlogic A311D2-NOD | downloads |
 
 - The Gizmondo ran Windows CE and was discontinued on 2006-02-06 ("Gizmondo", infobox).
-- The Beena's processor is from "List of home video game consoles",
-  and the two Wikipedia articles disagree on its sales; V.Smile Baby's row is only that list's
-  (both from "List of home video game consoles"; "Sega Pico", "Advanced Pico Beena").
+- The Beena's processor is in both "Sega Pico" (Beena infobox) and "List of home video game consoles".
+  "Sega Pico" gives two sales figures, over 350,000 and, as of 2010, 4.1 million; the list gives 4.1 million.
+  V.Smile Baby's row is only the list's ("Sega Pico", "Advanced Pico Beena"; "List of home video game consoles").
   The V.Flash article carries a "more citations needed" banner.
 - HyperScan's RFID reader reads and writes cards that unlock features and save data, so a game is a disc plus a card
-  ("HyperScan", lead and infobox).
+  ("HyperScan", lead, infobox, and "Games").
 - Zeebo sold games only as downloads over a built-in 3G modem, in Brazil and then Mexico,
   and was discontinued on 2011-09-30 ("Zeebo", lead and infobox).
 - The Playdate has a 400 × 240 1-bit display, a crank, and an accelerometer;
   its games arrive in "seasons" and through a store added on 2023-03-07 ("Playdate (console)", "Hardware" and "Games").
   Panic's SDK licence says its terms apply to the documentation of the programming interfaces as well,
   and forbids using the SDK "to develop applications for other platforms
-  or to develop another SDK" without Panic's written permission (Panic, Playdate SDK License 1.0, section 2).
+  or to develop another SDK" without Panic's written permission
+  (Panic, Playdate SDK License 1.0, preamble and section 2).
   The register closes Panic's SDK documentation for that reason;
   the effect on an emulator is a risk for `R0-02` and `R0-03` (inference).
 - The Arduboy's infobox gives no release date; the year is from "List of handheld game consoles".
@@ -317,23 +353,25 @@ Each row rests on the Wikipedia article on the device, unless it names another s
   its games download and then play offline ("Nex Playground", infobox and body).
   It is classed here as a dedicated console because it runs its own closed library, though it is Android-based
   (inference; flagged in "Boundary cases").
-- No lock-out or protection is described in any of these articles
+- No lock-out or protection is described in these articles except for the V.Flash,
+  whose discs sit in a plastic case and have no copy protection beyond a sensor in the case jacket ("V.Flash")
   (searches of each article for "protect", "lock", "encrypt", and "sign");
   the Playdate's licence limits documentation, not the device.
 
 ### Emulator hosts
 
 The roadmap's rule lists these as hosts, covered by `R3-07` and `R3-12`.
-Each row rests on the Wikipedia article on the device or line, read raw.
+Each row rests on the Wikipedia article on the device or line, read raw, except the Tecno Pocket Go,
+which has no article and rests on "List of handheld game consoles".
 
 | Device or line | Maker | First release | Rule's class | Processor family |
 |---|---|---|---|---|
 | Nvidia Shield Portable | Nvidia | 2013-07-31 | Android handheld | Tegra 4 |
 | Nvidia Shield Tablet | Nvidia | NA 2014-07-29 | Android handheld | Tegra K1 |
-| GPD XD | GamePad Digital | 2015 | Android handheld | not stated |
+| GPD XD | GamePad Digital | 2015-10 | Android handheld | Rockchip RK3288 |
 | Logitech G Cloud | Logitech, Tencent | NA 2022-10-17 | Android handheld | Snapdragon 720G |
 | Razer Edge | Razer | 2023-01-26 | Android handheld | Snapdragon G3x Gen 1 |
-| Anbernic line | Shenzhen YangLiMing | 2017 | Android or Linux handheld | not stated |
+| Anbernic line | Shenzhen YangLiMing | 2017 | Android or Linux handheld | Rockchip and others, by model |
 | GPD Win line | GamePad Digital | 2016-10 | PC handheld | Intel Atom, then others |
 | Ayaneo line | Anyun Intelligent Technology | 2021 | PC handheld | AMD Ryzen |
 | Steam Deck (LCD; OLED) | Valve | NA, EU 2022-02-25 | PC handheld | AMD Zen 2, RDNA 2 |
@@ -352,38 +390,43 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 | Analogue Nt mini; Super Nt; Mega Sg | Analogue | 2017-01-23 to 2019-03-25 | FPGA | Altera Cyclone V |
 | Analogue Pocket | Analogue | 2021-12-13 | FPGA | Cyclone V and Cyclone 10 |
 | Analogue 3D | Analogue | 2025-11-18 | FPGA | Cyclone 10 GX |
-| MiSTer | open project | not stated | FPGA | DE10-Nano board |
-| ModRetro Chromatic; M64 | ModRetro | 2024; M64 not dated | FPGA | MiSTer components |
+| MiSTer | open project | 2017-06 (on GitHub) | FPGA | DE10-Nano board |
+| ModRetro Chromatic; M64 | ModRetro | announced 2024-06; M64 not dated | FPGA | MiSTer components (Chromatic) |
 | NES and Super NES Classic Editions | Nintendo | 2016-11-10; 2017-09-29 | retro mini | Allwinner R16 |
 | PlayStation Classic | SIE | 2018-12-03 | retro mini | MediaTek MT8167A |
-| Genesis Mini; Mini 2 | Sega, with M2 | 2019-09-19; 2022-10-27 | retro mini | ZUIKI Z2713 |
+| Genesis Mini; Mini 2 | Sega, with M2 | 2019-09-19; 2022-10-27 | retro mini | ZUIKI Z7213 (Z2713 in the infobox) |
 | TurboGrafx-16 Mini | Konami, with M2 | JP 2020-03-19 | retro mini | not stated |
 | Neo Geo Mini; Neo Geo X | SNK; Tommo | 2018-07-24; 2012-12-18 | retro mini | not stated; Ingenic JZ4770 |
 | Game Gear Micro | Sega | JP 2020-10-06 | retro mini | not stated |
 | Game & Watch (2020, 2021) | Nintendo | 2020-11-13; 2021-11-12 | retro mini | STM32H7B0 |
-| Atari Flashback line; 2600+ | AtGames; Atari, Plaion | not stated; 2023-11-17 | retro mini | Rockchip 3128 (2600+) |
-| RetroN line | Hyperkin | 2014 | retro mini | not stated |
+| Atari Flashback line; 2600+ | Legacy, AtGames; Atari, Plaion | 2004; 2023-11-17 | retro mini | Rockchip 3128 (2600+) |
+| RetroN line | Hyperkin | 2010 | retro mini | not stated |
 
 - The Steam Deck runs SteamOS, plays Windows games through Proton,
   and has a desktop mode in which users install other software
-  ("Steam Deck", lead and "Development"); no lock-out against user software is described.
+  ("Steam Deck", lead and "History"); no lock-out against user software is described.
   Its LCD models were discontinued on 2025-12-19 (same article, infobox).
 - The ROG Xbox Ally's "Xbox mode" "boots the system directly into the Xbox app without loading the full Windows shell by
   default" ("ROG Xbox Ally"); it is a Windows PC, not an Xbox console (inference from the article's "Handheld PC" type).
-  Wikipedia's type field calls the Asus ROG Ally and MSI Claw A1M handheld game consoles and the Steam Deck, Legion Go,
-  and ROG Xbox Ally handheld PCs, so the field cannot decide the class (each article's infobox).
+  Wikipedia's type field calls the Asus ROG Ally a handheld game console,
+  the MSI Claw A1M both a handheld game console and a handheld gaming computer,
+  the Steam Deck and Legion Go handheld gaming computers, and the ROG Xbox Ally a handheld PC,
+  so the field cannot decide the class (each article's infobox).
 - The Steam Machine of 2026 was released on 2026-06-29 after a reservation waitlist, at a base price above US$1,000;
-  Valve stopped offering waitlist places in November 2026 ("Steam Machine", infobox and "Release").
-  The Steam Machines of 2015 to 2018 were third-party PCs to a Valve specification ("Steam Deck", "Development").
+  Valve stopped offering waitlist places in November 2026 ("Steam Machine", infobox and "History", "Launch").
+  Valve's earlier Steam Machines, from 2015, relied on other manufacturers ("Steam Deck", lead and "History").
 - The Analogue Pocket's FPGA is reprogrammed to replicate the Game Boy, Game Boy Color, and Game Boy Advance,
-  and takes other handhelds' cartridges through adapters ("Analogue Pocket", "Hardware").
+  and takes other handhelds' cartridges through adapters ("Analogue Pocket", "Design" and "Hardware").
   Wikipedia says of MiSTer, "The project is licensed under version 3 of the GNU General Public Licence";
   the register walls the project's repositories "per core", so the two readings differ ("MiSTer"; register).
   ModRetro's Chromatic "uses open-source components from the MiSTer FPGA project" ("ModRetro").
-  Wikipedia says the M64 is "planned for release in 2026"; whether it shipped by 2026-11-20 was not established.
-- The Atari 2600+ plays original 2600 and 7800 cartridges
+  Wikipedia says the M64 is "planned for release in 2026"; a citation in its lead, a TechRadar review dated 2026-06-09,
+  is titled as a month's use of an M64 (not opened); whether it went on sale by 2026-11-20 was not established.
+- The Atari Flashback line began in 2004, before this note's date rule; it is listed because it continues
+  ("Atari Flashback", infobox and lead).
+  The Atari 2600+ plays original 2600 and 7800 cartridges
   but "uses software-based emulation instead of a binary compatible system-on-chip hardware", so some cartridges fail
-  ("Atari 2600+"; the quotation drops link markup).
+  ("Atari 2600+", "Software"; the quotation drops link markup).
   Of the RetroN 5, Wikipedia reports that RetroArch's developers said "the RetroN 5 violates several licenses",
   because it shipped emulators under a non-commercial licence ("RetroN", "RetroN 5 (2014)").
 - Wikipedia describes the Anbernic line as playing older systems "through software emulation"
@@ -391,6 +434,7 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 - No articles exist for the Retroid Pocket, AYN Odin, Miyoo Mini, OneXPlayer, Zotac Zone, Mad Catz M.O.J.O.,
   Razer Forge TV, Analogue Duo, Legion Go S, or Atari 7800+
   (each title returned 404 from Wikipedia); they are not listed in the table.
+  "TECNO Pocket Go" redirects to a list in "Tecno Mobile".
 - Hardware clusters: the Shield TV uses the Switch's Tegra X1 and X1+;
   the NES and Super NES Classic Editions share the Allwinner R16; the Neo Geo X shares the GCW Zero's Ingenic JZ4770;
   the Steam Deck and the ROG Xbox Ally (Z2 A) both pair Zen 2 with RDNA 2
@@ -400,28 +444,31 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 
 | Device | Maker | First release | Reading as console | Reading as host |
 |---|---|---|---|---|
-| Evercade handheld, VS, EXP, Nexus | Blaze | 2020-05-22 | own cartridges; a native game | licensed emulators |
+| Evercade handheld, VS, EXP, Nexus | Blaze | 2020-05-22 | own cartridges; native titles | licensed emulators |
 | Super Pocket | HyperMegaTech! (Blaze) | 2023-11-14 | plays Evercade cartridges | as Evercade |
 | Polymega | Playmaji | 2021-09-12 | own modules | licensed emulators, x86 Linux |
-| Atari VCS (2021) | Atari | NA 2021-06-15 | marketed as a console | x86 PC with Debian-based OS |
+| Atari VCS (2021) | Atari | AU, NZ 2021-06-10; NA 2021-06-15 | marketed as a console | x86 PC with Debian-based OS |
 | GP2X; GP2X Wiz; Caanoo | GamePark Holdings | KR 2005-11-10 | own homebrew | emulation focus, Linux |
-| Dingoo A320, A330 | Dingoo Digital | 2009 (from memory) | own games | sold with emulators |
-| GCW Zero | Game Consoles Worldwide | 2013 | homebrew | "homebrew and emulation" |
+| Dingoo A320, A330 | Dingoo Digital | CN 2009-02 | own games | sold with emulators |
+| GCW Zero | Game Consoles Worldwide | 2013 | homebrew and indie games | runs emulators |
 | Pandora | OpenPandora | 2010-05 | handheld games | handheld computer |
 | Analogue Nt (2015) | Analogue | 2015 | original Nintendo chips | neither: no emulation inside |
-| Atari Flashback 2, 2+ | AtGames | not stated | a hardware re-implementation | retro mini |
-| ZX Spectrum Next | SpecNext | 2017-12 | home computer | FPGA computer |
+| Atari Flashback 2, 2+ | Legacy Engineering | 2005-08; 2+ 2010-02-22 | a hardware re-implementation | retro mini |
+| ZX Spectrum Next | SpecNext | 2017-12 (board) | home computer | FPGA computer |
 | Xperia Play | Sony Ericsson | 2011 | game phone | Android phone |
 
 - Every row rests on the Wikipedia article on the device.
-  Blaze says "The Evercade runs emulators that have been licensed by Blaze or custom-built in some cases",
-  and one Evercade title runs natively ("Evercade").
+  The article says "The Evercade runs emulators that have been licensed by Blaze or custom-built in some cases";
+  at least one title, Full Void, runs natively, and the Nexus comes with native ports of two games ("Evercade").
   The Evercade VS's processor is a Rockchip RK3328 in its own article
   and an unknown Cortex-A7 in "List of home video game consoles".
 - The Atari VCS's storefront is set to close on 2027-02-01 ("Atari VCS (2021 console)").
 - The Analogue Nt's article lists a Ricoh 2A03 and 2C02, the NES's own chips; if catalogued,
   it is an NES variant for `R1-15` (inference).
-- The Dingoo's year of release is not in its article; 2009 is from memory.
+- The ZX Spectrum Next's date is the development board's; the cased machine followed in February 2020
+  ("ZX Spectrum Next", infobox).
+- The Xperia Play is the one phone listed, flagged because `R1-07` lists it as a host
+  (`R1-07`, "Emulator hosts, PC-based systems, and cancelled systems").
 
 ### Announced and not sold
 
@@ -429,8 +476,8 @@ Each row rests on the Wikipedia article on the device or line, read raw.
   its article now says the delays left "the console without a release date",
   that its maker said in November 2023 it lacked funds to produce units,
   and that Atari SA bought the Intellivision brand in May 2024 without the Amico ("Intellivision Amico").
-- A PlayStation 6 has no article; "Ninth generation of video game consoles" says the memory shortage is expected to
-  delay "the planned PlayStation 6".
+- A PlayStation 6 has no article; "Ninth generation of video game consoles" says rising hardware costs,
+  including memory, are expected to delay the next generation, "the planned PlayStation 6 from Sony" among it.
 - Microsoft's next Xbox, codename Project Helix,
   was announced in March 2026 and is described as re-evaluated for component prices
   ("Xbox", "Project Helix"; "Ninth generation of video game consoles").
@@ -442,57 +489,76 @@ Each row rests on the Wikipedia article on the device or line, read raw.
   (the Steam Frame, released 2026-09-18, and the Meta Quest line),
   cloud gaming services and their clients
   (Stadia, Luna, Xbox Cloud Gaming, OnLive),
-  and phones are not consoles in the roadmap's sense (inference); the owner decides whether any belongs here.
+  and phones other than the flagged Xperia Play are not consoles in the roadmap's sense (inference);
+  the owner decides whether any belongs here.
 
 ### Boundary cases
 
 | System | By survey | By date | Placed |
 |---|---|---|---|
-| Xbox 360 | `R1-23`, which depends on `R1-03` and `R1-04` | seventh generation | `R1-07` |
+| Xbox 360 | `R1-23`, which depends on `R1-03` and `R1-04` | seventh generation | `R1-07`, shared placement |
 | Wii; Wii U; 3DS; Vita and PS TV | `R1-17`, `R1-13`, `R1-20` (on `R1-03`) | seventh and eighth | `R1-07` |
-| Seventh-generation minor devices | none | 2005 to 2012 | here, overlapping `R1-07` |
+| Minor devices and hosts of 2005 to 2013 | none | 2005 to 2013 | here, overlapping `R1-07` |
 | PlayStation Portal | `R1-21` names PS3, 4, 5 only | 2023 | here, in its family |
 
-- The placements follow the roadmap's survey dependencies and the note's date rule (roadmap, "System family surveys").
-  The previous catalogue's handheld share reaches 2012, so the Gizmondo, Game Wave, Beena, V.Flash, HyperScan, Zeebo,
-  the GP2X line, and the Dingoo may be listed in both; which note keeps them is open (Open questions).
+- The placements follow the roadmap's survey dependencies ("System family surveys"), its era rule
+  ("Hardware primers"), and the note's date rule.
+  `R1-07` places unsurveyed systems by years of sale from 1998 to 2013, so both notes list the Gizmondo, Game Wave,
+  Beena, V.Flash, HyperScan, Zeebo, V.Smile Baby
+  (with the V.Smile there),
+  the GP2X line, the Dingoo, the Pandora, the Neo Geo X, the GCW Zero, the Xperia Play, the Nvidia Shield Portable,
+  and the Ouya (`R1-07`, "Minor and educational home systems", "Other dedicated handhelds", and "Emulator hosts,
+  PC-based systems, and cancelled systems"); which note keeps them is open (Open questions).
 
 ### Patterns across the catalogue
 
-- The PlayStation and Nintendo families had system software releases in 2026: the PS3 (4.93, 2026-03-18), the PS4
+- Every surveyed family had a system software release in 2026: the PS3 (4.93, 2026-03-18), the PS4
   (14.02, 2026-11-04),
-  the PS5 (update 14, 2026-09-16), and the Switch and Switch 2
-  (23.5.0, 2026-11-10); the Xbox articles give current version numbers without dates (findings above).
-  The PS3 was discontinued in Japan on 2017-05-29 and still receives updates ("PlayStation 3", infobox).
-- Processor families: Cell in the PS3; AMD Jaguar in the PS4 and Xbox One families; AMD Zen 2 with RDNA 2 in the PS5,
-  Xbox Series, Steam Deck, and ROG Xbox Ally; Arm cores with Nvidia graphics in the Switch, Switch 2, and Shield devices
+  the PS5 (update 14, 2026-09-16), the Switch and Switch 2 (23.5.0, 2026-11-10), and the Xbox One and Series
+  (10.0.26100.9662, 2026-11-11, by "Xbox system software") (findings above).
+  The PS3 was discontinued in Japan on 2017-05-29 ("PlayStation 3", infobox) and still receives updates
+  ("PlayStation 3 system software", lead).
+- Processor families: Cell in the PS3; AMD Jaguar in the PS4 and Xbox One families,
+  the One X's cores being Jaguar-compatible; AMD Zen 2 with RDNA 2 in the PS5, Xbox Series, Steam Deck,
+  and ROG Xbox Ally; Arm cores with Nvidia graphics in the Switch, Switch 2, and Shield devices
   (rows above; the grouping is the note's).
-- Region locks are nearly gone from the surveyed families: the PS3 has one region-locked game, the PS4, PS5, Xbox One,
-  and Series are region-free, and the exceptions are the Switch's Tencent model and the Switch 2's Japan-only model
-  ("Region lock"; findings above).
-- Media is moving from discs to downloads: the PS5 Digital, PS5 Pro, Series S, and all-digital Series X have no drive;
-  Switch 2 Game-Key Cards hold only a licence; and Sony has announced the end of physical game discs from 2028
-  (findings above).
-  For an emulator, a game that exists only as a download or a licence card is reached only through the user's own copy
-  (inference; `R0-02` records the law).
-- Fast storage with hardware decompression appears in the PS4 (zlib), PS5 (zlib and Kraken), and Xbox Series
-  (zlib and BCPack) (findings above).
-- Encryption and signed boot chains are described for every surveyed family at the level the sources give
+- Region locks on native games are nearly gone from the surveyed families: one PS3 game is region-locked, PS4, PS5,
+  Xbox One, and Series games are region-free,
+  and the Switch's exceptions are Tencent's Chinese cartridges and the Switch 2's Japan-only model.
+  The PS3 still locks PS1 and PS2 games and films, and PlayStation downloadable content is tied to its region
+  ("Region lock", "Sony"; findings above).
+- Media is moving from discs to downloads: the PS5 Digital, PS5 Pro, Series S,
+  and all-digital Series X ship without a drive,
+  though the revised PS5 Digital Edition and the Pro take one sold separately
+  ("PlayStation 5");
+  Switch 2 Game-Key Cards hold only a licence;
+  and Sony has announced it will stop producing physical game discs from 2028 (findings above).
+  For an emulator, a game that exists only as a download, or whose card holds only a licence,
+  is reached only through the user's own copy (inference; `R0-02` records the law).
+- Hardware decompression appears in the PS4 (zlib), PS5 (zlib and Kraken), and Xbox Series
+  (zlib and BCPack); the PS5 and Series pair it with SSDs, the PS4 with a hard disk (findings above).
+- Protection described in the sources read: for the PlayStation family,
+  the PS3's Blu-ray key renewal and the PS5's hypervisor; for the Xbox family, the hypervisor; for the Nintendo family,
+  the Switch's boot ROM flaw and the T239's encrypted carveouts and game-card identifiers.
+  No signed boot chain is described for the PlayStation or Xbox families in the sources read
   (findings above); `R0-02`, "Firmware, keys, and game copies", records what follows for keys.
 
 ### Coverage of sources
 
-- psdevwiki gives model codes, boards, and process sizes for the PS3, PS4, and PS5,
-  read through web archive captures because the live site served a challenge page
+- psdevwiki gives model codes for the PS3, PS4, and PS5, boards for the PS3 and PS4, and process sizes for the PS3,
+  read through existing web archive captures because the live site served a challenge page
   (psdevwiki, "SKU Models", archived copies).
   SwitchBrew gives boards, chips, and system versions for the Switch and Switch 2.
-- Sony's open-source pages list the Portal's system software releases (Sony, open-source software).
-- No registered source beyond Wikipedia covers the Xbox One or Xbox Series,
-  or any other row in this note. psdevwiki's pages on the PS4's security processor
-  and hypervisor had no archive capture.
+- Sony's open-source pages list the Portal's system software versions (Sony, open-source software).
+- Beyond Wikipedia, only Sony's open-source page (Portal) and Panic's licence (Playdate) are cited
+  for rows outside the PlayStation and Nintendo hubs.
+  For the Xbox One and Series, the register's Xbox hubs
+  (`xboxdevwiki.net`, `free60.org`),
+  which serve the original Xbox and the Xbox 360, were not searched, and the Hot Chips talk was not read
+  (findings above). psdevwiki's PS4 "Hypervisor" page has no archive capture (web archive index, both host spellings).
 - Makers' product pages for the Steam Deck, Analogue's devices, Evercade, ModRetro,
-  and Nvidia's Shield were read on their prose pages for evaluation and are not cited, because they are not registered;
-  Analogue's site terms limit its content to "personal, non-commercial use" (research log).
+  and Nvidia's Shield were read on their prose pages for evaluation and are not cited, because they are not registered
+  (research log).
 
 ## Options and trade-offs
 
@@ -500,9 +566,10 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 
 - **What:** keep a row for each revision, as here, or one row per family with revisions as notes.
 - **Costs:** a row per revision repeats most columns; one per family hides that the PS5 Pro, the One X,
-  and the Switch 2's Japan-only model are separate targets.
+  and the Switch Lite differ in hardware (inference).
 - **Gains:** per revision shows which models differ for software; per family keeps the table short.
-- **Used by:** psdevwiki and SwitchBrew list every model and board.
+- **Used by:** psdevwiki and SwitchBrew list models and boards in detail, though not every revision:
+  psdevwiki lacks the 825 GB Slim Digital, and SwitchBrew lists boards, not regional models.
 
 ### Where a device the rule does not name belongs
 
@@ -510,7 +577,8 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 - **Costs:** a console reading adds emulation targets with Wikipedia as their only source;
   a host reading leaves closed platforms such as the Evercade without a study.
 - **Gains:** a console reading keeps closed new-content platforms in view; a host reading keeps the research finite.
-- **Used by:** the roadmap's rule names four kinds of host and none of the flagged kinds.
+- **Used by:** the roadmap's rule names PC and Android handhelds, microconsoles, FPGA devices, and retro minis;
+  each flagged device falls between these kinds or has a second reading outside them (inference).
 
 ### A streaming client in the catalogue
 
@@ -522,21 +590,25 @@ Each row rests on the Wikipedia article on the device or line, read raw.
 ### Systems on sale
 
 - **What:** catalogue systems on sale with a date and re-check them, or freeze the catalogue at one date.
-- **Costs:** re-checking is recurring work; a frozen date goes stale within months.
+- **Costs:** re-checking is recurring work; a frozen date goes stale within months
+  (inference from the 2026 changes in the findings).
 - **Gains:** a dated catalogue says what was true when; re-checks keep the system scope proposal current.
 - **Used by:** this note dates every statement about a system on sale.
 
 ## Implications for Rustalgia
 
-- Every surveyed family is still sold or updated,
-  so the legal exposure that `R0-02` records for systems on sale applies to all three surveys
-  (`R1-14`, `R1-21`, `R1-23`); this feeds the system scope proposal (`R6-01`).
-- Games for disc-less models, Game-Key Cards, and download-only consoles exist only
-  as the user's own downloads (inference); this feeds `R2-11` on media and storage formats.
+- Every surveyed family is still sold or updated, which bears on all three surveys
+  (`R1-14`, `R1-21`, `R1-23`) and on the system scope proposal (`R6-01`).
+  `R0-02` does not sort risk by whether a system is on sale; it finds encryption the common fact in emulator disputes
+  (`R0-02`, "Implications for Rustalgia"), so how being on sale bears on risk is the note's inference.
+- Download-only games, and games whose Game-Key Card holds only a licence, exist only
+  as the user's own downloads (inference); the disc-less PS5 models take an add-on drive;
+  this feeds `R2-11` on media and storage formats.
 - Hardware decompression for zlib, Kraken, and BCPack is part of the PS4, PS5, and Series storage paths;
-  whether the formats are documented is a question for `R1-04` and `R1-21`, and their licensing for `R0-03` (inference).
-- The host list shows a few processor families covering many devices, which `R3-07`
-  and `R3-12` can test by family (inference).
+  whether the formats are documented is a question for `R1-04`, `R1-21`, and `R1-23`, and their licensing
+  for `R0-03` (inference).
+- Three processor families, AMD x86, Nvidia Tegra, and Altera Cyclone FPGAs, cover 14 of the 35 host rows,
+  which `R3-07` and `R3-12` can test by family (counted from the table; inference).
 - The Xbox One and Series rest on Wikipedia alone; `R1-23` needs a registered source before relying on any figure.
 
 ## Open questions
@@ -547,9 +619,10 @@ Each row rests on the Wikipedia article on the device or line, read raw.
   A decision for the owner.
 - Which catalogue keeps the seventh-generation minor devices that both this note and `R1-07` may list?
   A decision for the owner when both are open.
-- What are the PS3's RSX clock, the Series S's GPU clock, and the Switch 2's memory bandwidth, from a primary source?
+- What are the Series S's GPU clock and the Switch 2's memory bandwidth, from a primary source?
   `R1-04` and the surveys.
-- What are the Xbox Series model numbers, and is there a registered source for the Xbox One and Series hardware?
+- What are the model numbers of the 2 TB and all-digital Series X,
+  and is there a registered source for the Xbox One and Series hardware, such as the Hot Chips talk?
   `R1-23`.
 - What processor do the PlayStation Portal and the Evercade VS use?
   A source beyond Wikipedia, which disagrees with itself.
@@ -575,6 +648,7 @@ Wikipedia, surveyed families (last modified, GMT):
 - "Nintendo Switch" 2026-11-09 02:30; "Nintendo Switch 2" 2026-11-17 21:58;
   "Nintendo Switch system software" 2026-10-25 13:38; "Nintendo Game Card" 2026-11-11 04:02; "Tegra" 2026-11-14 04:41;
   "Region lock" 2026-11-09 02:36.
+- "Seventh generation of video game consoles" revision 1386320369.
 
 Wikipedia, other devices (revision IDs):
 
@@ -587,8 +661,8 @@ Wikipedia, other devices (revision IDs):
   "GCW Zero" 1366037317.
 - "Ouya" 1386318623; "GameStick" 1386313319; "Nexus Player" 1380498656; "Nvidia Shield TV" 1384340364;
   "Amazon Fire TV" 1385876881; "Apple TV (device)" 1386231890.
-- "Nvidia Shield Portable" 1381277348; "Nvidia Shield Tablet" 1382229923; "Logitech G Cloud" 1370941045;
-  "Razer Edge" 1366404016; "Anbernic" 1384269816.
+- "Nvidia Shield Portable" 1381277348; "Nvidia Shield Tablet" 1382229923; "GPD XD" 1367516307;
+  "Logitech G Cloud" 1370941045; "Razer Edge" 1366404016; "Anbernic" 1384269816.
 - "GPD Win" 1382382620; "Ayaneo" 1373675588; "Ayaneo 2" 1335970637; "Steam Deck" 1385949939; "Asus ROG Ally" 1385002726;
   "Lenovo Legion Go" 1374923849; "MSI Claw A1M" 1383630618; "ROG Xbox Ally" 1386825038; "Steam Machine" 1386682817;
   "Atari VCS (2021 console)" 1386169078.
@@ -609,17 +683,24 @@ Hubs:
 - psdevwiki, "SKU Models" for the PS3, PS4, and PS5, and PS5 "Hypervisor", read from existing archive captures:
   `https://web.archive.org/web/20261107043400/https://www.psdevwiki.com/ps3/SKU_Models`
   (PS3, last edited 2026-02-03),
-  and the captures of 2026-07-10 (PS4, last edited 2025-09-22), 2026-03-12 (PS5, last edited 2026-02-22), and 2026-05-19
-  (Hypervisor, last edited 2024-10-30).
+  `https://web.archive.org/web/20260710164056/https://www.psdevwiki.com/ps4/SKU_Models`
+  (PS4, last edited 2025-09-22),
+  `https://web.archive.org/web/20260312145723/https://www.psdevwiki.com/ps5/SKU_Models`
+  (PS5, last edited 2026-02-22),
+  and `https://web.archive.org/web/20260519183327/https://www.psdevwiki.com/ps5/Hypervisor` (last edited 2024-10-30).
+  The live pages are not gone; they served a challenge page, which is why captures were used.
 - SwitchBrew, "Hardware" (revision 15339), "Switch 2: Hardware" (14956), "Switch 2: Tegra T239" (15493),
   "System Versions" (15460), "Switch 2: System Versions" (15457), "Gamecard" (12871), read as raw wikitext:
   `https://switchbrew.org/w/index.php?title=Hardware&action=raw` and sibling pages.
-- Sony, open-source software pages for the PS3, PS5, and PlayStation Portal: `https://www.playstation.com/en-us/oss/`.
+- Sony, "Source Code for Open-Source Software Used in PlayStation Portal Remote Player (US)":
+  `https://www.playstation.com/en-us/oss/accessories/playstation-portal-remote-player/`.
 
 Licences:
 
-- Panic, Playdate SDK License 1.0: `https://play.date/dev/sdk-license/`.
+- Panic, Playdate SDK License 1.0, dated 2022-02-25: `https://play.date/dev/sdk-license/`.
 
 Project documents:
 
 - The research roadmap, `docs/roadmap/research.md`; `R0-02`; `R0-05`; ADR 0001; the source register.
+- `R1-07`, the sixth-generation catalogue, a draft not yet merged:
+  `docs/research/topics/R1-07-catalogue-sixth-generation.md` at commit `ec00ea7`.
