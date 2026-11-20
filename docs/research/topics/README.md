@@ -16,6 +16,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R0-04](R0-04-glossary-and-conventions.md) | Which terms need fixed meanings, and what a note may quote and tabulate |
 | [R0-05](R0-05-source-map.md) | Where each system's documentation lives, and each hub's licence, origin, and tier |
 | [R0-06](R0-06-provenance-controls.md) | What can record and control where agent-written work comes from |
+| [R1-07](R1-07-catalogue-sixth-generation.md) | Every console and handheld of the sixth-generation era, with sources |
 
 ## Conventions
 
