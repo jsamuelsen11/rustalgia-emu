@@ -56,6 +56,7 @@ This installs every tool at the version recorded in `.config/mise.lock` and inst
 | `mise run security` | Scans for secrets and audits the CI workflows |
 | `mise run check` | Runs every CI check except the pull request title, without changing files |
 | `mise run pin` | Pins GitHub Actions to commit SHAs |
+| `mise run label-pr` | Sets a pull request's labels; needs `GH_REPO` and `PR_NUMBER` |
 
 Each tool also has its own task, such as `mise run lint:vale`.
 Run `mise tasks` to list them.
@@ -134,6 +135,11 @@ Install plugins with the `/plugin` command in Claude Code.
 Each pull request runs the `format`, `lint`, `links`, `security`, and `pr-title` jobs.
 The `gate` job passes when all of them succeed, and it is the one check a merge requires.
 A weekly job rechecks external links.
+
+A separate `label` job sets each pull request's labels: the kind of change from its title, the areas from its files,
+`controls` when it touches `.github/`, `.config/`, or `.claude/`,
+and `needs-owner` when its description lists a decision for the owner.
+Run it by hand with `mise run label-pr`.
 
 ## License
 

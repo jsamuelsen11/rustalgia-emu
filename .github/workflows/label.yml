@@ -1,0 +1,33 @@
+name: Label
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: label-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    name: label
+    # Dependabot's token cannot write labels, and Dependabot labels its own pull requests.
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read # check out the task script
+      pull-requests: write # add and remove labels on the pull request
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
+      - name: Set labels from the title, the files, and the description
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: mise run label-pr

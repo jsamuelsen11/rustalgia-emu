@@ -1,0 +1,62 @@
+#!/usr/bin/env sh
+#MISE description="Set a pull request's labels from its title, its files, and its description"
+set -eu
+
+# Needs GH_REPO as owner/name, PR_NUMBER, and a token for gh.
+# Set LABEL_PR_DRY_RUN=1 to print what would change without changing it.
+: "${GH_REPO:?set GH_REPO to owner/name}"
+: "${PR_NUMBER:?set PR_NUMBER}"
+
+# The labels this task owns. It adds and removes these and leaves every other label alone.
+managed="documentation enhancement bug tooling research decision roadmap controls needs-owner"
+
+pull="repos/$GH_REPO/pulls/$PR_NUMBER"
+issue="repos/$GH_REPO/issues/$PR_NUMBER"
+title=$(gh api "$pull" --jq .title)
+body=$(gh api "$pull" --jq '.body // ""')
+files=$(gh api --paginate "$pull/files" --jq '.[].filename')
+current=$(gh api "$issue/labels" --jq '.[].name')
+
+wanted=""
+want() { wanted="$wanted $1"; }
+
+# The kind of change, from the Conventional Commits type in the title.
+case "$title" in
+  docs*) want documentation ;;
+  feat*) want enhancement ;;
+  fix*) want bug ;;
+  chore* | build* | ci* | test* | refactor* | perf* | style*) want tooling ;;
+esac
+
+# The areas touched, from the paths of the changed files.
+if printf '%s\n' "$files" | grep -q '^docs/research/'; then want research; fi
+if printf '%s\n' "$files" | grep -q '^docs/adr/'; then want decision; fi
+if printf '%s\n' "$files" | grep -q '^docs/roadmap/'; then want roadmap; fi
+if printf '%s\n' "$files" | grep -Eq '^\.(github|config|claude)/'; then want controls; fi
+
+# Whether the owner has something to decide: the "Decisions for you" section holds more than "None".
+decisions=$(printf '%s\n' "$body" | tr -d '\r' | awk '
+  /^## / { inside = ($0 == "## Decisions for you"); next }
+  inside { print }
+' | sed -e 's/<!--.*-->//' | awk '
+  /<!--/ { comment = 1 }
+  !comment { print }
+  /-->/ { comment = 0 }
+' | grep -v '^[[:space:]]*$' || true)
+case "$(printf '%s' "$decisions" | tr '[:upper:]' '[:lower:]')" in
+  "" | none | none.) ;;
+  *) want needs-owner ;;
+esac
+
+has() { printf '%s\n' "$1" | tr ' ' '\n' | grep -qxF -- "$2"; }
+
+for label in $managed; do
+  if has "$wanted" "$label" && ! has "$current" "$label"; then
+    echo "add $label"
+    [ -n "${LABEL_PR_DRY_RUN:-}" ] || gh api -X POST "$issue/labels" -f "labels[]=$label" --silent
+  elif ! has "$wanted" "$label" && has "$current" "$label"; then
+    echo "remove $label"
+    [ -n "${LABEL_PR_DRY_RUN:-}" ] || gh api -X DELETE "$issue/labels/$label" --silent
+  fi
+done
+echo "labels wanted:$wanted"
