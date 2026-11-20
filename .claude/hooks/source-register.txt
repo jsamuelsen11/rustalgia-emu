@@ -24,7 +24,7 @@ open | pcsx2/pcsx2 | GPL-3.0 | - | 2026-11-17 | licence file
 open | jpd002/play- | BSD-2-Clause | - | 2026-11-17 | licence file
 open | hrydgard/ppsspp | GPL-2.0-or-later | reuses PSPSDK headers | 2026-11-17 | licence file, docs
 open | bsnes-emu/bsnes | GPL-3.0-or-later | - | 2026-11-17 | licence file
-open | dolphin-emu/dolphin | GPL-2.0-or-later | parts under other licences | 2026-11-17 | COPYING
+open | dolphin-emu/dolphin | GPL-2.0-or-later | parts under other licences; DSP ROM closed | 2026-11-19 | COPYING, FAQ
 open | ares-emulator/ares | ISC | parts from MAME under BSD-3-Clause | 2026-11-17 | licence file
 open | sourmesen/mesen2 | GPL-3.0-or-later | archived | 2026-11-17 | README
 open | nesdev-org/mesence | GPL-3.0-or-later | community fork of Mesen | 2026-11-17 | README
@@ -49,12 +49,12 @@ walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-17
 walled | pokemon-speedrunning/gambatte-core | GPL-2.0 | fork of Gambatte | 2026-11-17 | README
 walled | libretro/gambatte-libretro | GPL-2.0 | fork of Gambatte | 2026-11-17 | licence metadata
 walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
-walled | mamedev/mame | GPL-2.0, texts disagree; most files BSD-3 | - | 2026-11-17 | COPYING, docs
+walled | mamedev/mame | GPL-2.0, texts disagree on or later | most files BSD-3 | 2026-11-19 | COPYING, legal page, docs
 walled | tasemulators/bizhawk | MIT own code; repository mixes licences | - | 2026-11-17 | licence file
 walled | provenance-emu/provenance | BSD-style plus branding clause | bundles many cores | 2026-11-17 | licence file
 
 # Emulators: closed tier. Not open source, or no licence.
-closed | stenzek/duckstation | CC BY-NC-ND 4.0 | - | 2026-11-17 | licence file
+closed | stenzek/duckstation | CC BY-NC-ND 4.0 | - | 2026-11-19 | licence file, README
 closed | snes9xgit/snes9x | own non-commercial licence | - | 2026-11-17 | licence file
 closed | sinamas/gambatte | none shown | "taken private" | 2026-11-17 | README
 
@@ -62,7 +62,7 @@ closed | sinamas/gambatte | none shown | "taken private" | 2026-11-17 | README
 closed | pret/ | none | disassemblies of games | 2026-11-17 | project site
 closed | zeldaret/ | none | decompilations of games | 2026-11-17 | README
 closed | n64decomp/ | CC0 on a decompilation | decompilations of games | 2026-11-17 | README
-closed | pcsx-redux/nugget | - | OpenBIOS, rewritten from a BIOS dump | 2026-11-17 | README
+closed | pcsx-redux/nugget | MIT | holds OpenBIOS, a reimplementation of the BIOS, and a kit | 2026-11-19 | README
 
 # Libraries whose origin is disputed: closed tier.
 closed | devkitpro/libogc | zlib-style | accused of copying a maker's kit and RTEMS | 2026-11-17 | R0-01
@@ -71,10 +71,452 @@ closed | devkitpro/libogc | zlib-style | accused of copying a maker's kit and RT
 tainted | psx-spx.consoledev.net | none obtained | maintainers say it copies secret material | 2026-11-17 | home page
 tainted | psx-spx/psx-spx.github.io | none obtained | repository of the same reference | 2026-11-17 | home page
 tainted | problemkaputt.de/psx-spx | copyright notice | the document that statement is about | 2026-11-17 | R0-01
+tainted | www.psx-spx.consoledev.net | none obtained | same reference with the www prefix | 2026-11-19 | R0-05
+tainted | www.problemkaputt.de/psx-spx | copyright notice | same document with the www prefix | 2026-11-19 | R0-05
+tainted | problemkaputt.de/psxspx | copyright notice | the same document's per-chapter pages | 2026-11-19 | R0-05
+tainted | www.problemkaputt.de/psxspx | copyright notice | per-chapter pages, www prefix | 2026-11-19 | R0-05
 
 # References: open tier.
-open | gbdev.io/pandocs | CC0 | origin of its facts not stated | 2026-11-17 | History page
-open | problemkaputt.de/gbatek | copyright notice, no grant | author's credits | 2026-11-17 | page footer
-open | nesdev.org/wiki | site calls it public domain | not stated | 2026-11-17 | disclaimer page
-open | 3dbrew.org | none stated | reverse engineering; bars NDA material | 2026-11-17 | Copyrights page
-open | wiibrew.org | none stated | bars leaked kit content | 2026-11-17 | Policy page
+open | gbdev.io/pandocs | CC0 | origin of its facts not stated | 2026-11-19 | About, History, References pages
+open | problemkaputt.de/gbatek | notice, no grant | credits; DSi parts name leaked material | 2026-11-19 | footer, About
+open | nesdev.org/wiki | disclaimer: public domain; none set | origin not stated | 2026-11-19 | disclaimer page
+open | 3dbrew.org | none stated | reverse engineering; bars NDA material, rule dated 2011 | 2026-11-19 | Copyrights page
+open | wiibrew.org | none stated | bars leaked kit content; origin not stated | 2026-11-19 | Policy page, rights setting
+
+# ---- Added by the source map (R0-05), docs/research/topics/R0-05-source-map.md. ----
+# A web address is matched as written: "example.org/wiki" does not match "www.example.org/wiki".
+# "none stated" means none on the pages read; the note lists the pages.
+# The guard lets through an address that equals a closed or walled pattern exactly, as it does a bare repository page.
+# A pattern for one page or one archive item is therefore cut short, so that the full address continues past it.
+
+# Game Boy and Game Boy Advance: references and research, open tier.
+open | gbdev/pandocs | CC0-1.0 | repository of Pan Docs; origin of its facts not stated | 2026-11-19 | README
+open | gbdev.io | GPL-3.0 site and list | community site, a lead; no rule on leaks | 2026-11-19 | home, AI policy
+open | gbdev/awesome-gbdev | GPL-3.0 | list, a lead; links disassemblies and boot ROM pages | 2026-11-19 | README
+open | gbdev/gbdev.github.io | GPL-3.0 | source of gbdev.io | 2026-11-19 | licence metadata
+open | gbdev.gg8.se/wiki | none stated | owner asks that all information have a source | 2026-11-19 | Main Page
+open | gekkio/gb-ctr | CC-BY-SA-4.0 | cites Sharp data books; marks speculation | 2026-11-19 | README, title page
+open | gekkio.fi | none stated for site text | author's hardware research; hosts gb-ctr | 2026-11-19 | home page
+open | gekkio/gb-research | CC-BY-4.0; code Apache-2.0 OR MIT | traced from decap photographs | 2026-11-19 | README
+open | gekkio/gb-schematics | CC-BY-4.0 | traced from board scans | 2026-11-19 | README
+open | gbhwdb.gekkio.fi | CC-BY-SA-4.0 | photographs and data of consoles and cartridges | 2026-11-19 | home page
+open | furrtek/dmg-cpu-inside | CC-BY-SA-4.0 | traced from die photographs; archived | 2026-11-19 | README
+open | msinger/dmg-schematics | CC-BY-SA-4.0 | derived from Furrtek's schematics, with fixes | 2026-11-19 | README
+open | iceboy.a-singer.de | CC-BY-SA-4.0 | research pages for the same schematics | 2026-11-19 | home page
+open | raphael-boichot/game-boy-chips-decapping-project | GPL-3.0 | decapped chips; method stated | 2026-11-19 | README
+open | shonumi.github.io/dandocs | "Public Domain" by its author | author's research and others' | 2026-11-19 | About
+open | ashiepaws/gbedg | MIT | origin unstated | 2026-11-19 | README
+open | hacktix/gbedg | MIT | old name of ashiepaws/gbedg | 2026-11-19 | redirect
+open | gbdev/gb-opcodes | CC0-1.0 | opcode table; origin unstated | 2026-11-19 | licence metadata
+open | izik1/gbops | MIT | opcode table; origin unstated | 2026-11-19 | README
+open | gbdev/hardware.inc | CC0-1.0 | register definitions | 2026-11-19 | licence metadata
+open | mgba-emu/gbdoc | CC-BY-4.0 | mGBA's Game Boy notes; no push since 2019 | 2026-11-19 | licence metadata
+open | mgba.io | none stated for blog text | blog of an open-tier emulator | 2026-11-19 | home page, FAQ
+open | gbadev.net | see its parts | community site, a lead; chat rule bars leaked material | 2026-11-19 | chat page
+open | gbadev-org/awesome-gbadev | GPL-3.0, no-commercial notice | list; links a BIOS disassembly | 2026-11-19 | README
+open | gbadev-org/gbadoc | CC0-1.0 | CowBite descendant; chapters from other sites and emulators | 2026-11-19 | README
+open | gbadev.net/tonc | CC-BY-NC-SA-4.0 | tutorial; tested on emulator and hardware | 2026-11-19 | foreword
+open | coranac.com/tonc | author's terms; code free to use | original edition of Tonc | 2026-11-19 | introduction
+open | gbadev-org/libtonc | MIT | fork of the Tonc library | 2026-11-19 | licence metadata
+open | belogic.com/gba | none stated | "Unofficial" sound specification | 2026-11-19 | introduction
+open | copetti.org/writings/consoles | CC-BY-4.0 | a lead; some articles cite maker manuals | 2026-11-19 | footers
+open | flipacholas/architecture-of-consoles | CC-BY-4.0 | source of the same articles | 2026-11-19 | licence metadata
+open | archive.org/details/bitsavers_sharpdatabomputer | not read | Sharp data books, scans | 2026-11-19 | metadata
+
+# Game Boy and Game Boy Advance: emulators and kits met while evaluating.
+open | gekkio/mooneye-gb | GPL-3.0 | research emulator; needs a boot ROM | 2026-11-19 | README
+open | wilbertpol/mooneye-gb | GPL-3.0 | fork with more tests | 2026-11-19 | licence metadata
+open | nba-emu/nanoboyadvance | GPL-3.0-or-later | archived on GitHub | 2026-11-19 | README
+open | gbdev/rgbds | MIT | assembler | 2026-11-19 | licence metadata
+open | gvaliente/butano | zlib | bundles other libraries under their own licences | 2026-11-19 | README
+open | felixjones/gba-toolchain | zlib | - | 2026-11-19 | licence file
+walled | antoniond/giibiiadvance | GPL-2.0, or later not stated | emulator; holds TCAGBD | 2026-11-19 | README
+walled | skylyrac/giibiiadvance | GPL-2.0, only or later not stated | Codeberg home of the same | 2026-11-19 | README
+walled | shonumi/gbe-plus | GPL-2.0, or later not determined | emulator behind Dan Docs | 2026-11-19 | licence metadata
+walled | msinger/dmg-sim | CC-BY-SA-4.0 | code; licence not on the open list | 2026-11-19 | licence metadata
+closed | gbadev-org/tonc | CC-BY-NC-SA-4.0 | Tonc; licence bars commercial use | 2026-11-19 | licence file
+walled | mgba-emu/gbatek | none | copy of all GBATEK, with the DSi pages closed below | 2026-11-19 | metadata
+open | rust-console/gbatek-gbaonly | none | Markdown copy of GBATEK's GBA part, a reference | 2026-11-19 | metadata
+walled | gbdk-2020/gbdk-2020 | mix, one part unread | - | 2026-11-19 | licence file
+walled | devkitpro/libgba | Library GPL v2 with exceptions | or later not established | 2026-11-19 | licence file
+closed | devkitpro/libtonc | none shown | - | 2026-11-19 | metadata
+closed | devkitpro/buildscripts | none shown | toolchain build scripts | 2026-11-19 | metadata
+closed | aappleby/metroboy | none | gate-level simulation from die photographs | 2026-11-19 | README
+
+# Game Boy and Game Boy Advance: firmware, and maker software that others host. Closed tier.
+closed | gbdev.gg8.se/files/roms/bootroms | - | folder of boot ROM images | 2026-11-19 | folder index
+closed | gbdev.gg8.se/files/roms/dmg_test_prog | - | ROM of a Nintendo test cartridge | 2026-11-19 | folder readme
+closed | pikalaxalt/gba_bios | none | disassembly of the GBA BIOS | 2026-11-19 | README
+closed | cult-of-gba/bios | MIT | replacement GBA BIOS | 2026-11-19 | README
+closed | issotm/gb-bootroms | none shown | boot ROM project; README did not confirm its content | 2026-11-19 | README
+closed | mgba-emu/bios-dump | MIT | tool whose use obtains the BIOS; closed by its purpose | 2026-11-19 | README
+
+# Game Boy and Game Boy Advance: tests.
+open | gekkio/mooneye-test-suite | MIT | run on consoles by its author; has an emulator-only class | 2026-11-19 | README
+open | mattcurrie/mealybug-tearoom-tests | MIT | expected images from the author's emulator | 2026-11-19 | README
+open | mattcurrie/dmg-acid2 | MIT | reference image plus console photographs | 2026-11-19 | README
+open | mattcurrie/cgb-acid2 | MIT | reference image plus console photographs | 2026-11-19 | README
+open | mattcurrie/cgb-acid-hell | MIT | reference photograph of a console | 2026-11-19 | README
+open | liji32/samesuite | X11 | verification method not stated in the top README | 2026-11-19 | README, licence file
+walled | c-sp/game-boy-test-roms | MIT own files | bundles suites with other or no licences | 2026-11-19 | README
+walled | c-sp/gameboy-test-roms | MIT own files | old name of c-sp/game-boy-test-roms | 2026-11-19 | redirect
+open | c-sp/age-test-roms | MIT | named for the devices verified | 2026-11-19 | README
+open | aappleby/gbmicrotest | MIT | "checked on real hardware" | 2026-11-19 | README
+open | antoniond/gbc-hw-tests | MIT | archived; moved to Codeberg | 2026-11-19 | licence metadata
+open | ashiepaws/bullygb | MIT | hardware verification not examined | 2026-11-19 | licence metadata
+open | ashiepaws/scribbltests | MIT | hardware verification not examined | 2026-11-19 | licence metadata
+open | aaaaaa123456789/rtc3test | Unlicense | - | 2026-11-19 | licence metadata
+open | pinobatch/numism | Apache-2.0 | - | 2026-11-19 | licence metadata
+open | gbdev/gbemulatorshootout | MIT | emulator comparison; results are emulator results | 2026-11-19 | README
+open | singlesteptests/sm83 | MIT | generated by translating the ares core | 2026-11-19 | README
+open | singlesteptests/arm7tdmi | MIT | generated from NanoBoyAdvance | 2026-11-19 | README
+open | adtennant/gameboycputests | MIT | randomly generated; archived | 2026-11-19 | README
+open | jsmolka/gba-tests | MIT | hardware verification not stated | 2026-11-19 | README
+open | mgba-emu/suite | MIT | no README | 2026-11-19 | licence metadata
+open | nba-emu/hw-test | BSD-3-Clause | archived on GitHub; continues on Codeberg | 2026-11-19 | README
+open | densinh/fuzzarm | GPL-3.0 | generator; compared against emulators | 2026-11-19 | README
+open | pinobatch/240p-test-mini | GPL-2.0-or-later | display tests | 2026-11-19 | README
+walled | hades-emu/hades-tests | GPL-2.0, only or later not determined | - | 2026-11-19 | licence metadata
+closed | retrio/gb-test-roms | none | mirror of blargg's tests; results usable | 2026-11-19 | readme.txt
+closed | powerlated/turtletests | none | results usable | 2026-11-19 | metadata
+closed | pinobatch/little-things-gb | none | results usable | 2026-11-19 | metadata
+closed | nitro2k01/little-things-gb | none | results usable | 2026-11-19 | metadata
+closed | erickirschenmann/mbc3-tester-gb | none | disassembly of another author's test | 2026-11-19 | README
+closed | destoer/armwrestler-gba-fixed | none | results usable | 2026-11-19 | metadata
+closed | arisotura/arm7wrestler | none | results usable | 2026-11-19 | metadata
+closed | peterlemon/gba | none | tested on a console; results usable | 2026-11-19 | README
+
+# NES, SNES, Nintendo 64, Virtual Boy: references and research, open tier.
+open | snes.nesdev.org/wiki | CC0 | origin not stated; links the maker's developer manual | 2026-11-19 | footer
+open | forums.nesdev.org | none stated | forum, a lead | 2026-11-19 | terms page
+open | wiki.superfamicom.org | none stated | re-hosted third-party documents; origin not stated | 2026-11-19 | home page
+open | problemkaputt.de/fullsnes | notice, no grant | Anomie's specs, hardware tests, Snes9x | 2026-11-19 | About
+open | romhacking.net/documents | none stated | Anomie's documents; origin not stated | 2026-11-19 | entry, policy
+open | n64brew.dev | CC BY-SA 4.0 | origin not stated; describes and links the maker's kit | 2026-11-19 | footer
+open | n64.readthedocs.io | copyright notice, no grant | an emulator author's notes, a lead | 2026-11-19 | home page
+open | qmtpro.com/~nes | none stated | traced from die photographs | 2026-11-19 | index page
+open | visual6502.org | none stated | die photographs of a decapped chip | 2026-11-19 | home page, FAQ
+open | emu-russia/breaks | CC0-1.0 | circuits traced from die photographs | 2026-11-19 | licence file, README
+open | emu-russia/breaknes | CC0-1.0 | gate-level simulator from the same research | 2026-11-19 | licence file, README
+open | 6502.org | none stated | community hub; hosts makers' datasheets; summary only | 2026-11-19 | home page
+open | westerndesigncenter.com | all rights reserved | chip maker's own datasheets | 2026-11-19 | datasheet page 1
+open | archive.ares-emu.net/near.sh | none stated | mirror of Near's articles, a lead | 2026-11-19 | index pages
+open | perfectkiosk.net/stsvb | unclear | NEC manuals, community sites, original research | 2026-11-19 | About section
+open | tasvideos.org | CC BY 2.0 | emulator test results; lists maker test programs | 2026-11-19 | SiteLicense page
+open | n64.dev | none stated | link list, a lead; links closed material | 2026-11-19 | page
+open | n64dev.org | none stated | link list, a lead; hosts a copy of an NEC manual | 2026-11-19 | page
+open | dragonminded.com/n64dev | none stated | original libdragon author's research notes | 2026-11-19 | page
+
+# NES, SNES, Nintendo 64: emulators, components, and kits.
+open | higan-emu/higan | GPL-3.0-or-later | - | 2026-11-19 | licence file
+open | n64dev/cen64 | BSD-3-Clause | needs a console boot ROM to run | 2026-11-19 | licence file
+open | themaister/parallel-rdp | MIT | written after studying Angrylion, by its README | 2026-11-19 | README
+open | rasky/r64emu | GPL-3.0 | reversing on hardware | 2026-11-19 | README, licence metadata
+open | raddad772/jsmoo | MIT | generator of some test vectors; born from reading higan | 2026-11-19 | README
+open | dragonminded/libdragon | Unlicense | no dispute found; boot folder replaces maker code | 2026-11-19 | README
+open | cc65/cc65 | Zlib | - | 2026-11-19 | licence file
+open | alekmaul/pvsneslib | MIT | bundles third-party tools | 2026-11-19 | README, licence file
+open | vhelin/wla-dx | GPL-2.0-or-later | - | 2026-11-19 | licence file
+walled | trebonian/visual6502 | per-file notices; no licence file | simulator and chip data | 2026-11-19 | README
+walled | rpghacker/asar | LGPL-3.0-or-later or own terms | licence not on the open list | 2026-11-19 | licence file
+walled | tj90241/n64chain | LGPL-3.0 | licence not on the open list | 2026-11-19 | licence metadata
+walled | arm9/bass | none shown; upstream said ISC | fork of an assembler | 2026-11-19 | README
+closed | ata4/angrylion-rdp-plus | old MAME non-commercial terms | fork of Angrylion | 2026-11-19 | licence text
+closed | project64/angrylion-rdp | none shown | parent of the fork above | 2026-11-19 | licence metadata
+closed | dillonb/n64 | none | source of n64.readthedocs.io | 2026-11-19 | licence metadata
+
+# NES, SNES, Nintendo 64: maker material that others host, decompilations, and sites of game images. Closed tier.
+closed | ultra64.ca | all rights reserved | hosts the maker's manuals and kits | 2026-11-19 | home page, a list
+closed | www.ultra64.ca | all rights reserved | same site with the www prefix | 2026-11-19 | home page
+closed | archive.org/details/snesdevman | none | maker manual for licensed developers | 2026-11-19 | SNESdev wiki page
+closed | 64dd.org | none stated | hosts game images by its own statement | 2026-11-19 | home page
+closed | www.64dd.org | none stated | same site with the www prefix | 2026-11-19 | home page
+closed | decompals/ultralib | none | decompilation of the maker's library | 2026-11-19 | README
+closed | modernn64sdkarchives/n64sdkmod | none | the maker's kit repackaged | 2026-11-19 | README, N64brew page
+closed | crashoveride95/n64sdkmod | none | old address of the same | 2026-11-19 | redirect
+
+# NES, SNES, Nintendo 64: tests.
+open | 100thcoin/accuracycoin | MIT | designed for one console revision | 2026-11-19 | licence file, README
+open | singlesteptests/65x02 | MIT | generated by an emulator implementation | 2026-11-19 | README, licence file
+open | singlesteptests/65816 | MIT | no method stated in its README | 2026-11-19 | licence file
+open | singlesteptests/spc700 | MIT | generated with JSMoo | 2026-11-19 | description, licence file
+open | artemiourbina/240ptestsuite | GPL-2.0-or-later | tested on hardware; display tests | 2026-11-19 | README
+open | gilyon/snes-tests | MIT | origin of expected values not stated | 2026-11-19 | licence file, README
+open | undisbeliever/snes-test-roms | Zlib | - | 2026-11-19 | licence file
+open | peterlemon/n64 | Unlicense | tested on a console | 2026-11-19 | licence file, README
+open | lemmy-64/n64-systemtest | MIT | deprecated; origin of expected values not stated | 2026-11-19 | README
+open | thelemmy/nemu64-test | MIT | successor of n64-systemtest | 2026-11-19 | README, licence file
+closed | singlesteptests/processortests | none | archived parent of the per-processor sets | 2026-11-19 | metadata
+closed | christopherpow/nes-test-roms | none | mirror of many authors' tests; results usable | 2026-11-19 | metadata
+closed | peterlemon/snes | none | tested on a console; results usable | 2026-11-19 | README
+closed | dillonb/n64-tests | none | uses another author's code by permission | 2026-11-19 | README
+closed | bbbradsmith/snes_stuff | none | - | 2026-11-19 | licence metadata
+
+# Nintendo DS, DSi, and 3DS: references and documentation, open tier.
+open | dsibrew.org | none stated | origin not stated; no rule on leaked material | 2026-11-19 | Contributing page
+open | melonds.kuribo64.net | notice, no grant | developer's research; board is a lead | 2026-11-19 | footer
+open | citra.azahar-emu.org | none stated | archive of the Citra site, dated 2024-03-04 | 2026-11-19 | site disclaimer
+open | documentation-service.arm.com | Arm notices | no reproduction; one manual excludes models | 2026-11-19 | notices
+open | developer.arm.com | Arm notices | maker; serves the same manuals | 2026-11-19 | notices
+open | blocksds.skylyrac.net | CC BY-SA 4.0 | BlocksDS documentation | 2026-11-19 | page footer
+
+# Two parts of GBATEK, closed as a precaution until the owner decides. ADR 0001 has no test that fits them.
+closed | problemkaputt.de/gbatek-dsi-teak | notice, no grant | author: only source leaked | 2026-11-19 | keyword search
+closed | www.problemkaputt.de/gbatek-dsi-teak | notice, no grant | same pages, www prefix | 2026-11-19 | keyword search
+closed | problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | BPTWL; firmware leaked | 2026-11-19 | search
+closed | www.problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | same page, www prefix | 2026-11-19 | search
+
+# Nintendo DS, DSi, and 3DS: libraries, tools, and emulators.
+open | devkitpro/libctru | zlib text in README | origin not stated; no dispute found for it | 2026-11-19 | README
+open | devkitpro/libnds | zlib | origin not stated; no dispute found for this library | 2026-11-19 | licence file
+open | devkitpro/citro3d | zlib | - | 2026-11-19 | licence file
+open | devkitpro/picasso | MIT | credits reverse engineering of the 3DS GPU | 2026-11-19 | licence file, README
+open | devkitpro/dswifi | MIT | - | 2026-11-19 | licence file
+open | devkitpro/maxmod | ISC | - | 2026-11-19 | licence file
+open | blocksds/libnds | zlib; one driver separate | fork of libnds; canonical copy on Codeberg | 2026-11-19 | README
+open | blocksds/sdk | zlib, MIT, ISC, MPL-2.0, BSD by part | canonical copy on Codeberg | 2026-11-19 | licences page
+open | wwylele/teakra | MIT | thanks GBATEK's Teak section; own hardware testers | 2026-11-19 | licence file, README
+open | neobrain/nihstro | BSD-3-Clause | credits 3dbrew and aemstro | 2026-11-19 | README
+open | psi-rockin/corgi3ds | GPL-3.0 | 3DS emulator; needs boot ROMs | 2026-11-19 | README
+walled | azahar-emu/citra-web-archive | AGPL-3.0 | source of the Citra site archive | 2026-11-19 | licence metadata
+walled | devkitpro/calico | ZPL-2.1 | licence not on the open list | 2026-11-19 | licence file, README
+walled | devkitpro/3ds-examples | Public Domain Mark badge only | no licence file | 2026-11-19 | README
+closed | devkitpro/nds-examples | none found | no README or licence found | 2026-11-19 | metadata
+closed | smealum/aemstro | none | tool for 3DS shaders | 2026-11-19 | metadata, README
+closed | lumateam/luma3ds | GPL-3.0; parts MIT | reimplements parts of the 3DS system software | 2026-11-19 | README
+closed | plutooo/3dmoo | none | 3DS emulator prototype | 2026-11-19 | metadata
+
+# Nintendo DS, DSi, and 3DS: tests.
+open | jaklyy/polyrastertest | MIT | data recorded on a New 3DS XL in DS mode | 2026-11-19 | README
+open | archshift/crossbar9 | BSD-3-Clause | 3DS tests; borrows a decryption tool as a submodule | 2026-11-19 | README
+walled | aspargas2/3ds_hw_test | GPL-2.0, only or later not stated | memory tester | 2026-11-19 | metadata
+closed | mic-/armwrestler | none | results usable | 2026-11-19 | metadata, README
+closed | atem2069/armwrestler-fixed | none | results usable; "works on hardware" | 2026-11-19 | README
+closed | rockpolish/rockwrestler | none | results usable; tested on hardware with help | 2026-11-19 | README
+closed | normmatt/hwtests | none | copy of Citra's hardware tests; original gone | 2026-11-19 | README
+closed | wwylele/ctrhwtest | none | 3DS hardware tests | 2026-11-19 | README
+closed | jayfoxrox/3ds-tests | none | 3DS hardware tests | 2026-11-19 | README
+closed | aroulin/3ds-gpu-tests | none | 3DS shader tests | 2026-11-19 | README
+
+# GameCube, Wii, Wii U, Switch, Switch 2: references and documentation, open tier.
+open | wiiubrew.org | none stated | origin not stated; forbids leaked information | 2026-11-19 | Policy page
+open | switchbrew.org | none stated | origin not stated; no rule on leaks; covers Switch 2 | 2026-11-19 | About page
+open | gc-forever.com/wiki | none stated | origin not stated; no policy pages | 2026-11-19 | Main page
+open | hitmen.c02.at/files/yagcd | none stated | author: from games, patents, public papers | 2026-11-19 | 1.4, 19, 20
+open | wiki.dolphin-emu.org | CC BY-SA 3.0 | wiki of an open-tier emulator | 2026-11-19 | page footer, rights setting
+open | dolphin-emu.org | not determined for the blog | site of an open-tier emulator; blog refused | 2026-11-19 | FAQ
+open | wiki.cemu.info | none stated | Cemu user wiki | 2026-11-19 | About page
+open | reswitched/swipc | ISC | interface definitions; origin not stated; archived | 2026-11-19 | README, licence file
+open | reswitched/libtransistor | ISC | archived; origin not stated | 2026-11-19 | licence file
+open | kinnay/nintendoclients | MIT | online services only; origin not stated | 2026-11-19 | README, licence file
+open | openpower.foundation/specifications/isa | Power ISA licence | grant tied to a purpose | 2026-11-19 | v3.1C
+open | docs.vulkan.org | Khronos notice | unmodified reproduction only; no patent licence | 2026-11-19 | preamble
+open | registry.khronos.org | Khronos notice | unmodified reproduction only; no patent licence | 2026-11-19 | OpenGL 4.6
+open | support.nintendo.com/jp/oss | per component | Nintendo's own open-source releases | 2026-11-19 | page text
+
+# GameCube, Wii, Wii U, Switch: libraries and emulators.
+open | switchbrew/libnx | ISC | "Based on libctru"; origin not stated; no dispute found | 2026-11-19 | README
+open | switchbrew/nx-hbmenu | ISC | based on a 3DS menu | 2026-11-19 | README, licence file
+open | devkitpro/wut | Zlib | origin not stated; no dispute found for this library | 2026-11-19 | README, licence file
+open | cemu-project/cemu | MPL-2.0 | some files and dependencies under other licences | 2026-11-19 | README
+open | decaf-emu/decaf-emu | GPL-3.0-or-later | - | 2026-11-19 | README
+walled | developer.nvidia.com/tegra-rdp-trm | NVIDIA licence | registration; confidentiality | 2026-11-19 | licence
+walled | dekunukem/nintendo_switch_reverse_engineering | none | own captures; notes with code | 2026-11-19 | README
+walled | switchbrew/switch-examples | Public Domain Mark badge only | no licence file | 2026-11-19 | README
+walled | devkitpro/wiiu-examples | Public Domain Mark badge only | no licence file | 2026-11-19 | README
+walled | fail0verflow/hbc | GPL-2.0, or later not stated | archived; its README is cited by R0-01 | 2026-11-19 | README
+walled | fail0verflow/shofel2 | BSD-3-Clause | exploit tool, not a hardware source | 2026-11-19 | README
+walled | emu-russia/pureikyubu | CC0-1.0 | mentions maker-kit demos and a host-side BIOS | 2026-11-19 | README
+walled | skyline-emu/skyline | none now; was MPL-2.0 | source removed at Nintendo's request | 2026-11-19 | README
+walled | git.ryujinx.app | MIT by its site | fork of Ryujinx; named in a takedown notice | 2026-11-19 | project site
+walled | ryubing/ | not established | repositories of the same fork | 2026-11-19 | metadata
+walled | reswitched/mephisto | GPL-2.0-only | - | 2026-11-19 | licence file
+walled | reswitched/switch-oss | none | copy of Nintendo's source releases | 2026-11-19 | description
+closed | extremscorner/libogc2 | zlib-style | fork of libogc with the same copyright holders | 2026-11-19 | README
+
+# GameCube, Wii, Switch: reimplementations of system software. Closed tier.
+closed | atmosphere-nx/ | GPL-2.0, or later not stated | replaces Switch system software | 2026-11-19 | README
+closed | fail0verflow/mini | GPL-2.0 | "replacement for IOS" | 2026-11-19 | README
+
+# GameCube and Wii: tests.
+walled | dolphin-emu/hwtests | GPL-2.0, or later not stated | oracle not stated; needs libogc | 2026-11-19 | README
+closed | ioncodes/gamecube-wii-tests | none | README records hardware results; results usable | 2026-11-19 | README
+closed | geotale/gc-like-research | none | "expected results by hardware"; results usable | 2026-11-19 | README
+
+# PlayStation family: references and maker material, open tier.
+open | hitmen.c02.at/files/docs/psx | none; one text given away | Walker denies Sony documents | 2026-11-19 | intro
+open | hitmen.c02.at/files/yapspd | none stated | datasheets, patents, forums, game debug text | 2026-11-19 | ch. 1, 32
+open | emu-russia/psxrev | CC0-1.0 | board and chip reverse engineering | 2026-11-19 | README, licence metadata
+open | psx.amidog.se | CC BY-NC-SA 3.0 for wiki text | author's experiments; archives unlicensed | 2026-11-19 | footer
+open | psi-rockin/ps2tek | none | origin not stated; form modelled on the Nocash documents | 2026-11-19 | README
+open | psi-rockin.github.io/ps2tek | none | origin not stated | 2026-11-19 | page introduction
+open | ps2-linux.tensioncore.com | none stated | copy of Sony's PS2 Linux site; FAQ | 2026-11-19 | FAQ
+open | pspdev/vfpu-docs | GPL-3.0 | statements backed by tests run on a PSP | 2026-11-19 | README
+open | psdevwiki.com | GFDL 1.2 | reverse engineering; no leak rule; key pages never opened | 2026-11-19 | archived
+open | kernel.org/pub/linux/kernel/people/geoff/cell | GFDL 1.2 | Sony's PS3 Linux documents | 2026-11-19 | index notice
+open | playstation.com/en-us/oss | per package | Sony's open-source disclosure pages | 2026-11-19 | PS3, PS4, PS5 pages
+open | old.hotchips.org | none stated | conference talks by Sony and Toshiba engineers | 2026-11-19 | 1999 programme
+open | emudev.org | none stated | community hub, a lead | 2026-11-19 | home page
+open | cgi.cse.unsw.edu.au/~cs3231/doc | notices, no grant | copy of the IDT R30xx manual | 2026-11-19 | title pages
+
+# PlayStation family: kits, emulators, and tests.
+open | spicyjpeg/ps1-bare-metal | MIT | origin of hardware facts not stated | 2026-11-19 | README
+open | jaczekanski/ps1-tests | MIT | built with a closed-tier kit; hardware origin not stated | 2026-11-19 | README
+open | singlesteptests/r3000 | MIT | generated by the ares interpreter | 2026-11-19 | README
+open | filipalac/240ptestsuite-ps1 | GPL-2.0-or-later | display tests | 2026-11-19 | README
+open | unknownbrackets/ps2autotests | ISC | results generated on a console; depends on ps2sdk | 2026-11-19 | README
+open | pspdev/pspsdk | BSD-3-Clause; one tool GPL-3.0 | origin not stated | 2026-11-19 | README, licence file
+open | vitasdk/vita-headers | MIT | origin not stated | 2026-11-19 | README, licence file
+open | ps3dev/psl1ght | MIT | origin not stated | 2026-11-19 | README, licence file
+open | openorbis/openorbis-ps4-toolchain | GPL-3.0 | reverse-engineered format documents | 2026-11-19 | README
+walled | simias/rustation | GPL-2.0-or-later | mainly uses the tainted document; precaution | 2026-11-19 | README
+walled | simias/psx-guide | none | companion guide to the same emulator; no README | 2026-11-19 | metadata
+walled | psxdev.net | none stated | forum; offline since October 2025 | 2026-11-19 | home page
+walled | mednafen.github.io | GPLv2, only or later not stated | emulator; user documentation | 2026-11-19 | home page
+walled | ps2dev/ps2sdk | AFL-2.0 | not GPL-compatible by the GNU list; origin not stated | 2026-11-19 | README, licence
+walled | uofw/upspd | none | collection of third-party documents, one about keys | 2026-11-19 | README, index
+walled | wiki.henkaku.xyz | not determined | refused access | 2026-11-19 | none read
+walled | vita3k/vita3k | GPL-2.0, or later not stated | denies use of confidential material | 2026-11-19 | README
+walled | rpcs3/rpcs3 | GPL-2.0-only, some files differ | - | 2026-11-19 | README
+walled | rpcs3/ps3autotests | GPL-2.0, or later not stated | output "preferably from a real PS3" | 2026-11-19 | README
+walled | shadps4-emu/shadps4 | GPL-2.0; prose says or-later | credits a PS4 emulator and yuzu | 2026-11-19 | README
+
+# PlayStation family: closed tier.
+closed | lameguy64/psn00bsdk | MPL-2.0 core | README: parts "lifted as-is from Sony libraries" | 2026-11-19 | README
+closed | psx.arthus.net | none stated | hosts Sony kits, a BIOS folder, a Sony reference disc | 2026-11-19 | indexes
+closed | archive.org/details/net-yaroze-doc | none stated | Sony manuals, third-party upload | 2026-11-19 | metadata
+closed | uofw/uofw | MIT | reverse-engineered reimplementation of PSP firmware | 2026-11-19 | README
+closed | obhq/obliteration | MIT OR Apache-2.0 | reimplementation of the PS4 kernel | 2026-11-19 | README
+closed | idc/ps4libdoc | none | library data organised by firmware version | 2026-11-19 | README
+closed | peterlemon/psx | none | tested on a console; results usable | 2026-11-19 | README
+closed | hrydgard/pspautotests | placeholder only | "preferably from a real PSP"; results usable | 2026-11-19 | README
+
+# Sega, arcade, Xbox, and other systems: references, open tier.
+open | smspower.org/development | none stated | origin unstated; its Sega documents are closed | 2026-11-19 | index
+open | dreamjam.co.uk/emuviews | none stated | author: reverse engineered from hardware; a lead | 2026-11-19 | index
+open | techno-junk.org | none stated | frames the same author's pages | 2026-11-19 | frameset
+open | segaretro.org | CC BY 4.0, archived footer | origin unstated; articles only | 2026-11-19 | 2026-11-14 copy
+open | plutiedev.com | none stated; code snippets free to use | origin unstated; a lead | 2026-11-19 | FAQ
+open | md.railgun.works | CC BY-NC-SA, no version | origin unstated; last edited 2017 | 2026-11-19 | footer
+open | wiki.yabause.org | GFDL 1.2 | origin unstated | 2026-11-19 | footer
+open | mc.pp.se/dc | none stated | origin unstated; a lead | 2026-11-19 | index pages
+open | dreamcast.wiki | none stated | origin unstated | 2026-11-19 | root page
+open | wiki.neogeodev.org | public domain dedication | origin unstated | 2026-11-19 | footer
+open | mamedev.org | see the repository line | MAME's legal and documentation pages | 2026-11-19 | legal page
+open | xboxdevwiki.net | none stated | origin unstated; policy pages not readable | 2026-11-19 | capture of 2026-10-27
+open | free60.org | none stated | origin unstated | 2026-11-19 | home page
+open | sinclair.wiki.zxnet.co.uk | CC BY-SA 4.0 | origin not read | 2026-11-19 | rights setting
+open | c64-wiki.com | GFDL | origin not read | 2026-11-19 | footer
+open | 3dodev.com | CC BY-SA 4.0 | origin unstated; wiki prose only; hosted kits closed by rule | 2026-11-19 | footer
+open | map.grauw.nl | copyright notice, no grant | origin unstated | 2026-11-19 | footer
+open | msx.org/wiki | copyright notice, no grant | origin unstated | 2026-11-19 | footer
+open | ws.nesdev.org | CC0, seen through a summary only | origin unstated | 2026-11-19 | footer
+open | renesas.com/en/document | no reproduction without consent | chip maker's own manuals | 2026-11-19 | notice pages
+open | nxp.com/docs | none on the pages read | chip maker's own manual | 2026-11-19 | pages 1 to 3
+open | cdrdv2.intel.com | Intel notices | maker's manual; no legal analysis; patent licence back | 2026-11-19 | notices
+open | dspace.mit.edu/handle/1721.1/6694 | not read | published research on the Xbox | 2026-11-19 | record page
+open | nostarch.com/xboxfree | not found on the pages read | free edition of a published book | 2026-11-19 | publisher
+
+# Sega, arcade, Xbox, and other systems: emulators, cores, and kits.
+open | retrodev.com/repos/blastem | GPL-3.0-or-later | credits community documents | 2026-11-19 | README, COPYING
+open | rogersanders/exodus | MIT | author: own reverse engineering | 2026-11-19 | licence file, site
+open | stephane-d/sgdk | MIT | points to a hosted Sega manual | 2026-11-19 | README
+open | yabause/yabause | GPL-2.0-or-later by its wiki | headers not read | 2026-11-19 | wiki, COPYING
+open | ymir-emu/ymir | GPL-3.0 | - | 2026-11-19 | licence file
+open | strikerx3/ymir | GPL-3.0 | old address of ymir-emu/ymir | 2026-11-19 | redirect
+open | kallistios/kallistios | BSD-style; parts vary | "developed independently from Sega" | 2026-11-19 | README
+open | jotego/jtcores | GPL-3.0 | schematics drawn from boards | 2026-11-19 | README
+open | xenia-project/xenia | BSD-3-Clause | bans the maker's kit as a source | 2026-11-19 | licence file, README
+open | xenia-canary/xenia-canary | BSD-3-Clause | fork of xenia | 2026-11-19 | licence file
+open | jeffpar/pcjs | MIT, third-party material excluded | carries others' programs and manuals | 2026-11-19 | licence
+walled | nukeykt/nuked-opn2 | LGPL-2.1, or later seen second-hand only | die photographs | 2026-11-19 | README
+walled | nukeykt/nuked-opm | LGPL-2.1, or later not stated | - | 2026-11-19 | licence file
+walled | nukeykt/nuked-psg | GPL-2.0, only or later not stated | - | 2026-11-19 | licence file
+walled | nukeykt/nuked-md | GPL-2.0, only or later not stated | decapped chip photographs | 2026-11-19 | README
+closed | sverx/devkitsms | none found | - | 2026-11-19 | README
+walled | fcare/kronos | GPL-2.0, only or later not stated | fork of a Yabause fork | 2026-11-19 | COPYING, site
+walled | furrtek/siliconre | GPL-2.0 only | die photographs; author opposes use by AI systems | 2026-11-19 | README
+walled | furrtek/neogeo_mister | GPL-2.0, only or later not stated | - | 2026-11-19 | licence file
+walled | mister-devel/neogeo_mister | GPL-2.0, only or later not stated | - | 2026-11-19 | licence file
+walled | xemu-project/xemu | GPL-2.0 as a whole; files vary | QEMU fork | 2026-11-19 | licence file
+walled | xqemu/xqemu | GPL-2.0 as a whole; files vary | QEMU fork | 2026-11-19 | licence file
+walled | xboxdev/nxdk | per component; no root licence | reuses an older kit | 2026-11-19 | README
+open | free60project/wiki | none | source of free60.org, a reference | 2026-11-19 | README
+closed | free60project/libxenon | none found | "without using any existing code as a basis" | 2026-11-19 | description
+walled | stella-emu/stella | GPL-2.0, only or later not stated | - | 2026-11-19 | licence file, site
+walled | openmsx/openmsx | GPL, version not stated in README | - | 2026-11-19 | README
+closed | ekeeke/genesis-plus-gx | own non-commercial licence | - | 2026-11-19 | licence file
+closed | finalburnneo/fbneo | own non-commercial licence plus old MAME terms | - | 2026-11-19 | licence text
+closed | srg320/saturn_mister | none | - | 2026-11-19 | README
+closed | mister-devel/saturn_mister | none | - | 2026-11-19 | README
+
+# Sega, arcade, and other systems: maker material that others host. Closed tier.
+closed | smspower.org/development/officialdoc | none | Sega developer documents | 2026-11-19 | Documents index
+closed | www.smspower.org/development/officialdoc | none | same page with the www prefix | 2026-11-19 | Documents index
+closed | segaretro.org/images/ | none | scans of Sega manuals and internal documents | 2026-11-19 | main page
+closed | retrocdn.net | none | file host for the same scans, by inference from a footer | 2026-11-19 | 2026-11-14 copy
+closed | antime.kapsi.fi/sega | none | Sega manuals and libraries received from individuals | 2026-11-19 | index
+closed | arcarc.xmission.com | none | arcade makers' manuals; host has not verified rights | 2026-11-19 | front page
+closed | alienbill.com/2600/101/docs/stella | none | reconstruction of an Atari internal guide | 2026-11-19 | header
+closed | amigadev.elowar.com | none | contents of a commercial Amiga developer disc | 2026-11-19 | front page
+closed | mist64/c64ref | BSD-2-Clause | holds ROM disassemblies and comments from original source | 2026-11-19 | README
+closed | trapexit/3do-devkit | none | ships original 3DO kit libraries | 2026-11-19 | README
+closed | trapexit/portfolio_os | not read | described by a README as 3DO system source | 2026-11-19 | a README
+
+# Sega, arcade, Xbox, and other systems: tests.
+open | raxoft/z80test | MIT | results from a real Spectrum | 2026-11-19 | README
+open | singlesteptests/m68000 | MIT | generated with MAME's microcoded core | 2026-11-19 | README
+open | singlesteptests/z80 | MIT | generated with JSMoo | 2026-11-19 | description
+open | singlesteptests/8088 | MIT | captured from a physical processor with MartyPC | 2026-11-19 | README
+open | klaus2m5/6502_65c02_functional_tests | GPL-3.0 | self-checking programs | 2026-11-19 | licence file
+open | dirkwhoffmann/vamigats | GPL-3.0 | reference images from real machines; needs a system ROM | 2026-11-19 | README
+open | asiekierka/ws-test-suite | MIT | - | 2026-11-19 | README
+walled | agn453/zexall | GPL-2.0, only or later not stated | extract of an older distribution | 2026-11-19 | README
+
+# Cross-system sources: makers and standards bodies, open tier. Each notice limits reuse; the note quotes them.
+open | arm.com/company/policies | Arm terms and standard notices | maker's own terms pages | 2026-11-19 | notices page
+open | amd.com/content/dam/amd/en/documents | all rights reserved | chip maker's own guide | 2026-11-19 | guide 48751
+open | ecma-international.org | Ecma default notice | copying allowed unmodified | 2026-11-19 | copyright policy
+open | sdcard.org/downloads/pls | simplified specification terms | may need a licence | 2026-11-19 | download page
+open | usb.org | adopters agreements; notice not read | published by the owner | 2026-11-19 | document library
+open | aacsla.com/aacs-specifications | not read | published by the licensor; keys never obtained | 2026-11-19 | index
+open | j-core.org | BSD by the project's statement | processor design described as clean-room | 2026-11-19 | home page
+open | mips.com | site terms: personal use | chip maker's site; no manual found on it | 2026-11-19 | terms page
+open | ti.com | site terms: personal use | chip maker's site; no datasheet found on it | 2026-11-19 | terms page
+
+# Cross-system sources: references and leads, open tier.
+open | emulation.gametechwiki.com | none stated | user wiki, a lead; BIOS link pages never opened | 2026-11-19 | wiki
+open | stackexchange.com | CC BY-SA 2.5, 3.0, or 4.0 by date | forum, a lead | 2026-11-19 | licensing help page
+open | wikipedia.org | CC BY-SA 4.0 and GFDL | tertiary reference; cites its sources | 2026-11-19 | terms of use
+open | media.ccc.de | per talk; CC BY 4.0 is its example | conference talks, leads | 2026-11-19 | about page
+open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies page
+open | no-intro.org | none stated | database of hashes; no games | 2026-11-19 | home page
+open | redump.org | none stated | disc hash database; front page reports a staff dispute | 2026-11-19 | home page
+open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
+
+# Cross-system sources: not evaluated, so walled. Each refused access or could not be established.
+walled | tcrf.net | not determined | game wiki; a page carried instructions for AI agents | 2026-11-19 | summary only
+walled | datacrystal.tcrf.net | GFDL 1.2, by a summary only | memory maps from game binaries | 2026-11-19 | summary only
+walled | console5.com/techwiki | not determined | repair wiki | 2026-11-19 | refused access
+walled | consolemods.org/wiki | not determined | modification wiki | 2026-11-19 | refused access
+walled | siliconpr0n.org | not determined | decap image archive | 2026-11-19 | refused access
+walled | libretro/libretro-database | CC-BY-SA-4.0 | hash catalogues; licence not on the open list | 2026-11-19 | README
+walled | mister-devel/ | per core | FPGA cores; licences and methods not surveyed | 2026-11-19 | documentation home
+
+# Cross-system sources: closed tier.
+closed | bsnes.org | none read | not shown to be the bsnes project; its menu offers games | 2026-11-19 | home page
+closed | www.bsnes.org | none read | same site with the www prefix | 2026-11-19 | home page navigation
+
+# Cross-system tests: the remaining SingleStepTests sets.
+open | singlesteptests/8086 | MIT | "Hardware-Generated" by its description | 2026-11-19 | licence metadata
+open | singlesteptests/80186 | MIT | "Hardware-Generated" by its description | 2026-11-19 | licence metadata
+open | singlesteptests/80286 | MIT | "Hardware-Generated" by its description | 2026-11-19 | licence metadata
+open | singlesteptests/v20 | MIT | captured from a physical processor with MartyPC | 2026-11-19 | README
+open | singlesteptests/sh4 | MIT | generated by the Reicast interpreter | 2026-11-19 | README
+open | singlesteptests/huc6280 | MIT | generated by Mesen | 2026-11-19 | README
+open | singlesteptests/gameboycputests | MIT | randomly generated; generator not named | 2026-11-19 | README
+walled | singlesteptests/80386 | unclear from metadata | captured from a physical processor | 2026-11-19 | README
+walled | singlesteptests/ares_r3000_ssts | unclear from metadata | fork of ares; a generator | 2026-11-19 | description
+walled | singlesteptests/ares_tcls900h_ssts | unclear | fork of ares; a generator | 2026-11-19 | description
+closed | singlesteptests/680x0 | none found | emulator-generated; results usable | 2026-11-19 | licence metadata
+closed | singlesteptests/tlcs900h | none found | experimental; results usable | 2026-11-19 | licence metadata

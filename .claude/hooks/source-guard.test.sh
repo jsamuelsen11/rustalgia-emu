@@ -51,6 +51,40 @@ check 2 reader "$(fetch https://psx-spx.consoledev.net/cpuspecifications/)"
 check 2 writer "$(bash 'curl -sL https://problemkaputt.de/psx-spx.htm')"
 check 0 writer "$(fetch https://problemkaputt.de/gbatek.htm)"
 
+# Tainted: the www prefix and the per-chapter pages need their own register lines, and have them.
+check 2 writer "$(fetch https://www.problemkaputt.de/psx-spx.htm)"
+check 2 writer "$(fetch https://www.psx-spx.consoledev.net/)"
+check 2 writer "$(fetch https://problemkaputt.de/psxspx-spu-overview.htm)"
+check 2 reader "$(fetch https://www.problemkaputt.de/psxspx-spu-overview.htm)"
+check 2 writer "$(fetch https://web.archive.org/web/2024/https://problemkaputt.de/psx-spx.htm)"
+
+# Web sites: a closed path beside open pages on the same host, and a closed host with and without www.
+check 0 writer "$(fetch https://www.smspower.org/Development/Documents)"
+check 2 writer "$(fetch https://www.smspower.org/Development/OfficialDocumentation)"
+check 2 writer "$(fetch https://smspower.org/Development/OfficialDocumentation)"
+check 0 writer "$(fetch https://problemkaputt.de/gbatek-gba-memory-map.htm)"
+check 2 writer "$(fetch https://problemkaputt.de/gbatek-dsi-teak-misc.htm)"
+check 2 writer "$(fetch https://ultra64.ca/resources/)"
+check 2 writer "$(fetch https://www.ultra64.ca/resources/)"
+check 2 writer "$(bash 'curl -sL https://archive.org/details/SNESDevManual/')"
+check 2 writer "$(fetch https://archive.org/details/SNESDevManual)"
+check 0 writer "$(fetch https://archive.org/details/some-other-item)"
+check 0 writer "$(fetch https://segaretro.org/Sega_Mega_Drive)"
+check 2 writer "$(fetch https://segaretro.org/images/a/a2/manual.pdf)"
+check 0 writer "$(fetch https://segaretro.org/Images_of_the_Mega_Drive)"
+check 2 writer "$(fetch https://problemkaputt.de/gbatek-dsi-i2c-device-4ah-bptwl-chip.htm)"
+check 2 reader "$(fetch https://www.problemkaputt.de/gbatek-dsi-i2c-device-4ah-bptwl-chip.htm)"
+
+# Repositories this change moved between tiers.
+check 2 reader "$(fetch https://github.com/gbadev-org/tonc/blob/master/code/basic/hello/hello.c)"
+check 0 writer "$(fetch https://github.com/gbadev-org/tonc/blob/master/README.md)"
+check 2 writer "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
+check 0 reader "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
+
+# Web sites: a walled site is closed to a writer and open to a reader.
+check 2 writer "$(fetch https://tcrf.net/Help:Contents)"
+check 0 reader "$(fetch https://tcrf.net/Help:Contents)"
+
 # Walled: closed to a writer, open to a reader.
 check 2 writer "$(fetch https://github.com/flyinghead/flycast/blob/master/core/hw/sh4/sh4_core.h)"
 check 0 writer "$(fetch https://github.com/flyinghead/flycast/blob/master/README.md)"
