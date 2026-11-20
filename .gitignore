@@ -60,8 +60,7 @@ boot11.bin
 firmware/
 
 # Save data, save states, and memory dumps, which carry game data.
-# Battery saves. The bracket stops the spelling check from reading the extension as a typo.
-*.sa[v]
+*.sav
 *.srm
 *.dsv
 *.state
