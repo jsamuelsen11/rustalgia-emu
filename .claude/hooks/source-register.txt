@@ -609,3 +609,7 @@ closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firm
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+# Sources first cited by R1-04, the modern consoles primer.
+open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a host tool | 2026-11-20 | README
+open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README
+open | learn.microsoft.com/en-us/openspecs | copies to implement; no patent grant | maker's specs | 2026-11-20 | notice
