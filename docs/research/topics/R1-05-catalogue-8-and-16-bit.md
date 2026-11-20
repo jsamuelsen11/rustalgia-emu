@@ -11,13 +11,14 @@ date: 2026-11-20
 
 This note asks which dedicated consoles and handhelds were sold in the 8-bit and 16-bit era, and what hardware,
 protection, firmware, and sources each has.
-It lists about 100 machines and families, from the processor-less consoles of 1972 to 8-bit handhelds sold in 2001,
+It lists about 100 machines and families, from the processor-less consoles of 1972 to handhelds sold as late as 2002,
 and groups the more than 1,000 first-generation consoles that Wikipedia lists, many of them rebadges,
 by the game chip they share.
 An open-tier hardware reference beyond Wikipedia exists for the systems the roadmap's family surveys name and
-for a few others (the SG-1000, Neo Geo CD, Neo Geo Pocket, and WonderSwan); for the rest,
-Wikipedia is the only source found, and no maker document was located for most of their chips.
-Two facts matter most to Rustalgia: about 40 of the roughly 90 rows with a processor name built-in firmware
+for a few others (the SG-1000, Neo Geo AES and CD, Neo Geo Pocket, WonderSwan, Pocket Challenge V2, Mega Jet, and
+Nomad); for the rest, Wikipedia and, for five consoles, maker patents are the only sources found, and no maker document
+was located for most of their chips.
+Two facts matter most to Rustalgia: about 40 of the roughly 70 rows with a processor name built-in firmware
 that the project may not obtain (counted from the rows below), and the era's boundary is unclear for about 20 systems,
 which the owner's rule has to place.
 This note is not legal advice.
@@ -35,9 +36,10 @@ This note is not legal advice.
 - Researched on 2026-11-20 against the Wikipedia revisions and hub pages listed in Sources.
 - How claims were checked: three research agents each covered a share of the era and read every page as raw text,
   Wikipedia through its raw wikitext; no value here comes from a summarising tool unless it is marked "(secondary)".
-  A second, independent pass fetched the sources again and tested each claim and quotation.
-  Each of its findings was checked against the source once more before the text was changed;
-  its corrections were applied, and the claims it could not check are listed in the pull request.
+  Two independent verification passes, one after the other,
+  fetched the sources again and tested each claim and quotation.
+  Each of their findings was checked against the source once more before the text was changed;
+  their corrections were applied, and the claims they could not check are listed in the pull request.
   Wikipedia is a tertiary source: a value with no hub named rests on the article's own text,
   whose citations were not followed.
   Counts marked "(counted from the raw table)" were made by script over Wikipedia's wikitext. "(inference)" marks
@@ -74,9 +76,9 @@ Every row rests on the Wikipedia article on the system or series, unless it name
 |---|---|---|---|---|
 | Odyssey | Magnavox, by Sanders Associates | NA 1972-09; UK 1973; EU 1974 | discrete transistors and diodes | 1 |
 | Odyssey dedicated series | Magnavox; Philips | NA, EU 1975 to 1978 | TI, GI, National chips by model | 13 |
-| Home Pong | Atari; Sears Tele-Games | NA 1975 | custom Atari chip per family | 9 |
+| Home Pong | Atari; Sears Tele-Games | NA 1975 | mostly custom Atari chips | 9 |
 | TV Tennis Electrotennis | Epoch | JP 1975-09-12 | not stated; Magnavox licence | 1 |
-| Telstar series | Coleco | NA 1976 | GI AY-3-8500 family; one MOS chip | 14 |
+| Telstar series | Coleco | NA 1976 | GI AY-3-8500 family; one MOS chip | 14, with the Arcade |
 | Color TV-Game | Nintendo, with Mitsubishi | JP 1977-06-01 | not stated | 5 |
 | Video Pinball | Atari | NA 1977 | microcontroller with RAM | 3 |
 | Telstar Arcade | Coleco | NA 1977-08 | MOS MPS-7600 in each cartridge | 1 |
@@ -85,13 +87,16 @@ Every row rests on the Wikipedia article on the system or series, unless it name
 
 - Exceptions to the one-article rule: the Odyssey series counts 9 Magnavox and 4 Philips models
   ("Odyssey series");
-  the Home Pong models and chips are from the list of first-generation consoles;
+  the Home Pong models and chips are from the list of first-generation consoles,
+  counting the rows named "Pong" and leaving out Video Pinball, which has its own row, and two other Atari units;
+  some Atari-branded units there use General Instrument chips;
   the Magnavox licence for TV Tennis is from "First generation of video game consoles".
-  Video Pinball's article calls its chip a microcontroller in its specifications and "Pong-on-a-chip" in its lead.
+  Video Pinball's article calls its chip a microcontroller in "Gameplay" and "Pong-on-a-chip" in its lead.
+  The Telstar series' count of 14 includes the Telstar Arcade, which also has its own row.
 - The Odyssey is built from discrete diode-transistor logic, and its game cards act as switches on that logic
   (Wikipedia, "Magnavox Odyssey", "Design"); that it has no processor and no stored program is an inference from that.
   Its designer's patent describes generating symbols by voltage-controlled delay of pulses and coincidence gating
-  (US 3,659,285, abstract; the second pass could not fetch the patent again).
+  (US 3,659,285, front page, read at the Patent Office).
 - PC-50x consoles have no central processor:
   "all the games are implemented thanks to the individual chips in the cartridges,
   all based on the chip family AY-3-8xxx of General Instrument" (Wikipedia, "PC-50x family", lead).
@@ -100,7 +105,7 @@ Every row rests on the Wikipedia article on the system or series, unless it name
 - Wikipedia's list of first-generation consoles holds 1,036 released rows from 340 maker names
   (counted from the raw table).
   Another article speaks of "more than 900" first-generation consoles
-  (Wikipedia, "List of home video game consoles", introduction).
+  (Wikipedia, "List of home video game consoles", section "List of home video game consoles").
   The rows group by the game chip they name:
 
 | Chip family | Rows | Chip maker |
@@ -115,16 +120,21 @@ Every row rests on the Wikipedia article on the system or series, unless it name
 | Mitsubishi M58816P and others | 5 | Mitsubishi (inference from the prefix) |
 | Soviet К145ИК17 | 9 | not stated |
 | F-4301, NTL-600, SN76410N, MSL9320 | about 21 | not stated |
-| Discrete logic (TTL, 7400, DTL, CMOS) | 36 | none |
+| Discrete logic or CMOS logic (TTL, 7400, DTL, CMOS) | 36 | none |
 | Not given | 311 | — |
 
-- The counts are of rows in one table and depend on its wording (counted from the raw table).
-  The AY-3-8500 alone is said to be used in "at least two hundred different consoles" (Wikipedia, "AY-3-8500").
+- The counts are of rows in one table and depend on its wording
+  (counted from the raw table); six rows that name only Texas Instruments or Tesla fall in no group.
+  The AY-3-8500 alone was "used in hundreds of different consoles" (Wikipedia, "AY-3-8500", lead).
   It runs from a nominal 2.0 MHz clock, and colour needs a companion AY-3-8515 (same article).
 - No General Instrument datasheet for the family was found among the pages read; the hosts searched were not recorded
   (research log).
 
 ### Second generation: home consoles
+
+Every row rests on the Wikipedia article on the system, unless a finding below names another source:
+the 2600's 1979 Japanese date is from "Cassette Vision", the APF's sound from "APF Imagination Machine",
+and the Champion 2711's sale in the United States and, from 1979, in Japan from "Unisonic Products Corporation".
 
 Identity, with the hub where one exists:
 
@@ -134,7 +144,7 @@ Identity, with the hub where one exists:
 | Studio II (licensed clones) | RCA | NA 1977 | — | — |
 | 2600 (VCS; Atari 2800 in JP) | Atari | NA c. 1977-09; EU 1978; JP 1979 (Epoch), 1983; BR 1983 | — | — |
 | Astrocade (Bally Professional Arcade) | Bally | NA 1977-12 by mail; 1978-01 retail | — | — |
-| 1292 APVS / VC 4000 (25 variants) | Radofin; Interton | EU, AU 1978 | — | — |
+| 1292 APVS / VC 4000 (25 variants) | Radofin; Interton | EU 1978; AU 1979 | — | — |
 | APF-MP1000 (Imagination Machine) | APF Electronics | NA 1978-10 | — | — |
 | Champion 2711 | Unisonic | NA 1978; JP 1979 | — | — |
 | Odyssey 2 (Videopac G7000) | Magnavox; Philips | NA, EU 1978; JP 1982; BR 1983 | — | — |
@@ -162,7 +172,7 @@ Hardware:
 | Odyssey 2 | Intel 8048, 5.37 MHz NTSC | Intel 8244/8245 | in the 8244/8245 | 1 KiB in the 8048 |
 | Super Vision 8000 | NEC D780C-1 (Z80 clone), 3.58 MHz | AMI S68047 | GI AY-3-8910 | not stated |
 | Intellivision | GI CP1610, about 1.79 MHz NTSC | STIC (AY-3-8900) | GI AY-3-8914 | Exec, plus graphics ROM |
-| Cassette Vision | NEC µPD777C or µPD778 in cartridge | in the console | beeper | none recorded |
+| Cassette Vision | NEC µPD777C or µPD778 in cartridge | from the cartridge chip; NTSC out | beeper | none recorded |
 | CreatiVision | 6502, 2 MHz | TI TMS9918/9929 | TI SN76489 | not stated |
 | Arcadia 2001 | Signetics 2650 | Signetics 2637 | beeper and noise | none |
 | ColecoVision | Z80A, 3.58 MHz | TI TMS9928A/9929A | TI SN76489 | 8 KiB BIOS |
@@ -180,7 +190,8 @@ Hardware:
   Only its video chip differs between NTSC and PAL units, and SECAM units add an adapter board; the palettes are 128,
   104, and 8 colours (Wikipedia, "Atari 2600 hardware"; "Television Interface Adaptor"),
   and games were developed and published separately for each region (Wikipedia, "Atari 2600", "Graphics").
-  Cartridges larger than its 4 KiB window use bank switching (Wikipedia, "Atari 2600", "Hardware").
+  Cartridges larger than its 4 KiB window use bank switching, up to 64 KiB
+  (Wikipedia, "Atari 2600 hardware", "Technical specifications").
   Atari's patent, filed in 1976, describes horizontal motion by per-object position counters,
   with vertical motion done by the processor
   (US 4,112,422, abstract); that it describes the TIA is an inference from its inventors and date.
@@ -209,12 +220,16 @@ Hardware:
 
 ### Third generation: home consoles
 
+Every row rests on the system's Wikipedia article, unless a finding names another source:
+the NES and Dendy processor clocks and chip names are from the NESdev wiki, "Cycle reference chart",
+the Master System's clocks from SMS Power, "Clock Rate".
+
 Identity:
 
 | System (other names) | Maker | First release | Survey | Hub |
 |---|---|---|---|---|
 | Famicom / NES (Comboy KR) | Nintendo | JP 1983-07-15; NA 1985-10-18; EU 1986-09-01 | R1-15 | NESdev wiki |
-| Famiclones (Dendy, Pegasus, Micro Genius) | various | PL 1991; RU 1992; Asia | R1-15 | NESdev wiki |
+| Famiclones (Dendy, Pegasus, Micro Genius) | various | PL 1991; RU 1992; Asia | R1-15 (inference) | NESdev wiki |
 | SG-1000 (SC-3000; SG-1000 II) | Sega | JP 1983-07-15; AU 1983-11 | — | SMS Power |
 | Mark III / Master System | Sega; Tectoy, Samsung | JP 1985-10-20; NA 1986; EU 1987; BR 1989 | R1-22 | SMS Power |
 | 7800 ProSystem | Atari Corp., by GCC | NA 1986-05; EU 1987 | — | — |
@@ -242,15 +257,15 @@ Hardware:
 | Dendy | UMC UA6527P, 1.773448 MHz | clone of the PPU | in the CPU chip | none |
 | SG-1000 | Z80A, 3.58 MHz | TI TMS9918A | TI SN76489AN | none |
 | Master System | Z80A, 3.58 MHz NTSC; 3.55 PAL | Sega VDP | SN76489 via VDP; YM2413 in JP | BIOS; check on export |
-| 7800 | SALLY (6502), 1.79 or 1.19 MHz | MARIA, display lists | TIA; POKEY on some games | 4 KiB; PAL 16 KiB, game |
+| 7800 | SALLY (6502), 1.79 or 1.19 MHz NTSC | MARIA, display lists | TIA; POKEY on some games | 4 KiB; PAL 16 KiB |
 | XEGS | 6502C, 1.79 MHz | ANTIC and GTIA | POKEY | ROM with Missile Command |
 | PV-1000 | Z80, 3.579 MHz | NEC D65010G031 | in the video chip | not stated |
 | Super Cassette Vision | NEC µPD7801G, 4 MHz | EPOCH TV-1 | NEC µPD1771C | not stated |
 | My Vision | not given | not given | not given | not stated |
 | Videopac+ G7400 | Intel 8048, 5.91 MHz | 8245 + Thomson EF9340/9341 | 1 channel | 1 KiB ROM |
 | Pyūta Jr. | TI TMS9995 (inference) | TI TMS9918 (inference) | TI SN76489AN (inference) | not stated |
-| Dina | Z80 | TI TMS9928A | not stated | a built-in game |
-| BBC Bridge Companion | Z80A, 3.579 MHz | not checked | not checked | 16 KiB ROM |
+| Dina | Z80 | TI TMS9928A | not stated | a built-in game; a changed boot screen |
+| BBC Bridge Companion | Z80A, 3.579 MHz | TI TMS9129NL | not stated | 16 KiB ROM |
 | Video Art | Motorola 6800-based EF6805 | Thomson EF9367P | not checked | not checked |
 | Socrates | Z80A, 3.57 MHz | custom | not stated | not stated |
 | Action Max | HD401010 | VHS tape | VHS tape | not stated |
@@ -274,19 +289,26 @@ Hardware:
   (SMS Power, "Clock Rate").
   Japanese models add a YM2413 FM chip, and the SN76489 sound reaches the output through the VDP
   (Wikipedia, "Master System", infobox).
-  Its VDP was designed by Sega because the SG-1000's TMS9918A lacked the power Sega wanted
-  (Wikipedia, "Master System", "History").
+  By the account of Hideki Sato that Wikipedia reports, Sega redesigned the console, with a video chip of its own,
+  because the SG-1000's TMS9918A lacked the power for the games Sega wanted (Wikipedia, "Master System", "Mark III").
 - The 7800 can run almost all 2600 cartridges
   (Wikipedia, "Atari 7800", lead);
-  its processor slows to 1.19 MHz when it reaches the TIA or the 6532 ("Technical specifications").
-  Its BIOS checks a digital signature stored on each cartridge against one it computes from the ROM,
-  and runs the cartridge in 7800 mode only if they match (same article, "Digitally signed cartridges").
+  on NTSC units its processor slows to 1.19 MHz when it reaches the TIA or the 6532 ("Technical specifications").
+  The NTSC BIOS checks a digital signature stored on each cartridge against one it computes from the ROM,
+  and runs the cartridge in 7800 mode only if they match;
+  PAL units lack the signature check and tell 2600 cartridges apart by heuristics
+  (same article, "Digitally signed cartridges").
   The PAL unit's 16 KiB ROM includes a built-in game ("Technical specifications").
 - The XEGS ships with Missile Command built in (Wikipedia, "Atari XEGS", "Games").
-- The SG-1000, ColecoVision, CreatiVision, Dina, and Pyūta Jr. use Texas Instruments' TMS9918 video chip family
+- The SG-1000, ColecoVision, CreatiVision, Dina, BBC Bridge Companion,
+  and Pyūta Jr. use Texas Instruments' TMS9918 video chip family
   (Wikipedia, articles on each system; for the Pyūta Jr., the Tomy Tutor's infobox, an inference for the console).
-- The video-tape consoles play analogue tape and score a light gun against it,
-  so the console itself holds little to emulate (inference from Wikipedia, "Action Max" and "Video Challenger").
+- The Dina's start-up screen replaces the ColecoVision's with its maker's name,
+  so it carries a changed ColecoVision BIOS (inference from Wikipedia, "Dina (console)", "Software").
+- The Action Max and Video Challenger score a light gun against a tape played on the owner's video recorder,
+  so the console itself holds little to emulate
+  (inference from Wikipedia, "Action Max" and "Video Challenger");
+  the Interactive Vision adds its own graphics and games over the tape (Wikipedia, "View-Master Interactive Vision").
 
 ### Fourth generation: home consoles
 
@@ -314,18 +336,18 @@ Hardware:
 | System | CPU | Video | Audio | Firmware |
 |---|---|---|---|---|
 | Mega Drive | 68000, 7.6 MHz; Z80, 3.58 MHz | Sega VDP (YM7101) | YM2612; PSG in VDP | TMSS check from 1991 |
-| PC Engine | Hudson HuC6280, 7.16 MHz | HuC6270 and HuC6260 | in the CPU chip | none (HuCard) |
-| SuperGrafx | HuC6280A | two HuC6270, HuC6202, HuC6260 | in the CPU chip | none |
-| Super Famicom | Ricoh 5A22 (65C816), 3.58 MHz peak | S-PPU1 and S-PPU2 | S-SMP: SPC700, S-DSP | none in the console |
+| PC Engine | Hudson HuC6280, 7.16 MHz | HuC6270 and HuC6260 | in the CPU chip | not stated |
+| SuperGrafx | HuC6280A | two HuC6270, HuC6202, HuC6260 | in the CPU chip | not stated |
+| Super Famicom | Ricoh 5A22 (65C816), 3.58 MHz peak | S-PPU1 and S-PPU2 | S-SMP: SPC700, S-DSP | not stated |
 | Neo Geo AES | 68000, 12 MHz; Z80, 4 MHz | LSPC | Yamaha YM2610 | system ROM |
 | Neo Geo CD | 68000, 12 MHz; Z80, 4 MHz | as the AES | YM2610 without ADPCM-B; CD audio | CD system ROM |
-| TeraDrive | 80286; 68000; Z80 | Mega Drive and PC | Mega Drive | PC BIOS and Mega Drive |
+| TeraDrive | 80286; 68000; Z80 | Mega Drive and PC | Mega Drive | not stated |
 | CDTV | 68000, 7 MHz | Amiga OCS, ECS | 4 channels, 8-bit | AmigaOS 1.3 |
 | CD-i | Philips SCC68070, 15.5 MHz | SCC66470, MCD 212 | MCD 221, ADPCM | CD-RTOS |
 | Video Information System | AMD 80286, 12 MHz | Cirrus Logic | Yamaha YMF262 | not checked |
 | Sega Pico | 68000, 7.6 MHz | from the Mega Drive | SN76489; NEC µPD7759 | not checked |
 | LaserActive | not stated; PAC modules | not stated | not stated | not stated |
-| CPS Changer | 68000, 10 MHz; Z80, 3.579 MHz | CPS-1 board | YM2151; OKI6295 | the arcade board's |
+| CPS Changer | 68000, 10 MHz; Z80, 3.579 MHz | CPS-1 board | YM2151; OKI6295 | not stated |
 | Super A'Can | 68000, 10.738635 MHz | UMC UM6618 | UMC UM6619, 16 PCM channels | not checked |
 
 - Wikipedia gives the Mega Drive's 68000 as 7.6 MHz and its Z80 as 3.58 MHz ("Sega Genesis", infobox).
@@ -342,8 +364,10 @@ Hardware:
   (SNESdev wiki, "Timing").
   A lock-out chip in console and cartridge separates PAL from Japanese and North American systems
   (Wikipedia, "Super Nintendo Entertainment System", "Regional lockout").
-- Super Famicom cartridges can carry coprocessors that their games cannot run without, such as the Super FX and SA-1
-  (Wikipedia, "Super Nintendo Entertainment System", "Enhancement chips"); `R1-15` is the survey to list them.
+- Super Famicom cartridges can carry coprocessors, such as the Super FX and SA-1
+  (Wikipedia, "Super Nintendo Entertainment System", "Enhancement chips");
+  that a game needs its chip to run is an inference, and `R1-15` is the survey to list them.
+- The Neo Geo CD's YM2610 lacks the ADPCM-B channels (NeoGeo Development Wiki, "YM2610").
 - North American HuCards "reverse eight of these pins as a region lockout method"
   (Wikipedia, "TurboGrafx-16", "Technical specifications").
   No PC Engine hub could be reached: the one community wiki tried failed on every address form (research log).
@@ -357,8 +381,8 @@ Hardware:
   and the comparison table marks them free of regional lock-out
   (Wikipedia, "CD-i"; "Fourth generation of video game consoles", "Other consoles").
 - The CDTV was shown in North America in March 1991 and launched in April (Wikipedia, "CDTV").
-  Each LaserActive PAC module adds compatibility with one platform, and the article names no processor
-  (Wikipedia, "LaserActive").
+  Two of the LaserActive's PAC modules each add compatibility with one platform, Sega's and NEC's;
+  others add karaoke and computer control, and the article names no processor (Wikipedia, "LaserActive").
 
 ### Add-ons that act as systems
 
@@ -396,8 +420,8 @@ Every survey in this table is an inference from the survey of the base system.
   the Super Game Boy 2 has its own crystal (Pan Docs, "SGB Functions"; Wikipedia, "Super Game Boy").
 - Most Satellaview content was lost when the service closed; some has been recovered, partly from memory packs
   (Wikipedia, "Satellaview").
-- Bandai's Datach barcode reader (1992)
-  and Codemasters' Aladdin Deck Enhancer (1992) change how cartridges are built rather than adding a processor
+- Bandai's Datach barcode reader (1992) and Camerica's Aladdin Deck Enhancer, developed with Codemasters (1992),
+  change how cartridges are built rather than adding a processor
   (Wikipedia, "Datach"; "Aladdin Deck Enhancer"); this catalogue treats them as media.
 - The 32X has 32-bit processors on a 16-bit console; Wikipedia places it in the fifth generation
   ("32X", infobox), and Sega Retro's figures for it cite Sega manuals that the register closes.
@@ -420,7 +444,7 @@ Identity:
 | Lynx (Lynx II) | Atari Corp., by Epyx | NA 1989-09-01; EU, JP 1990 | — | — |
 | Game Gear (Kids Gear) | Sega; Majesco re-release | JP 1990-10-06; NA, EU 1991-04 | R1-22 | SMS Power |
 | TurboExpress (PC Engine GT); LT | NEC | JP, NA 1990-12; LT JP 1991-12-13 | — | — |
-| Gamate | Bit Corporation | 1990 | — | — |
+| Gamate | Bit Corporation | early 1990s | — | — |
 | Game Master (Systema 2000) | Hartung | DE 1990 | — | — |
 | Barcode Battler | Epoch | JP 1991-03 | — | — |
 | Supervision (QS-800, SV-100) | Watara | 1992 | — | — |
@@ -433,7 +457,7 @@ Identity:
 | Game Boy Color | Nintendo | JP 1998-10-21; NA 1998-11-18; EU 1998-11-23 | R1-10 | Pan Docs |
 | Neo Geo Pocket; Color; New Color | SNK | JP 1998-10-28; Color NA 1999-08-06 | — | NgpCraft |
 | WonderSwan; Color; SwanCrystal | Bandai | JP 1999-03-04; 2000-12-09; 2002-07-12 | — | WSdev wiki |
-| Pocket Challenge V2 | Benesse | not found | — | WSdev wiki |
+| Pocket Challenge V2 | Benesse (from memory) | not found | — | WSdev wiki |
 | Cybiko | Cybiko Inc. | NA 2000-04 | — | — |
 | Pokémon Mini | Nintendo; The Pokémon Company | NA 2001-11-16; JP 2001-12-14 | — | — |
 
@@ -442,7 +466,7 @@ Hardware:
 | System | CPU | Display | Audio | Firmware or lock-out |
 |---|---|---|---|---|
 | Microvision | Intel 8021 or TI TMS1100 in cartridge | 16 × 16 LCD | piezo | none; mask ROM per game |
-| Game & Watch | Sharp SM5xx | segment LCD | not stated | ROM in the MCU, per game |
+| Game & Watch | Sharp SM5xx | segment LCD | melody ROM in some MCUs | ROM in the MCU, per game |
 | Select-A-Game | in each cartridge, type not stated | 7 × 16 VFD | not stated | none |
 | Adventure Vision | Intel 8048, 733 kHz | 150 × 40 LEDs, spun mirror | NS COP411L | ROMs in both chips |
 | Game Pocket Computer | NEC µPD78C06, 6 MHz | 75 × 64 | 1 channel | built-in software |
@@ -450,17 +474,17 @@ Hardware:
 | Lynx | VL65NC02 (Lynx I), up to 4 MHz | 160 × 102, blitter | 4 channels | 512-byte boot ROM |
 | Game Gear | Z80, 3.5 or 3.579545 MHz | 160 × 144 of 160 × 146 | SN76489 | none, then a header BIOS |
 | TurboExpress | HuC6280, 7.16 MHz | values conflict | 6 wavetable channels | not stated; HuCard pins |
-| Gamate | 6502-based UMC or NCR chip | 160 × 152, 4 greys | GI AY-3-8910 | 2 KiB internal ROM |
+| Gamate | 6502-based UMC or NCR chip | 160 × 152, 4 greys | GI AY-3-8910 | 2 KiB, listed as ROM on a RAM part |
 | Game Master | NEC µPD7810 | 61 × 64 | 1-bit | not stated |
 | Supervision | 65C02 or 65SC02, 4 MHz | 160 × 160, frame buffer | 2 tone, noise, DMA | not stated |
 | Mega Duck | Sharp SM83, 4.194304 MHz master | 160 × 144 | 4 channels | not stated |
 | Design Master | Hitachi H8/3334, 7.63 MHz | 160 × 150, touch | not stated | not stated |
 | Nomad | 68000 | colour LCD and AV out | Mega Drive | regional lock-out |
-| Game.com | Sharp SM8521, 10 MHz | 200 × 160, touch | 2 wave, noise, PCM | not stated |
+| Game.com | Sharp SM8521, 10 MHz | 200 × 160, touch | 2 wave, noise, PCM | built-in Solitaire, system software |
 | Game Boy Color | Sharp SM83 core, up to 8.388608 MHz | 160 × 144, 15-bit colour | 4 channels | boot ROM, half-logo |
 | Neo Geo Pocket | Toshiba TLCS-900/H, 6.144 MHz; Z80 | 160 × 152 | T6W28 and DACs | 64 KiB BIOS ROM |
 | WonderSwan | NEC V30MZ, 3.072 MHz | 224 × 144 | 4 PCM channels | boot ROM; handshake |
-| Cybiko | Hitachi H8S/2241, 11.0592 MHz | 160 × 100 | not stated | not stated |
+| Cybiko | Hitachi H8S/2241, 11.0592 MHz; AT90S2313 | 160 × 100 | not stated | 512 KiB flash ROM |
 | Pokémon Mini | Epson S1C88, 4 MHz | 96 × 64 | a speaker | 4 KiB BIOS ROM |
 
 - The Game Boy's boot ROM shows the logo from the cartridge header, compares it with its own copy,
@@ -478,7 +502,8 @@ Hardware:
   The panel is 160 × 146 dots, and Master System mode scales 240 of each line's 256 pixels three to two
   (SMS Power, "Game Gear LCD").
   Its processor clock is 3.5 MHz by Wikipedia and 3.579545 MHz by Sega Retro
-  ("Game Gear", infobox; Sega Retro, "Sega Game Gear"); SMS Power's "Clock Rate" page gives only the Master System's.
+  ("Game Gear", infobox; Sega Retro, "Sega Game Gear");
+  SMS Power's "Clock Rate" page names no system, so it is not cited for the Game Gear.
 - WonderSwan models use three versions of one system chip (WSdev wiki, "SoC").
   A cartridge must complete a handshake with it,
   and "The boot ROM will refuse to boot the cartridge if this bit is not set; on the WonderSwan Color,
@@ -494,10 +519,15 @@ Hardware:
   Its LT model's date is from "TurboGrafx-16", where HuCards' reversed pins act as a regional lock-out.
 - The Neo Geo Pocket's specification table carries an unreferenced-section banner dated July 2025
   (Wikipedia, "Neo Geo Pocket").
-  NgpCraft, a developer reference under the MIT licence, is the only Neo Geo Pocket hub found;
-  it states no origin for its facts and no rule on leaked material (its README and licence file).
+  NgpCraft, a developer reference under the MIT licence,
+  is the only Neo Geo Pocket hub that the research agents' web searches and `R0-05`'s tables turned up
+  (research log); it states no origin for its facts and no rule on leaked material (its README and licence file).
 - The Palmtex and R-Zone cartridges each hold the processor and the screen, the Digi Casse's the screen
   (Wikipedia, articles on each).
+- The Gamate's article gives no release date, only a lifespan of 1990 to 1994,
+  and lists its 2 KiB "ROM" on a part it names as a static RAM (Wikipedia, "Gamate").
+  The Game.com has Solitaire built in, and the Cybiko a 512 KiB flash ROM and a second, Atmel processor
+  (Wikipedia, "Game.com"; "Cybiko").
 - The Mega Duck uses a Game Boy processor and sound; all its games but the pack-in were made by one developer,
   Thin Chen Enterprise, under two brand names, and later re-released for the Game Boy without Nintendo's licence
   (Wikipedia, "Mega Duck").
@@ -517,7 +547,8 @@ Hardware:
 | Videopac+ G7400 | 8-bit | third | R1-05 |
 | Virtual Boy | 32-bit: R1-06 | fifth | not here: `R1-06` |
 | Playdia | 8-bit: R1-05 | fifth | not here: left to `R1-06`, by generation |
-| Amiga CD32; FM Towns Marty; PC-FX | 32-bit: R1-06 | fifth | not here: `R1-06` |
+| Amiga CD32; PC-FX | 32-bit: R1-06 | fifth | not here: `R1-06` |
+| FM Towns Marty | 32-bit inside, 16-bit bus | fifth, category fourth | not here: `R1-06`, like the CD32 |
 | Cybiko; GameKing; Dreamcast VMU | not stated (H8S); 8-bit; 8-bit | sixth or none | Cybiko here; the others `R1-07` |
 
 - The sources for each placement are the system's Wikipedia article, its `generation` field read raw,
@@ -525,7 +556,10 @@ Hardware:
   Exceptions: the Mega Jet has no article of its own
   (it redirects to "Genesis Nomad"),
   and the CPS Changer's article, "CP System", has no generation field, only a fourth-generation category;
-  the Super A'Can's infobox says fifth while its category says fourth.
+  the Super A'Can's and FM Towns Marty's infoboxes say fifth while their categories say fourth.
+  The Marty has the CD-i's profile, a 32-bit processor on a 16-bit bus,
+  but is left to `R1-06` with the other computer-based fifth-generation consoles,
+  a choice this note makes and the owner can reverse.
   The CD-i's register widths are from memory.
   Playdia, GameKing, and the VMU are left out by generation, an exception to this catalogue's word-size fallback.
 - The Dreamcast VMU is a memory card that runs small games (Wikipedia, "VMU") and is listed with the Dreamcast.
@@ -543,13 +577,14 @@ Hardware:
   The 68000 runs the Mega Drive, Mega CD, Neo Geo, CDTV, Sega Pico, CPS Changer, and Super A'Can.
   Sharp's SM83 runs the Game Boy, Game Boy Color, and Mega Duck
   (each system's row and its source; the grouping is the note's).
-- Sound chips recur: the SN76489 in at least seven systems
-  (rows above; for the Master System, "Master System", infobox),
+- Sound chips recur: the SN76489 in the CreatiVision, ColecoVision, SG-1000, Master System, Game Gear, Sega Pico,
+  and Mega Drive, where it sits in the video chip
+  (rows above; "Master System" and "Sega Genesis", infoboxes),
   and General Instrument's AY-3-891x family in the Intellivision, Super Vision 8000, Vectrex, Gamate, and GX4000
   (rows above).
 - Signetics' 2650 runs two families of rebadged consoles,
-  the VC 4000 group with 25 named variants of identical hardware,
-  grouped by the article into several cartridge families, and the Arcadia 2001 group with 38
+  the VC 4000 group with 25 named variants of "identical computational hardware" whose cartridge slots differ,
+  so cartridges do not always interchange, and the Arcadia 2001 group with 38
   (Wikipedia, "1292 Advanced Programmable Video System"; "Arcadia 2001"; variants counted from the raw tables).
 - Nine systems put the processor, the game chip, or the screen in each cartridge: the Telstar Arcade, PC-50x,
   Cassette Vision, TV Boy, Microvision, Select-A-Game, Palmtex unit, Digi Casse, and R-Zone (rows above).
@@ -559,10 +594,11 @@ Hardware:
   (counted from the rows above).
   Whether each can be emulated without its firmware is left to `R1-01` and `R2-12`.
 - Lock-outs found: the NES and Super Famicom lock-out chips, the Game Boy logo check,
-  the export Master System and later Game Gear header check, TMSS, the 7800's cartridge signature,
+  the export Master System and later Game Gear header check, TMSS, the NTSC 7800's cartridge signature,
   the Disk System's licence check and moulding, the Intellivision II's changed Exec, the TurboGrafx pin reversal,
   the WonderSwan handshake, and the Nomad's regional lock-out (rows and findings above).
-  Neo Geo graphics scrambling is protection of game data rather than a lock-out (NeoGeo Development Wiki, "NEO-CMC").
+  Neo Geo cartridge scrambling of graphics, and on one version sound data,
+  is protection of game data rather than a lock-out (inference from NeoGeo Development Wiki, "NEO-CMC").
   None was found for the other second-generation consoles, by a search of each article for "lock-out", "lockout",
   "lock out", "copy protect", "authentication", "security chip", "header", and "signature".
 
@@ -577,7 +613,8 @@ Hardware:
 - Every other row rests on Wikipedia alone, apart from the patents named above for the Odyssey, Channel F, 2600, 5200,
   and NES.
   That covers every first- and second-generation console; every third- and fourth-generation console except the NES,
-  Master System, SG-1000, Mega Drive, Super Famicom, and Neo Geo families; the PC Engine add-ons; and 20 handhelds.
+  Master System, SG-1000, Mega Drive, Super Famicom, and Neo Geo families; the PC Engine add-ons, the 32X,
+  and the Family Computer Network System; and 20 handhelds.
 - Sega Retro's technical pages for the Master System, Mega Drive, Mega CD,
   and 32X cite Sega manuals hosted on Sega Retro, which the register closes;
   their figures need an open source before a note relies on them
@@ -590,7 +627,8 @@ Hardware:
   the CP1610, the F8, the 1802, the 2650, the TIA and its successors, the 8048 and 8244, and the TMS9918 family
   (research log: the register records the Texas Instruments and Zilog sites as checked;
   other hosts tried were not recorded).
-  `R0-05` reports the same gap for the Z80, 6502, and NEC parts ("Processor and chip makers' manuals").
+  `R0-05` found no maker-hosted manual with a readable notice for the Z80, 6502, and NEC parts,
+  though it records a maker-served 65C816 datasheet ("Processor and chip makers' manuals").
 - Processor test sets in the register cover the 6502 family, Z80, 68000, SM83, HuC6280, SPC700, and 8086 family;
   a TLCS-900/H set exists, closed for want of a licence, with its results usable; none was found for the F8, 1802,
   CP1610, 8048, 2650, 6800, 6809, SM8521, or S1C88 (register; `R0-05`, "Test suites and test vectors").
@@ -600,7 +638,7 @@ Hardware:
 ### Study every catalogued system, or only those with a survey
 
 - **What:** give each row a later study, or limit study to the systems the surveys name and keep the rest as rows.
-- **Costs:** every row means about 100 more studies, most resting on Wikipedia;
+- **Costs:** every row means about 100 studies, about 85 of them beyond the surveys, most resting on Wikipedia;
   surveys only leaves out every first- and second-generation console and most third- and fourth-generation
   and handheld rows, among them the Atari, NEC, SNK, and Bandai machines.
 - **Gains:** every row studied gives the widest choice for `R6-01`; surveys only keeps the research finite.
@@ -633,7 +671,7 @@ Hardware:
 - **Gains:** word size predicts the processor work; generation matches Wikipedia's generation articles;
   survey placement matches the roadmap's dependencies.
 - **Used by:** this catalogue uses the survey placement, falls back on word size, and departs from both for the CD-i,
-  the 32X, Playdia, GameKing, and the VMU, as the boundary table shows.
+  the 32X, Playdia, GameKing, the VMU, and the Cybiko, as the boundary table shows.
 
 ### Sources for systems with Wikipedia alone
 
@@ -647,7 +685,7 @@ Hardware:
 
 ## Implications for Rustalgia
 
-- Which rows Rustalgia may emulate is a decision for `R6-01`,
+- `R6-01` proposes which rows Rustalgia emulates, and the choice is the owner's;
   and the catalogue's survey column shows which rows will have an emulator survey behind them.
 - About 40 rows name built-in firmware that the project may not obtain
   (ADR 0001; `R0-02`, "Firmware, keys, and game copies").
@@ -666,18 +704,19 @@ Hardware:
 
 - Does `R1-25` cover the consoles and handhelds that no survey names, or do Atari, NEC, SNK, and Bandai need surveys?
   A decision for the owner.
-- Where do the Neo Geo Pocket, WonderSwan, Pokémon Mini, CD-i, and 32X belong when the rules disagree?
+- Where do the Neo Geo Pocket, WonderSwan, Pokémon Mini, CD-i, 32X,
+  and the other boundary cases belong when the rules disagree?
   A decision for the owner, recorded in the roadmap.
 - What are the Game Gear's processor clock, the Studio II's clock, and the Odyssey 2's North American release date,
   from a primary source?
   `R1-22` for the Game Gear; a maker document or a later pass for the others.
-- How does the Lynx boot stage check a cartridge, and how does the 7800 compute its signature?
+- How does the Lynx boot stage check a cartridge, how does the NTSC 7800 compute its signature,
+  and what heuristics does the PAL 7800 use?
   No page read says; a survey, if `R1-25` or a new one covers them, or a registered community source.
 - Which maker hosts, if any, still serve datasheets for the General Instrument, Fairchild, RCA, Signetics,
   and Texas Instruments chips?
   `R1-01` and later primers.
-- What is the Pocket Challenge V2's release date,
-  and what are the BBC Bridge Companion's and Video Art's video and sound chips?
+- What is the Pocket Challenge V2's release date, and what are the BBC Bridge Companion's and Video Art's sound chips?
   A later pass with sources beyond Wikipedia.
 - What processors do the My Vision, the Select-A-Game cartridges, the Palmtex and R-Zone cartridges,
   and the Digi Casse use?
@@ -687,7 +726,7 @@ Hardware:
 
 Every source below was read on 2026-11-20.
 Wikipedia articles were read as raw wikitext from `https://en.wikipedia.org/w/index.php?title=<Article>&action=raw`;
-each pin is the revision ID, or, where the API refused, the time the page was last modified (GMT).
+each pin is the revision ID.
 
 Wikipedia, first and second generation:
 
@@ -706,29 +745,23 @@ Wikipedia, first and second generation:
 - "Cassette Vision" 1375473899; "VTech CreatiVision" 1383969050; "Arcadia 2001" 1352938983; "ColecoVision" 1369186567;
   "Atari 5200" 1382706947; "Vectrex" 1386579084; "Gakken Compact Vision TV Boy" 1352892594.
 
-Wikipedia, third and fourth generation and add-ons (last modified, GMT):
+Wikipedia, third and fourth generation and add-ons:
 
-- "Nintendo Entertainment System" 2026-11-17 07:11; "Nintendo Entertainment System models" 2026-11-08 21:47;
-  "Famicom Disk System" 2026-10-20 01:08; "Family Computer Network System" 2026-11-17 05:04;
-  "Aladdin Deck Enhancer" 2026-07-08 06:51; "Datach" 2026-11-11 14:17; "Dendy" 2026-08-22 19:08.
-- "Master System" 2026-11-19 12:47; "SG-1000" 2026-11-16 10:51; "Atari 7800" 2026-11-07 18:09;
-  "Atari XEGS" 2026-11-04 22:22; "Sega Genesis" 2026-11-19 02:30; "Sega CD" 2026-11-12 21:53; "32X" 2026-11-12 21:52;
-  "TeraDrive" 2026-09-14 21:52; "Sega Pico" 2026-10-11 02:23.
-- "Super Nintendo Entertainment System" 2026-11-03 18:24; "Satellaview" 2026-11-10 17:21;
-  "Super Game Boy" 2026-11-08 00:35; "SuFami Turbo" 2026-03-28 10:18; "TurboGrafx-16" 2026-11-10 09:16;
-  "PC Engine SuperGrafx" 2026-06-29 03:02; "TurboDuo" 2026-11-10 09:19.
-- "Neo Geo" 2026-11-09 02:17; "Neo Geo CD" 2026-10-16 15:44; "CD-i" 2026-11-08 06:48; "CDTV" 2026-08-19 21:00;
-  "LaserActive" 2026-10-21 10:24; "Video Information System" 2026-09-29 04:51; "CP System" 2026-11-16 08:45;
-  "Super A'Can" 2026-10-03 14:38.
-- "PV-1000" 2026-05-19 08:52; "Super Cassette Vision" 2026-10-15 00:27; "My Vision" 2026-09-13 16:14;
-  "Action Max" 2026-05-07 04:25; "Video Challenger" 2026-05-07 17:38; "VTech Socrates" 2026-11-12 21:55;
-  "View-Master Interactive Vision" 2026-11-08 20:43; "GX4000" 2026-05-07 04:29;
-  "Commodore 64 Games System" 2026-10-09 15:36; "Zemmix" 2026-08-11 09:08; "Tomy Tutor" 2026-08-19 02:44; "Dina
-  (console)", "BBC Bridge Companion" (last edited 2026-06-17), and "LJN Video Art", read by the second pass on
-  2026-11-20.
-- "Playdia" 2026-11-14 00:12; "Amiga CD32" 2026-11-20 11:04; "FM Towns Marty" 2026-10-08 22:00;
-  "PC-FX" 2026-05-07 04:48; "Third generation of video game consoles" 2026-11-17 07:52;
-  "Fourth generation of video game consoles" 2026-11-01 17:39.
+- "Nintendo Entertainment System" 1386206850; "Nintendo Entertainment System models" 1384562285;
+  "Famicom Disk System" 1381100509; "Family Computer Network System" 1386190728; "Aladdin Deck Enhancer" 1363131517;
+  "Datach" 1385030981; "Dendy" 1370722756.
+- "Master System" 1386607587; "SG-1000" 1386011328; "Atari 7800" 1384315726; "Atari XEGS" 1383793263;
+  "Sega Genesis" 1386540687; "Sega CD" 1385340710; "32X" 1385340621; "TeraDrive" 1374925864; "Sega Pico" 1379636195.
+- "Super Nintendo Entertainment System" 1383614888; "Satellaview" 1384890138; "Super Game Boy" 1384385701;
+  "SuFami Turbo" 1345812760; "TurboGrafx-16" 1384843861; "PC Engine SuperGrafx" 1361623105; "TurboDuo" 1384844068.
+- "Neo Geo" 1384602234; "Neo Geo CD" 1380573033; "CD-i" 1384443552; "CDTV" 1370221495; "LaserActive" 1381290213;
+  "Video Information System" 1377392993; "CP System" 1385997383; "Super A'Can" 1378214813.
+- "PV-1000" 1354986519; "Super Cassette Vision" 1380309796; "My Vision" 1374699443; "Action Max" 1352940996;
+  "Video Challenger" 1353018784; "VTech Socrates" 1385341106; "View-Master Interactive Vision" 1384550636;
+  "GX4000" 1352941564; "Commodore 64 Games System" 1379370511; "Zemmix" 1368826364; "Tomy Tutor" 1370097527; "Dina
+  (console)" 1353018547; "BBC Bridge Companion" 1359829232; "LJN Video Art" 1353018644.
+- "Playdia" 1385569273; "Amiga CD32" 1386758766; "FM Towns Marty" 1379254432; "PC-FX" 1352943842;
+  "Third generation of video game consoles" 1386211087; "Fourth generation of video game consoles" 1383231353.
 
 Wikipedia, handhelds:
 
@@ -745,13 +778,13 @@ Wikipedia, handhelds:
 
 Hubs:
 
-- NESdev wiki, "Cycle reference chart", "CIC lockout chip", "FDS BIOS", read as raw wikitext:
+- NESdev wiki, "Cycle reference chart" revision 24433, "CIC lockout chip" 24095, "FDS BIOS" 24615, read as raw wikitext:
   `https://www.nesdev.org/w/index.php?title=CIC_lockout_chip&action=raw` and sibling pages.
-- SNESdev wiki, "Timing": `https://snes.nesdev.org/w/index.php?title=Timing&action=raw`.
+- SNESdev wiki, "Timing", revision 1467: `https://snes.nesdev.org/w/index.php?title=Timing&action=raw`.
 - fullsnes, index and chapters on the Super Game Boy, Satellaview, and SuFami Turbo:
   `https://problemkaputt.de/fullsnes.htm`; read by the first pass, refused the second (HTTP 403).
 - Pan Docs, "Specifications", "Power Up Sequence", "The Cartridge Header", "SGB Functions", commit `f7f7b064`:
-  `https://raw.githubusercontent.com/gbdev/pandocs/master/src/Power_Up_Sequence.md` and sibling files.
+  `https://raw.githubusercontent.com/gbdev/pandocs/f7f7b064/src/Power_Up_Sequence.md` and sibling files.
 - SMS Power!, "Clock Rate", "BIOS", "BIOSes", "ROM Header", "Game Gear LCD", read as page source:
   `https://www.smspower.org/Development/ROMHeader?action=source` and sibling pages.
 - Plutiedev, "ROM header" and "Using the Sub-CPU in mode 1": `https://plutiedev.com/rom-header` and sibling pages.
@@ -759,9 +792,9 @@ Hubs:
   Mega Jet, and Nomad articles; Sega Game Gear last edited 2026-10-14
   (the second pass received only a bot check from this site):
   `https://segaretro.org/index.php?title=Sega_Game_Gear&action=raw` and sibling pages.
-- NeoGeo Development Wiki, "Clock", "System ROM", "NEO-CMC":
+- NeoGeo Development Wiki, "Clock" revision 9305, "System ROM" 6391, "NEO-CMC" 9366, "YM2610" 9251:
   `https://wiki.neogeodev.org/index.php?title=Clock&action=raw` and sibling pages.
-- WSdev wiki, "SoC", "Timing", "Cartridge connector", front page last edited 2026-09-10:
+- WSdev wiki, "SoC" revision 752, "Timing" 645, "Cartridge connector" 471:
   `https://ws.nesdev.org/w/index.php?title=Cartridge_connector&action=raw` and sibling pages.
 - NgpCraft, NGPC Dev Wiki, README and licence file, last pushed 2026-11-03: `https://github.com/tixul/NgpCraft_dev_ref`.
 
@@ -775,6 +808,9 @@ Patents, front pages and abstracts:
 - US 4,112,422 and US 4,296,476 (Atari):
   `https://patents.google.com/patent/US4112422/en` and `https://patents.google.com/patent/US4296476/en`.
 - US 4,799,635 (Nintendo): `https://patents.google.com/patent/US4799635A/en`.
+
+The community sites named in "Coverage of sources" were read on their prose pages only and nothing rests on them,
+so they are not listed.
 
 Project documents:
 
