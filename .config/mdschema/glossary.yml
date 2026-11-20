@@ -1,0 +1,35 @@
+# Contract: Glossary. One heading for each term, under "## Terms".
+# Unknown frontmatter fields, the single-title rule, and the alphabetical order of the terms
+# are enforced by `mise run lint:contracts`.
+frontmatter:
+  fields:
+    - name: title
+      type: string
+    - name: status
+      type: string
+      enum: [draft, approved]
+    - name: date
+      type: date
+      format: date
+structure:
+  - heading:
+      pattern: "^# .+$"
+      regex: true
+    children:
+      - heading: "## Scope"
+        allow_additional: true
+      - heading: "## Terms"
+        children:
+          - heading:
+              pattern: "^### .+$"
+              regex: true
+            count:
+              min: 1
+              max: 0
+            # Every entry says where its definition comes from.
+            required_text:
+              - pattern: "\\*\\*Basis:\\*\\* \\S"
+# A term is defined once.
+heading_rules:
+  unique: true
+  max_depth: 3

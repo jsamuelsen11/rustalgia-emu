@@ -96,6 +96,19 @@ open | nesdev.org/wiki | site calls it public domain | not stated | 2026-11-17 |
 open | 3dbrew.org | none stated | reverse engineering; bars NDA material | 2026-11-17 | Copyrights page
 open | wiibrew.org | none stated | bars leaked kit content | 2026-11-17 | Policy page
 
+# Sources first cited by R0-04, the note on the glossary and research conventions.
+other | jackchuka/mdschema | MIT | structure checker used here | 2026-11-19 | README, licence file
+other | lycheeverse/lychee | Apache-2.0 OR MIT | link checker used here | 2026-11-19 | README
+open | gbdev/pandocs | CC0 | repository of Pan Docs; states no rule on sources | 2026-11-19 | README, contributing guide
+open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as input | 2026-11-19 | README, licence file
+open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
+open | tasvideos.org | CC BY 2.0 | community wiki; origin of its facts not stated | 2026-11-19 | Site License page
+open | no-intro.org | own data licence, 2026-09-11 | catalogue of dump hashes; no games | 2026-11-19 | home, terms pages
+open | emulation.gametechwiki.com | none named | anonymous wiki; a lead for facts | 2026-11-19 | Copyrights page
+closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
+walled | libretro/libretro-database | CC BY-SA 4.0 | imports other catalogues' data | 2026-11-19 | README, licence file
+walled | redump.org | none stated | catalogue of disc dump hashes; wiki offline | 2026-11-19 | front, downloads pages
+walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
 open | image-ppubs.uspto.gov | public patent documents | official copies of patents | 2026-11-19 | face pages

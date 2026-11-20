@@ -19,6 +19,7 @@ The [documentation guide](docs/README.md) explains the document types, their str
 
 | Path | Holds |
 |---|---|
+| `docs/glossary/` | What the documents mean by their terms of art |
 | `docs/research/emulators/` | Studies of existing emulators |
 | `docs/research/topics/` | Studies of hardware, techniques, platforms, and policy |
 | `docs/research/spikes/` | Reports on throwaway experiments |
