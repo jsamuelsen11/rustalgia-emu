@@ -1,6 +1,10 @@
 # Preferred glossary terms. The glossary fills this map: "discouraged term: preferred term".
+# Each key is a form that docs/glossary/terms.md lists under "Avoid".
+# A form goes here only when no document needs to quote it outside a code span.
 extends: substitution
 message: "Use '%s' instead of '%s'."
 level: error
 ignorecase: true
-swap: {}
+swap:
+  bootrom: boot ROM
+  savestate: save state
