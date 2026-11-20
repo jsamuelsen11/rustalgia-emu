@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 # Claude Code PreToolUse hook: refuse a tool call that would open a restricted source.
 # It reads the call as JSON on standard input and exits 2, with the reason on standard error, to block it.
-# The list is restricted-sources.txt in this folder. The rule is docs/adr/0001-restrict-reading-by-licence-tier.md.
+# The list is source-register.txt in this folder; entries in the open tier are ignored here.
+# The rule is docs/adr/0001-restrict-reading-by-licence-tier.md.
 set -eu
 
-list="$(dirname "$0")/restricted-sources.txt"
+list="$(dirname "$0")/source-register.txt"
 [ -f "$list" ] || exit 0
 
 role=${RUSTALGIA_SOURCE_ROLE:-writer}
@@ -19,7 +20,10 @@ block() {
   exit 2
 }
 
-while read -r tier pattern; do
+while IFS='|' read -r tier pattern _; do
+  tier=${tier%% *}
+  pattern=${pattern# }
+  pattern=${pattern%% *}
   case "$tier" in
   closed | tainted) ;;
   walled) [ "$role" = reader ] && continue ;;

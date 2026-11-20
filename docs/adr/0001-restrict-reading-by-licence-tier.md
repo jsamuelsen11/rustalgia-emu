@@ -112,6 +112,47 @@ Rustalgia's own code is written independently in every tier.
   Its licence and policy statements may be quoted from R0-01, which already records them.
 - **Not allowed:** opening it, or relying on a fact that is known only from it.
 
+### Sources that are not emulators
+
+The four tiers apply to every kind of source.
+For kinds other than emulators, the tests are:
+
+| Kind | Open when | Otherwise |
+|---|---|---|
+| Material a console or chip maker published itself | Always; note any limit on reuse | Not applicable |
+| Maker material that others host, with no sign the maker released it | Never | Closed |
+| Community reference: a wiki or a specification | No claim that it has a confidential origin | Tainted or closed |
+| Test software and test vectors | Results always; code by its licence | Code walled or closed |
+| Development kit or library | Its licence passes and its origin is not disputed | Closed |
+| Forum, chat, video, or personal blog | Always, as a lead to a better source | Not applicable |
+
+- A community reference is tainted when its own maintainers say it copies confidential material.
+  It is closed when a named project or rights holder has publicly accused it of that.
+  An unstated origin, or no stated licence, does not close a reference; the register records the gap.
+- A library whose origin is publicly disputed is closed, whatever its licence.
+- A fact found only in a forum, a chat, a video, or a personal blog is a lead.
+  It is not relied on until a better source or a test confirms it.
+
+### Evaluating a new source
+
+Before a source is opened beyond its prose, or cited for the first time:
+
+1. Decide its kind: emulator, decompilation or firmware reimplementation, maker material, community reference,
+   test software, library, or discussion.
+2. Read its prose only: the licence file, the README, and any page on contributions, copyright, or policy.
+   Record the licence, how it says its information was obtained, any rule on confidential material,
+   and any public dispute about its origin.
+3. Apply the tests in this order and stop at the first that fits: tainted, closed, walled, open.
+   A source that fits none, or whose facts cannot be established, is walled.
+4. Add it to the register, `.claude/hooks/source-register.txt`, with its tier, licence, stated origin, the date checked,
+   and the evidence, in the same change that first opens or cites it.
+5. The author of the change proposes the tier, and the owner accepts it by merging.
+
+A tier is checked again when a family survey or the source map (`R0-05`) covers the source,
+and whenever a change of licence or a new dispute is noticed.
+The date in the register shows how old each evaluation is.
+A source that is not in the register has not been evaluated.
+
 ### In every tier
 
 - Prose means a README, a licence file, a contributing guide, a wiki, a blog, release notes, and documentation.
@@ -138,9 +179,11 @@ or if `R0-06` finds that agent-written code needs stricter controls.
 - Given up: the PlayStation reference at psx-spx and the document it descends from,
   although their accounts of its origin conflict.
   The hardware primer and the PlayStation survey must use other sources.
-- Work created: `.claude/hooks/restricted-sources.txt` lists the walled, closed, and tainted sources,
-  and `.claude/hooks/source-guard.sh` refuses tool calls that would open them.
-  Each family survey confirms the tier of its emulators and extends the list.
+- Work created: `.claude/hooks/source-register.txt` records every evaluated source and its tier,
+  and `.claude/hooks/source-guard.sh` refuses tool calls that would open the walled, closed, and tainted ones.
+  Each family survey confirms the tier of its emulators and extends the register.
+- Harder: the hook blocks only what the register lists.
+  A source that has not been evaluated is walled by rule, and nothing enforces that.
 - Work created: MAME, BizHawk, and Provenance mix licences and start as walled; their surveys settle the tier.
 - Work created: the hook lists repositories,
   so it cannot tell a replacement BIOS inside an open-tier emulator from the rest of that emulator.

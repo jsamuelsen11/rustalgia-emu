@@ -55,10 +55,12 @@ Read it before opening any emulator's repository.
 - Closed tier, not open source, plus decompilations and firmware reimplementations: read prose only.
   A replacement BIOS or boot ROM inside any emulator is closed.
 - Tainted references, such as psx-spx: do not open.
-- A source with no tier is walled until its family survey gives it one.
+- Before opening a source beyond its prose, or citing it for the first time,
+  look for it in `.claude/hooks/source-register.txt`.
+  If it is not there, evaluate it by the steps in the ADR and add it in the same change.
+  Until then it is walled.
 - Never copy or port code from any tier.
   Cite what was learned and write Rustalgia's code independently.
-- `.claude/hooks/source-guard.sh` blocks tool calls to the sources listed in `.claude/hooks/restricted-sources.txt`.
+- `.claude/hooks/source-guard.sh` blocks tool calls to the restricted sources in the register.
   Do not work around a block.
-  Add a source to the list in the same change that gives it a tier.
 - Give every subagent these rules in its brief.

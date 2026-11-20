@@ -64,6 +64,21 @@ check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBView
 check 0 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/Core/gb.c)"
 check 0 reader "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBViewController.m)"
 
+# Disputed libraries are closed, and an open-tier entry in the register blocks nothing.
+check 2 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/libogc/lwp_threads.c)"
+check 0 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/LICENSE)"
+check 0 writer "$(fetch https://gbdev.io/pandocs/Rendering.html)"
+
+# Every register line has a known tier, six fields, and a date.
+register="$(dirname "$0")/source-register.txt"
+bad=$(grep -Ev '^[[:space:]]*(#|$)' "$register" |
+  grep -Ev '^(open|walled|closed|tainted) \| [^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+$' || true)
+if [ -n "$bad" ]; then
+  echo "FAIL: malformed register lines:"
+  echo "$bad"
+  failed=1
+fi
+
 if [ "$failed" -eq 0 ]; then
   echo "source-guard: all cases pass"
 fi
