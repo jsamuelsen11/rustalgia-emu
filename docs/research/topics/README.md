@@ -13,6 +13,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 |---|---|
 | [R0-01](R0-01-clean-room-policy.md) | Which sources may be read, and how notes are taken |
 | [R0-04](R0-04-glossary-and-conventions.md) | Which terms need fixed meanings, and what a note may quote and tabulate |
+| [R0-06](R0-06-provenance-controls.md) | What can record and control where agent-written work comes from |
 
 ## Conventions
 
