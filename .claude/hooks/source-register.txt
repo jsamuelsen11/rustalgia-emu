@@ -17,6 +17,16 @@ other | ffmpeg.org | prose page read; code not evaluated | media library's own l
 other | videolan.org | prose page read; code not evaluated | media player project's legal page | 2026-11-19 | R0-02
 other | docs.mesa3d.org | release notes read; code not evaluated | graphics library documentation | 2026-11-19 | R0-02
 other | dri.freedesktop.org/wiki | none stated | graphics driver wiki, one page read | 2026-11-19 | R0-02
+other | jplag/jplag | GPL-3.0 | source-code plagiarism detector | 2026-11-19 | licence file, README
+other | blingenf/copydetect | MIT | code similarity tool | 2026-11-19 | licence file, README
+other | git-ai-project/git-ai | Apache-2.0 | AI attribution tool for git | 2026-11-19 | licence file, README
+other | code.claude.com/docs | none stated | vendor documentation of the agent tool | 2026-11-19 | R0-06
+other | torvalds/linux | GPL-2.0 WITH Linux-syscall-note | operating system kernel | 2026-11-19 | COPYING
+other | dodona-edu/dolos | MIT | source-code plagiarism detector | 2026-11-19 | README
+other | whit3rabbit/clean-room-skill | MIT | clean-room workflow for agents | 2026-11-19 | licence file
+other | px4/px4-autopilot | BSD-3-Clause | drone autopilot; its AI policy cited | 2026-11-19 | documentation page
+other | librelane/librelane | not checked | chip design flow; its LLM policy cited | 2026-11-19 | policy page
+other | curl/curl | curl | transfer tool and library; its AI rules cited | 2026-11-19 | copyright page
 
 # Emulators: open tier.
 open | mgba-emu/mgba | MPL-2.0 | - | 2026-11-17 | licence file
@@ -58,6 +68,7 @@ walled | tasemulators/bizhawk | MIT own code; repository mixes licences | - | 20
 walled | provenance-emu/provenance | BSD-style plus branding clause | bundles many cores | 2026-11-17 | licence file
 walled | rpcs3/rpcs3 | GPL-2.0-only for most files | - | 2026-11-19 | README
 walled | vita3k/vita3k | GPL-2.0, only or later not stated | - | 2026-11-19 | README, COPYING.txt
+walled | qemu-project/qemu | GPL-2.0, only or later not stated | machine emulator | 2026-11-19 | docs footer
 
 # Emulators: closed tier. Not open source, or no licence.
 closed | stenzek/duckstation | CC BY-NC-ND 4.0 | - | 2026-11-17 | licence file
