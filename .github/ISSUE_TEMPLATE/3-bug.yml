@@ -2,6 +2,7 @@ name: Bug report
 description: Something behaves incorrectly, crashes, or differs from real hardware.
 title: "bug: "
 labels: ["bug", "needs-triage"]
+type: Bug
 body:
   - type: markdown
     attributes:

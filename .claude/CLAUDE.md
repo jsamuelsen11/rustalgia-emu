@@ -31,6 +31,18 @@ Read `README.md` and `docs/README.md` before writing anything.
 - Use the status values defined in `docs/README.md`.
   A document starts as `draft`; only the owner approves it.
 
+## Pull requests and issues
+
+- Read `.github/PULL_REQUEST_TEMPLATE.md` and follow it; a pull request opened through the API does not receive it.
+- Put the owner's decisions first, including every choice you made that was the owner's to make.
+- Give evidence as the commands you ran and what they printed.
+  List what you did not verify.
+- Do not start a task issue that lacks the `agent-ready` label.
+- When a choice belongs to the owner, open a decision issue or ask.
+  Carry on with work that does not depend on the answer.
+- An issue you open follows the headings of the matching form in `.github/ISSUE_TEMPLATE/`.
+- Never approve or merge a pull request.
+
 ## Research
 
 - The research roadmap is `docs/roadmap/research.md`.

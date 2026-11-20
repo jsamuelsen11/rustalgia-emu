@@ -1,47 +1,64 @@
-<!-- Title: Conventional Commits, lower-case subject, at most 72 characters. It becomes the commit on main. -->
+<!--
+Written by an agent, read by the owner. Keep it short; the owner's time is the scarce thing.
+Title: Conventional Commits, lower-case subject, at most 72 characters. It becomes the commit on main.
+A pull request opened through the API does not get this template: read this file and follow it.
+Write "None" in a section that does not apply. Do not delete a section.
+-->
 
-## Summary
+## Purpose
 
-<!-- What this changes and why, in two or three sentences. -->
+<!-- One sentence: what this changes and why. If it takes two, the pull request is too big. -->
 
-## Linked work
+## Request
 
-<!-- Use "Closes #123" so the issue closes on merge. Delete the lines that do not apply. -->
+<!-- The owner's instruction, quoted or linked: "Closes #123", a roadmap item, or the words of the request. -->
 
-- Closes #
-- Requirements:
-- ADRs:
+## Decisions for you
 
-## Type of change
+<!-- What only the owner can settle before merging, each as a question with a recommended answer.
+     Include every choice the author made that was the owner's to make. -->
 
-- [ ] Documentation: research, requirements, ADRs, or roadmap
-- [ ] Feature
-- [ ] Fix
-- [ ] Refactor or performance, with no change in behaviour
-- [ ] Tests
-- [ ] Tooling, CI, or repository config
+## Read in this order
 
-## What changed
+<!-- A map for the reviewer. Name the files that need careful reading, and why.
+     Then name the files that are mechanical: renames, generated output, formatting. -->
 
-<!-- The main changes, grouped. Point the reviewer at the files that matter most. -->
+Changes to checks or controls (`.github/`, `.config/`, `.claude/`):
 
-## Verification
+<!-- Each one with its reason, or "None". A change that makes a check pass by weakening it is never acceptable. -->
 
-<!-- How you know it works: commands run, results seen, and anything you could not verify. -->
+## Evidence
 
-- [ ] `mise run check` passes locally
-- [ ] New behaviour has a test or a recorded proof, described above
-- [ ] Platforms exercised (Linux, Windows, Android, iOS), or not applicable:
+<!-- The commands that were run and what they printed, not a statement that things pass.
+     Trim output to the lines that show the result. -->
 
-## Risk
+```text
+$ mise run check
+```
 
-<!-- What could break, who it affects, and how to roll back. Write "None" if that is true. -->
+## Not verified
+
+<!-- What was not checked, could not be checked, or was assumed. Sources that refused access. Claims from memory. -->
+
+## Risk and rollback
+
+<!-- What could break, who it affects, and how to undo it. -->
+
+## Out of scope
+
+<!-- What was noticed and left alone, with the issue opened for each. -->
+
+## Provenance
+
+- Tool and model:
+- Sources opened: all in the open tier or registered in `.claude/hooks/source-register.txt` (yes or no):
+- New entries in the source register:
 
 ## Checklist
 
-- [ ] The change is one logical unit, and the title describes it
+- [ ] One logical change, and the purpose above fits in one sentence
+- [ ] `mise run check` passes locally, with the output above
 - [ ] New documents sit in the right folder and follow their structure contract
 - [ ] A decision that is hard to reverse has an ADR
-- [ ] The README, glossary, and related documents reflect the change
 - [ ] No ROMs, BIOS files, firmware, keys, or other copyrighted or secret material
-- [ ] Changes under `.github/` or `.config/` are called out in the summary, with the reason
+- [ ] Nothing was copied or ported from another project's code
