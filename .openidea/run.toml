@@ -1,0 +1,37 @@
+# Run configurations shared with everyone who opens this project in OpenIDEA.
+# Each one runs a mise task, so the editor, the git hooks, and CI all run the same commands.
+
+[[configurations]]
+id = "user:check"
+name = "Check"
+kind = "shell"
+command = "mise"
+args = ["run", "check"]
+
+[[configurations]]
+id = "user:fmt"
+name = "Format"
+kind = "shell"
+command = "mise"
+args = ["run", "fmt"]
+
+[[configurations]]
+id = "user:lint"
+name = "Lint"
+kind = "shell"
+command = "mise"
+args = ["run", "lint"]
+
+[[configurations]]
+id = "user:links"
+name = "Check links"
+kind = "shell"
+command = "mise"
+args = ["run", "links"]
+
+[[configurations]]
+id = "user:source-guard-tests"
+name = "Test the source guard"
+kind = "shell"
+command = "sh"
+args = [".claude/hooks/source-guard.test.sh"]

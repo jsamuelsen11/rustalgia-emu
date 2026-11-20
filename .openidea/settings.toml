@@ -1,0 +1,5 @@
+# Project settings for OpenIDEA. Only values that differ from a user's own settings belong here.
+
+[files]
+# Hidden from the project tree and skipped by search and indexing. This list replaces the user's own.
+exclude = ["**/.git", "**/node_modules", "**/target", "**/.lycheecache", "**/.rumdl_cache"]
