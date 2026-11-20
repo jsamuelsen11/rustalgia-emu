@@ -609,3 +609,7 @@ closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firm
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+# Sources first cited by R1-03, the sixth-generation primer.
+open | learn.microsoft.com/en-us/archive/blogs/xboxteam | none stated | maker's team blog | 2026-11-20 | post
+open | ppsspp.org | notice, no grant | site of an open-tier emulator; prose | 2026-11-20 | footer, one page
+open | xenia.jp | none stated | site of an open-tier emulator; bans the maker's kit | 2026-11-20 | one article
