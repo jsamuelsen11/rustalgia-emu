@@ -1,0 +1,81 @@
+name: Task for an agent
+description: Brief an AI agent on one piece of work. Everything the agent needs must be in this issue.
+title: "task: "
+labels: ["task"]
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An agent starts with no memory of earlier conversations, so write what it cannot find in the repository.
+        One task produces one pull request. Split anything larger.
+        The agent does not start until you add the `agent-ready` label.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What is true when this is done, and why it matters. State the result, not the steps.
+      placeholder: "The research note for roadmap item R0-02 exists as a draft and passes every check."
+    validations:
+      required: true
+      min_length: 40
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Statements the agent can check for itself. Prefer a command and its expected result.
+      value: |
+        - [ ] `mise run check` passes
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What the agent must not touch or decide, even if it looks related.
+      placeholder: |
+        - Do not change anything under `.config/` or `.github/`.
+        - Do not choose between the options; record them.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and pointers
+      description: |
+        Roadmap item, documents to read first, an existing file to follow as a pattern, and anything you already know.
+        Name files that are likely involved; the agent treats the list as an expectation to check, not a limit.
+      placeholder: |
+        - Roadmap: R0-02 in `docs/roadmap/research.md`
+        - Read first: `docs/research/topics/R0-01-clean-room-policy.md`
+        - Follow the pattern of: `docs/research/topics/_template.md`
+  - type: textarea
+    id: ask-first
+    attributes:
+      label: Stop and ask me if
+      description: Conditions under which the agent must stop and open a decision issue or ask, instead of choosing.
+      value: |
+        - The work turns out to need more than one pull request.
+        - A source needed for the work is walled, closed, or tainted under ADR 0001.
+        - A check would have to be weakened or skipped to finish.
+  - type: dropdown
+    id: autonomy
+    attributes:
+      label: How far may the agent go
+      options:
+        - Open a draft pull request and wait for me
+        - Show me a plan first, then wait
+        - Investigate and report in this issue only; change nothing
+      default: 0
+    validations:
+      required: true
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Before adding the agent-ready label
+      options:
+        - label: Someone with no context could do this from the issue alone.
+          required: true
+        - label: Every item this depends on is done.
+          required: true

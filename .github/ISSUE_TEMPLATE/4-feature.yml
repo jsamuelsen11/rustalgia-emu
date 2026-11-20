@@ -2,6 +2,7 @@ name: Feature request
 description: Propose a capability Rustalgia does not have.
 title: "feat: "
 labels: ["enhancement", "needs-triage"]
+type: Feature
 body:
   - type: textarea
     id: problem

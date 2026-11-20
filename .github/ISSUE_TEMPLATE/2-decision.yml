@@ -1,0 +1,60 @@
+name: Decision for the owner
+description: A choice only the owner can make. Agents open this instead of choosing.
+title: "decision: "
+labels: ["decision"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when work cannot go on without a choice that is hard to reverse, changes scope,
+        or is the owner's by rule.
+        A choice that is hard to reverse is recorded as an ADR in `docs/adr/`.
+        Write it so that it can be answered in one reply.
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision needed
+      description: The question, in one sentence that a short answer settles.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Why now
+      description: What raised the question, and the constraints an answer must meet. Link the note, ADR, or PR.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Each option with its main gain, its main cost, and the evidence. Two is the minimum.
+      placeholder: |
+        1. **Option name.** Gain: ... Cost: ... Evidence: `docs/...`
+        2. **Option name.** Gain: ... Cost: ... Evidence: ...
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: The option the author would pick and the reason, or "None".
+    validations:
+      required: true
+  - type: textarea
+    id: blocked
+    attributes:
+      label: What waits on this
+      description: The work that is stopped, and the work that carries on in the meantime.
+      placeholder: "Blocked: R1-30 to R1-67. Carrying on: R0-02, R0-04."
+    validations:
+      required: true
+  - type: dropdown
+    id: reversible
+    attributes:
+      label: How hard is it to reverse
+      options:
+        - Easy to reverse; no ADR needed
+        - Hard to reverse; the answer becomes an ADR
+    validations:
+      required: true
