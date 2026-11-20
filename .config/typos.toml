@@ -9,3 +9,7 @@ extend-ignore-words-re = ["^[A-Z0-9]+$"]
 [default.extend-words]
 # Correctly spelled words that the checker takes for typos. Each maps to itself.
 sav = "sav" # the file extension of a battery save
+
+[default.extend-identifiers]
+# Correctly spelled words that the checker splits into wrong parts. Each maps to itself.
+PDFing = "PDFing" # making PDF copies, in a quoted newsgroup post
