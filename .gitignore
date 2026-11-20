@@ -197,7 +197,8 @@ graphify-out/
 
 # --- Editors and operating systems ---------------------------------------------
 
-.openidea/
+# OpenIDEA shares .openidea/settings.toml and .openidea/run.toml.
+# The editor keeps its per-user files out of git through .openidea/.gitignore, which it maintains itself.
 .idea/
 *.iml
 .vscode/

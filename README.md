@@ -29,6 +29,7 @@ The [documentation guide](docs/README.md) explains the document types, their str
 | `docs/plans/` | Implementation plans that carry out a design |
 | `.config/` | Tool versions, tasks, git hooks, and every tool's configuration |
 | `.claude/` | Project instructions for Claude Code, and the hook that blocks restricted sources |
+| `.openidea/` | Shared OpenIDEA settings and run configurations for the mise tasks |
 | `.github/` | CI workflows, Dependabot, issue and pull request templates, and contributor policies |
 
 ## Development
