@@ -13,6 +13,10 @@
 other | jsamuelsen11/rustalgia-emu | GPL-3.0 | this project | 2026-11-19 | -
 other | github/dmca | - | GitHub's published takedown notices | 2026-11-19 | -
 other | crate-ci/typos | MIT OR Apache-2.0 | spelling checker used here | 2026-11-19 | -
+other | ffmpeg.org | prose page read; code not evaluated | media library's own legal page | 2026-11-19 | R0-02
+other | videolan.org | prose page read; code not evaluated | media player project's legal page | 2026-11-19 | R0-02
+other | docs.mesa3d.org | release notes read; code not evaluated | graphics library documentation | 2026-11-19 | R0-02
+other | dri.freedesktop.org/wiki | none stated | graphics driver wiki, one page read | 2026-11-19 | R0-02
 other | jplag/jplag | GPL-3.0 | source-code plagiarism detector | 2026-11-19 | licence file, README
 other | blingenf/copydetect | MIT | code similarity tool | 2026-11-19 | licence file, README
 other | git-ai-project/git-ai | Apache-2.0 | AI attribution tool for git | 2026-11-19 | licence file, README
@@ -62,6 +66,8 @@ walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
 walled | mamedev/mame | GPL-2.0, texts disagree; most files BSD-3 | - | 2026-11-17 | COPYING, docs
 walled | tasemulators/bizhawk | MIT own code; repository mixes licences | - | 2026-11-17 | licence file
 walled | provenance-emu/provenance | BSD-style plus branding clause | bundles many cores | 2026-11-17 | licence file
+walled | rpcs3/rpcs3 | GPL-2.0-only for most files | - | 2026-11-19 | README
+walled | vita3k/vita3k | GPL-2.0, only or later not stated | - | 2026-11-19 | README, COPYING.txt
 walled | qemu-project/qemu | GPL-2.0, only or later not stated | machine emulator | 2026-11-19 | docs footer
 
 # Emulators: closed tier. Not open source, or no licence.
@@ -103,3 +109,6 @@ closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firm
 walled | libretro/libretro-database | CC BY-SA 4.0 | imports other catalogues' data | 2026-11-19 | README, licence file
 walled | redump.org | none stated | catalogue of disc dump hashes; wiki offline | 2026-11-19 | front, downloads pages
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
+# Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
+open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+open | image-ppubs.uspto.gov | public patent documents | official copies of patents | 2026-11-19 | face pages
