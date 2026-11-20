@@ -1,0 +1,80 @@
+# Source register: every source that has been evaluated, and its tier.
+# The rule and the evaluation steps are in docs/adr/0001-restrict-reading-by-licence-tier.md.
+# source-guard.sh reads this file and blocks the walled, closed, and tainted entries.
+#
+# One source per line, six fields separated by " | ":
+#   tier | pattern | licence | stated origin or note | date checked | evidence
+# The pattern is in lower case: "owner/repository", "owner/" for every repository of an owner, or a web address.
+# A source that is not listed has not been evaluated, and is treated as walled:
+# the guard blocks its code and asks for an evaluation.
+# The tier "other" marks a repository that has nothing to do with consoles or emulation. Nothing is restricted.
+
+# This repository, and repositories that are not sources.
+other | jsamuelsen11/rustalgia-emu | GPL-3.0 | this project | 2026-11-19 | -
+other | github/dmca | - | GitHub's published takedown notices | 2026-11-19 | -
+other | crate-ci/typos | MIT OR Apache-2.0 | spelling checker used here | 2026-11-19 | -
+
+# Emulators: open tier.
+open | mgba-emu/mgba | MPL-2.0 | - | 2026-11-17 | licence file
+open | skylersaleh/skyemu | MIT | - | 2026-11-17 | licence file
+open | melonds-emu/melonds | GPL-3.0-or-later | - | 2026-11-17 | README
+open | azahar-emu/azahar | GPL-3.0 | - | 2026-11-17 | licence file
+open | wheremyfoodat/panda3ds | GPL-3.0 | adapts Citra code | 2026-11-17 | README
+open | pcsx2/pcsx2 | GPL-3.0 | - | 2026-11-17 | licence file
+open | jpd002/play- | BSD-2-Clause | - | 2026-11-17 | licence file
+open | hrydgard/ppsspp | GPL-2.0-or-later | reuses PSPSDK headers | 2026-11-17 | licence file, docs
+open | bsnes-emu/bsnes | GPL-3.0-or-later | - | 2026-11-17 | licence file
+open | dolphin-emu/dolphin | GPL-2.0-or-later | parts under other licences | 2026-11-17 | COPYING
+open | ares-emulator/ares | ISC | parts from MAME under BSD-3-Clause | 2026-11-17 | licence file
+open | sourmesen/mesen2 | GPL-3.0-or-later | archived | 2026-11-17 | README
+open | nesdev-org/mesence | GPL-3.0-or-later | community fork of Mesen | 2026-11-17 | README
+open | jsgroth/jgenesis | GPL-3.0 | cites hosted official documents | 2026-11-17 | README
+open | libretro/retroarch | GPL-3.0 | frontend only; cores vary | 2026-11-17 | COPYING
+open | kelpsyberry/dust | GPL-3.0 | - | 2026-11-17 | licence file
+open | gopher64/gopher64 | GPL-3.0 | adapts mupen64plus and ares code | 2026-11-17 | README
+open | michelhe/rustboyadvance-ng | MIT | - | 2026-11-17 | licence file
+open | lukexor/tetanes | MIT OR Apache-2.0 | - | 2026-11-17 | README
+open | dbalsom/martypc | MIT | - | 2026-11-17 | licence file
+open | liji32/sameboy | Expat | iOS folder under its own terms | 2026-11-17 | licence file
+
+# A folder under its own terms inside an open-tier emulator.
+walled | liji32/sameboy/tree/master/ios | Expat plus app-store condition | - | 2026-11-17 | licence file
+walled | liji32/sameboy/blob/master/ios | Expat plus app-store condition | - | 2026-11-17 | licence file
+
+# Emulators: walled tier. Open source under a licence that is not compatible with GPL-3.0, or not resolved.
+walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-17 | wiki FAQ
+walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | grumpycoders/pcsx-redux | GPL-2.0, only or later not stated | old address | 2026-11-17 | redirect
+walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | pokemon-speedrunning/gambatte-core | GPL-2.0 | fork of Gambatte | 2026-11-17 | README
+walled | libretro/gambatte-libretro | GPL-2.0 | fork of Gambatte | 2026-11-17 | licence metadata
+walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
+walled | mamedev/mame | GPL-2.0, texts disagree; most files BSD-3 | - | 2026-11-17 | COPYING, docs
+walled | tasemulators/bizhawk | MIT own code; repository mixes licences | - | 2026-11-17 | licence file
+walled | provenance-emu/provenance | BSD-style plus branding clause | bundles many cores | 2026-11-17 | licence file
+
+# Emulators: closed tier. Not open source, or no licence.
+closed | stenzek/duckstation | CC BY-NC-ND 4.0 | - | 2026-11-17 | licence file
+closed | snes9xgit/snes9x | own non-commercial licence | - | 2026-11-17 | licence file
+closed | sinamas/gambatte | none shown | "taken private" | 2026-11-17 | README
+
+# Decompilations and reimplementations of console firmware: closed tier.
+closed | pret/ | none | disassemblies of games | 2026-11-17 | project site
+closed | zeldaret/ | none | decompilations of games | 2026-11-17 | README
+closed | n64decomp/ | CC0 on a decompilation | decompilations of games | 2026-11-17 | README
+closed | pcsx-redux/nugget | - | OpenBIOS, rewritten from a BIOS dump | 2026-11-17 | README
+
+# Libraries whose origin is disputed: closed tier.
+closed | devkitpro/libogc | zlib-style | accused of copying a maker's kit and RTEMS | 2026-11-17 | R0-01
+
+# References: tainted tier.
+tainted | psx-spx.consoledev.net | none obtained | maintainers say it copies secret material | 2026-11-17 | home page
+tainted | psx-spx/psx-spx.github.io | none obtained | repository of the same reference | 2026-11-17 | home page
+tainted | problemkaputt.de/psx-spx | copyright notice | the document that statement is about | 2026-11-17 | R0-01
+
+# References: open tier.
+open | gbdev.io/pandocs | CC0 | origin of its facts not stated | 2026-11-17 | History page
+open | problemkaputt.de/gbatek | copyright notice, no grant | author's credits | 2026-11-17 | page footer
+open | nesdev.org/wiki | site calls it public domain | not stated | 2026-11-17 | disclaimer page
+open | 3dbrew.org | none stated | reverse engineering; bars NDA material | 2026-11-17 | Copyrights page
+open | wiibrew.org | none stated | bars leaked kit content | 2026-11-17 | Policy page

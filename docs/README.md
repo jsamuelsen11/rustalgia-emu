@@ -11,10 +11,10 @@ AI agents write the documents; the owner reviews and approves them.
 |---|---|---|
 | `roadmap/` | What we plan to do, and in what order | [roadmap/README.md](roadmap/README.md) |
 | `research/emulators/` | Studies of existing emulators | |
-| `research/topics/` | Studies of hardware, techniques, platforms, and policy | |
+| `research/topics/` | Studies of hardware, techniques, platforms, and policy | [research/topics/README.md](research/topics/README.md) |
 | `research/spikes/` | Reports on throwaway experiments | |
 | `requirements/` | One requirement per file | |
-| `adr/` | Architecture decision records | |
+| `adr/` | Architecture decision records | [adr/README.md](adr/README.md) |
 | `designs/` | Designs for work on the repository itself: what to build and why | [designs/README.md](designs/README.md) |
 | `plans/` | Implementation plans that carry out a design | [plans/README.md](plans/README.md) |
 | `assets/` | Images used by the README and the documents | |
