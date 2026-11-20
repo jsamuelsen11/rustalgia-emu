@@ -12,6 +12,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | File | Answers |
 |---|---|
 | [R0-01](R0-01-clean-room-policy.md) | Which sources may be read, and how notes are taken |
+| [R0-02](R0-02-legal-baseline.md) | What law and enforcement history constrain an emulator project |
 
 ## Conventions
 
