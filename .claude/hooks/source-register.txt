@@ -531,7 +531,7 @@ closed | trapexit/portfolio_os | not read | described by a README as 3DO system 
 # Sega, arcade, Xbox, and other systems: tests.
 open | raxoft/z80test | MIT | results from a real Spectrum | 2026-11-19 | README
 open | singlesteptests/m68000 | MIT | generated with MAME's microcoded core | 2026-11-19 | README
-open | singlesteptests/z80 | MIT | generated with JSMoo | 2026-11-19 | description
+open | singlesteptests/z80 | MIT | translated from the ares core, by its README | 2026-11-20 | README, R1-01
 open | singlesteptests/8088 | MIT | captured from a physical processor with MartyPC | 2026-11-19 | README
 open | klaus2m5/6502_65c02_functional_tests | GPL-3.0 | self-checking programs | 2026-11-19 | licence file
 open | dirkwhoffmann/vamigats | GPL-3.0 | reference images from real machines; needs a system ROM | 2026-11-19 | README
