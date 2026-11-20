@@ -153,6 +153,13 @@ and whenever a change of licence or a new dispute is noticed.
 The date in the register shows how old each evaluation is.
 A source that is not in the register has not been evaluated.
 
+The hook applies this on the spot for repositories on code hosts.
+When a session tries to open code in a repository that is not in the register,
+the hook blocks the call and asks for the steps above; the repository's prose stays open so that they can be done.
+Once the line is added, the hook applies its tier and does not ask again.
+A repository that has nothing to do with consoles or emulation, such as a tool this project uses,
+is registered as `other` and is not restricted.
+
 ### In every tier
 
 - Prose means a README, a licence file, a contributing guide, a wiki, a blog, release notes, and documentation.
@@ -182,8 +189,10 @@ or if `R0-06` finds that agent-written code needs stricter controls.
 - Work created: `.claude/hooks/source-register.txt` records every evaluated source and its tier,
   and `.claude/hooks/source-guard.sh` refuses tool calls that would open the walled, closed, and tainted ones.
   Each family survey confirms the tier of its emulators and extends the register.
-- Harder: the hook blocks only what the register lists.
-  A source that has not been evaluated is walled by rule, and nothing enforces that.
+- Harder: a session classifies a new source before the owner sees the register line.
+  The owner reviews the line and its evidence at merge, after the source may have been read.
+- Harder: the fallback covers repositories on code hosts only.
+  For web sites, forums, and search results, "not evaluated means walled" rests on the written rule.
 - Work created: MAME, BizHawk, and Provenance mix licences and start as walled; their surveys settle the tier.
 - Work created: the hook lists repositories,
   so it cannot tell a replacement BIOS inside an open-tier emulator from the rest of that emulator.

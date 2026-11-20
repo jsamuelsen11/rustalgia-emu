@@ -69,4 +69,47 @@ done <<LIST
 $(grep -Ev '^[[:space:]]*(#|$)' "$list")
 LIST
 
+# Fallback: code in a repository that is not in the register has not been evaluated, so it is walled.
+# Prose stays open, so that the licence and the README can be read to evaluate it.
+hosts='github\.com|raw\.githubusercontent\.com|gitlab\.com|codeberg\.org'
+name='[a-z0-9][a-z0-9._-]*'
+reserved='^(orgs|search|settings|features|topics|about|login|marketplace|sponsors|notifications|explore)/'
+found=$(
+  {
+    printf '%s' "$input" | grep -oE "(^|[^a-z0-9.-])(${hosts})/${name}/${name}" | sed -E "s~^.*(${hosts})/~~"
+    printf '%s' "$input" | grep -oE "(api\.github\.com/|gh api +/?)repos/${name}/${name}" | sed -E 's~^.*repos/~~'
+    printf '%s' "$input" | grep -oE "(--repo|-r|gh repo (clone|view)) +${name}/${name}" | sed -E 's~^.* ~~'
+    printf '%s' "$input" | grep -E '"owner"[[:space:]]*:' | sed -nE \
+      "s~.*\"owner\"[[:space:]]*:[[:space:]]*\"(${name})\".*\"repo\"[[:space:]]*:[[:space:]]*\"(${name})\".*~\1/\2~p"
+  } | sed -E 's~\.git$~~' | grep -Ev "$reserved" | sort -u
+)
+
+for repository in $found; do
+  owner=${repository%%/*}
+  if grep -Eq "^[a-z]+ \| (${repository}|${owner}/) \|" "$list"; then
+    continue
+  fi
+  escaped=$(printf '%s' "$repository" | sed 's/[.[\*^$]/\\&/g')
+  marked=$(printf '%s' "$input" | sed -E "s~(^|[^a-z0-9_.-])${escaped}~\\1${mark}~g")
+  rest=$(printf '%s' "$marked" | sed -E \
+    -e "s~${mark}(/(blob|raw|contents)(/[^/\"' ]+)?|/[^/\"' ]+)?/(${prose})[a-z0-9._-]*${end}~\\5~g" \
+    -e "s~${mark}/(license|readme)${end}~\\2~g" \
+    -e "s~${mark}${end}~\\1~g")
+  unevaluated=no
+  case "$rest" in *"$mark"*) unevaluated=yes ;; esac
+  if printf '%s' "$marked" | grep -Eq 'clone|tarball|zipball|archive|codeload|search|"owner"'; then
+    unevaluated=yes
+  fi
+  if [ "$unevaluated" = yes ]; then
+    {
+      echo "Blocked by .claude/hooks/source-guard.sh: '$repository' is not in the source register."
+      echo "Evaluate it first. Its licence, README, and policy pages may be read now."
+      echo "Follow 'Evaluating a new source' in docs/adr/0001-restrict-reading-by-licence-tier.md,"
+      echo "add a line to .claude/hooks/source-register.txt, then try again."
+      echo "A repository that has nothing to do with consoles or emulation is registered as 'other'."
+    } >&2
+    exit 2
+  fi
+done
+
 exit 0

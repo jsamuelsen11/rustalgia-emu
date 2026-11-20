@@ -5,7 +5,14 @@
 # One source per line, six fields separated by " | ":
 #   tier | pattern | licence | stated origin or note | date checked | evidence
 # The pattern is in lower case: "owner/repository", "owner/" for every repository of an owner, or a web address.
-# A source that is not listed has not been evaluated, and is treated as walled.
+# A source that is not listed has not been evaluated, and is treated as walled:
+# the guard blocks its code and asks for an evaluation.
+# The tier "other" marks a repository that has nothing to do with consoles or emulation. Nothing is restricted.
+
+# This repository, and repositories that are not sources.
+other | jsamuelsen11/rustalgia-emu | GPL-3.0 | this project | 2026-11-19 | -
+other | github/dmca | - | GitHub's published takedown notices | 2026-11-19 | -
+other | crate-ci/typos | MIT OR Apache-2.0 | spelling checker used here | 2026-11-19 | -
 
 # Emulators: open tier.
 open | mgba-emu/mgba | MPL-2.0 | - | 2026-11-17 | licence file

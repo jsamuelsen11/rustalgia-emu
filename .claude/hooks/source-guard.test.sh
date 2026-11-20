@@ -25,7 +25,6 @@ fetch() { printf '{"tool_name":"WebFetch","tool_input":{"url":"%s","prompt":"x"}
 # Unrestricted sources pass.
 check 0 writer "$(fetch https://github.com/mgba-emu/mgba/blob/master/src/gba/gba.c)"
 check 0 writer "$(bash 'git status')"
-check 0 writer "$(bash 'gh api repos/interpret/x/contents/src')"
 
 # Closed: code is blocked, prose is allowed.
 check 2 writer "$(fetch https://github.com/stenzek/duckstation/blob/master/src/core/cpu_core.cpp)"
@@ -64,6 +63,21 @@ check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBView
 check 0 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/Core/gb.c)"
 check 0 reader "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBViewController.m)"
 
+# Fallback: a repository that is not in the register is walled until it is evaluated.
+check 2 writer "$(fetch https://github.com/example-org/new-emulator/blob/main/src/cpu.rs)"
+check 2 reader "$(fetch https://github.com/example-org/new-emulator/blob/main/src/cpu.rs)"
+check 2 writer "$(bash 'git clone https://github.com/example-org/new-emulator.git')"
+check 2 writer "$(bash 'gh api repos/example-org/new-emulator/contents/src')"
+check 2 writer "$(github example-org new-emulator)"
+check 0 writer "$(fetch https://github.com/example-org/new-emulator)"
+check 0 writer "$(fetch https://github.com/example-org/new-emulator/blob/main/README.md)"
+check 0 writer "$(bash 'gh api repos/example-org/new-emulator/license')"
+check 0 writer "$(bash 'gh api repos/jsamuelsen11/rustalgia-emu/pulls/9/comments')"
+check 0 writer "$(fetch https://github.com/crate-ci/typos/blob/master/docs/reference.md)"
+check 0 writer "$(fetch https://docs.github.com/en/copilot/concepts/completions/code-referencing)"
+check 0 writer "$(fetch https://github.com/search?q=emulator)"
+check 0 writer "$(fetch https://gbdev.io/pandocs/Rendering.html)"
+
 # Disputed libraries are closed, and an open-tier entry in the register blocks nothing.
 check 2 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/libogc/lwp_threads.c)"
 check 0 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/LICENSE)"
@@ -71,8 +85,9 @@ check 0 writer "$(fetch https://gbdev.io/pandocs/Rendering.html)"
 
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
+fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
 bad=$(grep -Ev '^[[:space:]]*(#|$)' "$register" |
-  grep -Ev '^(open|walled|closed|tainted) \| [^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+$' || true)
+  grep -Ev "^(open|walled|closed|tainted|other) \\| ${fields}\$" || true)
 if [ -n "$bad" ]; then
   echo "FAIL: malformed register lines:"
   echo "$bad"

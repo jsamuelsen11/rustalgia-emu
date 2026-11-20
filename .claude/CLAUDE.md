@@ -61,6 +61,7 @@ Read it before opening any emulator's repository.
   Until then it is walled.
 - Never copy or port code from any tier.
   Cite what was learned and write Rustalgia's code independently.
-- `.claude/hooks/source-guard.sh` blocks tool calls to the restricted sources in the register.
-  Do not work around a block.
+- `.claude/hooks/source-guard.sh` blocks tool calls to the restricted sources in the register,
+  and to code in any repository that is not in the register.
+  When it asks for an evaluation, do the evaluation; do not work around a block.
 - Give every subagent these rules in its brief.
