@@ -73,6 +73,8 @@ A catalogue lists every dedicated console and handheld sold in the era, with its
 PC and Android handhelds, microconsoles, FPGA devices, and retro "mini" consoles are listed as emulator hosts,
 which `R3-07` and `R3-12` cover, not as systems to emulate.
 An era holds the systems whose family survey depends on its primer.
+Where a survey depends on more than one primer, each of its systems belongs to the era of its own generation,
+and the survey depends on the other primers for the hardware that its systems contain or carry over.
 
 - [ ] **R1-01** 8-bit and 16-bit consoles and handhelds: primer.
 - [ ] **R1-02** The 32-bit and 64-bit era: primer.
