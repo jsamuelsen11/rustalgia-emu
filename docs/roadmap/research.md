@@ -27,7 +27,7 @@ Every system, platform, and technique stays an option until the synthesis phase.
   We do not copy them.
 - **Host platforms:** iOS, Android, Linux, and Windows, with other hosts noted as options.
 - **Technology:** Rust and the languages it must work with, plus performance, testing, and project engineering.
-- **Law and policy:** what constrains an emulator project, as topics to take to a lawyer.
+- **Law and policy:** what constrains an emulator project, recorded as risks.
 
 ### How items work
 

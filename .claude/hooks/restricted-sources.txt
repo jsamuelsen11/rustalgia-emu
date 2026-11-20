@@ -33,3 +33,7 @@ walled rileytestut/delta
 walled mamedev/mame
 walled tasemulators/bizhawk
 walled provenance-emu/provenance
+
+# A folder under its own terms inside an open-tier emulator. The pattern matches an address that names the folder.
+walled liji32/sameboy/tree/master/ios
+walled liji32/sameboy/blob/master/ios

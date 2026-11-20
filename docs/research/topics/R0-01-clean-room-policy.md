@@ -577,7 +577,7 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   `R0-04` can extend it to cover quoting, constants, and pseudo-code, where no source gives a line.
 - Patents, contributor agreements, and the laws
   that reach downstream recipients of secrets are not addressed by separating readers from writers.
-  They belong in `R0-02` as questions for a lawyer.
+  `R0-02` records them as risks.
 
 ## Open questions
 
@@ -587,17 +587,17 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   `R0-05` can record what each hub says; no method was found.
 - Does a model's training on public emulator source count as access,
   and can agent-written code be shown to be independent?
-  No ruling was found; a question for a lawyer, tracked through `R0-02`.
+  No ruling was found; `R0-02` and `R0-06` record the risk.
 - Is agent-written code protected by copyright, so that GPL-3.0 can bind it?
   `R0-03`.
 - May notes derived from decompilation be published under European Union law,
   and is an emulator "interoperability" under Article 6?
   `R0-02`.
 - How much of a constant, table, or algorithm description may a note hold?
-  `R0-04` can set a convention; a lawyer would need to confirm it.
+  `R0-04` can set a convention.
 - What do the notices on processor manuals from other makers permit,
   and what do Arm's older notices mean for an emulator?
-  `R0-05` for the notices; a lawyer for their meaning.
+  `R0-05`.
 - Which roadmap emulators under GPL-2.0 are "only" and which "or later"?
   The family surveys, without opening code if option 1 is chosen.
 - What did the court in NEC v Intel hold, in its own words?

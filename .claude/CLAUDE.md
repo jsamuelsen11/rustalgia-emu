@@ -40,6 +40,8 @@ Read `README.md` and `docs/README.md` before writing anything.
 - State how each claim was checked, and mark a claim that comes from memory.
 - Never read leaked source code or documents.
   Never obtain, use, or store copyrighted games, firmware, or keys.
+- Record legal risks as findings.
+  Do not defer a question to a lawyer; the project does not seek legal counsel.
 
 ## Sources
 
@@ -51,6 +53,7 @@ Read it before opening any emulator's repository.
   unless the owner started the session as a reader with `RUSTALGIA_SOURCE_ROLE=reader`.
   A reader writes functional descriptions, with no code and no listings.
 - Closed tier, not open source, plus decompilations and firmware reimplementations: read prose only.
+  A replacement BIOS or boot ROM inside any emulator is closed.
 - Tainted references, such as psx-spx: do not open.
 - A source with no tier is walled until its family survey gives it one.
 - Never copy or port code from any tier.

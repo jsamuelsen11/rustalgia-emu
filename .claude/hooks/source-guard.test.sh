@@ -59,6 +59,11 @@ check 0 reader "$(fetch https://github.com/flyinghead/flycast/blob/master/core/h
 check 2 writer "$(github mamedev mame)"
 check 0 reader "$(github mamedev mame)"
 
+# A walled folder inside an open-tier emulator.
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBViewController.m)"
+check 0 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/master/Core/gb.c)"
+check 0 reader "$(fetch https://github.com/LIJI32/SameBoy/blob/master/iOS/GBViewController.m)"
+
 if [ "$failed" -eq 0 ]; then
   echo "source-guard: all cases pass"
 fi
