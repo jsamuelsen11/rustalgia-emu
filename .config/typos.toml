@@ -10,3 +10,4 @@ extend-ignore-words-re = ["^[A-Z0-9]+$"]
 # Correctly spelled words that the checker takes for typos. Each maps to itself.
 sav = "sav" # the file extension of a battery save
 Artic = "Artic" # Artic International, a party in Midway v Artic
+Yout = "Yout" # Yout LLC, a party in Yout v RIAA

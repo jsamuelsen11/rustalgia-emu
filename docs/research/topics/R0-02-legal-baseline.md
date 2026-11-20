@@ -10,12 +10,21 @@ date: 2026-11-19
 ## Summary
 
 This note asks what law and enforcement history constrain an emulator project, building on the clean-room note.
-No court was found to have ruled, in a contested case, that an emulator is lawful or unlawful.
-The favourable appeals of 2000 concern copyright fair use and consoles without encryption;
-the actions since 2023 rest on anti-circumvention law and target emulators of one console whose games are encrypted,
-and they ended in consent or default judgments.
-Three things matter most to Rustalgia: encryption divides the systems on the roadmap into two risk classes; firmware,
-keys, and game dumps have no settled lawful route from the user to the emulator in any jurisdiction examined;
+No contested ruling was found that decides
+whether distributing a console emulator is lawful under anti-circumvention law.
+The favourable appeals of 2000 were preliminary-injunction rulings, mainly on copyright fair use,
+about one console whose games the opinions do not describe as encrypted;
+a later ruling for Connectix on remand is known only from press accounts.
+One contested judgment held a free server emulator for an online game to be a trafficked circumvention tool
+(Davidson v Jung, 2005).
+The actions against emulators since 2023 rest mainly on anti-circumvention law
+and concern emulators of consoles whose games are encrypted, almost all for the Switch.
+Only the yuzu action ended in a judgment against an emulator's developer, by consent;
+a default judgment held a streamer who linked to emulators liable for trafficking, and the rest ended through notices,
+a letter to a store, or private contact.
+Three things matter most to Rustalgia: whether a system's games are encrypted,
+and perhaps whether they are authenticated, separates the systems on the roadmap by risk (inference); firmware, keys,
+and game dumps have no settled lawful route from the user to the emulator in any jurisdiction examined;
 and patents and trade marks are separate risks that independent writing does not answer.
 This note is not legal advice.
 
@@ -34,8 +43,11 @@ This note is not legal advice.
   French, German, Japanese, and Korean law was read partly in translations or in earlier texts, as marked.
 - How claims were checked: each finding names its source,
   and research agents fetched every source on 2026-11-19 and copied quotations from the raw text.
-  A second, independent pass fetched the sources again and tested each claim and quotation. "(secondary)" marks a claim
-  that rests on commentary or press, "(from memory)" one that no fetched page confirmed, and "(inference)" reasoning.
+  A second, independent pass fetched the sources again and tested each claim and quotation.
+  Its corrections were applied, and the claims it could not check are listed in the pull request.
+  Where only part of a source was read,
+  the finding says so. "(secondary)" marks a claim that rests on commentary or press,
+  "(from memory)" one that no fetched page confirmed, and "(inference)" reasoning.
   A statement that nothing was found records a search, not proof of absence.
   No emulator source code, decompilation, leaked material, firmware, key, or game was opened or obtained.
   From emulator projects, only README files, licence files, documentation, and websites were read.
@@ -49,17 +61,22 @@ R0-01 records Sega v Accolade, Sony v Connectix, and Atari v Nintendo on reverse
 ("Reverse engineering and the legal status of a clean room").
 This section adds what the emulator cases did and did not decide.
 
-- Sony v Connectix was an appeal from a preliminary injunction, on copyright and trade mark grounds only.
+- Sony v Connectix was an appeal from a preliminary injunction that the district court had based on copyright alone;
+  the court also reversed a finding of trade mark tarnishment, and Sony's other claims were not before it.
   The court called the emulator "modestly transformative" and "a legitimate competitor in the market for platforms on
   which Sony and Sony-licensed games can be played".
   "Sony has asserted no patent rights in this proceeding."
   The opinion does not consider an emulator that needs the user to supply a BIOS, keys, or decrypted game data
   (inference from the whole opinion; a search of its text found neither "encrypt" nor "key").
-- The Connectix case ended by agreement.
-  A joint announcement of 14 March 2001 said the companies had "resolved all legal issues" and
+- On remand the district court is reported to have granted Connectix summary judgment from the bench on the copyright
+  and trade mark claims, seven of Sony's nine, in May 2000,
+  leaving trade-secret and unfair-competition claims for a jury trial set for March 2001
+  (a Connectix press release reprinted by MacTech, and The Register; secondary).
+  No written order was found.
+- The Connectix case then ended by agreement, before that trial.
+  A joint announcement of 14 March 2001 said the companies had "resolved all legal issues" about the emulator and
   that Sony would "acquire from Connectix all assets related to the VGS emulation technology"
   (MacTech reprint of the press release, secondary).
-  No ruling on remand was found.
 - Sony v Bleem did not decide whether an emulator is lawful.
   "The legality of the emulator is not at issue in this lawsuit."
   The only issue on appeal, again from a preliminary injunction,
@@ -78,29 +95,36 @@ This section adds what the emulator cases did and did not decide.
   "A derivative work must incorporate a protected work in some concrete or permanent form."
   The device "does not alter the data that is stored in the game cartridge.
   Its effects are temporary."
-- Micro Star v FormGen narrowed Galoob on a preliminary-injunction record.
+- Micro Star v FormGen distinguished Galoob on a preliminary-injunction record.
   Level files sold on a disc described the game's display in detail,
   so "the audiovisual displays assume a concrete or permanent form in the MAP files".
   The court also said that Galoob's fair use discussion "was not necessary", and called it dicta.
 - Midway v Artic held that a speeded-up arcade game made with a replacement circuit board was a derivative work,
-  and that the board's seller was a contributory infringer (7th Circuit 1983; only the relevant paragraphs were read).
-- No court has applied these three cases to a save state, a texture pack, a translation patch, or an upscaling filter.
+  and that the board's seller was a contributory infringer
+  (7th Circuit 1983, affirming a preliminary injunction; only the relevant paragraphs were read).
+- No decision was found that applies these three cases to a save state, a texture pack, a translation patch,
+  or an upscaling filter.
   A cheat or filter that leaves nothing behind resembles Galoob's facts,
   and a distributed file that re-describes game content resembles Micro Star's (inference).
-- Loading a program into memory makes a copy.
+- In the Ninth Circuit, loading a program into memory makes a copy.
   MAI v Peak held that "the loading of MAI's operating software into RAM ... constitutes a copyright violation"
-  where the user was a licensee without permission.
+  where a repair company ran the software on more machines than its one licence covered,
+  and also found infringement where the company, a third party outside its customers' licences, ran their copies.
+  Section 117(c) now exempts a copy made by switching on a machine "for purposes only of maintenance or repair".
 - 17 U.S.C. § 117(a) lets "the owner of a copy of a computer program" make a copy "as an essential step in the
   utilization of the computer program in conjunction with a machine", or a copy "for archival purposes only".
-  The privilege belongs to an owner, and the circuits define "owner" differently.
+  The privilege belongs to an owner.
+  The Ninth and Second Circuits word the test for ownership differently,
+  though Vernor said its holding created no split with Krause.
   In the Ninth Circuit a user is a licensee where the copyright owner "(1) specifies that the user is granted a license;
   (2) significantly restricts the user's ability to transfer the software; and (3) imposes notable use restrictions"
   (Vernor v Autodesk).
   In the Second Circuit "formal title in a program copy is not an absolute prerequisite",
   and the question is whether the party "exercises sufficient incidents of ownership" (Krause v Titleserv).
-  Neither case concerned a game cartridge or disc.
+  Neither case concerned a game.
 - Not every breach of a licence is infringement.
-  "There must be a nexus between the condition and the licensor's exclusive rights of copyright" (MDY v Blizzard).
+  For a licensee's breach to be infringement,
+  "there must be a nexus between the condition and the licensor's exclusive rights of copyright" (MDY v Blizzard).
 - A term confining an operating system to its maker's hardware survived a copyright misuse defence.
   The licence "did not prevent others from developing their own computer or operating systems" (Apple v Psystar).
   The defendant sold computers with the system installed, and the infringement finding was not appealed.
@@ -109,8 +133,10 @@ This section adds what the emulator cases did and did not decide.
   (Apple v Corellium, 2023).
   The purpose found was security research, and two counts were sent back undecided.
 - Distributing games is a different matter from distributing an emulator.
-  A contested summary judgment found the operator of a paid ROM site liable for direct, contributory,
-  and vicarious infringement, with judgment for $2,115,000 (Nintendo v Storman, Central District of California 2021).
+  A contested summary judgment found the operator of a ROM site with paid memberships liable for direct, contributory,
+  and vicarious copyright infringement
+  ($1,715,000) and for wilful infringement of 28 trade marks on the website ($400,000),
+  with judgment for $2,115,000 (Nintendo v Storman, Central District of California 2021).
   The order does not contain the word "emulator" or any form of it (search of its text).
 - Nintendo v Tropic Haze, the yuzu case, ran nine days from complaint to judgment with no answer filed
   (calculated from the docket documents).
@@ -136,14 +162,16 @@ This section adds what the emulator cases did and did not decide.
   The fourth finding reads: "Developing or distributing software, including Yuzu,
   that in its ordinary course functions only when cryptographic keys are integrated without authorization,
   violates the Digital Millennium Copyright Act's prohibition on trafficking in devices
-  that circumvent effective technological measures".
+  that circumvent effective technological measures", on the ground that the software is "primarily designed" for it.
   A consent judgment binds its parties; it is not precedent for other courts or other emulators (inference).
 - The Tropic Haze injunction bars "trafficking in Yuzu or any source code or features of Yuzu".
-  It also bars infringement "which includes the emulation of Nintendo's video games",
-  orders the domain surrendered and "all circumvention devices, including all copies of Yuzu" deleted,
+  It also bars infringement "which includes the emulation of Nintendo's video games", orders the domain surrendered and,
+  "upon Nintendo's election and to the extent controlled by Defendant or its members",
+  the deletion of "all circumvention devices, including all copies of Yuzu",
   and is "binding against Defendant and its members worldwide".
-- One court has applied § 1201 to named emulators in its own reasoning, on an undefended default.
-  In Nintendo v Keighin a magistrate judge, taking the complaint as true,
+- One court has applied § 1201 to named console emulators in its own reasoning, on an undefended default.
+  In Nintendo v Keighin a magistrate judge,
+  taking the complaint as true and likening them to "the Battle.net emulator in Davidson",
   wrote that the emulators a streamer had linked "evade technological measures
   which prevent an individual from playing Nintendo games on other consoles and from playing pirated games",
   and that "There is no other alleged use for these emulators."
@@ -159,17 +187,23 @@ This section adds what the emulator cases did and did not decide.
   for pirated Switch games and circumvention software, on claims that included breach of the console's user agreements
   (Nintendo v Williams, Western District of Washington, 23 September 2026).
   Its text does not mention emulators (search of its text).
-- No suit against an emulator's developer or distributor other than Tropic Haze was found for 2024 to November 2026,
-  and none by Sony, Sega, or Microsoft.
+- Apart from Tropic Haze, and Keighin,
+  where a streamer who posted links to emulators was held on default to have trafficked in them
+  and was enjoined from "trafficking in Switch emulators",
+  no suit against an emulator's developer or distributor was found for 2024 to November 2026, and none by Sony, Sega,
+  or Microsoft.
   Ryujinx ended in October 2024 after, by a press account of a developer's chat message,
   its creator "was contacted by Nintendo and offered an agreement to stop working on the project" (PC Gamer, secondary).
   No court filing was found.
-- Every judgment found against a person connected with emulation is a consent or default judgment.
-  The contested rulings found concern ROM distribution, or pre-date consoles with encrypted games (inference).
+- Every judgment found against the developer or distributor of a console emulator is a consent or default judgment.
+  The one contested § 1201 judgment found against an emulator's developers concerns a free server for an online game,
+  not a console (Davidson v Jung, summary judgment affirmed in 2005).
+  The other contested rulings found concern ROM distribution, or pre-date consoles with encrypted games (inference).
 
 ### Anti-circumvention law in the United States
 
-R0-01 gives two sentences on 17 U.S.C. § 1201(f) and the 2024 exemptions.
+R0-01 gives one sentence on 17 U.S.C. § 1201(f) and two on the 2024 exemptions
+("Reverse engineering and the legal status of a clean room").
 This section sets out the statute and how courts have read it.
 
 - The statute has three prohibitions.
@@ -199,7 +233,11 @@ This section sets out the statute and how courts have read it.
   The Second Circuit affirmed and wrote
   that fair use "has never been held to be a guarantee of access to copyrighted material"
   for copying "by the fair user's preferred technique or in the format of the original" (Universal v Corley).
-  The Ninth Circuit has assumed the point without deciding it (Disney v VidAngel, note 17).
+  The Ninth Circuit has left the question open.
+  On a preliminary injunction it assumed for argument that fair use can be a defence to a § 1201(a) claim
+  and rejected it on the facts (Disney v VidAngel, note 17),
+  and in MDY it wrote "we too leave open the question whether fair use might serve
+  as an affirmative defense to a prima facie violation of § 1201" (MDY, note 12).
 - Buying a copy does not carry authority to decrypt it.
   The statute "exempts from liability those who would 'decrypt' an encrypted DVD with the authority of a copyright
   owner, not those who would 'view' a DVD with the authority of a copyright owner" (Corley).
@@ -217,7 +255,7 @@ This section sets out the statute and how courts have read it.
   the encryption effectively worked to prevent access" (Apple v Psystar, Northern District of California 2009).
 - A check does not control access to material that is otherwise readable.
   A printer's authentication sequence did not control access to a program
-  that anyone "may read ... directly from the printer memory",
+  that anyone who buys the printer "may read ... directly from the printer memory",
   and the provision "does not naturally extend to a technological measure that restricts one form of access
   but leaves another route wide open" (Lexmark v Static Control, on a preliminary injunction).
   The Ninth Circuit applied the same reasoning to the parts of a game that sit unprotected on the buyer's disk (MDY).
@@ -225,40 +263,51 @@ This section sets out the statute and how courts have read it.
 - Lexmark set video games apart, in passing.
   "Unlike the code underlying video games or DVDs,
   'using' or executing the Printer Engine Program does not in turn create any protected expression."
-  This explains why the console cases did not help Lexmark; it is not a holding about any console.
+  This explains why the console cases did not help Lexmark; it is not a holding about any console (inference).
 - Two district courts treated a console's disc authentication as an access control
   when a device defeated it on the console.
   A device that let a PlayStation play discs from another territory "appears to be a device whose primary function is to
   circumvent" (Sony v GameMasters, preliminary injunction, 1999).
-  In Sony v Divineo, modchips were circumvention devices,
+  In Sony v Divineo, on summary adjudication against a seller who appeared without a lawyer
+  and default against his companies, modchips and a hard-disk loader program were circumvention devices,
   and "downstream customers' lawful or fair use of circumvention devices does not relieve" a seller of liability.
-  Neither opinion describes the games as encrypted.
+  Divineo describes an authentication process, not encryption.
+  GameMasters says the console operates only when "encrypted data is read from an authorized CD-ROM",
+  citing the plaintiff's papers; the measure at issue is a territory and authenticity check (inference).
 - Using software after someone else removed its protection is not circumvention by the user, in the Fifth Circuit:
   § 1201(a)(1) "does not apply to the use of copyrighted works after the technological measure has been circumvented"
   (MGE v GE).
 - A free server emulator has been held a trafficked tool.
   The bnetd server "had limited commercial purpose because its sole purpose was to avoid the limitations of Battle.net"
-  (Davidson v Jung).
-- Section 1201(f) is narrow, and each contested defence found under it failed or was left open.
+  (Davidson v Jung, a contested summary judgment, affirmed).
+- Section 1201(f) is narrow.
+  Of the contested defences found under it,
+  three failed and one was favourably received at the preliminary-injunction stage.
   Subsection (f)(1) exempts the act for a person who "has lawfully obtained the right to use a copy of a computer
   program", for "the sole purpose of identifying and analyzing those elements of the program that are necessary to
   achieve interoperability of an independently created computer program".
-  Subsection (f)(2) lets a person "develop and employ" means of circumvention for that purpose;
+  Subsection (f)(2) lets a person "develop and employ" means of circumvention to enable that analysis,
+  or to enable interoperability of an independently created program "with other programs,
+  if such means are necessary to achieve such interoperability", so far as that does not infringe;
   it does not say "distribute".
   Subsection (f)(3) lets the information and means "be made available to others" by the person who did the work,
   and "solely" for enabling interoperability.
   Subsection (f)(4) defines interoperability as "the ability of computer programs to exchange information".
 - Davidson rejected the defence because the circumvention "constitutes infringement".
-  Reimerdes said the right to share "does not apply to public dissemination of means of circumvention",
-  in a passage that by its own terms was not needed for the result.
+  Reimerdes rejected it after trial, first because the defendants had done no reverse engineering themselves,
+  and added that the right to share "does not apply to public dissemination of means of circumvention".
+  Divineo held a modchip seller liable while taking as true that users could use modchips
+  for interoperability under § 1201(f).
   Lexmark said a defendant "may benefit from the interoperability defense,
   at least in the preliminary injunction context".
-- The Copyright Office reads § 1201(f) more generously than those courts.
+- The Copyright Office has read § 1201(f) as reaching circumvention for interoperability itself, not only analysis.
   Its 2017 study concludes "that the stronger interpretation is
-  that section 1201(f) does permit circumvention to enable interoperability in certain circumstances".
+  that section 1201(f) does permit circumvention to enable interoperability in certain circumstances,
+  and subject to various statutory safeguards".
   In the first rulemaking, in 2000, it refused an exemption for games playable only on dedicated platforms,
   saying that because a console's BIOS is a computer program "section 1201(f) would appear to address the problem".
-  Both are agency views, not rulings that an emulator qualifies.
+  Both are agency views, not rulings that an emulator qualifies,
+  and how they compare with the court decisions above is an inference.
 - The encryption research and security testing exemptions have their own conditions.
   Research requires "a good faith effort to obtain authorization",
   and testing requires "the authorization of the owner or operator" of the computer (§ 1201(g) and (j)).
@@ -283,8 +332,14 @@ This section sets out the statute and how courts have read it.
 - Civil damages are counted for each item, with no cap:
   "not less than $200 or more than $2,500 per act of circumvention, device, product, component, offer,
   or performance of service" (§ 1203(c)(3)(A)).
-  Courts have multiplied by devices sold: $6,018,700 for 7,194 modchips in Sony v Filipiak.
-  No decision was found that counts downloads of free software.
+  A court has multiplied by devices sold:
+  $6,018,700 for 7,194 circumvention devices, modchips and a loader program on disc, at $800 for 7,039 and $2,500
+  for 155, in Sony v Filipiak, where liability was stipulated and damages were tried (total of units calculated).
+- One decision found counts end-user downloads of posted software:
+  $200 for each of 11,228 downloads, within an award of $2,250,600
+  (DISH Network v SatFTA, Northern District of California 2011, on an opposed motion for summary judgment;
+  downloads added up from the order).
+  The order does not say whether the software was free.
 - A crime needs a violation done "willfully and for purposes of commercial advantage or private financial gain",
   with up to five years for a first offence (§ 1204(a)).
   One modified console sold to an undercover agent "for a $50 profit" supported a conviction (United States v Reichert).
@@ -296,9 +351,14 @@ This section sets out the statute and how courts have read it.
 - Rulings in 2026 read "access control" broadly at the pleading stage.
   A court refused to dismiss a claim that scraping publicly viewable videos circumvented a "rolling cipher"
   (Ted Entertainment v ByteDance, order of 2 October 2026).
-- Every emulator filing, judgment, and notice found concerns one console whose games are encrypted.
+- Every § 1201 complaint, judgment, and notice found against a console emulator concerns the Switch,
+  whose games are encrypted; the one letter found, about Dolphin,
+  asserts that Wii and GameCube game files are encrypted.
   None pleads § 1201 against an emulator of a system that has no encryption or authentication.
-  No decision was found on a cartridge-era lock-out, such as a logo comparison, a lock-out chip, or a region check.
+  No decision under § 1201 was found on a cartridge-era lock-out, such as a logo comparison, a lock-out chip,
+  or a region check.
+  Sega v Accolade and Atari v Nintendo addressed such lock-outs under copyright and trade mark law
+  before § 1201 existed.
 
 ### Outside the United States
 
@@ -314,8 +374,8 @@ The table is a reading of the statute texts, and each row combines several provi
 |---|---|---|---|---|
 | European Union | Barred for games, if knowing | Barred on three tests | A recital only | Devices: PC Box |
 | United Kingdom | Civil wrong for works other than programs | Civil and criminal | None in the text | Devices only |
-| Germany | Barred; no crime if private | Barred; fine | None read in section 95a | Devices only |
-| France | Fined, in the 2006 text | Crime, in the 2006 text | Struck out in 2006 | No primary read |
+| Germany | Barred; no crime if private | Crime if commercial, else a fine | None read in section 95a | Devices only |
+| France | Fined, in the 2006 text | Crime, in the 2006 text | Criminal one struck out, 2006 | No primary read |
 | Japan | Deemed infringement; no penalty | Unfair competition; crime | None named; research | Devices only |
 | Canada | Barred for access controls | Barred; crime if commercial | Yes, section 41.12 | Devices: King |
 | Australia | Civil wrong for access controls | Civil; crime if for profit | Yes, section 116AN(3) | Statute only |
@@ -337,19 +397,19 @@ The table is a reading of the statute texts, and each row combines several provi
   Games "constitute complex matter comprising not only a computer program but also graphic and sound elements",
   protected "together with the entire work" under Directive 2001/29 (Nintendo v PC Box, paragraph 23).
   Measures "partly incorporated in the physical housing of videogames and partly in consoles" are covered
-  (paragraph 28).
+  if their objective is to prevent or limit acts that adversely affect the rightholder's rights (paragraph 28).
 - PC Box made that protection subject to proportionality.
   Measures "must be suitable for achieving that objective and must not go beyond what is necessary".
   The national court must ask whether other measures "could have caused less interference with the activities of third
-  parties", and must examine "how often those devices ... are in fact used in disregard of copyright and how often they
-  are used for purposes which do not infringe copyright".
+  parties", must examine the purpose of the devices, and "may, in particular, examine how often those devices ... are in
+  fact used in disregard of copyright and how often they are used for purposes which do not infringe copyright".
   The Court decided neither point; an Italian court is reported to have then ruled for Nintendo
   (Punto Informatico, secondary; the judgment was not found).
 - The recitals of Directive 2001/29 say its protection should not "prevent the development
   or use of any means of circumventing a technological measure
   that is necessary to enable acts to be undertaken in accordance with" the Software Directive's Articles 5(3) and 6
   (recital 50).
-  A recital is an aid to interpretation, and no ruling read applies this sentence to a game.
+  A recital is an aid to interpretation (from memory), and no ruling read applies this sentence to a game.
 - Private copying does not reach programs.
   The private copying exception is optional, and Member States need not make rightholders lift measures for it
   (Directive 2001/29/EC, Articles 5(2)(b) and 6(4)).
@@ -362,8 +422,9 @@ The table is a reading of the statute texts, and each row combines several provi
   It applies to a person who, "knowing or having reason to believe that it will be used to make infringing copies",
   deals in a sole-purpose means or "publishes information intended to enable or assist persons to remove
   or circumvent the technical device" (Copyright, Designs and Patents Act 1988, section 296).
-- For works other than programs, United Kingdom law makes the act a civil wrong where the person knows,
-  and gives rights against dealers on the three European tests (sections 296ZA and 296ZD).
+- For works other than programs, United Kingdom law makes the act a civil wrong where the person acts "knowing,
+  or with reasonable grounds to know", and gives rights against dealers on the three European tests
+  (sections 296ZA and 296ZD).
   Dealing is a crime mainly "in the course of a business",
   or otherwise "to such an extent as to affect prejudicially the copyright owner" (section 296ZB).
   The statutory answer to a measure that blocks a permitted act is a complaint to the Secretary of State
@@ -371,12 +432,15 @@ The table is a reading of the statute texts, and each row combines several provi
 - English courts have applied these sections to modchips and game copiers, not to emulators.
   Section 296ZD "creates a tort of strict liability", and "What counts is that there is copy protection,
   not where it is" (Sony v Ball).
-  A back-up was no answer in that case: "Since there is no necessity to make a back up,
-  there is no justification for having one."
+  A back-up was no answer in that case, under the program back-up rule of section 50A:
+  "Since there is no necessity to make a back up, there is no justification for having one."
   Lawful uses such as home-made games did not help a seller:
-  "The mere fact that the device can be used for a non-infringing purpose is not a defence"
-  (Nintendo v Playables, an application the defendants did not resist).
-- Playing a copied game copies a substantial part of it in England, at least through what the screen shows
+  "The mere fact that the device can be used for a non-infringing purpose is not a defence,
+  provided one of the conditions in section 296 ZD(1)(b) (considered below) is satisfied"
+  (Nintendo v Playables, a summary judgment application that the defendants, who did not appear, no longer resisted).
+- Playing a copied game in England makes substantial copies of the drawings shown on screen,
+  which are copyright works in their own right;
+  the court did not need to decide whether the data passing through memory are a substantial part of the game as a whole
   (R v Gilham, upholding a modchip dealer's conviction).
   An earlier appeal had quashed such convictions because the prosecution had not proved copying (R v Higgs).
 - A website-blocking order has been granted on the anti-circumvention sections.
@@ -388,15 +452,22 @@ The table is a reading of the statute texts, and each row combines several provi
   The 2014 regulations were quashed "in their entirety" in 2015, and as enacted they excluded computer programs
   (BASCA v Secretary of State; legislation.gov.uk note to section 28B).
 - Germany forbids circumventing effective measures "without the rightholder's consent",
-  and dealing in devices on the three tests (UrhG section 95a, official translation).
-  The criminal penalty does not apply to an act "committed exclusively for the personal private use of the offender"
-  (section 108b).
-  The civil prohibition has no such words (inference).
+  and dealing in devices on the three tests
+  (UrhG section 95a, English translation on the federal law portal, which says its translations are not binding).
+  The criminal penalty for circumventing does not apply to an act "committed exclusively
+  for the personal private use of the offender or of persons personally associated with the offender" (section 108b(1)).
+  Dealing in devices for commercial purposes stays a crime
+  (section 108b(2)), and other dealing outside one's personal circle is a regulatory offence with a fine (section 111a).
+  The civil prohibition has no private-use words (inference).
 - The Federal Court of Justice applied section 95a to games with a proportionality condition.
-  Measures are protected only if their use is proportionate and does not unduly limit lawful uses,
-  and the rightholder bears the burden of showing that no less restrictive measure would do
-  (I ZR 124/11, 2014, headnote and paragraph 107, paraphrased from the German).
-  That judgment and a second in 2017 sent the cases back; the outcome on remand was not read.
+  Measures are protected only if their use is proportionate and does not unduly limit lawful uses
+  (I ZR 124/11, 2014, headnote).
+  In guidance for the remand it said that the rightholder in principle bears the burden of showing
+  that no other measure would interfere less with lawful acts while giving comparable protection,
+  although the other side must first put forward such a measure (paragraph 107, paraphrased from the German).
+  That judgment sent the case back.
+  A second judgment, of 2017 (I ZR 273/14), was read only in its short text, which concerns new facts raised on appeal;
+  whether it also sent a case back was not confirmed, and no outcome on remand was read.
 - France's 2006 law protected measures on works other than software and said measures must not prevent interoperability,
   in the text adopted by Parliament.
   The Constitutional Council struck the interoperability exemption out of the criminal provisions,
@@ -408,16 +479,18 @@ The table is a reading of the statute texts, and each row combines several provi
   and providing a service that does so.
   For a program that has other functions too, it is limited to provision made to enable the restricted use
   (Unfair Competition Prevention Act, Article 2(1)(xvii), unofficial translation).
-  Testing and research are exempt, and the crime needs "the purpose of wrongful gain" or of causing damage
-  (Articles 19(1)(x) and 21(3)(iv)).
+  Testing or research on technological restriction measures is exempt,
+  and the crime needs "the purpose of wrongful gain" or of causing damage (Articles 19(1)(x) and 21(3)(iv)).
 - A 2018 amendment added services and codes.
   The ministry's overview notes that the "Act of interfering with TRM is not considered to be unfair competition,
   but it would be against another law" (METI overview, slide 10).
-  An industry association reports police action in 2019 and 2020 against people offering save-data modification
-  (ACCS announcements; they report referrals, not convictions).
+  An industry association reports an arrest and referrals to prosecutors in 2019,
+  and the referral of a company and three of its people in 2020, for offering save-data modification services and tools
+  (ACCS announcements; they report no convictions).
 - Japan's Copyright Act deems circumvention of an access-type measure to be infringement,
   unless it is done within a scope justified for research or technological development,
-  "or otherwise does not harm the interests of the copyright owner" (Article 113(6)).
+  "or otherwise does not harm the interests of the copyright owner"
+  (Article 113(6), unofficial translation of the text as amended to 2021).
   The general criminal penalty excludes that deemed infringement (Article 119(1)).
   Dealing in circumvention programs, and circumventing "in the course of trade ... at the request of the public",
   are crimes (Article 120-2).
@@ -433,7 +506,8 @@ The table is a reading of the statute texts, and each row combines several provi
 - Reported Japanese prosecutions over modified consoles in 2025 and 2026 used the Trademark Act
   (Anime News Network; Automaton; secondary).
 - Canada forbids circumventing an access control and dealing in circumvention technology,
-  with a criminal offence for acts done "knowingly and for commercial purposes" (Copyright Act, sections 41.1 and 42).
+  with a criminal offence for acts done "knowingly and for commercial purposes"
+  (Copyright Act, sections 41.1 and 42(3.1)).
   A rightholder cannot elect statutory damages against an individual who circumvented "only for his
   or her own private purposes" (section 41.1(3)).
 - Canada's interoperability exception was widened in 2024.
@@ -441,14 +515,17 @@ The table is a reading of the statute texts, and each row combines several provi
   which it is embedded interoperable with any other computer program, device or component".
   The exception is lost if the person "does an act that constitutes an infringement of copyright"
   (section 41.12(1) and (7)).
+  The exceptions for services and for tools still speak only of making "the computer program
+  and any other computer program interoperable" (section 41.12(2) and (3)).
   No decision on the new wording was found.
-- The one tested interoperability defence failed on the evidence.
+- In the only decision found that tested the interoperability defence, it failed on the evidence.
   In Nintendo v King the court held that "'homebrew' is not a recognized exception under the Act",
   that the seller of game copiers and modchips bore the burden, and that it "adduced no evidence".
   The reasons adopt the applicant's written argument, which the court called "effectively uncontested".
 - King assessed damages by the works unlocked, without proof of copying:
-  "$11,700,000 for TPM circumvention in respect of its 585 Nintendo Games", $60,000 for copying three header
-  and boot code works, and $1,000,000 in punitive damages (Canadian dollars).
+  "$11,700,000 for TPM circumvention in respect of its 585 Nintendo Games", "$60,000
+  for copyright infringement in respect of the three Header Data works", found infringed by sale under section 27(2),
+  and $1,000,000 in punitive damages (Canadian dollars).
 - Canada's private and back-up copying exceptions each require
   that the person "did not circumvent ... a technological protection measure" (sections 29.22 and 29.24).
 - Australia's current definitions name software and exclude two things.
@@ -462,15 +539,18 @@ The table is a reading of the statute texts, and each row combines several provi
   (sections 116AN(3) and 116AO(3)).
   The offences need "the intention of obtaining a commercial advantage or profit" (sections 132APC and 132APD).
   No decision applying these sections was found; Stevens v Sony construed wording since replaced.
-- South Korea forbids circumvention "by intention or negligence without legitimate authority",
-  except where a lawful user decompiles "to the extent necessary to secure compatibility with other programs"
-  (Copyright Act, Article 104-2, unofficial translation; statute only).
-- Personal-use limits in these laws remove penalties, not the prohibition.
-  Germany removes the crime, Canada the statutory damages, Australia requires commercial intent for the offence,
-  and Japan excludes the deemed infringement from its general penalty (inference from the provisions above).
-- Most of the reported rulings were one-sided.
-  Playables, Sky, and King were unopposed or rested on one party's evidence, and the two German judgments are remands.
-  None concerned free software (inference from the judgments' own descriptions).
+- South Korea forbids circumvention "by intention or negligence without legitimate authority", with eight exceptions,
+  among them decompiling by a lawful user "to the extent necessary to secure compatibility with other programs"
+  (Copyright Act, Article 104-2(1), unofficial translation of the text as amended to May 2023; statute only).
+- Where these laws limit liability for personal use, they remove a penalty, not the prohibition:
+  Germany removes the crime and Canada the statutory damages.
+  Australia's offences require commercial intent,
+  and Japan's general criminal penalty excludes circumvention whatever its purpose,
+  while circumventing as a trade for others is a separate crime (inference from the provisions above).
+- Three of the reported rulings were one-sided: Playables and Sky were unopposed,
+  and King rested on the applicant's evidence.
+  The 2014 German judgment ended in a remand with no final outcome read.
+  None of the rulings concerned free software (inference from the judgments' own descriptions).
 
 ### Firmware, keys, and game copies
 
@@ -492,57 +572,74 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   and licence terms "might affect your ability or right under section 117 to make a backup copy".
   The answer to whether one may "buy and use a backup copy of software I already own" begins "No"
   (Copyright Office, "Copyright and Digital Files"; guidance, not a ruling, and it does not mention games).
-- The one decision found on backing up a cartridge went against the copier.
-  A district court held, on a preliminary injunction against the seller of a cartridge copying device,
-  that the archival exception protects against "destruction or damage by mechanical or electrical failure" and
-  that the seller had offered no evidence that a ROM cartridge is such a medium (Atari v JS&A, 1983).
-  The ruling rests on a failure of proof, concerns a seller and not an owner,
+- The one decision found that construes the archival exception for a cartridge went against the copier.
+  On a preliminary injunction against the seller of a cartridge copying device, a district court read the exception,
+  following the CONTU Report, as applying "Where, and only where,
+  a medium may be destroyed by mechanical or electrical failure", and found that the seller, who bore the burden,
+  had not shown a ROM cartridge to be one (Atari v JS&A, 1983).
+  It was a likelihood-of-success finding, concerns a seller and not an owner,
   and has no appellate sequel that was found.
+  Sega v MAPHIA (1996) later rejected a back-up use for a copier
+  because Sega's cartridges "are not susceptible to breakdown".
 - Sony publishes system software update files for the PlayStation 3, 4, 5, and Vita on its support site.
   The pages were read and no file was downloaded.
   The licences limit use to the console: Sony grants "a non-exclusive,
   non-commercial right to use System Software solely on your PS5 system", and the user "may not reverse engineer,
-  decompile or disassemble System Software".
-  The PlayStation 3 agreement adds that Sony "does not grant any license to System Software obtained by users in any
-  manner other than through SIE's authorized distribution methods".
+  decompile or disassemble System Software"; the PlayStation 4 and Vita licences use the same grant for their systems.
+  The PlayStation 3 agreement also says
+  that Sony "does not grant any license to System Software obtained by users in any manner other than through SIE's
+  authorized distribution methods".
   No licence read permits use of a published firmware file off the console.
 - No Nintendo page offering console firmware as a file was found.
-  The Switch 2 agreement forbids the user to "obtain
-  or install any version of the Software other than through distribution methods provided by Nintendo".
-- Game licences forbid emulation in terms.
+  The Switch 2 agreement forbids the user to "publish, copy, modify, reverse engineer" any portion of the Software,
+  and to "obtain or install any version of the Software other than through distribution methods provided by Nintendo".
+- PPSSPP can optionally use real firmware: it installs the update that "almost every game disc carries",
+  or one "from an official PSP update file" (PPSSPP FAQ).
+- Sony's game licence forbids emulation in terms,
+  and Microsoft's services agreement does so for software it provides as part of its services.
   PlayStation's Software Usage Terms say the software "is licensed to you, not sold",
   for use "on the system or device it was intended for",
   and that the user agrees not to "emulate the Software" or to "use any means to bypass or disable any encryption,
   security, or authentication mechanism".
   The Microsoft Services Agreement bars a user to "disassemble, decompile, decrypt, hack, emulate, exploit,
   or reverse engineer", "except and only to the extent that the applicable copyright law expressly permits doing so".
-- Nintendo's agreements changed in 2025.
+  Applications bought in Microsoft's stores, including on Xbox,
+  fall under separate standard terms unless the application has its own,
+  and those terms bar reverse engineering but do not use the word "emulate".
+- The Nintendo Account User Agreement changed in 2025.
   The Nintendo Account User Agreement dated May 2025 says that
   if the user breaks its restrictions "Nintendo may render the Nintendo Account Services and/or the applicable Nintendo
   device permanently unusable in whole or in part".
   An archived copy dated April 2021 has no such sentence.
-  The Switch 2 agreement bars using software "from which one or more unauthorized copies have been made",
+  The Switch 2 agreement, dated October 2026,
+  bars using software "from which one or more unauthorized copies have been made",
   which on its words reaches a purchased game after its owner has dumped it (inference).
-- These terms matter in two ways (inference, building on R0-01's findings on Bowers and Davidson).
+- These terms matter in two ways (inference, building on R0-01's findings on Bowers and Davidson,
+  in "Reverse engineering and the legal status of a clean room").
   A person who accepted them may face a contract claim in the United States for an act that copyright would allow.
   "Licensed, not sold" wording is also the route by which a maker can argue that a user is not an owner under § 117.
   No decision enforcing any of these agreements against a person for dumping or emulating was found.
-- Nintendo's published position has narrowed, and its pleaded position has not.
+- Nintendo's published wording has changed, and its pleaded position is broader than its current page
+  (inference from comparing them).
   Its former legal page, archived in 2017,
   said "it is illegal to download and play a Nintendo ROM from the Internet" whether or not the user owns the game,
-  and called emulators "the greatest threat to date".
+  and said that "emulators created to play illegally copied Nintendo software" were "the greatest threat to date to the
+  intellectual property rights of video game developers".
   That page is no longer served.
   The current page says that "some unauthorized emulators also circumvent the security measures in the games and are
-  therefore unlawful pieces of software", and says nothing about back-up copies.
+  therefore unlawful pieces of software", and says nothing about back-up copies,
+  though it still lists "emulators" among the "illegal activities" it asks people to report.
   In the yuzu complaint Nintendo pleaded that obtaining keys from one's own console
   and dumping one's own games "are themselves unlawful".
 - No official Sony or Sega statement on emulators as such was found.
 - No court decision was found on whether a cryptographic key is a copyrightable work.
-  The claims found against publishing keys rest on anti-circumvention law.
+  The claims found against publishing keys rest mainly on anti-circumvention law; where copyright is pleaded,
+  it is induced infringement or infringement of the firmware, and no claim of copyright in a key itself was found.
   The Electronic Frontier Foundation wrote of the 2007 disc key that the licensing body "is not claiming
   that the key is copyrightable, but rather that it is (or is a component of) a circumvention technology" (commentary).
-  Sony's 2011 complaint over PlayStation 3 keys pleaded anti-circumvention, computer misuse, contract, and tort claims;
-  it ended in a consent judgment recording that "Hotz denies these allegations"
+  Sony's 2011 complaint over PlayStation 3 keys pleaded anti-circumvention, computer misuse,
+  induced copyright infringement, contract, and tort claims, by the consent judgment's own recital;
+  as to Hotz it ended in that consent judgment, which records that "Hotz denies these allegations"
   (only the caption and judgment were read).
 - Nintendo's 2023 notices to GitHub attack key files and a key-dumping tool as trafficking,
   and for key files add that distributing them "constitutes copyright infringement of Nintendo Switch firmware itself".
@@ -555,7 +652,9 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   and said the emulator works "by incorporating these cryptographic keys without Nintendo's authorization".
   Dolphin wrote that "Nintendo has not taken any legal action against Dolphin Emulator or Valve",
   that a short random key "is not copyrightable under current US copyright law",
-  and that removing the key "would not change whether the exemption in 17 U.S.C. § 1201(f) applies"
+  that removing the key "would not change whether the exemption in 17 U.S.C. § 1201(f) applies",
+  and that "Unless a court rules that our understanding of the law is incorrect,
+  we have every reason to believe that our decryption of Wii game discs is covered by this exemption"
   (Dolphin blog, archived copy; a project's view, untested).
 - Emulator projects handle firmware in four ways, by their own documentation.
 
@@ -569,12 +668,18 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
 | High-level emulation | "simulates the BIOS and the entire internal operating system" | PPSSPP |
 | Maker's download | "can be downloaded from the official PlayStation website" | Vita3K |
 
+- Vita3K's page adds that a second package, of system fonts, must be found by the user: "we couldn't get the URL for it,
+  so you will have to find it yourself".
 - The projects that speak about games tell users to dump their own.
-  Dolphin's FAQ says "Downloading commercial games is illegal",
-  and that this "includes gray areas like downloading games which you purchased earlier".
+  Dolphin's FAQ says "Downloading commercial games is illegal and thus strongly frowned upon by the Dolphin developers",
+  and "To prevent legal issues, this includes gray areas like downloading games which you purchased earlier".
+- Some projects publish dumping guides that name or link tools.
+  PCSX2's BIOS guide recommends softmods such as "FreeMcBoot or FreeDVDBoot" and links a dumping program,
+  and Dolphin's FAQ says to "install the homebrew channel and run an application like CleanRip".
 - Replacements cost accuracy, by one project's account.
   SkyEmu says its replacements "lack many of the features of the native firmware/BIOS
-  (such as colorizing GB games and the startup splashes)".
+  (such as colorizing GB games and the startup splashes) and are not as accurate".
+  PCSX2 says that for the PlayStation 2 BIOS "no open-source alternative exists".
 - The boot-time logo is a separate question.
   Sega v Accolade held that "when there is no other method of access to the computer that is known
   or readily available to rival cartridge manufacturers,
@@ -586,13 +691,18 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   no decision on it was found.
 - Pan Docs says the Game Boy logo check "was meant to deter piracy using trademark law",
   and that after Sega v Accolade "there is no danger for homebrew developers".
-  The page calls itself advisory, and its reading drops the condition in the holding (inference).
-  No project statement was found on how a replacement boot ROM treats the logo.
-- Courts outside the United States have treated header and logo data as copyright works.
+  The page calls itself advisory and not legal advice, and it restates the holding's condition loosely,
+  as use that "is necessary for running programs on the console" (inference).
+  The only project statement found on how a replacement boot ROM treats the logo is SameBoy's,
+  whose boot ROMs have "Support for games with a non-Nintendo logo in the header";
+  none was found that says whether a replacement embeds or draws a maker's logo.
+- Two courts outside the United States, on applications that were unopposed or effectively uncontested,
+  have treated header and logo data files as copyright works.
   King declared copyright infringed in three registered works,
   one named "GAME BOY ADVANCE BOOT CODE WITH NINTENDO LOGO DATA FILE".
   Playables called copier devices holding the logo data file "templates for infringement",
-  while refusing summary judgment on the console's own boot code.
+  while refusing summary judgment on the console's own boot code, and on a logo as an artistic work,
+  which it found "so rudimentary" that subsistence of copyright was arguable.
 
 ### Takedown and enforcement history
 
@@ -604,12 +714,12 @@ No repository named in a notice was opened.
 
 | Date | Who and what | Mechanism | Stated theory or outcome | Source |
 |---|---|---|---|---|
-| 2011-01 | Sony against PlayStation 3 key repositories | Notice; suit | Trafficking; consent judgment | GitHub; Hotz |
+| 2011-01 | Sony against PlayStation 3 custom firmware | Notice; suit | Trafficking; consent judgment | GitHub; Hotz |
 | 2014-05 | Nintendo against the GBA4iOS download site | § 512 notice | Access to game copies | GitHub |
 | 2016-12 | Nintendo against freeShop, a 3DS shop downloader | Notice | Circumvention; logo data | GitHub |
 | 2018-08 | EmuParadise removes its game downloads | Voluntary | Cites suits against others | Press |
 | 2018-11 | Nintendo against LoveROMs | Consent judgment | $12,230,000 in the lodged form | Filed forms |
-| 2021-08 | Nintendo against RomUniverse | Contested judgment | $2,115,000; ROM distribution | Court |
+| 2021-08 | Nintendo against RomUniverse | Contested judgment | $2,115,000; ROMs and site marks | Court |
 | 2022-07 | Nintendo against signature patches for the Switch | § 1201 notice | Bypasses signature checks | GitHub |
 | 2023-05 | Nintendo against key files and Lockpick | § 1201 notices | Trafficking; key extraction | GitHub |
 | 2023-05 | Skyline halts development | Voluntary | Cites the Lockpick notice (secondary) | Press |
@@ -622,22 +732,26 @@ No repository named in a notice was opened.
 | 2024-10 | Ryujinx removed by its creator | Private contact | Terms not public (secondary) | Press |
 | 2025-02 | Nintendo against Ryujinx copies | § 1201 notices | 4,238 repositories in one notice | GitHub |
 | 2025-05 | Nintendo against LibHac, a file-format library | § 1201 notice | Cites the yuzu judgment | GitHub |
-| 2025-09 | Nintendo against a modchip seller, Daly | Consent judgment | $2,000,000 | Court copy |
-| 2025-10 | Nintendo against a streamer, Keighin | Default judgment | $17,500; emulators as tools | Court |
+| 2025-09 | Nintendo against a modchip seller, Daly | Consent judgment | $2,000,000 | News-site copy |
+| 2025-10 | Nintendo against a streamer, Keighin | Default judgment | $17,500; links to emulators | Court |
 | 2026-02 | Nintendo against thirteen named Switch emulators | § 1201 notice | Cites yuzu and Keighin | GitHub |
 | 2026-09 | Nintendo against a shop operator, Williams | Default judgment | $4,500,000 | Court |
 | 2026-10 | Nintendo against a game decompilation | § 512 notice | Derivative copies of code | GitHub |
 | 2026-11 | Nintendo against Switch modchip firmware | § 1201 notice | 144 repositories | GitHub |
 
-- Nintendo's GitHub notices before 2022 concern game content, not emulator code.
-  The notices read from 2014 to 2020 target sites that bundled games, fan games, and recreations; one, in 2016,
-  pleads circumvention against a shop downloader (inference from the files read).
+- Nintendo's GitHub notices before 2022 do not plead anti-circumvention against an emulator.
+  The 2014 notice targeted the download site of the GBA4iOS emulator on the ground that it gave access to game copies.
+  The others read from 2014 to 2020 concern game content, fan games, and recreations,
+  one in 2016 pleads circumvention against a shop downloader,
+  and of two in 2019 whose authenticity the recipients disputed,
+  one alleges unauthorised documentation and "illegal emulation software" of an online service
+  (inference from the files read).
 - The emulator notices plead decryption, not copying.
   The April 2024 notice says that yuzu "necessarily uses unauthorized copies of these cryptographic keys to decrypt
   unauthorized copies of Nintendo Switch games, or ROMs, at or immediately before runtime".
   No notice read alleges that an emulator's source code copies Nintendo's code, or that yuzu shipped keys.
 - Uncontested judgments are now cited as findings.
-  From May 2025 the notices cite the yuzu consent judgment as "finding that the distribution of software
+  From February 2025 the notices cite the yuzu consent judgment as "finding that the distribution of software
   which primarily decrypts Nintendo Switch games without authorization violated DMCA anti-trafficking provisions".
   From February 2026 they add Keighin, a default judgment.
 - The notices of 2026 widen the target.
@@ -659,41 +773,54 @@ No repository named in a notice was opened.
 - Nintendo describes its development kit as secret.
   A February 2026 notice calls it "proprietary and confidential",
   "subject to a valid and enforceable License and Non-Disclosure Agreement".
-  This bears on R0-01's findings on leaked material.
+  This bears on R0-01's findings on leaked material ("Trade secrets, contracts, and leaked material").
 - Every emulator named in a circumvention notice or letter emulates a console whose retail games are encrypted:
-  the Switch, and the Wii in the letter about Dolphin.
+  the Switch, and the Wii and GameCube in the letter about Dolphin,
+  which asserts that the game files of both are encrypted.
   A search of the archive for some thirty other emulators, including bsnes, MAME, PCSX2, PPSSPP, DuckStation, RPCS3,
   melonDS, and SameBoy, found no notice against any of them.
   That is a search of one host's archive.
-  GitLab, Google Play, Patreon, Discord, and YouTube publish no comparable record that was found.
+  GitLab, Patreon, and Discord publish no comparable record that was found.
+  Google shares some notices for its services with the Lumen database, which was not searched.
 - No notice from Sony against a PlayStation emulator, or naming a console BIOS file, was found in the archive.
   No file mentions the Switch 2.
 - The original projects mostly ended by other means than a notice. yuzu ended by consent judgment,
   Ryujinx by private contact, Skyline and EmuParadise by their own decision,
-  and Dolphin's store release by Valve's decision.
+  and Dolphin's store release by its own decision after Valve required an agreement with Nintendo.
   The notices then removed copies and continuations (inference from the dated records).
 - A store can act with no notice at all.
   Dolphin reports that Valve "told us that we had to come to an agreement with Nintendo"
   before it could release on Steam, and that it abandoned the release.
 - The counter-notice route carries its own exposure.
-  The host restores material "not less than 10, nor more than 14, business days" after a counter-notice,
-  unless the sender files suit (17 U.S.C. § 512(g)(2)(C)).
-  The counter-notice must be sworn, and must consent "to the jurisdiction of Federal District Court" (§ 512(g)(3)).
-  In the one published sequence found that ran to its end, the sender sued (Take-Two; see R0-01).
+  To keep its immunity, the host restores material "not less than 10, nor more than 14,
+  business days" after a counter-notice, unless the sender first tells it that suit has been filed
+  (17 U.S.C. § 512(g)(1) and (2)(C)).
+  The counter-notice must be sworn, must give the subscriber's "name, address, and telephone number",
+  and must consent "to the jurisdiction of Federal District Court" (§ 512(g)(3)).
+  In the one published sequence found that ran to its end,
+  a counter-notice was filed in April 2021 and the sender then sued developers of the project
+  (GitHub DMCA archive; Take-Two v Papenhoff, recorded in R0-01, "Policies of emulator and decompilation projects").
+  Whether the person who filed the counter-notice was among those sued was not checked.
   No counter-notice naming yuzu, Ryujinx, their successors, Lockpick, or LibHac is in the archive.
 - The remedy for a wrongful notice is narrow.
   Section 512(f) reaches a person who "knowingly materially misrepresents ... that material or activity is infringing".
   A rights holder must "consider fair use before sending a takedown notification",
   but a "subjective good faith belief" suffices (Lenz v Universal).
-  Whether § 512(f) or the put-back applies to a notice that alleges only circumvention is not settled by any source read
+- One district court has held that § 512(f) does not reach a notice that alleges only circumvention,
+  because such notices "do not identify any copyrighted works
+  and accordingly are incapable of being misrepresentations under section 512"
+  (Yout v RIAA, District of Connecticut 2022, on a motion to dismiss).
+  The appeal was still pending in March 2026, and no appellate ruling was found.
+  Whether the put-back applies to such a notice is not settled by any source read
   (inference from the statute's wording).
 - GitHub says it reviews circumvention claims with "both technical and legal experts",
   and that where it cannot tell whether a claim is valid it "will err on the side of the developer"
   (GitHub DMCA takedown policy).
   It does not publish its reasoning.
 - Notices can be false.
-  In 2019 recipients of two notices filed under Nintendo's name answered that the notice "was fraudulent" and
-  that their documentation was "all our own work" (counter-notice of 10 September 2019; the recipients' allegation).
+  In 2019 recipients of two notices filed under Nintendo's name answered that the notices were fraudulent; of the first,
+  they said it "was fraudulent" and that their documentation was "all our own work"
+  (counter-notices of 10 September and 3 October 2019; the recipients' allegations).
 
 ### Patents, recorded as risks
 
@@ -705,16 +832,24 @@ That limit is a choice made in writing this note, for the reason given in the kn
 Patent status here is as shown by Google Patents on 2026-11-19,
 which says its status "is an assumption and is not a legal conclusion".
 No Patent Office fee or term record was read.
+The second pass could not reach Google Patents, which refused automated requests.
+It read the front pages of the patents named instead,
+and their filing dates and adjustments agree with the statuses given;
+statuses of patents not named here were not checked again.
 
 - Console makers hold patents on emulation itself.
   Nintendo's US 6,672,963, "Software implementation of a handheld video game hardware platform",
   was filed in 2000 and is shown as expired in 2020.
-  Three continuations and one application from the same family are shown as expired or abandoned.
-  A continuation's term runs "from the date on which the earliest such application was filed" (35 U.S.C. § 154(a)(2)).
+  Later patents from the same original application, a division and continuations, and one further application,
+  are shown as expired or abandoned.
+  A child's 20 years run "from the date on which the earliest such application was filed"
+  (35 U.S.C. § 154(a)(2)), plus any adjustment of its own; the division's front page shows an adjustment of 1,258 days.
 - Other expired Nintendo patents claim emulators of particular handhelds.
   US 7,445,551, filed in 2000, recites one handheld's memory layout in its first claim
   and is shown with an adjusted expiry in 2023.
   US 7,988,556 claims emulating a two-screen handheld on a one-screen handheld and is shown as expired in 2024.
+  The application it was divided from, filed in 2005, issued with an adjustment of nearly four years,
+  so that family may not have wholly expired (calculated from the front page; its status was not checked).
 - Patents shown as in force cover emulator techniques and features, not only hardware.
   Title searches found Nintendo and Sony patents, shown with expiry dates from 2028 into the 2040s,
   on subjects that include translating code between instruction sets, caching translated code,
@@ -722,11 +857,11 @@ No Patent Office fee or term record was read.
   suspending and restoring emulated games over a network, and showing a ROM's graphics in a second application.
   Whether any emulator practises any of these claims was not analysed, and the searches were by title word only.
   Microsoft's position was not mapped.
-- "Filed before late 2006" is not a safe test for expiry in this field.
+- R0-01's rule of thumb, that a patent filed before late 2006 has expired, allows for adjustment
+  ("Copyright: what is protected and how copying is proved"), and the adjustments found in this field are large.
   Patent Office delay extends a term "1 day for each day" (35 U.S.C. § 154(b)).
   Adjustments of about two to nearly four years were found on console-related patents filed in 2000 and 2005,
   and one hardware patent from the two-screen handheld era is shown in force until 2027.
-  This qualifies the rule of thumb in R0-01.
 - A foreign priority date does not start the United States term:
   priority "shall not be taken into account in determining the term of a patent" (§ 154(a)(3)).
   A patent from an application filed before 8 June 1995 runs for the greater of 20 years from filing
@@ -734,16 +869,19 @@ No Patent Office fee or term record was read.
 - Patents filed around a console's launch have passed 20 years for systems launched by 2001,
   and plausibly run into the 2030s and 2040s for systems launched from 2011
   (inference from filing-date arithmetic; no list of patents for any console was made).
-- One assertion of an emulation patent against an emulator developer was found, and it is a lead.
+- One letter asserting a patent on emulation itself against an emulator developer was found, and it is a lead.
   A fan site reproduces what it says is a March 2004 letter from Nintendo to the maker of a commercial Game Boy Advance
   emulator, citing US 6,672,963 and warning of "treble damages for willful infringement" (Zophar's Domain; The Register,
   12 March 2004; secondary).
-  No lawsuit was found.
-- Sony's patent suits against the two commercial PlayStation emulators were never decided.
+  No lawsuit on it was found; Sony's patent suits of 2000, below, are the only patent suits against emulators found.
+- Neither of Sony's patent suits against the two commercial PlayStation emulators was found to reach a final judgment.
   Press reports say Sony sued Connectix for patent infringement in February 2000 and "withdrew the case" in June 2000,
-  and sued Bleem in May 2000 (The Register, secondary).
+  after the judge had by one report rejected seven of its nine patent claims, and later refiled it;
+  they say Sony sued Bleem in May 2000, and the outcome of that suit was not found
+  (The Register, secondary; its reports differ on which of Sony's claims the judge rejected).
   No complaint, docket, or patent number was found.
-  Two emulator patents first filed by Connectix and by Bleem's developer are now shown as assigned to Sony.
+  Two emulator patents first filed by Connectix and by Bleem's developer are shown as assigned to Sony
+  (Google Patents in the first pass; not checked again).
 - No patent suit against a non-commercial, open-source emulator was found in any jurisdiction.
   That records the searches made; court dockets and the Japanese and European registers were not searched.
 - A patent holder has sued a free software project.
@@ -758,68 +896,80 @@ No Patent Office fee or term record was read.
 - Indirect infringement turns on knowledge.
   "Induced infringement under § 271(b) requires knowledge that the induced acts constitute patent infringement",
   and wilful blindness, which "surpasses recklessness and negligence", counts as knowledge (Global-Tech v SEB).
-  A letter that names a patent supplies knowledge from its date (inference).
+  A letter that names a patent supplies knowledge of the patent from its date;
+  knowledge that the acts infringe needs more (inference).
 - Reading and writing about a patent creates a record of knowledge.
   Debian's guidance for distributions says "reading patents increases the probability
   that subsequent infringement will be found to be willful"
   (Debian and Software Freedom Law Center FAQ, 2011, written before Halo).
-  Debian's policy asks members to "refrain from posting patent concerns publicly",
-  because such messages can be demanded in a lawsuit.
+  Debian's policy asks community members to "refrain from posting patent concerns publicly"
+  or discussing patents outside privileged communications,
+  because unprivileged communications may have to be produced in a lawsuit, and unfounded concerns create "fear,
+  uncertainty, and doubt".
+  The same page says "Debian will not knowingly distribute software encumbered by patents".
   FFmpeg says "we have never read patents to implement any part of FFmpeg".
   A public note that names in-force patents is such a record (inference).
-- ADR 0001 treats material a maker published itself as open, and patents are in that class.
+- ADR 0001 treats material a console maker published itself as open.
+  It does not mention patents, but R0-01's source table lists patents as a maker's public material,
+  so a maker's patent would appear to fall in that class (inference).
   An expired patent read as hardware documentation and an in-force patent read
-  for the same facts carry different patent risks.
-  No source read draws that line as a project policy (inference).
+  for the same facts carry different patent risks (inference).
+  No project read was found to state that line as a policy.
 - United States law has no general exemption for private or non-commercial use.
   The common-law experimental use defence is narrow, and limited to actions performed "for amusement,
   to satisfy idle curiosity, or for strictly philosophical inquiry" (Madey v Duke).
-- The United Kingdom, Germany, and Japan exempt the private user, not the supplier.
+- The United Kingdom and Germany exempt the private user, not the supplier.
   An act is not an infringement in the United Kingdom if "it is done privately and for purposes
   which are not commercial" (Patents Act 1977, section 60(5)(a)).
   A person who supplies "means, relating to an essential element of the invention" can still infringe,
   and the exempt user "shall not be treated as a person entitled to work the invention" (section 60(2) and (6)).
-  Germany's Patent Act has the same structure (sections 10 and 11, official translation).
-  Japan gives the patentee "the exclusive right to work the patented invention in the course of trade",
+  Germany's Patent Act has the same structure (sections 10 and 11, English translation on the federal law portal).
+- Japan has a different structure.
+  It gives the patentee "the exclusive right to work the patented invention in the course of trade",
+  limits indirect infringement to supply "in the course of trade" as well,
   and lists providing a program "through a telecommunications line" as working it
-  (Patent Act, Articles 68 and 2(3), unofficial translation).
+  (Patent Act, Articles 68, 101, and 2(3), unofficial translation of the text as amended to 2019).
   How "in the course of trade" applies to free distribution was not researched.
 - Past acts stay exposed after expiry:
   "no recovery shall be had for any infringement committed more than six years" before the complaint is filed
   (35 U.S.C. § 286).
   Damages can be increased "up to three times" (§ 284).
-- A patent can be applied for after the accused product ships, where it descends from an earlier application.
+- A patent can carry an application date after the accused product shipped.
   The three Japanese patents that Nintendo and The Pokémon Company assert against Palworld carry application dates
-  after the game's release, by the defendant's own report.
-  Those are game-mechanic patents, and the defendant changed its game during the suit, before any ruling
+  after the game's release, by the defendant's own report,
+  which does not say whether they descend from earlier applications.
+  Those are game-mechanic patents (inference from the changes the defendant describes),
+  and the defendant changed its game while the suit was pending, by its own account
   (Pocketpair statements of November 2024 and May 2025).
   The suit's status in late 2026 was not established.
 - A console feature can be covered by a third party's patents.
   Immersion reports a 2004 jury verdict and $82.0 million in damages against Sony over controller vibration,
   reaching "PlayStation consoles, Dual Shock controllers, and the 47 games found by the jury to infringe"
   (Immersion's annual report; the plaintiff's account).
-- Media formats that newer consoles use are still pooled.
-  The H.264 pool's list dated 1 November 2026 holds 353 United States patent numbers
+- Media formats that some consoles use (from memory) are still pooled.
+  The H.264 pool's list of active patents dated 1 November 2026 holds 353 United States patent numbers and one reissue
   (count of the published list), and the AAC pool lists several hundred.
   The pools' lists do not say which patents a given game's decoding would touch.
   For MPEG-2, the pool says "the last US patent expired February 13, 2018".
   The MP3 licensing programme "has been terminated" as of April 2017 (Fraunhofer).
   The S3 texture compression patent was filed in October 1997, so its 20 years ended in 2017 (calculated).
   The status of AC-3, ATRAC, the ADPCM variants, and VC-1 was not confirmed.
-- Mesa kept a patented feature out until expiry.
+- Mesa kept a patented feature out while the patent ran, and integrated it in December 2017,
+  after the patent's 20 years had passed (inference from the dates).
   While the texture patent ran, its developers wrote "We cannot integrate
   and enable S3TC code by default due to the patents on the algorithm", and loaded an external library instead;
   the code was integrated in 2017 (DRI wiki; Mesa 17.3.0 release notes).
 - Design patents last "15 years from the date of grant", or 14 for applications filed before 13 May 2015
   (35 U.S.C. § 173 and its notes).
-  Designs for current consoles are therefore in force.
+  Design patents granted for current consoles would therefore still be in force (inference; none was looked up).
   Whether an on-screen image of a controller can infringe a design patent was not resolved by any source read.
-- Licence grants do not reach these patents.
-  GPLv3 gives a licence under "the contributor's essential patent claims", which are a contributor's own (GPLv3 § 11).
-  The Open Invention Network's cross-licence is scoped to "a list of software packages" that was not read.
+- GPLv3's grant does not reach these patents: it gives a licence under "the contributor's essential patent claims",
+  which are a contributor's own (GPLv3 § 11).
+  Whether the Open Invention Network's cross-licence, whose members include Sony,
+  reaches any emulator was not established: it is scoped to "a list of software packages" that was not read.
   `R0-03` covers licences.
-- European law excludes "programs for computers" from patents only "as such"
-  (European Patent Convention, Article 52(2) and (3)).
+- The European Patent Convention, a treaty outside European Union law,
+  excludes "programs for computers" from patents only "as such" (European Patent Convention, Article 52(2) and (3)).
   VideoLAN takes the position that "software patents licenses do not apply on VideoLAN software";
   that is one project's stance, tied to France.
 
@@ -838,20 +988,21 @@ No Patent Office fee or term record was read.
   The Third Circuit makes it a defence the defendant must prove after confusion is shown (Century 21 v LendingTree).
   The Second Circuit holds that it "is not an affirmative defense" and adds its factors to the ordinary ones
   (Security University, 2016).
-- Logos and stylised use fall outside the cases read.
+- In the cases read, logos and stylised use fell outside nominative fair use.
   A car broker "could adequately communicate their message without using the visual trappings of the Lexus brand",
   and a disclaimer, "while not required", "is relevant to the nominative fair use analysis" (Toyota v Tabari).
   A repeated, stylised abbreviation used as page wallpaper failed the test (Playboy v Welles).
 - Using a maker's mark inside one's own name or logo is treated differently.
   The dilution exclusions cover fair use "other than as a designation of source for the person's own goods or services"
   (§ 1125(c)(3)(A)).
-  The Supreme Court held that a parody defence gets no threshold protection
-  where the accused party "has used a trademark as a trademark" (Jack Daniel's v VIP Products).
+  The Supreme Court held that the Rogers threshold test, a First Amendment screen,
+  does not apply where the accused party "has used a trademark as a trademark",
+  and that a parody used as a mark is not "noncommercial" for the dilution exclusion (Jack Daniel's v VIP Products).
 - A domain name can suggest sponsorship.
   A name that is "only the trademark followed by .com" "will typically suggest sponsorship or endorsement" (Tabari).
-  Panels have transferred names such as one joining "switch" and "emulator",
-  where the site offered pirated games and the registrant did not respond
-  (Forum claim FA2207002006456, an administrative decision).
+  A single-member Forum panel transferred a name joining "switch" and "emulator" to Nintendo in 2022,
+  where the site offered unauthorised copies of Nintendo games, advertising, and adult material,
+  and the registrant did not respond (Forum claim FA2207002006456, an administrative decision).
 - The trade mark rulings in emulator cases are few and narrow.
   Connectix rejected dilution by tarnishment because "there is insufficient evidence", while assuming "without deciding,
   that the concept of tarnishment is applicable".
@@ -868,7 +1019,8 @@ No Patent Office fee or term record was read.
 - Sega v Accolade's trade mark holding rests on its facts.
   The court asked "which party is primarily responsible" for the misleading message,
   and held "that Sega is primarily responsible for any resultant confusion",
-  because the check regulated access and there was no "feasible alternate method of gaining access".
+  because the check regulated access and there was "no indication in the record of any public
+  or industry awareness of any feasible alternate method of gaining access".
   It noted that Accolade's packaging said it "is not associated with Sega Enterprises, Ltd."
   The ruling was on a preliminary injunction: "Possibly, Sega will be able to meet its burden of proof at trial."
 - By Pan Docs' description, the logo a Game Boy shows at start-up is read from the cartridge's header,
@@ -878,7 +1030,8 @@ No Patent Office fee or term record was read.
 - European Union law lets a third party use a mark for "identifying or referring to goods or services
   as those of the proprietor", but only "in accordance with honest practices in industrial or commercial matters"
   (Regulation (EU) 2017/1001, Article 14).
-  Use is not honest where it gives "the impression that there is a commercial connection",
+  Construing the same words in the earlier Directive 89/104, the Court of Justice held that use is not honest,
+  for example, where it gives "the impression that there is a commercial connection",
   or where the third party "presents its product as an imitation or replica" (Gillette v LA-Laboratories).
   Infringement requires use "in the course of trade", and whether a free project's use qualifies was not researched.
   The United Kingdom's Trade Marks Act 1994 has matching words (sections 10 and 11(2)).
@@ -899,18 +1052,21 @@ No Patent Office fee or term record was read.
   Microsoft allows a note that a product "is interoperable or compatible with a Microsoft product",
   and forbids its marks "in the name of your business, product, service, app, domain name, social media account",
   and its logos "in any manner" (Microsoft Trademark and Brand Guidelines).
-  Nintendo of Europe says "our policy is to decline use of our trademarks and copyrights".
+  Asked for permission to use its website content,
+  Nintendo of Europe says that because it receives thousands of requests,
+  "our policy is to decline use of our trademarks and copyrights".
   These are owners' wishes, not statements of what the law allows (inference).
 - Console and controller shapes can carry design rights.
   Nintendo says it registers "design rights, or design patents as they are known in the US",
-  which "can include the shape of accessories like controllers".
+  which "can include the shape of accessories like controllers" (Nintendo, Intellectual Property and Piracy FAQ).
   European Union design law now covers "graphical user interfaces" and products in "non-physical form",
   with a limit for acts done for "identifying or referring to a product as that of the design right holder"
   (Regulation (EC) 6/2002 as consolidated in May 2025).
   Trade dress does not protect a feature that "is essential to the use or purpose of the article" (TrafFix).
   No dispute about an emulator's on-screen controller skin was found.
-- Stores apply stricter rules than the courts.
-  Apple forbids using "another developer's icon, brand, or product name in your app's icon or name",
+- Stores apply stricter rules than the courts (inference).
+  Apple forbids using "another developer's icon, brand, or product name in your app's icon or name,
+  without approval from the developer",
   and Google says an app using another's marks "in a way that is likely to cause confusion ... may be suspended".
   Delta's release notes record a "Brand new legally-compliant app icon" in July 2024,
   after a complaint from Adobe that press reports say was also sent to Apple (TechCrunch, secondary).
@@ -931,9 +1087,12 @@ Each line records searches, not proof of absence.
 
 - Whether an emulator that contains no maker code and no keys, and needs the user to supply keys or firmware,
   is a circumvention tool.
-  Only an agreed finding and a default ruling exist.
+  For console emulators, only an agreed finding and a default ruling exist.
 - Whether § 1201(f), or an interoperability exception elsewhere, protects such an emulator.
-- Whether a lock-out check on an unencrypted game is a measure that "effectively controls access".
+- Whether a cartridge-era lock-out on an unencrypted game, such as a logo comparison, a lock-out chip,
+  or a region check, is a measure that "effectively controls access",
+  and whether software that never runs such a check circumvents it.
+  A disc authentication check was treated as an access control, on the console, in Divineo.
 - Whether the owner of a game may dump it and run the dump on other hardware,
   and whether buyers of console games are owners or licensees.
 - Whether a user may copy a BIOS out of a console the user owns,
@@ -944,6 +1103,7 @@ Each line records searches, not proof of absence.
 - Whether a replacement boot ROM or an emulator that draws a maker's logo infringes a trade mark or copyright.
 - Whether free distribution of emulator source code infringes a patent, and under which provision.
 - Whether the remedies for a wrongful takedown notice apply to a notice that alleges only circumvention.
+  One district court held that § 512(f) does not (Yout v RIAA); no appellate ruling was found.
 - Whether a maker's licence terms bind a developer who never accepted them,
   where users who did accept them supply the dumps.
 
@@ -975,11 +1135,12 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 ### 3. Accept only decrypted input, or embed a published key
 
 - **What:** two variants seen: leave decryption to separate tools, or include a widely published key in the source.
-- **Costs:** linking to decryption tools was pleaded as trafficking and enjoined by consent;
+- **Costs:** linking to decryption tools was pleaded as trafficking,
+  and the consent injunction bars trafficking in other circumvention software without naming links;
   an embedded key was cited in a maker's letter; neither variant has been tested.
 - **Gains:** in the first, the project's code performs no decryption; in the second, the emulator works unaided.
-- **Used by:** Dolphin embeds the Wii common key and states that § 1201(f) applies;
-  the first variant is reported for Azahar (from memory).
+- **Used by:** Dolphin embeds the Wii common key and has "every reason to believe" that § 1201(f) covers its decryption;
+  no project stating the first variant was found.
 
 ### 4. Require firmware that the user dumps
 
@@ -1001,9 +1162,10 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 ### 6. Point users to firmware the maker publishes
 
 - **What:** have the user download system software from the maker's own site.
-- **Costs:** the licences read limit use to the console; a maker can withdraw the page; not available for every system.
+- **Costs:** the licences read limit use to the console; a maker can withdraw the page (inference);
+  not available for every system.
 - **Gains:** no console modification and no third-party copy.
-- **Used by:** Vita3K; PPSSPP optionally.
+- **Used by:** Vita3K, which leaves a second font package to the user.
 
 ### 7. Publish, or decline to publish, dumping guides and links
 
@@ -1011,7 +1173,8 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** of publishing: guides and links were pleaded as trafficking,
   and United Kingdom law names publishing information; of declining: users turn to third parties.
 - **Gains:** of publishing: usability; of declining: removes conduct that the filings rely on.
-- **Used by:** yuzu published a guide and links; PCSX2 and Dolphin tell users to dump their own.
+- **Used by:** yuzu published a guide and links to key-dumping tools;
+  PCSX2 and Dolphin publish guides that name or link dumping tools for one's own console.
 
 ### 8. Take money, or not
 
@@ -1029,7 +1192,7 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** one notice can disable a repository and every fork; a store can refuse a release with no notice;
   self-hosting moves the exposure to hosts and registrars.
 - **Gains:** a host with a published review process and counter-notice route; a store's reach.
-- **Used by:** Dolphin abandoned its Steam release; Eden and Citron are reported to self-host (secondary).
+- **Used by:** Dolphin abandoned its Steam release.
 
 ### 10. Respond to a claim by contesting, complying, or settling
 
@@ -1037,24 +1200,26 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** a counter-notice needs identity, an address, and consent to a United States court,
   and was followed by a suit in one case; agreed judgments carried broad findings and injunctions;
   withdrawal ends the project.
-- **Gains:** only contested cases produce reasoned rulings;
-  compliance and settlement end the exposure of the people involved,
-  though a dormant repository was still disabled later.
-- **Used by:** Connectix and Bleem contested; yuzu and Hotz consented; Skyline and EmuParadise withdrew.
+- **Gains:** only contested cases produce rulings tested by argument from both sides;
+  compliance and settlement end the dispute, often on terms that bind the people involved afterwards,
+  and a dormant repository was still disabled later.
+- **Used by:** Connectix and Bleem contested, and Connectix then settled; yuzu and Hotz consented;
+  Skyline and EmuParadise withdrew.
 
 ### 11. Do not read patents
 
 - **What:** contributors never search for or read patents, and the project does not discuss specific patents in public.
 - **Costs:** gives up expired patents as hardware documentation; no effect on direct infringement;
   cannot be shown for an AI author whose training data is unknown.
-- **Gains:** no record of knowledge for indirect infringement or enhanced damages.
+- **Gains:** no record of having read patents, for indirect infringement or enhanced damages;
+  knowledge can still come from a letter, or be argued as wilful blindness.
 - **Used by:** FFmpeg; recommended by Debian's guidance.
 
 ### 12. Read expired patents only, as documentation
 
 - **What:** treat a maker's expired patents as open maker material, and leave patents in force unread.
 - **Costs:** needs a reliable expiry check for each patent; public status data disclaims accuracy;
-  a continuation may still be in force.
+  a patent in the family may run past the 20-year estimate through term adjustment.
 - **Gains:** keeps the documentary value for old systems.
 - **Used by:** no project found that states it.
 
@@ -1063,7 +1228,8 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **What:** omit a patented codec or technique, load it from an external library, or wait.
 - **Costs:** missing features; someone must track expiry in each country.
 - **Gains:** the project does not ship the feature while the patent runs.
-- **Used by:** Mesa for texture compression until 2017; Debian's policy.
+- **Used by:** Mesa for texture compression until 2017; Debian,
+  which "will not knowingly distribute software encumbered by patents" (Debian policy).
 
 ### 14. Name the project without a maker's mark, and describe systems in plain words
 
@@ -1077,9 +1243,10 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **What:** either show only the project's interface, test programs, and homebrew,
   or use screenshots and state a fair use position.
 - **Costs:** of abstaining: plainer pages; of using: rests on a holding confined to comparative advertising,
-  and makers' guidelines exclude emulators.
+  Nintendo's guidelines treat emulator content as inappropriate,
+  and the others read cover only personal or legitimate use.
 - **Gains:** of abstaining: no third-party copyright or mark in the project's material.
-- **Used by:** PCSX2 states a position; Delta's README image shows maker characters with an attribution.
+- **Used by:** PCSX2 states a position.
 
 ### 16. Handle boot logos by drawing what the game supplies, or by drawing none
 
@@ -1092,26 +1259,27 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 
 ## Implications for Rustalgia
 
-- Encryption is the dividing fact in every enforcement record found.
+- Encryption is the common fact in every console emulator filing, judgment, and notice found.
   Each family survey (`R1-10` to `R1-25`) needs to record whether a system's games or firmware are encrypted
   or authenticated, and by what kind of check.
   This feeds the system scope proposal (`R6-01`) and an ADR on protected content.
 - Options 1 to 3 cannot be chosen by research.
   For the Switch and PlayStation surveys
   (`R1-14`, `R1-21`),
-  which depend on this note, the record is one-sided and uncontested; that is a recorded risk,
-  not a finding that those systems are closed.
+  which depend on this note, the record for consoles with encrypted games is one-sided and uncontested;
+  that is a recorded risk, not a finding that those systems are closed.
 - Firmware has three routes, options 4 to 6, and none is settled law.
   `R2-12` weighs them technically; the legal inputs are the findings on Connectix, maker licences, and Atari v JS&A.
   This feeds an ADR on firmware and a requirement on what the project ships.
 - What the project says to users is itself conduct.
   Guides, links, compatibility lists, screenshots, and telemetry all appear in the filings.
-  This feeds requirements on documentation and on the website, and it bears on what `R0-04` lets notes contain: no keys,
-  no firmware bytes, and care with step-by-step circumvention detail.
-- Patents are a risk that ADR 0001 does not address, and the ADR treats maker material, including patents, as open.
+  This feeds requirements on documentation and on the website, and it bears on `R0-04`: whether notes may contain keys,
+  firmware bytes, or step-by-step circumvention detail is a question for that item.
+- Patents are a risk that ADR 0001 does not address; its row for maker material,
+  which R0-01's source table says includes patents, treats them as open (inference).
   Whether to distinguish expired patents from those in force, and whether notes may name patents in force,
   are decisions for the owner.
-  This note takes the cautious reading until that is decided.
+  Until the owner decides, this note names no patent in force, as its patents section states.
 - The project's licence, hosting, and funding choices carry legal weight found here:
   open-source status was counted against emulators in one default ruling, a single notice can disable all forks,
   and contesting a notice needs a named person.
@@ -1120,7 +1288,10 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   Rules for descriptive statements, logos, screenshots, controller skins, and boot logos would follow options 14 to 16.
   This feeds a requirement on branding and one on the default interface.
 - Country matters, and the project has not said whose law it plans around.
-  Interoperability exceptions exist in Canada, Australia, and South Korea and not in the texts read elsewhere.
+  Statutory interoperability exceptions to anti-circumvention rules exist in the United States
+  (§ 1201(f)),
+  Canada, Australia, and South Korea; the European Union has only a recital, and none was found in the United Kingdom,
+  German, French, or Japanese texts read.
   This feeds the exit review (`R6-05`) as an unknown.
 
 ## Open questions
@@ -1129,14 +1300,16 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   The family surveys, `R1-10` to `R1-25`.
 - Is a lock-out check on an unencrypted game an access control?
   No ruling was found; the family surveys can record the checks, and the risk stays open.
-- What did the full Keighin recommendation and its final judgment say beyond the passages read?
+- What did the full Keighin recommendation and its final judgment say beyond the passages read, and what is document 40,
+  of 5 November 2025, which the 2026 notices cite?
   A complete read of the docket.
-- How did the remands in the German console cases and PC Box end, and what did the Paris court hold in 2011?
+- How did the remands in the German console cases and PC Box end?
   The judgment texts were not obtained; `R1-12` and `R1-14` could look again.
 - What is the current French text on technological measures,
-  and where does German law now exclude programs from section 95a?
-  A further read of both codes.
-- Which acts do Australia's regulations prescribe, and has any court applied Canada's 2024 wording?
+  and does German section 95a reach computer programs as well as games?
+  Section 69a(5), as read, does not exclude it; a further read of both codes.
+- Do any Australian exceptions beyond sections 116AN(3) and 116AO(3) bear on emulation,
+  and has any court applied Canada's 2024 wording?
   A further read before `R6-01`.
 - Is a console's protection a measure that takes a game outside Japan's private copying rule?
   Not examined; `R1-14` and `R1-21`.
@@ -1160,18 +1333,18 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 ## Sources
 
 Every source below was read on 2026-11-19.
-Sources that R0-01 lists are not repeated: Sega v Accolade, Sony v Connectix, Davidson v Jung,
-the Tropic Haze complaint and judgment, Directive 2009/24/EC, the German Copyright Act,
-the Japanese Copyright Act and Unfair Competition Prevention Act, the Australian Copyright Act, 37 C.F.R. § 201.40,
-and GPLv3.
+Sources that R0-01 lists are not repeated: Sega v Accolade, Sony v Connectix, Atari v Nintendo, Davidson v Jung,
+Bowers v Baystate, Halo v Pulse, Take-Two v Papenhoff, the Tropic Haze complaint and judgment, Directive 2009/24/EC,
+the German Copyright Act, the Japanese Copyright Act and Unfair Competition Prevention Act,
+the Australian Copyright Act, 37 C.F.R. § 201.40, and GPLv3.
 European Union texts were read through the Publications Office address `http://publications.europa.eu/resource/celex/`
 followed by the document number, because EUR-Lex returned empty pages.
 
 Statutes, treaties, and regulations:
 
 - 17 U.S.C. §§ 117, 512, 1201, 1203, 1204: `https://www.law.cornell.edu/uscode/text/17/1201` and sibling pages.
-- 15 U.S.C. §§ 1114, 1115, 1125: `https://www.law.cornell.edu/uscode/text/15/1125` and sibling pages.
-- 35 U.S.C. §§ 102, 154, 171, 173, 271, 284, 286: `https://www.law.cornell.edu/uscode/text/35/154` and sibling pages.
+- 15 U.S.C. § 1125: `https://www.law.cornell.edu/uscode/text/15/1125`.
+- 35 U.S.C. §§ 154, 173, 271, 284, 286: `https://www.law.cornell.edu/uscode/text/35/154` and sibling pages.
 - WIPO Copyright Treaty, Article 11: `https://www.wipo.int/wipolex/en/text/295166`.
 - Directive 2001/29/EC: `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32001L0029`.
 - Regulation (EU) 2017/1001, Articles 9 and 14: `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R1001`.
@@ -1181,7 +1354,9 @@ Statutes, treaties, and regulations:
   `https://www.legislation.gov.uk/ukpga/1988/48/section/296` and sibling pages.
 - Trade Marks Act 1994, sections 10 and 11: `https://www.legislation.gov.uk/ukpga/1994/26/section/10`.
 - Patents Act 1977, section 60: `https://www.legislation.gov.uk/ukpga/1977/37/section/60`.
-- German Patent Act, official translation: `https://www.gesetze-im-internet.de/englisch_patg/englisch_patg.html`.
+- German Patent Act, English translation: `https://www.gesetze-im-internet.de/englisch_patg/englisch_patg.html`.
+- German Copyright Act, section 69a, German text: `https://www.gesetze-im-internet.de/urhg/__69a.html`;
+  the portal's note on translations: `https://www.gesetze-im-internet.de/Teilliste_translations.html`.
 - France, bill adopted on 30 June 2006, text 596: `https://www.assemblee-nationale.fr/12/ta/ta0596.asp`.
 - France, Constitutional Council, decision 2006-540 DC:
   `https://www.conseil-constitutionnel.fr/decision/2006/2006540DC.htm`.
@@ -1258,6 +1433,15 @@ United States court decisions and filings:
   (N.D. Cal. 2005): `https://static.case.law/f-supp-2d/406/cases/1068-01.json`.
 - United States v Reichert, 747 F.3d 445
   (6th Cir. 2014): `https://www.govinfo.gov/content/pkg/USCOURTS-ca6-13-03479/pdf/USCOURTS-ca6-13-03479-0.pdf`.
+- DISH Network v SatFTA, No. 5:08-cv-01561
+  (N.D. Cal., order of 9 March 2011), copy hosted by Justia:
+  `https://cases.justia.com/federal/district-courts/california/candce/5:2008cv01561/201657/53/0.pdf`.
+- Yout v Recording Industry Association of America, No. 3:20-cv-1602
+  (D. Conn., ruling of 30 September 2022),
+  and the appellees' letter of 31 March 2026 in the appeal, No. 22-2760
+  (2d Cir.):
+  `https://storage.courtlistener.com/recap/gov.uscourts.ctd.141714/gov.uscourts.ctd.141714.61.0.pdf`
+  and `https://storage.courtlistener.com/recap/gov.uscourts.ca2.59200/gov.uscourts.ca2.59200.146.0.pdf`.
 - Ted Entertainment v ByteDance, No. 3:25-cv-10933
   (N.D. Cal. 2 October 2026), copy hosted by a news service:
   `https://www.courthousenews.com/wp-content/uploads/2026/10/bytedance-motion-dismiss-ruling.pdf`.
@@ -1342,13 +1526,15 @@ Takedown notices and host policy:
 
 - GitHub DMCA notice archive, README and the notices cited by month: `https://github.com/github/dmca`.
 - GitHub DMCA Takedown Policy: `https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy`.
+- Google, "About Lumen": `https://support.google.com/legal/answer/12158374`.
 
 Makers' terms, statements, and guidelines:
 
 - PlayStation system software pages and licence agreements:
   `https://www.playstation.com/en-us/support/hardware/ps5/system-software/`,
-  `https://www.playstation.com/en-us/legal/ps5-ssla/`,
-  and `https://doc.dl.playstation.net/doc/ps3-eula/ps3_eula_en.html`.
+  `https://www.playstation.com/en-us/legal/ps5-ssla/`, `https://doc.dl.playstation.net/doc/ps3-eula/ps3_eula_en.html`,
+  `https://doc.dl.playstation.net/doc/ps4-eula/ps4_eula_en.html`,
+  and `https://doc.dl.playstation.net/doc/psvita-eula/psvita_eula_en.html`.
 - PlayStation Software Usage Terms: `https://www.playstation.com/en-us/legal/software-eula/`.
 - Microsoft Services Agreement, effective 30 September 2026: `https://www.microsoft.com/en-us/servicesagreement`.
 - Microsoft Trademark and Brand Guidelines, and Game Content Usage Rules:
@@ -1377,7 +1563,7 @@ Makers' terms, statements, and guidelines:
 
 Emulator projects, prose only:
 
-- Dolphin, FAQ, and blog posts of 27 May and 20 July 2023 in archived copies:
+- Dolphin, FAQ, and blog post of 20 July 2023 in an archived copy:
   `https://dolphin-emu.org/docs/faq/` and
   `https://web.archive.org/web/20241221001744/https://dolphin-emu.org/blog/2023/07/20/what-happened-to-dolphin-on-steam/`.
 - PCSX2, BIOS documentation and "Trademark and Copyright":
@@ -1417,6 +1603,9 @@ Secondary sources:
 
 - MacTech, "Sony and Connectix Announce Agreement"
   (16 March 2001): `https://www.mactech.com/content/sony-and-connectix-announce-agreement-0`.
+- MacTech, reprint of a Connectix press release
+  (17 May 2000):
+  `https://www.mactech.com/2000/05/17/court-dismisses-all-sony-copyright-and-tm-claims-in-connectix-case/`.
 - PC Gamer, report on Ryujinx (1 October 2024):
   `https://www.pcgamer.com/gaming-industry/switch-emulator-ryujinx-goes-offline-after-creator-gets-an-offer-from-nintendo-they-cant-refuse`.
 - Electronic Frontier Foundation, "09 f9: A Legal Primer"
@@ -1432,7 +1621,7 @@ Secondary sources:
   and
   `https://automaton-media.com/en/news/four-men-referred-to-prosecution-for-selling-modified-nintendo-switch-consoles-in-japan/`.
 - Punto Informatico (17 November 2015): `https://www.punto-informatico.it/modchip-nintendo-vince-a-milano/`.
-- The Register, reports of 16 February, 19 May, and 30 June 2000 and 12 March 2004:
+- The Register, reports of 16 February, 19 May, 30 June, and 6 September 2000 and 12 March 2004:
   `https://www.theregister.com/2000/02/16/sony_slaps_patent_suit/` and sibling pages.
 - Zophar's Domain, news archive: `https://www.zophar.net/news-archive/nintendo-patents-certain-emulators-6614.html`.
 - TorrentFreak (9 August 2018), on EmuParadise:
