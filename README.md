@@ -55,7 +55,7 @@ This installs every tool at the version recorded in `.config/mise.lock` and inst
 | `mise run lint` | Runs every linter, including internal link checks |
 | `mise run links` | Checks internal and external links |
 | `mise run security` | Scans for secrets and audits the CI workflows |
-| `mise run check` | Runs every CI check except the pull request title, without changing files |
+| `mise run check` | Runs every pull request check except the title, without changing files |
 | `mise run pin` | Pins GitHub Actions to commit SHAs |
 | `mise run label-pr` | Sets a pull request's labels; needs `GH_REPO` and `PR_NUMBER` |
 
@@ -133,9 +133,12 @@ Install plugins with the `/plugin` command in Claude Code.
 
 ### Continuous integration
 
-Each pull request runs the `format`, `lint`, `links`, `security`, and `pr-title` jobs.
+Each pull request runs the `format`, `lint`, `security`, and `pr-title` jobs.
+`lint` checks internal links and heading anchors; it does not fetch external pages.
 The `gate` job passes when all of them succeed, and it is the one check a merge requires.
-A weekly job rechecks external links.
+A weekly job, `.github/workflows/links.yml`, checks external links,
+so a site that refuses or times out never blocks a pull request.
+Run `mise run links` to check them locally.
 
 A separate `label` job sets each pull request's labels: the kind of change from its title, the areas from its files,
 `controls` when it touches `.github/`, `.config/`, or `.claude/`,
