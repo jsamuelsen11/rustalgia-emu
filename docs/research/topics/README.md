@@ -17,6 +17,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R0-05](R0-05-source-map.md) | Where each system's documentation lives, and each hub's licence, origin, and tier |
 | [R0-06](R0-06-provenance-controls.md) | What can record and control where agent-written work comes from |
 | [R1-01](R1-01-primer-8-and-16-bit.md) | How 8-bit and 16-bit consoles and handhelds work, and what that asks of an emulator |
+| [R1-02](R1-02-primer-32-and-64-bit.md) | How the 32-bit and 64-bit machines work, and what that asks of an emulator |
 | [R1-04](R1-04-primer-modern.md) | How modern consoles work, and what that asks of an emulator |
 | [R1-05](R1-05-catalogue-8-and-16-bit.md) | Which consoles and handhelds the 8-bit and 16-bit era sold, and their hardware and sources |
 | [R1-06](R1-06-catalogue-32-and-64-bit.md) | Which consoles and handhelds the 32-bit and 64-bit era sold, and their hardware and sources |
