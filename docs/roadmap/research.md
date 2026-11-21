@@ -52,7 +52,7 @@ Nothing else starts before R0-01.
 - [x] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
 - [ ] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history.
 - [ ] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
-      Depends on R0-02.
+      Depends on R0-02, R0-06.
 - [ ] **R0-04** Glossary and research conventions.
       Adds the glossary and its structure contract.
 - [ ] **R0-05** Source map: the documentation hubs and essential reading for each system.
@@ -197,7 +197,7 @@ Each depends on R1-90.
       Depends on R1-63.
 - [ ] **R2-11** Media and storage formats.
 - [ ] **R2-12** Firmware: boot ROMs, replacements, and emulating a console's operating system.
-      Depends on R0-02.
+      Depends on R0-02, R0-06.
 - [ ] **R2-13** Input and peripherals.
 - [ ] **R2-14** Debugging, tracing, cheats, and achievements.
 - [ ] **R2-15** Verifying accuracy: test suites, input replays, and compatibility lists.

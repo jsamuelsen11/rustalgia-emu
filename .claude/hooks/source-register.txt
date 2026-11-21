@@ -21,6 +21,10 @@ other | jplag/jplag | GPL-3.0 | source-code plagiarism detector | 2026-11-19 | l
 other | blingenf/copydetect | MIT | code similarity tool | 2026-11-19 | licence file, README
 other | git-ai-project/git-ai | Apache-2.0 | AI attribution tool for git | 2026-11-19 | licence file, README
 other | code.claude.com/docs | none stated | vendor documentation of the agent tool | 2026-11-19 | R0-06
+other | learn.microsoft.com/en-us/legal | none stated | vendor terms; Copilot copyright commitment | 2026-11-20 | R0-06
+other | curia.europa.eu | none stated | Court of Justice of the EU, official site | 2026-11-20 | R0-06
+other | www.anthropic.com | none stated | provider's system cards and terms | 2026-11-20 | R0-06
+other | web.archive.org | none stated | web archive, not a source; captures cited with dates | 2026-11-20 | R0-06
 other | torvalds/linux | GPL-2.0 WITH Linux-syscall-note | operating system kernel | 2026-11-19 | COPYING
 other | dodona-edu/dolos | MIT | source-code plagiarism detector | 2026-11-19 | README
 other | whit3rabbit/clean-room-skill | MIT | clean-room workflow for agents | 2026-11-19 | licence file
