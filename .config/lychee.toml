@@ -51,4 +51,5 @@ exclude = [
   '^https?://(www\.)?law\.berkeley\.edu/', # 403 to CI runners
   '^https?://(www\.)?retrodev\.com/', # 502 Bad Gateway to CI runners
   '^https?://caselaw\.findlaw\.com/', # 403 Forbidden (challenge page)
+  '^https?://patents\.google\.com/', # 503 Service Unavailable
 ]
