@@ -807,7 +807,6 @@ open | lutris/jzintv | GPL-2.0-or-later by its notice | mirror of jzIntv; COPYIN
 walled | jeremiah-sypult/blissemu | GPL-2.0, only or later not stated | fork of Bliss | 2026-11-20 | README, LICENSE.txt
 walled | wiki.intellivision.us | not stated; project pages need a login | community wiki | 2026-11-20 | Main Page
 # Added by the R1-03 rework: an archive for captures of pages that refuse scripts, and two maker sites.
-other | web.archive.org | - | an archive, not a source; captures of pages that refuse scripts | 2026-11-20 | -
 open | learn.microsoft.com/en-us/windows/win32 | Microsoft terms of use | maker's documentation | 2026-11-20 | footer
 open | gpuopen.com | AMD copyright page, no grant | maker's documentation index; list read only | 2026-11-20 | footer
 # Pages on open wikis that the R1-03 evidence names as holding boot ROM pseudo-code or assembly, firmware-internal

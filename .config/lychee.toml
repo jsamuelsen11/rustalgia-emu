@@ -29,7 +29,6 @@ exclude = [
   '^https?://wiki\.henkaku\.xyz/', # bot check (Anubis challenge page)
   '^https?://(www\.)?nxp\.com/', # 404 Not Found to scripts, even for the home page
   '^https?://(www\.)?gnu\.org/', # times out
-  '^https?://(www\.)?nxp\.com/', # 404 to the link checker on 2026-11-20; a plain fetch loaded the same pages
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
   # Refuse GitHub's CI runners though they answer other clients (CI runs of #34 to #46, 2026-11-20).
