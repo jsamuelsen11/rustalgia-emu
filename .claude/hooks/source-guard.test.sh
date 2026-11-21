@@ -172,6 +172,19 @@ check 2 reader "$(fetch https://github.com/free60project/wiki/blob/master/docs/H
 check 2 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md)"
 check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md')"
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
+
+# psdevwiki's PS4 wrapper and libraries pages, closed, at every form they are reached by; other pages stay open.
+check 2 writer "$(fetch https://www.psdevwiki.com/ps4/SELF_File_Format)"
+check 2 writer "$(fetch https://psdevwiki.com/ps4/SELF_File_Format)"
+check 2 writer "$(fetch https://web.archive.org/web/20260220000705id_/https://www.psdevwiki.com/ps4/SELF_File_Format)"
+check 2 reader "$(fetch https://www.psdevwiki.com/ps4/Libraries)"
+check 2 writer "$(bash 'curl -sL https://web.archive.org/web/2026/https://www.psdevwiki.com/ps4/Libraries')"
+check 0 writer "$(fetch https://web.archive.org/web/20260216085041id_/https://www.psdevwiki.com/ps4/Syscalls)"
+
+# Microsoft's directory of GDK topics under a non-disclosure agreement is closed; the public pages stay open.
+check 2 writer "$(fetch https://docs.xbox.com/nda/nda-overview.md)"
+check 2 writer "$(fetch https://docs.xbox.com/nda/nda-topic-directory.md)"
+check 0 writer "$(fetch https://docs.xbox.com/home/glossary.md)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
 # Every register line has a known tier, six fields, and a date.
