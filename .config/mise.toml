@@ -15,6 +15,7 @@ shellcheck = "latest"
 shfmt = "latest"
 "aqua:Latias94/merman" = "latest"
 "aqua:jackchuka/mdschema" = "latest"
+"pipx:reuse" = "latest"
 
 [tasks.fmt]
 description = "Rewrite files with every formatter"
@@ -36,6 +37,7 @@ depends = [
   "lint:editorconfig",
   "lint:actionlint",
   "lint:shellcheck",
+  "lint:reuse",
   "links:offline",
 ]
 

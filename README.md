@@ -156,6 +156,7 @@ and declines any trade mark right in the name.
 The project's own documents, the source register, and the configuration are also available, at your option,
 under the Creative Commons Attribution-ShareAlike 4.0 licence (`GPL-3.0-or-later OR CC-BY-SA-4.0`).
 Quotations in the documents stay under their sources' terms.
+[REUSE.toml](REUSE.toml) declares each file's licence in SPDX form, and `mise run lint:reuse` checks it.
 
 The decisions are recorded in ADRs [0002](docs/adr/0002-license-under-gpl-3-0-or-later.md),
 [0003](docs/adr/0003-permit-conveying-through-app-stores.md),

@@ -1,5 +1,5 @@
 [files]
-extend-exclude = ["LICENSE", "*.lock"]
+extend-exclude = ["LICENSE", "LICENSES/", "*.lock"]
 ignore-hidden = false
 
 [default]
