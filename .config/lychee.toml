@@ -63,4 +63,5 @@ exclude = [
   '^https?://developer\.arm\.com/', # 403 Forbidden to automated requests
   '^https?://(www\.)?segaretro\.org/', # bot-check page in place of the article
   '^https?://(www\.)?opensource\.org/', # 403 Forbidden (2026-11-21)
+  '^https?://(www\.)?govinfo\.gov/', # 502 Bad Gateway to CI runners (2026-11-21)
 ]
