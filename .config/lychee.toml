@@ -62,6 +62,8 @@ exclude = [
   '^https?://(www\.)?sega\.jp/', # 403 Forbidden (challenge page)
   '^https?://developer\.arm\.com/', # 403 Forbidden to automated requests
   '^https?://(www\.)?segaretro\.org/', # bot-check page in place of the article
+  '^https?://web\.archive\.org/', # refuses connections after a burst of automated requests (2026-11-20)
   '^https?://(www\.)?opensource\.org/', # 403 Forbidden (2026-11-21)
   '^https?://(www\.)?govinfo\.gov/', # 502 Bad Gateway to CI runners (2026-11-21)
+  '^https?://(www\.)?playstation\.com/', # 403 to CI runners (2026-11-21)
 ]

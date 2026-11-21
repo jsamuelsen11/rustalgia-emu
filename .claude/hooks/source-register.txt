@@ -821,8 +821,24 @@ closed | trapexit/3do-docs | not read | collection of 3DO documents | 2026-11-20
 closed | n64brew.dev/wiki/pif-nu | CC BY-SA 4.0 | PIF page; prints secret keys | 2026-11-20 | R1-06 research log
 closed | n64brew.dev/wiki/cic-nu | CC BY-SA 4.0 | CIC page; prints a boot secret | 2026-11-20 | R1-06 research log
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
+# "site terms": the terms of Sony, Microsoft, and Nintendo, read once by R1-08, bar automated collection.
 open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
+open | hc32.hotchips.org | IEEE notice; personal use permitted | Hot Chips 32 archive | 2026-11-20 | programme, slide 1
+open | xbox.com/en-us/consoles | site terms | maker's own product pages | 2026-11-20 | Series S and X pages
+open | news.xbox.com | site terms | maker's own Xbox Wire | 2026-11-20 | posts of 2014-09-29, 2020-09-09
+open | xboxwire.thesourcemediaassets.com | none stated | Xbox Wire media host | 2026-11-20 | one image
+open | sie.com/corporate/release | site terms | maker's own press releases | 2026-11-20 | release 141211
+open | sonyinteractive.com/en/press-releases | site terms | redirect target | 2026-11-20 | one release
+open | evercade.co.uk | none read | maker's own product pages | 2026-11-20 | VS page
+open | learn.microsoft.com/en-us/previous-versions/windows/uwp/xbox-apps | site terms | maker docs | 2026-11-20 | two
+closed | ifixit.com | CC BY-NC-SA 3.0 | repair wiki and parts store; NC term; prose only | 2026-11-20 | Info/Licensing
+closed | www.ifixit.com | CC BY-NC-SA 3.0 | same site, www prefix | 2026-11-20 | Info/Licensing
+# web.archive.org hosts captures, cited for pages that refuse scripts; each capture takes its original source's tier.
+open | learn.microsoft.com/en-us/legal/windows/agreements | maker's terms | agreement text | 2026-11-20 | one PDF
+open | www.nintendo.com/us/gaming-systems | site terms | maker's product pages | 2026-11-20 | one page
+other | docs.github.com | - | documentation of the API used for licence metadata | 2026-11-20 | one page
+other | api.github.com | - | API host; repository metadata only | 2026-11-20 | four repositories
 # Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
 # Sources opened or evaluated while researching R1-02, and not cited by it.
