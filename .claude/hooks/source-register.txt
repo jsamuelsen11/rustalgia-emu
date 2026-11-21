@@ -615,4 +615,5 @@ open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 202
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
 open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
+# Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
