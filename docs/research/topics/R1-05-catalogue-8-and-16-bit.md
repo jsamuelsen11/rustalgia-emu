@@ -13,25 +13,23 @@ This note asks which dedicated consoles and handhelds were sold in the 8-bit and
 protection, firmware, and sources each has.
 
 It lists about 100 machines and families, from the processor-less consoles of 1972 to handhelds sold as late as 2002.
-It also groups the more than 1,000 first-generation consoles that Wikipedia lists, many of them rebadges,
-by the game chip they share.
+It also groups the more than 1,000 first-generation consoles that
+[Wikipedia lists](https://en.wikipedia.org/w/index.php?title=List_of_first_generation_home_video_game_consoles&oldid=1386346200),
+many of them rebadges, by the game chip they share.
 
-An open-tier hardware reference beyond Wikipedia exists for the systems the roadmap's family surveys name,
-and for a few others: the SG-1000, Neo Geo AES and CD, Neo Geo Pocket, WonderSwan, Pocket Challenge V2, Mega Jet,
-and Nomad.
-For the rest, Wikipedia is the main source found.
-Maker patents add to it for five consoles and the R-Zone, a Sega page settles the Game Gear's clock,
-and a trade newsletter of 1978 settles the Odyssey 2's first shipments.
-Of the old chips probed, only RCA's 1802 still has a datasheet served by its maker's successor.
+Beyond Wikipedia, open-tier hubs cover the surveyed families and a few others; patents,
+[Sega's own page](https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/),
+and a [1978 trade newsletter](https://www.worldradiohistory.com/Archive-TV-Digest/70s/1978/TV-Digest-1978-09.pdf) settle
+several conflicts.
 
 The fact that matters most to Rustalgia:
-about 40 of the roughly 70 rows with a processor name built-in firmware that the project may not obtain
+about 40 of the roughly 70 rows that name a processor have built-in firmware the project may not obtain
 (counted from the rows below).
 
 About 20 systems sit at the era's edges.
-The note places them by one rule: a system with a survey goes with its survey, a device without one by its first sale,
-and a home console by its generation, with word size breaking ties.
-Under that rule the Pokémon Mini moves to [R1-07](R1-07-catalogue-sixth-generation.md).
+A system with a survey goes with its survey, and a device without one by its first sale.
+The Pokémon Mini and Cybiko stay here because [R1-07](R1-07-catalogue-sixth-generation.md) leaves them to this note,
+and the Pocket Challenge V2 stays with the WonderSwan line.
 
 The note recommends four new family surveys, for Atari, NEC, SNK, and Bandai,
 and later study only of systems that have a survey; the owner decides.
@@ -56,10 +54,13 @@ This note is not legal advice.
   Wikipedia through its raw wikitext; no value here comes from a summarising tool unless it is marked "(secondary)".
   Two independent verification passes, one after the other,
   fetched the sources again and tested each claim and quotation.
-  Each of their findings was checked against the source once more before the text was changed;
-  their corrections were applied, and the claims they could not check are listed in the pull request.
-- A rework pass on the same date answered the earlier open questions from the sources named in each finding,
-  fetched as raw text with curl; its copies were deleted when the work was done.
+  A rework pass on the same date then answered the open questions from the sources named in each finding,
+  fetched as raw text with curl.
+  A third independent pass checked the reworked note: one verifier tested its claims and quotations,
+  another its links and shape.
+  Each finding of the three passes was checked against the source once more before the text was changed;
+  their corrections were applied, the claims they could not check are listed in the pull request,
+  and the raw copies were deleted when the work was done.
 - Wikipedia is a tertiary source: a value with no hub named rests on the article's own text,
   whose citations were not followed unless a finding says so.
   Counts marked "(counted from the raw table)" were made by script over Wikipedia's wikitext. "(inference)" marks
@@ -68,8 +69,8 @@ This note is not legal advice.
 - Notation: memory sizes that sources give in "KB" are written in KiB, because chip sizes are powers of two (inference);
   clocks are as each source gives them.
 - No firmware, BIOS, boot ROM, game, maker manual hosted by others, or emulator code was opened.
-  One page read, SMS Power's "BIOSes", carries excerpts of a BIOS disassembly in its own text;
-  nothing from them is used.
+  One page read by the first pass, SMS Power's "BIOSes", carries excerpts of a BIOS disassembly in its own text;
+  the [register](../../../.claude/hooks/source-register.txt) now closes it, and nothing here rests on it.
 
 ## Findings
 
@@ -86,8 +87,11 @@ This note is not legal advice.
 - A device placed in another catalogue keeps one cross-reference row here, so that each device is listed once.
 - "Survey" names the family survey whose title includes the system, or the system it is a model
   or add-on of. "(inference)" marks a survey that does not name the system;
-  "R1-25 (inference)" marks a console built from a home computer, which "Other handhelds and home computers" may cover.
-  A dash means no survey's title names the system; "Options and trade-offs" recommends where those are studied.
+  "R1-25 (inference)" marks a console built from a home computer.
+  A dash means no survey's title names the system,
+  so it falls to [R1-25](../../roadmap/research.md#system-family-surveys), "Other consoles, handhelds,
+  and home computers: the systems that no other survey names";
+  "Options and trade-offs" recommends four family surveys for some of them.
 - "Hub" names the best open-tier source other than Wikipedia, as registered;
   a dash means Wikipedia was the only source found.
 - Regions: NA North America, EU Europe, UK United Kingdom, DE Germany, RU Russia, PL Poland, JP Japan, KR South Korea,
@@ -161,8 +165,10 @@ Every row rests on the Wikipedia article on the system or series, unless it name
   (Wikipedia, ["AY-3-8500"](https://en.wikipedia.org/w/index.php?title=AY-3-8500&oldid=1355333866), lead).
   It runs from a nominal 2.0 MHz clock, and colour needs a companion AY-3-8515 (same article).
 - No General Instrument datasheet for the family was found among the pages read.
-  Microchip, which holds General Instrument's chip lines
-  (from memory), refused a scripted request for its AY-3-8910 page (HTTP 403; see "Coverage of sources").
+  Microchip, a General Instrument spin-off that sold the AY-3-8910 under its own brand for a few years (Wikipedia,
+  ["General Instrument AY-3-8910"](https://en.wikipedia.org/w/index.php?title=General_Instrument_AY-3-8910&oldid=1375275795),
+  lead), refused a scripted request for its AY-3-8910 page (HTTP 403 at `microchip.com/en-us/product/AY-3-8910`;
+  research log; see "Coverage of sources").
 
 ### Second generation: home consoles
 
@@ -220,13 +226,13 @@ Hardware:
 - The Channel F's start-up code, shared routines, and two games sit in 2 KiB of ROM in two 3851 chips
   (Wikipedia, ["Fairchild Channel F"](https://en.wikipedia.org/w/index.php?title=Fairchild_Channel_F&oldid=1385111024),
   "Design").
-  Fairchild's patent settles the part numbers:
+- Fairchild's patent settles the part numbers:
   the console uses "a Fairchild F8 3850 central processing unit (CPU)
   and two F8 3851 program storage units (PSU) with each of the PSUs containing 1024 bytes of the program",
   and its processor clock is 1.8 MHz, "derived from a 3.58 MHz signal"
   ([US 4,095,791](https://patents.google.com/patent/US4095791A/en), description of the preferred embodiment).
-  The article's "3580" and "3581", in its "Cartridges" and "Technical specifications" subsections,
-  cite Buchsbaum and Mauro's book of 1979, p. 294, which was not read.
+- The article's "3580" and "3581" cite White and de Boer (2016), p. 25, in "Cartridges", and Buchsbaum and Mauro (1979),
+  p. 294, in "Technical specifications"; neither book was read.
   The table's 1.79 MHz is consistent with the patent's 3.58 MHz halved (inference).
 - The patents of the Channel F's maker
   and of the licensor of its prototype describe a display memory read out in step with the scan,
@@ -254,8 +260,9 @@ Hardware:
   Renesas, the successor of RCA's chip line (from memory), has no product page for the CDP1861
   (HTTP 404 at `renesas.com/en/products/cdp1861`).
   The datasheet that ["RCA CDP1861"](https://en.wikipedia.org/w/index.php?title=RCA_CDP1861&oldid=1356046971) links is
-  an archive copy on a third-party host, which was not opened: a maker document that survives only on such a host is
-  closed unless the maker's release is shown, as "Options and trade-offs" records.
+  an archive copy on a third-party host, which was not opened: maker material that others host, with no sign the maker
+  released it, is closed ([ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md), "Sources that are not
+  emulators").
 - The Astrocade's video chip transforms data that a program writes to the ROM address space and stores the result in RAM
   (Wikipedia, ["Astrocade"](https://en.wikipedia.org/w/index.php?title=Astrocade&oldid=1386364772), "Description");
   the chips are shared with Midway arcade boards such as Gorf (same article).
@@ -377,9 +384,13 @@ Hardware:
   PAL units lack the signature check and tell 2600 cartridges apart by heuristics
   (same article, "Digitally signed cartridges").
   The PAL unit's 16 KiB ROM includes a built-in game ("Technical specifications").
-- How the signature is computed and what the PAL heuristics are could come only from analysis of the BIOS,
-  so they are not sought or recorded (ADR 0001;
-  the research guide's [constants convention](../README.md#constants-and-tables)).
+- How the signature is computed and what the PAL heuristics are would come from analysis of the BIOS (inference),
+  or from Atari's signing software, which the article says "was eventually found
+  and released at Classic Gaming Expo in 2001" ("Game development").
+  Neither is sought or recorded: the first is firmware,
+  and the second is maker material with no sign that Atari released it,
+  which [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) closes;
+  see also the research guide's [constants convention](../README.md#constants-and-tables).
 - The XEGS ships with Missile Command built in
   (Wikipedia, ["Atari XEGS"](https://en.wikipedia.org/w/index.php?title=Atari_XEGS&oldid=1383793263), "Games").
 - The SG-1000, ColecoVision, CreatiVision, Dina, BBC Bridge Companion, My Vision,
@@ -400,9 +411,17 @@ Hardware:
   Vision adds its own graphics and games over the tape (Wikipedia,
   ["View-Master Interactive Vision"](https://en.wikipedia.org/w/index.php?title=View-Master_Interactive_Vision&oldid=1384550636)).
 - The Video Art's article names its EF6805 and EF9367P and no sound chip
-  (Wikipedia, ["LJN Video Art"](https://en.wikipedia.org/w/index.php?title=LJN_Video_Art&oldid=1353018644)),
-  and ["BBC Bridge Companion"](https://en.wikipedia.org/w/index.php?title=BBC_Bridge_Companion&oldid=1359829232) names
-  no sound hardware; both stay open (Open questions).
+  (Wikipedia, ["LJN Video Art"](https://en.wikipedia.org/w/index.php?title=LJN_Video_Art&oldid=1353018644)).
+  The board photographs it cites, an [Internet Archive upload](https://archive.org/details/centerofboardbottom),
+  list the EF6805R2P, the EF9367P, NEC D41416C-15 memory, 74-series logic, a regulator,
+  and a Thomson TSGB01019ACP that the uploader could not identify; none is a sound chip (item description; observed).
+  Whether the Video Art makes sound, and through which part, stays open.
+- ["BBC Bridge Companion"](https://en.wikipedia.org/w/index.php?title=BBC_Bridge_Companion&oldid=1359829232) names no
+  sound hardware.
+  The [board photograph](https://commons.wikimedia.org/wiki/File:BBC-bridge-companion-pcb.jpg) in its "History" shows a
+  Z80A, a Z80 PIO, the TMS9129NL, a 2 KiB static RAM, two EPROMs, two TMS4416 video RAMs, and an RF modulator, and no
+  sound chip on the side shown (observed).
+  Any sound would then come from the processor through the PIO or the video output stage (inference).
 
 ### Fourth generation: home consoles
 
@@ -447,8 +466,8 @@ Hardware:
 - Wikipedia gives the Mega Drive's 68000 as 7.6 MHz and its Z80 as 3.58 MHz
   (["Sega Genesis"](https://en.wikipedia.org/w/index.php?title=Sega_Genesis&oldid=1386540687), infobox).
   Exact rates of 7.670454 MHz and 3.579545 MHz on NTSC appear on Sega Retro,
-  whose master-clock line cites a Sega service manual that it hosts and that the register closes,
-  so they rest on a closed source (Sega Retro,
+  whose master-clock line cites a Sega service manual that it hosts and
+  that the [register](../../../.claude/hooks/source-register.txt) closes, so they rest on a closed source (Sega Retro,
   ["Sega Mega Drive/Technical specifications"](https://segaretro.org/Sega_Mega_Drive/Technical_specifications)).
 - From 1991 the Mega Drive's Trademark Security System checks the cartridge before showing a licence message
   (Wikipedia, "Sega Genesis", "Trademark Security System and Sega v. Accolade").
@@ -473,11 +492,14 @@ Hardware:
   "Technical specifications").
 - No PC Engine hub was found.
   The community wiki tried, Archaic Pixels
-  (no link: the domain no longer serves the wiki), returns HTTP 500 or no connection in 2026.
-  Its Wayback captures from 2025 and 2026 show a bot-check page or an unrelated site with gambling content
-  (observed in the capture index, 2025-03 to 2026-05).
-  No other PC Engine hub is in the register or in [R0-05](R0-05-source-map.md)'s tables.
-  Evaluating a capture from before the lapse, licence first, is work for the NEC survey that Options recommends.
+  (no link: the domain no longer serves the wiki), returns HTTP 500 or no connection in 2026 (research log).
+  Its main page captured on 2025-03-19 holds only a redirect to another page, and the one of 2025-12-07 a "One moment,
+  please..." page; the capture index runs to 2026-10-07, which returns HTTP 500 (observed).
+  The last capture of the wiki itself, of 2023-10-03, states no licence in its footer,
+  and its "About" and "General disclaimer" pages have no captures,
+  so its licence and the origin of its facts cannot be evaluated; it stays unregistered and is not cited.
+  No other PC Engine hub is in the [register](../../../.claude/hooks/source-register.txt)
+  or in [R0-05](R0-05-source-map.md)'s tables.
 - The Neo Geo's master clock is 24 MHz on the arcade board and 24.167829 MHz on the home console,
   so the two run at different speeds (NeoGeo Development Wiki,
   ["Clock"](https://wiki.neogeodev.org/index.php?title=Clock)).
@@ -507,8 +529,10 @@ Sources by row:
 - the PC Engine add-ons from Wikipedia,
   ["TurboGrafx-16"](https://en.wikipedia.org/w/index.php?title=TurboGrafx-16&oldid=1384843861),
   with ADPCM and CD audio from the fourth-generation comparison table;
-- the Super Game Boy's firmware cell from Pan Docs, the Satellaview's from Wikipedia,
-  and the SuFami Turbo's from fullsnes, read in an archive capture because the live site refuses scripts;
+- the Super Game Boy's firmware cell from
+  [Pan Docs](https://github.com/gbdev/pandocs/blob/f7f7b064/src/SGB_Functions.md), the Satellaview's from Wikipedia, and
+  the SuFami Turbo's from [fullsnes](https://web.archive.org/web/20261105224518/https://problemkaputt.de/fullsnes.htm),
+  read in an archive capture because the live site refuses scripts;
 - the rest from each add-on's Wikipedia article.
 
 Every survey in this table is an inference from the survey of the base system.
@@ -547,7 +571,7 @@ Every survey in this table is an inference from the survey of the base system.
   the Super Game Boy 2 has its own crystal
   (Pan Docs, "SGB Functions"; Wikipedia,
   ["Super Game Boy"](https://en.wikipedia.org/w/index.php?title=Super_Game_Boy&oldid=1384385701)).
-- "The required system cartridge, *BS-X* …,
+- "The required system cartridge, *BS-X* ...,
   functions both as an interactive menu for the Satellaview service and as a standalone game"
   (Wikipedia, ["Satellaview"](https://en.wikipedia.org/w/index.php?title=Satellaview&oldid=1384890138),
   "Technical specifications").
@@ -564,7 +588,8 @@ Every survey in this table is an inference from the survey of the base system.
   this catalogue treats them as media.
 - The 32X has 32-bit processors on a 16-bit console; Wikipedia places it in the fifth generation
   (["32X"](https://en.wikipedia.org/w/index.php?title=32X&oldid=1385340621), infobox),
-  and Sega Retro's figures for it cite Sega manuals that the register closes
+  and Sega Retro's figures for it cite Sega manuals
+  that the [register](../../../.claude/hooks/source-register.txt) closes
   (["Sega 32X/Technical specifications"](https://segaretro.org/Sega_32X/Technical_specifications)).
   It stays here as a Mega Drive add-on, and [R1-06](R1-06-catalogue-32-and-64-bit.md) keeps a cross-reference to it.
 
@@ -599,9 +624,9 @@ Identity:
 | Game Boy Color | Nintendo | JP 1998-10-21; NA 1998-11-18; EU 1998-11-23 | [R1-10](../../roadmap/research.md#system-family-surveys) | Pan Docs |
 | Neo Geo Pocket; Color; New Color | SNK | JP 1998-10-28; Color NA 1999-08-06 | — | NgpCraft |
 | WonderSwan; Color; SwanCrystal | Bandai | JP 1999-03-04; 2000-12-09; 2002-07-12 | — | WSdev wiki |
-| Pocket Challenge V2 | Benesse (from memory) | not found | — | WSdev wiki |
+| Pocket Challenge V2 | Benesse, with Koto | JP 2002 | — | WSdev wiki |
 | Cybiko | Cybiko Inc. | NA 2000-04 | — | — |
-| Pokémon Mini | listed in [R1-07](R1-07-catalogue-sixth-generation.md), by its first sale (NA 2001-11-16) | | | |
+| Pokémon Mini | Nintendo; The Pokémon Company | NA 2001-11-16; JP 2001-12-14 | — | — |
 
 Hardware:
 
@@ -626,7 +651,9 @@ Hardware:
 | Game Boy Color | Sharp SM83 core, up to 8.388608 MHz | 160 × 144, 15-bit colour | 4 channels | boot ROM, half-logo |
 | Neo Geo Pocket | Toshiba TLCS-900/H, 6.144 MHz; Z80 | 160 × 152 | T6W28 and DACs | 64 KiB BIOS ROM |
 | WonderSwan | NEC V30MZ, 3.072 MHz | 224 × 144 | 4 PCM channels | boot ROM; handshake |
+| Pocket Challenge V2 | NEC V30MZ | not checked | not checked | not checked |
 | Cybiko | Hitachi H8S/2241, 11.0592 MHz; AT90S2313 | 160 × 100 | not stated | 512 KiB flash ROM |
+| Pokémon Mini | Epson S1C88, 4 MHz | 96 × 64 | a speaker | 4 KiB BIOS ROM |
 
 - The Game Boy's boot ROM shows the logo from the cartridge header, compares it with its own copy,
   and checks the header checksum: "If either of these checks fail, the boot ROM locks up,
@@ -640,20 +667,26 @@ Hardware:
   and Pan Docs calls it a Sharp CPU "speculated to be" an SM83 core; 4.194304 MHz is the master clock,
   of which the system clock is a quarter
   (Pan Docs, ["Specifications"](https://github.com/gbdev/pandocs/blob/f7f7b064/src/Specifications.md)).
-- The first Game Gear has no BIOS (SMS Power, ["BIOS"](https://www.smspower.org/Development/BIOS)).
-  A BIOS came with the VA1 board of 1992, disabled by a jumper on early boards and enabled by 1993;
-  it looks for the string `TMR SEGA` at three header locations and locks the system up with the screen off
-  if none is found (SMS Power, "BIOSes"; no link: the page carries BIOS disassembly listings and attaches BIOS images).
-  SMS Power's BIOS-replacement page and its hosted Game Gear service manual are not to be opened, and are not linked:
-  one describes replacement system software, the other is a maker manual hosted by others.
+- The first Game Gear has no BIOS, and later revisions have one
+  (SMS Power, ["BIOS"](https://www.smspower.org/Development/BIOS)).
+  Those later Game Gears also refuse software without a valid header
+  (SMS Power, ["ROM Header"](https://www.smspower.org/Development/ROMHeader)), which begins `TMR SEGA`.
+- When the BIOS arrived, and where it looks for the header, are given only on SMS Power's "BIOSes" page,
+  which carries BIOS disassembly listings and attaches BIOS images; the register closes it, so it is not linked,
+  and those details are not recorded.
+  - SMS Power's BIOS-replacement page is closed too, as replacement system software, and is not linked.
+  - Its hosted Game Gear service manual is maker material hosted by others,
+    closed by [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md); it was not opened.
 - The panel is 160 × 146 dots, and Master System mode scales 240 of each line's 256 pixels three to two
   (SMS Power, ["Game Gear LCD"](https://www.smspower.org/Development/GGLCD)).
 - Sega's own hardware history page gives the Game Gear's processor as "Z80A(3.58MHz)", its display as 480 × 146 dots,
-  and its release as 1990-10-06 ([Sega,
-  ["Game Gear"](https://en.wikipedia.org/w/index.php?title=Game_Gear&oldid=1377875769) hardware history
-  page](<https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/>), specification table).
-  This settles Wikipedia's 3.5 MHz against Sega Retro's 3.579545 MHz in favour of the 3.58 MHz rounding;
-  the exact rate is not on Sega's page.
+  and its release as 1990-10-06
+  ([Sega, "ゲームギア"](https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/),
+  specification table).
+  This settles the 3.5 MHz of Wikipedia's
+  ["Game Gear"](https://en.wikipedia.org/w/index.php?title=Game_Gear&oldid=1377875769) against the 3.579545 MHz of
+  [Sega Retro](https://segaretro.org/Game_Gear) in favour of the 3.58 MHz rounding; the exact rate is not on Sega's
+  page.
   The 480 dots are three times SMS Power's 160 (inference: the colour sub-pixels counted separately).
   Japanese Wikipedia gives the same "Z80A（3.58MHz）", citing the same page
   (["ゲームギア"](https://ja.wikipedia.org/w/index.php?title=%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AE%E3%82%A2&oldid=111465393),
@@ -666,11 +699,21 @@ Hardware:
   (WSdev wiki, ["Cartridge connector"](https://ws.nesdev.org/w/index.php?title=Cartridge_connector&oldid=471)).
   By default its display runs at about 75.47 Hz from 159 lines of 256 cycles of the 3.072 MHz clock
   (WSdev wiki, ["Timing"](https://ws.nesdev.org/w/index.php?title=Timing&oldid=645)).
+- Benesse's Pocket Challenge V2, an educational device sold through its correspondence courses,
+  was released in 2002 with an NEC V30 MZ processor (Japanese Wikipedia,
+  ["ポケットチャレンジ"](https://ja.wikipedia.org/w/index.php?title=%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8&oldid=107760478),
+  infobox, citing a capture of Koto's products page, which was not read).
+  The Japanese "WonderSwan" article says it appears to be a WonderSwan OEM made with Koto,
+  and that its cartridges run on a WonderSwan
+  (["ワンダースワン"](https://ja.wikipedia.org/w/index.php?title=%E3%83%AF%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B9%E3%83%AF%E3%83%B3&oldid=111759139);
+  the paraphrase is the note's).
+  The WSdev wiki has no page of its own on it, but its pages on the mapper, keypad, boot ROM,
+  and internal EEPROM cover it (the wiki's own search, 2026-11-20), so it keeps that hub.
 - The Lynx's Mikey chip holds the processor, sound, and "512 bytes of bootstrap and game-card loading ROM",
   and Suzy is a blitter with sprite scaling
   (Wikipedia, ["Atari Lynx"](https://en.wikipedia.org/w/index.php?title=Atari_Lynx&oldid=1385284173)).
-  How the boot stage checks a cartridge could come only from analysis of that ROM, so it is not sought or recorded
-  (the research guide's [constants convention](../README.md#constants-and-tables)).
+  How the boot stage checks a cartridge would come from analysis of that ROM (inference),
+  so it is not sought or recorded (the research guide's [constants convention](../README.md#constants-and-tables)).
   A family survey can record how emulators deal with such checks, for example by starting from a post-boot state.
 - The TurboExpress's English infobox gives "336×221 pixels", and an uncited list gives 400 × 270
   (Wikipedia, ["TurboExpress"](https://en.wikipedia.org/w/index.php?title=TurboExpress&oldid=1352943257)).
@@ -678,9 +721,10 @@ Hardware:
   and B separately
   (["PCエンジンGT"](https://ja.wikipedia.org/w/index.php?title=PC%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3GT&oldid=110948000),
   specifications; the translation is the note's).
-  So both articles give 336 × 221 dots counted by colour sub-pixel, and the 400 × 270 is dropped;
-  the panel's count in whole pixels is not stated.
-  The English article also lists two HuC6270A video chips, the SuperGrafx's pair (inference),
+  The English infobox gives the same figure without saying so, and that the two agree is an inference.
+  Both English values are uncited; the 400 × 270 is dropped because neither other figure supports it,
+  and the panel's count in whole pixels is not stated.
+- The English article also lists two HuC6270A video chips, the SuperGrafx's pair (inference),
   so it is not cited for video values.
   Its LT model's date is from
   ["TurboGrafx-16"](https://en.wikipedia.org/w/index.php?title=TurboGrafx-16&oldid=1384843861), where HuCards' reversed
@@ -697,12 +741,13 @@ Hardware:
   Those components are contained in a microcontroller inside the game cartridge"
   (Wikipedia, ["R-Zone"](https://en.wikipedia.org/w/index.php?title=R-Zone&oldid=1353050445)).
   Tiger's patent, which the article cites,
-  places "a microprocessor 42 and image screen 31" in the cassette and names no type
+  says "the microprocessor 42 and image screen 31 are mounted in the cassette 28", and names no type
   ([US 5,683,297](https://patents.google.com/patent/US5683297A/en), description of a preferred embodiment).
 - Select-A-Game cartridges carry the processor too.
   The [Handheld Museum](https://www.handheldmuseum.com/Entex/SAG.htm) gives one type, "CPU: Space Invader 2 cartridge:
   Hitachi HD38800-A31", and says each game's processor is in its cartridge;
-  the other five cartridges' types are not on the page.
+  the other five cartridges' types are not on the page,
+  and its photograph of the console's inside shows the display and controls, with no processor (observed).
   Its scans of maker manuals are closed and were not opened.
 - The Gamate's article gives no release date, only a lifespan of 1990 to 1994,
   and lists its 2 KiB "ROM" on a part it names as a static RAM
@@ -716,18 +761,27 @@ Hardware:
 
 ### Boundary cases
 
-The placement rule, settled for every catalogue of this phase:
+The placement rule, a process call settled in this note:
 
-- A system that has a survey goes by the roadmap's rule, "each of its systems belongs to the era of its own generation"
+- A system that has a survey goes by the roadmap: "An era holds the systems whose family survey depends on its primer",
+  and "Where a survey depends on more than one primer, each of its systems belongs to the era of its own generation"
   ([roadmap, "Hardware primers"](../../roadmap/research.md#hardware-primers)).
+  The Game Boy Color stays here by the first sentence, because its survey, R1-10, depends on R1-01 alone.
   An add-on or model is folded into the row of the machine it extends.
 - A device without a survey goes by its first sale:
   up to 2000 in [R1-06](R1-06-catalogue-32-and-64-bit.md) for the fifth-generation consoles and the 32-bit handhelds,
   from 2001 to 21 November 2005 in [R1-07](R1-07-catalogue-sixth-generation.md),
   and later in [R1-08](R1-08-catalogue-modern.md).
+  The cut-off is the day before the Xbox 360's first sale, in North America on 22 November 2005
+  (Wikipedia, ["Xbox 360"](https://en.wikipedia.org/w/index.php?title=Xbox_360&oldid=1386323476), infobox);
+  the reworked drafts of R1-06, R1-07, and R1-08 of 2026-11-20 state the same ranges.
   The 8-bit and 16-bit handhelds first sold up to 2000 stay here.
 - A home console up to 2000 with no survey goes by Wikipedia's generation field.
   Where an infobox and a category disagree, word size breaks the tie.
+- A device that a neighbouring catalogue leaves to this note stays here, with its placement flagged,
+  so that no device goes unlisted: the reworked R1-07 lists the Pokémon Mini and Cybiko as "not here:
+  R1-05" and keeps devices where this note places them.
+  The Pocket Challenge V2 of 2002 stays with the WonderSwan line, as a likely OEM model of it (see "Handhelds").
 
 | System | Word-size rule | Wikipedia generation | Placed in |
 |---|---|---|---|
@@ -735,8 +789,9 @@ The placement rule, settled for every catalogue of this phase:
 | Neo Geo Pocket | 16-bit core ("16/32-bit" in a table) | fifth | R1-05: 16-bit handheld of 1998 |
 | WonderSwan line | 16-bit | sixth | R1-05: 16-bit handheld of 1999 |
 | Game.com | 8-bit | fifth | R1-05: 8-bit handheld of 1997 |
-| Cybiko | not stated (H8S) | sixth or none | R1-05: handheld of 2000 |
-| Pokémon Mini | 8-bit | sixth | [R1-07](R1-07-catalogue-sixth-generation.md): first sold 2001; cross-reference here |
+| Pocket Challenge V2 | 16-bit (V30MZ) | none; first sold 2002 | R1-05, with the WonderSwan line; flagged |
+| Cybiko | "32-bit" in a press title; H8S | sixth | R1-05, left here by R1-07; flagged for R1-06 |
+| Pokémon Mini | 8-bit | sixth | R1-05, left here by R1-07; first sold 2001, flagged |
 | Nomad; Mega Jet | 16-bit | fifth (Nomad); none (Mega Jet) | R1-05: Genesis models, [R1-22](../../roadmap/research.md#system-family-surveys) |
 | 32X | 32-bit | fifth | R1-05: Genesis add-on; cross-reference in [R1-06](R1-06-catalogue-32-and-64-bit.md) |
 | Super A'Can | 16-bit | fifth; category fourth | R1-05: word size breaks the tie |
@@ -758,17 +813,23 @@ The placement rule, settled for every catalogue of this phase:
   has no generation field, only a fourth-generation category;
   the Super A'Can's and FM Towns Marty's infoboxes say fifth while their categories say fourth.
 - The CD-i's register widths are from memory.
-  The Cybiko's H8S word size is not stated in the sources read;
-  that it has a 16-bit ALU with 32-bit registers is from memory.
+  The Cybiko's article gives a sixth-generation field and category and an H8S processor,
+  and the list of handhelds cites an IGN article titled "New 32-bit Handheld System on the Block"
+  (["Cybiko"](https://en.wikipedia.org/w/index.php?title=Cybiko&oldid=1364470227), infobox;
+  ["List of handheld game consoles"](https://en.wikipedia.org/w/index.php?title=List_of_handheld_game_consoles&oldid=1384273411),
+  Cybiko row; the IGN article was not read).
+  By that title the rule would send it to R1-06, which does not list it; it stays here, flagged, until R1-06 takes it.
+  That the H8S has a 16-bit ALU with 32-bit registers is from memory.
 - The Dreamcast VMU is a memory card that runs small games
   (Wikipedia, ["VMU"](https://en.wikipedia.org/w/index.php?title=VMU&oldid=1379027676))
   and is listed with the Dreamcast.
   The GameKing of 2003 or 2004 (the two articles differ) is an 8-bit cartridge handheld sold in the sixth generation
   (Wikipedia, ["GameKing"](https://en.wikipedia.org/w/index.php?title=GameKing&oldid=1353051015);
   ["List of handheld game consoles"](https://en.wikipedia.org/w/index.php?title=List_of_handheld_game_consoles&oldid=1384273411)).
-  The Pokémon Mini (NA 2001-11-16, JP 2001-12-14; Wikipedia,
-  ["Pokémon Mini"](https://en.wikipedia.org/w/index.php?title=Pok%C3%A9mon_Mini&oldid=1384550005)) joins it in
-  [R1-07](R1-07-catalogue-sixth-generation.md).
+  The Pokémon Mini (NA 2001-11-16, JP 2001-12-14) is an 8-bit S1C88 handheld with a 4 KiB BIOS ROM
+  (Wikipedia, ["Pokémon Mini"](https://en.wikipedia.org/w/index.php?title=Pok%C3%A9mon_Mini&oldid=1384550005),
+  infobox and "Design and specifications"); by first sale it belongs to [R1-07](R1-07-catalogue-sixth-generation.md),
+  which leaves it here.
 
 ### Patterns across the catalogue
 
@@ -776,10 +837,10 @@ The placement rule, settled for every catalogue of this phase:
   The 6502 family runs the 2600, 5200, 7800, NES, CreatiVision, Lynx, Supervision, and Gamate;
   the PC Engine's HuC6280 and the Super Famicom's 65C816 descend from it
   (from memory: neither system's article says so).
-  The Z80 runs the Astrocade, ColecoVision, SG-1000, Master System, Game Gear, PV-1000, Socrates, GX4000,
+- The Z80 runs the Astrocade, ColecoVision, SG-1000, Master System, Game Gear, PV-1000, Socrates, GX4000,
   and the Zemmix line, and the sound side of the Mega Drive, Neo Geo, and Neo Geo Pocket.
   The 68000 runs the Mega Drive, Mega CD, Neo Geo, CDTV, Sega Pico, CPS Changer, and Super A'Can.
-  Sharp's SM83 runs the Game Boy, Game Boy Color, and Mega Duck
+- Sharp's SM83 runs the Game Boy, Game Boy Color, and Mega Duck
   (each system's row and its source; the grouping is the note's).
 - Sound chips recur: the SN76489 in the CreatiVision, ColecoVision, SG-1000, Master System, Game Gear, Sega Pico,
   and Mega Drive, where it sits in the video chip
@@ -820,7 +881,8 @@ The placement rule, settled for every catalogue of this phase:
   ([Pan Docs](https://github.com/gbdev/pandocs/blob/f7f7b064/src/Specifications.md)),
   the SG-1000, Master System, and Game Gear
   ([SMS Power](https://www.smspower.org/Development/ClockRate)),
-  the Mega Drive and Mega CD ([Plutiedev](https://plutiedev.com/rom-header); Sega Retro's articles), the Neo Geo
+  the Mega Drive and Mega CD ([Plutiedev](https://plutiedev.com/rom-header);
+  [Sega Retro](https://segaretro.org/Sega_Mega_Drive/Technical_specifications)'s articles), the Neo Geo
   ([NeoGeo Development Wiki](https://wiki.neogeodev.org/index.php?title=Clock)),
   the WonderSwan ([WSdev wiki](https://ws.nesdev.org/w/index.php?title=SoC&oldid=752)),
   and the Neo Geo Pocket ([NgpCraft](https://github.com/tixul/NgpCraft_dev_ref)).
@@ -828,9 +890,13 @@ The placement rule, settled for every catalogue of this phase:
   and the [register](../../../.claude/hooks/source-register.txt).
 - Beyond Wikipedia, the other rows draw on:
   - patents for the Odyssey, Channel F, 2600, 5200, NES, and R-Zone;
-  - Sega's hardware history page for the Game Gear's clock;
-  - *Television Digest* for the Odyssey 2's first shipments;
-  - the Handheld Museum for one Select-A-Game processor.
+  - [Sega's hardware history page](https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/)
+    for the Game Gear's clock;
+  - [*Television Digest*](https://www.worldradiohistory.com/Archive-TV-Digest/70s/1978/TV-Digest-1978-09.pdf)
+    for the Odyssey 2's first shipments;
+  - the [Handheld Museum](https://www.handheldmuseum.com/Entex/SAG.htm) for one Select-A-Game processor;
+  - Japanese Wikipedia for the My Vision, TurboExpress, and Pocket Challenge V2;
+  - board photographs for the Video Art and BBC Bridge Companion.
 - Every other value rests on Wikipedia alone: every first- and second-generation console apart from those sources;
   every third- and fourth-generation console except the NES, Master System, SG-1000, Mega Drive, Super Famicom,
   and Neo Geo families; the PC Engine add-ons, the 32X, and the Family Computer Network System; and 17 handhelds
@@ -841,26 +907,34 @@ The placement rule, settled for every catalogue of this phase:
   [Mega-CD](https://segaretro.org/Sega_Mega-CD/Technical_specifications),
   [32X](https://segaretro.org/Sega_32X/Technical_specifications)) cite Sega manuals hosted on Sega Retro,
   which the register closes; their figures need an open source before a note relies on them (citations read raw).
-  Sega Retro serves a bot check to scripts (observed 2026-11-20), so its pages were read by the first pass only.
+  Sega Retro served a bot check to the rework's scripted requests
+  (research log),
+  so the rework did not re-read them; a later scripted request on the same date returned the 32X page (observed).
 - Community sites were found for the Intellivision, Channel F, Astrocade, Atari 7800, CD-i, and Pokémon Mini,
   and their prose pages were read, but nothing here rests on them (research log).
   - VESWiki, Bally Alley, and icdia are named without links: they host firmware, disassemblies, ROMs,
-    or maker documents, which ADR 0001 closes.
+    or maker documents, which [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) closes,
+    and the [register](../../../.claude/hooks/source-register.txt) now closes all three.
   - The Intellivision Wiki, AtariAge, Pong-Story, 20th Century Video Games, 7800.8bitdev.org,
     and pokemon-mini.net are not evaluated, so they are not linked or cited;
     their evaluation goes to the family surveys recommended below
     and to [R1-25](../../roadmap/research.md#system-family-surveys),
     and pokemon-mini.net's to [R1-07](R1-07-catalogue-sixth-generation.md) with the Pokémon Mini.
-- Of the chip makers' successors probed on 2026-11-20, only Renesas still serves a datasheet for a part in these rows.
+- Of the chip makers' successors that answered a probe on 2026-11-20,
+  only Renesas still serves a datasheet for a part in these rows; Microchip refused scripted requests.
   - Renesas's [CDP1802A product page](https://www.renesas.com/en/products/cdp1802a) shows the part as "Active"
     and links the CDP1802AC/3 datasheet, served as a PDF; the datasheet was not read for this note.
   - Renesas has no page for the CDP1861 (HTTP 404 at `renesas.com/en/products/cdp1861`).
   - Texas Instruments has no product page for the SN76489, SN76489AN, or TMS9918A (HTTP 404 at `ti.com/product/<part>`).
   - NXP has no part page for the Signetics 2650 (HTTP 404 at `nxp.com/part/SCN2650`).
-  - onsemi redirects the Fairchild F8 3850's part address to its general products page.
-  - Microchip refused the request for the General Instrument AY-3-8910 (HTTP 403), so that one is unverified.
-  - The succession of each maker (Intersil to Renesas, Signetics to NXP, Fairchild to onsemi,
-    General Instrument to Microchip) is from memory.
+  - onsemi redirects the Fairchild F8 3850's part address, `onsemi.com/products/F3850`, to its general products page.
+  - Microchip refused the request for the General Instrument AY-3-8910
+    (HTTP 403 at `microchip.com/en-us/product/AY-3-8910`; research log),
+    and a web search limited to `microchip.com` on 2026-11-20 returned no page for the part,
+    so no Microchip-hosted datasheet was found.
+  - General Instrument's spin-off of Microchip is from
+    ["General Instrument AY-3-8910"](https://en.wikipedia.org/w/index.php?title=General_Instrument_AY-3-8910&oldid=1375275795);
+    the other successions (Intersil to Renesas, Signetics to NXP, Fairchild to onsemi) are from memory.
 - No maker datasheet was found for the other chips in the rows above, among them the CP1610, the 2650,
   the TIA and its successors, the 8048 and 8244, and the TMS9918 family (research log, and the probes above).
   [R0-05](R0-05-source-map.md) found no maker-hosted manual with a readable notice for the Z80, 6502, and NEC parts,
@@ -884,7 +958,7 @@ The placement rule, settled for every catalogue of this phase:
   and handheld rows, among them the Atari, NEC, SNK, and Bandai machines.
 - **Gains:** every row studied gives the widest choice for [R6-01](../../roadmap/research.md#phase-6-synthesis);
   surveys only keeps the research finite.
-- **Used by:** the roadmap today, whose surveys for this era
+- **Used by:** the [roadmap](../../roadmap/research.md#system-family-surveys) today, whose surveys for this era
   (those that depend on [R1-01](R1-01-primer-8-and-16-bit.md)) name Nintendo, Sega, arcade, and "other" families only.
 
 ### One target per chip family, or one per model
@@ -894,16 +968,19 @@ The placement rule, settled for every catalogue of this phase:
 - **Costs:** one per family misses clones with their own clocks, such as the Dendy;
   one per model multiplies work for machines whose differences are cases and labels.
 - **Gains:** one per family matches how the hardware was shared; one per model matches what a user owns.
-- **Used by:** the NESdev wiki, which gives clone clocks their own columns.
+- **Used by:** the [NESdev wiki](https://www.nesdev.org/w/index.php?title=Cycle_reference_chart&oldid=24433),
+  which gives clone clocks their own columns.
 
-### A survey for the systems no survey names
+### Family surveys for some of the systems no survey names
 
-- **What:** read [R1-25](../../roadmap/research.md#system-family-surveys) as covering every unnamed console
-  and handheld, add surveys for Atari, NEC, SNK, and Bandai, or leave these systems in the catalogue only.
-- **Costs:** a wide [R1-25](../../roadmap/research.md#system-family-surveys) mixes computers and consoles;
-  new surveys add roadmap items; catalogue only leaves them without an emulator survey.
-- **Gains:** each choice settles where the PC Engine, Lynx, Neo Geo, and WonderSwan are studied.
-- **Used by:** the roadmap's present wording, which does not say.
+- **What:** leave every unnamed console and handheld to [R1-25](../../roadmap/research.md#system-family-surveys),
+  or add family surveys for Atari, NEC, SNK, and Bandai and leave the rest there.
+- **Costs:** [R1-25](../../roadmap/research.md#system-family-surveys) alone mixes home computers with whole console
+  families; new surveys add roadmap items.
+- **Gains:** R1-25 alone keeps the roadmap short; family surveys give the PC Engine, Lynx, Neo Geo,
+  and WonderSwan lines a study of their own.
+- **Used by:** the [roadmap](../../roadmap/research.md#system-family-surveys),
+  whose R1-25 covers "the systems that no other survey names".
 
 ### How a boundary system is placed
 
@@ -913,6 +990,7 @@ The placement rule, settled for every catalogue of this phase:
 - **Gains:** word size predicts the processor work; generation matches Wikipedia's generation articles;
   survey placement matches the roadmap's dependencies.
 - **Used by:** this catalogue, which applies them in the order "Boundary cases" sets out, after first sale.
+  The [roadmap](../../roadmap/research.md#hardware-primers) sets the rule for systems with a survey.
 
 ### Sources for systems with Wikipedia alone
 
@@ -930,29 +1008,35 @@ The placement rule, settled for every catalogue of this phase:
   and keep the other rows as catalogue entries that [R6-01](../../roadmap/research.md#phase-6-synthesis) can pull in.
   Most rows beyond the surveys rest on Wikipedia alone, so a study of each would have no source it could rely on.
 - **Targets:** one target per chip family, with a model as its own target where a source records its own timing,
-  such as the Dendy's divide-by-15 clock (NESdev wiki).
-  The rebadges in the AY-3-8500, VC 4000, and Arcadia groups differ by case and cartridge slot,
-  while the sources give clone clocks their own columns.
+  such as the Dendy's divide-by-15 clock
+  ([NESdev wiki](https://www.nesdev.org/w/index.php?title=Cycle_reference_chart&oldid=24433)).
+  The VC 4000 group's variants share "identical computational hardware" and differ in cartridge slot,
+  while the sources give clone clocks their own columns; the AY-3-8500's PAL and NTSC parts are two targets.
 - **Surveys:** add four family surveys: Atari (2600, 5200, 7800, Lynx); NEC
   (PC Engine, SuperGrafx, CD-ROM², TurboExpress);
   SNK (Neo Geo AES and CD, Neo Geo Pocket,
   with the MVS left to [R1-24](../../roadmap/research.md#system-family-surveys)); and Bandai
   (the WonderSwan line, with the Pocket Challenge V2).
-  Read [R1-25](../../roadmap/research.md#system-family-surveys) as covering the other unnamed handhelds,
-  and keep the other first- and second-generation consoles as rows.
-  These four families hold most of the unsurveyed rows with more than Wikipedia behind them,
-  an open-tier hub or a processor test set,
-  and a wide [R1-25](../../roadmap/research.md#system-family-surveys) would mix home computers with four console
-  families; the cost is four new roadmap items in phase 1.
+  Leave the other unnamed systems to [R1-25](../../roadmap/research.md#system-family-surveys),
+  as the roadmap's wording already does: among them the SG-1000, CD-i, Sega Pico, LaserActive, Super A'Can,
+  the other Z80 and 6502 machines, the Mega Duck, and the first- and second-generation consoles.
+  - The reason: these four are the largest console families with no survey,
+    14 rows with an open-tier hub or a processor test set behind them
+    (Atari 4, NEC 5, SNK 3, Bandai 2; counted from the rows above).
+    About 15 other such rows are scattered single systems,
+    which R1-25 can take without mixing whole families into a survey of home computers.
+  - The cost is four new roadmap items in phase 1.
 - **Boundaries:** none needed from the owner: the rule in "Boundary cases" is a process call,
   settled in this note and listed in the pull request.
 - **Sources:** use Wikipedia for catalogue rows only, read raw and pinned to a revision,
   and rest a study on a maker document, an expired patent, an open-tier hub, or a test on hardware the project owns.
-  This pass settled three of the four Wikipedia conflicts only by going to a maker page, a patent,
-  and a trade newsletter, and in the Studio II, Odyssey 2, and TurboExpress cases the value dropped was uncited.
-- **Maker documents on third-party hosts**, such as the CDP1861 datasheet that Wikipedia links,
-  are recommended closed unless the maker's release is shown, and expired patents open as maker material:
-  the proposed amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) carries both.
+  Of Wikipedia's four internal conflicts, a patent settled the Channel F and a trade newsletter the Odyssey 2;
+  Japanese Wikipedia settled the TurboExpress, and the Studio II rests on the cited figure (secondary).
+  Sega's page settled the Game Gear, a conflict between Wikipedia and Sega Retro.
+  In the Studio II, Odyssey 2, and TurboExpress cases the value dropped was uncited.
+  Maker documents hosted by others stay closed,
+  as [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) already rules,
+  and the [register](../../../.claude/hooks/source-register.txt) already lists patents as open maker material.
 
 ## Implications for Rustalgia
 
@@ -977,25 +1061,22 @@ The placement rule, settled for every catalogue of this phase:
 
 ## Open questions
 
-- What chip datasheets does Microchip still serve for General Instrument's AY-3-891x family?
-  Its server refused a scripted request; a later fetch of Microchip's legacy part pages,
-  or [R1-01](R1-01-primer-8-and-16-bit.md).
-- When was the Pocket Challenge V2 released?
-  The WSdev wiki has no page on it, and neither English nor Japanese Wikipedia has an article;
-  a Benesse product record or a Japanese press report of its launch, in the Bandai survey recommended above.
-- What is the BBC Bridge Companion's sound chip?
-  Its article names none, and the one lead, a MiSTer core, is walled;
-  a reader session on that core's documentation or the chip markings on a board photograph,
+- Does the BBC Bridge Companion make sound, and through which part?
+  Its article names none, and its board photograph shows no sound chip on the side shown; the other side of the board,
+  or a reader session on the walled MiSTer core's documentation,
   in [R1-25](../../roadmap/research.md#system-family-surveys).
-- What is the LJN Video Art's sound chip?
-  Its article names none; a board photograph, or a reader session on MAME's prose documentation,
-  in [R1-25](../../roadmap/research.md#system-family-surveys).
+- What is the LJN Video Art's sound source, and what is its Thomson TSGB01019ACP?
+  The board photographs' uploader could not identify that part; its markings in a Thomson data book,
+  or a reader session on MAME's prose documentation, in [R1-25](../../roadmap/research.md#system-family-surveys).
 - What processors are in the other five Select-A-Game cartridges, and in the Palmtex and R-Zone cartridges?
-  No page read names a type; chip markings on board photographs,
-  in [R1-25](../../roadmap/research.md#system-family-surveys).
+  No page read names a type, and the [Handheld Museum](https://www.handheldmuseum.com/Entex/SAG.htm)'s photograph of the
+  Select-A-Game's inside shows only the console, which holds none; chip markings on photographs of opened cartridges, in
+  [R1-25](../../roadmap/research.md#system-family-surveys).
 - What processor does the Digi Casse use?
-  Its article's fields are empty and the [Handheld Museum page](https://www.handheldmuseum.com/Bandai/DigiCasseA.htm) it
-  cites gives none; board inspection, in [R1-25](../../roadmap/research.md#system-family-surveys).
+  Its article's fields are empty, and none of the pages it cites that were read names one:
+  the [Handheld Museum page](https://www.handheldmuseum.com/Bandai/DigiCasseA.htm),
+  and the Pad and Pixel and Game Medium pages, which are unregistered and were read as prose only
+  (research log); board inspection, in [R1-25](../../roadmap/research.md#system-family-surveys).
 
 ## Sources
 
@@ -1159,15 +1240,21 @@ Wikipedia, handhelds:
   ["Barcode Battler"](https://en.wikipedia.org/w/index.php?title=Barcode_Battler&oldid=1354183831) 1354183831;
   ["List of handheld game consoles"](https://en.wikipedia.org/w/index.php?title=List_of_handheld_game_consoles&oldid=1384273411)
   1384273411.
+- ["General Instrument AY-3-8910"](https://en.wikipedia.org/w/index.php?title=General_Instrument_AY-3-8910&oldid=1375275795)
+  1375275795; ["Xbox 360"](https://en.wikipedia.org/w/index.php?title=Xbox_360&oldid=1386323476) 1386323476.
 
-Japanese Wikipedia, read raw the same way (titles: My Vision, Game Gear, PC Engine GT):
+Japanese Wikipedia, read raw the same way (titles: My Vision, Game Gear, PC Engine GT, Pocket Challenge, WonderSwan):
 
 - ["マイビジョン"](https://ja.wikipedia.org/w/index.php?title=%E3%83%9E%E3%82%A4%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3&oldid=108997077)
   108997077;
   ["ゲームギア"](https://ja.wikipedia.org/w/index.php?title=%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AE%E3%82%A2&oldid=111465393)
   111465393;
   ["PCエンジンGT"](https://ja.wikipedia.org/w/index.php?title=PC%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3GT&oldid=110948000)
-  110948000.
+  110948000;
+  ["ポケットチャレンジ"](https://ja.wikipedia.org/w/index.php?title=%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8&oldid=107760478)
+  107760478;
+  ["ワンダースワン"](https://ja.wikipedia.org/w/index.php?title=%E3%83%AF%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B9%E3%83%AF%E3%83%B3&oldid=111759139)
+  111759139.
 
 Hubs:
 
@@ -1187,9 +1274,9 @@ Hubs:
   ["SGB Functions"](https://github.com/gbdev/pandocs/blob/f7f7b064/src/SGB_Functions.md).
 - SMS Power!, read as page source: ["Clock Rate"](https://www.smspower.org/Development/ClockRate),
   ["BIOS"](https://www.smspower.org/Development/BIOS), ["ROM Header"](https://www.smspower.org/Development/ROMHeader),
-  ["Game Gear LCD"](https://www.smspower.org/Development/GGLCD), and "BIOSes",
-  `https://www.smspower.org/Development/BIOSes`
-  (no link: the page carries BIOS disassembly listings and attaches BIOS images).
+  and ["Game Gear LCD"](https://www.smspower.org/Development/GGLCD).
+  The "BIOSes" page, `https://www.smspower.org/Development/BIOSes`, was read by the first pass and is no longer used
+  (no link: it carries BIOS disassembly listings and attaches BIOS images, and the register closes it).
 - Plutiedev, ["ROM header"](https://plutiedev.com/rom-header)
   and ["Using the Sub-CPU in mode 1"](https://plutiedev.com/subcpu-in-mode1).
 - Sega Retro, technical specification pages
@@ -1197,8 +1284,9 @@ Hubs:
   [Master System](https://segaretro.org/Sega_Master_System/Technical_specifications),
   [Mega-CD](https://segaretro.org/Sega_Mega-CD/Technical_specifications),
   and [32X](https://segaretro.org/Sega_32X/Technical_specifications),
-  and the [Mega Jet](https://segaretro.org/Mega_Jet) and [Nomad](https://segaretro.org/Nomad) articles,
-  read by the first pass (research log); the site serves a bot check to scripts (observed 2026-11-20).
+  and the [Mega Jet](https://segaretro.org/Mega_Jet), [Nomad](https://segaretro.org/Nomad),
+  and [Game Gear](https://segaretro.org/Game_Gear) articles, read by the first pass
+  (research log); the site served a bot check to the rework's scripted requests, and a later one returned the page.
 - NeoGeo Development Wiki, ["Clock"](https://wiki.neogeodev.org/index.php?title=Clock) revision 9305,
   ["System ROM"](https://wiki.neogeodev.org/index.php?title=System_ROM) 6391,
   ["NEO-CMC"](https://wiki.neogeodev.org/index.php?title=NEO-CMC) 9366,
@@ -1213,17 +1301,23 @@ Hubs:
 Makers, archives, and collectors:
 
 - Sega,
-  ["セガハード大百科: ゲームギア"](https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/)
-  (Sega hardware encyclopaedia: Game Gear), "ハード概要", specification table, footer "©SEGA".
+  ["ゲームギア ｜セガ SEGA"](https://web.archive.org/web/20261007070751/https://www.sega.jp/history/hard/gamegear/)
+  (Game Gear), in the site section "セガハード大百科" (Sega hardware encyclopaedia), "ハード概要", specification table,
+  footer "©SEGA".
   The [live page](https://sega.jp/history/hard/gamegear/) refuses scripts
   (HTTP 403), so it was read in the Wayback capture of 2026-10-07 07:07:51 UTC.
 - [*Television Digest*, vol. 18 no. 39, 25 September 1978](https://www.worldradiohistory.com/Archive-TV-Digest/70s/1978/TV-Digest-1978-09.pdf),
   p. 12 (PDF page 46), from the World Radio History archive, read through its text layer.
 - Renesas, [CDP1802A product page](https://www.renesas.com/en/products/cdp1802a);
   the other makers' addresses probed are given in "Coverage of sources".
-- Handheld Museum, ["Entex Select-a-Game"](https://www.handheldmuseum.com/Entex/SAG.htm)
+- Handheld Museum, ["Entex Select-a-Game"](https://www.handheldmuseum.com/Entex/SAG.htm),
+  its ["Guts"](https://www.handheldmuseum.com/Guts/index.html) photograph of the same console,
   and ["Bandai Digi Casse A"](https://www.handheldmuseum.com/Bandai/DigiCasseA.htm);
   no licence or copyright notice on the pages read.
+- Board photographs:
+  ["BBC-bridge-companion-pcb.jpg"](https://commons.wikimedia.org/wiki/File:BBC-bridge-companion-pcb.jpg) on Wikimedia
+  Commons (CC BY-SA 3.0), and ["LJN VideoArt Main Board Pictures"](https://archive.org/details/centerofboardbottom) on
+  the Internet Archive, its photographs and item description (no licence stated).
 
 Patents (front pages, abstracts, and for US 4,095,791 and US 5,683,297 the description):
 

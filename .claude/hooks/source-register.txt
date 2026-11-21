@@ -628,6 +628,24 @@ closed | retrostic.com | none | ROM download site; front page opened by mistake 
 closed | www.retrostic.com | none | same site, www prefix | 2026-11-20 | R1-05 research log
 closed | smspower.org/uploads/development | none | wiki attachments, among them BIOS images | 2026-11-20 | BIOSes source
 closed | www.smspower.org/uploads/development | none | same folder, www prefix | 2026-11-20 | BIOSes page source
+closed | smspower.org/development/bioses | none | page carries BIOS disassembly listings | 2026-11-20 | first-pass read
+closed | www.smspower.org/development/bioses | none | same page, www prefix | 2026-11-20 | first-pass read
+closed | smspower.org/development/biosreplacement | none | replacement system software | 2026-11-20 | BIOS page link
+closed | www.smspower.org/development/biosreplacement | none | same page, www prefix | 2026-11-20 | BIOS page link
+closed | channelf.se/veswiki | none | Channel F wiki with firmware and disassemblies | 2026-11-20 | R1-05 research log
+closed | ballyalley.com | none | Astrocade site hosting ROMs and maker documents | 2026-11-20 | R1-05 research log
+closed | www.ballyalley.com | none | same site, www prefix | 2026-11-20 | R1-05 research log
+closed | icdia.co.uk | none | CD-i site hosting maker documents | 2026-11-20 | R1-05 research log
+closed | www.icdia.co.uk | none | same site, www prefix | 2026-11-20 | R1-05 research log
+# Other pages first cited by R1-05's third verification pass.
+open | renesas.com/en/products | not read | chip maker's own product pages | 2026-11-20 | CDP1802A page
+open | www.renesas.com/en/products | not read | same pages, www prefix | 2026-11-20 | CDP1802A page
+open | www.nxp.com/part | not read | chip maker's part pages; probe returned 404 | 2026-11-20 | probe
+open | www.onsemi.com/products | not read | chip maker's product pages; probe redirected | 2026-11-20 | probe
+open | www.microchip.com/en-us/product | not read | chip maker's product pages; refused scripts | 2026-11-20 | HTTP 403
+open | commons.wikimedia.org | per file; CC BY-SA 3.0 for the one used | Wikimedia media | 2026-11-20 | file page
+open | upload.wikimedia.org | per file, as on its Commons page | files of the same library | 2026-11-20 | file page
+open | archive.org/details/centerofboardbottom | none stated | owner's photographs of a board | 2026-11-20 | item page
 # Sources first cited by R1-06, the 32-bit and 64-bit catalogue.
 open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's own P/ECE pages | 2026-11-20 | intr.html
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.

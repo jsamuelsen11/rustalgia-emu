@@ -183,6 +183,9 @@ check 0 writer "$(fetch https://www.smspower.org/Development/ClockRate)"
 check 2 writer "$(fetch https://www.handheldmuseum.com/Manuals/Entex-SAG.pdf)"
 check 2 writer "$(bash 'curl -sL https://handheldmuseum.com/Manuals/Entex-SAG.pdf')"
 check 0 writer "$(fetch https://www.handheldmuseum.com/Entex/SAG.htm)"
+check 2 writer "$(fetch https://www.ballyalley.com/rom_images/rom_images.html)"
+check 2 writer "$(fetch https://channelf.se/veswiki/index.php?title=Main_Page)"
+check 0 writer "$(fetch https://commons.wikimedia.org/wiki/File:BBC-bridge-companion-pcb.jpg)"
 
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
