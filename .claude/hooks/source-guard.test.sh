@@ -174,6 +174,29 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# Pages beside key and boot material on open wikis, closed by R1-03; the cited pages beside them stay open.
+check 2 writer "$(fetch https://wiiubrew.org/wiki/Cafe_OS/Kernel)"
+check 2 writer "$(fetch https://www.wiiubrew.org/wiki/Cafe_OS/Kernel)"
+check 0 writer "$(fetch https://wiiubrew.org/wiki/Cafe_OS)"
+check 0 writer "$(fetch https://wiiubrew.org/wiki/Boot_process)"
+check 2 writer "$(fetch https://wiibrew.org/wiki/Signing_bug)"
+check 2 writer "$(fetch https://www.wiibrew.org/wiki/Signing_bug)"
+check 2 writer "$(fetch https://wiibrew.org/wiki/Wii_disc)"
+check 2 reader "$(fetch https://www.wiibrew.org/wiki/Wii_disc)"
+check 0 writer "$(fetch https://wiibrew.org/wiki/Boot0)"
+check 0 writer "$(fetch https://wiibrew.org/wiki/Wiimote)"
+check 2 writer "$(fetch https://3dbrew.org/wiki/Bootloader)"
+check 2 writer "$(fetch https://www.3dbrew.org/wiki/Bootloader)"
+check 0 writer "$(fetch https://www.3dbrew.org/wiki/FIRM)"
+check 2 writer "$(fetch https://xboxdevwiki.net/Boot_Process)"
+check 2 writer "$(fetch https://www.xboxdevwiki.net/Boot_Process)"
+check 2 writer "$(fetch https://xboxdevwiki.net/MCPX_ROM)"
+check 2 writer "$(fetch https://www.xboxdevwiki.net/MCPX_ROM)"
+check 2 writer "$(fetch https://xboxdevwiki.net/Xbox_Game_Disc)"
+check 2 writer "$(fetch https://www.xboxdevwiki.net/Xbox_Game_Disc)"
+check 0 writer "$(fetch https://xboxdevwiki.net/Kernel)"
+check 0 writer "$(fetch https://xboxdevwiki.net/Xbox_Input_Devices)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
