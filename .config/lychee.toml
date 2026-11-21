@@ -60,4 +60,5 @@ exclude = [
   '^https?://docs\.fedoraproject\.org/', # 200 with a bot-challenge page, so a fetch checks nothing
   '^https?://git\.kernel\.org/', # 200 with a bot-challenge page, so a fetch checks nothing
   '^https?://(www\.)?sega\.jp/', # 403 Forbidden (challenge page)
+  '^https?://developer\.arm\.com/', # 403 Forbidden to automated requests
 ]
