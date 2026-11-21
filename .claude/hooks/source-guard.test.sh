@@ -174,6 +174,17 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# ReactOS code is closed, by Wine's account of how it was made; its README stays readable.
+check 2 writer "$(fetch https://github.com/reactos/reactos/blob/master/ntoskrnl/ke/bug.c)"
+check 2 reader "$(fetch https://raw.githubusercontent.com/reactos/reactos/master/ntoskrnl/ke/bug.c)"
+check 2 writer "$(bash 'git clone https://github.com/reactos/reactos')"
+check 0 writer "$(fetch https://github.com/reactos/reactos/blob/master/README.md)"
+# Wine's wiki is walled: a writer is blocked from its pages, a reader is not.
+# An archive capture of an unrestricted page passes.
+check 2 writer "$(fetch https://wiki.winehq.org/Clean_Room_Guidelines)"
+check 0 reader "$(fetch https://wiki.winehq.org/Clean_Room_Guidelines)"
+check 0 writer "$(fetch https://web.archive.org/web/20260522220716/https://www.dni.gov/files/documents/ICD/ICD-203.pdf)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'

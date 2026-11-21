@@ -607,6 +607,12 @@ open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as inp
 open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
 closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
+# Added by the rework of R0-04 on 2026-11-20.
+other | web.archive.org | - | an archive, not a source; existing captures only | 2026-11-20 | -
+open | nesdev.org/w/ | disclaimer: public domain | raw wikitext paths of nesdev.org/wiki | 2026-11-20 | disclaimer
+walled | wiki.winehq.org | none seen in capture | Wine's wiki; refuses scripts | 2026-11-20 | capture of 17 July 2024
+walled | reactos.org | not read | project site; Wine bars ReactOS code | 2026-11-20 | Wine Clean Room Guidelines
+closed | reactos/reactos | not checked | Wine: reverse-engineered by unfit methods | 2026-11-20 | Wine guidelines
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
