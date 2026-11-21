@@ -169,6 +169,12 @@ check 2 writer "$(fetch https://free60.org/Hardware/Fusesets/)"
 check 2 writer "$(fetch https://free60.org/Hardware/Fusesets)"
 check 2 writer "$(fetch https://www.free60.org/Hardware/Fusesets/)"
 check 2 reader "$(fetch https://github.com/free60project/wiki/blob/master/docs/Hardware/Fusesets.md)"
+
+# SMS Power: the attachment folder of the Development pages is closed; the pages themselves stay open.
+check 2 writer "$(fetch https://www.smspower.org/uploads/Development/bios.zip)"
+check 2 writer "$(bash 'curl -sLO https://smspower.org/uploads/Development/bios.zip')"
+check 0 writer "$(fetch https://www.smspower.org/Development/SN76489)"
+check 0 writer "$(fetch https://www.smspower.org/uploads/Site/logo.png)"
 check 2 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md)"
 check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md')"
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"

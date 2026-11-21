@@ -443,7 +443,7 @@ open | dreamjam.co.uk/emuviews | notice, no grant | author: reverse engineered; 
 open | techno-junk.org | none stated | frames the same author's pages | 2026-11-19 | frameset
 open | segaretro.org | CC BY 4.0, archived footer | origin unstated; articles only | 2026-11-19 | 2026-11-14 copy
 open | plutiedev.com | none stated; code snippets free to use | origin unstated; a lead | 2026-11-19 | FAQ
-open | md.railgun.works | CC BY-NC-SA, no version | origin unstated; TMSS file closed by rule | 2026-11-19 | footer
+open | md.railgun.works | CC BY-NC-SA 3.0 | origin unstated; TMSS file closed by rule | 2026-11-20 | footer, Main Page
 open | wiki.yabause.org | GFDL 1.2 | partly MacDonald's Saturn notes, by permission | 2026-11-19 | footer, main page
 open | mc.pp.se/dc | none stated | origin unstated; a lead | 2026-11-19 | index pages
 open | dreamcast.wiki | none stated | origin unstated | 2026-11-19 | root page
@@ -633,3 +633,12 @@ closed | free60.org/hardware/fuseset | none stated | key material | 2026-11-20 |
 closed | www.free60.org/hardware/fuseset | none stated | www prefix | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened
+# Sources first cited by R1-01, the 8-bit and 16-bit primer, in its rework.
+open | sega.jp/fb/segahard | none stated | maker's hardware encyclopaedia; read in a capture | 2026-11-20 | capture
+other | web.archive.org | - | an archive, not a source; captures of pages that refuse scripts | 2026-11-20 | -
+open | www.nesdev.org/w | disclaimer: public domain; none set | raw and revision paths | 2026-11-20 | disclaimer
+open | snes.nesdev.org/w | CC0 | raw and revision paths of the SNESdev wiki | 2026-11-20 | footer
+# SMS Power's attachment folder for every Development page, BIOS files among them. A narrower pattern would need
+# the BIOS file names, which were not read. No note cites a file in the folder.
+closed | smspower.org/uploads/development | none | Development attachments, BIOS files among them | 2026-11-20 | links
+closed | www.smspower.org/uploads/development | none | same folder, www prefix | 2026-11-20 | SN76489 and BIOSes links
