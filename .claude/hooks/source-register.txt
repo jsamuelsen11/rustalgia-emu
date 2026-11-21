@@ -612,7 +612,7 @@ open | patents.google.com | public patent documents | status shown is not a lega
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
 open | tixul/ngpcraft_dev_ref | MIT | Neo Geo Pocket reference; origin unstated; no leak rule | 2026-11-20 | README
 open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 2026-11-20 | home page
-# Sources first cited by R1-06, the 32-bit and 64-bit catalogue.
+# Sources first evaluated for R1-06, the 32-bit and 64-bit catalogue.
 open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's own P/ECE pages | 2026-11-20 | intr.html
 # 3DO Development Repo: key, maker-document, and source paths, closed so that the guard blocks them.
 # A pattern with no trailing "/" blocks the pages below it; the index page at the path itself stays readable.
@@ -632,6 +632,11 @@ closed | 3dodev.com/_export/raw/software/rom | none | ROM and BIOS images, raw |
 closed | 3dodev.com/_media/software/rom | none | ROM and BIOS images, files | 2026-11-20 | start page
 closed | 3dodev.com/_export/raw/software/sdk | none | maker's kits, raw | 2026-11-20 | start page
 closed | 3dodev.com/_media/software/sdk | none | maker's kits, files | 2026-11-20 | start page
+# The same pages by DokuWiki's colon IDs. Query forms (doku.php?id=, fetch.php?media=) are not matched by the guard.
+closed | 3dodev.com/documentation:encryption | none | key and signing pages, colon ID | 2026-11-20 | encryption index
+closed | 3dodev.com/_export/raw/documentation:encryption | none | same, raw export | 2026-11-20 | encryption index
+closed | 3dodev.com/documentation:development | none | maker's documents, colon ID | 2026-11-20 | index
+closed | 3dodev.com/_export/raw/documentation:development | none | same, raw export | 2026-11-20 | index
 closed | trapexit/3do-docs | not read | collection of 3DO documents | 2026-11-20 | development_documents index
 # N64brew pages that print key or seed material. Patterns are cut short so that the page itself is blocked.
 closed | n64brew.dev/wiki/pif-nu | CC BY-SA 4.0 | PIF page; prints secret keys | 2026-11-20 | R1-06 research log
