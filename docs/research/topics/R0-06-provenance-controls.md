@@ -1,8 +1,8 @@
 ---
 title: Provenance controls for agent-written work
 roadmap_item: R0-06
-status: draft
-date: 2026-11-19
+status: approved
+date: 2026-11-21
 ---
 
 # Provenance controls for agent-written work

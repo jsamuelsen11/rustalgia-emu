@@ -50,15 +50,15 @@ Done when all six items are done.
 Nothing else starts before R0-01.
 
 - [x] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
-- [ ] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history,
+- [x] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history,
       and patents and trade marks as risks.
 - [ ] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
       Depends on R0-02, R0-06.
-- [ ] **R0-04** Glossary and research conventions.
+- [x] **R0-04** Glossary and research conventions.
       Adds the glossary and its structure contract.
-- [ ] **R0-05** Source map: the documentation hubs and essential reading for each system.
+- [x] **R0-05** Source map: the documentation hubs and essential reading for each system.
       Records each hub's licence, stated origin, rule on confidential material, and tier.
-- [ ] **R0-06** Provenance controls for agent-written work: logging, walls, similarity checks, and authorship.
+- [x] **R0-06** Provenance controls for agent-written work: logging, walls, similarity checks, and authorship.
       Depends on R0-01.
 
 ### Phase 1: landscape
@@ -77,14 +77,14 @@ An era holds the systems whose family survey depends on its primer.
 Where a survey depends on more than one primer, each of its systems belongs to the era of its own generation,
 and the survey depends on the other primers for the hardware that its systems contain or carry over.
 
-- [ ] **R1-01** 8-bit and 16-bit consoles and handhelds: primer.
-- [ ] **R1-02** The 32-bit and 64-bit era: primer.
-- [ ] **R1-03** The sixth generation and the move to programmable graphics: primer.
-- [ ] **R1-04** Modern consoles and handhelds, including systems on sale today: primer.
-- [ ] **R1-05** 8-bit and 16-bit consoles and handhelds: catalogue.
-- [ ] **R1-06** The 32-bit and 64-bit era: catalogue.
-- [ ] **R1-07** The sixth generation and the move to programmable graphics: catalogue.
-- [ ] **R1-08** Modern consoles and handhelds, including systems on sale today: catalogue.
+- [x] **R1-01** 8-bit and 16-bit consoles and handhelds: primer.
+- [x] **R1-02** The 32-bit and 64-bit era: primer.
+- [x] **R1-03** The sixth generation and the move to programmable graphics: primer.
+- [x] **R1-04** Modern consoles and handhelds, including systems on sale today: primer.
+- [x] **R1-05** 8-bit and 16-bit consoles and handhelds: catalogue.
+- [x] **R1-06** The 32-bit and 64-bit era: catalogue.
+- [x] **R1-07** The sixth generation and the move to programmable graphics: catalogue.
+- [x] **R1-08** Modern consoles and handhelds, including systems on sale today: catalogue.
 
 #### System family surveys
 

@@ -1,8 +1,8 @@
 ---
 title: Source map
 roadmap_item: R0-05
-status: draft
-date: 2026-11-19
+status: approved
+date: 2026-11-21
 ---
 
 # Source map

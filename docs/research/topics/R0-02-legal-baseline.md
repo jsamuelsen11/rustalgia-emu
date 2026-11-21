@@ -1,8 +1,8 @@
 ---
 title: Legal baseline
 roadmap_item: R0-02
-status: draft
-date: 2026-11-19
+status: approved
+date: 2026-11-21
 ---
 
 # Legal baseline

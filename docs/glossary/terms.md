@@ -1,7 +1,7 @@
 ---
 title: Glossary
-status: draft
-date: 2026-11-19
+status: approved
+date: 2026-11-21
 ---
 
 # Glossary

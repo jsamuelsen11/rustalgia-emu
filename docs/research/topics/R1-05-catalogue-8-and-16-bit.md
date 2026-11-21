@@ -1,8 +1,8 @@
 ---
 title: "8-bit and 16-bit consoles and handhelds: catalogue"
 roadmap_item: R1-05
-status: draft
-date: 2026-11-20
+status: approved
+date: 2026-11-21
 ---
 
 # 8-bit and 16-bit consoles and handhelds: catalogue

@@ -1,8 +1,8 @@
 ---
 title: Glossary and research conventions
 roadmap_item: R0-04
-status: draft
-date: 2026-11-19
+status: approved
+date: 2026-11-21
 ---
 
 # Glossary and research conventions
