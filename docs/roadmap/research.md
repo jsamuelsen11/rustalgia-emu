@@ -199,7 +199,7 @@ Each depends on R1-90.
 - [ ] **R2-11** Media and storage formats.
       Depends on R0-02.
 - [ ] **R2-12** Firmware: boot ROMs, replacements, and emulating a console's operating system.
-      Depends on R0-02.
+      Depends on R0-02, R0-06.
 - [ ] **R2-13** Input and peripherals.
 - [ ] **R2-14** Debugging, tracing, cheats, and achievements.
 - [ ] **R2-15** Verifying accuracy: test suites, input replays, and compatibility lists.
