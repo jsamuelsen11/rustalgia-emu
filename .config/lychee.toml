@@ -42,10 +42,12 @@ exclude = [
   '^https?://doc\.dl\.playstation\.net/', # 403 to CI runners
   '^https?://(www\.)?romhacking\.net/', # 403 to CI runners
   '^https?://api\.github\.com/', # rate-limited for CI runners
-  '^https?://(www\.)?no-intro\.org/', # times out from CI runners
+  '^https?://([a-z]+\.)?no-intro\.org/', # times out from CI runners
   '^https?://elaw\.klri\.re\.kr/', # times out from CI runners
   '^https?://(www\.)?androidauthority\.com/', # 403 to CI runners
   '^https?://(www\.)?dragonminded\.com/', # times out from CI runners
+  '^https?://(www\.)?internethistorypodcast\.com/', # times out from CI runners
+  '^https?://wiki\.desmume\.org/', # 500 Internal Server Error
   '^https?://(www\.)?nxp\.com/', # 404 "Page not available" to scripted requests; the pages exist
   '^https?://patents\.google\.com/', # 503 Service Unavailable to scripted requests
 ]
