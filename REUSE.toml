@@ -1,0 +1,19 @@
+# Licence of every file in the repository, in SPDX form, read by `reuse lint` (mise run lint:reuse).
+# The decisions are ADR 0002 (the code), ADR 0003 (LICENSE-EXCEPTIONS), and ADR 0005 (documents and configuration).
+# REUSE requires this file at the repository root, so it cannot live in .config/.
+version = 1
+
+# Documents, the source register, and configuration: either licence, at the recipient's option.
+# Quotations inside them stay under their sources' terms (README.md, "License").
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 The Rustalgia authors"
+SPDX-License-Identifier = "GPL-3.0-or-later OR CC-BY-SA-4.0"
+
+# Code: scripts and hooks are under the code's licence only.
+[[annotations]]
+path = [".claude/hooks/*.sh", ".config/mise/tasks/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 The Rustalgia authors"
+SPDX-License-Identifier = "GPL-3.0-or-later"

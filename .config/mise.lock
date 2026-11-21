@@ -400,6 +400,10 @@ url = "https://github.com/suzuki-shunsuke/pinact/releases/download/v5.0.2/pinact
 url_api = "https://api.github.com/repos/suzuki-shunsuke/pinact/releases/assets/675205667"
 provenance = "github-attestations"
 
+[[tools."pipx:reuse"]]
+version = "6.3.0"
+backend = "pipx:reuse"
+
 [[tools.rumdl]]
 version = "0.3.4"
 backend = "aqua:rvben/rumdl"
