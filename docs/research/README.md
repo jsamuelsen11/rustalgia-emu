@@ -50,9 +50,9 @@ The limits in words and bytes are project rules that a reviewer can check; no so
 
 ### Shape and links
 
-- The Summary is at most 150 words, in short paragraphs of one point each: the question, the answer,
-  and the points that matter most to Rustalgia.
-  Any other paragraph of more than about five sentences is split where its point changes.
+- Write in good plain style, and break dense blocks of text into paragraphs that each group related points.
+  The Summary is written that way too: the question, the answer, and the points that matter most to Rustalgia,
+  each in its own paragraph.
 - Every reference to a document in this repository is a relative link: a note, an ADR, the roadmap, the register,
   a guide, or a section of one.
   A roadmap item is linked to its note once the note exists, and otherwise to the roadmap.
