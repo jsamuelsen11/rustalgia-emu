@@ -35,7 +35,7 @@ and a record of the human contribution to each change.
 - Question: which controls can record or limit what agents read and write, and what does each prove?
 - Covered: what the agent tool records and enforces, this repository's own controls, provenance records beyond the tool,
   walls for agents, model memory, similarity checking, litigation on memory and output, authorship, and peer practice.
-- Left to other items: what authorship means for the licence ([R0-03](../../roadmap/research.md));
+- Left to other items: what authorship means for the licence ([R0-03](R0-03-licence-strategy.md));
   case law on emulation ([R0-02](R0-02-legal-baseline.md)); note conventions
   ([R0-04](R0-04-glossary-and-conventions.md)).
   [R0-01](R0-01-clean-room-policy.md),
@@ -895,7 +895,7 @@ The decisions below are the nearest, and most concern providers as defendants.
 
 [R0-01](R0-01-clean-room-policy.md) records the Copyright Office's two headline conclusions.
 The findings below add what bears on records.
-What follows for the licence belongs to [R0-03](../../roadmap/research.md).
+What follows for the licence belongs to [R0-03](R0-03-licence-strategy.md).
 
 - No court decision was found that rules on copyright in AI-generated or AI-assisted source code,
   or that enforces or refuses to enforce an open-source licence over such code.
@@ -1019,6 +1019,10 @@ These add to it.
   2025).
   Rustalgia does not use the certificate today.
 - Several projects decline or restrict AI-written code.
+  Dolphin bars contributors from using LLMs for changes to the emulated console's behaviour,
+  because models must be assumed to hold leaked Nintendo material
+  ([Dolphin contribution guide](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md), paraphrased;
+  added by [R0-03](R0-03-licence-strategy.md), 2026-11-21).
   Gentoo forbids it and states a copyright reason, among others:
   such material "could also weaken Gentoo claims to copyright and void the guarantees given by copyleft licensing"
   ([Gentoo Council policy](https://wiki.gentoo.org/wiki/Project:Council/AI_policy), 2024).
@@ -1338,7 +1342,7 @@ The owner decides; each recommendation below rests on the findings above.
   [Japan's factors](https://www.bunka.go.jp/english/policy/copyright/pdf/94055801_01.pdf), and the
   [reported Chinese ruling](https://natlawreview.com/article/beijing-internet-court-requires-evidence-creative-effort-claim-copyright-protection)
   all point to such records.
-  Marking AI-written regions (option 20) is left to [R0-03](../../roadmap/research.md),
+  Marking AI-written regions (option 20) is left to [R0-03](R0-03-licence-strategy.md),
   and option 21 conflicts with a project written mostly by agents.
 
 ## Implications for Rustalgia
@@ -1366,7 +1370,7 @@ The owner decides; each recommendation below rests on the findings above.
   or to the [hook](../../../.claude/hooks/source-guard.sh) is a change to a control,
   which the template asks to be listed with its reason.
 - Authorship of agent-written code is unsettled and differs by country.
-  The facts here feed [R0-03](../../roadmap/research.md),
+  The facts here feed [R0-03](R0-03-licence-strategy.md),
   which now depends on this note as well as on [R0-02](R0-02-legal-baseline.md);
   options 18 to 21 decide which records exist when that question is asked.
 - The tool changes fast: Claude Code released about 130 versions between July
@@ -1401,7 +1405,7 @@ The owner decides; each recommendation below rests on the findings above.
     and the owner's authorisation, as the question above does.
 - How do selection, arrangement, and modification apply to a code base assembled from agent-written changes?
   No source applies them to software (the Part 2 search above);
-  [R0-03](../../roadmap/research.md) is to record the risk.
+  [R0-03](R0-03-licence-strategy.md) is to record the risk.
 - Will the Court of Appeal in [Getty](https://caselaw.nationalarchives.gov.uk/ewhc/ch/2025/3343),
   the Court of Justice in [Like Company](https://curia.europa.eu/site/jcms/p1_1000088866/en/), or a higher court in
   [GEMA v OpenAI](https://www.justiz.bayern.de/gerichte-und-behoerden/landgericht/muenchen-1/presse/2025/11.php) change

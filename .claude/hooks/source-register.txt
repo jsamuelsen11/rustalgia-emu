@@ -937,3 +937,48 @@ closed | andkrau/nuanceresurrection | own: unmodified, no profit; then BSD-3-Cla
 closed | wiki.henkaku.xyz/vita/game_car | CC BY, no version | card authentication; key data | 2026-11-20 | capture
 closed | 3dbrew.org/wiki/memory_layou | none stated | boot-ROM copies and key locations | 2026-11-20 | capture; deleted
 closed | www.3dbrew.org/wiki/memory_layou | none stated | www prefix | 2026-11-20 | capture; copy deleted
+
+# Sources first cited by R0-03, the licence strategy. Licence texts, stewards' pages, store terms, and project
+# policies are prose about licensing, not about consoles; emulator-adjacent libraries are evaluated by ADR 0001.
+other | spdx.org/licenses | licence texts | SPDX License List 3.29.0 | 2026-11-20 | page footer
+other | www.fsf.org | CC BY-ND 3.0 or later | FSF news, blog, and contributor FAQ | 2026-11-20 | page footer
+other | www.mozilla.org/en-us/mpl | licence text and FAQ | Mozilla Public License 2.0 | 2026-11-20 | -
+other | www.mozilla.org/media/mpl | licence text | Mozilla Public License 2.0, plain text | 2026-11-20 | -
+other | www.apache.org/licenses | licence texts and forms | Apache licence, ICLA, GPL compatibility | 2026-11-20 | -
+other | rai.apache.org | none stated | Apache's unofficial responsible-AI draft | 2026-11-20 | page
+other | canonical.com/legal | none stated | Canonical's legal pages; Ubuntu font licence | 2026-11-21 | page
+other | assets.ubuntu.com | none stated | Canonical's CLA form | 2026-11-20 | PDF
+other | scancode-licensedb.aboutcode.org | CC BY 4.0 | licence database; transcriptions | 2026-11-20 | page
+other | creativecommons.org | CC BY 4.0 site; legal code CC0 | licence steward; FAQ, legal codes | 2026-11-20 | footer
+other | wiki.creativecommons.org | CC BY 4.0 | licence steward's wiki | 2026-11-20 | footer
+other | choosealicense.com | CC BY 3.0 | GitHub's licence guide | 2026-11-20 | footer
+other | reuse.software | CC BY-SA 4.0 | FSFE's REUSE specification and FAQ | 2026-11-20 | footer
+other | developercertificate.org | verbatim copying only | Developer Certificate of Origin 1.1 | 2026-11-20 | page
+other | cla.developers.google.com | none stated | Google's individual CLA | 2026-11-20 | page
+other | harmonyagreements.org | CC BY 3.0 Unported | Harmony contributor agreement templates | 2026-11-20 | page
+other | ev.kde.org | none stated | KDE e.V. Fiduciary Licence Agreement | 2026-11-20 | page
+other | community.kde.org | CC BY-SA 4.0 | KDE community wiki; licensing policy | 2026-11-20 | footer
+other | docs.kernel.org | GPL-2.0 per its licensing rules | Linux kernel documentation | 2026-11-20 | licence-rules page
+other | www.rust-lang.org/policies | none stated | Rust project licence policy | 2026-11-20 | page
+other | rustc-dev-guide.rust-lang.org | none stated | Rust compiler contribution guide | 2026-11-20 | page
+other | rustfoundation.org | all rights reserved | Rust Foundation trade mark policy | 2026-11-20 | footer
+other | openssl-library.org | none stated | OpenSSL policies and CLA | 2026-11-20 | page
+other | www.linuxfoundation.org/legal | none stated | Linux Foundation generative AI guidance | 2026-11-20 | page
+other | news.typo3.com | none stated | TYPO3 Association board statement | 2026-11-20 | page
+other | sfconservancy.org | CC BY-SA 4.0 | Conservancy news and case pages | 2026-11-20 | footer
+other | www.apple.com/legal | none stated | Apple's media services terms and standard EULA | 2026-11-20 | page
+other | apps.apple.com | none stated | App Store listings | 2026-11-20 | page
+other | play.google | none stated | Google Play agreements and terms | 2026-11-20 | page
+other | play.google.com/store | none stated | Google Play listings | 2026-11-20 | page
+other | developer.android.com | none read | Android developer documentation | 2026-11-20 | page
+other | f-droid.org | none stated on the pages | free-software app store; policy and package pages | 2026-11-20 | footer
+other | altstore.io | none stated | app marketplace's site; prose | 2026-11-20 | page
+open | provenance-emu.com | none stated | website of a walled project; prose only, no code | 2026-11-20 | page
+other | crates.io | registry metadata | Rust package registry; licence fields are self-declared | 2026-11-20 | API
+other | docs.rs | none stated | Rust documentation host; crate metadata | 2026-11-20 | page
+other | embarkstudios.github.io | MIT OR Apache-2.0 | cargo-deny and cargo-about books | 2026-11-20 | crates.io
+other | www.libsdl.org | zlib | SDL library's licence page | 2026-11-20 | page
+other | zlib.net | zlib | zlib library's licence page | 2026-11-20 | page
+other | learn.microsoft.com/en-us/cpp | Microsoft terms of use | Visual C++ documentation | 2026-11-20 | footer
+open | snowflakepowered/chd-rs | BSD-3-Clause | reimplements the CHD format; origin not disputed | 2026-11-20 | README
+walled | rtissera/libchdr | BSD-3-Clause | based on old MAME code; its relicensing unchecked | 2026-11-20 | README

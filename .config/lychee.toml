@@ -66,4 +66,5 @@ exclude = [
   '^https?://(www\.)?opensource\.org/', # 403 Forbidden (2026-11-21)
   '^https?://(www\.)?govinfo\.gov/', # 502 Bad Gateway to CI runners (2026-11-21)
   '^https?://(www\.)?playstation\.com/', # 403 to CI runners (2026-11-21)
+  '^https?://(www\.)?fsf\.org/', # TLS handshake failure for the link checker; curl answers (2026-11-21)
 ]

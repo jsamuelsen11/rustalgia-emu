@@ -32,7 +32,7 @@ jurisdiction examined; and patents and trade marks are separate risks that indep
   Patents and trade marks were added to the [roadmap](../../roadmap/research.md#phase-0-ground-rules) line at the
   owner's request, as recorded risks.
 - Left to other items: what [R0-01](R0-01-clean-room-policy.md) already records, which is cited by section name;
-  licence strategy and contributor terms ([`R0-03`](../../roadmap/research.md#phase-0-ground-rules)); note conventions
+  licence strategy and contributor terms ([`R0-03`](R0-03-licence-strategy.md)); note conventions
   ([R0-04](R0-04-glossary-and-conventions.md)); the exposure of each system family
   ([`R1-10` to `R1-25`](../../roadmap/research.md#system-family-surveys)); firmware emulation as a technique
   ([`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering)); store policy
@@ -1409,7 +1409,7 @@ Statuses of patents not named here were not checked again.
   and a search of that list's [package search](https://definition.openinventionnetwork.com/) on 2026-11-20
   for some twenty console emulators, among them MAME, RetroArch, mGBA, PCSX2, PPSSPP, Dolphin, and Ryujinx, found none;
   "dolphin" matched only a file manager, and QEMU, a general machine emulator, is listed.
-  [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) covers licences.
+  [`R0-03`](R0-03-licence-strategy.md) covers licences.
 
 ### Trade marks and branding, recorded as risks
 
@@ -1870,7 +1870,7 @@ Each recommendation is for the owner to decide.
 - The project's licence, hosting, and funding choices carry legal weight found here:
   open-source status was counted against emulators in one default ruling, a single notice can disable all forks,
   and contesting a notice needs a named person.
-  [`R0-03`](../../roadmap/research.md#phase-0-ground-rules),
+  [`R0-03`](R0-03-licence-strategy.md),
   [`R3-03`, and `R3-06`](../../roadmap/research.md#phase-3-host-platforms) take these up.
 - The name "Rustalgia" contains no maker's mark.
   Rules for descriptive statements, logos, screenshots, controller skins, and boot logos would follow options 14 to 16.

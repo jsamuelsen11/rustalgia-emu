@@ -33,7 +33,7 @@ This note is not legal advice.
 - Covered: the kinds of source, the law that makes reading matter, what comparable projects do,
   what changes when AI agents read and write, and note-taking practice.
 - Left to other items: case law, anti-circumvention, firmware, and keys in depth ([R0-02](R0-02-legal-baseline.md));
-  licence strategy ([R0-03](../../roadmap/research.md#phase-0-ground-rules)); note conventions
+  licence strategy ([R0-03](R0-03-licence-strategy.md)); note conventions
   and the glossary ([R0-04](R0-04-glossary-and-conventions.md)); the reading list
   for each system ([R0-05](R0-05-source-map.md)); provenance controls
   for agent-written work ([R0-06](R0-06-provenance-controls.md)).
@@ -496,7 +496,7 @@ This note is not legal advice.
 Read from each repository's licence file and README on 2026-11-17, through the GitHub contents and licence API,
 and for three projects again on 2026-11-20.
 Each emulator is linked to its repository at first mention, except those in the closed tier.
-[R0-03](../../roadmap/research.md#phase-0-ground-rules) covers what the licences mean for reuse.
+[R0-03](R0-03-licence-strategy.md) covers what the licences mean for reuse.
 
 - Permissive: [SameBoy](https://github.com/LIJI32/SameBoy), [SkyEmu](https://github.com/skylersaleh/SkyEmu),
   [Play!](https://github.com/jpd002/Play-), [ares](https://github.com/ares-emulator/ares),
@@ -512,6 +512,8 @@ Each emulator is linked to its repository at first mention, except those in the 
   [jgenesis](https://github.com/jsgroth/jgenesis), [RetroArch](https://github.com/libretro/RetroArch),
   [dust](https://github.com/kelpsyberry/dust), and [gopher64](https://github.com/gopher64/gopher64). melonDS, bsnes,
   and Mesen state "or any later version".
+  PCSX2 states it only in its source files, as the SPDX identifier `GPL-3.0+`, the deprecated form of "or later"
+  (corrected by [R0-03](R0-03-licence-strategy.md), 2026-11-21).
   The Mesen2 repository is archived and points to a community fork under the same licence.
 - GPL-2.0 or later: [PPSSPP](https://github.com/hrydgard/ppsspp), [Dolphin](https://github.com/dolphin-emu/dolphin),
   and [MAME](https://github.com/mamedev/mame) by its [documentation](https://www.mamedev.org/legal.html).
@@ -627,7 +629,7 @@ Each emulator is linked to its repository at first mention, except those in the 
   Whether it also binds as a contract is open:
   the district court in Doe v GitHub let a contract claim for breach of open-source licences proceed
   (order of 24 June 2024, as R0-06 records).
-  What licence strategy follows is for [R0-03](../../roadmap/research.md#phase-0-ground-rules).
+  What licence strategy follows is for [R0-03](R0-03-licence-strategy.md).
 - Local comparison tools need a copy of the reference code
   ([JPlag](https://github.com/jplag/JPlag); [copydetect](https://github.com/blingenf/copydetect)).
   Hosted snippet-matching services compare against an index the project never holds and return a match report
@@ -885,7 +887,7 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   Dolphin bars them from contributing code at all.
   It is the option that most directly addresses trade-secret and contract risk,
   alongside the standing exclusion of leaked material.
-  The contributor terms belong to [R0-03](../../roadmap/research.md#phase-0-ground-rules).
+  The contributor terms belong to [R0-03](R0-03-licence-strategy.md).
 
 ## Implications for Rustalgia
 
@@ -903,7 +905,7 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   ([ADR 0001, "Evaluating a new source"](../../adr/0001-restrict-reading-by-licence-tier.md#evaluating-a-new-source)).
 - Agents write most of this repository, and no source shows how a model can be the unexposed side of a wall.
   Options 7, 8, and 9 feed an ADR on AI provenance controls, which [R0-06](R0-06-provenance-controls.md) maps,
-  and the authorship findings feed [R0-03](../../roadmap/research.md#phase-0-ground-rules).
+  and the authorship findings feed [R0-03](R0-03-licence-strategy.md).
   The published policies of [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Developer-FAQ),
   [Asahi](https://asahilinux.org/llm-policy/),
   and [Dolphin](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) exclude code produced this way;
