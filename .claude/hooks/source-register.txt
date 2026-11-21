@@ -633,3 +633,26 @@ closed | free60.org/hardware/fuseset | none stated | key material | 2026-11-20 |
 closed | www.free60.org/hardware/fuseset | none stated | www prefix | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened
+# Added by the R1-03 rework: an archive for captures of pages that refuse scripts, and two maker sites.
+other | web.archive.org | - | an archive, not a source; captures of pages that refuse scripts | 2026-11-20 | -
+open | learn.microsoft.com/en-us/windows/win32 | Microsoft terms of use | maker's documentation | 2026-11-20 | footer
+open | gpuopen.com | AMD copyright page, no grant | maker's documentation index; list read only | 2026-11-20 | footer
+# Pages on open wikis that the R1-03 evidence names as holding boot ROM pseudo-code or assembly, firmware-internal
+# addresses, decryption recipes in pseudo-code, a key-data layout, or drive firmwares listed for dumping.
+# Closed so that the guard blocks them; patterns are cut short, and each has a www line. None was reopened.
+# WiiUBrew "Boot0" and "Boot1" cannot be closed: an exact pattern passes the guard, and a shorter one would block
+# the cited "Boot process". R1-03 names them, and the index.php?title= forms, as pages not to open.
+closed | wiiubrew.org/wiki/cafe_os/kerne | none stated | firmware-internal addresses | 2026-11-20 | R1-03 evidence
+closed | www.wiiubrew.org/wiki/cafe_os/kerne | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | wiibrew.org/wiki/signing_bu | none stated | pseudo-code; cites a decompilation | 2026-11-20 | R1-03 evidence
+closed | www.wiibrew.org/wiki/signing_bu | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | wiibrew.org/wiki/wii_dis | none stated | decryption recipe in pseudo-code | 2026-11-20 | R1-03 evidence
+closed | www.wiibrew.org/wiki/wii_dis | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | 3dbrew.org/wiki/bootloade | none stated | boot ROM key-data layout | 2026-11-20 | R1-03 evidence
+closed | www.3dbrew.org/wiki/bootloade | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/boot_proces | none stated | boot ROM pseudo-code and assembly | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/boot_proces | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/mcpx_ro | none stated | boot ROM pseudo-code and assembly | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/mcpx_ro | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/xbox_game_dis | none stated | drive firmwares listed for dumping | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/xbox_game_dis | none stated | www prefix | 2026-11-20 | R1-03 evidence
