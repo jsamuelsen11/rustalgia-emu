@@ -174,6 +174,16 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# Pages closed by R1-02: an N64 boot ROM listing, CIC key material, and 3DO internal material; the rest stays open.
+check 2 writer "$(fetch https://n64brew.dev/wiki/Initial_Program_Load)"
+check 2 writer "$(fetch https://n64brew.dev/wiki/CIC-NUS)"
+check 0 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS)"
+check 2 writer "$(fetch https://ext.3dodev.com/)"
+check 2 writer "$(fetch https://3dodev.com/documentation/hardware/opera/memory_configurations)"
+check 0 writer "$(fetch https://3dodev.com/documentation/hardware/opera/madam/matrix_engine)"
+check 2 writer "$(fetch https://github.com/rasky/n64_pi_dma_test/blob/master/main.c)"
+check 2 writer "$(fetch https://github.com/libretro/beetle-psx-libretro/blob/master/libretro.cpp)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
