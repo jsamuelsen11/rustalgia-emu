@@ -10,7 +10,7 @@ date: 2026-11-20
 ## Summary
 
 This note asks how the consoles of the modern era work and what that asks of an emulator,
-using the systems whose family surveys depend on it: the PlayStation 3, 4, and 5, the Xbox One and Xbox Series,
+using the systems the roadmap's era rule places here: the PlayStation 3, 4, and 5, the Xbox One and Xbox Series,
 and the Nintendo Switch and Switch 2.
 In this era a game is a user process of a full operating system,
 so the interface an emulator must reproduce is mostly the operating system's and its libraries',
@@ -19,10 +19,12 @@ The guest processors are general-purpose architectures
 (64-bit PowerPC with the Cell's SPUs, x86-64, and 64-bit Arm),
 so a host of the same architecture can run much guest code directly,
 and the PlayStation 3 needs translation on every host (inference).
-Console games ship pre-compiled shaders, which an emulator must translate for the host GPU,
-so shader translation and its compilation stutter are central costs (inference).
-Switch game containers are encrypted, by SwitchBrew;
-that the other systems' retail games are encrypted and signed is from memory.
+Console games can ship pre-compiled shaders
+(Wikipedia, Micro stuttering, secondary),
+which an emulator must translate for the host GPU, so shader translation
+and its compilation stutter are central costs (inference).
+Switch game containers are encrypted
+(SwitchBrew, NCA); that the other systems' retail games are encrypted and signed is from memory.
 The legal side is in `R0-02` and is not repeated here.
 This note is not legal advice.
 
@@ -30,51 +32,48 @@ This note is not legal advice.
 
 - Question: how do the consoles of the modern era work, and what does that ask of an emulator?
 - Covered: processors, memory and storage, graphics, audio, operating systems and services, timing, threading and input,
-  and online services, for the systems whose family surveys depend on this item: `R1-14` (Switch and Switch 2), `R1-21`
-  (PlayStation 3, 4, and 5), and `R1-23` (Xbox One and Xbox Series).
-  By the roadmap's era rule (pull request #22),
-  a system of a survey that depends on several primers belongs to the era of its generation: the Xbox 360,
-  of the seventh, is placed in `R1-03` with the Wii, and the PS3 here because `R1-21` depends only on this item.
-  That split of the seventh generation is the roadmap's grouping, not a hardware rule.
-  Every console and handheld of the era is listed in the catalogue, `R1-08`; PC and Android handhelds, microconsoles,
-  and FPGA devices are emulator hosts, left to `R3-07` and `R3-12`.
+  and online services, for the Switch and Switch 2 (`R1-14`), PlayStation 3, 4, and 5 (`R1-21`),
+  and Xbox One and Xbox Series (`R1-23`).
+  By the roadmap's era rule (pull request #22), the Xbox 360, of the seventh generation,
+  is placed in `R1-03` with the Wii, and the PS3 here because `R1-21` depends on no other primer;
+  that split is the roadmap's grouping, not a hardware rule.
+  The roadmap gives the listing of every console and handheld of the era to the catalogue, `R1-08`;
+  PC and Android handhelds, microconsoles, and FPGA devices are emulator hosts, left to `R3-07` and `R3-12`.
 - Left to other items: the law on encryption, firmware, keys, and takedowns
   (`R0-02`, cited by section name);
   each family's emulators (`R1-14`, `R1-21`, `R1-23`); host platforms (phase 3); techniques in depth (phase 2).
-- Researched on 2026-11-20.
-  As of 2026-11-20 the Switch, Switch 2, PlayStation 5, and Xbox Series are sold;
-  Nintendo plans to end Switch sales in Europe in February 2027 (Wikipedia, Nintendo Switch, secondary).
+- Researched on 2026-11-20, when Wikipedia recorded no end of sales for the Switch 2, PlayStation 5, or Xbox Series,
+  Nintendo's plan to end Switch sales in Europe in February 2027, the PS4 discontinued only in Japan (2024),
+  and the Xbox One discontinued in 2020 (Wikipedia, each system's article, secondary).
   Each claim about a system on sale is dated by the revision of the page it rests on.
 - How claims were checked: research agents fetched every source on 2026-11-20
   (wiki pages through `action=raw`, PDFs through `pdftotext`, repository files at a pinned commit where shown);
-  the Hot Chips 25 slides are images, and the patent was read by OCR.
-  One independent verification pass followed, of nine verifiers who saw only this note:
+  the Hot Chips 25 slides are mostly images, and the patent was read by OCR.
+  Two independent verification passes followed, each of nine verifiers who saw only this note:
   each fetched the sources again the same day and tested each claim and quotation.
   Each correction was checked against the source once more before it was applied;
-  claims the pass could not check are weakened, marked "(not re-checked)", or listed in the pull request.
+  claims the passes could not check are weakened, marked, or listed in the pull request.
   A claim marked "(secondary)" rests on Wikipedia or another summary of other sources,
   "(from memory)" on no page fetched for the note, "(inference)" on the author's reasoning,
   "(research log)" on an event while gathering the evidence,
   and "(observed)" on what the author saw in a page or image and did not quote.
-  Memory sizes are written with binary prefixes, as the conventions require.
-- What was opened: maker documents and talks, community wikis on their technical pages, archived copies of psdevwiki,
-  Wikipedia, and the prose of walled emulators.
+- What was opened: maker documents and talks, community wikis' technical pages, Wikipedia, and walled emulators' prose.
   No emulator source code, key, fuse, exploit, firmware, title-list, or game page was opened on purpose.
-  Two kinds of code outside emulators were read:
-  header constants of an open-tier homebrew library (`libnx`) and part of a Linux sound driver;
-  the findings that rest on them say so.
+  Code read outside emulators, header constants of `libnx`
+  (open tier) and part of a Linux sound driver, is named where used.
 
 ## Findings
 
 ### What changed in this era
 
-- A game here reaches hardware through kernel calls and system libraries or services, not by writing device registers:
-  Sony's PS3 Linux documents describe a hypervisor that virtualises "Most devices and system resources"
-  for a guest operating system, which reaches some, such as USB host controllers, directly;
+- Software here reaches hardware mostly through kernel calls and system libraries or services:
+  Sony's PS3 Linux documents describe a hypervisor that virtualises "Most devices and system resources" for Linux
+  as the guest, which reaches some, such as USB host controllers, directly;
   psdevwiki records that PS4 system calls are "mostly called by" a kernel library that exports wrappers to applications,
   and SwitchBrew describes Switch services reached by inter-process messages
   (Sony, Linux Kernel Overview; psdevwiki PS4, Syscalls; SwitchBrew, Services API).
-  The emulator's main interface is therefore the operating system's (inference).
+  That games rarely write device registers, and that the emulator's main interface is therefore the operating system's,
+  is inference from these.
 - The makers update that interface over the life of the console.
   SwitchBrew marks services and calls with the system version that added or changed them,
   and psdevwiki marks PS4 system calls by firmware interval (SwitchBrew, Services API; psdevwiki PS4, Syscalls).
@@ -97,15 +96,16 @@ This note is not legal advice.
   for data-intensive work, joined by the Element Interconnect Bus; Sony, Toshiba, and IBM began it in 2000
   (Gschwind et al., Hot Chips 17, slides 2 and 5; Sony, Cell Programming Primer, sections 1.1.2 and 1.2.1).
   An emulator therefore needs two unrelated instruction-set front ends in one guest (inference).
-- The PPE implements 64-bit PowerPC with the VMX vector extension
-  (Gschwind et al., slide 5),
-  with 32 KiB instruction and 32 KiB data caches and a 512 KiB L2 (Sony, Cell Programming Primer, section 1.2.2).
+- The PPE implements 64-bit PowerPC with the VMX vector extension,
+  with 32 KiB instruction and 32 KiB data caches and a 512 KiB L2
+  (Gschwind et al., slide 5; Sony, Cell Programming Primer, section 1.2.2).
   It runs two hardware threads (Wikipedia, Cell (processor), secondary; psdevwiki PS3, CELL BE).
 - Each SPU has one register file of 128 registers of 128 bits, used for every data type
   (Gschwind et al., slides 8 and 11).
-  A 32-bit scalar or address sits in bytes 0 to 3, the "preferred slot", and narrower or wider types sit elsewhere
+  A 32-bit scalar or address sits in bytes 0 to 3, the "preferred slot"; a byte sits in byte 3,
+  a 16-bit value in bytes 2 and 3, and a 64-bit value in bytes 0 to 7
   (Gschwind et al., slides 12 and 13; Sony, Cell Programming Primer, section 4.5.1);
-  bytes are numbered in big-endian order (same, section 2.2.2).
+  bytes are numbered in big-endian order (Sony, Cell Programming Primer, section 2.2.2).
   128 guest vector registers exceed the vector register files of x86-64 and AArch64 hosts
   (from memory),
   and the lane order is reversed against little-endian hosts,
@@ -118,8 +118,9 @@ This note is not legal advice.
   and has no branch prediction hardware, only static prediction by a prepare-to-branch instruction
   (Gschwind et al., slides 6 and 16; Wikipedia, Cell (processor), secondary).
   A functional translator can ignore the hints; one that models timing cannot (inference).
-- SPU single precision uses an IEEE data layout in a graphics-oriented mode,
-  while double precision follows IEEE conventions (Gschwind et al., slide 22).
+- The SPU supports standard IEEE and graphics-oriented arithmetic:
+  graphics-oriented single precision keeps an IEEE data layout with extended range, a simplified format,
+  and no floating-point exceptions, while double precision follows IEEE conventions (Gschwind et al., slide 22).
   The exact deviations are in IBM's SPU instruction-set document, which could not be read:
   IBM's own links now return HTTP 404, and the surviving copies are on third-party hosts (research log).
 - All SPU code runs at one privilege level, and the SPE shares the PPE's address translation and protection
@@ -143,7 +144,7 @@ This note is not legal advice.
   Sony's primer says that if these rules are broken "the MFC will stop, resulting in a DMA alignment error interrupt",
   so an emulator must raise the fault to the guest (inference).
 - Each DMA command carries a tag from 0 to 31, and the SPE program waits on groups of tags
-  (Sony, Cell Programming Primer, chapter 3 and section 4.2).
+  (Sony, Cell Programming Primer, sections 3.3.2 and 4.2.2).
   Performing DMA at once is simpler; deferring it is more faithful when games overlap work and transfer (inference).
 - Atomic updates use a reservation on a 128-byte line:
   a conditional store fails if another SPE updated the line after it was loaded
@@ -173,14 +174,14 @@ This note is not legal advice.
   (from memory), so a host lacking them must translate them (inference).
 - Games do not get every core. psdevwiki says six of the PS4's eight cores are available to applications
   (psdevwiki PS4, APU),
-  while Wikipedia says seven (Wikipedia, PlayStation 4, secondary); the difference may be a firmware change
-  (from memory).
+  while Wikipedia says seven, citing a 2015 Eurogamer article on Sony unlocking more CPU power for developers
+  (Wikipedia, PlayStation 4, secondary), so the figures can differ by firmware (inference).
   Wikipedia says one Xbox Series X core is dedicated to the operating system
   (Wikipedia, Xbox Series X and Series S, secondary).
   No source read gives the PS5's figure.
-- shadPS4, a walled PS4 emulator, describes its approach in its README
-  as "natively executing the x64 code of PS4 binaries",
-  and says some PS4 system modules must be dumped from the user's console (shadPS4 README; not re-checked).
+- By the research agent's reading of its README, shadPS4, a walled PS4 emulator,
+  runs the x64 code of PS4 binaries natively and needs some PS4 system modules dumped from the user's console
+  (shadPS4 README; neither verification pass could re-check it).
   Running guest code directly on an x86-64 host leaves the emulator to intercept system and library calls
   and to fit the guest's address layout into the host's (inference).
 
@@ -198,16 +199,20 @@ This note is not legal advice.
   and an address-space field whose values include 32-bit layouts
   (SwitchBrew, NPDM),
   so an emulator needs both 64-bit and 32-bit Arm front ends if any game is a 32-bit process (inference).
-- The Switch 2 (2025) uses Nvidia's T239: eight Cortex-A78C cores and a 1,536-core Ampere GPU,
-  built to Nintendo's specification and close to the T234 of Nvidia's Orin products, by SwitchBrew's account,
-  which states no origin for its figures (SwitchBrew, Switch 2: Tegra T239; on sale as of 2026-11-20).
-  Arm's guide gives the A78C's architecture as Armv8-A with extensions up to pointer authentication from Armv8.3-A
-  and enhanced pointer authentication from Armv8.6-A, without the optional FPAC
+- The Switch 2 (2025; Wikipedia, Nintendo Switch 2, secondary) uses Nvidia's T239:
+  eight Cortex-A78C cores and a 1,536-core Ampere GPU,
+  built to Nintendo's specification and sharing many aspects with the T234 of Nvidia's Orin products,
+  by SwitchBrew's account, which states no origin for its figures
+  (SwitchBrew, Switch 2: Tegra T239; on sale as of 2026-11-20).
+  Arm's guide gives the A78C's architecture as Armv8-A with the Armv8.1-A and Armv8.2-A extensions
+  and selected later features: pointer authentication and LDAPR from Armv8.3-A,
+  dot product and multi-OS support from Armv8.4-A,
+  and enhanced pointer authentication from Armv8.6-A without the optional FPAC
   (Arm, Cortex-A78C Software Optimization Guide, section 2).
   A host without pointer authentication runs the forms encoded as hints as no-ops and must emulate the others
   (from memory).
 - The same guide gives timings for A32 and T32 as well as A64 instructions
-  (section 3.1), so the A78C runs 32-bit code; at which exception levels was not found in a maker source.
+  (section 3.1), so the A78C runs 32-bit code (inference); at which exception levels was not found in a maker source.
 
 #### Translation between host and guest architectures
 
@@ -216,14 +221,12 @@ This note is not legal advice.
 | System | Guest code | On an x86-64 host | On an Arm64 host |
 |---|---|---|---|
 | PlayStation 3 | PowerPC with VMX, and SPU | translate both | translate both |
-| PlayStation 4, Xbox One | x86-64 (Jaguar) | run directly | translate |
+| PlayStation 4, Xbox One | x86-64 (Jaguar) | run directly, translating missing extensions | translate |
 | PlayStation 5, Xbox Series | x86-64 (Zen 2) | run directly, translating missing extensions | translate |
-| Switch | A64, and A32 if a game uses it (Cortex-A57) | translate | run directly |
-| Switch 2 | A64, and A32 if a game uses it (Cortex-A78C) | translate | run directly, with pointer authentication |
+| Switch | A64, and AArch32 if a game uses it (Cortex-A57) | translate | run directly |
+| Switch 2 | A64, and AArch32 if a game uses it (Cortex-A78C) | translate | run directly, with pointer authentication |
 
-- Ryujinx's macOS port used Apple silicon's hypervisor to run the Switch's ARMv8 code natively
-  (Wikipedia, Ryujinx, secondary).
-- FEX runs x86 Linux programs on ARM64 Linux, keeps a code cache,
+- FEX runs x86 Linux programs on ARM64 Linux, has an experimental code cache,
   and lets the user skip what its README calls "costly memory model emulation" per application (FEX README).
   Box64 runs x86-64 Linux programs on Arm and other hosts with a dynamic recompiler,
   keeping translated code on disk by default
@@ -237,10 +240,10 @@ This note is not legal advice.
   (Wikipedia, PlayStation 3 technical specifications, secondary; psdevwiki PS3, RAM).
   Main memory and an SPU's local store are separate address spaces, and a DMA command names one address in each
   (Sony, Cell Programming Primer, section 3.3.2).
-- The RSX can read up to 224 MiB of main memory (Wikipedia, RSX Reality Synthesizer, secondary).
-  Wikipedia and psdevwiki give the same table of rates, measured with the RSX at 550 MHz and the GDDR3 at 700 MHz,
-  higher than the shipped clocks, with the Cell reading GDDR3 at about 16 MB/s;
-  neither names the origin of the measurements, and their texts are nearly identical, so they count as one source
+- The RSX can access up to 224 MiB of main memory (Wikipedia, RSX Reality Synthesizer, secondary).
+  Wikipedia and psdevwiki give one nearly identical table of rates,
+  of unstated origin and measured with the RSX and GDDR3 above their shipped clocks,
+  with the Cell reading GDDR3 at about 16 MB/s; they count as one source
   (Wikipedia, RSX Reality Synthesizer, secondary; psdevwiki PS3, RSX).
   Games avoid that slow path, so an emulator need not model its cost but must allow both directions (inference).
 - Sony's documents say Linux on the PS3 runs on top of the hypervisor,
@@ -256,7 +259,8 @@ This note is not legal advice.
   Wikipedia's prose and its table give different ESRAM bandwidths (Wikipedia, Xbox One, secondary).
   Games were reported to get 5 GiB of the 8, and the Xbox One X has 12 GiB of GDDR5 with 9 GiB for games;
   its column of the table lists no ESRAM (same).
-  No source read says how games place data in ESRAM or how the One X runs games designed for it.
+  Neither the Wikipedia articles cited nor Microsoft's Hot Chips 25 slides say how games place data in ESRAM
+  or how the One X runs games designed for it.
 - The Xbox One and Series run a modified Hyper-V hypervisor with an "Exclusive" partition for games and a "Shared" one
   for apps, including the operating system (Wikipedia, Xbox system software, secondary).
   Microsoft's Hot Chips 25 slides show host-guest memory-management units for the GPU and for input and output,
@@ -268,9 +272,9 @@ This note is not legal advice.
   PS5 games must run from internal or M.2 storage (Wikipedia, PlayStation 5, secondary).
 - The Xbox Series X has 16 GiB of GDDR6 at two speeds, 10 GiB at 560 GB/s and 6 GiB at 336 GB/s,
   "with the system software only drawing from the slower pool";
-  its storage block decompresses zlib and Microsoft's BCPack texture format
+  its storage block decompresses zlib and a proprietary BCPack algorithm for game textures
   (Wikipedia, Xbox Series X and Series S, secondary; on sale as of 2026-11-20).
-  No public specification of Kraken or BCPack was found among the sources read.
+  The register, `R0-05`, and the Wikipedia articles cited give no public specification of Kraken or BCPack.
 - The Switch has 4 GiB of LPDDR4, LPDDR4X in the X1+ models
   (SwitchBrew, Hardware; Wikipedia, Nintendo Switch, secondary);
   that CPU and GPU share it is inference from the GPU mapping process memory (SwitchBrew, GPU).
@@ -292,8 +296,10 @@ This note is not legal advice.
   CPU and GPU addresses are translated separately over one pool (inference).
 - The Switch 2 has 12 GiB of LPDDR5X; SwitchBrew gives 120 GB/s, Wikipedia about 102 GB/s docked and 68 GB/s handheld
   (SwitchBrew, Switch 2: Tegra T239; Wikipedia, Nintendo Switch 2, secondary; on sale as of 2026-11-20).
-- Across the era every system here except the PS3 and the original Xbox One has one unified pool for CPU and GPU
-  (inference from the findings above).
+- Every system here except the PS3 has one pool shared by CPU and GPU;
+  the Xbox One and One S add 32 MiB of on-chip ESRAM beside it
+  (Wikipedia, Xbox One, secondary; Sell and O'Connor, Hot Chips 25, slide 4;
+  the rest is inference from the findings above).
   Guest memory now approaches host memory:
   a 16 GiB guest needs a host with more than 16 GiB once the emulator's own memory
   and host GPU copies are added (inference).
@@ -306,8 +312,8 @@ This note is not legal advice.
   with separate vertex and pixel pipelines rather than unified shaders
   (Wikipedia, RSX Reality Synthesizer, secondary, a page tagged "original research"; psdevwiki PS3, RSX).
   Vertex and fragment programs need separate translation paths to a host's unified shaders (inference).
-- Games program the RSX mostly through a library that builds GPU command buffers directly;
-  psdevwiki says "hardly anyone uses PSGL", the OpenGL ES layer built on top of it
+- psdevwiki says developers prefer a library that builds GPU command buffers directly,
+  and that "hardly anyone uses PSGL these days", the OpenGL ES layer built on top of it
   (psdevwiki PS3, RSX, "RSX Libraries").
   A PS3 emulator therefore works at the level of GPU commands (inference).
 - Sony's documents describe only the Linux frame-buffer path, not the 3D engine
@@ -322,19 +328,22 @@ This note is not legal advice.
   The PS4 Pro has 36 compute units and faster 16-bit floating point from AMD's Vega design (same);
   from system software 4.5 a "Boost Mode" raises clocks for games not patched for it
   (Wikipedia, PlayStation 4, secondary).
-- Wikipedia lists three PS4 changes from the PC parts: a bus that lets the GPU bypass its caches,
-  a tag on L2 lines for mixed graphics and compute work, and "An upgrade from 2 to 64 sources for compute commands"
+- Wikipedia lists three PS4 differences from PC cards of the first GCN generation:
+  a bus that lets the GPU bypass its caches, a tag on L2 lines for mixed graphics and compute work,
+  and "An upgrade from 2 to 64 sources for compute commands"
   (Wikipedia, PlayStation 4 technical specifications, secondary).
   Guest compute and graphics writes to shared memory must be ordered as the hardware orders them (inference).
 - PS4 games use two Sony APIs, GNM and the higher-level GNMX, and a shader language close to HLSL
   (Wikipedia, PlayStation 4 system software, secondary);
   the PS5 is programmed through a Sony API named AGC (Wikipedia, PlayStation 5, secondary).
-  No public description of either was found in the register, `R0-05`, or the Wikipedia articles cited.
+  The register and `R0-05` hold no detailed public description of either;
+  the PS4 system-software article outlines GNM and cites a 2013 Sony Europe developer talk that was not read.
   Both compile to command packets and GPU shader binaries, which is what an emulator sees (inference).
-- GCN runs threads in waves of 64; RDNA, used in the PS5 and Xbox Series, runs waves of 32 natively
-  (Wikipedia, Graphics Core Next and RDNA (microarchitecture), secondary);
-  that it also supports waves of 64 is from memory.
-  A host with 32-wide waves must emulate 64-wide wave operations (inference).
+- GCN runs threads in waves of 64; RDNA, used in the PS5 and Xbox Series,
+  runs waves of 32 natively and also supports 64,
+  and keeps aspects of GCN so those consoles run their GCN games natively
+  (Wikipedia, Graphics Core Next and RDNA (microarchitecture), secondary).
+  A host without 64-wide waves must emulate their wave operations (inference).
   The third generation of GCN is binary-incompatible with earlier ones
   (Wikipedia, Graphics Core Next, secondary),
   so even an AMD host cannot be assumed to run PS4 shader binaries unchanged (inference).
@@ -391,12 +400,6 @@ This note is not legal advice.
 - The Switch 2 GPU reports Ampere 3D class `0xC797` and keeps two older Nvidia classes
   (SwitchBrew, NV services, Switch 2 structure), so much of a Switch GPU front end carries over (inference).
   Its GPU runs at 1,007 MHz docked and 561 MHz handheld (Wikipedia, Nintendo Switch 2, secondary).
-- On the Switch 2, three compatibility modules loaded into a Switch game override selected library functions;
-  SwitchBrew says "The overrides are mostly related to Graphics
-  (i.e. translating to the new GPU),
-  but there are also plenty other function overrides to deal with various system differences"
-  (SwitchBrew, Switch 2: Compatibility Mode, "Hooking").
-  The maker translates the old GPU's work rather than executing it (inference).
 
 #### Shader translation and compilation stutter
 
@@ -409,43 +412,37 @@ This note is not legal advice.
 - Wikipedia says that "On consoles, developers can pre-compile all shaders for the known, fixed hardware",
   while PCs compile at run time and stutter, which is mitigated by recording pipeline variants, background compilation,
   and distributing compiled shaders (Wikipedia, Micro stuttering, "Shader compilation", secondary).
-  An emulator turns the console's pre-compiled shaders back into run-time compilation on the host (inference).
 - Khronos's pipeline-library proposal states that, for many engines,
-  requiring most of the state up front "either fails to eliminate hitching,
-  or requires precompiling so many state combinations that the size of the pipeline cache is nearly unmanageable"
+  requiring most of the state up front "either fails to eliminate hitching" or needs an unmanageable pipeline cache
   (Khronos, VK_EXT_graphics_pipeline_library proposal, "Problem Statement");
   a later proposal binds shaders without pipeline objects (Khronos, VK_EXT_shader_object proposal).
   An emulator learns guest state only at draw time, the case these extensions address (inference).
-- Vulkan pipeline caches let compiled pipelines be reused between runs
-  (Khronos, Vulkan specification, "Pipeline Cache");
-  an emulator keeps its own cache of translated shaders as well (inference).
 
 ### Audio
 
-- The surveyed systems use five arrangements, by the findings below (inference):
-  a plain output front end with all decoding and mixing in software (PS3);
-  a dedicated audio module with a programmable DSP (PS4, by secondary sources); DSP cores with fixed-function engines
-  (Xbox One);
-  a dedicated 3D audio engine (PS5) or spatial audio support
-  (Xbox Series),
-  both by Wikipedia; and a system renderer service that sends commands to a separate audio DSP (Switch, Switch 2).
 - Sony's documents say the PS3 front end "reads(DMAs) PCM data into its buffer" and plays it at a set clock and format,
   with no decoder for compressed audio and no volume control;
-  the back end sits behind the hypervisor and is reached over a virtual serial port,
-  and base clocks give 44.1 kHz and 48 kHz families (Sony, Linux Kernel Overview, "Audio").
+  the back end is controlled by an AV setting driver that sits behind the hypervisor
+  and is reached over a virtual serial port, and has base clock generators for 44.1 kHz and 48 kHz
+  (Sony, Linux Kernel Overview, "Audio").
   The Linux driver advertises stereo 16- or 24-bit big-endian samples at 44.1, 48, 88.2, or 96 kHz
   (Linux, `snd_ps3.c`; this description was written after reading part of that driver).
   Everything else a PS3 game plays is computed on the Cell (inference).
 - Wikipedia says the PS4 has a dedicated audio module and a DSP that is identical or similar to AMD TrueAudio
   (Wikipedia, PlayStation 4 technical specifications, secondary).
-  Sony's PS4 open-source page lists FLAC, libvorbis, and Opus among its components (Sony, open-source pages; observed).
+  Sony's PS4 open-source page lists FLAC, libvorbis, and Opus among its components
+  (Sony, PS4 open-source page; observed).
 - Wikipedia describes the PS5's Tempest engine as supporting "hundreds of simultaneous sound sources,
   compared to 50 on the PlayStation 4" (Wikipedia, PlayStation 5, secondary).
   No registered source describes Tempest's design; that it is a modified GPU compute unit is from memory.
+- Wikipedia says both Xbox Series models support spatial audio,
+  and that "audio ray tracing" uses the graphics ray-tracing processors for it
+  (Wikipedia, Xbox Series X and Series S, secondary); no source read describes the Series audio hardware.
 - Microsoft's Hot Chips 25 slides show the Xbox One's audio as four DSP cores beside a shared memory,
   plus fixed-function blocks for sample-rate conversion, DMA, an Xbox Media Audio decoder, equalisation and compression,
   and filtering (Sell and O'Connor, Hot Chips 25, slide 7; observed).
-  No source names the DSP cores' architecture,
+  The slide gives the cores' roles (control, scalar, and two 128-bit SIMD vector cores) and cache sizes,
+  but no source read names their instruction set,
   so emulating Microsoft's audio interfaces at high level is the only path visible in the sources read (inference).
 - On the Switch, a game either plays buffers through an audio output service at 48 kHz or uses the audio renderer,
   which takes the game's state updates and generates command lists for the audio DSP
@@ -460,8 +457,7 @@ This note is not legal advice.
   (SwitchBrew, Audio services, "hwopus"), so a host libopus can be expected to give matching output (inference).
 - Low-level emulation of the Switch audio DSP would need Nintendo's DSP firmware (inference),
   which SwitchBrew says was overhauled on the Switch 2 to run Nintendo's own kernel
-  (SwitchBrew, Audio services, "Notes");
-  the project does not obtain firmware (`R0-02`, "Firmware, keys, and game copies").
+  (SwitchBrew, Audio services, "Notes"); the project does not obtain firmware (ADR 0001, "Context").
 
 ### Operating systems, services, and security
 
@@ -494,7 +490,7 @@ This note is not legal advice.
 #### PlayStation 4 and 5
 
 - The PS4's Orbis OS is based on FreeBSD 9; Sony's open-source page lists a FreeBSD kernel among PS4 components
-  (Wikipedia, PlayStation 4 system software, secondary; Sony, open-source pages; observed).
+  (Wikipedia, PlayStation 4 system software, secondary; Sony, PS4 open-source page; observed).
   psdevwiki says PS4 system calls follow FreeBSD numbering with some disabled and Sony's own calls added from 99 and
   after FreeBSD 9.1's last, 531, and that "the last custom Sony syscall ID is 677 (as of FW 6.51)"
   (psdevwiki PS4, Syscalls).
@@ -538,7 +534,7 @@ This note is not legal advice.
   and permitted services, with a signed part (SwitchBrew, NPDM).
   Executables are segments with hashes, optionally compressed
   (SwitchBrew, NSO0),
-  inside containers that SwitchBrew says are "encrypted" except for an optional logo section,
+  inside containers that SwitchBrew says are "encrypted", the only known exception being an optional logo section,
   with a key generation that rises with system versions (SwitchBrew, NCA).
   A newer game needs keys from a newer system version (inference); `R0-02`,
   "Anti-circumvention law in the United States", records that every § 1201 complaint, judgment,
@@ -546,14 +542,14 @@ This note is not legal advice.
 - A secure monitor in Arm TrustZone offers cryptographic functions; user-mode processes reach it through a kernel call
   (SwitchBrew, Secure Monitor).
   An HLE answers the services above it and never models TrustZone (inference).
-- Switch 2 system versions ran from 19.0.0 before launch to 23.5.0 of 10 November 2026
-  (SwitchBrew, Switch 2: System Versions; as of 2026-11-20),
+- Switch 2 system versions ran from 19.0.0 before launch to 23.5.0 of 10 November 2026,
+  with 16 dated releases from June 2025
+  (SwitchBrew, Switch 2: System Versions, counted; as of 2026-11-20),
   so an HLE of a system on sale targets an interface that changes about monthly (inference).
-- In Switch 2 compatibility mode, three modules are mapped into a Switch game and override selected SDK functions,
-  with per-game patches; SwitchBrew writes
-  that "Backwards-compatibility is achieved by (ab)using dynamic linking to selectively hook API functions"
+- In Switch 2 compatibility mode, three modules mapped into a Switch game override selected SDK functions,
+  with per-game patches, while "most sdk codebin symbols remain unchanged and execute their original code"
   (SwitchBrew, Switch 2: Compatibility Mode, "Hooking").
-  The maker's own compatibility is high-level emulation at the library boundary plus per-game fixes (inference).
+  The maker's compatibility is a hybrid: hooks at the library boundary over its own system software (inference).
 
 #### Xbox One and Series
 
@@ -577,21 +573,24 @@ This note is not legal advice.
 - SwitchBrew lists kernel calls that arbitrate a lock at a guest address and wait on or signal a process-wide key,
   and from 4.0.0 a general wait-on-address
   (SwitchBrew, SVC); that these serve as mutexes and condition variables is inference from their names.
-  CPU and GPU synchronise through syncpoints, counters a program can read, increment, and wait on
-  (SwitchBrew, NV services).
+  The GPU driver service offers calls to read, increment, and wait on a syncpoint,
+  and a GPU submission returns a fence for others to wait on
+  (SwitchBrew, NV services); that CPU and GPU synchronise through these is inference.
   An HLE must keep these semantics, including timeouts and cancellation (inference).
 - The PS3's game kernel offers threads, mutexes, lightweight mutexes, condition variables, reader-writer locks,
   semaphores, event flags, and event queues
-  (psdevwiki PS3, LV2 Functions and Syscalls, group names);
+  (psdevwiki PS3, LV2 Functions and Syscalls, group and call names);
   the PS4 adds Sony event flags and semaphores to FreeBSD's calls (psdevwiki PS4, Syscalls).
 - The Switch's tick counter runs at 19.2 MHz and is read directly by games;
   on the Switch 2 the compatibility layer "Returns 31250000 instead of 19200000" to Switch games
   (SwitchBrew, SVC; Switch 2: Compatibility Mode).
   Because the guest reads it without a kernel call,
   the emulator must keep it consistent with guest progress (inference).
-- The Switch's performance service sets clock configurations: the CPU at 1020 MHz,
-  or 1785 MHz in boost configurations from 7.0.0 that drop the GPU to 76.8 MHz; the GPU otherwise from 230.4 to 768 MHz,
-  with two configurations available only when docked (SwitchBrew, PPC services).
+- The Switch's performance service sets clock configurations: the CPU at 1020 MHz
+  (1224 MHz in configurations for development units only),
+  or 1785 MHz in boost configurations from 7.0.0 that drop the GPU to 76.8 MHz,
+  which a power-saving mode from 7.0.0 also does at 1020 MHz; the others run the GPU from 230.4 to 768 MHz,
+  two of them only when docked (SwitchBrew, PPC services).
   Games ask for the operation mode (handheld or docked) and the performance mode,
   and can be notified when either changes (SwitchBrew, Applet Manager services).
   An emulator chooses the mode it reports, and a change must arrive as that notification (inference).
@@ -599,16 +598,13 @@ This note is not legal advice.
   for two of them SwitchBrew writes "Probably prevents a race condition that only manifests on Switch 2"
   (SwitchBrew, Switch 2: Compatibility Mode, "nnCompatThin").
   Running faster than the original exposes timing bugs, which an emulator on a fast host also meets (inference).
-- With a fixed refresh rate a late frame is held (judder) or shown part-drawn (tearing);
-  variable refresh lets the display follow the frame rate (Wikipedia, Variable refresh rate, secondary).
-  The Switch 2's screen runs up to 120 Hz with variable refresh
+- The Switch 2's screen runs up to 120 Hz with variable refresh
   (Wikipedia, Nintendo Switch 2, secondary; as of 2026-11-20),
   and the PS5 added variable refresh at 1440p in system software 7.00 of 8 March 2023
   (Wikipedia, PlayStation 5, secondary), so an emulator must not assume a fixed 60 Hz (inference).
-- On the host, Vulkan's FIFO present mode waits for vertical blanking and "is the only value of presentMode
-  that is required to be supported"; other modes replace, tear, or drop frames (Khronos, VkPresentModeKHR).
-  A guest that waits on its own vertical-sync event
-  (SwitchBrew, VI services) adds that latency to the host's (inference).
+- Vulkan requires only its FIFO present mode, which waits for vertical blanking
+  (Khronos, VkPresentModeKHR);
+  a guest waiting on its own vertical-sync event (SwitchBrew, VI services) adds that latency to the host's (inference).
 - Attached to the console, a Joy-Con is asked for its state every 15 ms
   (dekuNukem, README);
   over Bluetooth the standard full report is pushed at 60 Hz, or 120 Hz for the Pro Controller
@@ -616,13 +612,13 @@ This note is not legal advice.
   at a 15 ms push each report carries three motion samples 5 ms apart (dekuNukem, IMU notes).
   The game-facing input service writes ring buffers in a shared memory block of `0x40000` bytes,
   each entry with a sampling number (SwitchBrew, HID services).
-  A host gyroscope sampled at another rate must be resampled to that pattern
-  for motion aiming to feel the same (inference).
+  A host gyroscope must be resampled to that pattern (inference).
 - Each trigger of the Xbox Wireless Controller has its own rumble motor
   (Wikipedia, Xbox Wireless Controller, secondary).
-  Microsoft publishes its USB protocol, revision 1.0 of 16 September 2024,
-  under a notice that allows copies made to implement it and grants no patent licence itself,
-  pointing instead to Microsoft's patent promises (Microsoft, MS-GIPUSB, notice; its technical content was not read).
+  Microsoft publishes a USB protocol for game controllers, the Gaming Input Protocol USB extension,
+  revision 1.0 of 16 September 2024 (that it is the Xbox controllers' protocol is from memory),
+  under a notice that allows copies made to implement it and grants no patent licence itself
+  (Microsoft, MS-GIPUSB, notice; its technical content was not read).
 
 ### Online services
 
@@ -631,27 +627,24 @@ This note is not legal advice.
   Switch games also receive server-delivered content through a background delivery cache (SwitchBrew, BCAT services).
   Offline emulation loses multiplayer, cloud saves, and delivered content (inference).
 - A third-party client library warns that "Nintendo bans Switch devices that show suspicious behavior"
-  (NintendoClients README, commit `d0965c88`).
-  Wikipedia, citing Engadget, reports that Nintendo attaches a unique identifier to every Switch
-  and Switch 2 game card to block systems that appear to use duplicated cards,
-  and that users were banned from its online service (Wikipedia, Nintendo Switch 2, secondary).
+  (NintendoClients README, commit `d0965c88`);
+  Wikipedia, citing Engadget, reports unique identifiers on Switch and Switch 2 game cards against duplicated cards,
+  and bans from the online service (Wikipedia, Nintendo Switch 2, secondary).
   An emulator that connects to official servers exposes users to those measures (inference).
 
 ### Tests and sources
 
 - The only test suite found for these systems is RPCS3's PS3 repository,
   which compares output with expected output "preferably from a real PS3"
-  (RPCS3 ps3autotests README, prose of a walled source; not re-checked).
+  (RPCS3 ps3autotests README, prose of a walled source).
   None was found for the PS4, PS5, Xbox One, Series, Switch, or Switch 2, in the register or `R0-05` (research log).
-- The maker material found is Sony's PS3 Linux documents
-  (GFDL 1.2),
-  Hot Chips slides from IBM, Toshiba, and Microsoft, Arm's manuals, AMD's Family 16h guide, a Sony patent,
-  and Microsoft's controller specification.
+- Of the maker material in the Sources, Sony's PS3 Linux documents are under GFDL 1.2;
   IBM's slides say that nothing in them operates "as an express or implied license"
   (Gschwind et al., slide 31),
-  and Arm's manuals carry a notice read at first as forbidding reproduction
-  (Arm, Cortex-A57 TRM, notice; not re-checked); facts from them are stated in this note's own words.
-- No maker document was found for the PS4, PS5, or Xbox GPUs beyond Microsoft's slides, nor for the Tegra T239.
+  and Arm's Cortex-A57 manual carries a notice that forbids reproduction without Arm's written permission
+  (Arm, Cortex-A57 TRM, proprietary notice); facts from them are stated in this note's own words.
+- The register and `R0-05` list no maker document for the PS4, PS5, or Xbox GPUs beyond Microsoft's slides,
+  nor for the Tegra T239.
   AMD's instruction-set manuals for these GPUs now sit on unregistered hosts,
   and Nvidia's GPU documentation repository is unregistered
   (research log); both are proposed for the register in the pull request.
@@ -673,11 +666,11 @@ Costs and gains are the author's inference unless a source is named.
   and must model hypervisors and security processors.
 - **Gains:** HLE needs no maker code and skips the boot chain and security processors;
   low-level emulation reproduces the maker's behaviour, including its bugs.
-- **Used by:** the Switch 2's own compatibility for Switch games
-  (library hooks);
+- **Used by:** the Switch 2 for Switch games, as a hybrid (inference): its layer overrides selected SDK functions,
+  mostly graphics, and the rest of the game's SDK code runs on Nintendo's system software
+  (SwitchBrew, Switch 2: Compatibility Mode, "Hooking");
   RPCS3 requires Sony's published PS3 firmware
-  (Wikipedia, RPCS3, secondary),
-  though what it emulates was not found; shadPS4 loads some system modules from a dump (README; not re-checked).
+  (Wikipedia, RPCS3, secondary); shadPS4 loads some system modules from a dump (README; not re-checked).
 
 ### Where the high-level boundary sits
 
@@ -700,7 +693,8 @@ Costs and gains are the author's inference unless a source is named.
   translation costs speed and needs memory-ordering work from x86 guests on Arm hosts.
 - **Gains:** direct execution runs faster than translation; translation runs anywhere.
 - **Used by:** shadPS4 (direct, by its README); Ryujinx on Apple silicon
-  (host virtual machine; Wikipedia, Ryujinx, secondary); FEX and Box64 for x86 programs on Arm hosts.
+  (host virtual machine; Wikipedia, Ryujinx, secondary);
+  FEX and Box64 for x86 programs on Arm hosts (FEX README; Box64 README).
 
 ### The Cell's SPUs
 
@@ -763,19 +757,21 @@ Costs and gains are the author's inference unless a source is named.
 
 ## Implications for Rustalgia
 
-- The operating system is the main interface for every system here, so the family surveys `R1-14`, `R1-21`,
+- The operating system is the main interface for every system here (inference), so the family surveys `R1-14`, `R1-21`,
   and `R1-23` need to record which boundary each studied emulator chose and how it handles system-software versions.
   This feeds an ADR on high-level against low-level emulation of system software, and `R2-12`.
 - The PS3, PS4, PS5, Switch, and Switch 2 have no open-tier emulator, and the Xbox One and Series have no hub
-  (register; `R0-05`); the surveys will rest on prose and community wikis.
+  (register; `R0-05`);
+  the surveys will rest on prose, community wikis, the few maker documents, and reader sessions
+  for walled emulators (inference).
   This bears on `R6-01`, which weighs each system's risks.
 - Guest architecture decides which host runs a system fastest: x86-64 hosts for the Sony and Microsoft systems,
   Arm64 hosts for Nintendo's, and translation everywhere for the PS3 (inference).
   This feeds `R2-01`, `R3-01`, `R4-08`, and the host notes in phase 3.
-- Shader translation and caching are central GPU work for every system here.
+- Shader translation and caching are central GPU work for every system here (inference).
   This feeds `R2-05` and `R4-05`, and a quality target on first-run stutter in `R6-02`.
-- Switch games are encrypted, and the Switch 2's system software changed about monthly
-  (as of 2026-11-20); encryption on the other systems is from memory.
+- Switch games are encrypted, and the Switch 2's system software changes about monthly
+  (inference, as of 2026-11-20); encryption on the other systems is from memory.
   The legal record in `R0-02` and the pace of change both feed `R6-01`.
 - Unified memory near host size feeds the host requirements in phase 3 and `R6-02` (inference).
 
@@ -812,7 +808,7 @@ because the live site refused automated requests (research log); each capture's 
 Maker documents and talks:
 
 - Sony, PS3 Linux Distributor's Starter Kit: Linux Kernel Overview (revision 1.7), Application Programming Environment
-  (revision 1.1), and Cell Programming Primer (revision 1.6) chapters 1 to 4, GFDL 1.2; and G.
+  (revision 1.6), and Cell Programming Primer (revision 1.6) chapters 1 to 4, GFDL 1.2; and G.
   Levand's PS3-Linux README of 6 January 2024:
   `https://kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/LinuxKernelOverview.html` and sibling pages,
   `https://kernel.org/pub/linux/kernel/people/geoff/cell/README`.
@@ -821,16 +817,16 @@ Maker documents and talks:
 - R. Sakai et al., "Programming and Performance Evaluation of the Cell Processor", Hot Chips 17:
   `https://old.hotchips.org/wp-content/uploads/hc_archives/hc17/2_Mon/HC17.S1/HC17.S1T4.pdf`.
 - J. Sell and P.
-  O'Connor, "Xbox One Main SoC and Xbox One Kinect", Hot Chips 25 (2013), slide images:
+  O'Connor, "Xbox One Main SoC and Xbox One Kinect", Hot Chips 25 (2013), slides, mostly images:
   `https://old.hotchips.org/wp-content/uploads/hc_archives/hc25/HC25.10-SoC1-epub/HC25.26.121-fixed-%20XB1%2020130826gnn.pdf`.
-- Arm, Cortex-A57 MPCore Technical Reference Manual, DDI 0488 issue H (2016):
-  `https://documentation-service.arm.com/documentation/ddi0488/h/`.
+- Arm, Cortex-A57 MPCore Processor Technical Reference Manual, DDI 0488 issue H
+  (r1p3, 1 February 2016): `https://documentation-service.arm.com/documentation/ddi0488/h/`.
 - Arm, Cortex-A78C Core Software Optimization Guide, issue 1.0
   (2 November 2020): `https://documentation-service.arm.com/static/5fa2bd1eb1a7c5445f2906fd`.
 - AMD, BIOS and Kernel Developer's Guide for Family 16h Models 00h-0Fh, 48751 revision 3.03:
   `https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/48751_16h_bkdg.pdf`.
-- US 10,275,239 B2, "Deriving application-specific operating parameters for backwards compatib[i]lity"
-  (granted 30 April 2019),
+- US 10,275,239 B2, on deriving application-specific operating parameters for backwards compatibility
+  (granted 30 April 2019; title paraphrased),
   patent office image: `https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10275239`.
 - Sony, "Open Source Software Used in PlayStation(R)4 (US)": `https://www.playstation.com/en-us/oss/ps4/`.
 - Microsoft, "[MS-GIPUSB]: Gaming Input Protocol (GIP) Universal Serial Bus (USB) Extension", revision 1.0
@@ -870,24 +866,26 @@ Open-source documentation and specifications:
   (`driver-core.rst`, `ring-buffer.rst`, `gc/index.rst`) at commit `5f22fb20`:
   `https://raw.githubusercontent.com/torvalds/linux/5f22fb20497f4983094131f00a734362300d22d2/Documentation/gpu/amdgpu/driver-core.rst`
   and sibling files; and `Documentation/filesystems/spufs/spufs.rst`, `arch/powerpc/platforms/ps3/Kconfig`, and
-  `sound/ppc/snd_ps3.c` (header and capabilities only) from the master branch:
-  `https://raw.githubusercontent.com/torvalds/linux/master/Documentation/filesystems/spufs/spufs.rst` and sibling files.
-- Mesa documentation, RADV and NVK ("Hardware docs", "External Hardware Documentation and Resources"):
+  `sound/ppc/snd_ps3.c` (header and capabilities only), read from the master branch, whose head was `5f22fb20`; none of
+  the three has changed since 2025:
+  `https://raw.githubusercontent.com/torvalds/linux/5f22fb20497f4983094131f00a734362300d22d2/sound/ppc/snd_ps3.c` and
+  sibling files.
+- Mesa documentation, RADV, and NVK's pages "Hardware docs" and "External Hardware Documentation and Resources":
   `https://docs.mesa3d.org/drivers/radv.html` and sibling pages.
 - Khronos, Vulkan specification chapter "Pipelines",
   VK_EXT_graphics_pipeline_library and VK_EXT_shader_object proposals, and VkPresentModeKHR reference page:
   `https://docs.vulkan.org/spec/latest/chapters/pipelines.html` and sibling pages.
 - Khronos, SPIR-V Specification, version 1.6 revision 8:
   `https://registry.khronos.org/SPIR-V/specs/unified1/SPIRV.html`.
-- FEX README and Box64 README, from the main branch; the commit was not recorded:
-  `https://raw.githubusercontent.com/FEX-Emu/FEX/main/Readme.md`,
-  `https://raw.githubusercontent.com/ptitSeb/box64/main/README.md`.
+- FEX README at commit `20059335` and Box64 README at commit `07e9e5c3`, the latest to change each file:
+  `https://raw.githubusercontent.com/FEX-Emu/FEX/2005933518d51c15c7ff115522cf3d577a9f1a91/Readme.md`,
+  `https://raw.githubusercontent.com/ptitSeb/box64/07e9e5c34420b3116913b44e3f38a5c8f6f4e546/README.md`.
 
 Prose of walled emulators:
 
 - shadPS4 README, from the main branch, whose latest commit the research agent recorded as `e82c3350`:
   `https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/README.md`.
-- RPCS3 ps3autotests README, from the master branch:
+- RPCS3 ps3autotests README, from the master branch; the guard blocks the commit lookup, so none is given:
   `https://raw.githubusercontent.com/RPCS3/ps3autotests/master/README.md`.
 
 Wikipedia, raw wikitext (tertiary; revision numbers in brackets):
@@ -899,6 +897,6 @@ Wikipedia, raw wikitext (tertiary; revision numbers in brackets):
   Xbox system software [1386323584]; Xbox Wireless Controller [1385359035]; Nintendo Switch [1384604421];
   Nintendo Switch 2 [1386314413]; Nintendo Switch system software [1381894756]; Nintendo Switch Online [1384839693];
   Zen 2 [1373859411]; Direct3D [1385070978]; Graphics Core Next [1384947614]; RDNA (microarchitecture) [1384343765];
-  Micro stuttering [1385431095]; Variable refresh rate [1362871359]; RPCS3 [1384344878]; ShadPS4 [1383492990];
-  Ryujinx [1376535915]; Yuzu (emulator) [1380070546]:
-  `https://en.wikipedia.org/w/index.php?title=Cell_(processor)&action=raw` and sibling pages.
+  Micro stuttering [1385431095]; RPCS3 [1384344878]; ShadPS4 [1383492990]; Ryujinx [1376535915];
+  Yuzu (emulator) [1380070546]: `https://en.wikipedia.org/w/index.php?title=Cell_(processor)&action=raw`
+  and sibling pages.
