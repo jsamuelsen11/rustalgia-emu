@@ -146,25 +146,27 @@ If you found none, say what you looked for.
 **Purpose:** turn the findings into things we can act on.
 
 **Write:** one bullet for each implication, each tied to a finding above.
-Phrase it as an option or a question for a later decision, not as a decision.
+Where a choice follows, recommend one option and say why; the owner decides.
 
 **Leave out:** decisions.
-The research maps options; ADRs choose between them.
+The note recommends; the owner decides, and an ADR records a decision that is hard to reverse.
 
 **Length:** three to six bullets.
 
 **Example:**
 
-> - A core with no global state is an option worth carrying into the architecture phase.
+> - A core with no global state is recommended for the architecture phase, because save states and run-ahead need it.
 > - Save-state versioning should be considered from the first format, not added later.
 
 ## Open questions
 
 **Purpose:** list what this note could not answer.
 
-**Write:** each question, and the roadmap item or kind of work that would answer it.
+**Write:** each question that no source, test, or calculation available now can answer,
+and the roadmap item or kind of work that would answer it.
 
-**Leave out:** questions already answered elsewhere in the research.
+**Leave out:** questions more research would answer now (answer them), process questions
+(settle them), and design choices (recommend in the note).
 
 **Length:** one line for each question.
 Write "None" if there are none.

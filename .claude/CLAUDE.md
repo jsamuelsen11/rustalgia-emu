@@ -47,8 +47,12 @@ Read `README.md` and `docs/README.md` before writing anything.
 
 - The research roadmap is `docs/roadmap/research.md`.
   Each item produces one note, named for the item.
-- Research maps options.
-  It does not choose between systems, platforms, or techniques.
+- Research keeps every system, platform, and technique in scope, and solves questions as they come up.
+  - A gap in the evidence is closed by finding the answer: another source, a test, or a calculation.
+  - A process question, such as a tier, a placement, or a citation style, is settled and applied,
+    and listed in the pull request.
+  - A design choice between systems, platforms, or techniques gets a recommendation with its reasons; the owner decides.
+  - "Open questions" holds only what cannot be answered now, each with the work that would answer it.
 - State how each claim was checked, and mark a claim that comes from memory.
 - Never read leaked source code or documents.
   Never obtain, use, or store copyrighted games, firmware, or keys.

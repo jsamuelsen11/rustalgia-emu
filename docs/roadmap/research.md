@@ -12,9 +12,9 @@ Learn what it takes to build Rustalgia before designing any of it.
 The research starts from the assumption that we know nothing.
 It ends when we can write requirements and architecture decisions without guessing.
 
-The research maps options.
-It does not choose between them.
-Every system, platform, and technique stays an option until the synthesis phase.
+The research maps options and solves the questions it meets as it goes.
+Where a choice between options is a design decision, a note recommends one with its reasons, and the owner decides.
+Every system, platform, and technique stays in scope until the owner rules it out.
 
 ## Scope
 
@@ -294,8 +294,8 @@ Each depends on every item in phases 1 to 5.
 
 ## Out of scope
 
-- Choosing systems, platforms, libraries, or an architecture.
-  The research presents options; decisions follow it.
+- Deciding systems, platforms, libraries, or an architecture.
+  The research recommends; the owner decides, and ADRs record the decisions.
 - Writing requirements or ADRs.
   Phase 6 produces candidates only.
 - Emulator code beyond the throwaway spikes.

@@ -9,7 +9,7 @@ date: 2026-11-17
 
 This file is the template for a topic study.
 A topic study answers one research question about hardware, a technique, a platform, or policy.
-It sets out the options and their trade-offs without choosing between them.
+It sets out the options and their trade-offs, and recommends one where a design choice remains.
 The examples below are illustrative and are not findings.
 
 To use this template:
@@ -99,8 +99,12 @@ Those go in the next two sections.
 **Write:** one subsection for each option, with the option's name as its heading.
 Give each the same parts: what it is, what it costs, what it gains, and who uses it.
 
-**Leave out:** a recommendation.
-If the evidence favours one option, say what the evidence is and stop there.
+**Then:** end the section with a "Recommendation" subsection: the option the evidence favours,
+in one to three sentences, and why.
+Write "None needed" when the options are not a choice Rustalgia has to make.
+
+**Leave out:** a decision.
+The owner decides; the pull request lists each recommendation.
 
 **Length:** four short bullets for each option.
 Two options is the minimum.
@@ -129,7 +133,7 @@ Two options is the minimum.
 Name the decision it feeds, and the requirement or ADR it is likely to become.
 
 **Leave out:** decisions.
-The research maps options; ADRs choose between them.
+The note recommends; the owner decides, and an ADR records a decision that is hard to reverse.
 
 **Length:** three to six bullets.
 
@@ -141,11 +145,13 @@ The research maps options; ADRs choose between them.
 
 ## Open questions
 
-**Purpose:** list what this note could not answer.
+**Purpose:** list what this note could not answer, after trying.
 
-**Write:** each question, and the roadmap item or kind of work that would answer it.
+**Write:** each question that no source, test, or calculation available now can answer,
+and the roadmap item or kind of work that would answer it.
 
-**Leave out:** questions already answered elsewhere in the research.
+**Leave out:** questions that more research for this note would answer (answer them instead), process questions
+(settle them in the note), and design choices (recommend in "Options and trade-offs").
 
 **Length:** one line for each question.
 Write "None" if there are none.
@@ -159,7 +165,8 @@ Write "None" if there are none.
 
 **Purpose:** let a reader check every claim.
 
-**Write:** a list of every source used, each with its title, its address, and the date it was read.
+**Write:** a list of every source used, each with its title as a link to its address, and the date it was read.
+An address that must not be opened (closed, tainted, or holding keys or firmware) stays in a code span.
 
 **Leave out:** sources you did not use, and any link to copyrighted games, firmware, or keys.
 
@@ -167,4 +174,4 @@ Write "None" if there are none.
 
 **Example:**
 
-> - Example hardware documentation, "Display timing", `https://example.org/hardware/display`, read 2026-11-17.
+> - Example hardware documentation, ["Display timing"](https://example.org/hardware/display), read 2026-11-17.

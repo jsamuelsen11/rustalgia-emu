@@ -2,7 +2,8 @@
 
 ## Purpose
 
-Research notes record what the project has learned and how each claim was checked.
+Research notes record what the project has learned, how each claim was checked,
+and what the evidence recommends where a choice remains.
 This guide holds the conventions that every research note follows, whatever its type.
 [R0-04](topics/R0-04-glossary-and-conventions.md) sets out the options behind them; nothing here is legal advice.
 
@@ -19,8 +20,10 @@ Terms of art are defined in the [glossary](../glossary/terms.md).
 
 ## Conventions
 
-These conventions apply to notes whose first pull request is opened after this guide is merged.
-Earlier notes are not rewritten to match; whether an approved note is corrected in place is the owner's decision.
+These conventions apply to every note.
+"Shape and links" and "Questions and recommendations" were added on 2026-11-20 and applied to every note then written;
+the other sections bind notes whose first pull request opened after R0-04,
+and the owner decides whether an earlier note is corrected in place.
 The limits in words and bytes are project rules that a reviewer can check; no source read supplies them.
 
 ### Sources
@@ -33,8 +36,9 @@ The limits in words and bytes are project rules that a reviewer can check; no so
   the opinion and not the syllabus or headnote, the licence and not its FAQ, the statute and not a summary of it.
 - For law and policy, the finding states the authority: the court and the stage of the case, a holding or a remark,
   a project's rule or one person's comment, and the date or version of a policy.
-- The Sources section lists every source used, each with its title, its address in a code span,
-  and the date it was read; a spike report, which has no Sources section, lists them under Method.
+- The Sources section lists every source used, each with its title as a link to its address, and the date it was read;
+  a spike report, which has no Sources section, lists them under Method.
+  An address goes in a code span instead of a link only where a reader must not open it, as "Links" below says.
   One sentence may give the date for the whole list.
 - An entry also gives what fixes the version, where the source shows it: a commit or release,
   a wiki revision or "last edited" date, an edition, the version of a paper,
@@ -43,6 +47,32 @@ The limits in words and bytes are project rules that a reviewer can check; no so
 - The project does not ask a web archive to capture a page.
   An existing capture may be cited when the live page is gone, with its full time stamp.
 - English judgments are fetched from the National Archives one at a time, as each is needed.
+
+### Shape and links
+
+- Write in good plain style, and break dense blocks of text into paragraphs that each group related points.
+  The Summary is written that way too: the question, the answer, and the points that matter most to Rustalgia,
+  each in its own paragraph.
+- Every reference to a document in this repository is a relative link: a note, an ADR, the roadmap, the register,
+  a guide, or a section of one.
+  A roadmap item is linked to its note once the note exists, and otherwise to the roadmap.
+- A source named in the text is linked at its first mention in each section, to the same address as its Sources entry.
+- An address that a reader must not open stays in a code span and is never a link: a closed or tainted source,
+  a page that holds keys or firmware, and a download of a game or a kit.
+  Where the text must name one, it says why there is no link.
+- A host that refuses automated requests is listed, with the reason, in the link checker's configuration,
+  so that its links are kept but not fetched by CI.
+
+### Questions and recommendations
+
+- A question met during research is answered before the note is written, where another source, a test,
+  or a calculation can answer it.
+- A question about process, such as a tier, a placement, or a citation style, is settled in the note,
+  and the pull request lists each such call.
+- Where the evidence leaves a design choice between options,
+  "Options and trade-offs" ends with a recommendation and its reasons, and the pull request lists it for the owner.
+  The owner decides; an ADR records a decision that is hard to reverse.
+- "Open questions" lists only what cannot be answered now, each with the roadmap item or the work that would answer it.
 
 ### Claim status
 
