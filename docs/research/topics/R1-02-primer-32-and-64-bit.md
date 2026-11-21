@@ -20,10 +20,11 @@ The Nintendo 64's choice between low-level
 and high-level emulation of its signal processor shapes the whole core (inference).
 The note recommends the low level as the baseline, with replacement of known microcode only as a later speed path.
 
-For the PlayStation 1, no clean document was found for many details,
-but the published results of the ps1-tests suite now answer several of them: the GPU's dither pattern,
-its fill rule for the triangles tested, drawing time by kind of primitive, the length of a frame, disc command timings,
-and 1,150 recorded geometry-engine cases to check an implementation against.
+For the PlayStation 1, no clean document was found for many details, but the published results of the
+[ps1-tests suite](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb), whose origin
+is not stated but which read as console results, answer several of them, at least in part: the GPU's dither pattern, its
+fill rule for the shapes tested, drawing time by kind of primitive, the length of a frame, disc command timings, and
+1,150 recorded geometry-engine cases to check an implementation against.
 The note recommends hardware tests as the oracle for the rest.
 
 This note is not legal advice.
@@ -45,14 +46,15 @@ This note is not legal advice.
   [pull request #22](https://github.com/jsamuelsen11/rustalgia-emu/pull/22)).
   The 3DO, Jaguar, PC-FX, and Virtual Boy appear where they differ in kind.
 - Left to other items: every system of the era
-  and its hardware in one row each ([`R1-06`](R1-06-catalogue-32-and-64-bit.md)),
-  which also takes the Jaguar's custom processors,
-  since no family survey covers the Jaguar; the Dreamcast ([`R1-03`](R1-03-primer-sixth-generation.md));
-  the law on firmware, keys, and lock-outs ([`R0-02`](R0-02-legal-baseline.md)); techniques in depth
+  and its hardware in one row each ([`R1-06`](R1-06-catalogue-32-and-64-bit.md));
+  the Jaguar's custom processors in depth
+  ([`R1-25`](../../roadmap/research.md#system-family-surveys), which takes the systems no other survey names);
+  the Dreamcast ([`R1-03`](R1-03-primer-sixth-generation.md)); the law on firmware, keys,
+  and lock-outs ([`R0-02`](R0-02-legal-baseline.md)); techniques in depth
   ([`R2-01` to `R2-15`](../../roadmap/research.md#phase-2-cross-cutting-engineering));
   the emulators themselves ([`R1-30`](../../roadmap/research.md#emulator-studies) onward);
-  and the instruction sets of the Saturn control unit's DSP
-  and the SCSP's DSP ([`R1-22`](../../roadmap/research.md#system-family-surveys)):
+  and the instruction sets of the Saturn control unit's DSP and the SCSP's DSP,
+  and the SCSP's envelope rates ([`R1-22`](../../roadmap/research.md#system-family-surveys)):
   a primer records that they exist and are programmable.
 - Researched on 2026-11-20.
 - How claims were checked: research agents fetched every source on 2026-11-20 as raw text
@@ -63,10 +65,11 @@ This note is not legal advice.
   and a fix pass checked each finding against the raw source before applying it;
   the claims they could not check are listed in the pull request.
 - The open questions of those passes were then worked down on 2026-11-20.
-  The ps1-tests suite's sources and result logs were read at its commit, and figures were calculated from them,
-  including from one test's frame-buffer image with a script that uses only Python's standard library
-  (tested locally, Python 3.14.6).
-  Those additions have had no independent verification pass.
+  The [ps1-tests suite](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb)'s
+  sources and result logs were read at its commit, and figures were calculated from them, including from two tests'
+  frame-buffer images with a script that uses only Python's standard library (tested locally, Python 3.14.6).
+  A third independent pass, of two verifiers, fetched the sources again and checked those additions,
+  and their links and shape; a fix pass checked each of its findings against the raw source before applying it.
 - Markers are those of the [research guide](../README.md#claim-status);
   "(lead)" marks a source the [register](../../../.claude/hooks/source-register.txt) labels a lead.
   Wikipedia is a tertiary source, named wherever a fact rests on it.
@@ -282,7 +285,8 @@ This note is not legal advice.
   started by a register write and polled by the CPU
   ([3DO Development Repo wiki, `hardware/opera/madam/matrix_engine`](https://3dodev.com/documentation/hardware/opera/madam/matrix_engine);
   [Wikipedia, "3DO"](https://en.wikipedia.org/wiki/3DO_Interactive_Multiplayer)).
-  The wiki states no origin; its other pages index 3DO's closed documents.
+  The wiki states no origin on its [hardware hub](https://3dodev.com/documentation/hardware) or the pages cited;
+  its other pages index 3DO's closed documents.
 - The Virtual Boy's V810-family CPU has a 1 KiB instruction cache and no delay slot described (inference);
   a taken branch costs three cycles, and many timings are marked as needing research
   ([Sacred Tech Scroll](http://perfectkiosk.net/stsvb.html), "CPU - NVC/V810 Family Microprocessor").
@@ -326,7 +330,7 @@ This note is not legal advice.
   such as the 3D engine's polygon RAM and 256 KiB of firmware flash
   ([GBATEK](https://github.com/mgba-emu/gbatek/tree/64b5087aa45cd0187b8b239d77e54ee5eb2917d1),
   "DS Memory Maps" and "DS Memory Control - VRAM").
-  When the shared work RAM belongs wholly to one CPU,
+- When the DS's shared work RAM belongs wholly to one CPU,
   the ARM9 reads undefined data there and the ARM7 reads mirrors of its own work RAM
   (GBATEK, "DS Memory Control - WRAM").
   Each CPU therefore needs its own map and its own fallback for unmapped addresses (inference).
@@ -342,14 +346,16 @@ This note is not legal advice.
   The faithful result is a hang, not an open-bus value (inference).
 - On the PlayStation 1 a 1 KiB scratch pad sits at `0x1F800000`
   (older document: Walker, "The PSX Memory Map");
-  that it is the data cache configured as a scratchpad rests on Wikipedia, citing a closed Sony manual (tertiary).
+  that it is the data cache configured as a scratchpad rests on
+  [Wikipedia, "PlayStation technical specifications"](https://en.wikipedia.org/wiki/PlayStation_technical_specifications),
+  citing Sony's Net Yaroze user guide (tertiary).
 - Whether the PlayStation 1 core has a TLB is not settled.
   Walker describes a 64-entry TLB without saying how he checked it,
   and his bibliography names a processor family manual.
   Wikipedia's "PlayStation technical specifications" says the system coprocessor manages memory through virtual memory,
   under a "Citation needed" tag (tertiary).
-  The ps1-tests suite's `cpu/cop` test covers the coprocessor's enable bits and one undefined function,
-  not the TLB instructions
+  The ps1-tests suite's `cpu/cop` test covers the enable bits of coprocessors 0 to 3, their store instructions,
+  and an undefined function on coprocessors 0 and 2, not the TLB instructions
   ([ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
   `cpu/cop/main.cpp` and its log; observed).
 - Each Saturn SH-2 selects, by the top three address bits, cached access, cache-through access, a purge area,
@@ -358,8 +364,9 @@ This note is not legal advice.
   The two CPUs have no hardware cache coherency: shared data "should be read/written using cache-through addresses"
   (Yabause wiki, "SH-2CPU", "Caveats").
 - Saturn games have coherency bugs that the hardware typically hides,
-  "due to the effects of instruction fetches on the cache", and Mednafen keeps a per-game list of cache modes,
-  mainly because full cache emulation costs much more host time
+  "due to the effects of instruction fetches on the cache".
+  Mednafen keeps a per-game list of cache modes "to fix various logic and timing issues in games",
+  and does not turn full cache emulation on for every game mainly because of its host time
   ([Mednafen documentation, `ss.html`](https://mednafen.github.io/documentation/ss.html), "Cache Mode").
   On this system, cache emulation is a correctness question, not only a timing one (inference).
 - The DS ARM9's cache and tightly coupled memories sit off the system bus, so DMA cannot reach the latter,
@@ -408,7 +415,9 @@ This note is not legal advice.
   (GBATEK, "DS DMA Transfers").
   The DSi adds four more for each CPU, and their priority against the old ones is unknown
   (GBATEK, "DSi New DMA (NDMA)");
-  [DSiBrew's "NDMA" page](https://dsibrew.org/wiki/NDMA) (revision 3261, 2010-11-26) does not mention priority.
+  [DSiBrew's "NDMA" page](https://dsibrew.org/wiki/NDMA)
+  (revision 3261, 2010-11-26)
+  gives an arbitration bit for the new channels, fixed or round robin, but not their priority against the old ones.
 - The Nintendo 64's interfaces have their own DMA engines: the cartridge bus, the serial bus to the controller chip,
   the signal processor's memories, and audio and video fetches
   ([N64brew, "Reality Signal Processor/Interface"](https://n64brew.dev/wiki/Reality_Signal_Processor/Interface),
@@ -426,14 +435,23 @@ This note is not legal advice.
   the disc drive, the sound chip, an expansion port, and clearing the ordering table,
   and the graphics channel can follow a linked list
   (Walker, "DMA"; [Doomed, `system.txt`](https://hitmen.c02.at/files/docs/psx/system.txt), "DMA").
+- Hardware test (by inference from the suite): the ps1-tests suite's DMA tests each run one channel
+  ([ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
+  the logs of `dma/chopping`, `dma/otc-test`, `dma/chain-looping`, and `dma/dpcr`, and `dma/chopping/main.cpp`;
+  observed).
+  In `dma/chopping`, 8,192 bytes from the CPU to video RAM on channel 2 take 2,196 CPU clock cycles
+  when started at once, 22,819 in blocks of one word, falling to 2,471 in blocks of 128,
+  and 16,693 to 81,926 when chopped into one-word bursts, rising with the CPU's window (`dma/chopping/psx.log`).
+  In `dma/chain-looping`, a graphics linked list that points to itself never finishes and raises no interrupt,
+  and CPU work beside it takes 25,632 timer ticks instead of 16,040 (`dma/chain-looping/psx.log`).
+  No test runs two channels at once, so none settles the priority between them (inference).
 
 #### Save media
 
 - The Nintendo 64 cartridge offers serial EEPROM through the controller chip's channel,
   or SRAM or FlashRAM on the cartridge bus
-  ([N64brew, "PIF-NUS"](https://n64brew.dev/wiki/PIF-NUS),
-  ["Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol), ["Flash"](https://n64brew.dev/wiki/Flash),
-  and "Memory map").
+  ([N64brew, "Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol), ["Flash"](https://n64brew.dev/wiki/Flash),
+  and "Memory map"; and "PIF-NUS", closed and not linked, as "Media, protection, and firmware" explains).
   Its original header has no save-type field
   (a homebrew convention adds one),
   and "emulators normally work using a game database which matches games using checksum to find out which savetype
@@ -451,9 +469,18 @@ This note is not legal advice.
 - Older document: the PlayStation 1 memory card holds 128 KiB in 16 blocks of 8 KiB, the first a directory,
   and shares the serial protocol and pins with the controllers
   (Walker, "Memory Card Format" and "Controllers"; its bibliography credits others, methods unstated).
-  No clean source was found for the card's read and write commands;
-  Walker gives the shared bus timing and the byte that selects a card (`0x81`)
-  (searches of Walker, Doomed, and the ps1-tests README and file tree, which holds only `input/pad`, with no log).
+  Walker gives the shared bus timing and the byte that selects a card (`0x81`) (Walker, "Controllers").
+- Maker's patent: Sony's application, with 1994 priority, puts a microcomputer in each memory card,
+  with a serial interface on the console's data, clock, and control lines and a parallel one to its flash memory,
+  and has the CPU reach each card slot through a communication controller on the main bus
+  ([EP0810015A2](https://patents.google.com/patent/EP0810015A2/en), description).
+  It gives no command codes or timings.
+  A later patent by another maker, for a device that copies PlayStation 1 saves to a computer,
+  reads the card in blocks of 128 bytes in its example, but defines only its own commands to the computer
+  ([US 6,386,979](https://patents.google.com/patent/US6386979B1/en), description).
+- No clean source was found for the card's read and write commands
+  (searches of Walker, Doomed, the ps1-tests README and file tree, which holds only `input/pad`, with no log,
+  and the two patents above, found by web search).
 - The Saturn keeps 32 KiB of battery-backed RAM on odd bytes only,
   and its cartridge slot takes backup-RAM cartridges or RAM-expansion cartridges of 1 MiB or 4 MiB
   (MacDonald, "SH-2 Memory Map", lead; Yabause wiki,
@@ -509,8 +536,9 @@ This note is not legal advice.
   Together these give the console's characteristic texture warping and vertex jitter (inference).
 
 Hardware test (by inference from the suite):
-the ps1-tests suite's `gpu/triangle` test draws the same Gouraud-shaded triangle twice at the same horizontal positions,
-with dithering off in frame-buffer rows 0 to 239 and on in rows 240 to 479, and publishes the frame buffer as an image
+the ps1-tests suite's `gpu/triangle` test draws the same Gouraud-shaded triangle twice in the frame buffer's left 320
+columns, undithered in rows 16 to 222 and dithered in rows 256 to 462, and a third, larger triangle undithered to their
+right, and publishes the frame buffer as an image
 ([ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
 `gpu/triangle/main.c` and `gpu/triangle/vram.png`).
 The image's origin is not stated; its channels hold only multiples of 8,
@@ -531,25 +559,42 @@ so each 5-bit channel is stored shifted left by three (observed).
   | 2 | -3 | +1 | -4 | 0 |
   | 3 | +3 | -1 | +2 | -2 |
 
-- Fill rule: in the same image, three triangles
-  (the one above, its dithered copy, and one with vertices at (518, 472), (1018, 472), and (768, 39),
-  as the test's source computes them) cover, on every row, exactly the pixels from the left edge's exact position,
-  rounded up, to the last pixel before the right edge, from the top vertex's row to the row before the bottom edge
-  (856 rows checked, none differing; calculated from `gpu/triangle/vram.png` and `main.c`).
+- Fill rule, method: the same image holds three triangles, the one above, its dithered copy, and one with vertices at
+  (518, 472), (1018, 472), and (768, 39), as the test's source computes them.
+  Each was compared, row by row, with the span from the left edge's exact position, rounded up,
+  to the last pixel before the right edge, from the top vertex's row to the row before the bottom edge.
+- Fill rule, result: all 847 rows in those ranges match, and no pixel lies outside them;
+  the top vertex's row holds no pixel, as its span is empty
+  (calculated from `gpu/triangle/vram.png` and `main.c`; tested locally, Python 3.14.6).
   So the left edge is drawn and the right and bottom edges are not,
   which matches Doomed's four-point example (inference).
-  The triangles tested have a horizontal bottom edge and mirror-image sides;
-  a horizontal top edge and other slopes are untested.
-- Drawing time: the suite's `gpu/bandwidth` test runs each operation 400 times over a 320 by 240 area
+  These triangles have a horizontal bottom edge and mirror-image sides.
+- Fill rule, other shapes: the suite's `gpu/quad` test tiles the 320 by 240 screen with five semi-transparent flat
+  quadrilaterals, which share slanted edges and meet the screen's edges, and adds 16 squares of 16 by 16 pixels side by
+  side (`gpu/quad/main.c` and `gpu/quad/vram.png`).
+  In its image every pixel of the screen holds a colour blended once: none is left white and none is blended twice,
+  each square covers exactly 256 pixels, and column 320 and row 240 are not drawn
+  (calculated from `gpu/quad/vram.png`; tested locally, Python 3.14.6).
+  So edges shared by two polygons are drawn exactly once,
+  and top and left edges are drawn while right and bottom edges are not, for these slopes (inference).
+- Drawing time, method: the suite's `gpu/bandwidth` test runs each operation 400 times over a 320 by 240 area
   and counts horizontal blanks (`gpu/bandwidth/main.cpp`).
-  One such operation takes about 3.0 horizontal blanks for a fill, 19.0 for a plain rectangle, 28.6 semi-transparent,
-  and 37.8 textured, 19.3 for a plain quadrilateral, 29.1 semi-transparent, and 99.8 textured,
+- Drawing time, figures: one such operation takes about 3.0 horizontal blanks for a fill, 19.0 for a plain rectangle,
+  28.6 semi-transparent, and 37.8 textured, 19.3 for a plain quadrilateral, 29.1 semi-transparent, and 99.8 textured,
   and 47.8 for a copy within video RAM (calculated as each count divided by 400, from `gpu/bandwidth/psx.log`).
   A quadrilateral a quarter or half off screen takes 14.6 or 9.9, so clipped pixels cost little (same).
-  Drawing time therefore depends on the kind of primitive, texturing, and semi-transparency (inference).
+  The textured semi-transparent runs take the same time as the textured ones
+  (15,139 against 15,138 for rectangles, 39,938 for both quadrilaterals; same log).
+  Drawing time therefore depends on the kind of primitive and texturing,
+  and on semi-transparency only for untextured primitives (inference).
+- Per-pixel cost: at about 2,172 system clock cycles a line
+  (see "Timing, synchronisation, and input"),
+  those figures over 76,800 pixels give about 0.09 system clock cycles a pixel for a fill, 0.54 for a plain rectangle,
+  1.07 for a textured rectangle, and 2.82 for a textured quadrilateral (calculated).
+  This is the average over a whole screen, not the cost of a single pixel or of a small polygon (inference).
 - Still without a clean source: whether textures are point-sampled
-  (only Wikipedia's "Nintendo 64" says so, citing a tutorial site; tertiary),
-  and the limits on polygon size: the patent gives sprites of 1 by 1 to 256 by 256 dots,
+  (only [Wikipedia's "Nintendo 64"](https://en.wikipedia.org/wiki/Nintendo_64) says so, citing a tutorial site;
+  tertiary), and the limits on polygon size: the patent gives sprites of 1 by 1 to 256 by 256 dots,
   Doomed the fill command's maximum, and no ps1-tests case draws an over-size polygon
   (searches of Doomed's texts, Walker, the patent, the ps1-tests README's test list, and Wikipedia).
 
@@ -618,7 +663,7 @@ so each 5-bit channel is stored shifted left by three (observed).
   (GBATEK, "Maximum Number of Sprites per Line"), four per dot, so system-clock cycles (inference).
 - The DS has two 2D engines, each much like the Game Boy Advance's, and engine A adds a 3D layer
   (GBATEK, "DS Video" and "DS Video BG Modes / Control").
-  The 3D hardware is a geometry engine, whose vertex
+- The DS's 3D hardware is a geometry engine, whose vertex
   and polygon memories swap at the next vertical blank (`SWAP_BUFFERS`), and a rendering engine that draws line by line:
   "There's only the 48-line cache (not a full 192-line framebuffer to store the whole rendered image)"
   (GBATEK, "DS 3D Overview").
@@ -673,7 +718,7 @@ so each 5-bit channel is stored shifted left by three (observed).
   Disc timing therefore reaches the audio mix (inference).
 - No clean source was found for the reverb algorithm, the interpolation between samples, the envelope rate tables,
   or when the sound-RAM interrupt fires
-  (searches of the patent family, Doomed, Walker,
+  (searches of the patent family, [Doomed's `spu.txt`](https://hitmen.c02.at/files/docs/psx/spu.txt), Walker,
   and [ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
   whose sound tests have a result log only for `spu/memory-transfer`).
 
@@ -743,7 +788,7 @@ so each 5-bit channel is stored shifted left by three (observed).
   (inference from the findings above):
   the DS's ARM9 at twice its bus clock beside an ARM7, the Nintendo 64's CPU at 1.5 times the signal processor's clock,
   and the Saturn's two SH-2s beside a 68EC000 on the sound side's own clock.
-  The PlayStation 1's CPU shares the bus with sound and video chips that have their own memories,
+- The PlayStation 1's CPU shares the bus with sound and video chips that have their own memories,
   whose clocks no clean source found gives
   (searches of [Walker](https://hitmen.c02.at/files/docs/psx/psx.pdf) and
   [Doomed](https://hitmen.c02.at/files/docs/psx/system.txt)); the Game Boy Advance runs one CPU at a time.
@@ -773,19 +818,22 @@ so each 5-bit channel is stored shifted left by three (observed).
   that it can release the system bus to a controller moving drawing commands and image data
   ([US 5,850,540](https://patents.google.com/patent/US5850540A/en), description).
 - Hardware test (by inference from the suite):
-  the ps1-tests suite's `timers` test resets a timer as soon as one vertical blank interrupt and reads it at the next
+  the ps1-tests suite's `timers` test resets a timer as soon as a vertical blank interrupt arrives
+  and reads it at the next
   ([ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
   `timers/main.c`).
   With timer 2 at the system clock divided by eight, its NTSC log gives 71,407 to 71,412 after two warm-up runs,
-  so a frame is 571,256 to 571,296 system clock cycles, and with 263 lines about 2,172 system clock cycles a line
-  (calculated from `timers/psx.log`).
+  so a frame is 571,256 to 571,296 system clock cycles (calculated from `timers/psx.log`).
+  The same log's timer 1, clocked by horizontal blank, counts 263 a frame,
+  which gives about 2,172 system clock cycles a line (calculated).
   At Walker's 33.8688 MHz that is about 59.29 Hz (calculated).
 - The same log's frame values with the timer at the full system clock
   (about 112,500)
   are below one frame, because the 16-bit counter wraps several times in a frame and the test adds one wrap
   (inference from the source).
   The dot clocks the log prints are labels with no stated origin, and no clean source was found for them
-  (searches of Walker, Doomed, AmiDog's wiki, whose page on the counters does not exist, and ps1-tests).
+  (searches of Walker, Doomed, [AmiDog's PSX wiki](https://psx.amidog.se/doku.php?id=psx:cpu:division),
+  whose page on the counters does not exist, and ps1-tests).
 
 #### Interrupts and inter-processor signalling
 
@@ -807,14 +855,14 @@ so each 5-bit channel is stored shifted left by three (observed).
   at priority 5 and at priority 0, and completes with it set (`dma/dpcr/psx.log`; observed).
 - The interrupt controller's layout, the priority order between DMA channels,
   the line on which vertical blank interrupts, and the disc and sound interrupts have no clean source beyond Walker,
-  Doomed, and ps1-tests' `dma/chopping` and `dma/dpcr` tests (same searches).
+  Doomed, and the ps1-tests DMA tests under "DMA", which run one channel at a time (same searches).
 
 #### Input and peripherals
 
 - Nintendo 64 controllers and cartridge EEPROMs use the Joybus protocol run by the console's PIF microcontroller:
   the CPU writes a command frame into 64 bytes of PIF RAM and a DMA read makes the PIF run the whole exchange
   ([N64brew, "Serial Interface"](https://n64brew.dev/wiki/Serial_Interface),
-  ["PIF-NUS"](https://n64brew.dev/wiki/PIF-NUS), and ["Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol)).
+  ["Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol), and "PIF-NUS", closed and not linked).
 - The Saturn's system manager is a 4-bit Hitachi microcontroller with its own program ROM that switches the second SH-2,
   the 68000, and the disc block on and off, keeps time, changes the system clock, and polls the controllers
   ([Yabause wiki, "SMPC"](https://wiki.yabause.org/index.php5?title=SMPC);
@@ -842,8 +890,8 @@ this section records what the hardware does.
   (the Nintendo 64's PIF and the cartridge's CIC);
   and boot ROMs that verify the next stage
   (DSi; DSiBrew, "Stage1", at `https://dsibrew.org/wiki/Stage1`,
-  given with no link because the page may list key material and has no section headings by which
-  that could be checked without opening it).
+  given with no link because the page may list key material: the first passes' evidence does not say whether it does,
+  and the page has no section headings by which that could be checked without opening it).
 
 #### PlayStation 1
 
@@ -869,9 +917,9 @@ this section records what the hardware does.
   (Walker, "The PSX Memory Map", "Exception Handling", and appendix B;
   [Doomed, `system.txt`](https://hitmen.c02.at/files/docs/psx/system.txt)).
   An emulator that runs games without the BIOS must provide these services itself (inference).
-- The BIOS boot sequence is not recorded: it is firmware behaviour,
-  which a note records only where a hardware test confirms it
-  ([research guide, "Constants and tables"](../README.md#constants-and-tables)).
+- The BIOS boot sequence is not recorded: it is known only from the firmware,
+  and the [research guide's "Constants and tables"](../README.md#constants-and-tables) records no value known only from
+  firmware; [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) closes firmware itself.
   What an emulator needs is what a game can observe after boot, which a hardware test gives (inference).
 - Maker's patent: Sony's patent describes a security code stored
   as a radial wobble of the pits in the table-of-contents area, a 22.05 kHz carrier keyed on and off,
@@ -882,8 +930,12 @@ this section records what the hardware does.
   tertiary), so a disc image does not hold it and an emulator accepts the image in its place (inference).
 - No clean source was found for the executable format, the disc controller's own processor,
   or the subchannel protection that some PAL discs use (from memory)
-  (searches of Walker, Doomed, AmiDog's wiki index, Mednafen's prose, Wikipedia, which has no article on it,
-  and the Redump wiki, which has no page on it).
+  (searches of Walker, Doomed, [AmiDog's PSX wiki](https://psx.amidog.se/doku.php?id=psx:cpu:division) index,
+  [Mednafen's prose](https://mednafen.github.io/documentation/psx.html), and Wikipedia;
+  the [Redump](http://redump.org/) wiki returned HTTP 404 to every request on 2026-11-20, research log).
+  Wikipedia's
+  ["List of CD and DVD copy protection schemes"](https://en.wikipedia.org/wiki/List_of_CD_and_DVD_copy_protection_schemes)
+  says only that "Some titles also use the Libcrypt mechanism to validate the disc", without describing it (tertiary).
 
 #### Saturn
 
@@ -906,23 +958,26 @@ this section records what the hardware does.
 - The PIF on the board is a Sharp SM5 microcontroller with its own firmware;
   it holds the first two boot stages for the CPU in a 1984-byte ROM, which the CPU reads one serial transfer at a time,
   so the first stage copies the second into the signal processor's memory to run it
-  ([N64brew, "PIF-NUS"](https://n64brew.dev/wiki/PIF-NUS), "Internal ROMs and RAM" and "Console startup").
+  (N64brew, "PIF-NUS", "Internal ROMs and RAM" and "Console startup"; closed and not linked, as below).
   The PIF locks its ROM before the game runs.
 - Each cartridge holds a CIC, which sends the PIF a region identifier and a checksum of the boot code in the cartridge;
   a cartridge boots only with the boot code its CIC expects (N64brew, "PIF-NUS", "Console startup").
   After boot the game must talk to the PIF within about five seconds,
   and the PIF and CIC keep exchanging data while powered, so removing the cartridge halts the CPU (same page).
 - An emulator that boots a game without the PIF's firmware must reproduce what the boot leaves behind (inference).
-  N64brew describes a challenge that cartridges with the 6105 and 7105 CICs answer, 15 bytes each way through PIF RAM
+  N64brew describes a challenge that cartridges with the CIC-NUS-6105 answer, 15 bytes each way through PIF RAM
   (N64brew, "PIF-NUS", command `0x02`).
   Its response algorithm is not recorded: it would come from firmware analysis, and N64brew's "CIC-NUS" page,
   which shows key and seed material, was not read past it.
   A boot of these games without the PIF needs that response,
   which [`R1-16`](../../roadmap/research.md#system-family-surveys) takes up (inference).
-- Two N64brew pages are closed in the [register](../../../.claude/hooks/source-register.txt)
-  and given here with no link: "CIC-NUS" (`https://n64brew.dev/wiki/CIC-NUS`), which shows CIC key and seed material,
+- Three N64brew pages are closed in the [register](../../../.claude/hooks/source-register.txt)
+  and given here with no link: "CIC-NUS" (`https://n64brew.dev/wiki/CIC-NUS`), which shows CIC key and seed material;
+  "PIF-NUS" (`https://n64brew.dev/wiki/PIF-NUS`), whose table of CICs shows a seed and a checksum value for each,
+  found by the verification pass after the facts above were taken from its prose;
   and "Initial Program Load" (`https://n64brew.dev/wiki/Initial_Program_Load`),
   an annotated disassembly of the PIF boot ROM.
+  Nothing from either table is used.
   Their `index.php?title=` addresses, which the source guard cannot match, are not to be opened either.
 
 #### Game Boy Advance and DS
@@ -963,9 +1018,10 @@ this section records what the hardware does.
 - The Nintendo 64 has open tests run on a console: krom's tests "on a real N64 using a 64drive Cartridge",
   under the Unlicense ([`R0-05`, "Test suites and test vectors"](R0-05-source-map.md#test-suites-and-test-vectors);
   [PeterLemon/N64 README](https://github.com/PeterLemon/N64)). n64-systemtest covers coprocessor registers, exceptions,
-  and the TLB and is deprecated in favour of nemu64-test; neither states where its expected values came from
+  and the TLB and is deprecated in favour of [nemu64-test](https://github.com/thelemmy/nemu64-test);
+  neither states where its expected values came from
   ([n64-systemtest README](https://github.com/lemmy-64/n64-systemtest); [`R0-05`](R0-05-source-map.md)).
-- The DS has polyrastertest, recorded on a 3DS
+- The DS has [polyrastertest](https://github.com/Jaklyy/PolyRasterTest), recorded on a 3DS
   (see "Video"),
   and the Game Boy Advance has open suites that state no source for their expected results
   ([`R0-05`, "Test suites and test vectors"](R0-05-source-map.md#test-suites-and-test-vectors)).
@@ -1063,41 +1119,47 @@ The last subsection recommends one answer to each.
 
 ### Recommendation
 
+The options answer six separate questions, so this subsection gives one recommendation for each,
+in at most three sentences with its reasons.
 The owner decides each of these; the pull request lists them.
 
 - **Microcode and DSPs:** run the Nintendo 64's signal processor and display processor at the low level as the baseline,
-  and the Saturn's DSPs likewise, and add replacement of recognised microcode only later, as an optional speed path.
+  with replacement of recognised microcode only as a later, optional speed path.
   Games with their own microcode break high-level emulation,
-  paraLLEl-RDP shows the display processor running at the low level on a host GPU,
-  and the project's [README](../../../README.md) names accuracy first among its aims.
+  and [paraLLEl-RDP](https://raw.githubusercontent.com/Themaister/parallel-rdp/1cecd042/README.md) runs the display
+  processor at the low level on a host GPU.
+  The project's [README](../../../README.md) names accuracy first among its aims.
 - **CPU execution:** start each core with an interpreter, kept as the reference,
-  and add a cached interpreter or recompiler only where a measured target host needs it,
+  and add a cached interpreter or recompiler only where a measured host needs one,
   as [`R2-01`](../../roadmap/research.md#phase-2-cross-cutting-engineering)
-  and [`R3-01`](../../roadmap/research.md#phase-3-host-platforms) decide. n64-systemtest's authors doubt
-  that a dynamic recompiler can pass its cycle-accurate tests.
+  and [`R3-01`](../../roadmap/research.md#phase-3-host-platforms) decide.
+  [n64-systemtest](https://github.com/lemmy-64/n64-systemtest)'s authors doubt that a dynamic recompiler can pass its
+  cycle-accurate tests.
 - **Caches:** model the Saturn SH-2 caches fully by default,
   and the DS ARM9's caches and the Nintendo 64's cached-access rules,
   with a cheaper per-game mode only if profiling shows the need.
-  On the Saturn caches decide correctness and on the DS the ARM9's speed,
-  and Mednafen's per-game list exists to save host time, not for accuracy.
+  On the Saturn caches decide correctness,
+  and [Mednafen](https://mednafen.github.io/documentation/ss.html) turns full cache emulation on per game, from a list,
+  mainly because doing so for every game costs much more host time.
 - **3D:** reproduce the hardware's results by default
   (fixed point, edge rules, dither), with enhancement as an opt-in mode later.
   Enhancement changes what games show and breaks effects that depend on exact pixels,
-  and the PlayStation 1's edge rule and dither pattern can now be tested against ps1-tests' images.
-- **PlayStation 1 sources:** take hardware tests as the oracle for the gaps, starting with ps1-tests' published results,
-  and a PlayStation 1 hardware-test spike for the rest; keep the older documents and Sony's patents as the description,
-  and read no open-tier emulator code for the PlayStation 1.
-  A test's origin is the measurement, ps1-tests' logs answered six gaps in this note,
-  and emulator code may rest on the tainted reference, as Rustation's README says of its own
-  ([`R0-05`, "PlayStation family"](R0-05-source-map.md#playstation-family));
-  the spike needs a console the project does not own today.
+  and the PlayStation 1's edge rule and dither pattern can now be checked against
+  [ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb)' images.
+- **PlayStation 1 sources:** take hardware tests as the oracle for the gaps,
+  starting with ps1-tests' published results
+  and then [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes)'s console measurements,
+  keep the older documents and Sony's patents as the description, and read no open-tier emulator code for the console.
+  A test's origin is the measurement, and ps1-tests' logs and images answered, at least in part, six gaps in this note.
+  Emulator code may rest on the tainted reference, as Rustation's README says of its own
+  ([`R0-05`, "PlayStation family"](R0-05-source-map.md#playstation-family)).
 - **Firmware:** support firmware the user dumps as the accurate path
   ([`R0-02` option 4](R0-02-legal-baseline.md#4-require-firmware-that-the-user-dumps)),
-  with Rustalgia's own high-level services where clean sources describe them, as Mednafen does for the Game Boy Advance,
-  and never ship another project's replacement, which is closed tier.
-  High-level services differ in what games can observe,
-  and another project's replacement BIOS is closed under [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md);
-  [`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering) settles the technique.
+  with Rustalgia's own high-level services where clean sources describe them,
+  as [Mednafen](https://mednafen.github.io/documentation/gba.html) does for the Game Boy Advance,
+  and never ship another project's replacement.
+  Such a replacement is closed under [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md),
+  and [`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering) settles the technique.
 
 ## Implications for Rustalgia
 
@@ -1119,9 +1181,8 @@ The owner decides each of these; the pull request lists them.
   and the quality targets ([`R6-02`](../../roadmap/research.md#phase-6-synthesis)).
 - The PlayStation 1's published test results give [`R1-18`](../../roadmap/research.md#system-family-surveys) an oracle
   for the GPU's dither, fill rule, and drawing time, frame length, disc timing, and the geometry engine;
-  the rest of the gaps listed under "Open questions" need tests on a console,
-  which a PlayStation 1 hardware-test spike would run (inference).
-  The roadmap holds no such spike yet.
+  the rest of the gaps listed under "Open questions" need tests on a console (inference),
+  which [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes) is the roadmap item to run.
 - Emulators choose Nintendo 64 save types and Saturn cartridges from game databases
   ([N64brew, "ROM Header"](https://n64brew.dev/wiki/ROM_Header); Mednafen, `ss.html`, "Cart"),
   and use identifier strings or heuristics on the Game Boy Advance and DS.
@@ -1133,35 +1194,43 @@ The owner decides each of these; the pull request lists them.
   (the PlayStation 1's CPU on early PlayStation 2 models, not its graphics chip),
   so cores written for this era may be reused in part by [`R1-13`](../../roadmap/research.md#system-family-surveys)
   and [`R1-19`](../../roadmap/research.md#system-family-surveys) (inference).
-- Wikipedia says Hasbro released the Jaguar's patents and rights into the public domain in 1999 (tertiary).
+- [Wikipedia, "Atari Jaguar"](https://en.wikipedia.org/wiki/Atari_Jaguar),
+  says Hasbro released the Jaguar's patents and rights into the public domain in 1999 (tertiary).
   Whether that opens Atari's own documents falls to the proposed amendment of
-  [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md), whose recommended row treats maker documents that
-  survive only on third-party hosts as closed unless the maker's release is shown.
+  [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) and to
+  [`R0-05`'s option 5](R0-05-source-map.md#5-maker-documents-that-survive-only-as-third-party-copies); the reworked
+  `R0-05`, in its own pull request, recommends a row that treats maker documents surviving only on third-party hosts as
+  closed unless the maker's release is shown.
 
 ## Open questions
 
 - Does the PlayStation 1 CPU implement a TLB?
   A hardware test that writes a TLB entry, reads it back, and maps a user-segment address,
-  in a PlayStation 1 hardware-test spike.
-- What are the PlayStation 1 GPU's limits on polygon size, its fill rule for shapes ps1-tests does not draw,
-  its per-pixel drawing cost, and does its dither follow screen or frame-buffer position?
-  Hardware tests in that spike, drawing across the limits and with a drawing offset.
-- How are the PlayStation 1's interrupt controller and DMA priority laid out,
+  in [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes).
+- What are the PlayStation 1 GPU's limits on polygon size,
+  the cost of a small polygon as against the whole-screen averages under "Video",
+  and does its dither follow screen or frame-buffer position?
+  Hardware tests in [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes), drawing across the limits,
+  at several sizes, and with a drawing offset.
+- How are the PlayStation 1's interrupt controller and the priority between DMA channels laid out,
   on which line does vertical blank interrupt, and when do the disc and sound interrupts fire?
-  Hardware tests in that spike.
+  Hardware tests in [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes) that run two channels at once.
 - What are the PlayStation 1 sound chip's reverb, interpolation, and envelope rates?
-  Hardware tests that record the sound chip's output, in that spike.
+  Hardware tests that record the sound chip's output, in [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes).
 - What are the PlayStation 1 memory card's command protocol and the link cable's register-level behaviour?
-  A test that logs the exchange on the controller port, and one with two consoles, in that spike;
-  Sony's memory-card patents, read from the patent office's copies,
-  in [`R1-18`](../../roadmap/research.md#system-family-surveys);
+  Sony's patent describes the card's lines but no commands
+  (see "Save media");
+  a test that logs the exchange on the controller port, and one with two consoles,
+  in [`R5-12`](../../roadmap/research.md#phase-5-hands-on-spikes);
   [`R2-09`](../../roadmap/research.md#phase-2-cross-cutting-engineering) decides whether link play is in scope.
 - What are the PlayStation 1 executable format, the disc controller's own processor,
   and the subchannel protection on some PAL discs?
   [`R2-11`](../../roadmap/research.md#phase-2-cross-cutting-engineering) for the formats and the protection,
   [`R1-18`](../../roadmap/research.md#system-family-surveys) for the processor, whose firmware is closed.
 - What is the priority between the DSi's old and new DMA channels?
-  GBATEK marks it unknown and DSiBrew does not say; a hardware test on a DSi
+  GBATEK marks it unknown, and DSiBrew gives an arbitration bit for the new channels
+  (fixed or round robin)
+  but not their priority against the old ones; a hardware test on a DSi
   ([`R1-12`](../../roadmap/research.md#system-family-surveys)).
 
 ## Sources
@@ -1187,7 +1256,10 @@ Makers' manuals, releases, and patents:
   [EP1280150A2](https://patents.google.com/patent/EP1280150A2/en),
   [US 5,793,376](https://patents.google.com/patent/US5793376A/en),
   [US 5,850,540](https://patents.google.com/patent/US5850540A/en),
-  and [US 6,304,971](https://patents.google.com/patent/US6304971B1/en); Nintendo and Silicon Graphics,
+  [US 6,304,971](https://patents.google.com/patent/US6304971B1/en),
+  and [EP0810015A2](https://patents.google.com/patent/EP0810015A2/en)
+  (filed by Sony Corporation);
+  STD Manufacturing, [US 6,386,979](https://patents.google.com/patent/US6386979B1/en); Nintendo and Silicon Graphics,
   [US 6,331,856](https://patents.google.com/patent/US6331856B1/en).
 - Philips, [US 5,483,619](https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/5483619), patent office copy.
 - The 3DO Company, [WO 94/16383](https://patents.google.com/patent/WO1994016383A1/en).
@@ -1199,9 +1271,9 @@ References and research:
 - [GBATEK, mGBA's copy](https://github.com/mgba-emu/gbatek/tree/64b5087aa45cd0187b8b239d77e54ee5eb2917d1),
   commit `64b5087a` (2026-07-29):
   [`gba.md`](https://github.com/mgba-emu/gbatek/blob/64b5087aa45cd0187b8b239d77e54ee5eb2917d1/gba.md), and the DS and
-  3DS chapters in `ds.md` and `3ds.md`, cited by section name with no link to the files: `ds.md` prints the DS cartridge
-  encryption key bytes, and `3ds.md` covers the 3DS's cryptographic hardware (from memory), so it was not reopened to
-  check.
+  3DS chapters in `ds.md` and `3ds.md`, cited by section name with no link to the files.
+  `ds.md` prints the DS cartridge encryption key bytes, as the first passes found.
+  `3ds.md` covers the 3DS's cryptographic hardware (from memory, this claim only), so it was not reopened to check.
 - N64brew wiki, revisions current on 2026-11-20: ["VR4300"](https://n64brew.dev/wiki/VR4300) (5928),
   ["Clock Timing"](https://n64brew.dev/wiki/Clock_Timing) (5926), ["Memory map"](https://n64brew.dev/wiki/Memory_map)
   (5763), ["RDRAM"](https://n64brew.dev/wiki/RDRAM) (5529), ["Expansion Pak"](https://n64brew.dev/wiki/Expansion_Pak)
@@ -1212,9 +1284,10 @@ References and research:
   ["Reality Display Processor"](https://n64brew.dev/wiki/Reality_Display_Processor) (5675) and
   ["/Pipeline"](https://n64brew.dev/wiki/Reality_Display_Processor/Pipeline) (5674),
   ["Parallel Interface"](https://n64brew.dev/wiki/Parallel_Interface) (5761),
-  ["Serial Interface"](https://n64brew.dev/wiki/Serial_Interface) (5663), ["PIF-NUS"](https://n64brew.dev/wiki/PIF-NUS)
-  (5759), ["Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol) (5942),
-  ["Flash"](https://n64brew.dev/wiki/Flash) (5773), ["ROM Header"](https://n64brew.dev/wiki/ROM_Header) (5943),
+  ["Serial Interface"](https://n64brew.dev/wiki/Serial_Interface) (5663), "PIF-NUS" (5759; closed, at
+  `https://n64brew.dev/wiki/PIF-NUS`, with no link because its CIC table shows seed values),
+  ["Joybus Protocol"](https://n64brew.dev/wiki/Joybus_Protocol) (5942), ["Flash"](https://n64brew.dev/wiki/Flash)
+  (5773), ["ROM Header"](https://n64brew.dev/wiki/ROM_Header) (5943),
   ["Video Interface"](https://n64brew.dev/wiki/Video_Interface) (5791),
   ["Audio Interface"](https://n64brew.dev/wiki/Audio_Interface) (5924); read through the raw exports.
 - J. Walker,
@@ -1235,10 +1308,9 @@ References and research:
   through [the author's document index](http://www.dreamjam.co.uk/emuviews/docindex.php),
   because both ask not to be linked directly.
 - Yabause wiki, ["SH-2CPU"](https://wiki.yabause.org/index.php5?title=SH-2CPU),
-  ["SCU"](https://wiki.yabause.org/index.php5?title=SCU), ["SMPC"](https://wiki.yabause.org/index.php5?title=SMPC),
+  ["SMPC"](https://wiki.yabause.org/index.php5?title=SMPC),
   ["CDBlock"](https://wiki.yabause.org/index.php5?title=CDBlock),
-  ["VDP1"](https://wiki.yabause.org/index.php5?title=VDP1), ["VDP2"](https://wiki.yabause.org/index.php5?title=VDP2),
-  ["SCSP"](https://wiki.yabause.org/index.php5?title=SCSP),
+  ["VDP1"](https://wiki.yabause.org/index.php5?title=VDP1), ["SCSP"](https://wiki.yabause.org/index.php5?title=SCSP),
   ["Backup RAM Cartridge"](https://wiki.yabause.org/index.php5?title=Backup_RAM_Cartridge),
   and ["DRAM Cartridge"](https://wiki.yabause.org/index.php5?title=DRAM_Cartridge)
   (last modified 2008 to 2018), read as rendered pages because the raw export returns the main page (research log).
@@ -1256,15 +1328,15 @@ References and research:
   3DO system code, is closed in the register, and is given with no link; nothing from it is used.
 - The Audio Advance, ["Direct Sound"](https://belogic.com/gba/directsound.shtml).
 - melonDS blog, lead: ["The DS GPU and its fun quirks"](https://melonds.kuribo64.net/comments.php?id=56) (2018-10-27),
-  ["Introducing the compute renderer"](https://melonds.kuribo64.net/comments.php?id=143) (2021-05-01),
-  and ["Hardware rendering, the fun"](https://melonds.kuribo64.net/comments.php?id=241) (2025-12-01).
+  and ["Introducing the compute renderer"](https://melonds.kuribo64.net/comments.php?id=143) (2021-05-01).
 - DSiBrew, ["NDMA"](https://dsibrew.org/wiki/NDMA) (revision 3261, 2010-11-26), and "Stage1"
   (last edited 2024-01-22)
-  at `https://dsibrew.org/wiki/Stage1`, with no link because it may list key material;
-  it was read by the first passes and not reopened.
+  at `https://dsibrew.org/wiki/Stage1`, with no link because it may list key material; it was read by the first passes,
+  whose evidence does not say whether it does, and was not reopened.
 - R. Copetti, Saturn article, lead,
   [commit `55b15767`](https://raw.githubusercontent.com/flipacholas/Architecture-of-consoles/55b15767fe439663dff04eceb4a3fbdc68abdd8f/articles/sega-saturn.Rmd.md),
   and [its live page](https://www.copetti.org/writings/consoles/sega-saturn/) for the source list.
+- [Redump](http://redump.org/), whose wiki returned HTTP 404 to every request (research log).
 
 Emulator and tool documentation, prose only:
 
@@ -1284,13 +1356,16 @@ Tests:
 
 - [SingleStepTests arm7tdmi README](https://github.com/SingleStepTests/arm7tdmi), commit `e3097d88`.
 - [ps1-tests](https://github.com/JaCzekanski/ps1-tests/tree/f727802fead11f1daa7549285548392ef87749cb),
-  commit `f727802f`: README; the sources `cpu/cop/main.cpp`, `gpu/triangle/main.c`, `gpu/bandwidth/main.cpp`,
-  `timers/main.c`, `cdrom/timing/main.cpp`, and `common/measure.hpp`; the result logs of `cpu/access-time`,
-  `cpu/io-access-bitwidth`, `cpu/cop`, `gpu/bandwidth`, `gte/test-all`, `gte-fuzz`, `timers`, `timer-dump`, `dma/dpcr`,
-  and `cdrom/timing`; and the image `gpu/triangle/vram.png`.
+  commit `f727802f`: README; the sources `cpu/cop/main.cpp`, `gpu/triangle/main.c`, `gpu/quad/main.c`,
+  `gpu/bandwidth/main.cpp`, `timers/main.c`, `dma/chopping/main.cpp`, `cdrom/timing/main.cpp`, and `common/measure.hpp`;
+  the result logs of `cpu/access-time`, `cpu/io-access-bitwidth`, `cpu/cop`, `gpu/bandwidth`, `gte/test-all`,
+  `gte-fuzz`, `timers`, `timer-dump`, `dma/dpcr`, `dma/chopping`, `dma/otc-test`, `dma/chain-looping`,
+  and `cdrom/timing`; and the images `gpu/triangle/vram.png` and `gpu/quad/vram.png`.
 - [n64-systemtest README and `Cargo.toml`](https://github.com/lemmy-64/n64-systemtest), commit `196f5421`.
 - [PeterLemon/N64 README](https://github.com/PeterLemon/N64), commit `7085543e`.
 - [polyrastertest readme](https://github.com/Jaklyy/PolyRasterTest), commit `6fd29def`.
+- [nemu64-test](https://github.com/thelemmy/nemu64-test), commit `9a8b9f7d`, repository page only,
+  named as n64-systemtest's successor.
 
 Tertiary:
 
@@ -1304,5 +1379,7 @@ Tertiary:
   (1355643867), ["Nintendo 64"](https://en.wikipedia.org/wiki/Nintendo_64) (1386077971),
   ["Sega Saturn"](https://en.wikipedia.org/wiki/Sega_Saturn) (1384300813),
   ["3DO"](https://en.wikipedia.org/wiki/3DO_Interactive_Multiplayer) (1383977414),
-  ["Atari Jaguar"](https://en.wikipedia.org/wiki/Atari_Jaguar) (1386053059), and
-  ["PC-FX"](https://en.wikipedia.org/wiki/PC-FX) (1352943842).
+  ["Atari Jaguar"](https://en.wikipedia.org/wiki/Atari_Jaguar) (1386053059),
+  ["PC-FX"](https://en.wikipedia.org/wiki/PC-FX) (1352943842), and
+  ["List of CD and DVD copy protection schemes"](https://en.wikipedia.org/wiki/List_of_CD_and_DVD_copy_protection_schemes)
+  (1356035760).

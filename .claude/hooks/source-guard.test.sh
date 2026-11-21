@@ -174,10 +174,11 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
-# Pages closed by R1-02: an N64 boot ROM listing, CIC key material, and 3DO internal material; the rest stays open.
+# Pages closed by R1-02: an N64 boot ROM listing, CIC key and seed material, 3DO internal material; others stay open.
 check 2 writer "$(fetch https://n64brew.dev/wiki/Initial_Program_Load)"
 check 2 writer "$(fetch https://n64brew.dev/wiki/CIC-NUS)"
-check 0 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS)"
+check 2 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS)"
+check 0 writer "$(fetch https://n64brew.dev/wiki/Joybus_Protocol)"
 check 2 writer "$(fetch https://ext.3dodev.com/)"
 check 2 writer "$(fetch https://3dodev.com/documentation/hardware/opera/memory_configurations)"
 check 0 writer "$(fetch https://3dodev.com/documentation/hardware/opera/madam/matrix_engine)"
