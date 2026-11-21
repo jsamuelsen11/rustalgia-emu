@@ -142,7 +142,7 @@ The spike informs a decision; an ADR makes it.
 
 **Purpose:** list what the spike did not settle.
 
-**Write:** each question, and the work that would answer it.
+**Write:** each question the spike could not settle, and the work that would answer it.
 
 **Leave out:** questions the spike was never meant to answer.
 

@@ -3,7 +3,7 @@
 ## Purpose
 
 A topic study answers one research question about hardware, a technique, a platform, or policy.
-It sets out the options and their trade-offs without choosing between them.
+It sets out the options and their trade-offs, and recommends one where a design choice remains.
 
 ## Layout
 
