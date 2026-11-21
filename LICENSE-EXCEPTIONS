@@ -1,0 +1,30 @@
+Rustalgia: additional permission and term under section 7 of the GNU GPL
+
+Rustalgia is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. The licence text is in the file LICENSE. The permission and the term
+below are added under section 7 of that licence, as decided in
+docs/adr/0003-permit-conveying-through-app-stores.md.
+
+
+Additional permission for app stores
+
+If you convey this program, or a work based on it, in object code form
+through an application store or a similar distribution service, and the
+terms of that service, or of the devices it serves, impose restrictions or
+conditions beyond those of the GNU General Public License, the copyright
+holders of Rustalgia give you permission to convey it there under those
+terms, provided that you otherwise comply with the GNU General Public License
+for each covered work you convey, including making its Corresponding Source
+available.
+
+This permission covers only material whose copyright holders have granted it.
+It does not extend to code taken from other projects unless their copyright
+holders grant the same permission. As section 7 allows, you may remove this
+permission from your copy, or from any part of it.
+
+
+Additional term under section 7(e)
+
+This licence grants no rights under trade mark law in the name "Rustalgia".

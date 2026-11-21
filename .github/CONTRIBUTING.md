@@ -18,7 +18,12 @@ These protect the project and are not negotiable.
 - Never copy code from another emulator or from leaked sources.
   Describe behaviour from public documentation, hardware tests, and your own observation.
 - Cite your sources in research notes.
-- Your contribution is licensed under the [GNU General Public License v3.0](../LICENSE).
+- Your contribution is licensed on the project's own terms: the [GNU General Public License](../LICENSE),
+  version 3 or any later version, with the permissions in [LICENSE-EXCEPTIONS](../LICENSE-EXCEPTIONS).
+  A contribution to the documents, the source register, or the configuration is also licensed under CC BY-SA 4.0.
+  See [ADR 0004](../docs/adr/0004-take-contributions-on-the-outbound-licence.md).
+- Agents never add a `Signed-off-by` line.
+  A human sign-off under the Developer Certificate of Origin will be required from the first outside contribution.
 
 ## How work flows
 
