@@ -61,7 +61,7 @@ Read `README.md` and `docs/README.md` before writing anything.
 
 ## Sources
 
-`docs/adr/0001-restrict-reading-by-licence-tier.md` decides what may be read.
+`docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md` decides what may be read.
 Read it before opening any emulator's repository.
 
 - Open tier, a licence compatible with GPL-3.0: read anything, including code.

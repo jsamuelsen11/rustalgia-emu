@@ -2,7 +2,7 @@
 # Claude Code PreToolUse hook: refuse a tool call that would open a restricted source.
 # It reads the call as JSON on standard input and exits 2, with the reason on standard error, to block it.
 # The list is source-register.txt in this folder; entries in the open tier are ignored here.
-# The rule is docs/adr/0001-restrict-reading-by-licence-tier.md.
+# The rule is docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md.
 set -eu
 
 list="$(dirname "$0")/source-register.txt"
@@ -16,7 +16,7 @@ end="([\"' )?#\\\\]|\$)"
 
 block() {
   echo "Blocked by .claude/hooks/source-guard.sh: '$2' is a $1 source." >&2
-  echo "See docs/adr/0001-restrict-reading-by-licence-tier.md for what may be read." >&2
+  echo "See docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md for what may be read." >&2
   exit 2
 }
 
@@ -104,7 +104,7 @@ for repository in $found; do
     {
       echo "Blocked by .claude/hooks/source-guard.sh: '$repository' is not in the source register."
       echo "Evaluate it first. Its licence, README, and policy pages may be read now."
-      echo "Follow 'Evaluating a new source' in docs/adr/0001-restrict-reading-by-licence-tier.md,"
+      echo "Follow 'Evaluating a new source' in docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md,"
       echo "add a line to .claude/hooks/source-register.txt, then try again."
       echo "A repository that has nothing to do with consoles or emulation is registered as 'other'."
     } >&2

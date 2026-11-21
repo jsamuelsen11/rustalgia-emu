@@ -128,7 +128,7 @@ check 2 writer "$(fetch https://mednafen.github.io/releases/files/mednafen-1.32.
 
 # Tiers this verification moved.
 check 0 writer "$(fetch https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/README.md)"
-check 2 writer "$(fetch https://github.com/LIJI32/SameSuite/tree/master/apu)"
+check 0 writer "$(fetch https://github.com/LIJI32/SameSuite/tree/master/apu)" # open under ADR 0006 (X11)
 check 0 writer "$(fetch https://github.com/mgba-emu/gbatek/blob/master/gbatek.htm)"
 check 2 writer "$(fetch https://github.com/skyline-emu/skyline/tree/master/app)"
 

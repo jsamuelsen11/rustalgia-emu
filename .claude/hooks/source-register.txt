@@ -1,5 +1,5 @@
 # Source register: every source that has been evaluated, and its tier.
-# The rule and the evaluation steps are in docs/adr/0001-restrict-reading-by-licence-tier.md.
+# The rule and the evaluation steps are in docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md.
 # source-guard.sh reads this file and blocks the walled, closed, and tainted entries.
 #
 # One source per line, six fields separated by " | ":
@@ -10,7 +10,7 @@
 # The tier "other" marks a repository that has nothing to do with consoles or emulation. Nothing is restricted.
 
 # This repository, and repositories that are not sources.
-other | jsamuelsen11/rustalgia-emu | GPL-3.0 | this project | 2026-11-19 | -
+other | jsamuelsen11/rustalgia-emu | GPL-3.0-or-later | this project | 2026-11-19 | -
 other | github/dmca | - | GitHub's published takedown notices | 2026-11-19 | -
 other | crate-ci/typos | MIT OR Apache-2.0 | spelling checker used here | 2026-11-19 | -
 other | ffmpeg.org | prose page read; code not evaluated | media library's own legal page | 2026-11-19 | R0-02
@@ -193,7 +193,7 @@ open | mattcurrie/mealybug-tearoom-tests | MIT | expected images from the author
 open | mattcurrie/dmg-acid2 | MIT | reference image plus console photographs | 2026-11-19 | README
 open | mattcurrie/cgb-acid2 | MIT | reference image plus console photographs | 2026-11-19 | README
 open | mattcurrie/cgb-acid-hell | MIT | reference photograph of a console | 2026-11-19 | README
-walled | liji32/samesuite | X11 | X11 is not on the open list | 2026-11-19 | README, licence file
+open | liji32/samesuite | X11 | GNU list: compatible (ADR 0006) | 2026-11-21 | README, licence file
 walled | c-sp/game-boy-test-roms | MIT file, scope unstated | bundles suites under other licences | 2026-11-19 | README
 walled | c-sp/gameboy-test-roms | MIT file, scope unstated | old name of the same | 2026-11-19 | redirect
 open | c-sp/age-test-roms | MIT | named for the devices verified | 2026-11-19 | README
@@ -258,8 +258,8 @@ open | cc65/cc65 | Zlib | - | 2026-11-19 | licence file
 open | alekmaul/pvsneslib | MIT | bundles third-party tools | 2026-11-19 | README, licence file
 open | vhelin/wla-dx | GPL-2.0-or-later | - | 2026-11-19 | licence file
 walled | trebonian/visual6502 | per-file notices; no licence file | simulator and chip data | 2026-11-19 | README
-walled | rpghacker/asar | LGPL-3.0-or-later or own terms | licence not on the open list | 2026-11-19 | licence file
-walled | tj90241/n64chain | LGPL-3.0 | licence not on the open list | 2026-11-19 | licence metadata
+open | rpghacker/asar | LGPL-3.0-or-later or own terms | LGPL-3.0 option compatible | 2026-11-21 | licence file
+open | tj90241/n64chain | LGPL-3.0 | GNU list: compatible (ADR 0006) | 2026-11-21 | licence metadata
 closed | arm9/bass | none shown; upstream said ISC | fork of an assembler; a tool with no licence | 2026-11-19 | README
 closed | ata4/angrylion-rdp-plus | old MAME non-commercial terms | fork of Angrylion | 2026-11-19 | licence text
 closed | project64/angrylion-rdp | none shown | parent of the fork above | 2026-11-19 | licence metadata
@@ -584,7 +584,7 @@ walled | consolemods.org/wiki | not determined | modification wiki | 2026-11-19 
 walled | www.consolemods.org/wiki | not determined | same wiki, www prefix | 2026-11-19 | refused access
 walled | siliconpr0n.org | not determined | decap image archive | 2026-11-19 | refused access
 walled | www.siliconpr0n.org | not determined | same archive, www prefix | 2026-11-19 | refused access
-walled | libretro/libretro-database | CC BY-SA 4.0 | hash catalogues; not on open list | 2026-11-19 | README, LICENSE
+open | libretro/libretro-database | CC BY-SA 4.0 | hash catalogues; one way into GPLv3 | 2026-11-21 | README, LICENSE
 walled | mister-devel/ | per core | FPGA cores; licences and methods not surveyed | 2026-11-19 | documentation home
 
 # Cross-system sources: closed tier.
@@ -939,7 +939,7 @@ closed | 3dbrew.org/wiki/memory_layou | none stated | boot-ROM copies and key lo
 closed | www.3dbrew.org/wiki/memory_layou | none stated | www prefix | 2026-11-20 | capture; copy deleted
 
 # Sources first cited by R0-03, the licence strategy. Licence texts, stewards' pages, store terms, and project
-# policies are prose about licensing, not about consoles; emulator-adjacent libraries are evaluated by ADR 0001.
+# policies are prose about licensing, not about consoles; emulator-adjacent libraries are evaluated by ADR 0006.
 other | spdx.org/licenses | licence texts | SPDX License List 3.29.0 | 2026-11-20 | page footer
 other | www.fsf.org | CC BY-ND 3.0 or later | FSF news, blog, and contributor FAQ | 2026-11-20 | page footer
 other | www.mozilla.org/en-us/mpl | licence text and FAQ | Mozilla Public License 2.0 | 2026-11-20 | -

@@ -1,10 +1,12 @@
 ---
 title: Restrict what may be read by licence tier
-status: approved
-date: 2026-11-19
+status: superseded
+date: 2026-11-21
 ---
 
 # Restrict what may be read by licence tier
+
+Superseded by [ADR 0006](0006-read-sources-by-tier-under-a-compatibility-test.md).
 
 ## Context
 
