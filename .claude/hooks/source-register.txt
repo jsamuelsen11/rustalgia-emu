@@ -789,7 +789,6 @@ open | learn.microsoft.com/en-us/previous-versions/windows/uwp | none stated | m
 open | digitalfoundry.net | (c) notice, no grant | press; reports maker briefings and talks | 2026-11-20 | footer
 open | androidauthority.com | not stated on the page read | press; secondary | 2026-11-20 | article page
 walled | rpcs3.net | none stated | site of the walled RPCS3 emulator; prose | 2026-11-20 | blog, capture 20251204030505
-other | web.archive.org | - | an archive, not a source; captures cited with their time stamps | 2026-11-20 | -
 # Pages closed so that the guard blocks them; the rest of each site keeps its tier. Patterns are cut short.
 # Microsoft's directory of GDK topics under a non-disclosure agreement, linked from its public index; not opened.
 closed | docs.xbox.com/nda | - | maker's directory of NDA topics | 2026-11-20 | linked from the public index; not opened
