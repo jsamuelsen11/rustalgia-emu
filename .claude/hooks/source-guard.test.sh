@@ -174,6 +174,18 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# Kit pages on open wikis, closed by name; the wikis' other pages stay open (R0-05, 2026-11-20).
+check 2 writer "$(fetch https://www.psdevwiki.com/ps3/SCEI_PS3_SDK)"
+check 2 writer "$(fetch https://psdevwiki.com/ps4/SCEI_PS4_SDK)"
+check 2 reader "$(fetch https://www.psdevwiki.com/ps4/SCEI_PS4_SDK)"
+check 2 writer "$(fetch https://web.archive.org/web/2026/https://www.psdevwiki.com/ps3/SCEI_PS3_SDK)"
+check 0 writer "$(fetch https://www.psdevwiki.com/ps3/Main_Page)"
+check 2 writer "$(fetch https://xboxdevwiki.net/Microsoft_XDK)"
+check 2 reader "$(fetch https://www.xboxdevwiki.net/Microsoft_XDK)"
+check 0 writer "$(fetch https://xboxdevwiki.net/OpenXDK)"
+check 2 writer "$(fetch https://developer.nvidia.com/embedded/downloads)"
+check 0 reader "$(fetch https://developer.nvidia.com/embedded/downloads)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'

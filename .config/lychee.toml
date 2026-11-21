@@ -28,4 +28,6 @@ exclude = [
   '^https?://(www\.)?gnu\.org/', # times out
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
+  '^https?://(www\.)?devkitpro\.org/', # 403 Forbidden (Cloudflare block)
+  '^https?://(www\.)?nxp\.com/', # 404 to scripts, home page included; the pages load in a browser
 ]
