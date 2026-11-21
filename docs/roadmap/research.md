@@ -38,7 +38,7 @@ Every system, platform, and technique stays in scope until the owner rules it ou
 - An item is done when its note is merged with its status set to `approved`.
   The same pull request ticks the item here.
 - An item starts only when the items it depends on are done.
-  Every item in phases 1 to 5 depends on R0-01.
+  Every item in phases 1 to 5 depends on R0-01, and on R0-04 for the conventions it follows.
 - A note states how each claim was checked.
   A claim from memory is marked as one.
 
@@ -50,9 +50,10 @@ Done when all six items are done.
 Nothing else starts before R0-01.
 
 - [x] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
-- [ ] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history.
+- [ ] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history,
+      and patents and trade marks as risks.
 - [ ] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
-      Depends on R0-02.
+      Depends on R0-02, R0-06.
 - [ ] **R0-04** Glossary and research conventions.
       Adds the glossary and its structure contract.
 - [ ] **R0-05** Source map: the documentation hubs and essential reading for each system.
@@ -97,22 +98,22 @@ It also records the family's legal exposure and how hard it is to emulate.
 - [ ] **R1-11** Game Boy Advance.
       Depends on R1-02.
 - [ ] **R1-12** Nintendo DS and DSi.
-      Depends on R1-02.
+      Depends on R1-02, R0-02.
 - [ ] **R1-13** Nintendo 3DS.
-      Depends on R1-02, R1-03.
+      Depends on R1-02, R1-03, R0-02.
 - [ ] **R1-14** Nintendo Switch and Switch 2.
       Depends on R1-04, R0-02.
 - [ ] **R1-15** NES and SNES.
       Depends on R1-01.
 - [ ] **R1-16** Nintendo 64.
       Depends on R1-02.
-- [ ] **R1-17** GameCube, Wii, and Wii U. Depends on R1-03.
+- [ ] **R1-17** GameCube, Wii, and Wii U. Depends on R1-03, R0-02.
 - [ ] **R1-18** PlayStation 1.
       Depends on R1-02.
 - [ ] **R1-19** PlayStation 2.
       Depends on R1-02, R1-03.
 - [ ] **R1-20** PSP and Vita.
-      Depends on R1-03.
+      Depends on R1-03, R0-02.
 - [ ] **R1-21** PlayStation 3, 4, and 5.
       Depends on R1-04, R0-02.
 - [ ] **R1-22** Sega: Master System, Game Gear, Genesis, Saturn, Dreamcast.
@@ -120,9 +121,9 @@ It also records the family's legal exposure and how hard it is to emulate.
 - [ ] **R1-23** Xbox, Xbox 360, and later.
       Depends on R1-03, R1-04, R0-02.
 - [ ] **R1-24** Arcade hardware.
-      Depends on R1-01.
-- [ ] **R1-25** Other handhelds and home computers.
-      Depends on R1-01.
+      Depends on R1-01, R1-02, R1-03, R1-04.
+- [ ] **R1-25** Other consoles, handhelds, and home computers: the systems that no other survey names.
+      Depends on R1-01, R1-02, R1-03, R1-04, R1-05, R1-06, R1-07, R1-08.
 
 #### Emulator studies
 
@@ -196,6 +197,7 @@ Each depends on R1-90.
 - [ ] **R2-10** The boundary between core and frontend.
       Depends on R1-63.
 - [ ] **R2-11** Media and storage formats.
+      Depends on R0-02.
 - [ ] **R2-12** Firmware: boot ROMs, replacements, and emulating a console's operating system.
       Depends on R0-02.
 - [ ] **R2-13** Input and peripherals.
@@ -279,6 +281,8 @@ Done when all are done.
       Depends on R4-11.
 - [ ] **R5-11** An hour of fuzzing against a file parser.
       Depends on R4-10.
+- [ ] **R5-12** PlayStation 1 behaviour measured on a console, where no clean source describes it.
+      Depends on R1-18, R5-05.
 
 ### Phase 6: synthesis
 
