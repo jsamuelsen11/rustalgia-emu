@@ -35,8 +35,9 @@ as a test: a device sold to run other systems' games is a host.
 So the Evercade line, the Atari VCS, and the Linux handhelds are hosts,
 and clones are listed under the systems they copy.
 
-Two points stay open, listed under [Open questions](#open-questions): the Portal's Snapdragon part,
-and the Evercade VS's core type, on which two Wikipedia articles disagree.
+Four points stay open, listed under [Open questions](#open-questions): the Portal's Snapdragon part,
+the Evercade VS's core type, on which two Wikipedia articles disagree, the PS4's first sale in mainland China,
+and the licence of each MiSTer core.
 This note is not legal advice.
 
 ## Scope
