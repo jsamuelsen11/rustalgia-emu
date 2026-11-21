@@ -623,3 +623,13 @@ open | nec.co.jp/press | none stated | maker's own news releases, read in a capt
 open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a host tool | 2026-11-20 | README
 open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README
 open | learn.microsoft.com/en-us/openspecs | copies to implement; no patent grant | maker's specs | 2026-11-20 | notice
+# Sources first cited by R1-03, the sixth-generation primer.
+open | learn.microsoft.com/en-us/archive/blogs/xboxteam | none stated | maker's team blog | 2026-11-20 | post
+open | ppsspp.org | notice, no grant | site of an open-tier emulator; prose | 2026-11-20 | footer, one page
+open | xenia.jp | none stated | site of an open-tier emulator; bans the maker's kit | 2026-11-20 | one article
+# Free60's fuse page: key material on an open wiki, closed so that the guard blocks it. Patterns are cut short.
+# Evidence for each line in full: page lists console fuse values and a CPU key; never opened again.
+closed | free60.org/hardware/fuseset | none stated | key material | 2026-11-20 | fuses and CPU key; not reopened
+closed | www.free60.org/hardware/fuseset | none stated | www prefix | 2026-11-20 | fuses and CPU key; not reopened
+closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-11-20 | fuses and CPU key; not reopened
+closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened

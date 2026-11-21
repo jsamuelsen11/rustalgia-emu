@@ -164,6 +164,16 @@ check 2 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/libogc/l
 check 0 writer "$(fetch https://github.com/devkitPro/libogc/blob/master/LICENSE)"
 check 0 writer "$(fetch https://gbdev.io/pandocs/Rendering.html)"
 
+# Free60's fuse page, closed as key material, at every address it was reached by; the rest of the wiki stays open.
+check 2 writer "$(fetch https://free60.org/Hardware/Fusesets/)"
+check 2 writer "$(fetch https://free60.org/Hardware/Fusesets)"
+check 2 writer "$(fetch https://www.free60.org/Hardware/Fusesets/)"
+check 2 reader "$(fetch https://github.com/free60project/wiki/blob/master/docs/Hardware/Fusesets.md)"
+check 2 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md)"
+check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md')"
+check 0 writer "$(fetch https://free60.org/Hypervisor/)"
+check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
