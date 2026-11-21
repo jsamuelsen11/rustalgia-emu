@@ -982,3 +982,4 @@ other | zlib.net | zlib | zlib library's licence page | 2026-11-20 | page
 other | learn.microsoft.com/en-us/cpp | Microsoft terms of use | Visual C++ documentation | 2026-11-20 | footer
 open | snowflakepowered/chd-rs | BSD-3-Clause | reimplements the CHD format; origin not disputed | 2026-11-20 | README
 walled | rtissera/libchdr | BSD-3-Clause | based on old MAME code; its relicensing unchecked | 2026-11-20 | README
+other | signal.org/cla | none stated | Signal's contributor licence agreement | 2026-11-20 | page

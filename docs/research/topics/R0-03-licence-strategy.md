@@ -17,9 +17,11 @@ While the owner is the only human contributor, the owner alone can still fix the
 add a permission for app stores, and set the contributor terms;
 each outside contribution under plain GPL-3.0 takes that freedom away for its code, as VLC's relicensing showed.
 
-Apple's minimum terms for an App Store licence conflict with GPL-3.0 on the text, while Google Play and F-Droid do not;
-GPL emulators ship on the App Store anyway, and the exposure is a complaint by any one copyright holder.
-Every crate an emulator is likely to use is under a licence GPL-3.0 can take in.
+Apple's minimum terms for an App Store licence conflict with GPL-3.0 on the text,
+and no such term was found in Google Play's or F-Droid's; GPL emulators ship on the App Store anyway,
+and the exposure is a complaint by any one copyright holder.
+Every crate an emulator is likely to use declares a licence GPL-3.0 can take in,
+though the C libraries behind `-sys` crates need their own check.
 
 "Options and trade-offs" ends with [recommendations for the owner](#recommendation): GPL-3.0-or-later,
 an open section 7 permission for app stores written now,
@@ -51,8 +53,8 @@ This note is not legal advice.
 - A process call for this note: `www.gnu.org` refused every connection from this machine on 2026-11-20 and 2026-11-21
   (time-outs on ports 443 and 80, and in a browser) (research log).
   The licence text was read from GNU's FTP server, whose copy is byte-identical to the repository's `LICENSE`
-  (tested locally with `cmp`, 2026-11-20),
-  and the FAQ, the licence list, and two other GNU pages were read in existing Wayback Machine captures,
+  (tested locally with `cmp`, GNU diffutils 3.8, 2026-11-20),
+  and the FAQ, the licence list, and three other GNU pages were read in existing Wayback Machine captures,
   cited with their full time stamps.
   The research guide allows a capture "when the live page is gone";
   this note reads a page that cannot be reached at all as gone for that purpose, and asks for no new capture.
@@ -93,7 +95,8 @@ This note is not legal advice.
 - Corresponding Source is the whole build: "all the source code needed to generate, install, and
   (for an executable work)
   run the object code and to modify the work, including scripts to control those activities" (GPL-3.0 section 1).
-  System Libraries and general-purpose tools are excluded (same section).
+  System Libraries are excluded, and so are general-purpose tools used unmodified that are not part of the work
+  (same section).
   For Rustalgia, build scripts, Cargo manifests and lock files, shader sources,
   and packaging scripts belong in the published source (inference).
 - A download satisfies section 6(d) when the conveyor offers "equivalent access to the Corresponding Source in the same
@@ -105,18 +108,22 @@ This note is not legal advice.
   capture 20261118023556, page dated 2026/01/13).
   A release page with the binaries and a source archive of the same commit meets this,
   while a link to the default branch does not name the exact source (inference).
-- The written offer of section 6(b) must stay "valid for at least three years"
-  (GPL-3.0 section 6), so a release that ships source beside the binary avoids a lasting duty (inference).
+- The written offer of section 6(b) applies to object code in a physical product and must stay "valid
+  for at least three years" (GPL-3.0 section 6).
+  For downloads, section 6(d) keeps the source available only while the object code is offered,
+  so a release that ships source beside the binary ends its duty when the download ends (inference).
 - "Propagation includes copying, distribution (with or without modification), making available to the public"
   (GPL-3.0 section 0).
   Nightly and CI builds offered to the public are therefore conveyed and need matching source (inference).
-- Each copy carries the licence and notices
-  (GPL-3.0 section 4),
-  and each interactive user interface "must display Appropriate Legal Notices"
+- Each copy carries the licence and notices (GPL-3.0 section 4).
+  A modified version's interactive interfaces "must display Appropriate Legal Notices"
   (section 5(d)):
   a copyright notice, the absence of warranty, that the work may be conveyed under the licence, and how to view it
   (section 0).
-  An About screen in each front end, with the licence text in the package, meets this (inference).
+  The duty binds those who convey a modified work, and lapses where the original program shows no such notices
+  (section 5(d)).
+  An About screen in each Rustalgia front end, with the licence text in the package, passes the duty on to every fork
+  (inference).
 - Charging is allowed and restricting is not: "You may charge any price or no price for each copy that you convey"
   (section 4),
   and "You may not impose any further restrictions on the exercise of the rights granted or affirmed under this License"
@@ -158,9 +165,10 @@ This note is not legal advice.
 | [Dolphin](https://github.com/dolphin-emu/dolphin) | "version 2 or later (GPLv2+)" | `Readme.md` | `GPL-2.0-or-later` |
 | [mGBA](https://github.com/mgba-emu/mgba) | MPL-2.0, one named holder | README | MPL header |
 
-- The table rests on each repository's README and licence file, and on the first lines of one source file,
-  read on 2026-11-20 at commits `361ffa9501b6` (melonDS), `78474e5d39f5` (bsnes), `6bdd93d289a8` (PCSX2),
-  `7dac5ec79049` (Dolphin), and `e6c17152dec0` (mGBA).
+- The table rests on each repository's README and licence file, and on the first lines of one source file:
+  `src/ARCodeFile.cpp` (melonDS), `pcsx2/BuildVersion.cpp` (PCSX2), `Source/Core/Core/AchievementManager.cpp` (Dolphin),
+  and `src/gba/gba.c` (mGBA), read on 2026-11-20 at commits `361ffa9501b6` (melonDS), `78474e5d39f5` (bsnes),
+  `6bdd93d289a8` (PCSX2), `7dac5ec79049` (Dolphin), and `e6c17152dec0` (mGBA).
   PCSX2's `GPL-3.0+` is the deprecated SPDX spelling of "or later"
   ([SPDX License List](https://spdx.org/licenses/), version 3.29.0, which lists `GPL-3.0+` as deprecated) (observed).
 - The two choices trade control for reach.
@@ -185,7 +193,7 @@ This note is not legal advice.
   The FAQ says other contributors "do not have to make the same exception for their code"
   (GPL FAQ, `#GPLIncompatibleLibs`).
   So an exception reaches only code whose holders grant it,
-  and code taken from other GPL projects never carries it (inference).
+  and code taken from other GPL projects carries it only if its holders grant it too (inference).
 - Six kinds of extra term are allowed for added material,
   among them preserving "specified reasonable legal notices or author attributions",
   marking modified versions as different,
@@ -207,14 +215,14 @@ This note is not legal advice.
   "Any other use of the Services and Content is a material breach of this Agreement", and Content includes apps
   ([Apple Media Services Terms](https://www.apple.com/legal/internet-services/itunes/us/terms.html), section F,
   last updated 14 September 2026).
-  Among them: use only "for personal, noncommercial purposes", with exceptions Apple sets,
-  on up to ten devices per account (same).
+  Among them: use only "for personal, noncommercial purposes", with exceptions Apple sets, with up to ten devices,
+  at most five of them computers, signed in to an account at one time (same).
 - A developer may supply its own EULA,
   but it "must include and may not be inconsistent with the minimum terms" of Exhibit B,
   whose item 2 requires "a non-transferable license to use the Licensed Application on any Apple-branded Products
   that the end user owns or controls"
   ([Apple Developer Program License Agreement](https://developer.apple.com/support/terms/apple-developer-program-license-agreement/),
-  Schedule 1, section 3.2 and Exhibit B; Schedule 2 dated 29 October 2026).
+  Schedule 1, section 3.2 and Exhibit B; the Agreement and Schedule 1 last updated 29 October 2026).
   A GPL-3.0 grant allows transfer and redistribution, so it cannot meet item 2 (inference).
 - Apple's [Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) exempts what the licensing
   terms "of any open-sourced components included with the Licensed Application" permit from its copying and modification
@@ -234,8 +242,8 @@ This note is not legal advice.
   ([FSF news, 25 May 2010](https://www.fsf.org/news/2010-05-app-store-compliance)).
   Its follow-up said "this analysis would apply to all versions of the GNU GPL and AGPL"
   ([FSF blog, 26 May 2010](https://www.fsf.org/blogs/licensing/more-about-the-app-store-gpl-enforcement)).
-  Authority: the FSF's view as GNU Go's copyright holder, not a ruling.
-  Apple's terms have changed since, and the FAQ capture has no entry on app stores
+  Authority: the FSF's view in an enforcement letter, not a ruling.
+  Apple's terms have changed since (inference from the 2026 dates above), and the FAQ capture has no entry on app stores
   (searched for "app store", "apple", and "store").
 - VLC was removed from the App Store in January 2011 after one contributor's GPL complaint
   ([vlc-devel, 10 January 2011](https://mailman.videolan.org/pipermail/vlc-devel/2011-January/078047.html),
@@ -245,10 +253,10 @@ This note is not legal advice.
   His code was therefore rewritten." ([VideoLAN, 21 December 2011](https://www.videolan.org/press/lgpl-libvlc.html)).
   VLC for iOS is now "bi-licensed under the Mozilla Public License Version 2 as well
   as the GNU General Public License Version 2 or later" ([VLC for iOS](https://www.videolan.org/vlc/download-ios.html)).
-- SameBoy reserves the store to its author:
-  written permission from Lior Halphon "is required to distribute copies
+- SameBoy reserves the store to its author for its iOS folder,
+  whose files carry the condition that written permission from Lior Halphon "is required to distribute copies
   or substantial portions of the Software in a digital marketplace, such as Apple's App Store"
-  ([SameBoy `LICENSE`](https://github.com/LIJI32/SameBoy/blob/master/LICENSE)).
+  ([SameBoy `LICENSE`](https://github.com/LIJI32/SameBoy/blob/master/LICENSE), the condition on the iOS directory).
   It is the reverse of an exception, under a permissive licence.
 
 ### Apple outside the App Store
@@ -263,7 +271,8 @@ This note is not legal advice.
   so it is out of reach for an individual owner (inference).
   A marketplace can list others' apps:
   [AltStore](https://altstore.io/) says "Anyone can distribute their apps with AltStore" by hosting a source,
-  and Delta ships through it in the EU ([Delta, Get Delta](https://faq.deltaemulator.com/)).
+  and Delta ships through AltStore PAL or the App Store ([Delta user guide](https://faq.deltaemulator.com/), home page).
+  AltStore offers PAL "only in the European Union, Japan, & Brazil" (AltStore).
 - [TestFlight](https://developer.apple.com/testflight/) allows up to 10,000 external testers,
   and the first build must be approved by App Review; testers accept the TestFlight terms
   (Developer Program License Agreement, section 1.2).
@@ -279,16 +288,19 @@ This note is not legal advice.
   ([Developer Distribution Agreement](https://play.google/developer-distribution-agreement.html), section 5.3,
   effective 15 September 2025).
   The [Play Terms of Service](https://play.google/intl/en_us/play-terms/) bar redistributing content "except
-  as expressly authorized", and say apps "may be governed by" the developer's EULA (section 4, dated 17 November 2026).
+  as expressly authorized and only in the exact manner provided", and say apps "may be governed by" the developer's EULA
+  (section 4, dated 17 November 2026).
   The GPL's grant can be read as such an authorisation, and no term like Apple's Exhibit B was found (inference).
-- Developer verification began on 30 September 2026 in Brazil, Indonesia, Singapore, and Thailand,
-  and extends to all certified devices in 2027
+- Developer verification began on 30 September 2026 for installs from participating stores in Brazil, Indonesia,
+  Singapore, and Thailand, on certified devices running Android 8 or later,
+  and is to expand to all apps on certified devices in 2027
   ([Android developer verification](https://developer.android.com/developer-verification)).
   Apps from open-source repositories can keep shipping without registering the app, with users taking the advanced flow
   ([open-source registration guide](https://developer.android.com/developer-verification/guides/open-source-app-registration)).
   It concerns identity, not the licence (inference).
 - [F-Droid](https://f-droid.org/docs/Inclusion_Policy/) takes only FLOSS, "for example,
-  released under a GPL or Apache license", builds each app from source, and forbids proprietary tracking libraries.
+  released under a GPL or Apache license", builds apps from source where it can,
+  and forbids proprietary tracking libraries.
   Dolphin, PPSSPP, and RetroArch are listed there
   ([Dolphin](https://f-droid.org/en/packages/org.dolphinemu.dolphinemu/),
   [PPSSPP](https://f-droid.org/en/packages/org.ppsspp.ppsspp/),
@@ -298,10 +310,10 @@ This note is not legal advice.
 
 | Emulator | Licence | iOS | Android | Licence term in the listing |
 |---|---|---|---|---|
-| PPSSPP | GPL-2.0 or later | [App Store](https://apps.apple.com/us/app/id6496972903) | Play, F-Droid | Apple's Standard EULA |
+| PPSSPP | GPL-2.0 or later | [App Store](https://apps.apple.com/us/app/id6496972903) | Play, F-Droid | none shown |
 | RetroArch | GPL-3.0 | [App Store](https://apps.apple.com/us/app/id6499539433) | Play, F-Droid | not checked |
-| Delta | AGPL-3.0 | App Store, AltStore PAL | not checked | Apple's Standard EULA |
-| Provenance | BSD-style | [App Store](https://apps.apple.com/us/app/id1596862805) | not checked | Apple's Standard EULA |
+| Delta | AGPL-3.0 | App Store, AltStore PAL | not checked | Delta's own terms of use |
+| Provenance | BSD-style | [App Store](https://apps.apple.com/us/app/id1596862805) | not checked | Apple's Standard EULA, by the listing |
 | Dolphin | GPL-2.0 or later | none | [Play](https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu), F-Droid | "GNU GPL v3+" |
 
 - The table rests on the store listings and project pages read on 2026-11-20
@@ -312,7 +324,10 @@ This note is not legal advice.
   Provenance bundles cores under GPL-2.0-or-later and GPL-3.0-or-later and sells optional features
   ([Provenance licences](https://provenance-emu.com/licenses/)) (observed).
 - No complaint or takedown under the GPL against any of these was found
-  (searched: the web, for GPL complaints against emulators on the App Store from 2024 on).
+  (searched: the web, for "GPL emulator App Store takedown complaint", from 2024 on).
+  The search found Apple's removal of iGBA in April 2024 under its copyright guideline, as a copy of another app,
+  which [R0-02](R0-02-legal-baseline.md) records, and a forum thread on RetroArch's removal that gives no reason (lead);
+  RetroArch's listing is live.
   Practice tolerates GPL apps on the App Store; the exposure is a complaint by any holder, as with VLC (inference).
 
 ### Contributor terms
@@ -325,7 +340,7 @@ This note is not legal advice.
   (version 2.2)
   and [Google's CLA](https://cla.developers.google.com/about/google-individual) grant a "perpetual, worldwide,
   non-exclusive, no-charge, royalty-free, irrevocable copyright license" including the right to sublicense,
-  and the contributor keeps copyright (section 2).
+  (section 2), and the contributor keeps copyright (preamble).
   The recipient can relicense or add permissions without further consent (inference from "sublicense").
 - The [Harmony template](https://harmonyagreements.org/docs/ha-combined-v1) offers outbound limits from "only under the
   terms of the license or licenses which We are using on the Submission Date" to "any license, including copyleft,
@@ -333,10 +348,10 @@ This note is not legal advice.
   [Canonical's CLA](https://assets.ubuntu.com/v1/ff2478d1-Canonical-HA-CLA-ANY-I_v1.2.pdf)
   (version 1.2) uses option five.
 - The FSF asks for assignment because "enforcement by copyright holders is a universal, straightforward,
-  and powerful tool", and because it "allows us to grant additional permissions on a package, such as an exception"
-  ([FSF contributor FAQ](https://www.fsf.org/licensing/contributor-faq), 9 July 2021).
-  KDE's [Fiduciary Licence Agreement](https://ev.kde.org/rules/fla/) grants an exclusive licence to a trustee bound to
-  free licences, and KDE calls it optional.
+  and powerful tool", and because it "allows us to grant additional permissions on a package, such as an exception,
+  if the need should arise" ([FSF contributor FAQ](https://www.fsf.org/licensing/contributor-faq), 9 July 2021).
+  KDE's [Fiduciary Licence Agreement](https://ev.kde.org/rules/fla/) is its "preferred form
+  for assigning copyright" to KDE e.V., and KDE says "It is entirely optional".
 - GitHub's terms make inbound equal to outbound by default:
   content added to a repository with a licence notice is licensed "under the same terms",
   unless a separate agreement says otherwise
@@ -352,6 +367,9 @@ This note is not legal advice.
   [R0-01](R0-01-clean-room-policy.md) found no sign-off rule in the roadmap's emulators.
 - Dolphin's guide also bars contributors from using LLMs to make changes to the emulated console's behaviour,
   on the ground that models must be assumed to hold leaked Nintendo material (Dolphin `Contributing.md`, paraphrased).
+- Signal's CLA licenses contributions on the condition
+  that Signal "will make Your Contributions available under an OSI-approved open source license"
+  ([Signal CLA](https://signal.org/cla/)), which leaves room for its store exception (inference).
 - The Rust project's own projects are "generally dual-licensed" under Apache-2.0 and MIT
   ([Rust licences](https://www.rust-lang.org/policies/licenses)), with no CLA or sign-off in the
   [compiler's contribution guide](https://rustc-dev-guide.rust-lang.org/contributing.html) (observed).
@@ -362,7 +380,8 @@ This note is not legal advice.
   VideoLAN reported "more than 80% of the copyright holders on VLC's core have agreed",
   and that without the rest "we will not change the license"
   ([VideoLAN, 7 September 2011](https://www.videolan.org/press/lgpl.html)).
-  Dolphin moved from GPLv2-only to GPLv2 or later in 2014 and 2015 by tracking each unreachable contributor (secondary).
+  Dolphin's [FAQ](https://dolphin-emu.org/docs/faq/) says the project was relicensed to GPLv2 or later,
+  and its inbound term dates from 1 December 2014 (Dolphin `Contributing.md`).
 - Each holder enforces for its own code: reinstatement after a violation runs from "a particular copyright holder"
   (GPL-3.0 section 8).
   Hellwig's case against VMware was dismissed on procedure and standing
@@ -377,11 +396,11 @@ This note is not legal advice.
   (Apache ICLA section 5; Google CLA).
   A wholly agent-written change may fit neither
   (inference, from [R0-06](R0-06-provenance-controls.md#authorship-and-ownership-of-agent-written-code-and-text)).
-- OpenSSL rewrote its CLA in June 2026: where a portion was generated by AI tools "and is not protected by copyright,
+- OpenSSL has issued a new CLA: where a portion was generated by AI tools "and is not protected by copyright,
   You do not represent that portion as owned intellectual property"
   ([OpenSSL ICLA](https://openssl-library.org/policies/cla/openssl_icla.pdf), version 1.1, clause 8(c)).
   Its [AI policy](https://openssl-library.org/policies/general/ai-policy/) requires an `Assisted-by:` trailer
-  and the new CLA together.
+  and the new CLA together where a non-trivial portion of a submission was made with an AI tool.
 - The TYPO3 board's draft says "A lack of copyright protection does not render code incompatible with the GPL",
   and "Where a piece of code attracts no copyright protection, no copyleft obligation is triggered"
   ([TYPO3 board statement](https://news.typo3.com/article/typo3-association-board-meeting-protocol-8-july-2026/board-statement-on-gpl-and-ai-code),
@@ -416,8 +435,10 @@ This note is not legal advice.
   ([Redistributing Visual C++ files](https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files)),
   while the Universal CRT "ships as part of Windows 10 and later versions"
   ([CRT library features](https://learn.microsoft.com/en-us/cpp/c-runtime-library/crt-library-features)).
-  The GNU target's runtime libraries carry GCC's exception,
-  which permits combining them with independent modules "under terms of your choice"
+  GCC's own runtime libraries, such as libgcc and libstdc++, carry GCC's exception,
+  which lets a combination with independent modules be conveyed "under terms of your choice,
+  consistent with the licensing of the Independent Modules", provided the target code came from eligible compilation;
+  which libraries Rust's GNU target links is from memory
   ([GCC Runtime Library Exception 3.1](https://web.archive.org/web/20261114170117/https://www.gnu.org/licenses/gcc-exception-3.1.html),
   section 1, capture 20261114170117).
 - Apache-2.0 goes into GPL-3.0 one way:
@@ -427,18 +448,21 @@ This note is not legal advice.
   Crates under Apache-2.0 alone, such as winit and cpal, are usable because Rustalgia is GPLv3 (inference).
 - [MPL-2.0](https://www.mozilla.org/media/MPL/2.0/index.txt) names the GPL as a Secondary License
   (section 1.12),
-  and a file opts out only by an active choice, the Exhibit B notice
+  and a file opts out only by its author's choice: the Exhibit B notice,
+  or first publication under MPL 1.1 without a GPL option
   ([MPL FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/), question 14, updated 30 January 2024).
   LGPL-3.0 is GPL-3.0 "supplemented by the additional permissions listed below"
   ([LGPL-3.0](https://spdx.org/licenses/LGPL-3.0-only.html)), and LGPL-2.1 lets a recipient apply the GPL instead
-  ([LGPL-2.1](https://spdx.org/licenses/LGPL-2.1-only.html), section 3); "only" in 2.1 leads to GPLv2 alone (inference).
+  ([LGPL-2.1](https://spdx.org/licenses/LGPL-2.1-only.html), section 3), including a newer GPL version than version 2
+  (same section).
 - AGPL-3.0 is "technically not compatible with GPLv3 in a strict sense",
   but separate modules under each may be combined in one project (GNU licence list, `#AGPL`).
 - Fonts are separate works. egui's default fonts crate declares `(MIT OR Apache-2.0) AND OFL-1.1 AND Ubuntu-font-1.0`
   ([docs.rs, epaint_default_fonts 0.37.0](https://docs.rs/epaint_default_fonts/latest/epaint_default_fonts/)).
   The GNU list calls the [OFL](https://spdx.org/licenses/OFL-1.1.html) "a free copyleft license for fonts" (`#SILOFL`),
   and the [Ubuntu font licence](https://canonical.com/legal/font-licence) lets the fonts be "bundled, embedded,
-  and redistributed", while they "cannot be released under any other licence" (preamble).
+  and redistributed provided the terms of this licence are met",
+  while they "cannot be released under any other licence" (preamble).
   They ride with the program as separate works under their own licence (inference).
 - The likely crates all declare licences GPL-3.0 can take in
   (each crate's `license` field in the [crates.io API](https://crates.io/api/v1/crates/winit),
@@ -446,7 +470,8 @@ This note is not legal advice.
 
 | Declared licence | Crates |
 |---|---|
-| MIT OR Apache-2.0 | wgpu, naga, ash, rodio, egui, serde, gilrs, libc, flate2, ndk, windows, metal |
+| MIT OR Apache-2.0 | wgpu, naga, ash, rodio, egui, serde, libc, flate2, ndk, windows, metal |
+| Apache-2.0/MIT, the older spelling of the same choice | gilrs |
 | MIT | sdl3, iced, rfd, zip, objc2, alsa-sys, gtk-sys, libudev-sys |
 | Apache-2.0 | winit, cpal, oboe, ab_glyph |
 | MIT AND Zlib | sdl2-sys |
@@ -468,14 +493,20 @@ This note is not legal advice.
   and its README says the code "is based off of MAME's old C codebase",
   with third-party libraries under their own terms. [chd-rs](https://github.com/SnowflakePowered/chd-rs) calls itself a
   "Reimplementation of the CHD file format in pure Safe Rust" under the same licence.
-  MAME's code was under a non-commercial licence before its 2016 relicensing
-  (from memory), so libchdr's origin needs checking before its code is read or used.
+  MAME's [legal page](https://web.archive.org/web/20261111203603/https://www.mamedev.org/legal.html)
+  (capture 20261111203603, because the live site refused connections)
+  gives GPL-2.0 or later from MAME 0.172, lets files carry other licences in their headers,
+  and says "This license does not apply to prior versions of MAME".
+  So code taken from MAME's older C codebase carries the older terms unless its authors relicensed it,
+  and libchdr's origin needs checking before its code is read or used (inference).
 - Enforcement tools cover different gaps.
   [cargo-deny](https://embarkstudios.github.io/cargo-deny/checks/licenses/cfg.html) denies any licence not on an allow
   list, can allow a licence for one crate only, and matches GNU identifiers exactly, so `GPL-3.0-only`,
-  `GPL-3.0-or-later`, and `GPL-3.0` are separate entries; it checks build dependencies and not dev dependencies.
-  [cargo-about](https://embarkstudios.github.io/cargo-about/) generates the notice file that MIT and Apache-2.0 section
-  4(d) require in shipped apps.
+  `GPL-3.0-or-later`, and `GPL-3.0` are separate entries (as of version 0.18.4); by default it checks build dependencies
+  and not dev dependencies. [cargo-about](https://embarkstudios.github.io/cargo-about/) generates licence information
+  for every crate in the dependency graph, which serves MIT's notice condition and Apache-2.0's copy of the licence
+  (section 4(a)), and a NOTICE file's attributions where a crate ships one (section 4(d))
+  ([MIT](https://spdx.org/licenses/MIT.html); [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html); inference).
   [REUSE 3.3](https://reuse.software/spec-3.3/) declares a licence for every file,
   including vendored C and fonts that cargo-deny cannot see.
   None checks a C library a `-sys` crate links from the system (inference).
@@ -527,12 +558,16 @@ when "you can combine code released under the other license with code released u
   or modify your work without being at risk of take-downs, shake-downs, or litigation"
   ([choosealicense, "No License"](https://choosealicense.com/no-permission/)).
 - Practice splits.
-  [TetaNES](https://github.com/lukexor/tetanes) stores 157 of blargg's `.nes` tests with his readmes and no licence
-  for them, and [mGBA](https://github.com/mgba-emu/mgba) stores 41 Game Boy test files under `cinema/gb/blargg`,
+  [TetaNES](https://github.com/lukexor/tetanes) stores 157 `.nes` test ROMs under `tetanes-core/test_roms`,
+  many of them blargg's, with his readmes and no licence for them,
+  and [mGBA](https://github.com/mgba-emu/mgba) stores 41 Game Boy test files under `cinema/gb/blargg`,
   with a licence file for its Mooneye folder but none for blargg's
   (observed in repository listings at commits `344b607bb40f` and `e6c17152dec0`).
-  GitHub's code search showed 58 files that download a test bundle's releases at test time
+  GitHub's code search for `"game-boy-test-roms/releases/download"` showed 58 files that download
+  that bundle's releases at test time
   (observed in the result list, 2026-11-20; the search needs a signed-in account, so it is not linked).
+  [mooneye-gb](https://github.com/Gekkio/mooneye-gb/blob/master/.github/workflows/ci.yml) downloads its author's own MIT
+  test suite in CI, a step named "Download test ROMs" (observed at commit `3856dcbca82a`).
 - Fetching at test time still makes a copy on the machine that runs the test,
   but it removes Rustalgia's distribution and keeps the files out of its history (§ 106(1), (3); inference).
   [R0-05](R0-05-source-map.md) found that older addresses for blargg's tests no longer serve them,
@@ -540,9 +575,10 @@ when "you can combine code released under the other license with code released u
 - Facts about behaviour, such as pass or fail and the result code a test prints, are outside protection,
   which never extends to "any idea, procedure, process, system, method of operation" (§ 102(b); inference).
   A baseline screenshot reproduces what the ROM draws, so text results avoid the question (inference).
-- ADR 0001's kinds table says "Test software and test vectors: Results always; code by its licence"
-  ([ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md));
-  it does not say whether running a test binary counts as reading its code (observed).
+- In ADR 0001's kinds table, the row for test software and test vectors reads "Results always; code by its licence"
+  ([ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md)).
+  A suite with no licence is closed, and the closed tier allows "observing the program's behaviour by running it";
+  the ADR does not say whether running an open or walled test binary counts as reading its code (observed).
 
 ### The repository's documents and data
 
@@ -551,9 +587,11 @@ when "you can combine code released under the other license with code released u
   A Markdown note is its own source, so the GPL is easy to meet for the repository's documents (inference).
 - The FSF recommends the GFDL rather than the GPL for manuals and calls CC BY and CC BY-SA 4.0 suitable
   for educational works (GPL FAQ, `#GPLOtherThanSoftware`; GNU licence list, `#ccby`, `#ccbysa`; paraphrased).
-  KDE requires "CC-BY-SA-4.0 or compatible licence" for documentation and moved off the GFDL in 2017
+  KDE requires "CC-BY-SA-4.0 or compatible licence" for documentation,
+  lets documentation started before 2017 stay under the GFDL, allows its code licences in addition,
+  and requires the REUSE specification
   ([KDE Licensing Policy](https://community.kde.org/Policies/Licensing_Policy), last edited 15 August 2025).
-  The Linux kernel keeps its documents under the code's licence, with an SPDX line in each
+  The Linux kernel's SPDX rule extends to its `.rst` documents (observed)
   ([kernel licensing rules](https://docs.kernel.org/process/license-rules.html)).
 - Creative Commons allows dual licensing, for example "under both a CC license and the GPL",
   after which "A reuser may then choose which set of terms to comply with" (CC FAQ).
@@ -594,9 +632,8 @@ when "you can combine code released under the other license with code released u
   repositories "when referring to use with or compatibility with the Rust programming language", but "Using the Rust
   trademarks within another trademark requires written permission from the Rust Foundation and may include additional
   conditions of use and a fee for use" (no date on the page).
-  A store listing named "Rustalgia", or a registered mark, is a use within another trade mark by
-  that wording (inference).
-  A web search found no other product of that name (secondary); no trade mark register was searched.
+  A registered mark would be such a use; a store listing may be, if the name works as a mark (inference).
+  A web search for "Rustalgia" found no other product of that name (secondary); no trade mark register was searched.
 - Licences that bind a person, such as Panic's Playdate SDK licence ([R1-08](R1-08-catalogue-modern.md)),
   bind whoever accepted them; Rustalgia's licence cannot change that, so the exposure sits with each contributor
   (inference; [R0-01, option 10](R0-01-clean-room-policy.md#recommendation)).
@@ -632,7 +669,8 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 ### 3. GPL-3.0 with the owner as proxy
 
 - **What:** name the owner, under section 14, as the one who decides which later versions apply.
-- **Costs:** unusual, so readers may misread it; the decision lapses if the owner cannot act.
+- **Costs:** none of the five emulators uses it, so readers may misread it,
+  and the decision lapses if the owner cannot act (inference).
 - **Gains:** keeps the choice with the project without a contributor agreement.
 - **Used by:** none of the five emulators read.
 
@@ -640,14 +678,15 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 
 - **What:** ship plain GPL-3.0 to every store.
 - **Costs:** Apple's Exhibit B conflicts with the licence on the text; any holder can ask Apple to remove the app.
-- **Gains:** nothing to write; what PPSSPP and RetroArch appear to do.
-- **Used by:** PPSSPP, RetroArch, Dolphin on Play.
+- **Gains:** nothing to write.
+- **Used by:** Dolphin on Play, whose listing names the GPL; PPSSPP and RetroArch show no exception in their listings
+  (their licence files were not searched for one).
 
 ### 5. An open section 7 permission for stores
 
 - **What:** a permission letting anyone convey Rustalgia through a store whose terms add restrictions,
   provided they otherwise comply with GPL-3.0, written now and made part of the inbound terms.
-- **Costs:** forks may strip it; it does not cover code from other GPL projects, which then cannot enter store builds.
+- **Costs:** forks may strip it; it covers code from other GPL projects only if their holders grant it too.
 - **Gains:** removes the conflict for the project's own code; costs nothing while the owner is the only holder.
 - **Used by:** Signal, by a transcription of its exception; no emulator found.
 
@@ -664,7 +703,7 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 - **What:** move to MPL-2.0 or LGPL, as VLC did.
 - **Costs:** gives up copyleft over the whole program; larger than the question needs.
 - **Gains:** the store question goes away, as far as VLC's terms show.
-- **Used by:** VLC (MPL-2.0 or GPL-2.0-or-later), mGBA (MPL-2.0).
+- **Used by:** VLC for iOS (MPL-2.0 or GPL-2.0-or-later); mGBA has used MPL-2.0 from the start.
 
 ### 8. Inbound equals outbound, no sign-off
 
@@ -677,8 +716,10 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 
 - **What:** add a `Signed-off-by` from a human contributor to each commit; never from an agent.
 - **Costs:** one trailer; does not settle whether a person can certify agent output (R0-06).
-- **Gains:** a record for enforcement; what GCC and the kernel use.
-- **Used by:** GCC, the kernel, TYPO3's board recommendation.
+- **Gains:** a record for enforcement; what GCC uses.
+- **Used by:** GCC; the kernel and GCC require a person, not an agent, to sign
+  ([R0-06](R0-06-provenance-controls.md#how-other-projects-treat-and-record-ai-involvement)); TYPO3's board points to
+  it.
 
 ### 10. A contributor licence agreement
 
@@ -691,23 +732,23 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 ### 11. Assignment
 
 - **What:** contributors assign copyright, or license exclusively to a trustee.
-- **Costs:** the most friction; moving away from it is the trend; adds nothing for uncopyrighted output.
+- **Costs:** the most friction; GCC dropped the requirement in 2021; adds nothing for uncopyrighted output.
 - **Gains:** one holder who can enforce.
-- **Used by:** the FSF, KDE (optional).
+- **Used by:** the FSF; KDE, as an optional form.
 
 ### 12. Documents under the code's licence
 
 - **What:** notes, ADRs, and the register stay under GPL-3.0, as now.
 - **Costs:** notes cannot go back to CC wikis or Pan Docs; BY-SA 3.0 text cannot be adapted in.
 - **Gains:** one licence; notes flow into code comments.
-- **Used by:** the Linux kernel.
+- **Used by:** Rustalgia today; the kernel applies its SPDX rule to its documents.
 
 ### 13. Documents under CC BY-SA 4.0
 
 - **What:** license `docs/` separately.
 - **Costs:** code comments cannot flow back into the notes; two licences to explain.
-- **Gains:** matches KDE and the wikis; can carry BY-SA 3.0 adaptations.
-- **Used by:** KDE.
+- **Gains:** matches KDE's rule for new documentation and the wikis; can carry BY-SA 3.0 adaptations.
+- **Used by:** KDE, which also allows its code licences in addition.
 
 ### 14. Documents dual-licensed under the GPL or CC BY-SA 4.0
 
@@ -715,7 +756,7 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
   with imported text marked by its own licence.
 - **Costs:** per-file marking for anything imported.
 - **Gains:** notes can go to code and to wikis; CC sanctions the practice.
-- **Used by:** Wikimedia, with the GFDL in place of the GPL.
+- **Used by:** Wikimedia, with the GFDL in place of the GPL; KDE's rule allows it.
 
 ### 15. Store unlicensed test suites
 
@@ -729,7 +770,7 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 - **What:** download each suite from a pinned address, check it against a recorded checksum, keep it out of the tree,
   and store only text results; ask each author for a licence meanwhile.
 - **Costs:** the host can vanish; the runner still makes a copy.
-- **Gains:** no distribution by Rustalgia; a takedown reaches the host, not the project.
+- **Gains:** no distribution by Rustalgia; a takedown would reach the host, not the project (inference).
 - **Used by:** the 58 files found by code search.
 
 ### 17. Use only licensed suites
@@ -737,7 +778,7 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
 - **What:** run only suites under a licence.
 - **Costs:** gives up the only tests for several behaviours ([R0-05](R0-05-source-map.md)).
 - **Gains:** no copyright question at all.
-- **Used by:** mooneye-gb for its own suite.
+- **Used by:** mooneye-gb, for its author's own MIT suite.
 
 ### 18. A README statement only
 
@@ -752,7 +793,7 @@ Options 1 to 3 concern the GPL version, 4 to 7 app stores, 8 to 11 contributor t
   `LICENSES/` holding each text, and cargo-deny and cargo-about in the checks.
 - **Costs:** a check to maintain.
 - **Gains:** the version choice and each imported file's licence are machine-readable.
-- **Used by:** KDE, the kernel; Dolphin and PCSX2 use SPDX lines.
+- **Used by:** KDE requires REUSE; the kernel, Dolphin, and PCSX2 use SPDX lines.
 
 ### Recommendation
 
@@ -775,8 +816,9 @@ and the first four depend on doing them before the first outside contribution.
 - **Tests (options 15 to 17):** option 16, with option 17 wherever a licensed suite covers the same behaviour.
 - **Statement (options 18 and 19):** option 19, starting with `REUSE.toml` and `LICENSES/` now and adding cargo-deny,
   cargo-about, and SPDX headers with the first crate.
-  The allow list names MIT, Apache-2.0, Apache-2.0 WITH LLVM-exception, BSD-2-Clause, BSD-3-Clause, ISC, Zlib, MPL-2.0,
-  Unicode-3.0, the GNU licences in "or later" form, GPL-3.0-only, and LGPL-3.0, with fonts allowed per crate.
+  The allow list names, in SPDX form, the licences of the crate table and ADR 0001's open test, Unicode-3.0,
+  `GPL-3.0-only`, `LGPL-3.0-only`, and the GNU licences in their "or later" forms,
+  with fonts allowed per crate and the `Apache-2.0/MIT` spelling checked against cargo-deny's parser.
   The GNU list calls the
   [Unicode License v3](https://web.archive.org/web/20261118021016/https://www.gnu.org/licenses/license-list.html)
   "compatible with all versions of the GNU GPL" (`#Unicodev3`).
@@ -796,8 +838,10 @@ and the first four depend on doing them before the first outside contribution.
 - The tier table above feeds the pending amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md):
   replace the named list in the open test with the test itself,
   with the GNU list as the authority and the names as examples.
-  That would move SameSuite, n64chain, and asar to open, keep ps2sdk walled, and leave calico on its origin check.
-  The same amendment needs a line saying that running a test binary is not reading its code.
+  That would move SameSuite, n64chain, asar, and the libretro database
+  (with the BY-SA limit) to open, keep ps2sdk walled, and leave calico on its origin check.
+  The same amendment needs a line saying that running an open or walled test binary is not reading its code;
+  the closed tier already allows running a program.
 - Store builds need an About screen with the legal notices, the licence text, and a notice file from cargo-about;
   [`R3-03`](../../roadmap/research.md#phase-3-host-platforms)
   and [`R3-06`](../../roadmap/research.md#phase-3-host-platforms) take the store routes from here,
@@ -819,9 +863,13 @@ and the first four depend on doing them before the first outside contribution.
   Only a ruling can answer it; none was found.
 - Will blargg and the other authors of unlicensed suites grant a licence?
   Asking them, which the owner would do, answers it.
-- Was the MAME code that libchdr is based on relicensed by its authors?
-  Reading MAME's file headers for the CHD code in [`R4-04`](../../roadmap/research.md#phase-4-technology-stack) answers
-  it.
+- Was the older MAME code that libchdr is based on relicensed by its authors?
+  MAME's legal page says its licence does not reach versions before 0.172;
+  a reader session in [`R4-04`](../../roadmap/research.md#phase-4-technology-stack), started by the owner,
+  can compare libchdr's history with MAME's, which is walled.
+- Is "Rustalgia" registered as a trade mark anywhere?
+  A search of the United States, European Union, and United Kingdom registers, whose tools need a browser session,
+  answers it before any store listing.
 
 ## Sources
 
@@ -850,7 +898,8 @@ Licences and their stewards:
 - [SPDX License List](https://spdx.org/licenses/), version 3.29.0,
   with the texts of [LGPL-3.0](https://spdx.org/licenses/LGPL-3.0-only.html),
   [LGPL-2.1](https://spdx.org/licenses/LGPL-2.1-only.html), [OFL-1.1](https://spdx.org/licenses/OFL-1.1.html),
-  and [X11](https://spdx.org/licenses/X11.html).
+  [X11](https://spdx.org/licenses/X11.html), [MIT](https://spdx.org/licenses/MIT.html),
+  and [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html), the last two read 2026-11-21.
 - [Mozilla Public License 2.0](https://www.mozilla.org/media/MPL/2.0/index.txt)
   and its [FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/), updated 30 January 2024.
 - [Apache, "Apache License v2.0 and GPL Compatibility"](https://www.apache.org/licenses/GPL-compatibility.html).
@@ -870,7 +919,7 @@ Stores and their terms:
   last updated 14 September 2026.
 - [Apple Licensed Application EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/), undated.
 - [Apple Developer Program License Agreement](https://developer.apple.com/support/terms/apple-developer-program-license-agreement/),
-  Schedule 2 dated 29 October 2026.
+  the Agreement and Schedule 1 last updated 29 October 2026.
 - [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/), last updated 16 October 2026.
 - [Apple, "Update on apps distributed in the European Union"](https://developer.apple.com/support/dma-and-apps-in-the-eu/).
 - [Apple, Web Distribution](https://developer.apple.com/support/web-distribution-eu/).
@@ -903,6 +952,7 @@ Stores and their terms:
 Contributor terms:
 
 - [Developer Certificate of Origin 1.1](https://developercertificate.org/).
+- [Signal CLA](https://signal.org/cla/).
 - [Apache Individual CLA](https://www.apache.org/licenses/icla.pdf), version 2.2.
 - [Google Individual CLA](https://cla.developers.google.com/about/google-individual).
 - [Harmony combined template](https://harmonyagreements.org/docs/ha-combined-v1), version 1.0.
@@ -933,6 +983,7 @@ Emulator projects, at the commits given in the findings:
   [mGBA](https://github.com/mgba-emu/mgba)
   and its [contribution guide](https://github.com/mgba-emu/mgba/blob/master/CONTRIBUTING.md),
   [TetaNES](https://github.com/lukexor/tetanes),
+  [mooneye-gb's CI workflow](https://github.com/Gekkio/mooneye-gb/blob/master/.github/workflows/ci.yml),
   and [SameBoy's `LICENSE`](https://github.com/LIJI32/SameBoy/blob/master/LICENSE).
 
 Dependencies and tools:
@@ -961,4 +1012,6 @@ Law and policy on copies and documents:
 - [Wikimedia Terms of Use](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use).
 - [Pan Docs, About](https://gbdev.io/pandocs/About.html).
 - [libretro database](https://github.com/libretro/libretro-database), by its register line.
+- [MAME legal information](https://web.archive.org/web/20261111203603/https://www.mamedev.org/legal.html),
+  capture 20261111203603; read 2026-11-21.
 - [Rust Foundation, Rust Trademark Policy](https://rustfoundation.org/policy/rust-trademark-policy/), undated.
