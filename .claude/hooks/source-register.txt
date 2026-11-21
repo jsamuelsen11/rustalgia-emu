@@ -617,6 +617,16 @@ open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's o
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
 open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
+open | hc32.hotchips.org | IEEE notice; personal use permitted | Hot Chips 32 archive | 2026-11-20 | programme, slide 1
+open | xbox.com/en-us/consoles | none read | maker's own product pages | 2026-11-20 | Series S and X pages
+open | news.xbox.com | none read | maker's own news site (Xbox Wire) | 2026-11-20 | post of 2014-09-29
+open | sie.com/corporate/release | none read | maker's own press releases | 2026-11-20 | release 141211
+open | sonyinteractive.com/en/press-releases | none read | Sony's releases; redirect target | 2026-11-20 | one release
+open | evercade.co.uk | none read | maker's own product pages | 2026-11-20 | VS page
+open | learn.microsoft.com/en-us/previous-versions/windows/uwp/xbox-apps | none read | maker docs | 2026-11-20 | 2 pages
+walled | ifixit.com | CC BY-NC-SA 3.0 | repair wiki and parts store; prose only | 2026-11-20 | Info/Licensing
+walled | www.ifixit.com | CC BY-NC-SA 3.0 | same site, www prefix | 2026-11-20 | Info/Licensing
+other | web.archive.org | - | web archive, not a source; captures cited for pages that refuse scripts | 2026-11-20 | -
 # Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
 # Sources first cited by R1-04, the modern consoles primer.
