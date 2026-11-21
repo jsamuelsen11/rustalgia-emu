@@ -62,10 +62,10 @@ walled | liji32/sameboy/tree/master/ios | Expat plus app-store condition | - | 2
 walled | liji32/sameboy/blob/master/ios | Expat plus app-store condition | - | 2026-11-17 | licence file
 
 # Emulators: walled tier. Open source under a licence that is not compatible with GPL-3.0, or not resolved.
-walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-17 | wiki FAQ
-walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-20 | licence, README, wiki FAQ
+walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | grumpycoders/pcsx-redux | GPL-2.0, only or later not stated | old address | 2026-11-17 | redirect
-walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | pokemon-speedrunning/gambatte-core | GPL-2.0 | fork of Gambatte | 2026-11-17 | README
 walled | libretro/gambatte-libretro | GPL-2.0 | fork of Gambatte | 2026-11-17 | licence metadata
 walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
@@ -563,7 +563,7 @@ open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies pag
 open | no-intro.org | own data licence, 2026-09-11 | database of hashes; no games | 2026-11-19 | home, terms pages
 open | redump.org | none; bare copyright notice | disc hash database; staff dispute | 2026-11-19 | front, downloads
 open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
-open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-19 | FAQ, refused on re-check
+open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-20 | FAQ; answers intermittently, HTTP 500
 open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | required-files page
 open | segaxtreme.net | forum terms | forum, a lead | 2026-11-19 | resources index, terms
 open | mail.atariage.com | none stated | fan transcription of a press release, a lead | 2026-11-19 | page
@@ -646,8 +646,107 @@ open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as inp
 open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
 closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
+# Added by the rework of R0-04 on 2026-11-20.
+other | web.archive.org | - | an archive, not a source; existing captures only | 2026-11-20 | -
+open | nesdev.org/w/ | disclaimer: public domain | raw wikitext paths of nesdev.org/wiki | 2026-11-20 | disclaimer
+open | gitlab.winehq.org/wine/wine | LGPL-2.1-or-later | Wine; wiki licence not stated | 2026-11-20 | LICENSE, wiki page
+open | wiki.winehq.org | not stated | Wine's old wiki; 301 to gitlab.winehq.org | 2026-11-20 | HTTP response
+walled | reactos.org | not read | project site; Wine bars ReactOS code | 2026-11-20 | Wine Clean Room Guidelines
+# ReactOS reimplements Windows' libraries, and Wine publicly disputes how it was made: closed as a disputed library.
+closed | reactos/reactos | GPL-2.0, or later not stated | origin disputed by Wine | 2026-11-20 | README, Wine page
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+# Sources cited by R0-02, the legal baseline: legal and press hosts, not sources on consoles.
+# Registered on 2026-11-20 for the hosts R0-02 already cited and those its rework first cites. Nothing is restricted.
+other | law.cornell.edu | none checked | statutes and Supreme Court opinions | 2026-11-20 | R0-02
+other | law.resource.org | public domain | court opinions | 2026-11-20 | R0-02
+other | static.case.law | public domain | court opinions | 2026-11-20 | R0-02
+other | cdn.ca9.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | media.ca11.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | ca5.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | supremecourt.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | govinfo.gov | public domain | official publications and opinions | 2026-11-20 | R0-02
+other | public-inspection.federalregister.gov | public domain | official publications | 2026-11-20 | R0-02
+other | copyright.gov | public domain | Copyright Office publications | 2026-11-20 | R0-02
+other | storage.courtlistener.com | court records | court filings | 2026-11-20 | R0-02
+other | cases.justia.com | court records | copy of a court order | 2026-11-20 | R0-02
+other | courthousenews.com | press | copy of a court order | 2026-11-20 | R0-02
+other | torrentfreak.com | press | copies of court filings; news site, secondary | 2026-11-20 | R0-02
+other | archive.org/download/gov.uscourts | court records | copies of court filings | 2026-11-20 | R0-02
+other | eff.org | none stated | copy of a court judgment; commentary | 2026-11-20 | R0-02
+# The EFF's 2007 posts on a published disc key: key material, closed so that the guard blocks them. Not opened.
+closed | eff.org/deeplinks/2007/05 | none stated | may reproduce a published key | 2026-11-20 | R0-02; not opened
+closed | www.eff.org/deeplinks/2007/05 | none stated | the same, www prefix | 2026-11-20 | R0-02; not opened
+other | adrforum.com | none stated | domain name decisions | 2026-11-20 | R0-02
+other | wipo.int/wipolex | none stated | treaty text and copies of judgments | 2026-11-20 | R0-02
+other | eur-lex.europa.eu | official publications | European Union law and judgments | 2026-11-20 | R0-02
+other | publications.europa.eu | official publications | European Union law | 2026-11-20 | R0-02
+other | epo.org | none stated | European Patent Convention | 2026-11-20 | R0-02
+other | legislation.gov.uk | Open Government Licence | United Kingdom statutes | 2026-11-20 | R0-02
+other | caselaw.nationalarchives.gov.uk | Open Justice Licence | English judgments | 2026-11-20 | R0-02
+other | gesetze-im-internet.de | official publications | German statutes and translations | 2026-11-20 | R0-02
+other | rechtsprechung-im-internet.de | official publications | German federal judgments | 2026-11-20 | R0-02
+other | rws-verlag.de | none stated | publisher's copy of a German judgment | 2026-11-20 | R0-02
+other | gesetze.co | none stated | private mirror of German judgments | 2026-11-20 | one judgment
+other | buzer.de | none stated | private record of German statute versions | 2026-11-20 | amendment pages
+other | dserver.bundestag.de | official papers | German parliamentary printed papers | 2026-11-20 | Drucksache 19/27426
+other | lto.de | press | German legal news | 2026-11-20 | one article
+other | assemblee-nationale.fr | official publications | French bill text | 2026-11-20 | R0-02
+other | conseil-constitutionnel.fr | official publications | French constitutional decisions | 2026-11-20 | R0-02
+other | codes.droit.org | Légifrance open data | unofficial compilation of French codes | 2026-11-20 | edition page
+other | japaneselawtranslation.go.jp | unofficial translations | Japanese statutes | 2026-11-20 | R0-02
+other | meti.go.jp | official publications | Japanese ministry overview | 2026-11-20 | R0-02
+other | laws-lois.justice.gc.ca | official publications | Canadian statutes | 2026-11-20 | R0-02
+other | decisions.fct-cf.gc.ca | official publications | Canadian Federal Court decisions | 2026-11-20 | R0-02
+other | decisions.fca-caf.gc.ca | official publications | Canadian appeal court decisions | 2026-11-20 | search
+other | legislation.gov.au | official publications | Australian statutes and regulations | 2026-11-20 | R0-02
+other | elaw.klri.re.kr | unofficial translations | South Korean statutes | 2026-11-20 | R0-02
+other | law.berkeley.edu | none stated | university copy of a court opinion | 2026-11-20 | one PDF
+other | docs.github.com | none stated | code host's takedown policy | 2026-11-20 | R0-02
+other | support.google.com | none stated | store and search policies | 2026-11-20 | R0-02
+other | developer.apple.com | none stated | store review rules | 2026-11-20 | R0-02
+other | via-la.com | none stated | patent pool pages and lists | 2026-11-20 | R0-02
+other | iis.fraunhofer.de | none stated | codec licensor's page | 2026-11-20 | R0-02
+other | debian.org | none stated | distribution's patent policy | 2026-11-20 | R0-02
+other | openinventionnetwork.com | none stated | patent cross-licence pages | 2026-11-20 | R0-02
+other | definition.openinventionnetwork.com | none stated | cross-licence package search | 2026-11-20 | R0-02
+other | gnu.org | none stated | licence texts | 2026-11-20 | R0-02
+other | opensource.org | none stated | statement on a patent settlement | 2026-11-20 | R0-02
+other | pocketpair.jp | none stated | game maker's statements on a patent suit | 2026-11-20 | R0-02
+other | sec.gov | public domain | annual report of a patent holder | 2026-11-20 | R0-02
+other | web.archive.org | - | an archive, not a source; captures cited with full time stamps | 2026-11-20 | -
+other | mactech.com | press | news site, secondary | 2026-11-20 | R0-02
+other | theregister.com | press | news site, secondary | 2026-11-20 | R0-02
+other | pcgamer.com | press | news site, secondary | 2026-11-20 | R0-02
+other | nintendolife.com | press | news site, secondary | 2026-11-20 | R0-02
+other | androidauthority.com | press | news site, secondary | 2026-11-20 | R0-02
+other | techcrunch.com | press | news site, secondary | 2026-11-20 | R0-02
+other | famitsu.com | press | news site, secondary | 2026-11-20 | R0-02
+other | news.denfaminicogamer.jp | press | news site, secondary | 2026-11-20 | R0-02
+other | animenewsnetwork.com | press | news site, secondary | 2026-11-20 | R0-02
+other | automaton-media.com | press | news site, secondary | 2026-11-20 | R0-02
+other | punto-informatico.it | press | news site, secondary | 2026-11-20 | R0-02
+other | gigazine.net | press | news site, secondary | 2026-11-20 | one article
+other | zophar.net | none stated | fan news site, a lead | 2026-11-20 | R0-02
+other | www2.accsjp.or.jp | none stated | industry association's announcements | 2026-11-20 | R0-02
+# Makers' own terms and statements, R0-02: open tier, as maker material. No download is opened.
+open | playstation.com/en-us/legal | maker's terms | Sony's licences | 2026-11-20 | R0-02
+open | playstation.com/en-us/support | maker's pages | Sony's system software pages; no file opened | 2026-11-20 | R0-02
+open | doc.dl.playstation.net/doc | maker's terms | Sony's licence texts | 2026-11-20 | R0-02
+open | support.xbox.com | maker's support pages | material Microsoft published itself | 2026-11-20 | two pages
+open | microsoft.com/en-us | maker's terms | Microsoft's agreements and brand rules | 2026-11-20 | R0-02
+open | xbox.com/en-us/developers/rules | maker's terms | Microsoft's game content rules | 2026-11-20 | R0-02
+open | accounts.nintendo.com/term | maker's terms | Nintendo Account agreement | 2026-11-20 | R0-02
+open | en-americas-support.nintendo.com | maker's pages | Nintendo's agreements and FAQ | 2026-11-20 | R0-02
+open | nintendo.co.jp | maker's pages | Nintendo's guidelines and press releases | 2026-11-20 | R0-02
+open | nintendo.com/en-gb/legal-information | maker's pages | Nintendo of Europe's legal pages | 2026-11-20 | R0-02
+open | sega.co.jp/en/streaming_guideline | maker's terms | Sega's streaming guideline | 2026-11-20 | R0-02
+# Emulator projects' own sites, read for prose only by R0-02.
+open | pcsx2.net | none stated | site of an open-tier emulator; prose | 2026-11-20 | BIOS and trade mark pages
+open | vita3k.org | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | quickstart page
+open | faq.deltaemulator.com | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | release notes
+open | retroarch.com | none stated | site of an open-tier frontend; prose | 2026-11-20 | home page
+open | azahar-emu.org | none stated | site of an open-tier emulator; prose | 2026-11-20 | home page
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
 open | tixul/ngpcraft_dev_ref | MIT | Neo Geo Pocket reference; origin unstated; no leak rule | 2026-11-20 | README
 open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 2026-11-20 | home page

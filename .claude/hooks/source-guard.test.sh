@@ -174,6 +174,20 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# The EFF's 2007 posts on a published disc key are closed; the rest of the site stays open.
+check 2 writer "$(fetch https://www.eff.org/deeplinks/2007/05/legal-primer)"
+check 2 writer "$(fetch https://eff.org/deeplinks/2007/05/legal-primer)"
+check 0 writer "$(fetch https://www.eff.org/files/geohotz-finaljudgmentpi.pdf)"
+# ReactOS code is closed, by Wine's account of how it was made; its README stays readable.
+check 2 writer "$(fetch https://github.com/reactos/reactos/blob/master/ntoskrnl/ke/bug.c)"
+check 2 reader "$(fetch https://raw.githubusercontent.com/reactos/reactos/master/ntoskrnl/ke/bug.c)"
+check 2 writer "$(bash 'git clone https://github.com/reactos/reactos')"
+check 0 writer "$(fetch https://github.com/reactos/reactos/blob/master/README.md)"
+# Wine's wiki is open, at its old address and on GitLab.
+# An archive capture of an unrestricted page passes.
+check 0 writer "$(fetch https://wiki.winehq.org/Clean_Room_Guidelines)"
+check 0 writer "$(fetch https://gitlab.winehq.org/wine/wine/-/wikis/Clean-Room-Guidelines)"
+check 0 writer "$(fetch https://web.archive.org/web/20260522220716/https://www.dni.gov/files/documents/ICD/ICD-203.pdf)"
 # Kit pages on open wikis, closed by name; the wikis' other pages stay open (R0-05, 2026-11-20).
 check 2 writer "$(fetch https://www.psdevwiki.com/ps3/SCEI_PS3_SDK)"
 check 2 writer "$(fetch https://psdevwiki.com/ps4/SCEI_PS4_SDK)"
