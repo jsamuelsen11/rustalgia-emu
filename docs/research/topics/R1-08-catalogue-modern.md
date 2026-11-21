@@ -12,19 +12,16 @@ date: 2026-11-20
 This note asks which dedicated consoles and handhelds were sold from the seventh generation to 2026-11-20,
 and what hardware, protection, system software, and sources each has.
 
-It lists the models and revisions of the three surveyed families in 19 rows
-(PlayStation 3, 4, and 5; Xbox One and Xbox Series; Switch and Switch 2),
-with the PlayStation Portal listed once as a streaming client, not a system to emulate.
-It also lists 5 minor dedicated consoles,
-with cross-references for 6 more that [`R1-07`](R1-07-catalogue-sixth-generation.md) keeps,
-49 rows of emulator hosts under the owner's rule, 3 devices listed under other catalogues,
-and 3 systems announced or planned but not yet sold (counted from the tables).
+The three surveyed families take 19 rows, one per model with its revisions, plus the PlayStation Portal,
+listed once as a streaming client and not a system to emulate.
 
-For the PlayStation and Nintendo families,
-[psdevwiki](https://www.psdevwiki.com/)
-and [SwitchBrew](https://switchbrew.org/wiki/Main_Page) give model-level data beyond Wikipedia.
-For the Xbox One and Series X, Microsoft's own Hot Chips talks and product pages are cited; for every other row,
-Wikipedia is the only hardware source.
+The other tables hold 5 minor dedicated consoles, 6 cross-references to [`R1-07`](R1-07-catalogue-sixth-generation.md),
+49 emulator hosts, 3 devices listed under other systems, and 3 systems announced but not sold (counted from the tables).
+
+[psdevwiki](https://www.psdevwiki.com/) and [SwitchBrew](https://switchbrew.org/wiki/Main_Page) give model-level data
+for the PlayStation and Nintendo families.
+Microsoft's Hot Chips talks, product pages, and spec sheet cover the Xbox One, Series X, and Series S,
+and Blaze's page the Evercade VS; every other row rests on Wikipedia alone.
 
 Two facts matter most to Rustalgia.
 First, every surveyed family is still sold or supported as of 2026-11-20, and each had a system software release in 2026
@@ -32,12 +29,14 @@ First, every surveyed family is still sold or supported as of 2026-11-20, and ea
 by ["Xbox system software"](https://en.wikipedia.org/w/index.php?oldid=1386323584),
 while the ["Xbox One"](https://en.wikipedia.org/w/index.php?oldid=1386323575) infobox gives an older version).
 
-Second, the owner's rule classes every device that the roadmap's list of hosts does not name:
-a device sold to run other systems' games is a host, so the Evercade line, the Atari VCS, and the Linux handhelds,
-Anbernic's Linux models among them, are listed as hosts, and clones of older systems are listed under those systems.
+Second, this note reads the owner's "Dedicated consoles only"
+([pull request #18](https://github.com/jsamuelsen11/rustalgia-emu/pull/18), "Request")
+as a test: a device sold to run other systems' games is a host.
+So the Evercade line, the Atari VCS, and the Linux handhelds are hosts,
+and clones are listed under the systems they copy.
 
-Two conflicts remain in the sources and are recorded, not resolved:
-Microsoft gives the Series S CPU a higher clock than Wikipedia does, and the Portal's Snapdragon part is not identified.
+Two points stay open, listed under [Open questions](#open-questions): the Portal's Snapdragon part,
+and the Evercade VS's core type, on which two Wikipedia articles disagree.
 This note is not legal advice.
 
 ## Scope
@@ -63,20 +62,20 @@ This note is not legal advice.
 - Researched on 2026-11-20 against the Wikipedia revisions, wiki revisions, archive captures, maker pages,
   and conference slides listed in Sources.
   Every statement about a system on sale is as of 2026-11-20.
-- How claims were checked: two research agents each covered a share
+- Research: two research agents each covered a share
   (the surveyed families; every other device)
   and read every page as raw text, Wikipedia
   and [SwitchBrew](https://switchbrew.org/wiki/Main_Page) through their raw wikitext,
   and [psdevwiki](https://www.psdevwiki.com/) through existing web archive captures,
   because the live site served a challenge page (research log).
-  Two independent verification passes followed, each split among six or seven verifiers by section (research log).
-  Each fetched the sources again on 2026-11-20 and tested every claim and quotation in its part,
-  274 claims in the first and 304 in the second; after each,
-  a fix pass checked every finding against the raw sources and applied those that held.
-  The claims the verifiers could not check are weakened, marked, or dropped here, and listed in the pull request.
-- A rework pass on 2026-11-20 answered the draft's open questions from maker pages, Hot Chips slides, iFixit,
-  GitHub's licence metadata, and Wikipedia's revision interface, quoting only text matched in the raw pages;
-  its findings were not checked by a separate pass (research log).
+- Verification: three independent passes ran, each fetching the sources again on 2026-11-20 (research log).
+  The first two, each split among six or seven verifiers by section, tested every claim and quotation,
+  274 claims in the first and 304 in the second.
+  A rework pass then answered the draft's open questions from the sources listed in [Sources](#sources),
+  quoting only text matched in the raw pages.
+  The third pass tested the rework's new and changed lines, with one verifier on claims and one on links and shape.
+  After each pass, a fix pass checked every finding against the raw sources and applied those that held;
+  the claims the verifiers could not check are weakened, marked, or dropped here, and listed in the pull request.
 - Wikipedia is a tertiary source: a value with no hub named rests on the article's own text,
   whose citations were not followed. "(inference)" marks reasoning,
   and "(research log)" an event while gathering the evidence.
@@ -106,7 +105,7 @@ This note is not legal advice.
   A device that no survey places goes by its first sale: to 2000 in [`R1-06`](R1-06-catalogue-32-and-64-bit.md),
   from 2001 to 2005-11-21 in [`R1-07`](R1-07-catalogue-sixth-generation.md), and after that here.
   The cut-off is the Xbox 360's first sale, which began the seventh generation of home consoles
-  (["Seventh generation of video game consoles"](https://en.wikipedia.org/w/index.php?oldid=1386320369), lead);
+  (["Seventh generation of video game consoles"](https://en.wikipedia.org/w/index.php?oldid=1386320369), lead section);
   the placement is a project call for the catalogues.
 - Four devices are placed against that date.
   The GP2X line is listed here with its successors, though the first GP2X was sold in South Korea on 2005-11-10.
@@ -117,7 +116,10 @@ This note is not legal advice.
 - The roadmap lists "PC and Android handhelds, microconsoles, FPGA devices,
   and retro 'mini' consoles" as emulator hosts, not systems to emulate
   ([roadmap, "Hardware primers"](../../roadmap/research.md#hardware-primers)).
-  The owner's rule is "dedicated consoles only": a device sold to run emulators of other systems is a host.
+  The owner's answer of 2026-11-20 was "Dedicated consoles only", with those classes left to the host items
+  ([pull request #18](https://github.com/jsamuelsen11/rustalgia-emu/pull/18), "Request").
+  This note reads that answer as a test, a process call that the pull request lists:
+  a device sold to run emulators of other systems is a host.
   A clone that reproduces an older system is listed under that system,
   and a home computer goes to [`R1-25`](../../roadmap/research.md#system-family-surveys).
 - A row is one model, or a model with its revisions where they run the same software.
@@ -163,8 +165,12 @@ This note is not legal advice.
   ["PlayStation 5"](https://en.wikipedia.org/w/index.php?oldid=1385515902), and
   ["PlayStation Portal"](https://en.wikipedia.org/w/index.php?oldid=1382191333) (infoboxes and "Technical
   specifications" or "Hardware" sections), except where a bullet below names another source.
-  Model codes come from psdevwiki's "SKU Models" pages for the PS3, PS4, and PS5, process sizes from its PS3 page only,
-  and the PS4 Pro's 2 TB drive from its PS4 page (CUH-72xx row; Wikipedia gives 2 TB only for the family).
+  Model codes come from psdevwiki's "SKU Models" pages
+  for the [PS3](https://web.archive.org/web/20261107043400/https://www.psdevwiki.com/ps3/SKU_Models),
+  [PS4](https://web.archive.org/web/20260710164056/https://www.psdevwiki.com/ps4/SKU_Models),
+  and [PS5](https://web.archive.org/web/20260312145723/https://www.psdevwiki.com/ps5/SKU_Models);
+  process sizes come from the PS3 one only, and the PS4 Pro's 2 TB drive from the PS4 one
+  (CUH-72xx row; Wikipedia gives 2 TB only for the family).
 - The PS3's Cell has one PowerPC-based PPE and seven working SPEs,
   of which six are available to games and one is reserved for the operating system
   ("PlayStation 3", "Technical specifications").
@@ -190,7 +196,7 @@ This note is not legal advice.
 - The PS3's system software was at version 4.93, dated 2026-03-18,
   and Wikipedia says it "continues to be updated as of 2026 for performance and security enhancements,
   and to renew the Blu-ray encryption key"
-  (["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155), lead and infobox).
+  (["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155), lead section and infobox).
   Purchased PlayStation Network content is limited to two activated consoles per account,
   the OtherOS feature was removed by firmware 3.21 of 2010-04-01, and every PS3 game but one is region-free
   ("PlayStation 3", "Digital rights management" and "OtherOS support";
@@ -221,7 +227,7 @@ This note is not legal advice.
 - psdevwiki describes what it calls a "presumably custom" hypervisor on the PS5: "In the PS5 case,
   it is used primarily for Virtualization Based Security (VBS) to protect the kernel integrity"
   (psdevwiki, [PS5 "Hypervisor"](https://web.archive.org/web/20260519183327/https://www.psdevwiki.com/ps5/Hypervisor),
-  lead).
+  lead section).
   PS5 games, on disc or downloaded, carry no region codes,
   though region-locked games remain possible and downloadable content still needs an account of its region
   ("Region lock", "Sony").
@@ -247,18 +253,19 @@ This note is not legal advice.
 - The PlayStation Portal streams games from a PS5 and, since November 2025,
   from Sony's cloud service for PlayStation Plus Premium,
   "although it does not run any games or media natively on its own"
-  ("PlayStation Portal", lead and "Hardware and technicals").
+  ("PlayStation Portal", lead section and "Hardware and technicals").
   It is listed because it is sold as part of the family, and labelled a streaming client,
   so that no survey takes it as a system to emulate.
 - The Portal runs a modified Android 13 on a Snapdragon part that the article's text calls "662"
   while linking the article on the Snapdragon 660 ("PlayStation Portal", "Hardware and technicals").
   Reports name the 662, the 680, or a part marked SG4150P; those pages were not opened (lead, from search results).
-  Sony's open-source page lists the system software versions whose source it publishes
+- Sony's open-source page lists the system software versions whose source it publishes
   ([Sony, open-source software, PlayStation Portal](https://www.playstation.com/en-us/oss/accessories/playstation-portal-remote-player/)).
   The file names in its archive for version 1.0.0, `PS_Portal-1.0.0.zip`
   (a 658 MB download, named and not linked),
   include Qualcomm video-driver folders for several chips, which does not identify one part
   (observed from the archive's central directory only; no file in it was opened, and the copy was deleted).
+  The part stays open ([Open questions](#open-questions)).
 
 ### Xbox family
 
@@ -268,7 +275,7 @@ This note is not legal advice.
 | Xbox One S (1681); One S All-Digital | 2016-08-02 (2 TB); All-Digital 2019-05-07 | [`R1-23`] | — |
 | Xbox One X (1787) | 2017-11-07 | [`R1-23`] | — |
 | Xbox Series X | 2020-11-10; CN 2021-06-10 | [`R1-23`] | Hot Chips 32; Microsoft product page |
-| Xbox Series S | 2020-11-10; CN 2021-06-10 | [`R1-23`] | Microsoft product page |
+| Xbox Series S | 2020-11-10; CN 2021-06-10 | [`R1-23`] | Xbox Wire spec sheet |
 | Series refresh models; Series X25 edition | 2023-09-01 (1 TB Series S); 2024-10-15; X25 2026-11-12 | [`R1-23`] | — |
 
 | Model | CPU | Graphics | Memory | Media and storage |
@@ -277,7 +284,7 @@ This note is not legal advice.
 | Xbox One S | as One | GCN, 914 MHz | as One | UHD BD (none on All-Digital) |
 | Xbox One X | 8 cores, 2.3 GHz | GCN, 40 CUs, 1172 MHz | 12 GB GDDR5 | UHD BD; 1 TB HDD |
 | Xbox Series X | 8 Zen 2 cores, 3.8 GHz | RDNA 2, 52 CUs, 1.825 GHz | 16 GB GDDR6: 10 GB and 6 GB | UHD BD; 1 TB SSD |
-| Xbox Series S | 8 Zen 2, 3.6 or 3.8 GHz | RDNA 2, 20 CUs, 1.565 GHz | 10 GB GDDR6 | no drive; 512 GB, 1 TB SSD |
+| Xbox Series S | 8 Zen 2 cores, 3.6 GHz | RDNA 2, 20 CUs, 1.565 GHz | 10 GB GDDR6 | no drive; 512 GB, 1 TB SSD |
 
 - Every value rests on the Wikipedia articles ["Xbox One"](https://en.wikipedia.org/w/index.php?oldid=1386323575)
   and ["Xbox Series X and Series S"](https://en.wikipedia.org/w/index.php?oldid=1386594308)
@@ -290,7 +297,12 @@ This note is not legal advice.
   For the Series X, Microsoft's Hot Chips 32 talk, "Xbox Series X System Architecture"
   ([Andrews and Grossman](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf)),
   given on 2020-08-17 ([Hot Chips 32 programme](https://hc32.hotchips.org/), day 1).
-  For the Series S and X, Microsoft's product pages, which give each console's processor, graphics, and memory.
+  For the Series S and X, Microsoft's product pages
+  ([Series S](https://www.xbox.com/en-US/consoles/xbox-series-s),
+  [Series X](https://www.xbox.com/en-US/consoles/xbox-series-x)) and the spec sheet in the Xbox Wire post
+  that announced the Series S
+  ([Microsoft, Xbox Wire, 2020-09-09](https://news.xbox.com/en-us/2020/09/09/introducing-xbox-series-s/)), which give
+  each console's processor, graphics, and memory.
 - Xbox One release: 13 markets on 2013-11-22, then 26 more in September 2014 including Japan ("Xbox One").
   Mainland China followed on 2014-09-29: Xbox Wire said that day that "today, Xbox One officially launched in China,
   becoming the first video game console to do so in 14 years", at more than 4,000 retail locations in 37 cities
@@ -318,13 +330,15 @@ This note is not legal advice.
   with "10GB GDDR6 128 bit-wide bus" and bandwidth "8GB @ 224 GB/s, 2GB @ 56 GB/s"
   ([Microsoft, "Xbox Series S"](https://www.xbox.com/en-US/consoles/xbox-series-s), "Tech specs").
   That agrees with the 1.565 GHz of the Wikipedia infobox; the article's text gives 1.55 GHz.
-- The Series S's CPU clock is in conflict.
-  Microsoft's Series S page gives "8X Cores @ 3.8 GHz
-  (3.6 GHz w/SMT)",
-  the same line as its Series X page, while "Xbox Series X and Series S" gives 3.6 GHz, or 3.4 GHz with SMT,
-  for the Series S (Microsoft, "Xbox Series S", "Tech specs"; "Xbox Series X and Series S", "Xbox Series S").
-  The table gives both; the Hot Chips 32 talk does not cover the Series S
-  (a search of its text for "Series S" found no match).
+- The Series S's CPU runs at 3.6 GHz, or 3.4 GHz with SMT, on Microsoft's spec sheet of 2020-09-09
+  ([Microsoft, Xbox Wire, 2020-09-09](https://news.xbox.com/en-us/2020/09/09/introducing-xbox-series-s/),
+  embedded [spec sheet image](https://xboxwire.thesourcemediaassets.com/sites/2/2020/09/Tech-Specs-1.jpg), CPU row;
+  observed in the image), as in "Xbox Series X and Series S" (infobox and "Comparison").
+  The same sheet gives the Series X 3.8 GHz, or 3.6 GHz with SMT; Wikipedia gives 3.66 GHz with SMT (same places).
+  Microsoft's Series S product page gives "8X Cores @ 3.8 GHz (3.6 GHz w/SMT)", the line from its Series X page
+  ([Microsoft, "Xbox Series S"](https://www.xbox.com/en-US/consoles/xbox-series-s), "Tech specs");
+  against the spec sheet and Wikipedia, that line is an error on the page (inference).
+  The Hot Chips 32 talk does not cover the Series S (a search of its text for "Series S" found no match).
 - Series storage is a custom NVMe SSD with a decompression block for zlib and a proprietary "BCPack" algorithm
   for textures, expansion through proprietary cards, and no running of native games from USB
   ("Xbox Series X and Series S", "Xbox Velocity Architecture").
@@ -357,8 +371,18 @@ This note is not legal advice.
   and full access to available GPU cycles
   ([Microsoft Learn, "System resources for UWP apps and games on Xbox One"](https://learn.microsoft.com/en-us/previous-versions/windows/uwp/xbox-apps/system-resource-allocation)).
   A test program the project wrote could run there under those limits, without a native game's access (inference).
-- Risk: the developer account's agreement was not read, so whether it permits hardware tests for an emulator is unknown;
-  it is recorded for [`R1-23`](../../roadmap/research.md#system-family-surveys) and [`R0-02`](R0-02-legal-baseline.md).
+- The developer account's terms are Microsoft's
+  ["App Developer Agreement"](https://learn.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement),
+  version 8.11, published 2026-03-17 and effective 2026-04-17, which governs the use of Partner Center and the Store.
+  Its testing clause lets a developer unlock "a reasonable number of Windows Devices",
+  only to test and evaluate the developer's own apps,
+  and defines a Windows Device as "an electronic device that is capable of running Apps" (sections 3.c.i and 1.ee).
+  A search of its text for "Developer Mode", "emulat", "reverse engineer", "decompil",
+  and "disassembl" matched only Exhibit G's bans on reverse engineering an application,
+  terms between a customer and its publisher.
+  So a test program the project wrote may fall within the clause's purpose, if a console counts
+  as such a device (inference); the risk that a test seeks more than an app's access is recorded
+  for [`R1-23`](../../roadmap/research.md#system-family-surveys) and [`R0-02`](R0-02-legal-baseline.md).
 - Series models as of 2026-11-20: a 1 TB Series S of 2023-09-01; on 2024-10-15 a white 1 TB Series S,
   a white all-digital Series X, and a 2 TB Series X; with a price rise on 2026-08-01,
   Microsoft said it was discontinuing the 2 TB Series X;
@@ -366,12 +390,13 @@ This note is not legal advice.
   ("Xbox Series X and Series S", "History" and "Mid-generation refreshes and Limited Editions").
 - Model numbers: 1882 for the 1 TB Series X with a disc drive, 1881 for the 512 GB Series S,
   and 1883 for the 1 TB Series S ("Xbox Series X and Series S", "Comparison").
-  The article's table gives none for the 2 TB and all-digital Series X. iFixit's parts store titles parts
-  for both "Model 1882": "Microsoft Xbox Series X Disk Drive Model 1882
+  The article's table gives none for the 2 TB and all-digital Series X.
+- iFixit's parts store titles parts for both "Model 1882": "Microsoft Xbox Series X Disk Drive Model 1882
   (14 digit serial number)"
   on the 2 TB Galaxy Black page, and "Microsoft Xbox Series X All-Digital Model 1882" on the Digital Edition page
-  ([iFixit, device pages](https://www.ifixit.com/Device/Xbox_Series_X_2TB_Galaxy_Black); secondary:
-  a retailer's part titles, not a maker statement).
+  (secondary: a retailer's part titles, not a maker statement).
+  The pages are named and not linked, because the register closes iFixit for its non-commercial licence
+  (addresses in [Sources](#sources)).
   So both appear to carry the 1 TB disc model's number (inference); Microsoft's product pages give no model number.
 
 ### Nintendo family
@@ -417,7 +442,7 @@ This note is not legal advice.
   "Nintendo").
 - The Switch's system software, Horizon, is shared by the Switch and Switch 2; SwitchBrew lists version 23.5.0 for both,
   released on 2026-11-10 (UTC)
-  (["Nintendo Switch system software"](https://en.wikipedia.org/w/index.php?oldid=1381894756), lead; SwitchBrew,
+  (["Nintendo Switch system software"](https://en.wikipedia.org/w/index.php?oldid=1381894756), lead section; SwitchBrew,
   ["System Versions"](https://switchbrew.org/w/index.php?oldid=15460) and
   ["Switch 2: System Versions"](https://switchbrew.org/w/index.php?oldid=15457)).
 - As of 2026-11-20 the Switch was still sold;
@@ -431,11 +456,13 @@ This note is not legal advice.
   SwitchBrew gives "LPDDR5X-3750, 128-bit (120 GB/s)" (SwitchBrew, "Switch 2: Tegra T239").
   "Nintendo Switch 2" gives a 128-bit bus at 6,400 MT/s docked and 4,266 MT/s undocked (infobox),
   and about 102 GB/s docked and 68 GB/s handheld ("Console"); "Tegra" gives 102.4 GB/s (T239 row).
-  A 128-bit bus moves 16 bytes per transfer, so 7,500 MT/s gives 120 GB/s, the part's rated peak;
+- A 128-bit bus moves 16 bytes per transfer, so 7,500 MT/s gives 120 GB/s, the part's rated peak;
   6,400 MT/s gives 102.4 GB/s; and 4,266 MT/s gives 68.3 GB/s (calculated from the rates).
   Reading LPDDR5X-3750 as 7,500 MT/s is an inference from the double-data-rate naming.
-  No figure from Nintendo was found; Nintendo's pages were not searched for one
-  (["Coverage of sources"](#coverage-of-sources)).
+  Nintendo gives no figure: its specification page names only a "Custom processor made by NVIDIA"
+  and states no memory type, speed, or bandwidth
+  ([Nintendo, "Nintendo Switch 2 Technical Specifications"](https://www.nintendo.com/us/gaming-systems/switch-2/tech-specs/);
+  searched for "LPDDR", "RAM", "Memory", "GB/s", and "bandwidth").
 - The article lists Switch 2 game cards of 16, 32, and 64 GB,
   but says only 64 GB was offered at first and a 32 GB card was confirmed in September 2026;
   "Nintendo Switch 2 Edition" cards work in both consoles; and Game-Key Cards hold only a licence:
@@ -478,8 +505,9 @@ A cross-reference row names the catalogue that lists the device in full, and tak
 
 - Zeebo sold games only as downloads over a built-in 3G modem, in Brazil and then Mexico,
   and was discontinued on 2011-09-30 (["Zeebo"](https://en.wikipedia.org/w/index.php?oldid=1384449469),
-  lead and infobox).
-  Its article says the download-only distribution was chosen to circumvent piracy ("Zeebo", lead).
+  lead section and infobox).
+  The article gives the company's stated intention as circumventing piracy through wireless distribution
+  ("Zeebo", lead section).
 - The Playdate has a 400 × 240 1-bit display, a crank, and an accelerometer;
   its games arrive in "seasons" and through a store added on 2023-03-07
   (["Playdate (console)"](https://en.wikipedia.org/w/index.php?oldid=1383318356), infobox, "Hardware", and "Games").
@@ -507,8 +535,9 @@ A cross-reference row names the catalogue that lists the device in full, and tak
 
 ### Emulator hosts
 
-The owner's rule lists these as hosts,
-covered by [`R3-07`](../../roadmap/research.md#phase-3-host-platforms)
+The roadmap's list of hosts, and this note's test
+([How the catalogue is built](#how-the-catalogue-is-built)),
+place these here as hosts, covered by [`R3-07`](../../roadmap/research.md#phase-3-host-platforms)
 and [`R3-12`](../../roadmap/research.md#phase-3-host-platforms).
 Each row rests on the Wikipedia article on the device or line, read raw, except the Tecno Pocket Go,
 which has no article and rests on
@@ -584,10 +613,11 @@ which has no article and rests on
   (same article); a few native titles do not change what the device is sold to do (inference).
 - Blaze's own page says of the VS: "The Quad Core 1.5 Ghz processor will power a brand new user interface"
   ([Blaze, "VS"](https://evercade.co.uk/vs/)).
-  That agrees with ["Evercade VS"](https://en.wikipedia.org/w/index.php?oldid=1379582441)
-  (Rockchip RK3328, quad-core Cortex-A53, 1.5 GHz)
-  and not with ["List of home video game consoles"](https://en.wikipedia.org/w/index.php?oldid=1386685039),
-  which gives an unknown Cortex-A7; the part number rests on the article alone.
+  That matches both ["Evercade VS"](https://en.wikipedia.org/w/index.php?oldid=1379582441)
+  (Rockchip RK3328, quad-core Cortex-A53, 1.5 GHz; infobox)
+  and ["List of home video game consoles"](https://en.wikipedia.org/w/index.php?oldid=1386685039)
+  (an unknown four-core Cortex-A7 at 1.5 GHz; Evercade VS row).
+  The core type and the part number rest on Wikipedia, which disagrees with itself ([Open questions](#open-questions)).
 - The Atari VCS's article calls it a hybrid of a home console and a gaming PC, gives a release to backers on 2020-12-14,
   and says its storefront is set to close on 2027-02-01
   (["Atari VCS (2021 console)"](https://en.wikipedia.org/w/index.php?oldid=1386169078)).
@@ -608,12 +638,12 @@ which has no article and rests on
   and the Mojo is an Android microconsole that runs unmodified Android with Google Play
   (["Retroid Pocket 2"](https://en.wikipedia.org/w/index.php?oldid=1352232091),
   ["Ayn Odin"](https://en.wikipedia.org/w/index.php?oldid=1369017721),
-  and ["Mojo (microconsole)"](https://en.wikipedia.org/w/index.php?oldid=1386317773), leads).
+  and ["Mojo (microconsole)"](https://en.wikipedia.org/w/index.php?oldid=1386317773), lead sections).
   JXD started making Android tablets and gaming handhelds in 2011, after the JXD 301, which emulated retro consoles
   (["JXD"](https://en.wikipedia.org/w/index.php?oldid=1359557491), "History" and "Android products").
 - The Steam Deck runs SteamOS, plays Windows games through Proton,
   and has a desktop mode in which users install other software
-  (["Steam Deck"](https://en.wikipedia.org/w/index.php?oldid=1385949939), lead and "History");
+  (["Steam Deck"](https://en.wikipedia.org/w/index.php?oldid=1385949939), lead section and "History");
   no lock-out against user software is described.
   Its LCD models were discontinued on 2025-12-19 (same article, infobox).
 - The ROG Xbox Ally's "Xbox mode" "boots the system directly into the Xbox app without loading the full Windows shell by
@@ -626,7 +656,7 @@ which has no article and rests on
 - The Steam Machine of 2026 was released on 2026-06-29 after a reservation waitlist, at a base price above US$1,000;
   Valve stopped offering waitlist places in November 2026
   (["Steam Machine"](https://en.wikipedia.org/w/index.php?oldid=1386682817), infobox and "History", "Launch").
-  Valve's earlier Steam Machines, from 2015, relied on other manufacturers ("Steam Deck", lead and "History").
+  Valve's earlier Steam Machines, from 2015, relied on other manufacturers ("Steam Deck", lead section and "History").
 - The Analogue Pocket's FPGA is reprogrammed to replicate the Game Boy, Game Boy Color, and Game Boy Advance,
   and takes other handhelds' cartridges through adapters
   (["Analogue Pocket"](https://en.wikipedia.org/w/index.php?oldid=1384117105), "Design" and "Hardware").
@@ -636,15 +666,18 @@ which has no article and rests on
   though its "History" section still calls it "planned for release in 2026" ("ModRetro").
 - Wikipedia says of MiSTer, "The project is licensed under version 3 of the GNU General Public Licence"
   (["MiSTer"](https://en.wikipedia.org/w/index.php?oldid=1364318909)).
-  GitHub's licence metadata differs by repository: GPL-3.0 for Main_MiSTer and Distribution_MiSTer,
-  GPL-2.0 for Template_MiSTer, and none for Menu_MiSTer
+  GitHub's licence metadata differs by repository:
+  GPL-3.0 for [Main_MiSTer](https://github.com/MiSTer-devel/Main_MiSTer)
+  and [Distribution_MiSTer](https://github.com/MiSTer-devel/Distribution_MiSTer),
+  GPL-2.0 for [Template_MiSTer](https://github.com/MiSTer-devel/Template_MiSTer),
+  and none for [Menu_MiSTer](https://github.com/MiSTer-devel/Menu_MiSTer)
   ([GitHub, repository metadata](https://docs.github.com/en/rest/repos/repos#get-a-repository), field `license.spdx_id`;
   observed; no repository file was opened).
   Wikipedia's sentence fits the project's main repository, not every core (inference),
   which is why the [source register](../../../.claude/hooks/source-register.txt) walls MiSTer-devel's repositories per
   core.
 - The Atari Flashback line began in 2004, before this note's date rule; it is listed because it continues
-  (["Atari Flashback"](https://en.wikipedia.org/w/index.php?oldid=1386296269), infobox and lead).
+  (["Atari Flashback"](https://en.wikipedia.org/w/index.php?oldid=1386296269), infobox and lead section).
   The Atari 2600+ plays original 2600 and 7800 cartridges
   but "uses software-based emulation instead of a binary compatible system-on-chip hardware", so some cartridges fail
   (["Atari 2600+"](https://en.wikipedia.org/w/index.php?oldid=1384597237), "Software"; the quotation drops link markup).
@@ -744,7 +777,7 @@ which has no article and rests on
   The PS3 was discontinued in Japan on 2017-05-29
   (["PlayStation 3"](https://en.wikipedia.org/w/index.php?oldid=1386319117), infobox)
   and still receives updates (["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155),
-  lead).
+  lead section).
 - Processor families: Cell in the PS3; AMD Jaguar in the PS4 and Xbox One families,
   the One X's cores being Jaguar-compatible; AMD Zen 2 with RDNA 2 in the PS5, Xbox Series, Steam Deck,
   and the base ROG Xbox Ally (Z2 A); Arm cores with Nvidia graphics in the Switch, Switch 2, and Shield devices
@@ -764,8 +797,9 @@ which has no article and rests on
   For an emulator, a game that exists only as a download, or whose card holds only a licence,
   is reached only through the user's own copy (inference; [`R0-02`](R0-02-legal-baseline.md) records the law).
 - Hardware decompression appears in the PS4 (zlib), PS5 (zlib and Kraken), and Xbox Series
-  (zlib and BCPack, in the Series X's MSP block);
-  the PS5 and Series pair it with SSDs, the PS4 with a hard disk (findings above).
+  (zlib and BCPack, by Wikipedia; Microsoft's slides place Deflate/Zlib and an "MS XVA" texture codec in the MSP,
+  [Andrews and Grossman](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf),
+  slide 10); the PS5 and Series pair it with SSDs, the PS4 with a hard disk (findings above).
 - Protection described in the sources read: for the PlayStation family,
   the PS3's Blu-ray key renewal and the PS5's hypervisor; for the Xbox family,
   the hypervisor and the Series X's HSP/Pluton root of trust and memory encryption; for the Nintendo family,
@@ -775,8 +809,11 @@ which has no article and rests on
   and [psdevwiki](https://www.psdevwiki.com/)'s
   [PS5 "Hypervisor"](https://web.archive.org/web/20260519183327/https://www.psdevwiki.com/ps5/Hypervisor), for "secure
   boot", "boot chain", "chain of trust", "root of trust", "bootloader", "boot ROM", "signed", "signature", and "security
-  processor"; the Hot Chips 25 slides' OCR text for "boot" and "trust"; and the Hot Chips 32 text for "boot" and
-  "signed".
+  processor"; the OCR text of the
+  [Hot Chips 25 slides](https://old.hotchips.org/wp-content/uploads/hc_archives/hc25/HC25.10-SoC1-epub/HC25.26.121-fixed-%20XB1%2020130826gnn.pdf)
+  for "boot" and "trust"; and the text of the
+  [Hot Chips 32 slides](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf)
+  for "boot" and "signed".
   A root of trust, as on the Series X, is not by itself a described boot chain (inference).
   [`R0-02`, "Firmware, keys, and game copies"](R0-02-legal-baseline.md#firmware-keys-and-game-copies),
   records what follows for keys.
@@ -791,7 +828,7 @@ which has no article and rests on
 - [SwitchBrew](https://switchbrew.org/wiki/Main_Page) gives boards, chips,
   and system versions for the Switch and Switch 2.
 - Microsoft's Hot Chips talks give the Xbox One and Series X system architecture,
-  and its product pages give the Series S and X specifications; the register's older Xbox hubs
+  and its product pages and Xbox Wire spec sheet give the Series S and X specifications; the register's older Xbox hubs
   ([XboxDevWiki](https://xboxdevwiki.net/) and [Free60](https://free60.org/)),
   which serve the original Xbox and the Xbox 360, were not searched.
 - Sony's open-source pages list the Portal's system software versions
@@ -804,8 +841,9 @@ which has no article and rests on
   the pages were read for evaluation only and are not cited (research log).
 - Risk: Sony's, Nintendo's, and Microsoft's site terms, read in the first pass, bar automated collection,
   and Sony's terms reserve text-and-data mining under EU law (research log; the terms were not re-read for this pass).
-  This pass fetched single maker pages one at a time for named facts, not in bulk: Microsoft's product, Xbox Wire,
-  and Learn pages, Sony's press release, and Blaze's VS page.
+  The rework and fix passes fetched single maker pages one at a time for named facts, not in bulk: Microsoft's product,
+  Xbox Wire, and Learn pages and its developer agreement, Sony's press release, Nintendo's Switch 2 specification page,
+  and Blaze's VS page.
   [`R0-02`](R0-02-legal-baseline.md) records that makers' licence terms may bind those who accepted them,
   and leaves open whether they bind those who did not
   ([`R0-02`](R0-02-legal-baseline.md),
@@ -824,7 +862,7 @@ which has no article and rests on
   and [SwitchBrew](https://switchbrew.org/wiki/Main_Page) list models and boards in detail, though not every revision:
   psdevwiki's capture of 2026-03-12 lacks the 825 GB Slim Digital, and SwitchBrew lists boards, not regional models.
 
-### Where a device the rule does not name belongs
+### Where a device the roadmap does not name belongs
 
 - **What:** the test applied: a device sold to run its own games is a dedicated console,
   a device sold to run emulators of other systems is a host, a clone of a system is a variant of it,
@@ -858,12 +896,15 @@ which has no article and rests on
   ([psdevwiki](https://www.psdevwiki.com/) "SKU Models",
   [SwitchBrew](https://switchbrew.org/wiki/Main_Page) ["Hardware"](https://switchbrew.org/w/index.php?oldid=15339)) are
   organised by model, so per-model rows map straight onto the later surveys.
-- **Devices the rule does not name:** none needed as a choice now; the owner's rule
-  ("dedicated consoles only"; devices that run emulators of other systems are hosts) settles them.
+- **Devices the roadmap does not name:** apply the test above.
+  It is this note's reading of the owner's "Dedicated consoles only"
+  ([pull request #18](https://github.com/jsamuelsen11/rustalgia-emu/pull/18), "Request"),
+  settled here as a process call that the pull request lists.
   Keep the subsection as the record of the test and its edge cases.
 - **Streaming client:** list the Portal once, as a streaming client and not a system to emulate.
   The row records the sold family member, and the label keeps it out of every survey's scope,
-  since it "does not run any games or media natively on its own".
+  since it "does not run any games or media natively on its own"
+  (["PlayStation Portal"](https://en.wikipedia.org/w/index.php?oldid=1382191333), lead section).
 - **Systems on sale:** keep a dated catalogue
   ("as of 2026-11-20")
   and re-check it when [`R6-01`](../../roadmap/research.md#phase-6-synthesis)
@@ -907,15 +948,31 @@ which has no article and rests on
   and [`R3-12`](../../roadmap/research.md#phase-3-host-platforms) can test by family
   (counted from the table; inference).
 - [`R1-23`](../../roadmap/research.md#system-family-surveys) can start the Xbox One
-  and Series X from Microsoft's Hot Chips slides and the Series S from Microsoft's page,
-  and should carry the Series S CPU conflict forward until a source settles it.
-  Xbox Developer Mode is a possible route to tests on retail hardware, subject to the developer agreement's terms
+  and Series X from Microsoft's Hot Chips slides
+  ([Sell and O'Connor](https://old.hotchips.org/wp-content/uploads/hc_archives/hc25/HC25.10-SoC1-epub/HC25.26.121-fixed-%20XB1%2020130826gnn.pdf);
+  [Andrews and Grossman](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf))
+  and the Series S from Microsoft's
+  [Xbox Wire spec sheet](https://news.xbox.com/en-us/2020/09/09/introducing-xbox-series-s/), not from the Series S
+  product page, whose CPU line is wrong.
+  Xbox Developer Mode is a possible route to tests on retail hardware, within the developer agreement's testing clause
   (["Xbox family"](#xbox-family)).
 
 ## Open questions
 
-None.
-Every question the draft left open was answered, settled, or turned into a recommendation by the rework pass.
+- Which Snapdragon part the PlayStation Portal uses.
+  Only a maker statement or a teardown from a registered source can answer it; no roadmap item depends on it,
+  since the Portal has no survey.
+- Which core the Evercade VS uses, Cortex-A53 or Cortex-A7, and its part number.
+  Blaze's page gives only a quad-core 1.5 GHz processor; a registered teardown or maker statement would answer it,
+  for [`R3-12`](../../roadmap/research.md#phase-3-host-platforms) if it lists the VS as a host.
+- When the PS4 first went on sale in mainland China.
+  Sony's announced date was found, the date of first sale was not;
+  [`R1-21`](../../roadmap/research.md#system-family-surveys) answers it if the survey needs the regional release.
+- The licence of each MiSTer core.
+  The [register](../../../.claude/hooks/source-register.txt) walls MiSTer-devel's repositories until each is evaluated;
+  the evaluation by ADR 0001's steps falls to the first item that cites a core,
+  [`R3-12`](../../roadmap/research.md#phase-3-host-platforms) or a family survey,
+  with [`R0-05`](R0-05-source-map.md) as the map of hubs.
 
 ## Sources
 
@@ -1025,6 +1082,9 @@ Wikipedia, other devices:
 
 Hubs:
 
+- The hubs' home pages, cited where a section names the hub as a whole:
+  [psdevwiki](https://www.psdevwiki.com/) and [SwitchBrew](https://switchbrew.org/wiki/Main_Page);
+  the facts rest on the pages below.
 - psdevwiki, read from existing archive captures, because the live pages served a challenge page to scripts:
   [PS3 "SKU Models"](https://web.archive.org/web/20261107043400/https://www.psdevwiki.com/ps3/SKU_Models)
   (capture 20261107043400; page last edited 2026-02-03),
@@ -1051,13 +1111,20 @@ Makers' documents:
 - J. Andrews and M.
   Grossman,
   ["Xbox Series X System Architecture"](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf),
-  Hot Chips 32 (2020), 29 pages, "(c) 2020 IEEE.
+  Hot Chips 32 (2020), 29 pages, "© 2020 IEEE.
   Personal use of this material is permitted."; listed in the [HC32 Archive](https://hc32.hotchips.org/) programme,
   day 1, 2020-08-17.
 - Microsoft, ["Xbox Series S"](https://www.xbox.com/en-US/consoles/xbox-series-s), "Tech specs",
   and ["Xbox Series X"](https://www.xbox.com/en-US/consoles/xbox-series-x), product pages.
 - Microsoft, Xbox Wire,
   ["Xbox One Launches in China"](https://news.xbox.com/en-us/2014/09/29/xbox-one-launches-in-china/), 2014-09-29.
+- Microsoft, Xbox Wire,
+  ["Introducing Xbox Series S ..."](https://news.xbox.com/en-us/2020/09/09/introducing-xbox-series-s/), 2020-09-09, and
+  its embedded [spec sheet](https://xboxwire.thesourcemediaassets.com/sites/2/2020/09/Tech-Specs-1.jpg), an image read
+  by eye and by OCR.
+- Microsoft,
+  ["App Developer Agreement"](https://learn.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement),
+  Microsoft Store, version 8.11, published 2026-03-17, effective 2026-04-17; served as a PDF of 52 pages.
 - Microsoft Learn,
   ["Xbox Developer Mode activation"](https://learn.microsoft.com/en-us/previous-versions/windows/uwp/xbox-apps/devkit-activation)
   and
@@ -1069,17 +1136,24 @@ Makers' documents:
 - Sony,
   ["Source Code for Open-Source Software Used in PlayStation Portal Remote Player (US)"](https://www.playstation.com/en-us/oss/accessories/playstation-portal-remote-player/),
   listing system software versions 1.0.0 to 7.1.7.
+- Nintendo,
+  ["Nintendo Switch 2 Technical Specifications"](https://www.nintendo.com/us/gaming-systems/switch-2/tech-specs/),
+  product page.
 - Blaze, ["VS"](https://evercade.co.uk/vs/), the Evercade VS product page.
 
 Secondary and metadata:
 
-- iFixit, ["Xbox Series X (2 TB Galaxy Black)"](https://www.ifixit.com/Device/Xbox_Series_X_2TB_Galaxy_Black)
-  and ["Xbox Series X (Digital Edition)"](https://www.ifixit.com/Device/Xbox_Series_X_%28Digital_Edition%29) device
-  pages, under iFixit's [content licence](https://www.ifixit.com/Info/Licensing), CC BY-NC-SA 3.0.
+- iFixit, "Xbox Series X (2 TB Galaxy Black)", `https://www.ifixit.com/Device/Xbox_Series_X_2TB_Galaxy_Black`,
+  and "Xbox Series X (Digital Edition)", `https://www.ifixit.com/Device/Xbox_Series_X_%28Digital_Edition%29`,
+  device pages, under iFixit's content licence, CC BY-NC-SA 3.0 (`https://www.ifixit.com/Info/Licensing`).
+  Not linked: the register closes iFixit for that licence's non-commercial term, so only the part titles were read.
 - GitHub, repository licence metadata, field `license.spdx_id`,
   read through the [REST API's repository endpoint](https://docs.github.com/en/rest/repos/repos#get-a-repository)
-  for Main_MiSTer, Distribution_MiSTer, Template_MiSTer, and Menu_MiSTer.
-  The repositories are not linked: the register walls them, so only their metadata was read.
+  for [Main_MiSTer](https://github.com/MiSTer-devel/Main_MiSTer),
+  [Distribution_MiSTer](https://github.com/MiSTer-devel/Distribution_MiSTer),
+  [Template_MiSTer](https://github.com/MiSTer-devel/Template_MiSTer),
+  and [Menu_MiSTer](https://github.com/MiSTer-devel/Menu_MiSTer).
+  The register walls the repositories, so only their metadata was read.
 
 Licences:
 
