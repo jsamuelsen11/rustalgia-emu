@@ -28,7 +28,7 @@ The limits in words and bytes are project rules that a reviewer can check; no so
 
 ### Sources
 
-- A source is opened only as [ADR 0001](../adr/0001-restrict-reading-by-licence-tier.md) allows.
+- A source is opened only as [ADR 0006](../adr/0006-read-sources-by-tier-under-a-compatibility-test.md) allows.
 - Each finding names its source at the point of use, by a short name and a pinpoint: a paragraph, a section, a page,
   or a note number.
   A paragraph number is preferred to a page of a slip opinion.
@@ -117,7 +117,7 @@ Any other claim carries one of these markers:
   If the prose checker rejects a word inside it, another passage is quoted or the point is paraphrased.
 - Nothing is quoted from a leaked or unpublished source.
   From a tainted source, only the licence and policy statements that `R0-01` records may be quoted,
-  and only from `R0-01`, as ADR 0001 allows.
+  and only from `R0-01`, as ADR 0006 allows.
 - Text under a licence that forbids adaptation or reuse, or under a bare copyright notice,
   is quoted word for word or not at all; it is not translated or closely reworded.
   A note states facts from it in its own words and its own structure.
@@ -163,17 +163,15 @@ Any other claim carries one of these markers:
 ### Algorithms and pseudo-code
 
 - Behaviour is described in sentences, in tables of inputs and outputs, in formulas, and in state or timing diagrams.
-- Notes hold no code.
-  Until the owner decides where pseudo-code falls under ADR 0001, they hold no pseudo-code;
-  [R0-04](topics/R0-04-glossary-and-conventions.md#recommendation) recommends that an amendment of ADR 0001,
-  which the owner has yet to decide, count it as code.
+- Notes hold no code, and pseudo-code counts as code
+  ([ADR 0006, "Terms"](../adr/0006-read-sources-by-tier-under-a-compatibility-test.md#terms)).
   A code block holds only a command and its output, a path, or configuration.
 - A description says what a system does as seen from outside it: inputs, outputs, state, and timing.
   No note gives the order of steps or the internal names of an implementation;
   an emulator study describes architecture at the level of its parts, as its template says.
 - The steps of the hardware itself may be described in numbered sentences without assignment or loop notation,
   from the maker's documents, an open-tier reference, or a test, with the source named.
-  A reader session's description holds no listing (ADR 0001).
+  A reader session's description holds no listing (ADR 0006).
 - A description written after reading an implementation says so.
   Whether it is still too detailed is a judgement for the reviewer, because no source read gives a threshold.
 - A diagram may show the states and timing of hardware.

@@ -57,7 +57,7 @@ body:
       description: Conditions under which the agent must stop and open a decision issue or ask, instead of choosing.
       value: |
         - The work turns out to need more than one pull request.
-        - A source needed for the work is walled, closed, or tainted under ADR 0001.
+        - A source needed for the work is walled, closed, or tainted under ADR 0006.
         - A check would have to be weakened or skipped to finish.
   - type: dropdown
     id: autonomy

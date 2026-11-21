@@ -42,7 +42,7 @@ such as the Game Boy Advance in GBATEK; code that only starts the machine is a [
   up to a whole operating system; Pan Docs also says "SGB BIOS" for the Super Game Boy's program (`R0-04`).
 - **See also:** [firmware](#firmware), [system software](#system-software).
 - **Basis:** the glossary's own wording; `R0-04`, "Vocabulary: where the terms are contested";
-  ADR 0001 uses the word without defining it.
+  ADR 0006 takes this definition as its term.
 
 ### boot ROM
 
@@ -51,7 +51,7 @@ hands control to a game or to [system software](#system-software), and offers no
 
 - **Avoid:** `bootrom`.
 - **See also:** [BIOS](#bios), [firmware](#firmware).
-- **Basis:** Pan Docs' usage, recorded in `R0-04`; ADR 0001 uses the word without defining it.
+- **Basis:** Pan Docs' usage, recorded in `R0-04`; ADR 0006 takes this definition as its term.
 
 ### cached interpreter
 
@@ -85,7 +85,7 @@ or that reimplements a console's BIOS, boot ROM, or system software, wherever it
 Nobody reads its code; its [prose](#prose) may be read, and the program may be observed by running it.
 
 - **See also:** [tier](#tier).
-- **Basis:** ADR 0001, "Closed tier".
+- **Basis:** ADR 0006, "Closed tier".
 
 ### core
 
@@ -127,7 +127,7 @@ A decompilation of a game or of firmware is in the [closed tier](#closed-tier).
 
 - **Elsewhere:** European Union law uses "decompilation" for acts that United States cases call disassembly (`R0-04`).
 - **See also:** [disassembly](#disassembly).
-- **Basis:** the standard vocabulary's entry "decompile", recorded in `R0-04`; ADR 0001, "Closed tier".
+- **Basis:** the standard vocabulary's entry "decompile", recorded in `R0-04`; ADR 0006, "Closed tier".
 
 ### disassembly
 
@@ -135,7 +135,7 @@ Translating machine code into assembly language; also the listing so produced.
 A disassembly of a game or of firmware is in the [closed tier](#closed-tier).
 
 - **See also:** [decompilation](#decompilation).
-- **Basis:** the standard vocabulary's entry "disassemble", recorded in `R0-04`; ADR 0001, "Closed tier".
+- **Basis:** the standard vocabulary's entry "disassemble", recorded in `R0-04`; ADR 0006, "Closed tier".
 
 ### dump
 
@@ -241,7 +241,7 @@ One entry in a roadmap, with a stable ID such as `R1-32`.
 A fact found only in a forum, a chat, a video, or a personal blog.
 It is not relied on until a better source or a test confirms it.
 
-- **Basis:** ADR 0001, "Sources that are not emulators".
+- **Basis:** ADR 0006, "Sources that are not emulators".
 
 ### low-level emulation
 
@@ -258,7 +258,7 @@ The tier of a source whose licence lets its code be combined with GPL-3.0 code.
 Anyone may read it; nothing is copied or ported from it.
 
 - **See also:** [tier](#tier).
-- **Basis:** ADR 0001, "Open tier".
+- **Basis:** ADR 0006, "Open tier".
 
 ### option
 
@@ -273,7 +273,7 @@ A README, a licence file, a contributing guide, a wiki, a blog, release notes, a
 It stops where code begins.
 
 - **See also:** [pseudo-code](#pseudo-code).
-- **Basis:** ADR 0001, "In every tier".
+- **Basis:** ADR 0006, "In every tier".
 
 ### provenance
 
@@ -284,23 +284,22 @@ The record of where a fact or a piece of code came from: which sources were cons
 ### pseudo-code
 
 Steps of a procedure written with assignment, branching, or loops in an informal notation.
-Until the owner decides its place under ADR 0001, research notes do not hold it;
+It counts as code under ADR 0006, so research notes do not hold it;
 the [research guide](../research/README.md#algorithms-and-pseudo-code) says what they hold instead.
 
 - **Elsewhere:** the ITU's guidelines count it as software, apart from prose;
   the IETF's list of code components does not name it;
   the standard vocabulary defines pseudocode as programming constructs and natural language combined (`R0-04`).
-  ADR 0001 does not say whether it is [prose](#prose) or code.
-- **Basis:** `R0-04`, "Pseudo-code and algorithm descriptions: practice", and "Open questions".
+- **Basis:** `R0-04`, "Pseudo-code and algorithm descriptions: practice"; ADR 0006, "Terms".
 
 ### reader
 
 A session that the owner starts with `RUSTALGIA_SOURCE_ROLE=reader` to study one emulator.
 It may read the code of the walled emulator it studies, and writes functional descriptions with no code and no listings.
 
-- **Elsewhere:** the source guard lets a reader session open every walled repository; the narrower rule is ADR 0001's.
+- **Elsewhere:** the source guard lets a reader session open every walled repository; the narrower rule is ADR 0006's.
 - **See also:** [writer](#writer), [walled tier](#walled-tier).
-- **Basis:** ADR 0001, "Walled tier".
+- **Basis:** ADR 0006, "Walled tier".
 
 ### research note
 
@@ -359,14 +358,14 @@ The hook `.claude/hooks/source-guard.sh`, which refuses tool calls that would op
 and tainted sources in the [source register](#source-register), and code in a repository that is not registered.
 
 - **See also:** [reader](#reader), [writer](#writer).
-- **Basis:** ADR 0001, "Evaluating a new source" and "Consequences".
+- **Basis:** ADR 0006, "Evaluating a new source" and "Consequences".
 
 ### source register
 
 The file `.claude/hooks/source-register.txt`, which lists every evaluated source and its [tier](#tier).
 
 - **Also:** register.
-- **Basis:** ADR 0001, "Evaluating a new source".
+- **Basis:** ADR 0006, "Evaluating a new source".
 
 ### spike
 
@@ -387,7 +386,7 @@ A console's operating system and built-in programs, whether stored in the consol
 such as over a network or from removable storage.
 
 - **Elsewhere:** often called [firmware](#firmware) or [BIOS](#bios) in emulator documentation (`R0-04`).
-- **Basis:** console makers' usage, recorded in `R0-04`; ADR 0001 uses the word without defining it.
+- **Basis:** console makers' usage, recorded in `R0-04`; ADR 0006 takes this definition as its term.
 
 ### tainted tier
 
@@ -398,7 +397,7 @@ It is not opened at all.
 - **Elsewhere:** `R0-01` and Asahi Linux use "taint" for code that copied protected expression or broke a clean room
   (`R0-01`; `R0-04`).
 - **See also:** [tier](#tier).
-- **Basis:** ADR 0001, "Tainted tier".
+- **Basis:** ADR 0006, "Tainted tier".
 
 ### test ROM
 
@@ -416,11 +415,11 @@ A recorded set of inputs with the outputs or state expected for one operation, s
 
 ### tier
 
-One of the four classes into which ADR 0001 sorts every source by its licence and its origin: open, walled, closed,
+One of the four classes into which ADR 0006 sorts every source by its licence and its origin: open, walled, closed,
 and tainted.
 
 - **Elsewhere:** the source register also marks repositories unrelated to consoles as `other`; they are not restricted.
-- **Basis:** ADR 0001, "Decision" and "Evaluating a new source".
+- **Basis:** ADR 0006, "Decision" and "Evaluating a new source".
 
 ### walled tier
 
@@ -429,7 +428,7 @@ or whose licence is unclear, and of any source not yet evaluated.
 Only a [reader](#reader) reads its code.
 
 - **See also:** [tier](#tier).
-- **Basis:** ADR 0001, "Walled tier".
+- **Basis:** ADR 0006, "Walled tier".
 
 ### writer
 
@@ -438,4 +437,4 @@ A writer never opens the code of a walled source.
 
 - **Elsewhere:** in a clean room, and in `R0-01` option 4, the writer is someone who has not seen the source;
   a writer session here may have read open-tier code and walled prose.
-- **Basis:** the default role in the [source guard](#source-guard); ADR 0001 defines the reader only.
+- **Basis:** the default role in the [source guard](#source-guard); ADR 0006 defines the reader only.
