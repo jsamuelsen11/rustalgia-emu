@@ -174,6 +174,39 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# 3DO Development Repo: key, maker-document, and source paths are closed; the index pages R1-06 cites stay open.
+check 2 writer "$(fetch https://3dodev.com/documentation/encryption/keys)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/documentation/encryption/opera)"
+check 2 writer "$(fetch https://3dodev.com/_media/documentation/encryption/keys.zip)"
+check 0 writer "$(fetch https://3dodev.com/documentation/encryption)"
+check 0 writer "$(fetch https://3dodev.com/_export/raw/documentation/encryption)"
+check 2 writer "$(fetch https://3dodev.com/documentation/development/opera/hardware)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/documentation/development_documents)"
+check 2 writer "$(fetch https://3dodev.com/_media/documentation/sdks/docs.zip)"
+check 2 writer "$(fetch https://ext.3dodev.com/3do/docs/index.html)"
+check 2 writer "$(fetch https://3dodev.com/_media/software/operating_systems/portfolio.zip)"
+check 0 writer "$(fetch https://3dodev.com/_export/raw/software/operating_systems)"
+check 2 writer "$(fetch https://3dodev.com/documentation/hardware/opera/memory_configurations)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/documentation/hardware/opera/memory_configurations)"
+check 0 writer "$(fetch https://3dodev.com/_export/raw/documentation/hardware)"
+check 0 writer "$(fetch https://3dodev.com/_export/raw/documentation/patents)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/software/original_source_code)"
+check 2 writer "$(fetch https://3dodev.com/_media/software/original_source_code/opera.zip)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/software/rom/opera)"
+check 2 writer "$(fetch https://3dodev.com/_media/software/rom/image.zip)"
+check 2 writer "$(fetch https://3dodev.com/_export/raw/software/sdk/opera)"
+check 2 writer "$(fetch https://3dodev.com/_media/software/sdk/kit.zip)"
+check 2 writer "$(fetch https://github.com/trapexit/3do-docs/tree/master/docs)"
+check 2 writer "$(github trapexit 3do-docs)"
+check 0 writer "$(fetch https://github.com/trapexit/3do-docs/blob/master/README.md)"
+
+# N64brew's PIF and CIC pages print key or seed material; the pages R1-06 cites stay open.
+check 2 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS)"
+check 2 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS?action=raw)"
+check 2 reader "$(fetch https://n64brew.dev/wiki/CIC-NUS)"
+check 0 writer "$(fetch https://n64brew.dev/wiki/VR4300?action=raw)"
+check 0 writer "$(fetch https://n64brew.dev/wiki/64DD)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'

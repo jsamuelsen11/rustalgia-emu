@@ -614,6 +614,28 @@ open | tixul/ngpcraft_dev_ref | MIT | Neo Geo Pocket reference; origin unstated;
 open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 2026-11-20 | home page
 # Sources first cited by R1-06, the 32-bit and 64-bit catalogue.
 open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's own P/ECE pages | 2026-11-20 | intr.html
+# 3DO Development Repo: key, maker-document, and source paths, closed so that the guard blocks them.
+# A pattern with no trailing "/" blocks the pages below it; the index page at the path itself stays readable.
+closed | 3dodev.com/documentation/encryption | none | key and signing pages | 2026-11-20 | encryption index
+closed | 3dodev.com/_export/raw/documentation/encryption | none | same, raw export | 2026-11-20 | encryption index
+closed | 3dodev.com/_media/documentation/encryption | none | key archives | 2026-11-20 | encryption index
+closed | 3dodev.com/documentation/development | none | maker's documents; and their index | 2026-11-20 | index
+closed | 3dodev.com/_export/raw/documentation/development | none | same, raw export | 2026-11-20 | index
+closed | 3dodev.com/_media/documentation/sdks | none | zipped maker documents | 2026-11-20 | index
+closed | ext.3dodev.com/3do | none | maker kit documents, headers, examples | 2026-11-20 | index
+closed | 3dodev.com/_media/software/operating_systems | none | Portfolio source archives | 2026-11-20 | index
+closed | 3dodev.com/documentation/hardware/opera/memory_configuration | none | embeds system code | 2026-11-20 | log
+closed | 3dodev.com/_export/raw/documentation/hardware/opera/memory_configuration | none | same | 2026-11-20 | log
+closed | 3dodev.com/_export/raw/software/original_source_cod | none | 3DO source, raw | 2026-11-20 | start page
+closed | 3dodev.com/_media/software/original_source_cod | none | 3DO source, files | 2026-11-20 | start page
+closed | 3dodev.com/_export/raw/software/rom | none | ROM and BIOS images, raw | 2026-11-20 | start page
+closed | 3dodev.com/_media/software/rom | none | ROM and BIOS images, files | 2026-11-20 | start page
+closed | 3dodev.com/_export/raw/software/sdk | none | maker's kits, raw | 2026-11-20 | start page
+closed | 3dodev.com/_media/software/sdk | none | maker's kits, files | 2026-11-20 | start page
+closed | trapexit/3do-docs | not read | collection of 3DO documents | 2026-11-20 | development_documents index
+# N64brew pages that print key or seed material. Patterns are cut short so that the page itself is blocked.
+closed | n64brew.dev/wiki/pif-nu | CC BY-SA 4.0 | PIF page; prints secret keys | 2026-11-20 | R1-06 research log
+closed | n64brew.dev/wiki/cic-nu | CC BY-SA 4.0 | CIC page; prints a boot secret | 2026-11-20 | R1-06 research log
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
 open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
