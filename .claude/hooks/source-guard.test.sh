@@ -174,6 +174,16 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# R1-05's protective lines: a ROM site, SMS Power's attachments, and a collector's folder of maker manuals.
+check 2 writer "$(fetch https://retrostic.com/)"
+check 2 writer "$(fetch https://www.retrostic.com/roms/sega-game-gear)"
+check 2 writer "$(fetch https://www.smspower.org/uploads/Development/bios13.zip)"
+check 2 reader "$(fetch https://smspower.org/uploads/Development/bios13.asm)"
+check 0 writer "$(fetch https://www.smspower.org/Development/ClockRate)"
+check 2 writer "$(fetch https://www.handheldmuseum.com/Manuals/Entex-SAG.pdf)"
+check 2 writer "$(bash 'curl -sL https://handheldmuseum.com/Manuals/Entex-SAG.pdf')"
+check 0 writer "$(fetch https://www.handheldmuseum.com/Entex/SAG.htm)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
