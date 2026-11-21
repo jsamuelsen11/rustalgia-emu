@@ -9,35 +9,31 @@ date: 2026-11-19
 
 ## Summary
 
-This note asks where the documentation for each system lives, and what each hub says about its licence,
-the origin of its information, and confidential material.
-It evaluates more than 300 sources by the steps of [ADR 0001][adr]
-and adds each to the [source register][reg] with a tier, except the archives, whose items are tiered one by one.
+This note asks where each system's documentation lives and what each hub says about its licence,
+the origin of its information, and confidential material,
+and it records more than 300 sources in the [source register][reg] with a tier given by [ADR 0001][adr].
 
-Most community references state no origin and no rule on leaked material.
-Several open hubs link, describe, or host a maker's confidential documents,
+Most community references state no origin and no rule on leaked material,
+and several open hubs link or host a maker's confidential documents,
 so the register closes those pages by name and leaves the rest of each hub open.
 
-For the PlayStation 1, no detailed and current reference was found that does not name the tainted document as a source.
-The note recommends that hardware tests settle PlayStation 1 facts, with older documents of stated origin,
-makers' datasheets, and patents as the starting points.
+For the PlayStation 1 no detailed, current reference was found that does not name the tainted document as a source,
+so the note recommends that tests on a console settle its facts.
 
-Makers' public manuals are restricted: most forbid reproduction,
-and the licence in one Arm manual does not extend to building "models".
-The note recommends the current Arm manuals, whose notices carry no such exclusion.
+Arm's older core manuals forbid adapting or reproducing the product they describe,
+and one architecture manual's licence excludes building models,
+so the note records building a model from them as a legal risk and recommends the current Arm manuals.
 
-Where ADR 0001's tests give an uncertain result,
-the note states the rule that the proposed amendment of ADR 0001 recommends,
-and keeps the tier the register gives until the owner decides.
-Three questions remain open, each with the work that would answer it.
-This note is not legal advice.
+Where ADR 0001's tests leave a result uncertain, the note recommends a rule for the owner to decide,
+the register keeps its tier until then, and nothing here is legal advice.
 
 ## Scope
 
 - Question: which documentation hubs and essential reading exist for each system, and for each hub,
   what are its licence, stated origin, rule on confidential material, and tier?
 - Covered: six groups of systems, makers' processor manuals, multi-system references, archives, and test suites.
-  A tier here is one given by ADR 0001's tests, and the owner accepted the tiers by merging the first version.
+  A tier here is one given by ADR 0001's tests, and the owner accepted the tiers by merging the first version
+  ([pull request 17][pr17]).
   The [register][reg] holds every source evaluated except the archive hubs,
   and the tables here hold the hubs a later note is most likely to need.
 - Left to other items: what the law says about firmware, keys, and takedowns ([R0-02][r002]);
@@ -56,6 +52,10 @@ This note is not legal advice.
   Its corrections were applied after each was checked against the source again;
   the claims it could not check are listed in the pull request.
 - The answers added on 2026-11-20 rest on raw fetches made that day, named with each finding.
+  One further independent pass, in two parts, then re-fetched every source those answers cite and tested each claim,
+  quotation, link, and register line; each of its corrections was checked against the raw source before it was applied,
+  so the note has had two independent passes in all, one for each version.
+  The claims that pass could not check are marked where they stand and listed in the pull request.
   A claim marked "(secondary)" rests on another party's account, "(from memory)" was not confirmed by a fetched page,
   and "(inference)" is reasoning.
   "None" and "nothing was found" record what the pages read contain, not proof of absence; the Sources list the pages.
@@ -76,7 +76,8 @@ In every table, "none" means none stated on the pages read, and "not read" means
 The "Rule" column is the hub's rule on confidential or leaked material.
 The tier is the one given under [ADR 0001][adr], and the [register][reg] holds the evidence for each line.
 Where a tier rests on a rule that ADR 0001 does not yet state,
-the finding names the rule that the proposed amendment of ADR 0001 recommends.
+the finding names the rule this note recommends for the ADR,
+which [option 9](#9-rules-adr-0001-does-not-yet-state) gathers for the owner.
 
 ### Game Boy, Game Boy Color, and Game Boy Advance
 
@@ -136,19 +137,20 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   and otherwise "Tainted or closed".
   The Teak section's own words are such a claim, so it is not open; it is not tainted,
   because the leaked files are not a console maker's, and no public accusation closes it (inference).
-- The proposed amendment of ADR 0001 recommends a rule for such cases:
+- This note recommends a rule for such cases
+  ([option 9](#9-rules-adr-0001-does-not-yet-state)):
   where a source's author names leaked material as the source of some pages, those pages are closed,
   and the rest keeps the source's tier.
   The register closes the split Teak pages on that basis.
   The BPTWL page only names a leak, so the rule as worded would leave it open; the register closes it as a precaution,
-  which merging accepted, and the amendment should say whether a page that only names a leak is covered.
+  which merging accepted, and the rule should say whether a page that only names a leak is covered.
   The single page `gbatek.htm` and its copies hold every section and stay open.
 - [gbadoc][gbadoc] says it is "provided to you under the Creative Commons 0 License" and states second-hand origins.
   Its BIOS chapter came from two emulator authors' lists and from "observing the behavior of various demos in CowBite
-  and other emulators"; its sound chapter is "most of it verbatim" from The Audio Advance;
+  and other emulators"; its sound chapter is "most of it verbatim" from [The Audio Advance][audioadv];
   and Martin Korth "has given me permission to consolidate additional info from his emulator's informative help
   documents" (gbadoc, Acknowledgements and chapters).
-- [The Audio Advance][audioadv] carries "CC BY 4.0", which asks for attribution;
+- The Audio Advance carries "CC BY 4.0", which asks for attribution;
   a CC0 dedication cannot release text whose rights belong to others (inference).
 - [Tonc][tonc]'s community edition is "released under the CC-BY-NC-SA license",
   so its text cannot be reused in GPL-3.0 notes (inference).
@@ -170,7 +172,8 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   The Sharp data books are hosted as third-party scans; their own notices were not read.
   The pages read show no sign that Sharp released them,
   so the ADR's row for maker material hosted by others closes them;
-  the proposed amendment of ADR 0001 recommends a row that says so for such copies.
+  this note recommends a row that says so for such copies
+  ([option 5](#5-maker-documents-that-survive-only-as-third-party-copies)).
 - Must not be used: the Game Boy and Game Boy Advance programming manuals and development kits;
   the boot ROM folder and the ROM of "the official Nintendo Gameboy test cartridge" on the gbdev file hub;
   Nintendo's aging cartridges, which the [SkyEmu][skyemu] and [NanoBoyAdvance][nba] READMEs name as accuracy targets;
@@ -240,9 +243,9 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
 - [libdragon][libdragon]'s licence file is the Unlicense, and no public dispute about its origin was found.
   Its README makes no clean-room statement.
   Its `boot/` folder holds "an open source bootcode" that replaces the cartridge boot code Nintendo wrote.
-  The proposed amendment of ADR 0001 recommends that replacement boot code for cartridges, or for a coprocessor ROM,
-  counts as "system software" under the closed test; the folder would then take a closed path line,
-  proposed for the pull request that adopts the amendment.
+  This note recommends that replacement boot code for cartridges, or for a coprocessor ROM,
+  counts as "system software" under the closed test
+  ([option 9][opt9]); the folder would then take a closed path line, added if the owner adopts the rule.
 - [parallel-rdp][prdp] is MIT and says it was "written from scratch by studying Angrylion-Plus", "not a port,
   and not a derived codebase".
   The Angrylion fork ships a licence text saying "MAME is not licensed for commercial use";
@@ -256,10 +259,11 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   The [site][v6502] serves the same simulator code, which the register walls too.
   [Quietust's Visual 2A03][qmt] runs on it, and "The 6502 CPU was copied directly from The Visual 6502";
   his chip images and page prose stay open.
-- [6502.org's documents index][6502docs], re-read raw on 2026-11-20,
+- [6502.org's documents index][6502docs], in its capture of 2026-09-19,
   lists "Component datasheets for 6500- family parts from the original manufacturers" (the space is on the page).
-  Neither the index nor the [home page][6502home] has a copyright or licence line
-  (a count of "copyright" and "licen" in the raw pages gave 0).
+  Neither that capture nor the [home page's capture of 2026-10-16][6502home] has a copyright or licence line
+  (a count of "copyright" and "licen" in the raw captures gave 0).
+  The live site answered HTTP 404 at every form of its address on 2026-11-20 (research log).
   The pages show no sign that the makers released those copies,
   so the register closes the folder under the row for maker material hosted by others.
 - Maker-published material is thin.
@@ -267,7 +271,8 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   including the right of reproduction"; the console uses a Ricoh chip built around that core (from memory).
   One Nintendo patent and one Ricoh and Nintendo patent were read at the [patent office][uspto].
   No maker-hosted copy of the NEC manuals for the Nintendo 64 and Virtual Boy processors was found
-  (the searches are under "Processor and chip makers' manuals"); copies sit on third-party hosts and were not opened.
+  (the searches are under ["Processor and chip makers' manuals"][s-makers]);
+  copies sit on third-party hosts and were not opened.
 - Must not be used: the SNES Development Manual; the Nintendo 64 kit and manuals on `ultra64.ca`
   (closed, so not linked),
   which a resource list describes as "official development manuals, as well as SDK downloads";
@@ -314,7 +319,7 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   without saying how that is known.
   Its DSi part credits DSiBrew, and its 3DS part, marked "under construction", cites 3dbrew.
 - On their author's words the DSi Teak pages fail the open test of the kinds table,
-  as the Game Boy findings set out (inference).
+  as the [Game Boy findings][s-gb] set out (inference).
   GBATEK says of the TeakLite II opcodes that "the only available info has leaked in form of .DLLs",
   bundled with a release of RealView Developer Suite, and that those files were used to disassemble every opcode.
   The leaked document is a signal-processor designer's specification (DSP Group).
@@ -333,21 +338,24 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   a Teak fact taken from Teakra is relied on only where its hardware testers confirm it, and its register line says so.
 - The four Arm manuals for these processors are served by Arm and marked non-confidential.
   Three technical reference manuals carry the same core notice:
-  no part of the information "may be adapted
-  or reproduced in any material form except with the prior written permission of the copyright holder".
-  None of the three mentions models or patents (Arm DDI 0201D, DDI 0360F, DDI 0210C).
+  "Neither the whole nor any part of the information contained in, or the product described in,
+  this document may be adapted or reproduced in any material form except with the prior written permission of the
+  copyright holder".
+  None of the three mentions models or patents
+  (Arm [DDI 0201D][arm-ddi0201], [DDI 0360F][arm-ddi0360], [DDI 0210C][arm-ddi0210]).
   Each adds that "The right to use, copy
   and disclose this document may be subject to license restrictions in accordance with the terms of the agreement
   entered into by ARM and the party that ARM delivered this document to".
   [Citra's developer page][citra-dev] linked two of them.
 - The [architecture manual for ARMv5 and ARMv6][arm-ddi0100] differs,
-  and its notice was re-read in full from Arm's own copy on 2026-11-20 (pages ii and iii, extracted with pdftotext).
+  and its notice was re-read in full from Arm's own copy on 2026-11-20 (pages i to iii, extracted with pdftotext).
   Clause 1 grants "a perpetual, non-exclusive, nontransferable, royalty free,
-  worldwide licence to use" the manual for three purposes: software and operating systems, tools, and chips,
-  each for cores "distributed under licence from ARM".
+  worldwide licence to use" the manual for three purposes: software and operating systems, and tools,
+  each for cores "distributed under licence from ARM", and chips that incorporate a core "manufactured under licence".
 - Clause 2 says "No right is granted to you under the provisions of Clause 1 to;
   (i) use the ARM Architecture Reference Manual for the purposes of developing or having developed microprocessor cores
-  or models thereof".
+  or models thereof", compatible with the manual's instructions or programmer's models,
+  and adds "(ii) develop or have developed models of any microprocessor cores designed by or for ARM".
   So the exclusion limits what the clause 1 licence covers; it is worded as a right not granted,
   not as a ban on reading.
   Pages i to iii make neither access nor reading conditional on accepting the notice: a search for "conditional",
@@ -358,9 +366,9 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   a reader who builds a processor model from DDI 0100I acts outside that licence.
   Whether that matters turns on whether the use needs a licence at all,
   for copyright in the manual's text or for patents, which clause 2 also excludes; [R0-02][r002] holds that baseline.
-  A model written independently does not reproduce the manual's text,
-  so the older core manuals' "adapted
-  or reproduced in any material form" is wording about copying the document (inference).
+- Legal risk, recorded as a finding (inference): the older core manuals' ban reaches "the product described",
+  the processor itself, and not only the text, and no Arm page read defines "material form".
+  A model of the processor built from those manuals may be read as adapting or reproducing the product described.
 - No hardware documentation published by Nintendo for these systems was found.
   The [Citra index][citra-idx] lists papers by staff of the 3DS graphics chip's designer, DMP;
   one was located and not read ([Kazakov and Ohbuchi, 2011][kazakov]; the affiliation is from [Crossref][crossref]).
@@ -374,8 +382,9 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   Its footnote limits that charge: "This should not be taken to imply that any
   or all of libnds itself is tainted with SDK code.
   The commit in question itself only adds fairly standard cache maintenance functions,
-  and is not itself evidence that there was substantial copying" (hbc README, lines 92 to 101).
-  Settled: the accuser does not dispute the library's origin, so libnds stays open,
+  and is not itself evidence that there was substantial copying" (hbc README, lines 94 to 102).
+  The next sentence still says he was referring to "the leaked SDK" (line 103).
+  Settled: the accuser does not dispute the library's origin, only the co-maintainer's conduct, so libnds stays open,
   and its register line carries that limit.
   No statement naming libctru was found.
 - The maintainers' own site refuses scripts (HTTP 403 from a Cloudflare block on 2026-11-20).
@@ -443,7 +452,7 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   Its PlayStation page hosts an "R3000A Manual", closed the same way.
 - Maker manuals for these processors were not found on a maker's site.
   IBM's former addresses return "not found", among them the one the GameCube document's host links,
-  and the searches of 2026-11-20 under "Processor and chip makers' manuals" found no ibm.com copy.
+  and the searches of 2026-11-20 under ["Processor and chip makers' manuals"][s-makers] found no ibm.com copy.
   Copies sit on third-party sites and were not opened.
   A search result described one copy of the GameCube processor manual as marked confidential
   (lead; the search was not recorded, and the copy was not opened).
@@ -471,7 +480,7 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   so they are not recorded.
 - A manual handed out only under a confidentiality agreement is not plainly one the maker "published itself",
   so no row of the kinds table fits, and ADR 0001's step 3 walls it for now.
-  The proposed amendment of ADR 0001 recommends a row that closes such manuals.
+  This note recommends a row that closes such manuals ([option 9][opt9]).
   The register walls the download page as well as the licence page, by a pattern cut short.
   No maker document for the Switch 2 processor was found.
 - Nintendo publishes the open-source components of its consoles, with entries for Switch 2, Switch,
@@ -481,8 +490,8 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
 - libogc stays closed. libogc2 "is largely API compatible with libogc 2.1.0 and earlier",
   and its licence names libogc's two copyright holders and its own.
   No accusation names it, so the library row's literal test would open it.
-  The proposed amendment of ADR 0001 recommends that a fork inherits its parent's disputed origin,
-  and the register closes libogc2 on that basis.
+  This note recommends that a fork inherits its parent's disputed origin
+  ([option 9][opt9]), and the register closes libogc2 on that basis.
 - [Dolphin's hardware tests][dolphin-hwtests] require libogc;
   the READMEs of the other two GameCube and Wii suites found do not say what they build with.
 - Atmosphère describes itself as "customized firmware" whose parts replace components of the system,
@@ -545,15 +554,15 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
 | uOFW; Obliteration | MIT; MIT or Apache | reimplement system software | none | closed |
 
 - The tainted reference reaches other sources.
-  PSn00bSDK's README lists it first among "References used".
+  PSn00bSDK's README lists it first among "References used" (`Lameguy64/PSn00bSDK`, closed, so not linked).
   The [Rustation][rustation] emulator's README says its author is "mainly using" the Nocash specification,
   and that its geometry coprocessor support was "ported from mednafen PSX", a walled emulator;
   its author adds "I also run tests on the real hardware".
   [Copetti's PlayStation article][copetti-ps] lists it for the processor, audio, disc format, and graphics.
   A fact taken from these may be known only from the tainted document, and none of them marks which (inference).
 - Rustation and its companion guide, `simias/psx-guide`, stay walled, as merged.
-  The proposed amendment's rule on sources that name tainted or leaked material is the nearest wording,
-  and option 7 below gives the reason.
+  The rule this note recommends for sources that name tainted or leaked material is the nearest wording,
+  and [option 7][opt7] gives the reason.
 - Copetti's citations point at per-chapter pages of the Nocash document whose file names the register's pattern did not
   match.
   The register now carries a second pattern for them.
@@ -581,9 +590,10 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   (emphasis removed).
   Its to-do list puts the copied parts in one library:
   `libpsxgte`'s assembly functions are to be rewritten "as parts of them have been lifted as-is from Sony libraries"
-  (PSn00bSDK README, lines 87 to 89, read raw).
-- The proposed amendment of ADR 0001 recommends that a library whose README admits copied maker code is closed,
-  and the register closes PSn00bSDK on that basis.
+  (PSn00bSDK README, lines 87 to 89, read raw on 2026-11-20; the later verification pass could not re-read it,
+  because the guard blocks calls that name the closed repository).
+- This note recommends that a library whose README admits copied maker code is closed
+  ([option 7][opt7]), and the register closes PSn00bSDK on that basis.
   The tier table's "derived from a console maker's binary" is the nearest wording in the ADR as it stands.
 - The common PlayStation 1 test collection, [ps1-tests][ps1tests], links that library into every test:
   its `common-test.mk` lists `-lpsxgte` among the linked libraries
@@ -607,8 +617,8 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   and "the PDFs may not be posted on public web sites".
   It adds that they "have identical content to 6 of the 7 system manuals provided to licensed developers".
 - Copies of those manuals found online show no sign of Sony's permission, which the FAQ requires.
-  The proposed amendment of ADR 0001 recommends a row for maker documents that survive only on third-party hosts:
-  closed unless the maker's release is shown.
+  This note recommends a row for maker documents that survive only on third-party hosts
+  ([option 5][opt5]): closed unless the maker's release is shown.
   That row closes these copies; the register already closes them as a precaution.
 - [Sony's PlayStation 3 Linux documents][ps3linux] carry a free licence: "Permission is granted to copy,
   distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2".
@@ -623,8 +633,11 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
 - Six of psdevwiki's seven main pages index a "Keys" page, and three index pages on Sony's development kits;
   none was opened.
   The [PS3 main page][psdev-cap3] links "SCEI PS3 SDK" and "PSDK3v2",
-  and the [PS4 main page][psdev-cap4] links "SCEI PS4 SDK" and "PSM SDK" (captures of 2026-09-10 and 2026-09-24).
-  The register closes the two pages on Sony's own kit by name, with guard tests.
+  and the [PS4 main page][psdev-cap4] links "SCEI PS4 SDK", "PSM SDK", and "Open Orbis SDK"
+  (captures of 2026-09-10 and 2026-09-24).
+  The register closes by name, with guard tests, the pages on Sony's own kits: the two "SCEI" pages,
+  and the "PSM SDK" page, which by its name covers Sony's PlayStation Mobile kit (from memory), closed as a precaution.
+  "PSDK3v2" and "Open Orbis SDK" name homebrew kits (from memory; Open Orbis is the open-tier toolchain in the Sources).
 - The site refuses scripts, so the psdevwiki findings rest on archived copies dated November 2025 to November 2026.
   The default 2026 captures of the PS3 and PS4 roots were refusal pages,
   so the archive's capture index was used to find complete ones (research log).
@@ -724,7 +737,7 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   TMSS is code the console runs before the game:
   [Wikipedia's "Sega Genesis"][wp-genesis] says the Genesis III of 1991 "included a code known
   as the Trademark Security System (TMSS), which, when a game cartridge was inserted,
-  would check for the presence of the string "SEGA"" (raw wikitext, tertiary).
+  would check for the presence of the string 'SEGA'" (raw wikitext; secondary).
   So it falls under the closed test as boot code (inference).
 - [KallistiOS][kos]'s licence file says it "is licensed under the terms of the "new" BSD license",
   and that in its "utils" and "addons" folders "Licenses on these pieces vary"; the register walls those two folders.
@@ -763,8 +776,9 @@ the finding names the rule that the proposed amendment of ADR 0001 recommends.
   or other legal analysis concerning Intel products described herein", with a patent licence back to Intel.
 - The [Motorola manual on NXP's site][nxp-m68k] shows only a copyright line, "MOTOROLA INC., 1992",
   on its first three pages.
-  NXP still serves it at the same address; on 2026-11-20 NXP's site answered scripts with HTTP 404, home page included,
-  while the manual and NXP's terms of use loaded through a browser-like fetch (research log).
+  NXP still serves it at the same address.
+  Once on 2026-11-20 NXP's site answered scripts with HTTP 404, home page included,
+  and a later plain fetch the same day got the home page and the manual (research log).
   [Zilog's manual address][zilog] now redirects to a page that refused access.
 - Two well-known permissions are narrower than their reputation.
   Hasbro Interactive's 1999 release says it "has released all rights
@@ -799,7 +813,7 @@ Every document below is served by the maker or its successor, unless the row say
 | Maker and document | Reproduction | Use to build a compatible model | Other conditions |
 |---|---|---|---|
 | Arm, A-profile and ARMv7 (DDI 0487, 0602, 0406C.d) | needs permission | not addressed | no infringement analysis |
-| Arm, older core manuals (DDI 0201, 0210, 0301, 0360) | no adapting or copying | copying only | recipient's agreement |
+| Arm core manuals (DDI 0201, 0210, 0301, 0360) | no adapting or copying | product and text; model unnamed | agreement |
 | Arm, ARMv5 and ARMv6 manual (DDI 0100I) | no distribution | "No right is granted" | use licence; no patents |
 | Intel, developer's manual (2026) | unmodified copies | software on Intel products | no legal analysis; patents back |
 | Renesas, SuperH software manuals | needs written consent | no reverse engineering of products | no licence granted |
@@ -817,18 +831,18 @@ Every document below is served by the maker or its successor, unless the row say
   No confidential document was opened.
 - Arm's ARMv7 manual, issue C.d of 2018,
   has the reproduction ban and a patent condition worded as "whether implementations infringe",
-  and not the "models thereof" wording of the older ARMv5 manual (Arm DDI 0406C.d, page ii).
+  and not the "models thereof" wording of the older ARMv5 manual ([Arm DDI 0406C.d][arm-ddi0406], page ii).
   Earlier issues were not fetched.
 - The [ARMv5 manual][arm-ddi0100]'s notice is a licence as well as a limit: Arm "hereby grants to you a perpetual,
   non-exclusive, nontransferable, royalty free,
   worldwide licence to use this ARM Architecture Reference Manual for the purposes of developing;
   (i) software applications or operating systems
   which are targeted to run on microprocessor cores distributed under licence from ARM", and tools for them.
-  The "models thereof" exclusion in clause 2 limits that grant, as the DS findings set out.
+  The "models thereof" exclusion in clause 2 limits that grant, as the [DS findings][s-ds] set out.
 - The older core manuals' ban covers "the information contained in, or the product described in, this document".
-  Its words, "adapted or reproduced in any material form", are about copying the document,
-  and no Arm page read explains them further; a model written independently does not reproduce the text (inference).
-  That answers the rest of R0-01's question as far as the words go.
+  So it reaches the processor as well as the text, and no Arm page read defines "material form".
+  Whether a model built from those manuals adapts or reproduces "the product described" is not addressed,
+  and the DS findings record it as a legal risk (inference).
 - Arm's [website terms][arm-terms] allow downloading "and to make one hard copy of the information
   for reference purposes only", except on its Keil pages,
   and say documentation "is governed by the license that accompanies it".
@@ -860,22 +874,22 @@ Every document below is served by the maker or its successor, unless the row say
   the MIPS architecture volumes, and the PowerPC parts.
   The copies found were third-party scans and community reverse engineering.
 - Four web searches on 2026-11-20 looked for maker-hosted copies of the manuals most needed, and found none
-  (search results only; no copy was opened):
+  (research log: search results only, which cannot be repeated exactly; no copy was opened):
   - "IBM PowerPC 750CL user's manual PDF ibm.com" found copies on fail0verflow.com, bitsavers mirrors, archive.org,
     and manual sites, and no ibm.com copy.
   - "Zilog Z80 CPU user manual UM0080 download zilog.com" found copies at a university archive, bitsavers mirrors,
     Scribd, and cpcwiki, and no zilog.com copy; the register already records Zilog's redirect that refused access.
   - "MIPS Architecture for Programmers Volume II download mips.com documentation" found university copies only.
   - "Renesas VR4300 user's manual NEC V810 architecture manual download" found bitsavers mirrors, n64brew,
-    and virtual-boy.com; Renesas hosts manuals for the V850, the line descended from the V810,
-    but no VR4300 or V810 manual was found there.
+    and virtual-boy.com; Renesas hosts manuals for the V850, the line descended from the V810
+    (from memory), but no VR4300 or V810 manual was found there.
 - All of those copies are maker material hosted by others, closed under the row described next.
 - [ADR 0001][adr-kinds] opens material a maker "published itself" and closes maker material
   that others host "with no sign the maker released it".
   A datasheet that its maker once sold or handed out, and that survives only as a third-party scan,
   arguably fits both rows (inference).
   The ADR's order of tests (tainted, closed, walled, open) makes such a scan closed, and the register applies that.
-  The proposed amendment of ADR 0001 recommends writing it as a row: closed unless the maker's release is shown.
+  This note recommends writing it as a row: closed unless the maker's release is shown ([option 5][opt5]).
 
 ### Multi-system references and archives
 
@@ -929,8 +943,8 @@ Every document below is served by the maker or its successor, unless the row say
   not relied on until a better source or a test confirms it.
   This note applies the same rule to the other hubs it labels "lead", which the ADR would treat as references.
 - [No-Intro][nointro] and [Redump][redump] are none of the kinds that ADR 0001 lists.
-  This note treats them as community references,
-  and the proposed amendment of ADR 0001 recommends a row that makes hash catalogues community references.
+  This note treats them as community references, and recommends a row that makes hash catalogues community references
+  ([option 9][opt9]).
   No-Intro says "We do NOT help or encourage users to download or otherwise obtain any of the listed dumps";
   Redump's home page states no such rule.
 - No-Intro's data has its own licence, which this note's pages did not show: [R0-04][r004] read its Data Usage License,
@@ -939,7 +953,7 @@ Every document below is served by the maker or its successor, unless the row say
 - R0-04 registered Redump as walled, because the facts could not be established.
   This note gave it open: the two notes record the same facts, no licence and a bare copyright notice,
   and ADR 0001 says that "no stated licence, does not close a reference".
-  Merging accepted open, and the hash-catalogue row would give it a written basis.
+  Merging accepted open, and the hash-catalogue row in [option 9][opt9] would give it a written basis.
 
 ### Test suites and test vectors
 
@@ -955,17 +969,17 @@ For test software ADR 0001 lets results be used always, and code by its licence.
 | blargg's Game Boy tests | none | not stated; a development cartridge is mentioned | closed |
 | SingleStepTests sm83 | MIT | a translation of the ares core | open |
 | SingleStepTests ARM7TDMI | MIT | NanoBoyAdvance | open |
-| jsmolka gba-tests; mGBA suite | MIT | not stated | open |
-| NBA hardware tests | BSD-3-Clause | not stated on the pages read | open |
+| jsmolka gba-tests; mGBA suite | MIT | hardware: author's flash-cartridge runs; mGBA: a commit | open |
+| NBA hardware tests | BSD-3-Clause | consoles, named in one test's README | open |
 | FuzzARM | GPL-3.0 | computed by its generator; no hardware check stated | open |
 | ARMWrestler copies; krom's GBA code | none | krom: "a real GBA using a flash cartridge" | closed |
 | AccuracyCoin (NES) | MIT | the author's console, one chip revision | open |
 | NES test ROM mirror (blargg and others) | none | not stated at repository level | closed |
 | SingleStepTests 65x02, 65816, spc700 | MIT | 65x02, spc700: emulator implementations; 65816: not stated | open |
-| gilyon's SNES tests | MIT | not stated | open |
-| undisbeliever's SNES tests | zlib | not stated | open |
+| gilyon's SNES tests | MIT | a console, by one commit | open |
+| undisbeliever's SNES tests | zlib | a console with an sd2snes and a RAM cartridge, by commits | open |
 | krom's SNES code; blargg's SNES tests | none | krom: a console; blargg: not stated (copy not recorded) | closed |
-| n64-systemtest, nemu64-test | MIT | not stated | open |
+| n64-systemtest, nemu64-test | MIT | hardware runs, by commits; n64-systemtest: an EverDrive cartridge | open |
 | krom's N64 tests | Unlicense | "a real N64 using a 64drive Cartridge" | open |
 | parallel-rdp validation | MIT | another emulator, Angrylion | open |
 | 240p Test Suite and its small ports | GPL-2.0-or-later | display tests; "tested on real hardware" | open |
@@ -987,7 +1001,7 @@ For test software ADR 0001 lets results be used always, and code by its licence.
 | SingleStepTests m68000 | MIT | "the microcoded core in MAME" | open |
 | SingleStepTests z80 | MIT | an emulator, by its description | open |
 | SingleStepTests 8088 | MIT | a physical processor, with MartyPC | open |
-| Klaus Dormann's 6502 tests | GPL-3.0 | self-checking; not stated | open |
+| Klaus Dormann's 6502 tests | GPL-3.0 | self-checking; written to test an emulator | open |
 | vAmiga Test Suite | GPL-3.0 | "reference images taken on real Amigas" | open |
 
 - blargg's Game Boy tests carry no licence in the author's own copy of the one archive read.
@@ -996,6 +1010,18 @@ For test software ADR 0001 lets results be used always, and code by its licence.
   The author's copy sits under a path with "~", so the register closes its host by name.
   The register walls that collection, because its parts carry a mix of licences, some none, that is not resolved.
   The addresses older pages give for his tests no longer serve them.
+- Where a suite's top README is silent,
+  its other READMEs and its latest 100 commit messages were searched on 2026-11-20
+  for statements about hardware. [jsmolka's][jsmolka-unsafe] `unsafe/README.md` says "The failures on hardware are
+  probably caused by the flash card", and one [NBA test's README][nba-vram] says it "passes on GBA and GBA SP" but not
+  on a DS Lite or a 3DS.
+  Commits name hardware runs: [mGBA's suite][mgba-suite] updated results "to match with hardware" (`91f019f`),
+  [gilyon's][gilyon] disabled a test "that fails on real SNES" (`bf38f8c`),
+  [undisbeliever's][undisb] compared an sd2snes with a Quickdev16 cartridge (`5b3df82`),
+  and [n64-systemtest][n64st] fixed expectations after runs on an EverDrive cartridge (`ec4279a`, `fc26441`).
+  Neither the 65816 vectors' README nor their commits state an origin,
+  and the header of Dormann's main test says it is designed to test a 6502 emulator. nemu64-test,
+  the successor of n64-systemtest, has commits that give values seen on hardware.
 - Most single-step processor vectors come from emulators, and their READMEs say so.
   One says "Any bugs that exist in Mame's microcoded M68000 emulator will exist here too";
   another that it "was generated using Reicast's CPU interpreter".
@@ -1009,10 +1035,11 @@ For test software ADR 0001 lets results be used always, and code by its licence.
   [crossbar9][crossbar9] runs "using boot9strap",
   a loader whose README describes "Boot9/Boot11 code execution" and loading "boot.firm" from the SD card or CTRNAND
   ([boot9strap][b9s] README).
-  The author's [talk slides][b9s-talk] describe a crafted signature that crashes the 3DS boot ROM's signature parser,
+  The author's [talk slides][b9s-talk] describe a forged signature
+  that the 3DS boot ROM's flawed signature check accepts (lead),
   so the loader runs through a flaw in the boot ROM (inference).
   The same talk describes dumping the boot ROMs; nothing of that kind was opened or used.
-- The Game Boy findings name emulators that test against Nintendo's aging cartridges.
+- The [Game Boy findings][s-gb] name emulators that test against Nintendo's aging cartridges.
 - SameSuite's X11 licence is not on ADR 0001's list for the open tier, so the tests give walled,
   although the licence is permissive.
   Whether the list should name it is [R0-03][rm0]'s question;
@@ -1043,7 +1070,7 @@ Counts are of the hub rows in the family tables above and the multi-system table
   and tests are not in that count, and a hub that appears in two tables is counted once.
   A reference that gives only credits, or only a goal, was counted as not stating how its information was obtained,
   and a bare copyright notice was not counted as a licence.
-  The first pull request lists the 62.
+  The first pull request ([#17][pr17]) lists the 62.
 - Rules against confidential or leaked material are rare and narrow: three wikis for Nintendo home consoles and the 3DS,
   one PlayStation wiki, two emulators' contributing guides
   (Dolphin and Xenia), one emulator's and one author's denial, one chat rule, and bans on ROM references.
@@ -1075,7 +1102,8 @@ Counts are of the hub rows in the family tables above and the multi-system table
 - Evaluation read policy pages, not technical pages.
   A hub whose policy pages are clean can still hold a page that restates a closed document,
   and no method finds a restatement that the article does not state.
-  The rule settled in the Sega findings covers the stated case: such a fact needs a second source or a stated limit.
+  The rule settled in the [Sega findings][s-sega] covers the stated case:
+  such a fact needs a second source or a stated limit.
 - Some origins cannot be established from pages that may be read. psxrev's "condidual" figure is one:
   deciding it would mean opening the figure, so the repository stays walled.
 - The [guard][guard] matches addresses as written.
@@ -1096,14 +1124,16 @@ Counts are of the hub rows in the family tables above and the multi-system table
     including "research", are blocked;
   - and a walled web site blocks its prose to a writer, although ADR 0001 lets anyone read a walled source's prose.
 - The guard also slows every call it checks.
-  With the register at 635 lines, one `git status` call piped into the guard under `/usr/bin/dash` took 1.06 to 2.81 s
-  over eight runs, against 1.97 to 2.27 s with 500 lines in the first pull request (tested locally, timed with
-  `date +%s.%N` on a 12-core machine running Linux 5.15).
-  The cost holds at about 2 s and grows with the register (tested locally).
+  With the register at 651 lines, one `git status` call piped into the guard under `/usr/bin/dash` took 1.06 to 2.81 s
+  over eight runs (tested locally, timed with `date +%s.%N` on a 12-core machine running Linux 5.15).
+  The first pull request ([#17][pr17]) measured 0.10 to 0.20 s at 68 lines and 1.97 to 2.27 s at 500,
+  as [issue 33][iss33] quotes, so the cost grew with the register up to 500 lines;
+  the runs at 651 lines overlap the range at 500 and do not show further growth (calculated from the figures).
 - Settled: these limits, the over-blocked hosts named in place of "~" paths
   (`cgi.cse.unsw.edu.au` and `slack.net`),
-  and the cost of reading the register go into one task issue for the guard, on the task form,
-  opened by the main session; none of the repository's 30 issues and pull requests was about the guard.
+  and the cost of reading the register are in three task issues for the guard: [#31][iss31] (fail closed), [#32][iss32]
+  (match what the register means), and [#33][iss33] (fast at any register size).
+  An earlier fix, [#16][pr16], blocked the tainted reference at addresses the guard had missed.
 - Pages that refused automated access were read from archived copies or not at all,
   and a hub can change its policy after the date in the register.
 
@@ -1135,7 +1165,7 @@ The last subsection gives the recommendation for each.
 
 ### 3. Documents by the tainted reference's author that carry no such statement
 
-- **What:** apart from GBATEK's Teak pages, GBATEK and fullsnes pass the ADR's tests.
+- **What:** apart from GBATEK's Teak pages, [GBATEK][gbatek] and [fullsnes][fullsnes] pass the ADR's tests.
   They can stay open, be read through split pages that leave out flagged sections, or be walled as a precaution.
 - **Costs:** open concedes whatever their unstated origins hold;
   walled removes the standard Game Boy Advance and DS reference.
@@ -1147,7 +1177,8 @@ The last subsection gives the recommendation for each.
 
 - **What:** read them as ADR 0001 allows and note the limits; or avoid manuals whose notice excludes "models";
   or learn the instruction sets from other documents and tests.
-- **Costs:** the first leaves DDI 0100I's licence, which does not cover building models, and a copyright question;
+- **Costs:** the first leaves [DDI 0100I][arm-ddi0100]'s licence, which does not cover building models,
+  the older core manuals' ban on adapting "the product described", and a copyright question;
   the others give up the most authoritative source for the ARM processors.
 - **Gains:** the first is what Citra's developer page did; the others avoid the question.
 - **Used by:** [Citra's developer page][citra-dev] pointed readers to Arm's manuals.
@@ -1161,7 +1192,8 @@ The last subsection gives the recommendation for each.
 - **Gains:** the strict reading needs no judgement; item by item fits the facts.
 - **Used by:** community references cite such scans; one identifies its processor core from them.
   The register applies the strict reading, as the ADR's order of tests gives it, to the Sharp data books, the IDT copy,
-  6502.org's datasheets, two files on the GameCube document's host, and the PlayStation 2 manuals.
+  6502.org's datasheets, two files on the GameCube document's host, and the PlayStation 2 manuals;
+  each is a closed copy, so none is linked.
 
 ### 6. Tests with no licence, or with expectations from an emulator
 
@@ -1169,7 +1201,7 @@ The last subsection gives the recommendation for each.
   or label each suite's origin in the register and in later notes.
 - **Costs:** preferring hardware-verified suites leaves several processors with no vectors at all.
 - **Gains:** labelling keeps an emulator's behaviour from being taken as the hardware's.
-- **Used by:** suite authors label themselves in their READMEs.
+- **Used by:** suite authors label themselves in their READMEs and commits.
 
 ### 7. Sources whose own authors name tainted or leaked material
 
@@ -1188,10 +1220,27 @@ The last subsection gives the recommendation for each.
 
 - **What:** the routes found are the older documents with stated origins, makers' datasheets and patents,
   tests on hardware, and the code of open-tier emulators.
-- **Costs:** Walker's document calls itself "hearsay and logical deductions";
+- **Costs:** [Walker's document][walker] calls itself "hearsay and logical deductions";
   emulator code may itself rest on the tainted reference, and reading it concedes access.
 - **Gains:** each route has a nameable source; a hardware test's origin is the measurement.
 - **Used by:** one walled emulator's author says he also tests on hardware.
+
+### 9. Rules ADR 0001 does not yet state
+
+- **What:** the findings met cases that ADR 0001's tests leave uncertain, and the register gave each a tier.
+  The rules behind those tiers can stay in this note and the register, or be written into the ADR:
+  - a source whose author names leaked material as the origin of some pages: those pages closed,
+    the rest at the source's tier, with a decision on a page that only names a leak (GBATEK's BPTWL page);
+  - replacement boot code for a cartridge or a coprocessor ROM counts as "system software" (libdragon's `boot/`);
+  - a maker manual handed out only under a confidentiality agreement is closed (NVIDIA's Tegra X1 manual);
+  - a fork inherits its parent's disputed origin (libogc2);
+  - a maker document that survives only on third-party hosts is closed unless the maker's release is shown (option 5);
+  - a library whose README admits copied maker code is closed (option 7);
+  - a hash catalogue is a community reference (No-Intro and Redump).
+- **Costs:** written into the ADR, the rules bind later notes and need the owner's decision; left in the note,
+  each later case is argued again.
+- **Gains:** written rules let the register cite the ADR instead of a note, and let a reviewer check a tier.
+- **Used by:** the register, which applies each rule today on this note's reasoning.
 
 ### Recommendation
 
@@ -1201,22 +1250,29 @@ The last subsection gives the recommendation for each.
    A fact from such a hub that a design depends on should be confirmed by a test or a second source.
 2. **Mixed hubs:** rules for named paths, with protective closed lines for key, kit, and firmware pages.
    One tier per hub would either shut the main references or expose closed pages;
-   the paths the guard cannot express wait for the guard issue.
-3. **The tainted reference's author's other documents:** keep GBATEK and fullsnes open,
+   the paths the guard cannot express wait for [issue 32][iss32].
+3. **The tainted reference's author's other documents:** keep [GBATEK][gbatek] and [fullsnes][fullsnes] open,
    with the Teak pages closed and the BPTWL page closed as a precaution.
-   They pass the tests, three open emulators rely on GBATEK,
+   They pass the tests, three open emulators credit GBATEK,
    and walling them removes the standard Game Boy Advance and DS reference;
-   flagged sections stay closed by the per-page rule in the proposed amendment of ADR 0001.
+   flagged sections stay closed by the per-page rule of recommendation 9.
 4. **Makers' manuals whose notices restrict use:** read them as ADR 0001 allows and record each notice's limits,
-   preferring the current Arm manuals (DDI 0487, DDI 0406C.d) to DDI 0100I,
-   and check instruction behaviour against test vectors.
+   preferring the current Arm manuals ([DDI 0487][arm-ddi0487], [DDI 0406C.d][arm-ddi0406]) to [DDI 0100I][arm-ddi0100]
+   for instruction behaviour, and check that behaviour against test vectors.
    The current notices have no "models thereof" exclusion, while DDI 0100I's licence does not cover building models;
    the ARMv7 manual's appendices on earlier architecture versions cover the ARMv5 and ARMv6 differences
    (from memory; to be confirmed before it is relied on).
+   Core timing is the gap: the architecture manuals do not replace the core manuals for the DS and 3DS processors
+   ([DDI 0201][arm-ddi0201], [DDI 0210][arm-ddi0210], [DDI 0360][arm-ddi0360])
+   (from memory),
+   whose notice reaches "the product described";
+   so timing taken from them carries the legal risk recorded in the [DS findings][s-ds],
+   and timing measured by tests on hardware avoids it.
 5. **Maker documents that survive only as third-party copies:** closed unless the maker's release is shown,
    reopened item by item when it is.
-   This is the row in the proposed amendment of ADR 0001, and it needs no judgement about unseen copies;
-   maker-hosted current documents, such as WDC's 65C816 datasheet and Ecma's standards, fill part of the gap.
+   This is the row this note recommends for ADR 0001, and it needs no judgement about unseen copies;
+   maker-hosted current documents, such as [WDC's 65C816 datasheet][wdc] and Ecma's standards ([ECMA-130][ecma130]),
+   fill part of the gap.
 6. **Tests with no licence, or with expectations from an emulator:** use any suite's results, as ADR 0001 allows,
    and label each suite's oracle (hardware, emulator, or not stated) in its register note
    and wherever a later note uses it.
@@ -1225,17 +1281,22 @@ The last subsection gives the recommendation for each.
    and labelling keeps an emulator's behaviour from being taken as the hardware's.
 7. **Sources whose own authors name tainted or leaked material:** close the pages an author says came from leaked
    material, close a library that admits copied maker code, and wall an emulator that says it mainly uses the tainted
-   document, as the register does and the proposed amendment of ADR 0001 words it.
+   document, as the register does.
    This matches the reason the tainted tier exists,
    and licence alone would open code built on material the project refuses to read.
 8. **How the PlayStation 1 primer gets its facts:** make hardware tests the route that settles a fact,
    starting from the older documents with stated origins
-   (Walker, the 1999 to 2000 text files),
+   ([Walker][walker], the 1999 to 2000 text files),
    makers' datasheets, and patents, each named in the sentence,
    and using open-tier emulator documentation only where it states a hardware test.
    Walker calls his own document "hearsay and logical deductions", and emulator code may rest on the tainted reference;
-   so a hardware-test spike for the PlayStation 1 should be planned,
-   and results from ps1-tests may be used while its binaries are not stored.
+   so the measurements belong to [R5-12][rm5], "PlayStation 1 behaviour measured on a console",
+   and results from [ps1-tests][ps1tests] may be used while its binaries are not stored.
+9. **Rules ADR 0001 does not yet state:** write the seven rules of option 9 into ADR 0001,
+   in a change the owner approves, and keep the register's tiers until then.
+   Each rule matches a tier the owner accepted by merging [#17][pr17],
+   and a written rule lets a reviewer check a tier without this note.
+   The pull request lists the seven for the owner.
 
 ## Implications for Rustalgia
 
@@ -1243,14 +1304,14 @@ The last subsection gives the recommendation for each.
   ([R1-10 to R1-25][rmsurv]) read from this map.
   Each should cite the hub's register line and repeat the hub's gaps, not the tier alone.
 - The PlayStation 1 primer and survey ([R1-02][r102], [R1-18][rmsurv]) cannot lean on one reference.
-  This feeds the decision on option 8 and a hardware-test spike for the PlayStation 1.
+  This feeds the decision on [option 8][opt8] and the measurements of [R5-12][rm5].
 - Open hubs put closed material one link away.
   This feeds a requirement that a session checks the register before following a link from a hub to a file host,
   key page, or kit.
 - The guard needed register lines for forms of address it did not match, and the limits listed above remain.
-  This feeds the guard issue that the main session opens.
-  ADR 0001's tests gave uncertain results
-  for the kinds of source this note names beside the proposed amendment of ADR 0001; this feeds that amendment.
+  This feeds issues [#31][iss31] to [#33][iss33].
+  ADR 0001's tests gave uncertain results for the kinds of source that [option 9][opt9] lists;
+  this feeds the owner's decision on recommendation 9.
 - Makers' notices bear on how notes quote and tabulate ([R0-04][r004]),
   and Arm's condition on patent-infringement analysis
   and Intel's on legal analysis bear on how patent research is kept apart ([R0-02][r002]).
@@ -1258,23 +1319,27 @@ The last subsection gives the recommendation for each.
   This feeds the testing notes ([R2-15][rm2], [R4-10][rm4]), and the licence gaps feed [R0-03][rm0],
   which also answers whether X11, LGPL-3.0, ZPL-2.1, AFL-2.0,
   and the Creative Commons attribution licences belong on the open list.
-  The GNU list's current wording on each is recorded under "Test suites and test vectors".
+  The GNU list's current wording on each is recorded under ["Test suites and test vectors"][s-tests].
 
 ## Open questions
 
-- What do TCRF's copyright page, Data Crystal's licence page, the repair and modification wikis,
-  and the die-photograph archive say?
-  Their tier allows their prose to anyone, but the guard blocks a walled site's prose to a writer.
-  The guard change in the guard issue, or a session the owner allows to read their prose, would let the family surveys
+- What do [TCRF's copyright page][tcrf], [Data Crystal's licence page][datacrystal], the repair and modification wikis
+  ([Console5][console5], [ConsoleMods][consolemods]), and the die-photograph archive ([siliconpr0n][siliconpr0n]) say?
+  Their tier allows their prose to anyone, but the [guard][guard] blocks a walled site's prose to a writer.
+  The guard change in [issue 32][iss32], or a session the owner allows to read their prose, would let the family surveys
   ([R1-10 to R1-25][rmsurv]) evaluate them.
 - Which GPL-2.0 projects are "only" and which "or later"?
-  The READMEs a writer may read do not settle it: openMSX says "GNU Public License (GPL)" with no version,
-  and the Stella and Kronos READMEs have no licence wording.
+  The prose a writer may read does not settle it: [openMSX][openmsx] says "GNU Public License (GPL)" with no version,
+  and the [Stella][stella] and [Kronos][kronos] READMEs have no licence wording.
+  [Stella's site][stella-site] says it is "released under the GNU General Public License (GPL)",
+  and its manual's "License and Disclaimer" section gives the version 2 text with no "or later" notice
+  (both read on 2026-11-20).
   The answer lies in per-file headers, which are code;
   a reader session for each project in its family survey would answer it.
-- Who produced the expected values in the suites that do not say?
-  Their READMEs were read and say nothing; [R2-15][rm2], which examines each suite's oracle,
-  would answer it by reading each open suite's sources and history.
+- Who produced the expected values of the 65816 vectors, and of the suites in other tiers that do not say?
+  The open suites' READMEs and latest commits were searched, as ["Test suites and test vectors"][s-tests] records;
+  the 65816 set states nothing, and the walled and closed suites' code and history may not be read by a writer.
+  [R2-15][rm2], which examines each suite's oracle, would answer it, with a reader session for the walled suites.
 
 ## Sources
 
@@ -1373,8 +1438,8 @@ Nintendo DS, DSi, and 3DS:
 - DSiBrew, Main Page, [Contributing][dsibrew], About, General disclaimer, page index, rights setting.
 - 3dbrew, Main Page, [Copyrights][3dbrew], About, General disclaimer.
 - [Citra site archive][citra-idx], home and five wiki pages.
-- Arm, proprietary notices of [DDI 0201D](https://documentation-service.arm.com/documentation/ddi0201/d), DDI 0360F,
-  DDI 0210C, and DDI 0100I, from the same service.
+- Arm, proprietary notices of [DDI 0201D][arm-ddi0201], [DDI 0360F][arm-ddi0360], [DDI 0210C][arm-ddi0210],
+  and [DDI 0100I][arm-ddi0100], from the same service.
 - [Citra site archive, developer information page][citra-dev].
 - [Crossref record of the Kazakov and Ohbuchi paper][crossref].
 - Panda3DS, [listing of its third_party folder][panda-tp].
@@ -1476,25 +1541,24 @@ Sega, arcade, Xbox, and other systems:
 
 - SMS Power!, home, development index, [documents index][smspower], contact page.
 - C. MacDonald, [document index][macdonald]; the [frameset that shows it](http://www.techno-junk.org/).
-- [Sega Retro, main page, archived copy of 2026-11-14][segaretro]; the live site answers scripts with a bot check.
+- [Sega Retro, main page, archived copy of 2026-11-14][segaretro];
+  the live site answered one scripted fetch with a bot check, and a later one with the page (research log, 2026-11-20).
 - Plutiedev, home and [FAQ][plutiedev].
 - [MegaDrive Wiki][mdwiki], main page, About, rights setting.
 - [BlastEm, README and licence](https://www.retrodev.com/repos/blastem).
 - READMEs and licence files of `ekeeke/Genesis-Plus-GX`, [RogerSanders/Exodus](https://github.com/RogerSanders/Exodus),
   [nukeykt/Nuked-OPN2](https://github.com/nukeykt/Nuked-OPN2), [nukeykt/Nuked-MD](https://github.com/nukeykt/Nuked-MD),
-  [Stephane-D/SGDK][sgdk], [Yabause/yabause](https://github.com/Yabause/yabause),
-  [FCare/Kronos](https://github.com/FCare/Kronos), [ymir-emu/Ymir](https://github.com/ymir-emu/Ymir),
-  `srg320/Saturn_MiSTer`, [KallistiOS/KallistiOS][kos], `finalburnneo/FBNeo`,
-  [jotego/jtcores](https://github.com/jotego/jtcores), [furrtek/SiliconRE][siliconre],
+  [Stephane-D/SGDK][sgdk], [Yabause/yabause](https://github.com/Yabause/yabause), [FCare/Kronos][kronos],
+  [ymir-emu/Ymir](https://github.com/ymir-emu/Ymir), `srg320/Saturn_MiSTer`, [KallistiOS/KallistiOS][kos],
+  `finalburnneo/FBNeo`, [jotego/jtcores](https://github.com/jotego/jtcores), [furrtek/SiliconRE][siliconre],
   [xemu-project/xemu](https://github.com/xemu-project/xemu), [XboxDev/nxdk][nxdk],
   [Free60Project/wiki](https://github.com/Free60Project/wiki), [xenia-project/xenia][xenia], `mist64/c64ref`,
   `trapexit/3do-devkit`, [jeffpar/pcjs](https://github.com/jeffpar/pcjs).
 - [Renesas, SH-4][renesas-sh4] and SH-1, SH-2 software manuals, notice pages.
-- [Motorola M68000 Family Programmer's Reference Manual][nxp-m68k], pages 1 to 3; NXP,
-  [terms of use](https://www.nxp.com/company/about-nxp/terms-of-use:TERMSOFUSE).
-  Both answered a browser-like fetch on 2026-11-20 and refuse scripts.
+- [Motorola M68000 Family Programmer's Reference Manual][nxp-m68k], pages 1 to 3; NXP, [terms of use][nxp-terms].
+  On 2026-11-20 both refused one scripted fetch with HTTP 404, and the manual loaded on a later one (research log).
 - [Zilog, Z80 user manual address][zilog], which redirects to a page that refused access.
-- KallistiOS, `doc/LICENSE.md`; Xenia, `.github/CONTRIBUTING.md`.
+- KallistiOS, [`doc/LICENSE.md`][kos-lic]; Xenia, [`.github/CONTRIBUTING.md`][xenia-contrib].
 - [Intel 64 and IA-32 Architectures Software Developer's Manual][intel-sdm], volume 1, September 2026, notices page.
 - [Yabause wiki][yabause-wiki], main page and documentation index.
 - antime's Saturn page, document index only: `https://antime.kapsi.fi/sega/docs.html`
@@ -1518,7 +1582,7 @@ Sega, arcade, Xbox, and other systems:
 - Amiga developer disc pages, front page: `http://amigadev.elowar.com/`
   (closed: the contents of a commercial developer disc, so not linked).
 - [3DO Development Repo](https://3dodev.com/), home and documentation index.
-- 6502.org, [home page][6502home] and [documents index][6502docs].
+- 6502.org, home page and documents index, live on 2026-11-19 (captures under 2026-11-20 below).
 - [MSX Assembly Page](http://map.grauw.nl/) and [MSX Resource Center wiki](https://www.msx.org/wiki/) footers.
 - [Sinclair Wiki](https://sinclair.wiki.zxnet.co.uk/) rights setting and [C64-Wiki](https://www.c64-wiki.com/) footer.
 - [WSdev wiki](https://ws.nesdev.org/wiki/), footer, read through a summarising fetch, and read raw by [R1-05][r105].
@@ -1531,8 +1595,8 @@ Sega, arcade, Xbox, and other systems:
 
 Cross-system sources:
 
-- Arm, proprietary notices of DDI 0487 issue M.d, DDI 0406C.d, DDI 0301H, and DDI 0602;
-  the [standard notices page][arm-notices]; the [website terms][arm-terms].
+- Arm, proprietary notices of [DDI 0487][arm-ddi0487] issue M.d, [DDI 0406C.d][arm-ddi0406], [DDI 0301H][arm-ddi0301],
+  and [DDI 0602][arm-ddi0602]; the [standard notices page][arm-notices]; the [website terms][arm-terms].
 - [Renesas, legal notices][renesas-legal].
 - [AMD, guide 48751 revision 3.03](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/48751_16h_bkdg.pdf),
   page 2.
@@ -1553,10 +1617,9 @@ Cross-system sources:
 - [Wikimedia Foundation, Terms of Use](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use).
 - [media.ccc.de, about page](https://media.ccc.de/about.html).
 - [Hackaday, policies page](https://hackaday.com/policies/).
-- TCRF and Data Crystal copyright pages, through a summarising fetch only: [TCRF][tcrf],
-  [Data Crystal](https://datacrystal.tcrf.net/wiki/Data_Crystal:Copyrights).
-- Refused every request, so not read: [Console5 tech wiki](https://console5.com/techwiki/),
-  [ConsoleMods wiki](https://consolemods.org/wiki/), [siliconpr0n](https://siliconpr0n.org/).
+- TCRF and Data Crystal copyright pages, through a summarising fetch only: [TCRF][tcrf], [Data Crystal][datacrystal].
+- Refused every request, so not read: [Console5 tech wiki][console5], [ConsoleMods wiki][consolemods],
+  [siliconpr0n][siliconpr0n].
   The Vita wiki, refused in the first pass, answered on re-check.
 - READMEs of [skylersaleh/SkyEmu][skyemu], [nba-emu/NanoBoyAdvance][nba], [michelhe/rustboyadvance-ng][rbang],
   and [melonDS-emu/melonDS][melonds], on aging cartridges and on GBATEK.
@@ -1570,29 +1633,33 @@ Cross-system sources:
 
 Read on 2026-11-20, for the questions the first version left open:
 
-- [Teakra README][teakra-raw], raw.
-- [README of fail0verflow/hbc][hbc], lines 92 to 101, read through the GitHub API.
+- [Teakra README][teakra-raw], raw: its credits and its testers.
+- [README of fail0verflow/hbc][hbc], lines 94 to 103, read through the GitHub API.
 - libnds licence file, `libnds_license.txt`,
   read through the GitHub API's licence endpoint for [devkitPro/libnds][libnds].
-- PSn00bSDK README, lines 87 to 89, raw, from `Lameguy64/PSn00bSDK` (closed, so not linked).
+- PSn00bSDK README, lines 87 to 89, raw, from `Lameguy64/PSn00bSDK`
+  (closed, so not linked);
+  the verification pass could not re-read it, because the guard blocks calls that name the repository.
 - [ps1-tests][ps1tests], README and `common-test.mk` at commit `f727802`, through the GitHub API,
   and a code search for `psxgte` in the repository.
-- psxrev root README, through the GitHub API; the guard blocked its wiki index as walled.
+- [psxrev root README][psxrev-readme], through the GitHub API; the guard blocked its wiki index as walled.
 - [GNU, "Various Licenses and Comments about Them"][gnu-cap], revision dated 2026/04/22, capture of 2026-11-18;
   the live page timed out twice.
-- 6502.org, [home page][6502home] and [documents index][6502docs], raw.
-- [Arm DDI 0100I record][arm-ddi0100], with its PDF; pages 1 to 3 extracted with pdftotext, and the copy deleted.
+- 6502.org, [home page, capture of 2026-10-16][6502home] and [documents index, capture of 2026-09-19][6502docs], raw;
+  the live site answered HTTP 404.
+- [Arm DDI 0100I record][arm-ddi0100], with its PDF; pages i to iii extracted with pdftotext, and the copy deleted.
 - [Arm DUI 0255 record][arm-rvds] and the records of DUI 0204 and DUI 0348, as JSON.
 - devkitPro site, refused with HTTP 403; [capture of 2026-10-16][devkitpro-cap].
 - Dolphin blog, refused with HTTP 403;
   [capture of 2026-11-10](https://web.archive.org/web/20261110141123/https://dolphin-emu.org/blog/).
-- Sega Retro, live main page, which answered with a bot check; the capture of 2026-11-14 stays the source.
+- Sega Retro, live main page, which once answered with a bot check
+  (research log); the capture of 2026-11-14 stays the source.
 - tcrf.net copyright page, raw: blocked by the guard as walled, and not worked around.
-- READMEs of [Vita3K/Vita3K][vita3k], [openmsx/openmsx](https://github.com/openMSX/openMSX),
-  [stella-emu/stella](https://github.com/stella-emu/stella), and [FCare/Kronos](https://github.com/FCare/Kronos),
-  through the GitHub API, searched for "later", "only", and "GPL".
-- Web searches for the IBM, Zilog, MIPS, and NEC manuals, as listed under "Processor and chip makers' manuals";
-  results only.
+- READMEs of [Vita3K/Vita3K][vita3k], [openmsx/openmsx][openmsx], [stella-emu/stella][stella],
+  and [FCare/Kronos][kronos], through the GitHub API's README endpoint, which the guard allowed then,
+  searched for "later", "only", and "GPL".
+- Web searches for the IBM, Zilog, MIPS, and NEC manuals,
+  as listed under ["Processor and chip makers' manuals"][s-makers]; results only (research log).
 - [SwitchBrew, "Tegra X1"][sb-tegra], raw wikitext, lines 41 to 43.
 - Angrylion fork, GitHub's licence endpoint for `ata4/angrylion-rdp-plus`, which returned HTTP 404.
 - [XboxDevWiki, live Main Page][xboxdevwiki], raw.
@@ -1601,8 +1668,18 @@ Read on 2026-11-20, for the questions the first version left open:
 - [Mednafen home page][mednafen], raw.
 - [Wikipedia, "Sega Genesis"][wp-genesis], raw wikitext.
 - [README of SciresM/boot9strap][b9s], through the GitHub API, and the author's [talk slides][b9s-talk].
-- [NXP, Motorola M68000 manual][nxp-m68k] and NXP's terms of use, fetched again to check the address.
-- The guard's run time, measured locally as described under "What the evaluation cannot show".
+- [NXP, Motorola M68000 manual][nxp-m68k] and NXP's [terms of use][nxp-terms], fetched again to check the address.
+- The guard's run time, measured locally as described under ["What the evaluation cannot show"][s-cannot].
+- READMEs, sub-folder READMEs, and the latest 100 commit messages of [jsmolka/gba-tests][jsmolka-unsafe],
+  [mgba-emu/suite][mgba-suite], [nba-emu/hw-test][nba-vram], [gilyon/snes-tests][gilyon],
+  [undisbeliever/snes-test-roms][undisb], [lemmy-64/n64-systemtest][n64st],
+  [thelemmy/nemu64-test](https://github.com/thelemmy/nemu64-test),
+  [SingleStepTests/65816](https://github.com/SingleStepTests/65816),
+  and the readme and main test header of [Klaus2m5/6502_65C02_functional_tests][dormann], through the GitHub API.
+- [Stella's site][stella-site] and [manual](https://stella-emu.github.io/docs/index.html), raw.
+- The repository's guard issues, [#31][iss31] to [#33][iss33], and its pull request list, through `gh`.
+- Arm records of [DDI 0201D][arm-ddi0201], [DDI 0360F][arm-ddi0360], [DDI 0210C][arm-ddi0210],
+  and [DDI 0406C.d][arm-ddi0406], as JSON, for their notices and titles.
 
 Project documents:
 
@@ -1628,6 +1705,47 @@ Project documents:
 [rmsurv]: ../../roadmap/research.md#system-family-surveys
 [rm2]: ../../roadmap/research.md#phase-2-cross-cutting-engineering
 [rm4]: ../../roadmap/research.md#phase-4-technology-stack
+[pr16]: https://github.com/jsamuelsen11/rustalgia-emu/pull/16
+[pr17]: https://github.com/jsamuelsen11/rustalgia-emu/pull/17
+[iss31]: https://github.com/jsamuelsen11/rustalgia-emu/issues/31
+[iss32]: https://github.com/jsamuelsen11/rustalgia-emu/issues/32
+[iss33]: https://github.com/jsamuelsen11/rustalgia-emu/issues/33
+[rm5]: ../../roadmap/research.md#phase-5-hands-on-spikes
+[s-gb]: #game-boy-game-boy-color-and-game-boy-advance
+[s-ds]: #nintendo-ds-dsi-and-3ds
+[s-sega]: #sega-arcade-xbox-and-other-systems
+[s-makers]: #processor-and-chip-makers-manuals
+[s-tests]: #test-suites-and-test-vectors
+[s-cannot]: #what-the-evaluation-cannot-show
+[opt5]: #5-maker-documents-that-survive-only-as-third-party-copies
+[opt7]: #7-sources-whose-own-authors-name-tainted-or-leaked-material
+[opt8]: #8-how-the-playstation-1-primer-gets-its-facts
+[opt9]: #9-rules-adr-0001-does-not-yet-state
+[arm-ddi0201]: https://documentation-service.arm.com/documentation/ddi0201/d
+[arm-ddi0210]: https://documentation-service.arm.com/documentation/ddi0210/c
+[arm-ddi0301]: https://documentation-service.arm.com/documentation/ddi0301/h
+[arm-ddi0360]: https://documentation-service.arm.com/documentation/ddi0360/f
+[arm-ddi0406]: https://documentation-service.arm.com/documentation/ddi0406/cd
+[arm-ddi0602]: https://documentation-service.arm.com/documentation/ddi0602/latest
+[kos-lic]: https://github.com/KallistiOS/KallistiOS/blob/master/doc/LICENSE.md
+[xenia-contrib]: https://github.com/xenia-project/xenia/blob/master/.github/CONTRIBUTING.md
+[psxrev-readme]: https://github.com/emu-russia/psxrev/blob/master/Readme.md
+[nxp-terms]: https://www.nxp.com/company/about-nxp/terms-of-use:TERMSOFUSE
+[jsmolka-unsafe]: https://github.com/jsmolka/gba-tests/blob/master/unsafe/README.md
+[nba-vram]: https://github.com/nba-emu/hw-test/blob/master/ppu/vram-mirror/README.md
+[mgba-suite]: https://github.com/mgba-emu/suite
+[gilyon]: https://github.com/gilyon/snes-tests
+[undisb]: https://github.com/undisbeliever/snes-test-roms
+[n64st]: https://github.com/lemmy-64/n64-systemtest
+[dormann]: https://github.com/Klaus2m5/6502_65C02_functional_tests
+[openmsx]: https://github.com/openMSX/openMSX
+[stella]: https://github.com/stella-emu/stella
+[stella-site]: https://stella-emu.github.io/
+[kronos]: https://github.com/FCare/Kronos
+[datacrystal]: https://datacrystal.tcrf.net/wiki/Data_Crystal:Copyrights
+[console5]: https://console5.com/techwiki/
+[consolemods]: https://consolemods.org/wiki/
+[siliconpr0n]: https://siliconpr0n.org/
 [pandocs-about]: https://gbdev.io/pandocs/About.html
 [pandocs-history]: https://gbdev.io/pandocs/History.html
 [pandocs-refs]: https://gbdev.io/pandocs/References.html
@@ -1669,8 +1787,8 @@ Project documents:
 [n64brew]: https://n64brew.dev/wiki/
 [libdragon]: https://github.com/DragonMinded/libdragon
 [prdp]: https://github.com/Themaister/parallel-rdp
-[6502home]: http://www.6502.org/
-[6502docs]: http://www.6502.org/documents/
+[6502home]: https://web.archive.org/web/20261016133630/https://6502.org/
+[6502docs]: https://web.archive.org/web/20260919203141/https://6502.org/documents/
 [wp-leak]: https://en.wikipedia.org/wiki/Nintendo_data_leak
 [wp-genesis]: https://en.wikipedia.org/w/index.php?title=Sega_Genesis&action=raw
 [dsibrew]: https://dsibrew.org/wiki/DSiBrew:Contributing

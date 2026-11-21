@@ -313,7 +313,7 @@ open | devkitpro/dswifi | MIT | - | 2026-11-19 | licence file
 open | devkitpro/maxmod | ISC | - | 2026-11-19 | licence file
 open | blocksds/libnds | zlib; one driver separate | fork of libnds; canonical copy on Codeberg | 2026-11-19 | README
 open | blocksds/sdk | zlib, MIT, ISC, MPL-2.0, BSD by part | canonical copy on Codeberg | 2026-11-19 | licences page
-open | wwylele/teakra | MIT | credits GBATEK's Teak pages; its Teak facts need its testers | 2026-11-20 | licence
+open | wwylele/teakra | MIT | credits GBATEK's Teak pages; Teak facts need its testers | 2026-11-20 | licence, README
 open | neobrain/nihstro | BSD-3-Clause | credits 3dbrew and aemstro | 2026-11-19 | README
 open | psi-rockin/corgi3ds | GPL-3.0 | 3DS emulator; needs boot ROMs | 2026-11-19 | README
 walled | azahar-emu/citra-web-archive | AGPL-3.0 | source of the Citra site archive | 2026-11-19 | licence metadata
@@ -616,6 +616,29 @@ closed | psdevwiki.com/ps4/scei_ps4_sd | none stated | page on Sony's PS4 kit | 
 closed | www.psdevwiki.com/ps4/scei_ps4_sd | none stated | www prefix | 2026-11-20 | PS4 Main Page link
 closed | xboxdevwiki.net/microsoft_xd | none stated | page on Microsoft's kit | 2026-11-20 | Main Page link
 closed | www.xboxdevwiki.net/microsoft_xd | none stated | www prefix | 2026-11-20 | Main Page link
+closed | psdevwiki.com/ps4/psm_sd | none stated | Sony's PlayStation Mobile kit; precaution | 2026-11-20 | PS4 main page
+closed | www.psdevwiki.com/ps4/psm_sd | none stated | www prefix | 2026-11-20 | PS4 Main Page link
+# Hosts R0-05 links that had no line, registered after its verification pass (2026-11-20).
+# The archive hubs (archive.org items, bitsavers) keep no hub line: their items are tiered one by one.
+other | api.crossref.org | - | bibliographic metadata service | 2026-11-20 | -
+other | archive.org/metadata | - | catalogue metadata, not items | 2026-11-20 | -
+other | archive.org/advancedsearch | - | catalogue search, not items | 2026-11-20 | -
+other | help.archive.org | - | the Internet Archive's help and rights pages | 2026-11-20 | rights page
+other | archive.gamehistory.org/help | - | library help page; items tiered one by one | 2026-11-20 | help page
+other | foundation.wikimedia.org | - | Wikipedia's operator; terms of use | 2026-11-20 | -
+open | hitmen.c02.at/html | none stated | YAGCD host's listings; hosted files closed above | 2026-11-20 | listings
+walled | ryujinx.app | MIT by its site; file not read | Ryubing's site and documentation; prose only | 2026-11-20 | site
+open | libdragon.dev | Unlicense, by the repository | libdragon's documentation site | 2026-11-20 | home page
+walled | mister-devel.github.io | per core | MiSTer documentation; cores not surveyed | 2026-11-20 | documentation home
+open | openpowerfoundation.org/blog | none stated | standards body's post on the Power ISA licence | 2026-11-20 | post
+open | vitasdk.org | MIT, by the kit's headers | site of the Vita SDK | 2026-11-20 | site
+open | copetti.org/disclaimer | CC-BY-4.0 | the article site's disclaimer page | 2026-11-20 | page
+open | nxp.com/company/about-nxp | - | maker's site terms: personal use | 2026-11-20 | terms of use
+open | renesas.com/en/legal-notices | Renesas notice | maker's document disclaimer | 2026-11-20 | page
+open | romhacking.net/policy | none stated | the site's submission policy | 2026-11-20 | page
+open | virtual-boy.com/documents | none stated | catalogue entry for the Sacred Tech Scroll | 2026-11-20 | page
+open | gbdev.gg8.se/files | none stated | file hub index; its ROM folders closed above | 2026-11-20 | index pages
+walled | stella-emu.github.io | manual: GPL-2.0 text, or later unstated | Stella's site | 2026-11-20 | site, manual
 # Sources first cited by R0-04, the note on the glossary and research conventions.
 other | jackchuka/mdschema | MIT | structure checker used here | 2026-11-19 | README, licence file
 other | lycheeverse/lychee | Apache-2.0 OR MIT | link checker used here | 2026-11-19 | README

@@ -26,8 +26,8 @@ exclude = [
   '^https?://archive\.dni\.gov/', # 403 Forbidden
   '^https?://(www\.)?psdevwiki\.com/', # 403 Forbidden (challenge page)
   '^https?://(www\.)?gnu\.org/', # times out
+  '^https?://(www\.)?nxp\.com/', # 404 to the link checker on 2026-11-20; a plain fetch loaded the same pages
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
   '^https?://(www\.)?devkitpro\.org/', # 403 Forbidden (Cloudflare block)
-  '^https?://(www\.)?nxp\.com/', # 404 to scripts, home page included; the pages load in a browser
 ]
