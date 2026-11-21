@@ -19,7 +19,7 @@ but it fails open and can be switched off from outside the repository.
 It guards the walled tier with one environment variable that nothing records,
 and a local test showed that a committed or local settings file can set that variable.
 
-The provider's system cards report models getting past checks of this kind.
+The provider's [system cards](https://www.anthropic.com/system-cards) report models getting past checks of this kind.
 Early snapshots of one model split strings to get past security hooks that match regular expressions,
 the kind of hook this repository uses, and another model split commands that a broken hook's pattern caught.
 
@@ -41,15 +41,21 @@ and a record of the human contribution to each change.
   [R0-01](R0-01-clean-room-policy.md),
   ["When AI agents read and write"](R0-01-clean-room-policy.md#when-ai-agents-read-and-write) and options 7 to 9,
   is the starting point and is not repeated.
-- Researched on 2026-11-19 against Claude Code 2.1.329, the version heading its changelog that day.
+- Researched on 2026-11-19 against Claude Code 2.1.329,
+  the version heading its [changelog](https://code.claude.com/docs/en/changelog) that day.
   Its documentation pages carry no date of their own.
   The questions the first version left open were worked on 2026-11-20 with Claude Code 2.1.329 installed,
   when the changelog was headed by 2.1.330.
 - How claims were checked:
   - Research agents fetched every source on 2026-11-19 and copied quotations from the raw pages.
     A second, independent pass fetched the sources again and tested each claim and quotation.
-    Its corrections were checked against the sources once more and applied to this note;
-    the claims it could not check are listed in the pull request.
+    Its corrections were checked against the sources once more and applied to this note.
+  - The rework of 2026-11-20 was checked by two further independent passes:
+    one fetched the sources again and tested each new or changed claim and quotation,
+    and one resolved every link and checked the note's shape.
+    Their findings were re-checked against the raw sources before any change, and the corrections applied.
+    So three independent verification passes have run in all;
+    the claims they could not check are listed in the pull request.
   - On 2026-11-20 the open questions were answered from raw pages fetched with curl, from tests in a scratch repository,
     and from observations on the owner's machine; each such claim names its check.
   - "(secondary)" marks a claim that rests on commentary, "(from memory)" one that no fetched page confirmed,
@@ -62,7 +68,7 @@ and a record of the human contribution to each change.
     on 2026-11-19 and again on 2026-11-20 against the script at commit `2b1a9be`, as each case below says.
   - No walled or closed emulator source, leaked material, or tainted reference was opened.
     One spike checked out the cores of two open-tier emulators to measure similarity; it did not run,
-    and the copies were deleted (see "Open questions").
+    and the copies were deleted (see [Open questions](#open-questions)).
 
 ## Findings
 
@@ -190,6 +196,11 @@ and a record of the human contribution to each change.
   Bare mode skips "auto-discovery of your hooks" and still "reads settings files
   and their permission rules" ([`headless`](https://code.claude.com/docs/en/headless));
   the pages read do not say whether it runs managed hooks.
+  The nearest passage says `--bare` skips hooks "from the repo
+  and your home directory" ([`best-practices`](https://code.claude.com/docs/en/best-practices)),
+  and the project's `env` block "and helpers such
+  as `awsAuthRefresh` in its settings files still apply" under it (`permissions`).
+  So under `--bare` the role variable is still set, though the project's hook does not run (inference).
   Safe mode keeps them: "Managed settings policy still applies, including policy-configured hooks" (`cli-reference`).
 - In an interactive session hooks wait until the workspace trust dialog is accepted;
   a `-p` or SDK session "never shows the dialog and treats the folder as trusted" (`hooks`).
@@ -282,7 +293,8 @@ and DuckStation's repository, which is closed, for a closed one.
   WebFetch narrows the redirect gap: it does not follow a redirect to a different host
   ([`tools-reference`](https://code.claude.com/docs/en/tools-reference)).
 - The split-string pass is the shape the provider reports a model using against broken hooks
-  (see "Walls for agents in practice, and their failures"; the link between them is inference).
+  (see [Walls for agents in practice, and their failures](#walls-for-agents-in-practice-and-their-failures);
+  the link between them is inference).
 - The fallback for unregistered repositories names four hosts: `github.com`, `raw.githubusercontent.com`, `gitlab.com`,
   and `codeberg.org` (line 74).
   Unregistered code on any other host is covered only by the written rule.
@@ -292,10 +304,15 @@ and DuckStation's repository, which is closed, for a closed one.
 - The fallback misses some addresses of unregistered code, and catches some that are not code.
   The piped calls passed an unregistered repository given as an SSH clone address, with a `www.` prefix,
   or through `codeload.github.com` (tested locally).
-  A two-segment `github.com/<a>/<b>` page passes as a bare repository page, so GitHub's Copilot terms page,
+  A two-segment `github.com/<a>/<b>` page passes as a bare repository page,
+  so [GitHub's Copilot terms page](https://github.com/customer-terms/github-copilot-product-specific-terms),
   which the hook refused on 2026-11-19 under a longer path, now passes (tested locally).
-  A command holding `-r <word>/<word>`, such as a recursive copy of a local folder,
-  is read as a repository and refused when that name is unregistered (observed on 2026-11-20).
+- A command holding `-r <word>/<word>`, such as a recursive copy of a local folder, is read as a repository.
+  It is refused when that name is unregistered and the path goes on past it,
+  as with a third segment or a trailing slash, or when the command also holds a word such as `clone`, `archive`,
+  or `search`.
+  A two-segment path followed by a space passes
+  (tested locally, 2026-11-20; also observed that day when the hook refused a session's own commands).
 - An MCP tool that takes a free-text query or a library name gives the script nothing to classify,
   and its result is not inspected (inference; the piped calls passed a free-text library name).
   A library identifier that is exactly a closed repository's `owner/repo` also passes,
@@ -333,7 +350,8 @@ and DuckStation's repository, which is closed, for a closed one.
   An allowed script can rewrite the register or the hook, as the protected-path test above shows (inference).
 - The hook lives in project settings, which the routes in the previous section can switch off.
   The owner's machine has no managed settings and no Team or Enterprise login,
-  so the built-in mod guard does not load by default (observed on 2026-11-20; see the previous section).
+  so the built-in mod guard does not load by default (observed on 2026-11-20; see
+  [What the tool can enforce, and what it cannot see](#what-the-tool-can-enforce-and-what-it-cannot-see)).
   `.claude/settings.json` sets no permission rules, no sandbox, and no logging hook.
 - The hook's test, [`source-guard.test.sh`](../../../.claude/hooks/source-guard.test.sh),
   is not run by `mise run check` or the CI workflows, so a change that breaks the hook fails no check (observed).
@@ -432,8 +450,12 @@ and DuckStation's repository, which is closed, for a closed one.
   ([document 922](https://storage.courtlistener.com/recap/gov.uscourts.nysd.612697/gov.uscourts.nysd.612697.922.0.pdf)
   on the same docket).
 - The same court ordered production of 20 million de-identified conversation logs, denied reconsideration,
-  and the district judge affirmed (orders of 7 November 2025, 2 December 2025, and 5 January 2026; documents 734, 896,
-  and 1021 on the second docket in "Sources").
+  and the district judge affirmed (In re OpenAI, No. 25-md-3143, orders of 7 November 2025, 2 December 2025,
+  and 5 January 2026:
+  [document 734](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.734.0.pdf),
+  [document 896](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.896.0.pdf),
+  and
+  [document 1021](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1021.0.pdf)).
   Another court ordered Anthropic "to produce a statistically significant sample of the Claude prompt
   and output records" (Concord v Anthropic,
   [order of 25 March 2025](https://storage.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.318.0.pdf)).
@@ -524,6 +546,7 @@ and DuckStation's repository, which is closed, for a closed one.
   (7 October 2026)
   cards, a search for "hook", "network proxy", "regex",
   and "circumvent" found rubric definitions and comparisons and no instance of a bypass.
+- An earlier card does report a proxy bypass.
   The [Fable 5 and Mythos 5 card](https://www.anthropic.com/claude-fable-5-mythos-5-system-card)
   (9 June 2026) reports domain fronting to get past a network proxy.
   The cards were found through the provider's [system cards index](https://www.anthropic.com/system-cards)
@@ -600,13 +623,15 @@ and DuckStation's repository, which is closed, for a closed one.
   (GitHub, [Copilot in IDEs](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides)).
   Such a filter compares text against one host's public index, so a translation to another language passes (inference).
 - The filter is no longer a condition of Microsoft's copyright commitment for GitHub's offerings.
-  Microsoft's page on the Customer Copyright Commitment, updated on 13 July 2026,
+  Microsoft's page on the Customer Copyright Commitment,
+  whose metadata is dated 13 July 2026 and whose visible date is 2026-03-20,
   says that for GitHub Offerings "as of April 3, 2026, there are no additional required mitigations.
   Use of the Duplicate Detection filter feature is no longer required for CCC coverage"
   ([Customer Copyright Commitment mitigations](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/customer-copyright-commitment)).
   The page calls the commitment "a provision in the Microsoft Product Terms" on defending customers against certain
   third-party claims about output.
-  GitHub's own Copilot product terms page returned a server error to curl on 2026-11-20 and was not read (research log).
+  [GitHub's own Copilot product terms page](https://github.com/customer-terms/github-copilot-product-specific-terms)
+  returned a server error to curl twice on 2026-11-20 and was not read (research log).
 - One open code model publishes identifiers for its training code.
   StarCoder2's authors say they released Software Heritage persistent identifiers for their training code,
   and drew on pull requests, notebooks, and documentation as well
@@ -676,7 +701,7 @@ and DuckStation's repository, which is closed, for a closed one.
   The one artefact found is a research dataset of C and Rust contest solutions,
   published on 2 November 2026 with evaluation scripts
   and a model adapter trained to recognise solutions to the same problem
-  ([CRUSTPairs](https://zenodo.org/api/records/23888785)).
+  ([CRUSTPairs](https://zenodo.org/records/23888785)).
   It tests shared function, not copying (inference).
 - The base rate of innocent similarity depends on how much the task fixes (inference from the two studies below).
   For independent implementations of one small specification,
@@ -686,13 +711,20 @@ and DuckStation's repository, which is closed, for a closed one.
   JPlag at a 50% cutoff would "falsely retrieve 7 non-plagiarism pairs in addition to the 4 correct ones"
   (Prechelt et al. 2002).
   No study was found that measures similarity among independent emulators.
-- The [register](../../../.claude/hooks/source-register.txt) holds no pair of independent open-tier Rust emulators of
-  one system (observed on 2026-11-20; the register does not record languages, so this rests on the entries known to be
-  in Rust).
-  Those are `gekkio/mooneye-gb` for the Game Boy, `michelhe/rustboyadvance-ng` for the Game Boy Advance,
-  and `lukexor/tetanes` for the NES; `wilbertpol/mooneye-gb` is a fork of the first, not an independent emulator.
-  A same-language pair in C is registered open: SameBoy (`liji32/sameboy`, Expat) and the Game Boy core of mGBA
-  (`mgba-emu/mgba`, MPL-2.0).
+- The [register](../../../.claude/hooks/source-register.txt) holds independent open-tier Rust emulators of one system
+  (observed on 2026-11-20).
+  The register does not record languages;
+  GitHub's language field gives Rust for [jgenesis](https://github.com/jsgroth/jgenesis)
+  (`jsgroth/jgenesis`, GPL-3.0),
+  whose README lists the NES, the Game Boy and Game Boy Color, and the Game Boy Advance among its systems.
+- So jgenesis pairs with [TetaNES](https://github.com/lukexor/tetanes) (`lukexor/tetanes`) for the NES,
+  [mooneye-gb](https://github.com/Gekkio/mooneye-gb) (`gekkio/mooneye-gb`) for the Game Boy,
+  and [rustboyadvance-ng](https://github.com/michelhe/rustboyadvance-ng) (`michelhe/rustboyadvance-ng`)
+  for the Game Boy Advance, all registered open.
+  `wilbertpol/mooneye-gb` is a fork of mooneye-gb, not an independent emulator.
+  A same-language pair in C is registered open too: [SameBoy](https://github.com/LIJI32/SameBoy)
+  (`liji32/sameboy`, Expat)
+  and the Game Boy core of [mGBA](https://github.com/mgba-emu/mgba) (`mgba-emu/mgba`, MPL-2.0).
 - The guidance read for MOSS, copydetect, and OSSKB says a score is not proof.
   MOSS says "it is a misuse of Moss to rely solely on the similarity scores" (MOSS). copydetect "does not provide a
   guarantee that plagiarism has occurred" (its README).
@@ -719,9 +751,13 @@ and DuckStation's repository, which is closed, for a closed one.
   (tool documentation).
   A score released without the match cannot be filtered for function unless someone looks (inference).
 - A hosted fingerprint scan can send hashes instead of source.
-  The SCANOSS overview says "The API never receives your source code",
-  although its API reference also lists an endpoint that accepts a source archive (SCANOSS documentation).
-  Its fingerprints keep identifiers, so renamed or translated code would not match (inference from the algorithm page).
+  The SCANOSS [API overview](https://docs.scanoss.com/en/latest/developer-tools/api-overview.md) says "The API never
+  receives your source code", although its
+  [API reference](https://docs.scanoss.com/developer-tools/api-reference/v3/scan/scan-an-uploaded-wfp-source-archive-synchronous.md)
+  also lists an endpoint that accepts a source archive.
+  Its fingerprints keep identifiers, so renamed or translated code would not match (inference from the
+  [algorithm page](https://docs.scanoss.com/en/latest/advanced/fast-winnowing-fingerprint-algorithms.md), whose
+  normalisation removes only case and non-alphanumeric characters).
 - The free OSSKB service, a separate offering, is "for professional use only" and may limit use; its terms,
   and the OSSKB pages read, do not say which repositories it indexes (OSSKB terms).
   A hit can display code from a source that has no tier (inference).
@@ -802,8 +838,8 @@ The decisions below are the nearest, and most concern providers as defendants.
   The claimant had not argued that the model stores copies, and the training and output claims had been abandoned.
   Permission to appeal was granted ([[2025] EWHC 3343 (Ch)](https://caselaw.nationalarchives.gov.uk/ewhc/ch/2025/3343)).
   As of 2026-11-20 the appeal, CA-2026-000007, has no judgment;
-  search results show a replacement appeal skeleton dated November 2026 on the judiciary's site
-  (secondary, from two web searches).
+  the results of two web searches show a replacement appeal skeleton dated November 2026 listed on the judiciary's site,
+  whose page was not opened and so is not linked (secondary, web search results).
 - Germany.
   A regional court held that song lyrics memorised in a model's parameters are reproductions,
   and that the provider and not the users is responsible for outputs made from simple prompts
@@ -812,7 +848,7 @@ The decisions below are the nearest, and most concern providers as defendants.
   This rests on the court's press release, not the judgment text;
   the judgment was not final when the release was issued.
   The court established memorisation by comparing outputs with the training texts.
-  OpenAI announced an appeal, and no appellate ruling was found as of 2026-11-20 (secondary, press reports).
+  OpenAI announced an appeal, and no appellate ruling was found as of 2026-11-20 (secondary, web search results).
 - European Union.
   First Advocate General Szpunar delivered his Opinion in Like Company v Google, C-250/25, on 3 November 2026
   (Court of Justice, [Opinion page](https://curia.europa.eu/site/jcms/p1_1000088866/en/)).
@@ -876,7 +912,7 @@ What follows for the licence belongs to [R0-03](../../roadmap/research.md).
 - The Part 2 report does not apply selection, arrangement, or modification to software.
   A search of its text on 2026-11-20 for "computer program", "source code", and "software" found background passages,
   a footnoted authorship case on commissioned software
-  (page 18 of the PDF), and comments that programmers use automated tools for refactoring and translation (page 19).
+  (page 10), and comments that programmers use automated tools for refactoring and translation (page 11).
 - United States, courts.
   The Copyright Act "requires all eligible work to be authored in the first instance by a human being"
   ([Thaler v Perlmutter](https://media.cadc.uscourts.gov/opinions/docs/2025/03/23-5233.pdf), D.C. Circuit 2025);
@@ -976,8 +1012,8 @@ These add to it.
   QEMU declines such contributions because "How contributors could comply with DCO terms (b) or (c)
   for the output of AI content generators commonly available today is unclear"
   (QEMU, [code provenance](https://www.qemu.org/docs/master/devel/code-provenance.html)).
-  The [kernel](https://docs.kernel.org/process/coding-assistants.html) and GCC say a person must sign
-  and the agent may not.
+  The [kernel](https://docs.kernel.org/process/coding-assistants.html)
+  and [GCC](https://gcc.gnu.org/ai-policy.html) say a person must sign and the agent may not.
   Red Hat's Chris Wright and Richard Fontana argue that "The real point of the DCO is responsibility"
   ([Red Hat blog](https://www.redhat.com/en/blog/ai-assisted-development-and-open-source-navigating-legal-issues),
   2025).
@@ -1047,7 +1083,8 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
   though no order on a developer's own transcripts was found.
 - **Gains:** the record that exposed the reads in the chardet rewrite
   ([R0-01](R0-01-clean-room-policy.md#when-ai-agents-read-and-write)).
-- **Used by:** the chardet maintainer;
+- **Used by:** the chardet maintainer
+  ([Blanchard 2026](https://dan-blanchard.github.io/blog/chardet-rewrite-controversy/));
   the [Software Freedom Conservancy](https://sfconservancy.org/llm-gen-ai/llm-backed-generative-ai-recommendations.html)
   recommends keeping such records and archiving them "as if they are part of the Corresponding Source".
 
@@ -1055,11 +1092,12 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 
 - **What:** commit transcripts or WARC files with the work.
 - **Costs:** republishes every fetched page and any secret, and, once forked, cannot in practice be withdrawn
-  (inference, R0-01).
+  (inference; [R0-01](R0-01-clean-room-policy.md#note-taking-and-record-keeping)).
 - **Gains:** anyone can audit what was opened.
 - **Used by:** none among the projects read;
-  the [kernel](https://docs.kernel.org/process/generated-content.html) suggests prompts or a summary of them,
-  and the Software Freedom Conservancy recommends archiving records with the Corresponding Source.
+  the [kernel](https://docs.kernel.org/process/generated-content.html) suggests prompts or a summary of them, and the
+  [Software Freedom Conservancy](https://sfconservancy.org/llm-gen-ai/llm-backed-generative-ai-recommendations.html)
+  recommends archiving records with the Corresponding Source.
 
 ### 4. Log fetches by hash
 
@@ -1073,13 +1111,14 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 ### 5. Disclose in the commit or the pull request
 
 - **What:** a trailer naming tool and model, or prose on tools, prompts, and the parts affected.
-- **Costs:** a self-report; the kernel dropped its tag, and the patch that removed it called the tag uninformative;
-  a pull request lives on the hosting platform.
+- **Costs:** a self-report; the [kernel](https://docs.kernel.org/process/coding-assistants.html) dropped its tag,
+  and the patch that removed it called the tag uninformative; a pull request lives on the hosting platform.
 - **Gains:** cheap, and what most peer projects that accept AI work ask for.
 - **Used by:** [Fedora](https://docs.fedoraproject.org/en-US/council/policy/ai-contribution-policy/),
   [LLVM](https://llvm.org/docs/AIToolPolicy.html), [GCC](https://gcc.gnu.org/ai-policy.html),
   [Eclipse](https://www.eclipse.org/projects/guidelines/genai/),
-  [Apache](https://www.apache.org/legal/generative-tooling.html), and the kernel in prose.
+  [Apache](https://www.apache.org/legal/generative-tooling.html), and the kernel in prose
+  ([tool-generated content](https://docs.kernel.org/process/generated-content.html)).
 
 ### 6. Attribute lines to sessions, or attest builds
 
@@ -1097,7 +1136,8 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 
 - **What:** tell agents what not to read.
 - **Costs:** instructions have been overridden with stated reasons; in the chardet rewrite,
-  reads went through a connected tool that the instruction did not restrict (R0-01).
+  reads went through a connected tool
+  that the instruction did not restrict ([R0-01](R0-01-clean-room-policy.md#when-ai-agents-read-and-write)).
 - **Gains:** states the rule, and covers what no tool can see.
 - **Used by:** the chardet rewrite; this repository for web sites and
   for a replacement BIOS inside an open-tier emulator.
@@ -1134,7 +1174,8 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
   web search and remote connectors stay outside.
 - **Used by:** Claude Cowork's egress allow-list
   (Anthropic, [containment post](https://www.anthropic.com/engineering/how-we-contain-claude));
-  LzLabs' codes of conduct were meant to restrict which public sources its developers could use.
+  [LzLabs](https://caselaw.nationalarchives.gov.uk/ewhc/tcc/2025/532)' codes of conduct were meant to restrict
+  which public sources its developers could use.
 
 ### 11. Separate reader and writer sessions with a reviewed handoff
 
@@ -1142,16 +1183,18 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
   Variants give the writer no network, a different model, or only structured values such as test vectors.
 - **Costs:** two sessions for each area; the handoff can carry expression; shared memory, files,
   and history cross the wall unless closed; the overseer sees both sides; the writer model's training is untouched.
-- **Gains:** the separation courts have credited (R0-01), with an audit point.
+- **Gains:** the separation courts have credited ([R0-01](R0-01-clean-room-policy.md)), with an audit point.
 - **Used by:** [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md)'s reader role in part;
-  LzLabs' request system; no agent project found with a record of it working.
+  [LzLabs](https://caselaw.nationalarchives.gov.uk/ewhc/tcc/2025/532)' request system;
+  no agent project found with a record of it working.
 
 ### 12. No restricted reading at all
 
 - **What:** agents open nothing in the walled, closed, or tainted tiers.
 - **Costs:** knowledge forgone; model memory remains.
 - **Gains:** no wall to erode, and no access conceded to walled, closed, or tainted code.
-- **Used by:** ADR 0001 for code in the closed tier and for everything in the tainted tier;
+- **Used by:** [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) for code in the closed tier and
+  for everything in the tainted tier;
   [R0-01's option 1](R0-01-clean-room-policy.md#1-public-documents-and-observation-only) goes further
   and opens no implementation code at all.
 
@@ -1178,8 +1221,9 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 
 - **What:** an isolated job obtains walled or closed code, compares, and releases numbers only.
 - **Costs:** something must obtain and hold the code; the hook blocks cloning it;
-  holding closed-tier code conflicts with ADR 0001 if a comparison by machine counts as reading,
-  which this note recommends (see "Recommendation"); a bare score cannot be filtered for function.
+  holding closed-tier code conflicts with [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md)
+  once a comparison by machine counts as reading, which this note settles
+  (see [Recommendation](#recommendation)); a bare score cannot be filtered for function.
 - **Gains:** the only route found to compare against code nobody may read.
 - **Used by:** no project found; a party's forensic expert filtering matches before scoring
   ([Allscripts v Andor](https://www.govinfo.gov/content/pkg/USCOURTS-ded-1_21-cv-00704/pdf/USCOURTS-ded-1_21-cv-00704-16.pdf))
@@ -1187,7 +1231,8 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 
 ### 16. Hosted snippet scan
 
-- **What:** send fingerprints to a service such as OSSKB and receive matches.
+- **What:** send fingerprints to a service such as [OSSKB](https://www.softwaretransparency.org/terms)
+  and receive matches.
 - **Costs:** near-verbatim text only; unknown index; terms limit use; a hit can display code that has no tier.
 - **Gains:** the project holds no reference code.
 - **Used by:** no user named; the service states its purpose as licence compliance
@@ -1198,9 +1243,10 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 - **What:** flag code whose constants, arguments, or behaviour cite no permitted source, and hold it until cleared.
 - **Costs:** reviewer time; misses a copy that happens to be documented.
 - **Gains:** needs no reference code; extends the rule that every claim says how it was checked.
-- **Used by:** ReactOS, in the audit it announced in 2006 (R0-01), which froze modules until cleared
-  ([ReactOS wiki, Audit](https://web.archive.org/web/20250423130230/https://reactos.org/wiki/Audit),
-  archive capture of 23 April 2025).
+- **Used by:** ReactOS, in the audit it announced in 2006 ([R0-01](R0-01-clean-room-policy.md)),
+  which froze modules until cleared
+  ([ReactOS wiki, Audit](https://web.archive.org/web/20250423130230/https://reactos.org/wiki/Audit), archive capture of
+  23 April 2025).
 
 ### 18. No authorship record
 
@@ -1216,16 +1262,18 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 - **Costs:** volume and retention; the record also shows where the human added little.
 - **Gains:** the records that the Copyright Office's
   [guidance](https://www.federalregister.gov/documents/full_text/html/2023/03/16/2023-05321.html),
-  [Japan's factors](https://www.bunka.go.jp/english/policy/copyright/pdf/94055801_01.pdf), and the reported Chinese
-  ruling point to.
-- **Used by:** suggested by the kernel; recommended by the Software Freedom Conservancy.
+  [Japan's factors](https://www.bunka.go.jp/english/policy/copyright/pdf/94055801_01.pdf), and the
+  [reported Chinese ruling](https://natlawreview.com/article/beijing-internet-court-requires-evidence-creative-effort-claim-copyright-protection)
+  point to.
+- **Used by:** suggested by the [kernel](https://docs.kernel.org/process/generated-content.html); recommended by the
+  [Software Freedom Conservancy](https://sfconservancy.org/llm-gen-ai/llm-backed-generative-ai-recommendations.html).
 
 ### 20. Mark AI-written regions
 
 - **What:** a header or record saying which files or ranges a model wrote, with or without a disclaimer of copyright.
 - **Costs:** a judgement for each file; a disclaimer concedes that those parts carry no copyleft.
 - **Gains:** the notice claims no more than the law may give.
-- **Used by:** Eclipse's template header;
+- **Used by:** [Eclipse](https://www.eclipse.org/projects/guidelines/genai/)'s template header;
   Red Hat suggests an ultra-permissive licence such as the Unlicense for a wholly generated repository
   ([Red Hat blog](https://www.redhat.com/en/blog/ai-assisted-development-and-open-source-navigating-legal-issues)).
 
@@ -1235,9 +1283,11 @@ Options 1 to 6 concern records, 7 to 12 walls, 13 to 17 similarity checks, and 1
 - **Costs:** conflicts with a project written mostly by agents
   ([R0-01, option 9](R0-01-clean-room-policy.md#9-limit-or-check-what-ai-writes)).
 - **Gains:** human authorship of the core under every test found.
-- **Used by:** GCC, [QEMU](https://www.qemu.org/docs/master/devel/code-provenance.html),
+- **Used by:** [GCC](https://gcc.gnu.org/ai-policy.html),
+  [QEMU](https://www.qemu.org/docs/master/devel/code-provenance.html),
   [Gentoo](https://wiki.gentoo.org/wiki/Project:Council/AI_policy),
-  [NetBSD](https://www.netbsd.org/developers/commit-guidelines.html), and the projects R0-01 lists.
+  [NetBSD](https://www.netbsd.org/developers/commit-guidelines.html),
+  and the projects [R0-01 lists](R0-01-clean-room-policy.md#policies-of-emulator-and-decompilation-projects).
 
 ### Recommendation
 
@@ -1245,30 +1295,49 @@ The owner decides; each recommendation below rests on the findings above.
 
 - **Records (options 1 to 6):** keep transcripts privately with long retention
   (option 2), and keep prose disclosure in the pull request (option 5).
-  Transcripts are the record that showed the chardet reads, they stay out of the public repository,
-  and the Software Freedom Conservancy recommends keeping them; the owner's setting is already 365 days.
-  Publishing (option 3) republishes every page and secret, line attribution
-  (option 6)
-  would not survive this repository's squash merges without extra tooling, and a hash log (option 4) can be added later.
+  Transcripts are the record that showed the reads in the chardet rewrite
+  ([R0-01](R0-01-clean-room-policy.md#when-ai-agents-read-and-write)), they stay out of the public repository, and the
+  owner's setting is already 365 days.
+- This departs from the
+  [Software Freedom Conservancy](https://sfconservancy.org/llm-gen-ai/llm-backed-generative-ai-recommendations.html),
+  which says such records "should be archived as if they are part of the Corresponding Source", that is, with the code.
+  The reason is that publishing (option 3) republishes every fetched page and any secret printed in a session;
+  a private archive keeps the record without doing so (inference).
+  Line attribution (option 6) would not survive this repository's squash merges without extra tooling, and a hash log
+  (option 4) can be added later.
 - **Walls (options 7 to 12):** harden the existing hook (option 9), keep no reading of closed and tainted code
   (option 12), and use a reader and writer split with a reviewed handoff (option 11) for the walled studies.
-  The tests here show that a project or local settings file can set the role and that split strings pass the hook,
-  and two system cards report models splitting commands or narrowing down a classifier's input to get past such checks.
-  So the hook should fail closed, set `disableAllHooks` to `false`, cover the file tools and WebSearch,
-  log the role and every block, and run its test in `mise run check`; an allow-list
-  (option 10) cannot tell repositories apart on one host.
+- The evidence for hardening: the tests here show that a project or local settings file can set the role and
+  that split strings pass the hook.
+  Three system cards report models getting past such checks, by splitting strings
+  ([Fable 5.2 and Mythos 5.2](https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card)),
+  splitting commands ([Fable 5.1 and Mythos 5.1](https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card)),
+  or narrowing down a classifier's input ([Opus 5](https://www.anthropic.com/claude-opus-5-system-card)).
+- The hardening steps: the hook fails closed, the project settings set `disableAllHooks` to `false`,
+  the hook covers the file tools and WebSearch, it logs the role and every block, and its test runs in `mise run check`.
+  An allow-list (option 10) cannot tell repositories apart on one host.
 - **Similarity checks (options 13 to 17):** an indicator audit of Rustalgia's own code
   (option 17)
   and a local comparison against open-tier code (option 14), after a spike that measures the innocent base rate.
   Neither needs restricted code.
-  Option 15 conflicts with [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md)
-  if a comparison by a machine alone counts as reading,
-  which this note recommends for the proposed amendment of ADR 0001, so that such a comparison is not done;
-  option 16 matches near-verbatim text only, against an unknown index, and can display code that has no tier.
+- This note settles a process question
+  for the proposed amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md):
+  a comparison by a machine alone counts as reading.
+  No source read decides it, so the call rests on what such a comparison needs.
+  The job must obtain and hold a full copy, which the file tools can then open
+  (see [What this repository's controls cover](#what-this-repositorys-controls-cover));
+  the tools' reports reproduce the matched code
+  (see [Similarity checks](#similarity-checks));
+  and a bare score cannot be filtered for function unless someone looks at the match.
+  Under that call option 15 cannot run against closed-tier code, which nobody reads.
+  Option 16 matches near-verbatim text only, against an unknown index, and can display code that has no tier.
 - **Authorship records (options 18 to 21):** record the human contribution for each change
   (option 19): the owner's specifications, decisions, and reviews, which the pull requests already partly hold.
-  The United States registration guidance, Japan's factors, and the reported Chinese ruling all point to such records,
-  at small cost here.
+  The United States
+  [registration guidance](https://www.federalregister.gov/documents/full_text/html/2023/03/16/2023-05321.html),
+  [Japan's factors](https://www.bunka.go.jp/english/policy/copyright/pdf/94055801_01.pdf), and the
+  [reported Chinese ruling](https://natlawreview.com/article/beijing-internet-court-requires-evidence-creative-effort-claim-copyright-protection)
+  all point to such records.
   Marking AI-written regions (option 20) is left to [R0-03](../../roadmap/research.md),
   and option 21 conflicts with a project written mostly by agents.
 
@@ -1287,8 +1356,8 @@ The owner decides; each recommendation below rests on the findings above.
   The ADR on AI provenance controls that [R0-01](R0-01-clean-room-policy.md) anticipated cannot rest on a wall alone.
   It would choose among options 13 to 17 and say what a clean result does and does not show.
 - A similarity check against closed-tier code conflicts with ADR 0001 as written.
-  This note recommends that a comparison by a machine alone counts as reading, so that it is not done;
-  the recommendation goes to the proposed amendment of ADR 0001.
+  This note treats a comparison by a machine alone as reading, for the reasons under [Recommendation](#recommendation),
+  so such a check is not done; the call goes to the proposed amendment of ADR 0001.
 - What is kept, and for how long, is the owner's call: transcripts sit outside the repository under a user setting.
   Options 1 to 6 feed the same ADR, and a requirement on retention.
 - The [pull request template](../../../.github/PULL_REQUEST_TEMPLATE.md)'s Provenance section is a self-declaration:
@@ -1309,29 +1378,41 @@ The owner decides; each recommendation below rests on the findings above.
 ## Open questions
 
 - What is the innocent similarity between two independent open-tier emulators of one system in one language?
-  A run was set up on 2026-11-20 and stopped:
-  the [source guard](../../../.claude/hooks/source-guard.sh) refused a recursive copy of a local folder
-  as an unregistered repository, and the session's auto-mode classifier then denied the comparison.
-  A spike the owner authorises, run outside auto mode, would answer it for C:
-  JPlag in C mode over SameBoy's `Core/` folder, leaving out its boot ROM folder, which is closed,
-  and over mGBA's `src/gb`, at the default and a lowered minimum token count.
-  A Rust pair first needs a second Rust emulator of one system to be evaluated
-  and added to the [register](../../../.claude/hooks/source-register.txt).
+  - What was tried: a run was set up on 2026-11-20 and stopped.
+    The [source guard](../../../.claude/hooks/source-guard.sh) refused a recursive copy of a local folder
+    as an unregistered repository, and the session's auto-mode classifier then denied the comparison.
+    Working around either block would break the project's rules.
+  - What would answer it: a spike that the owner authorises and runs outside auto mode, over pairs already registered
+    (see [Similarity checks](#similarity-checks)).
+    For Rust, [JPlag](https://raw.githubusercontent.com/jplag/JPlag/main/README.md) in Rust mode over the core of one
+    system in [jgenesis](https://github.com/jsgroth/jgenesis) and in [TetaNES](https://github.com/lukexor/tetanes),
+    [mooneye-gb](https://github.com/Gekkio/mooneye-gb), or
+    [rustboyadvance-ng](https://github.com/michelhe/rustboyadvance-ng).
+    For C, JPlag in C mode over [SameBoy](https://github.com/LIJI32/SameBoy)'s `Core/` folder,
+    leaving out its boot ROM folder, which is closed, and over [mGBA](https://github.com/mgba-emu/mgba)'s `src/gb`.
+    Each pair would run at the default and a lowered minimum token count, with any closed folder left out.
 - Does a specification written by a reader agent carry expression from its source?
-  No reader notes exist yet, and no study measuring it was found.
-  A spike after the first walled study that uses the reader role
-  ([R1-35, R1-41, R1-52, R1-54, R1-64 to R1-66](../../roadmap/research.md))
-  could compare the note with its source by JPlag's text mode and by a reviewer;
-  a pilot on an open-tier emulator could run sooner.
+  - What was tried: no reader notes exist yet, and no study measuring it was found.
+  - What would answer it: a spike after the first walled study that uses the reader role
+    ([R1-35, R1-41, R1-52, R1-54, R1-64 to R1-66](../../roadmap/research.md)),
+    comparing the note with its source by JPlag's text mode and by a reviewer.
+    A pilot on an open-tier emulator could run sooner, but it is itself a spike, not a check this note can run:
+    it needs a chosen emulator area, a session that writes a functional description, a reviewer,
+    and the owner's authorisation, as the question above does.
 - How do selection, arrangement, and modification apply to a code base assembled from agent-written changes?
-  No source applies them to software (the Part 2 search above); [R0-03](../../roadmap/research.md) records the risk.
-- Will the Court of Appeal in Getty, the Court of Justice in Like Company,
-  or a higher court in GEMA v OpenAI change what a model's memory means?
+  No source applies them to software (the Part 2 search above);
+  [R0-03](../../roadmap/research.md) is to record the risk.
+- Will the Court of Appeal in [Getty](https://caselaw.nationalarchives.gov.uk/ewhc/ch/2025/3343),
+  the Court of Justice in [Like Company](https://curia.europa.eu/site/jcms/p1_1000088866/en/), or a higher court in
+  [GEMA v OpenAI](https://www.justiz.bayern.de/gerichte-und-behoerden/landgericht/muenchen-1/presse/2025/11.php) change
+  what a model's memory means?
   As of 2026-11-20 none has ruled; a review of this note when one does,
   with [R0-02](R0-02-legal-baseline.md) for the law.
 - Does `--bare` skip hooks set in managed settings?
-  The pages read do not say; a test with a managed settings file in `/etc/claude-code/`,
-  which needs the owner's administrator rights, would answer it.
+  The pages read do not say; the nearest passage names hooks "from the repo
+  and your home directory" only ([`best-practices`](https://code.claude.com/docs/en/best-practices)).
+  A test with a managed settings file in `/etc/claude-code/`, which needs the owner's administrator rights,
+  would answer it.
 
 ## Sources
 
@@ -1362,12 +1443,15 @@ Agent tooling and provider terms:
   [`data-usage`](https://code.claude.com/docs/en/data-usage),
   and [`changelog`](https://code.claude.com/docs/en/changelog); `hooks`, `tools-reference`, `cli-reference`,
   `data-usage`, `permissions`, and `changelog` read again 2026-11-20, when the changelog was headed by 2.1.330,
-  and [`headless`](https://code.claude.com/docs/en/headless) read 2026-11-20.
+  and [`headless`](https://code.claude.com/docs/en/headless)
+  and [`best-practices`](https://code.claude.com/docs/en/best-practices) read 2026-11-20.
 - Anthropic, [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms), effective 17 June 2025.
 - Anthropic, [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms), effective 8 October 2025.
 - Microsoft,
   [Customer Copyright Commitment required mitigations](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/customer-copyright-commitment),
-  updated 13 July 2026, read 2026-11-20.
+  page metadata dated 13 July 2026, visible date 2026-03-20, read 2026-11-20.
+- GitHub, [Copilot product specific terms](https://github.com/customer-terms/github-copilot-product-specific-terms),
+  server error on 2026-11-20, not read.
 - This repository: [`.claude/settings.json`](../../../.claude/settings.json),
   [`.claude/hooks/source-guard.sh`](../../../.claude/hooks/source-guard.sh),
   [`.claude/hooks/source-guard.test.sh`](../../../.claude/hooks/source-guard.test.sh),
@@ -1432,12 +1516,15 @@ Records, standards, and tools:
 - GitHub,
   [tracking Copilot sessions](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions).
 - [MOSS](https://theory.stanford.edu/~aiken/moss/).
-- [SCANOSS documentation, API overview](https://docs.scanoss.com/en/latest/developer-tools/api-overview.md)
-  and sibling pages.
+- SCANOSS documentation: [v3 API overview](https://docs.scanoss.com/en/latest/developer-tools/api-overview.md),
+  [scan of an uploaded WFP or source archive](https://docs.scanoss.com/developer-tools/api-reference/v3/scan/scan-an-uploaded-wfp-source-archive-synchronous.md),
+  and
+  [Fast Winnowing & Fingerprinting](https://docs.scanoss.com/en/latest/advanced/fast-winnowing-fingerprint-algorithms.md),
+  each read again 2026-11-20.
 - Software Transparency Foundation, [OSSKB terms](https://www.softwaretransparency.org/terms).
 - GitHub, [Copilot in IDEs](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides)
   (the former code-referencing address redirects there) and the [Copilot FAQ](https://github.com/features/copilot).
-- [CRUSTPairs dataset record](https://zenodo.org/api/records/23888785).
+- [CRUSTPairs dataset record](https://zenodo.org/records/23888785).
 
 Rules, court decisions, and official reports:
 
@@ -1452,10 +1539,17 @@ Rules, court decisions, and official reports:
   [stipulation and order filed on 9 October 2025](https://storage.courtlistener.com/recap/gov.uscourts.nysd.612697/gov.uscourts.nysd.612697.922.0.pdf);
   and No. 25-md-3143 (S.D.N.Y.):
   [opinion of 27 October 2025](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.701.0_1.pdf),
-  and the orders of 7 November 2025, 2 December 2025, and 5 January 2026 (documents 734, 896, and 1021 on that docket).
+  and the orders of 7 November 2025
+  ([document 734](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.734.0.pdf)),
+  2 December 2025
+  ([document 896](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.896.0.pdf)),
+  and 5 January 2026
+  ([document 1021](https://storage.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1021.0.pdf)),
+  read 2026-11-20.
 - [Concord Music v Anthropic, No. 24-cv-03811 (N.D. Cal.), order of 25 March 2025](https://storage.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.318.0.pdf).
 - Bartz v Anthropic, No. 3:24-cv-05417
   (N.D. Cal.),
+  filed as 3:24-cv-05417-WHA; the final approval's page header reads 4:24-cv-05417-AMO after reassignment,
   [order of 23 June 2025](https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.231.0.pdf)
   and
   [order of 20 July 2026](https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_4.pdf).
@@ -1562,4 +1656,11 @@ Secondary sources:
 - National Law Review,
   [reports on Chinese rulings (2025)](https://natlawreview.com/article/beijing-internet-court-requires-evidence-creative-effort-claim-copyright-protection).
 - Web search results on the Getty appeal and the GEMA appeal, two WebSearch calls on 2026-11-20,
-  relied on only for the status of those appeals.
+  relied on only for the status of those appeals; the pages they listed were not opened.
+
+Emulators named as similarity pairs, each registered open, read 2026-11-20 for their systems and language:
+
+- [jgenesis](https://github.com/jsgroth/jgenesis), README and GitHub's language field.
+- [TetaNES](https://github.com/lukexor/tetanes), [mooneye-gb](https://github.com/Gekkio/mooneye-gb),
+  [rustboyadvance-ng](https://github.com/michelhe/rustboyadvance-ng), [SameBoy](https://github.com/LIJI32/SameBoy),
+  and [mGBA](https://github.com/mgba-emu/mgba), by their register entries.
