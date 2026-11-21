@@ -21,6 +21,11 @@ other | jplag/jplag | GPL-3.0 | source-code plagiarism detector | 2026-11-19 | l
 other | blingenf/copydetect | MIT | code similarity tool | 2026-11-19 | licence file, README
 other | git-ai-project/git-ai | Apache-2.0 | AI attribution tool for git | 2026-11-19 | licence file, README
 other | code.claude.com/docs | none stated | vendor documentation of the agent tool | 2026-11-19 | R0-06
+other | learn.microsoft.com/en-us/legal | none stated | vendor terms; Copilot copyright commitment | 2026-11-20 | R0-06
+other | curia.europa.eu | none stated | Court of Justice of the EU, official site | 2026-11-20 | R0-06
+other | www.anthropic.com | none stated | provider's system cards and terms | 2026-11-20 | R0-06
+other | web.archive.org | none stated | web archive; a capture takes the tier of the page captured | 2026-11-20 | R0-06
+other | customer-terms/ | none stated | GitHub's product terms pages, not a repository | 2026-11-20 | R0-06
 other | torvalds/linux | GPL-2.0 WITH Linux-syscall-note | operating system kernel | 2026-11-19 | COPYING
 other | dodona-edu/dolos | MIT | source-code plagiarism detector | 2026-11-19 | README
 other | whit3rabbit/clean-room-skill | MIT | clean-room workflow for agents | 2026-11-19 | licence file
@@ -62,10 +67,10 @@ walled | liji32/sameboy/tree/master/ios | Expat plus app-store condition | - | 2
 walled | liji32/sameboy/blob/master/ios | Expat plus app-store condition | - | 2026-11-17 | licence file
 
 # Emulators: walled tier. Open source under a licence that is not compatible with GPL-3.0, or not resolved.
-walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-17 | wiki FAQ
-walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-20 | licence, README, wiki FAQ
+walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | grumpycoders/pcsx-redux | GPL-2.0, only or later not stated | old address | 2026-11-17 | redirect
-walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | pokemon-speedrunning/gambatte-core | GPL-2.0 | fork of Gambatte | 2026-11-17 | README
 walled | libretro/gambatte-libretro | GPL-2.0 | fork of Gambatte | 2026-11-17 | licence metadata
 walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
@@ -306,14 +311,14 @@ closed | www.problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | same page, ww
 
 # Nintendo DS, DSi, and 3DS: libraries, tools, and emulators.
 open | devkitpro/libctru | zlib text in README | origin not stated; no dispute found for it | 2026-11-19 | README
-open | devkitpro/libnds | zlib | a commit said to reference the maker's kit | 2026-11-19 | licence, hbc README
+open | devkitpro/libnds | zlib | one commit questioned; accuser: not evidence of copying | 2026-11-20 | licence, hbc
 open | devkitpro/citro3d | zlib | - | 2026-11-19 | licence file
 open | devkitpro/picasso | MIT | credits reverse engineering of the 3DS GPU | 2026-11-19 | licence file, README
 open | devkitpro/dswifi | MIT | - | 2026-11-19 | licence file
 open | devkitpro/maxmod | ISC | - | 2026-11-19 | licence file
 open | blocksds/libnds | zlib; one driver separate | fork of libnds; canonical copy on Codeberg | 2026-11-19 | README
 open | blocksds/sdk | zlib, MIT, ISC, MPL-2.0, BSD by part | canonical copy on Codeberg | 2026-11-19 | licences page
-open | wwylele/teakra | MIT | thanks GBATEK's Teak section; own hardware testers | 2026-11-19 | licence file, README
+open | wwylele/teakra | MIT | credits GBATEK's Teak pages; Teak facts need its testers | 2026-11-20 | licence, README
 open | neobrain/nihstro | BSD-3-Clause | credits 3dbrew and aemstro | 2026-11-19 | README
 open | psi-rockin/corgi3ds | GPL-3.0 | 3DS emulator; needs boot ROMs | 2026-11-19 | README
 walled | azahar-emu/citra-web-archive | AGPL-3.0 | source of the Citra site archive | 2026-11-19 | licence metadata
@@ -342,7 +347,7 @@ open | switchbrew.org | none stated | origin not stated; no rule on leaks; cover
 open | gc-forever.com/wiki | none stated | origin not stated; no policy pages | 2026-11-19 | Main page
 open | hitmen.c02.at/files/yagcd | none stated | author: from games, patents, public papers | 2026-11-19 | 1.4, 19, 20
 open | wiki.dolphin-emu.org | CC BY-SA 3.0 | wiki of an open-tier emulator | 2026-11-19 | page footer, rights setting
-open | dolphin-emu.org | not determined for the blog | site of an open-tier emulator; blog refused | 2026-11-19 | FAQ
+open | dolphin-emu.org | notice, no grant (blog) | open-tier emulator's site; refuses scripts | 2026-11-20 | capture
 open | wiki.cemu.info | none stated | Cemu user wiki | 2026-11-19 | About page
 open | reswitched/swipc | ISC | interface definitions; origin not stated; archived | 2026-11-19 | README, licence file
 open | reswitched/libtransistor | ISC | archived; origin not stated | 2026-11-19 | licence file
@@ -359,6 +364,8 @@ open | devkitpro/wut | Zlib | origin not stated; no dispute found for this libra
 open | cemu-project/cemu | MPL-2.0 | some files and dependencies under other licences | 2026-11-19 | README
 open | decaf-emu/decaf-emu | GPL-3.0-or-later | - | 2026-11-19 | README
 walled | developer.nvidia.com/tegra-rdp-trm | NVIDIA licence | registration; confidentiality | 2026-11-19 | licence
+walled | developer.nvidia.com/embedded/download | NVIDIA licence | X1 manual's page; cut short | 2026-11-20 | SwitchBrew
+walled | www.developer.nvidia.com/embedded/download | NVIDIA licence | www prefix | 2026-11-20 | SwitchBrew
 open | dekunukem/nintendo_switch_reverse_engineering | none | notes, a reference; own captures | 2026-11-19 | README
 walled | switchbrew/switch-examples | Public Domain Mark badge only | no licence file | 2026-11-19 | README
 walled | devkitpro/wiiu-examples | Public Domain Mark badge only | no licence file | 2026-11-19 | README
@@ -403,7 +410,7 @@ closed | cgi.cse.unsw.edu.au | notices, no grant | IDT manual copy; the host, as
 
 # PlayStation family: kits, emulators, and tests.
 open | spicyjpeg/ps1-bare-metal | MIT | origin of hardware facts not stated | 2026-11-19 | README
-open | jaczekanski/ps1-tests | MIT | built with a closed-tier kit; hardware origin not stated | 2026-11-19 | README
+open | jaczekanski/ps1-tests | MIT | links libpsxgte, said to hold lifted Sony code | 2026-11-20 | README, makefile
 open | singlesteptests/r3000 | MIT | generated by the ares interpreter | 2026-11-19 | README
 open | filipalac/240ptestsuite-ps1 | GPL-2.0-or-later | display tests | 2026-11-19 | README
 open | unknownbrackets/ps2autotests | ISC | results generated on a console; depends on ps2sdk | 2026-11-19 | README
@@ -415,7 +422,7 @@ walled | simias/rustation | GPL-2.0-or-later | uses the tainted document; part f
 walled | simias/psx-guide | none | companion guide to the same emulator; no README | 2026-11-19 | metadata
 open | psxdev.net | none stated | forum, a lead; offline since October 2025 | 2026-11-19 | home page
 open | mednafen.github.io | GPLv2, or later not stated | prose of a walled emulator | 2026-11-19 | home page
-walled | mednafen.github.io/releases/ | GPLv2, or later not stated | sources; path from memory | 2026-11-19 | home
+walled | mednafen.github.io/releases/ | GPLv2, or later not stated | sources; path confirmed | 2026-11-20 | home page
 walled | ps2dev/ps2sdk | AFL-2.0 | not GPL-compatible by the GNU list; origin not stated | 2026-11-19 | README, licence
 walled | uofw/upspd | none | collection of third-party documents, one about keys | 2026-11-19 | README, index
 open | wiki.henkaku.xyz | CC BY, no version | Vita wiki; origin not stated; no key pages read | 2026-11-19 | footer
@@ -443,7 +450,7 @@ open | dreamjam.co.uk/emuviews | notice, no grant | author: reverse engineered; 
 open | techno-junk.org | none stated | frames the same author's pages | 2026-11-19 | frameset
 open | segaretro.org | CC BY 4.0, archived footer | origin unstated; articles only | 2026-11-19 | 2026-11-14 copy
 open | plutiedev.com | none stated; code snippets free to use | origin unstated; a lead | 2026-11-19 | FAQ
-open | md.railgun.works | CC BY-NC-SA, no version | origin unstated; TMSS file closed by rule | 2026-11-19 | footer
+open | md.railgun.works | CC BY-NC-SA 3.0 | origin unstated; TMSS file closed by rule | 2026-11-20 | footer, Main Page
 open | wiki.yabause.org | GFDL 1.2 | partly MacDonald's Saturn notes, by permission | 2026-11-19 | footer, main page
 open | mc.pp.se/dc | none stated | origin unstated; a lead | 2026-11-19 | index pages
 open | dreamcast.wiki | none stated | origin unstated | 2026-11-19 | root page
@@ -451,7 +458,7 @@ open | wiki.neogeodev.org | public domain dedication | origin unstated | 2026-11
 open | mamedev.org | see the repository line | MAME's legal and documentation pages | 2026-11-19 | legal page
 closed | mamedev.org/rom | per ROM, non-commercial | ROM download pages | 2026-11-19 | legal page FAQ
 closed | www.mamedev.org/rom | per ROM, non-commercial | same pages, www prefix | 2026-11-19 | legal page FAQ
-open | xboxdevwiki.net | none stated | origin unstated; indexes the maker's kit | 2026-11-19 | Main Page, About
+open | xboxdevwiki.net | none stated | origin unstated; indexes the maker's kit | 2026-11-20 | live Main Page
 open | free60.org | none stated | origin unstated | 2026-11-19 | home page
 open | sinclair.wiki.zxnet.co.uk | CC BY-SA 4.0 | origin not read | 2026-11-19 | rights setting
 open | c64-wiki.com | GFDL | origin not read | 2026-11-19 | footer
@@ -562,7 +569,7 @@ open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies pag
 open | no-intro.org | own data licence, 2026-09-11 | database of hashes; no games | 2026-11-19 | home, terms pages
 open | redump.org | none; bare copyright notice | disc hash database; staff dispute | 2026-11-19 | front, downloads
 open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
-open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-19 | FAQ, refused on re-check
+open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-20 | FAQ; answers intermittently, HTTP 500
 open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | required-files page
 open | segaxtreme.net | forum terms | forum, a lead | 2026-11-19 | resources index, terms
 open | mail.atariage.com | none stated | fan transcription of a press release, a lead | 2026-11-19 | page
@@ -601,6 +608,43 @@ closed | singlesteptests/tlcs900h | none found | experimental; results usable | 
 # Cross-system tests: author's own copy, closed for want of a licence. The guard cannot match "~", so the host is named.
 closed | slack.net | none | blargg's own copy of his tests, under ~ant; whole host | 2026-11-19 | index, one readme
 closed | www.slack.net | none | same host, www prefix | 2026-11-19 | index, one readme
+
+# Added when R0-05's questions were worked down (2026-11-20).
+other | web.archive.org | - | an archive, not a source; captures cited with their time stamps | 2026-11-20 | -
+other | gnu.org/licenses | - | licence commentary by the FSF | 2026-11-20 | -
+open | devkitpro.org | none stated | maintainers' forum portal, a lead; refuses scripts | 2026-11-20 | capture
+open | sciresm/boot9strap | GPL-3.0 | 3DS loader using a boot-ROM flaw; README cited only | 2026-11-20 | README
+open | sciresm.github.io | none stated | author's talk slides; a lead | 2026-11-20 | page
+# Pages on Sony's and Microsoft's kits, named on the wikis' main pages and never opened. Patterns are cut short.
+closed | psdevwiki.com/ps3/scei_ps3_sd | none stated | page on Sony's PS3 kit | 2026-11-20 | PS3 Main Page link
+closed | www.psdevwiki.com/ps3/scei_ps3_sd | none stated | www prefix | 2026-11-20 | PS3 Main Page link
+closed | psdevwiki.com/ps4/scei_ps4_sd | none stated | page on Sony's PS4 kit | 2026-11-20 | PS4 Main Page link
+closed | www.psdevwiki.com/ps4/scei_ps4_sd | none stated | www prefix | 2026-11-20 | PS4 Main Page link
+closed | xboxdevwiki.net/microsoft_xd | none stated | page on Microsoft's kit | 2026-11-20 | Main Page link
+closed | www.xboxdevwiki.net/microsoft_xd | none stated | www prefix | 2026-11-20 | Main Page link
+closed | psdevwiki.com/ps4/psm_sd | none stated | Sony's PlayStation Mobile kit; precaution | 2026-11-20 | PS4 main page
+closed | www.psdevwiki.com/ps4/psm_sd | none stated | www prefix | 2026-11-20 | PS4 Main Page link
+# Hosts R0-05 links that had no line, registered after its verification pass (2026-11-20).
+# The archive hubs (archive.org items, bitsavers) keep no hub line: their items are tiered one by one.
+other | api.crossref.org | - | bibliographic metadata service | 2026-11-20 | -
+other | archive.org/metadata | - | catalogue metadata, not items | 2026-11-20 | -
+other | archive.org/advancedsearch | - | catalogue search, not items | 2026-11-20 | -
+other | help.archive.org | - | the Internet Archive's help and rights pages | 2026-11-20 | rights page
+other | archive.gamehistory.org/help | - | library help page; items tiered one by one | 2026-11-20 | help page
+other | foundation.wikimedia.org | - | Wikipedia's operator; terms of use | 2026-11-20 | -
+open | hitmen.c02.at/html | none stated | YAGCD host's listings; hosted files closed above | 2026-11-20 | listings
+walled | ryujinx.app | MIT by its site; file not read | Ryubing's site and documentation; prose only | 2026-11-20 | site
+open | libdragon.dev | Unlicense, by the repository | libdragon's documentation site | 2026-11-20 | home page
+walled | mister-devel.github.io | per core | MiSTer documentation; cores not surveyed | 2026-11-20 | documentation home
+open | openpowerfoundation.org/blog | none stated | standards body's post on the Power ISA licence | 2026-11-20 | post
+open | vitasdk.org | MIT, by the kit's headers | site of the Vita SDK | 2026-11-20 | site
+open | copetti.org/disclaimer | CC-BY-4.0 | the article site's disclaimer page | 2026-11-20 | page
+open | nxp.com/company/about-nxp | - | maker's site terms: personal use | 2026-11-20 | terms of use
+open | renesas.com/en/legal-notices | Renesas notice | maker's document disclaimer | 2026-11-20 | page
+open | romhacking.net/policy | none stated | the site's submission policy | 2026-11-20 | page
+open | virtual-boy.com/documents | none stated | catalogue entry for the Sacred Tech Scroll | 2026-11-20 | page
+open | gbdev.gg8.se/files | none stated | file hub index; its ROM folders closed above | 2026-11-20 | index pages
+walled | stella-emu.github.io | manual: GPL-2.0 text, or later unstated | Stella's site | 2026-11-20 | site, manual
 # Sources first cited by R0-04, the note on the glossary and research conventions.
 other | jackchuka/mdschema | MIT | structure checker used here | 2026-11-19 | README, licence file
 other | lycheeverse/lychee | Apache-2.0 OR MIT | link checker used here | 2026-11-19 | README
@@ -608,8 +652,107 @@ open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as inp
 open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
 closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
+# Added by the rework of R0-04 on 2026-11-20.
+other | web.archive.org | - | an archive, not a source; existing captures only | 2026-11-20 | -
+open | nesdev.org/w/ | disclaimer: public domain | raw wikitext paths of nesdev.org/wiki | 2026-11-20 | disclaimer
+open | gitlab.winehq.org/wine/wine | LGPL-2.1-or-later | Wine; wiki licence not stated | 2026-11-20 | LICENSE, wiki page
+open | wiki.winehq.org | not stated | Wine's old wiki; 301 to gitlab.winehq.org | 2026-11-20 | HTTP response
+walled | reactos.org | not read | project site; Wine bars ReactOS code | 2026-11-20 | Wine Clean Room Guidelines
+# ReactOS reimplements Windows' libraries, and Wine publicly disputes how it was made: closed as a disputed library.
+closed | reactos/reactos | GPL-2.0, or later not stated | origin disputed by Wine | 2026-11-20 | README, Wine page
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+# Sources cited by R0-02, the legal baseline: legal and press hosts, not sources on consoles.
+# Registered on 2026-11-20 for the hosts R0-02 already cited and those its rework first cites. Nothing is restricted.
+other | law.cornell.edu | none checked | statutes and Supreme Court opinions | 2026-11-20 | R0-02
+other | law.resource.org | public domain | court opinions | 2026-11-20 | R0-02
+other | static.case.law | public domain | court opinions | 2026-11-20 | R0-02
+other | cdn.ca9.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | media.ca11.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | ca5.uscourts.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | supremecourt.gov | public domain | court opinions | 2026-11-20 | R0-02
+other | govinfo.gov | public domain | official publications and opinions | 2026-11-20 | R0-02
+other | public-inspection.federalregister.gov | public domain | official publications | 2026-11-20 | R0-02
+other | copyright.gov | public domain | Copyright Office publications | 2026-11-20 | R0-02
+other | storage.courtlistener.com | court records | court filings | 2026-11-20 | R0-02
+other | cases.justia.com | court records | copy of a court order | 2026-11-20 | R0-02
+other | courthousenews.com | press | copy of a court order | 2026-11-20 | R0-02
+other | torrentfreak.com | press | copies of court filings; news site, secondary | 2026-11-20 | R0-02
+other | archive.org/download/gov.uscourts | court records | copies of court filings | 2026-11-20 | R0-02
+other | eff.org | none stated | copy of a court judgment; commentary | 2026-11-20 | R0-02
+# The EFF's 2007 posts on a published disc key: key material, closed so that the guard blocks them. Not opened.
+closed | eff.org/deeplinks/2007/05 | none stated | may reproduce a published key | 2026-11-20 | R0-02; not opened
+closed | www.eff.org/deeplinks/2007/05 | none stated | the same, www prefix | 2026-11-20 | R0-02; not opened
+other | adrforum.com | none stated | domain name decisions | 2026-11-20 | R0-02
+other | wipo.int/wipolex | none stated | treaty text and copies of judgments | 2026-11-20 | R0-02
+other | eur-lex.europa.eu | official publications | European Union law and judgments | 2026-11-20 | R0-02
+other | publications.europa.eu | official publications | European Union law | 2026-11-20 | R0-02
+other | epo.org | none stated | European Patent Convention | 2026-11-20 | R0-02
+other | legislation.gov.uk | Open Government Licence | United Kingdom statutes | 2026-11-20 | R0-02
+other | caselaw.nationalarchives.gov.uk | Open Justice Licence | English judgments | 2026-11-20 | R0-02
+other | gesetze-im-internet.de | official publications | German statutes and translations | 2026-11-20 | R0-02
+other | rechtsprechung-im-internet.de | official publications | German federal judgments | 2026-11-20 | R0-02
+other | rws-verlag.de | none stated | publisher's copy of a German judgment | 2026-11-20 | R0-02
+other | gesetze.co | none stated | private mirror of German judgments | 2026-11-20 | one judgment
+other | buzer.de | none stated | private record of German statute versions | 2026-11-20 | amendment pages
+other | dserver.bundestag.de | official papers | German parliamentary printed papers | 2026-11-20 | Drucksache 19/27426
+other | lto.de | press | German legal news | 2026-11-20 | one article
+other | assemblee-nationale.fr | official publications | French bill text | 2026-11-20 | R0-02
+other | conseil-constitutionnel.fr | official publications | French constitutional decisions | 2026-11-20 | R0-02
+other | codes.droit.org | Légifrance open data | unofficial compilation of French codes | 2026-11-20 | edition page
+other | japaneselawtranslation.go.jp | unofficial translations | Japanese statutes | 2026-11-20 | R0-02
+other | meti.go.jp | official publications | Japanese ministry overview | 2026-11-20 | R0-02
+other | laws-lois.justice.gc.ca | official publications | Canadian statutes | 2026-11-20 | R0-02
+other | decisions.fct-cf.gc.ca | official publications | Canadian Federal Court decisions | 2026-11-20 | R0-02
+other | decisions.fca-caf.gc.ca | official publications | Canadian appeal court decisions | 2026-11-20 | search
+other | legislation.gov.au | official publications | Australian statutes and regulations | 2026-11-20 | R0-02
+other | elaw.klri.re.kr | unofficial translations | South Korean statutes | 2026-11-20 | R0-02
+other | law.berkeley.edu | none stated | university copy of a court opinion | 2026-11-20 | one PDF
+other | docs.github.com | none stated | code host's takedown policy | 2026-11-20 | R0-02
+other | support.google.com | none stated | store and search policies | 2026-11-20 | R0-02
+other | developer.apple.com | none stated | store review rules | 2026-11-20 | R0-02
+other | via-la.com | none stated | patent pool pages and lists | 2026-11-20 | R0-02
+other | iis.fraunhofer.de | none stated | codec licensor's page | 2026-11-20 | R0-02
+other | debian.org | none stated | distribution's patent policy | 2026-11-20 | R0-02
+other | openinventionnetwork.com | none stated | patent cross-licence pages | 2026-11-20 | R0-02
+other | definition.openinventionnetwork.com | none stated | cross-licence package search | 2026-11-20 | R0-02
+other | gnu.org | none stated | licence texts | 2026-11-20 | R0-02
+other | opensource.org | none stated | statement on a patent settlement | 2026-11-20 | R0-02
+other | pocketpair.jp | none stated | game maker's statements on a patent suit | 2026-11-20 | R0-02
+other | sec.gov | public domain | annual report of a patent holder | 2026-11-20 | R0-02
+other | web.archive.org | - | an archive, not a source; captures cited with full time stamps | 2026-11-20 | -
+other | mactech.com | press | news site, secondary | 2026-11-20 | R0-02
+other | theregister.com | press | news site, secondary | 2026-11-20 | R0-02
+other | pcgamer.com | press | news site, secondary | 2026-11-20 | R0-02
+other | nintendolife.com | press | news site, secondary | 2026-11-20 | R0-02
+other | androidauthority.com | press | news site, secondary | 2026-11-20 | R0-02
+other | techcrunch.com | press | news site, secondary | 2026-11-20 | R0-02
+other | famitsu.com | press | news site, secondary | 2026-11-20 | R0-02
+other | news.denfaminicogamer.jp | press | news site, secondary | 2026-11-20 | R0-02
+other | animenewsnetwork.com | press | news site, secondary | 2026-11-20 | R0-02
+other | automaton-media.com | press | news site, secondary | 2026-11-20 | R0-02
+other | punto-informatico.it | press | news site, secondary | 2026-11-20 | R0-02
+other | gigazine.net | press | news site, secondary | 2026-11-20 | one article
+other | zophar.net | none stated | fan news site, a lead | 2026-11-20 | R0-02
+other | www2.accsjp.or.jp | none stated | industry association's announcements | 2026-11-20 | R0-02
+# Makers' own terms and statements, R0-02: open tier, as maker material. No download is opened.
+open | playstation.com/en-us/legal | maker's terms | Sony's licences | 2026-11-20 | R0-02
+open | playstation.com/en-us/support | maker's pages | Sony's system software pages; no file opened | 2026-11-20 | R0-02
+open | doc.dl.playstation.net/doc | maker's terms | Sony's licence texts | 2026-11-20 | R0-02
+open | support.xbox.com | maker's support pages | material Microsoft published itself | 2026-11-20 | two pages
+open | microsoft.com/en-us | maker's terms | Microsoft's agreements and brand rules | 2026-11-20 | R0-02
+open | xbox.com/en-us/developers/rules | maker's terms | Microsoft's game content rules | 2026-11-20 | R0-02
+open | accounts.nintendo.com/term | maker's terms | Nintendo Account agreement | 2026-11-20 | R0-02
+open | en-americas-support.nintendo.com | maker's pages | Nintendo's agreements and FAQ | 2026-11-20 | R0-02
+open | nintendo.co.jp | maker's pages | Nintendo's guidelines and press releases | 2026-11-20 | R0-02
+open | nintendo.com/en-gb/legal-information | maker's pages | Nintendo of Europe's legal pages | 2026-11-20 | R0-02
+open | sega.co.jp/en/streaming_guideline | maker's terms | Sega's streaming guideline | 2026-11-20 | R0-02
+# Emulator projects' own sites, read for prose only by R0-02.
+open | pcsx2.net | none stated | site of an open-tier emulator; prose | 2026-11-20 | BIOS and trade mark pages
+open | vita3k.org | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | quickstart page
+open | faq.deltaemulator.com | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | release notes
+open | retroarch.com | none stated | site of an open-tier frontend; prose | 2026-11-20 | home page
+open | azahar-emu.org | none stated | site of an open-tier emulator; prose | 2026-11-20 | home page
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
 open | tixul/ngpcraft_dev_ref | MIT | Neo Geo Pocket reference; origin unstated; no leak rule | 2026-11-20 | README
 open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 2026-11-20 | home page
@@ -620,6 +763,20 @@ open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licenc
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
 # Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
+# Sources opened or evaluated while researching R1-02, and not cited by it.
+open | hitmen.c02.at/html | none stated | the host's index pages | 2026-11-20 | evidence of #27
+open | spicyjpeg/ps1-ram-tester | MIT | uses ps1-bare-metal; author states AI-free work; uncited | 2026-11-20 | README
+walled | libretro/beetle-psx-libretro | GPL-2.0 by licence metadata | fork of Mednafen PSX | 2026-11-20 | metadata
+walled | gonetz/gliden64 | not determined; metadata NOASSERTION | N64 graphics plugin | 2026-11-20 | metadata
+closed | rasky/n64_pi_dma_test | none | test with no licence | 2026-11-20 | metadata
+# Pages the R1-02 evidence named that hold closed material, closed so that the guard blocks them. Patterns are cut
+# short, as the guard allows a bare page that matches a pattern exactly. Never reopened.
+# The N64brew pages' "index.php?title=" forms cannot be matched; the note names them as pages not to open.
+closed | n64brew.dev/wiki/initial_program_loa | CC BY-SA 4.0 | PIF boot ROM disassembly | 2026-11-20 | #27
+closed | n64brew.dev/wiki/cic-nu | CC BY-SA 4.0 | shows CIC key and seed material | 2026-11-20 | evidence of #27
+closed | n64brew.dev/wiki/pif-nu | CC BY-SA 4.0 | CIC table shows seed values | 2026-11-20 | R1-02 verification
+closed | ext.3dodev.com | none | the 3DO repository's internal-document host | 2026-11-20 | evidence of #27
+closed | 3dodev.com/documentation/hardware/opera/memory_configuration | CC BY-SA 4.0 | 3DO code | 2026-11-20 | #27
 # Sources first cited by R1-04, the modern consoles primer.
 open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a host tool | 2026-11-20 | README
 open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README
@@ -655,3 +812,41 @@ closed | free60.org/hardware/fuseset | none stated | key material | 2026-11-20 |
 closed | www.free60.org/hardware/fuseset | none stated | www prefix | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened
+# Sources first cited by R1-01, the 8-bit and 16-bit primer, in its rework.
+open | sega.jp/fb/segahard | none stated | maker's hardware encyclopaedia; read in a capture | 2026-11-20 | capture
+# The archive is a host, not a source: a capture takes the tier of the source captured, and the closed and tainted
+# patterns still match inside a capture's address, so the guard blocks them there.
+other | web.archive.org | - | an archive, not a source; captures of pages that refuse scripts | 2026-11-20 | -
+open | www.nesdev.org/w | disclaimer: public domain; none set | raw and revision paths | 2026-11-20 | disclaimer
+open | snes.nesdev.org/w | CC0 | raw and revision paths of the SNESdev wiki | 2026-11-20 | footer
+# SMS Power's attachment folder for every Development page, BIOS files among them. A narrower pattern would need
+# the BIOS file names, which were not read. No note cites a file in the folder.
+closed | smspower.org/uploads/development | none | Development attachments, BIOS files among them | 2026-11-20 | links
+closed | www.smspower.org/uploads/development | none | same folder, www prefix | 2026-11-20 | SN76489 and BIOSes links
+# Intellivision routes, evaluated by the R1-01 verification pass.
+open | libretro/freeintv | GPL-2.0-or-later | libretro core; needs user's Exec and GROM | 2026-11-20 | LICENSE, README
+open | lutris/jzintv | GPL-2.0-or-later by its notice | mirror of jzIntv; COPYING.txt plain | 2026-11-20 | COPYRIGHT.txt
+walled | jeremiah-sypult/blissemu | GPL-2.0, only or later not stated | fork of Bliss | 2026-11-20 | README, LICENSE.txt
+walled | wiki.intellivision.us | not stated; project pages need a login | community wiki | 2026-11-20 | Main Page
+# Added by the R1-03 rework: an archive for captures of pages that refuse scripts, and two maker sites.
+open | learn.microsoft.com/en-us/windows/win32 | Microsoft terms of use | maker's documentation | 2026-11-20 | footer
+open | gpuopen.com | AMD copyright page, no grant | maker's documentation index; list read only | 2026-11-20 | footer
+# Pages on open wikis that the R1-03 evidence names as holding boot ROM pseudo-code or assembly, firmware-internal
+# addresses, decryption recipes in pseudo-code, a key-data layout, or drive firmwares listed for dumping.
+# Closed so that the guard blocks them; patterns are cut short, and each has a www line. None was reopened.
+# WiiUBrew "Boot0" and "Boot1" cannot be closed: an exact pattern passes the guard, and a shorter one would block
+# the cited "Boot process". R1-03 names them, and the index.php?title= forms, as pages not to open.
+closed | wiiubrew.org/wiki/cafe_os/kerne | none stated | firmware-internal addresses | 2026-11-20 | R1-03 evidence
+closed | www.wiiubrew.org/wiki/cafe_os/kerne | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | wiibrew.org/wiki/signing_bu | none stated | pseudo-code; cites a decompilation | 2026-11-20 | R1-03 evidence
+closed | www.wiibrew.org/wiki/signing_bu | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | wiibrew.org/wiki/wii_dis | none stated | decryption recipe in pseudo-code | 2026-11-20 | R1-03 evidence
+closed | www.wiibrew.org/wiki/wii_dis | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | 3dbrew.org/wiki/bootloade | none stated | boot ROM key-data layout | 2026-11-20 | R1-03 evidence
+closed | www.3dbrew.org/wiki/bootloade | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/boot_proces | none stated | boot ROM pseudo-code and assembly | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/boot_proces | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/mcpx_ro | none stated | boot ROM pseudo-code and assembly | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/mcpx_ro | none stated | www prefix | 2026-11-20 | R1-03 evidence
+closed | xboxdevwiki.net/xbox_game_dis | none stated | drive firmwares listed for dumping | 2026-11-20 | R1-03 evidence
+closed | www.xboxdevwiki.net/xbox_game_dis | none stated | www prefix | 2026-11-20 | R1-03 evidence
