@@ -49,5 +49,4 @@ exclude = [
   '^https?://(www\.)?internethistorypodcast\.com/', # times out from CI runners
   '^https?://wiki\.desmume\.org/', # 500 Internal Server Error
   '^https?://caselaw\.findlaw\.com/', # 403 Forbidden (challenge page)
-  '^https?://wiki\.desmume\.org/', # HTTP 500 to most requests (2026-11-20)
 ]
