@@ -520,7 +520,7 @@ A cross-reference row names the catalogue that lists the device in full, and tak
   The [register](../../../.claude/hooks/source-register.txt) closes Panic's SDK documentation for that reason;
   the licence limits documentation, not the device.
   The effect on an emulator is a risk for [`R0-02`](R0-02-legal-baseline.md)
-  and [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) (inference).
+  and [`R0-03`](R0-03-licence-strategy.md) (inference).
 - The Arduboy's infobox gives no release date;
   the year is from ["List of handheld game consoles"](https://en.wikipedia.org/w/index.php?oldid=1384273411).
   Successors are the Arduboy FX and FX-C (["Arduboy"](https://en.wikipedia.org/w/index.php?oldid=1379368117)).
@@ -943,7 +943,7 @@ which has no article and rests on
   above); whether the formats are documented is a question for [`R1-04`](R1-04-primer-modern.md),
   [`R1-21`](../../roadmap/research.md#system-family-surveys), and
   [`R1-23`](../../roadmap/research.md#system-family-surveys), and their licensing for
-  [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) (inference).
+  [`R0-03`](R0-03-licence-strategy.md) (inference).
 - Three processor families, AMD x86, Nvidia Tegra, and Altera Cyclone FPGAs, cover 16 of the 49 host rows,
   which [`R3-07`](../../roadmap/research.md#phase-3-host-platforms)
   and [`R3-12`](../../roadmap/research.md#phase-3-host-platforms) can test by family

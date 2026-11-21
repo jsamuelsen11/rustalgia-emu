@@ -456,8 +456,7 @@ This note is not legal advice.
   (a homebrew convention adds one),
   and "emulators normally work using a game database which matches games using checksum to find out which savetype
   and controllers are expected by the game" ([N64brew, "ROM Header"](https://n64brew.dev/wiki/ROM_Header)).
-  An emulator needs that database, whose terms [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) governs
-  (inference).
+  An emulator needs that database, whose terms [`R0-03`](R0-03-licence-strategy.md) governs (inference).
 - The Game Boy Advance has four save kinds: SRAM or FRAM on an 8-bit bus, serial EEPROM driven by DMA,
   flash from several makers with different identifiers, or none (GBATEK, "GBA Cart Backup" sections).
   "Nintendo didn't include a backup-type entry in the ROM header",
@@ -1186,7 +1185,7 @@ The owner decides each of these; the pull request lists them.
 - Emulators choose Nintendo 64 save types and Saturn cartridges from game databases
   ([N64brew, "ROM Header"](https://n64brew.dev/wiki/ROM_Header); Mednafen, `ss.html`, "Cart"),
   and use identifier strings or heuristics on the Game Boy Advance and DS.
-  The database's origin and licence feed [`R0-03`](../../roadmap/research.md#phase-0-ground-rules)
+  The database's origin and licence feed [`R0-03`](R0-03-licence-strategy.md)
   and [`R2-11`](../../roadmap/research.md#phase-2-cross-cutting-engineering).
 - Firmware differs in kind across the era; the routes are [`R0-02`](R0-02-legal-baseline.md)'s options 4 to 6,
   and the technique is [`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering).

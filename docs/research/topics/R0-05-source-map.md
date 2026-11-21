@@ -1701,7 +1701,7 @@ Project documents:
 [r102]: R1-02-primer-32-and-64-bit.md
 [r104]: R1-04-primer-modern.md
 [r105]: R1-05-catalogue-8-and-16-bit.md
-[rm0]: ../../roadmap/research.md#phase-0-ground-rules
+[rm0]: R0-03-licence-strategy.md
 [rmsurv]: ../../roadmap/research.md#system-family-surveys
 [rm2]: ../../roadmap/research.md#phase-2-cross-cutting-engineering
 [rm4]: ../../roadmap/research.md#phase-4-technology-stack

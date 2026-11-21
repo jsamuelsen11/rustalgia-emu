@@ -52,7 +52,7 @@ Nothing else starts before R0-01.
 - [x] **R0-01** Clean-room policy: which sources we may read, and how notes are taken.
 - [x] **R0-02** Legal baseline: emulation case law, anti-circumvention law, firmware and keys, takedown history,
       and patents and trade marks as risks.
-- [ ] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
+- [x] **R0-03** Licence strategy: GPL-3.0, app stores, contributor terms, dependency licences.
       Depends on R0-02, R0-06.
 - [x] **R0-04** Glossary and research conventions.
       Adds the glossary and its structure contract.

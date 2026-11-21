@@ -1732,7 +1732,7 @@ Secondary sources:
 
 [r01]: R0-01-clean-room-policy.md
 [r02]: R0-02-legal-baseline.md
-[r03]: ../../roadmap/research.md#phase-0-ground-rules
+[r03]: R0-03-licence-strategy.md
 [r05]: R0-05-source-map.md
 [r06]: R0-06-provenance-controls.md
 [r190]: ../../roadmap/research.md#landscape-synthesis
