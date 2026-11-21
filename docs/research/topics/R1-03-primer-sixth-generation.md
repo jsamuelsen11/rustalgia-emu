@@ -11,15 +11,15 @@ date: 2026-11-20
 
 This note asks how the consoles and handhelds of the roadmap's sixth era work, and what that asks of an emulator.
 The era moves graphics from fixed pipelines to configurable combiners and then to programmable shaders,
-and brings multi-core processors, vector units, and resident system software.
+and brings multi-core processors, vector units, and resident system software (inference from the findings).
 Three things matter most to Rustalgia.
 First, emulation here is translation: the faster guests need dynamic recompilation,
 most major CPUs examined have floating-point behaviour that host defaults do not reproduce,
 and graphics become host shaders generated per configuration and cached (inference from the findings).
 Second, system software decides much of the design: high-level emulation of what games call avoids firmware,
 and the open-tier emulators read mostly take that route.
-Third, the Wii, Wii U, 3DS, PSP, Vita, and Xbox 360 encrypt their retail content, while GameCube, Dreamcast,
-and PS2 games reach an emulator as plain images by the pages read
+Third, by the pages read, the Wii, 3DS, PSP, Vita, and Xbox 360 encrypt retail content, within the limits under Media,
+and the Wii U does (from memory), while GameCube, Dreamcast, and PS2 games reach an emulator as plain images
 (inference, partly from silence), which bears on `R0-02`'s options.
 No maker specification was found for any major graphics chip of the era in the register's sources or `R0-05`'s search.
 This note is not legal advice.
@@ -32,9 +32,7 @@ This note is not legal advice.
   (`R1-13`, `R1-17`, `R1-19`, `R1-20`, `R1-22`, `R1-23`).
   The era follows the roadmap's grouping of surveys, not console generations,
   so it includes seventh- and eighth-generation systems; the PlayStation 3 and later systems are `R1-04`'s.
-  For a survey that depends on several primers,
-  pull request #22 proposes that each system belongs to the era of its own generation,
-  and that the survey depends on the other primers for hardware its systems contain or carry over.
+  Pull request #22 proposes how a survey that spans several primers depends on each.
 - Left to other items: the catalogue of every system sold (`R1-07`);
   the DS and PlayStation 1 hardware inside the 3DS and PS2 (`R1-02`); the law on firmware, keys,
   and encryption (`R0-02`), cited by section name; each emulator in depth
@@ -42,11 +40,11 @@ This note is not legal advice.
 - Researched on 2026-11-20.
   Wiki pages are pinned by revision and repositories by commit where the source showed one.
 - How claims were checked: research agents fetched each source as raw text on 2026-11-20 and copied quotations from it.
-  One independent verification pass followed, of nine verifiers who saw only this note:
+  Two independent verification passes followed, each of nine verifiers who saw only this note:
   each fetched the sources again the same day and tested each claim and quotation.
-  Its findings were checked against the raw sources before the note was corrected;
-  pages beside key material were not reopened, and claims resting on them were weakened instead.
-  The claims it could not check are listed in the pull request.
+  Each pass's findings were checked against the raw sources before the note was corrected;
+  pages beside key material were not reopened, and claims resting on them were weakened or marked instead.
+  The claims the passes could not check are listed in the pull request.
   Markers are those of `docs/research/README.md`; Wikipedia read as wikitext is marked "(secondary)".
   A statement that nothing was found records the searches named, not proof of absence.
 - Emulator projects' documentation and data are cited as implementations' accounts, not hardware facts;
@@ -61,7 +59,7 @@ This note is not legal advice.
 
 - The Emotion Engine's core is a custom MIPS core (R5900) at 294.912 MHz
   that can issue two instructions per cycle "in ideal conditions", with small caches and a 16 KiB scratchpad
-  (ps2tek, "EE Architecture"),
+  (ps2tek, "Emotion Engine (EE)", "EE Architecture"),
   and 128-bit general registers whose full width only some instructions use (ps2tek, "EE Registers").
   The same die carries two vector units, a 10-channel DMA controller, an MPEG decoder,
   and the paths to the graphics chip and the I/O processor
@@ -72,10 +70,10 @@ This note is not legal advice.
   (ps2tek, "IEEE 754 Differences"; ps2tek states no source).
   Results recorded on a console agree for addition: adding `0x7fffffff` to itself returns `0x7fffffff`,
   a pattern that IEEE 754 reads as a NaN
-  (ps2autotests, `tests/cpu/ee_fpu/arithmetic.expected`, results recorded on a PS2; the IEEE reading from memory).
+  (ps2autotests, `tests/cpu/ee_fpu/arithmetic.expected`; the IEEE reading from memory).
 - Each vector unit has 32 registers of four 32-bit floats and executes an upper and a lower instruction per cycle;
   VU0 also acts as a coprocessor inside the core's instruction stream, and VU1 runs microprograms that games upload
-  (Hot Chips 11 slides; ps2tek, "VU Architecture", "VU Registers").
+  (Hot Chips 11 slides; ps2tek, "VU Architecture", "VU Registers", "Vector Interface (VIF)").
   Their pipeline is exposed: "Underneath the surface, the VU is full of quirks.
   This is partially because its pipeline is exposed to the program." (ps2tek, "VU Pipelining").
   A recompiler for them models per-instruction timing as well as results (inference).
@@ -86,7 +84,8 @@ This note is not legal advice.
 - The core's caches are not coherent with DMA, and "Certain games are so buggy, however,
   that they require cache emulation to work" (ps2tek, "Cache Coherency").
 - The I/O processor duplicates the PlayStation 1's CPU and runs slow I/O and PS1 compatibility
-  (ps2tek, "PS2 Overview"), so it inherits the PS1's source problem, which `R1-02` records (`R0-05`, option 8).
+  (ps2tek, "PS2 Overview"),
+  so it inherits the PS1's source problem, which `R1-02` records (inference; `R0-05`, option 8).
   Wikipedia says later models replaced it with a PowerPC part
   (Wikipedia, PlayStation 2 technical specifications, secondary).
 
@@ -116,15 +115,16 @@ This note is not legal advice.
 #### Xbox and Xbox 360
 
 - The Xbox CPU is a 733 MHz Pentium III variant for which no datasheet exists, by XboxDevWiki,
-  and the console is a PC built from chipset parts apart from its security additions
-  (XboxDevWiki, "CPU", "Xbox Hardware Overview").
-  Microsoft's own Xbox emulation on the Xbox 360 was software:
-  "Xbox 360's backwards compatibility had to emulate the exact configuration of an original Xbox"
+  and the overview calls the console a standard PC extended with security additions,
+  while noting departures such as a system timer 6% faster than a PC's (XboxDevWiki, "CPU", "Xbox Hardware Overview").
+  Microsoft's Xbox emulation on the Xbox 360 was software aiming at the original's exact configuration,
+  though the same post says it "doesn't need to emulate things exactly right", as games ignore most exceptions
   (Microsoft Xbox team blog, "On Backwards Compatibility", 2006).
 - Microsoft gives the Xbox 360 CPU as three 3.2 GHz PowerPC cores, each "2-issue per cycle, in-order",
   with two hardware threads and a vector unit of 128 registers per thread
-  (Hot Chips 17 slides), so six guest threads need a host with as many, or interleaving (inference).
-  Wikipedia says its vector unit, VMX128, is not entirely compatible with AltiVec: integer operations were removed,
+  (Hot Chips 17 slides, "CPU Chip/PPC Core Specs"),
+  so six guest threads need a host with as many, or interleaving (inference).
+  Wikipedia says its vector unit, VMX128, is not entirely compatible with AltiVec: some integer operations were removed,
   and registers and game-oriented operations added (Wikipedia, AltiVec, secondary).
   AltiVec's non-Java mode flushes denormals: "If an element in a source vector register contains a denormalized value,
   the value 0 is used instead" (Freescale, AltiVec Programming Environments Manual, Rev. 3, Table 2-1, VSCR[NJ]);
@@ -155,7 +155,7 @@ This note is not legal advice.
 #### PSP and Vita
 
 - Sony's 2004 slides give the PSP two MIPS R4000-class cores with FPUs, one also with a vector unit (VFPU),
-  the other the Media Engine, plus 4 MB of embedded DRAM (Kurose and others, Sony, Hot Chips 16 slides).
+  the other the Media Engine, plus 4 MiB of embedded DRAM (Kurose and others, Sony, Hot Chips 16 slides).
 - The VFPU's 128 registers are addressable singly or as rows, columns, and matrices,
   with prefixes that alter inputs and outputs;
   vfpu-docs' VFPU chapter says rounding is fixed to nearest and subnormals are flushed
@@ -178,8 +178,8 @@ This note is not legal advice.
 - The original 3DS has a dual-core ARM11 MPCore at 268 MHz, "exactly twice the clock rate of the ARM9",
   and the New 3DS four cores that can run at 804 MHz when a title's header asks, with more memory
   (3dbrew, "Hardware" and "New_3DS").
-  The New 3DS page says its list came from disassembling system modules, a firmware-derived origin,
-  and the Hardware page cites unnamed "Official Documentation"; both facts need that caveat.
+  The New 3DS page's list came from disassembled system modules, a firmware-derived origin,
+  and the Hardware page cites unnamed "Official Documentation".
 - One ARM11 core is reserved for the operating system, and the ARM9 serves mainly DS and DSi compatibility
   (Wikipedia, Nintendo 3DS, secondary); DS-mode hardware is `R1-02`'s.
 
@@ -205,16 +205,18 @@ This note is not legal advice.
 
 #### PlayStation 2
 
-- The core reaches its 32 MB of main memory through cached, uncached, and "uncached and accelerated" windows,
+- The core reaches its 32 MiB of main memory through cached, uncached, and "uncached and accelerated" windows,
   and its scratchpad only by virtual address; beside it sit the vector units' memories,
-  2 MB of I/O-processor RAM it can read directly, 4 MB of graphics memory, and 2 MB of sound memory
+  2 MiB of I/O-processor RAM mapped into its space, 4 MiB of graphics memory, and 2 MiB of sound memory
   (ps2tek, "Memory Map").
   A 48-entry TLB written by software maps user addresses, with a bit that redirects a page to the scratchpad
   (ps2tek, "EE COP0 Memory Management").
 - Sony gives the graphics chip's embedded DRAM a 2,560-bit width
-  (Kutaragi, Sony, Hot Chips 11 keynote), which is why games re-read and rewrite the framebuffer freely (inference).
-- The DMA controller moves 16 bytes per bus cycle on ten channels and walks linked lists of tags that games build
-  (ps2tek, "DMA Controller (DMAC)", "DMAC Chain Mode");
+  (Kutaragi, Sony, Hot Chips 11 keynote, slides 11 and 12),
+  which would let games re-read and rewrite the framebuffer cheaply (inference).
+- The DMA controller moves 16 bytes at bus speed on ten channels and walks chains of tags,
+  read from memory in source chain mode and from the peripheral in destination chain mode
+  (ps2tek, "DMA Controller (DMAC)", "DMAC I/O", "DMAC Chain Mode");
   its address registers "update while a transfer is ongoing", and certain games rely on them changing
   (ps2tek, "DMAC I/O").
   The graphics interface takes work from three paths in fixed priority
@@ -226,19 +228,19 @@ This note is not legal advice.
   for unknown reasons" (ps2tek, "SIO2 PS2 Memcards"); they use Sony's MagicGate encryption
   (Wikipedia, PlayStation 2 technical specifications, secondary; ps2tek, "BIOS IOP SECRMAN - Security Manager"),
   which an emulator bypasses at a high level, because the project holds no keys (inference; `R0-02`).
-- ps2autotests holds results recorded on a console for the DMA controller and the vector interface (`tests/dma`).
+- ps2autotests holds results recorded on a console for the DMA controller and the vector interface
+  (`tests/dma`, observed).
 
 #### GameCube and Wii
 
-- The GameCube has 24 MB of 1T-SRAM and a separate 16 MB audio RAM on a bus YAGCD calls "by far the slowest one,
-  clocked at only 81MHz" (YAGCD, 2.4.2 and 2.5); its figures for the CPU's bus disagree between sections,
-  so none of them is recorded.
+- The GameCube has 24 MiB of 1T-SRAM and a separate 16 MiB audio RAM on a bus YAGCD calls "by far the slowest one,
+  clocked at only 81MHz" (YAGCD, 2.4.2 and 2.5); its CPU-bus figures disagree, so none is recorded.
 - The CPU sees memory through fixed cached and uncached windows, the embedded framebuffer through its own,
-  and a 16 KB region that YAGCD's map labels "L2 Cache" and its 2.1 calls a data scratchpad (YAGCD, 2.1 and 4.1).
+  and a 16 KiB region that YAGCD's map labels "L2 Cache" and its 2.1 calls a data scratchpad (YAGCD, 2.1 and 4.1).
   Audio RAM is not mapped into the CPU's memory
   (WiiBrew, "Memory map");
   a DMA engine and the DSP's "accelerator" reach it, with 32-byte alignment (YAGCD, 5.6; WiiBrew, "Hardware/DSP").
-- The Wii adds 64 MB of GDDR3, and "The Wii does not have the ARAM chip; instead, DSP can access MEM1 or MEM2"
+- The Wii adds 64 MiB of GDDR3, and "The Wii does not have the ARAM chip; instead, DSP can access MEM1 or MEM2"
   (WiiBrew, "Memory map");
   its ARM processor can lock part of that memory against the main CPU,
   and its flash holds a file system encrypted with a per-console key (WiiBrew, "Hardware/Starlet", "Hardware/NAND").
@@ -251,19 +253,18 @@ This note is not legal advice.
   The sources disagree on what MEM1 is: WiiUBrew says 1T-SRAM,
   and Wikipedia says embedded DRAM on the GPU and notes that Nintendo, IBM,
   and AMD never published detailed specifications (Wikipedia, Wii U, secondary).
-- Titles run under a paging kernel that gives each process its own virtual map (WiiUBrew, "Cafe OS").
-  The layouts on those pages are system software's, and the pages do not say how they were found,
-  so they are not recorded here; a high-level emulator reproduces the map the kernel gives a title rather than the
-  hardware page tables (inference).
+- Titles run under a kernel that gives each process its own address space (WiiUBrew, "Cafe OS").
+  The pages' layouts are system software's, of unstated origin, and are not recorded;
+  a high-level emulator reproduces the map the kernel gives a title (inference).
 
 #### Xbox and Xbox 360
 
-- The Xbox has 64 MB of memory shared by the CPU and the GPU
+- The Xbox has 64 MiB of memory shared by the CPU and the GPU
   (XboxDevWiki, "Memory"),
   a kernel closely related to Windows NT's that exports virtual-memory functions
   (XboxDevWiki, "Kernel"),
   and a standard IDE hard disk, locked by the console, with its own file system (XboxDevWiki, "Hard Drive", "FATX").
-- Microsoft describes the Xbox 360's 10 MB of embedded DRAM, on a die beside the GPU's main die,
+- Microsoft describes the Xbox 360's 10 MiB of embedded DRAM, on a die beside the GPU's main die,
   as a way to take framebuffer and depth fill out of the unified memory
   (Hot Chips 17 slides, "Architectural Choices - EDRAM", "GPU Block Diagram").
   Its CPU caches use 128-byte lines and its first-level data caches are write-through
@@ -272,15 +273,16 @@ This note is not legal advice.
   while user-mode code cannot reach the hypervisor's space (Free60, "Hypervisor").
   An emulator implements the services the hypervisor and kernel give games rather than the hypervisor itself
   (inference; Xenia's `docs/kernel.md` describes that approach for the kernel).
-- Most boards carry 16 MB of NAND flash; bundles sold without a hard disk got 256 MB or 512 MB
+- Earlier board revisions carry 16 MiB of NAND flash; Jasper-era bundles sold without a hard disk got 256 MiB or 512 MiB
   (Free60, "NAND"), and the disk is needed for original Xbox games (Free60, "HDD").
 
 #### Dreamcast
 
-- The Dreamcast has 16 MB of system RAM and 8 MB of video RAM (dreamcast.wiki, "Memory map"; Comstedt, memory map).
-  The SH-4 uses 32-bit logical addresses over a 29-bit physical space whose top bits select caching and mapping
+- The Dreamcast has 16 MiB of system RAM and 8 MiB of video RAM (dreamcast.wiki, "Memory map"; Comstedt, memory map).
+  The top three bits of each 32-bit logical address select mapping and caching over a 29-bit physical space
   (dreamcast.wiki, "Memory map"),
-  and its MMU has a 64-entry unified TLB (Renesas, SH7750 Group User's Manual: Hardware, Rev. 7.02, section 1).
+  and the SH7750 group's MMU has a 64-entry unified TLB
+  (Renesas, SH7750 Group User's Manual: Hardware, Rev. 7.02, section 1).
   The video RAM is seen through two windows that arrange the same memory differently (dreamcast.wiki, "VRAM").
 - The memory card, the VMU, is itself a small computer with an 8-bit Sanyo CPU and flash memory
   (dreamcast.wiki, "VMU hardware overview").
@@ -290,25 +292,22 @@ This note is not legal advice.
 
 - The PSP's CPU has no TLB (YAPSPD, 4.3.1 and 7.1); it has data and instruction caches,
   "only a 32k L1 cache" and no second level, and no hardware coherence with DMA (YAPSPD, 4.10).
-  Its 4 MB of embedded DRAM is two 2 MB blocks, one in the graphics chip and one in the Media Engine
+  Its 4 MiB of embedded DRAM is two 2 MiB blocks, one in the graphics chip and one in the Media Engine
   (YAPSPD, chapter 2 and the chapter 3 parts list),
   and its video memory appears mirrored at several offsets that change how the depth buffer reads back (YAPSPD, 10.2).
-  YAPSPD's preface warns that it may be wrong.
-- The Vita has 512 MiB of DRAM on two channels plus video memory
-  (Vita Development Wiki, "Physical Memory"),
-  and DMA controllers some of which also encrypt or hash while copying (same wiki, "DMAC").
+  YAPSPD's first chapter warns that it may be wrong.
+- The Vita has 512 MiB of DRAM, which the wiki tentatively places on two channels, plus video memory
+  (Vita Development Wiki, "Physical Memory").
   Its memory card speaks the Memory Stick protocol
   (same wiki, "Memory Card"), which the wiki derives from a system driver, a firmware-derived origin.
 
 #### Nintendo 3DS
 
-- The ARM11 cores see 128 MB of FCRAM, 256 MB on the New 3DS, plus video memory, DSP memory, and a shared work RAM,
+- The ARM11 cores see 128 MiB of FCRAM, 256 MiB on the New 3DS, plus video memory, DSP memory, and a shared work RAM,
   and the ARM9 sees the same plus memory of its own (3dbrew, "Memory layout").
-  "Memory layout" states no origin for the New 3DS extension,
-  but the "New_3DS" page says its account of that model's changes rests on disassembly of system modules.
+  The New 3DS figure carries the caveat given under Processors.
 - The 3DS has three DMA systems, one used by the ARM9's code and two Arm CoreLink engines
-  (3dbrew, "NDMA Registers"; "Corelink DMA Engines");
-  which processor drives each CoreLink engine is read from the pages' peripheral tables (inference).
+  (3dbrew, "NDMA Registers"; "Corelink DMA Engines").
   Its NAND and SD contents are encrypted
   (3dbrew, "Flash Filesystem"; "SD Filesystem"),
   so emulators present title storage decrypted by the user's own tools or as folders (inference; `R0-02`).
@@ -318,11 +317,12 @@ This note is not legal advice.
 - Most worked examples pair a large general pool with a small fast pool beside the GPU: the PS2's graphics DRAM,
   the GameCube and Wii embedded framebuffer, the Wii U's MEM1, the Xbox 360's embedded DRAM, the PSP's embedded DRAM,
   and the 3DS's video memory (inference from the findings above).
-  The Xbox has one shared pool; the Dreamcast's and Vita's video memories are not shown to be faster.
+  The Xbox has one shared pool; the Dreamcast's, Vita's, and 3DS's video memories are not shown to be faster.
 - Address translation ranges from none on the PSP, through fixed segments and block mappings, to software TLBs
   (PS2; the Dreamcast's MMU, normally disabled, by dreamcast.wiki, "Memory map")
-  and paging kernels (Xbox 360, Wii U); and keeping caches coherent with DMA is the software's job on the PS2 and PSP
-  (inference from the findings above).
+  and kernels that give each process its own address space (Wii U) (inference from the findings above).
+  Keeping caches coherent with DMA is the program's job on the PS2 (ps2tek, "Cache Coherency") and the PSP
+  (YAPSPD, 4.10).
 
 ### Graphics
 
@@ -337,7 +337,8 @@ This note is not legal advice.
 
 #### PlayStation 2: Graphics Synthesizer
 
-- The Graphics Synthesizer holds framebuffer, textures, and depth buffer together in 4 MB of embedded memory,
+- The Graphics Synthesizer holds framebuffer, textures, and depth buffer together in 4 MiB of memory
+  (ps2tek, "Memory Map"),
   and ps2tek says "the GS only supports single-pass texturing and is entirely fixed-unit."
   (ps2tek, "GS Special Effects and Optimizations").
 - Its blend unit has one fixed equation with selectable inputs, and "Internally,
@@ -351,14 +352,14 @@ This note is not legal advice.
   which requires a slow fragment shader to process the effect correctly
   if the game doesn't fully mask on the byte level." (same section).
   The memory is not linear: colour and depth formats, and 32-bit and 8-bit textures, are swizzled differently
-  (same section), so a game that reads one format as another forces the emulator to convert between layouts.
+  (same section), so a game that reads one format as another forces the emulator to convert between layouts (inference).
 - The GS draws points, lines, strips, fans, triangles, and two-vertex rectangles
   (ps2tek, "GS Primitives"), and has two output circuits, each with its own display buffer (ps2tek, "I/O Maps").
   Geometry reaches it by three paths: from VU1, through VIF1, and by DMA from main memory
   (ps2tek, "Graphics Interface (GIF)").
 - The open-tier PS2 emulator's game database carries per-game options for its hardware renderer,
   such as blending accuracy levels (PCSX2, `bin/docs/GameIndex.pdf`; an implementation's options),
-  which shows that no single host configuration fits every title (inference).
+  so no single host configuration fits every title (inference).
 
 #### GameCube and Wii: the texture environment
 
@@ -366,13 +367,12 @@ This note is not legal advice.
   stages, forming a chain of blending operations", on values it gives as "unsigned 8-bit values or signed 10-bit values
   but other implementations could provide different precisions." (US 7,034,828, Nintendo, abstract and column 11, of
   multiplexer outputs in an example embodiment; patent office copy read by optical recognition).
-  The Dolphin team writes that 32-bit floating point on PC GPUs is not precise enough to reproduce the hardware's 24-bit
-  integer results (Dolphin blog, "Pixel Processing Problems", 2014, capture of 2026-07-01).
+  The Dolphin team writes that imitating the GPU's integer arithmetic in floating point was doomed,
+  because 32-bit floats lack the precision to emulate 24-bit integers
+  (Dolphin blog, "Pixel Processing Problems", 2014, capture of 2026-07-01).
 - Dolphin turns each configuration into a host shader, and "shaders have to be compiled, which takes time";
-  its answer runs a general shader while the specialised one compiles: "Under Hybrid Mode,
-  whenever a new pipeline configuration appears,
-  Dolphin will use the already compiled Ubershaders to immediately render the effect without stuttering"
-  (Dolphin blog, "Ubershaders", 2017, capture of 2026-11-03).
+  in its hybrid mode, a general shader compiled in advance renders each new configuration at once, without stutter,
+  while the specialised one compiles (Dolphin blog, "Ubershaders", 2017, capture of 2026-11-03).
 - The GPU renders into "a special 2MB chunk of memory on the GPU itself, separate from the shared main memory",
   then copies frames to main memory, and some games alter frames there
   (Dolphin blog, "To the Screen with Hybrid XFB", 2017, capture of 2026-05-24).
@@ -382,8 +382,8 @@ This note is not legal advice.
 
 - "The Tile Accelerator divides the scene into 32 by 32 pixel tiles, which can be rendered individually."
   (Comstedt, Dreamcast programming, "PowerVR"; a lead).
-  A VideoLogic patent of 1995 describes deciding per pixel, within screen regions, which surface is visible
-  (US 5,729,672, VideoLogic, read from the patent office copy).
+  A VideoLogic patent, filed in 1995 and granted in 1998, describes deciding per pixel, within screen regions,
+  which surface is visible (US 5,729,672, VideoLogic, read from the patent office copy).
 - Wikipedia says the method "allows for correct rendering of partially transparent polygons,
   independent of the order in which they are processed" (Wikipedia, PowerVR, secondary).
   A host GPU draws in submission order, so order-independent transparency must be emulated (inference).
@@ -404,7 +404,7 @@ This note is not legal advice.
 #### Xbox 360: Xenos and its embedded DRAM
 
 - Microsoft gives Xenos as a 500 MHz GPU with "48 parallel shader cores (ALUs); dynamically scheduled; 32bit IEEE FLP",
-  with 10 MB of embedded DRAM meant to "Take FB/ZB fill-rate out of the equation" (Hot Chips 17 slides).
+  with 10 MiB of embedded DRAM meant to "Take FB/ZB fill-rate out of the equation" (Hot Chips 17 slides).
   Free60 relates it to ATI's R500 series (Free60, "Xenos (GPU)").
 - A developer of the open-tier emulator writes: "The Xbox 360 allows games to draw only to eDRAM — after drawing,
   resolving ... is necessary to write the result to the back buffer for presentation or to a texture
@@ -412,9 +412,7 @@ This note is not legal advice.
   The article gives the eDRAM's tile size and storage formats, and reports that 24-bit floating-point depth,
   emulated as 32-bit on the host, must survive round trips through eDRAM (same article).
   Emulating the resolve step and the console's own formats is where most of the work lies (inference).
-- The same project states the origin of its GPU knowledge and its rule:
-  "The writer of this post has never used the Xbox 360 XDK for any purpose,
-  and contributions based on information obtained from the XDK are not allowed." (same article).
+- The article's writer states never having used Microsoft's development kit (same article).
 
 #### PSP
 
@@ -423,8 +421,8 @@ This note is not legal advice.
   and that "Floats processed in the command-stream are 24 bits instead of 32 that are used by the CPU."
   (YAPSPD, 11.1 and 11.2).
 - The open-tier PSP emulator's change log records rendering a software depth buffer alongside the hardware renderer to
-  fix lens flares in several games (PPSSPP, README, "What's new in 1.19"), one case of reading back what a host GPU does
-  not expose (inference).
+  fix lens flares in several games "efficiently" (PPSSPP, README, "What's new in 1.19"), one case of computing on the
+  CPU what is slow to read back from a host GPU (inference).
 
 #### Nintendo 3DS: PICA200
 
@@ -436,30 +434,25 @@ This note is not legal advice.
 - 3dbrew: "The PICA200 is not IEEE-compliant.
   It has positive and negative infinities and NaN, but does not seem to have negative 0.
   Input and output subnormals are flushed to +0." (3dbrew, "GPU/Shader Instruction Set").
-- The top screen shows two framebuffers in 3D mode: "Top screen uses AB interlacing in 3D mode
-  (with 3D slider enabled), and A mode (no interlacing) in 2D mode." (3dbrew, "GPU/External Registers").
+- In 3D mode the top screen interlaces two framebuffers by scanline (3dbrew, "GPU/External Registers").
   The GPU renders into tiled buffers that a transfer engine converts for display (same page).
-- The developers of Citra, predecessor of the open-tier Azahar, wrote in 2018: "As it stands,
-  only a portion of the PICA200 emulation is running on the GPU; most of it is running on the CPU!"
-  (Citra site archive, "Hardware Renderer Updates").
-  The same post reports the rest moved to the host GPU, the guest's shader programs translated into host shaders.
-- 3dbrew's register list carries a column headed "Official Name",
-  whose names have a form that suggests a maker's document
-  (3dbrew, "GPU/Internal Registers"; inference);
-  the wiki does not say where they came from, so the names are not used here.
+- The developers of Citra, predecessor of the open-tier Azahar,
+  wrote in 2018 that most PICA200 emulation had run on the CPU, and that all of it now ran on the host GPU,
+  the guest's shader programs translated into host shaders (Citra site archive, "Hardware Renderer Updates").
+- 3dbrew's register list has an "Official Name" column of unstated origin, whose form suggests a maker's document
+  (3dbrew, "GPU/Internal Registers"; inference); the names are not used here.
 
 #### Vita and Wii U
 
-- The Vita carries a four-core PowerVR SGX543MP4+.
-  The Vita Development Wiki compares the GPU's kernel module with the open-source Linux PowerVR kernel module
-  (Vita Development Wiki, "GPU").
+- The Vita embeds an SGX543MP4+ GPU (Vita Development Wiki, "GPU").
+  The wiki compares the GPU's kernel module with the open-source Linux PowerVR kernel module (same page).
   A user-mode library, `SceGxm`, exports the graphics functions
   (same wiki, "SceGxm", observed), so a high-level emulator implements that library over a host API (inference).
 - WiiUBrew relates the Wii U's GPU to AMD's Radeon R7xx family and says:
   "While documentation perfectly matching the card is yet to be found,
   several documents can be brought together to form a reasonable picture of the register layout."
   (WiiUBrew, "Hardware/GX2").
-  The closest maker documents would be AMD's for that desktop family;
+  Among those documents the page lists AMD's R6xx and R7xx register guides;
   the copies tried redirected to a portal page that needs a script to load, and were not read (research log).
 
 #### What host-GPU emulation needs, across the era
@@ -482,11 +475,11 @@ This note is not legal advice.
 
 ### Audio
 
-- Audio takes four forms (inference from the findings below): a DSP running a program the game or its library uploads
+- Audio takes five forms (inference from the findings below): a DSP running a program the game or its library uploads
   (GameCube, Wii, 3DS, the Xbox's two programmable DSPs, the Dreamcast's ARM7);
   a fixed voice synthesiser (PS2, the Xbox's voice processor, the 3DS's second sound unit);
-  a fixed decoder plus mixing in software
-  (Xbox 360, and by their libraries the PSP and Vita);
+  a fixed decoder plus mixing in software (Xbox 360); a media processor reached only through system libraries
+  (PSP, and by its libraries the Vita);
   and a DSP running fixed microcode from ROM (Wii U, by a WiiUBrew statement marked for checking).
   The first is where high-level against low-level emulation matters most.
 
@@ -510,7 +503,8 @@ This note is not legal advice.
 
 - The 3DS's DSP, a Teak-family processor by Teakra's README
   (3dbrew's "Hardware" says CEVA TeakLite),
-  runs a program the title supplies, which "requires RSA-signed DSP firmware"
+  runs a program the title supplies (Citra site archive, "Accurate Audio Emulation Has Arrived"),
+  which "requires RSA-signed DSP firmware"
   (3dbrew, "DSP:LoadComponent"),
   and talks to the game through shared memory; a second sound unit can play at the same time
   (3dbrew, "DSP Memory Region", "DSP Services").
@@ -520,18 +514,19 @@ This note is not legal advice.
   the 2016 post credits the community's reverse engineering of the DSP firmware, a firmware-derived origin.
   Of their low-level emulator they wrote "When it comes to writing an LLE DSP emulator, it's all or nothing."
   (same post of 2018); it ships testers that run on a 3DS (Teakra, README).
-  Citra kept high-level emulation as the default in 2018 (the 2018 post), as Dolphin does
-  (from memory),
+  Citra kept high-level emulation as the default in 2018
+  (the 2018 post),
   and Dolphin's wiki says "all sound issues need to be confirmed with LLE." (Dolphin wiki, "Audio Emulation").
 
 #### PlayStation 2
 
-- The SPU2 is a sound processor of two cores with 24 voices each and 2 MB of its own RAM,
+- The SPU2 is a sound processor of two cores with 24 voices each and 2 MiB of its own RAM,
   attached to the I/O processor with its own DMA channels
   (ps2tek, "I/O Maps", "Memory Map").
   ps2tek names a game whose library for a custom sound module reuses one buffer for sending and receiving,
   and which needs cache emulation to boot (ps2tek, "Cache Coherency").
-  Sound reaches the SPU2 through the I/O processor's modules,
+  Sound reaches the SPU2 through the I/O processor's modules
+  (ps2tek, "BIOS IOP LIBSD - Low-level Sound Library"),
   so high-level emulation of those modules is an alternative to running them (inference).
 
 #### Xbox and Xbox 360
@@ -559,8 +554,7 @@ This note is not legal advice.
 - Games reach Vita audio through system libraries
   (Vita Development Wiki, "SceAudio", "SceNgs"),
   and PSP audio through `sceAudio` and the Media Engine's libraries
-  (PPSSPP, "The PSP Media Engine and its implementation"; YAPSPD, 12.1, gives only a 44,100 Hz rate),
-  which a high-level emulator reimplements (inference).
+  (PPSSPP, "The PSP Media Engine and its implementation"), which a high-level emulator reimplements (inference).
 
 ### Timing, synchronisation, and input
 
@@ -614,7 +608,7 @@ This note is not legal advice.
 
 #### Networking
 
-- Network hardware is built in on the Dreamcast, Xbox 360, PSP, and 3DS,
+- Network hardware is built in on the Dreamcast, Xbox 360, 3DS, and PSP models other than the E1000,
   and an add-on on the GameCube and on PS2 models before the slim one
   (dreamcast.wiki, "Hardware overview"; Hot Chips 17 slides; Wikipedia, PlayStation Portable, Nintendo 3DS, GameCube,
   PlayStation 2 technical specifications, secondary); their online services have ended or changed,
@@ -637,14 +631,15 @@ this note records no key, key layout, or secret value.
   (Comstedt, "IP.BIN and 1ST_READ.BIN", a lead).
 - The PS2's BIOS sets up the hardware and copies the EE kernel into RAM, and "Unlike the EE,
   the IOP does not have a monolithic kernel" (ps2tek, "BIOS", "BIOS Boot Process").
-  The PSP's UMD standard leaves the format of its copyright management fields to agreement between the parties
-  (Ecma-365, 1st edition, 18.3 and 26.2.4.3).
+  The PSP's UMD standard leaves the format of each data frame's copyright management bytes to agreement between the
+  parties (Ecma-365, 1st edition, 18.3), and lets the control data carry copyright information or none (26.2.4.3).
 - By the pages read, GameCube, Dreamcast, and PS2 games reach an emulator as plain images,
   and no page read says Xbox game executables are encrypted (inference, partly from silence).
   Wii, 3DS, PSP, Vita, and Xbox 360 retail content is encrypted
   (WiiBrew, "Ticket"; 3dbrew, "NCCH", unless a title's no-encryption flag is set; YAPSPD, 23.1.1.1,
-  for a UMD game's main executable; Vita Development Wiki, "Security"; Free60, "XEX",
+  which marks a UMD's `EBOOT.BIN` encrypted but not its `BOOT.BIN`; Vita Development Wiki, "Security"; Free60, "XEX",
   under a heading that calls its account speculation), and so is the Wii U's (from memory).
+  Citra's FAQ also says it runs encrypted 3DS games only with keys the user dumps (Citra site archive, FAQ).
   This sorts the systems by `R0-02`'s options 1 to 3 (inference); which applies is the owner's decision.
 
 #### Boot chains and security processors
@@ -659,10 +654,11 @@ this note records no key, key layout, or secret value.
   The Vita's root of trust is a separate security processor (Vita Development Wiki, "Security").
 - Free60 writes: "In case of the Xbox 360, the hypervisor is responsible for encryption,
   decryption and the enforcement of access restrictions on memory." (Free60, "Hypervisor").
-- None of these chains needs to run for a game to run in the emulators read:
-  the open-tier emulators boot games without the maker's boot firmware, except that PCSX2 requires a BIOS dump,
-  and the walled-tier xemu requires the Xbox's boot ROM image, flash image, and hard disk image
-  (PCSX2, README; xemu, "Required Files").
+- The open-tier emulators read boot games without the maker's boot firmware, except PCSX2, which requires a BIOS dump
+  (PCSX2, README).
+  The walled-tier xemu runs the Xbox's chain from a boot ROM image and a debug or modified flash image,
+  as it cannot boot games with an unmodified retail one,
+  plus a disk image it also offers pre-built without copyrighted content (xemu, "Required Files").
   Citra recommends maker system files for accuracy (Citra site archive, FAQ).
 
 #### System software that games call
@@ -677,16 +673,17 @@ this note records no key, key layout, or secret value.
   (WiiUBrew, "Cafe OS", "Boot process");
   the PS2 has a kernel in RAM and loadable I/O modules
   (ps2tek, "BIOS Boot Process", "BIOS");
-  the PSP and 3DS load modules or services that games import or request by name
-  (YAPSPD, 26.2.2.6; 3dbrew, "Services"),
+  the PSP imports functions from named libraries by hashed identifier
+  (YAPSPD, 26.2.2.6 and 26.2.2.10),
+  and 3DS titles request services by name
+  (3dbrew, "Services"),
   and the Vita's user libraries export functions by identifier
   (Vita Development Wiki, "SceGxm", observed);
   the Xbox runs a kernel closely related to Windows NT's and the Xbox 360 a hypervisor and kernel
   (XboxDevWiki, "Kernel"; Free60, "Hypervisor", "Kernel").
-- Named, dynamically linked interfaces
-  (PSP, Vita, Wii U, 3DS, Xbox 360)
-  suit high-level emulation; statically linked libraries
-  (GameCube, Wii, Xbox) push it down to recognising library code, or toward hardware (inference).
+- Dynamically linked interfaces (PSP, Vita, Wii U, 3DS, Xbox 360) suit high-level emulation.
+  The GameCube, Wii, and Xbox link their libraries into each game, which pushes it down to recognising library code,
+  though the Xbox kernel's exports and the Wii's IOS requests are clean boundaries (inference).
 - The emulators read say which they do: "No BIOS file required to play, PPSSPP is an 'HLE' emulator."
   (PPSSPP, README); "Play!
   uses a built-in high-level emulation BIOS."
@@ -695,26 +692,23 @@ this note records no key, key layout, or secret value.
 
 #### Pages next to restricted material
 
-- Open wiki pages in this area sit beside firmware listings, key layouts, and pseudo-code of boot ROMs
-  (`R0-05`, "Patterns across the hubs").
-  A research session displayed one Free60 page that lists a console's fuse values; nothing from it was used,
-  and the register now closes it.
-  The correction pass did not reopen 3dbrew's "FIRM" and "NCCH", WiiUBrew's "Disc drive", or Free60's "XEX"
-  (research log).
+- Open wikis here sit near maker manuals, key pages, and firmware (`R0-05`, "Patterns across the hubs").
+  A research session displayed one Free60 page that lists a console's fuse values; nothing from it was used
+  (research log), and the register now closes it.
+  Neither verification pass reopened 3dbrew's "FIRM" and "NCCH", WiiUBrew's "Disc drive", or Free60's "XEX";
+  claims citing them rest on the research agents' reading (research log).
 
 ## Options and trade-offs
 
 The options answer separate questions and can be combined, and the answer can differ by system.
-Options 1 and 2 concern system software, 3 and 4 audio processors, 5 to 7 graphics, 8 to 10 processors,
-and 11 protected content.
 Costs and gains are the note's reasoning from the findings (inference) unless a source is named.
 
 ### 1. High-level emulation of system software
 
 - **What:** implement the services games call (kernel functions, libraries, modules, IOS requests) as host code.
 - **Costs:** each interface must be reimplemented and kept compatible with what games expect;
-  statically linked libraries (GameCube, Wii, Xbox) offer no clean boundary.
-- **Gains:** no firmware needed; fast.
+  libraries linked into games (GameCube, Wii, Xbox) offer no clean boundary.
+- **Gains:** no boot firmware, though some features need the user's system files (Citra site archive, FAQ); fast.
 - **Used by:** PPSSPP, Play!, Xenia, and Azahar, by their READMEs and Xenia's `docs/kernel.md`.
 
 ### 2. Low-level emulation of system software
@@ -723,7 +717,8 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 - **Costs:** needs firmware the project never holds, which `R0-02` records as unsettled law;
   boot chains include security processors and encryption; slower.
 - **Gains:** behaviour matches the console wherever the hardware model is right.
-- **Used by:** PCSX2, which requires a BIOS; xemu, which requires boot ROM, flash, and disk images.
+- **Used by:** PCSX2, which requires a BIOS; xemu, which requires a boot ROM image, a debug or modified flash image,
+  and a disk image (xemu, "Required Files").
 
 ### 3. High-level emulation of audio DSP programs
 
@@ -756,13 +751,14 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
   used alone or while specialised shaders compile.
 - **Costs:** slower per pixel; heavy on host GPUs.
 - **Gains:** no compilation stall for new configurations.
-- **Used by:** Dolphin's "ubershaders", alone or in hybrid mode.
+- **Used by:** Dolphin's "ubershaders", alone or in hybrid mode (Dolphin blog, "Ubershaders").
 
 ### 7. Precision and blending: host fixed function or shader emulation
 
 - **What:** use host blending and floating point where they agree with the guest, or emulate the guest's integer,
   wrap-around, 9-bit, and 24-bit arithmetic in shaders, including blending in the fragment shader.
-- **Costs:** shader emulation is slower and needs optional host features such as fragment-shader interlock.
+- **Costs:** shader emulation is slower,
+  and blending in the shader can need optional host features such as fragment-shader interlock.
 - **Gains:** fixes effects that depend on the guest's arithmetic.
 - **Used by:** per-game blending options in PCSX2; Xenia's work on depth formats.
 
@@ -781,8 +777,7 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 - **Costs:** an interpreter cannot keep up with the faster guests of the era;
   recompilers need invalidation for code that changes, and a back end per host architecture.
 - **Gains:** in that order, simplicity, speed, and portability of optimisation.
-- **Used by:** Xenia describes an intermediate form; Wikipedia names several console emulators
-  that recompile (secondary).
+- **Used by:** Xenia describes an intermediate form (Xenia, `docs/cpu.md`).
 
 ### 10. Host threads for guest processors
 
@@ -790,14 +785,14 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 - **Costs:** threads need the guest's memory ordering and atomic operations and careful synchronisation;
   interleaving is slower for symmetric multi-core guests.
 - **Gains:** threads use host cores; interleaving is deterministic.
-- **Used by:** Dolphin names CPU, GPU, and DSP as tasks that run well on separate threads.
+- **Used by:** Dolphin names CPU, GPU, and DSP as tasks that run well on separate threads (Dolphin, FAQ).
 
 ### 11. Plain images only, or content that the user decrypts
 
 - **What:** support only systems whose games arrive as plain images,
   or accept content the user has decrypted with their own tools.
-- **Costs:** the first leaves out the Wii, Wii U, 3DS, PSP, Vita, and Xbox 360; the second is `R0-02`'s option 3,
-  with its risks.
+- **Costs:** the first leaves out the Wii, Wii U
+  (from memory), 3DS, PSP, Vita, and Xbox 360; the second is the first variant of `R0-02`'s option 3, with its risks.
 - **Gains:** the first keeps the project away from decryption; the second covers the era.
 - **Used by:** `R0-02` found no project that states it accepts only user-decrypted input,
   and records Dolphin as embedding a published key instead.
@@ -807,8 +802,8 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 These follow from the findings (inference).
 
 - System software is the deciding question for most of this era.
-  Options 1 and 2 feed `R2-12` (firmware and system software) and an ADR on firmware; each survey
-  (`R1-13`, `R1-17`, `R1-19`, `R1-20`, `R1-22`, `R1-23`) records where its system's software lives.
+  Options 1 and 2 feed `R2-12` (firmware and system software) and an ADR on firmware;
+  each family survey records where its system's software lives.
 - Options 5 to 7 feed `R2-05` (3D hardware and shader compilation) and `R4-05`
   (graphics libraries);
   the optional Vulkan features they need bear on which hosts can run an accurate renderer (`R3-05`, `R3-12`).
@@ -820,8 +815,6 @@ These follow from the findings (inference).
   system by system, and `R6-01`.
 - Audio DSPs that run uploaded programs feed `R2-06` (audio), with options 3 and 4;
   input that passes through system software, and controllers with no host equivalent, feed `R2-13`.
-- Most sources are community wikis, maker talks and patents, and emulator projects' own writing;
-  the surveys keep each emulator's account of itself apart from hardware facts.
 
 ## Open questions
 
@@ -837,14 +830,14 @@ These follow from the findings (inference).
   `R1-23`.
 - How does the Vita run PSP games, and does the Wii U's DSP always run microcode from ROM?
   `R1-20`, `R1-17`.
-- What is the Wii U's MEM1, and what are its CPU's cache sizes from a maker?
+- What is the Wii U's MEM1?
   No maker document found.
   `R1-17`.
 - Where did 3dbrew's "Official Name" register column and "Official Documentation" citation come from?
   Not stated on the pages read; `R1-13` should ask before relying on them.
 - Which statements on these wikis rest on disassembled system software?
-  Several pages say so; `R0-05`'s finding that a tier does not show a single fact's origin
-  ("What the evaluation cannot show"), a question `R0-01` first asked, applies.
+  Several pages say so; `R0-05` finds that a tier does not show a single fact's origin
+  ("What the evaluation cannot show"), as `R0-01` first asked.
 - Which of options 1 to 11 apply to each system?
   Decisions for the owner after the surveys.
 
@@ -879,7 +872,7 @@ Maker material: conference talks, manuals, standards, and patents:
 - Khronos, Vulkan reference pages `VkPipelineCache`, `VK_EXT_fragment_shader_interlock`,
   `VK_EXT_graphics_pipeline_library`, `VkPhysicalDeviceFeatures`, latest version on the date read:
   `https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCache.html` and sibling pages.
-- Ecma International, ECMA-365, 1st edition
+- Ecma International, ECMA-365, "Data Interchange on 60 mm Read-Only ODC - Capacity: 1,8 Gbytes (UMD)", 1st edition
   (June 2005): `https://ecma-international.org/wp-content/uploads/ECMA-365_1st_edition_june_2005.pdf`.
 - United States patents, patent office copies: 5,729,672 (VideoLogic), 6,606,689 (Nintendo), 6,609,977 (Nintendo),
   6,907,522 (Microsoft), 7,034,828 (Nintendo):
@@ -891,7 +884,7 @@ Community references:
   `https://psi-rockin.github.io/ps2tek/` and `https://raw.githubusercontent.com/psi-rockin/ps2tek/master/index.html`.
 - Yet Another GameCube Documentation, chapters 1 to 6, 10, and 13
   (last revised 2006): `https://hitmen.c02.at/files/yagcd/yagcd/chap2.html` and sibling chapters.
-- Yet Another PSP Documentation, chapters 2 to 12, 23, and 26
+- Yet Another PSP Documentation, chapters 1 to 11, 23, and 26
   (last revised 2006): `https://hitmen.c02.at/files/yapspd/psp_doc/chap4.html` and sibling chapters.
 - WiiBrew: "Paired single" (rev 120284), "Hardware/Broadway" (rev 121256), "Hardware/Starlet" (rev 118313), "Memory map"
   (rev 121456),
@@ -918,12 +911,12 @@ Community references:
   (rev 23934);
   revisions from each page's information view:
   `https://www.3dbrew.org/w/index.php?title=Hardware&action=raw` and sibling pages.
-- Vita Development Wiki: "Main_Processor" (rev 21601), "Venezia" (rev 20746), "Physical Memory" (rev 21616), "DMAC"
-  (rev 21584),
+- Vita Development Wiki: "Main_Processor" (rev 21601), "Venezia" (rev 20746), "Physical Memory"
+  (rev 21616),
   "Memory Card" (rev 21881), "GPU" (rev 21670), "SceGxm" (rev 21212), "SceAudio" (rev 19499), "SceNgs"
   (rev 19600),
-  "Security" (rev 20413); read as rendered pages, and as raw wikitext where the research's first fetch was refused:
-  `https://wiki.henkaku.xyz/vita/Main_Processor` and sibling pages.
+  "Security" (rev 20413); read as rendered pages, and as raw wikitext where the research's first fetch was refused
+  (research log): `https://wiki.henkaku.xyz/vita/Main_Processor` and sibling pages.
 - XboxDevWiki: "CPU" (rev 7347), "Xbox Hardware Overview" (rev 6007), "Memory" (rev 7416), "Kernel"
   (rev 6596),
   "Hard Drive" (rev 7037), "FATX" (rev 7419), "NV2A" (rev 6894), "NV2A/Pixel Combiner" (rev 6853), "NV2A/Vertex Shader"
@@ -941,24 +934,25 @@ Community references:
 
 Tests:
 
-- ps2autotests, README and `tests/cpu/ee_fpu/arithmetic.expected`, commit `97469ffb` (2019-11-16):
-  `https://github.com/unknownbrackets/ps2autotests`.
+- ps2autotests, README, `tests/cpu/ee_fpu/arithmetic.expected`,
+  and the `tests/dma` listing, commit `97469ffb` (2019-11-16): `https://github.com/unknownbrackets/ps2autotests`.
 - SingleStepTests sh4 README, commit `48975cb1`: `https://github.com/SingleStepTests/sh4`.
 - Teakra README, commit `3d697a18` (2025-08-24): `https://github.com/wwylele/teakra`.
 
 Emulator projects' documentation and data (implementations' accounts):
 
-- PCSX2, commit `84077463` (2026-11-15): `bin/resources/GameIndex.yaml`, `bin/docs/GameIndex.pdf`, and `README.md`:
-  `https://github.com/PCSX2/pcsx2`.
+- PCSX2, commit `84077463` (2026-11-16 in the committer's time): `bin/resources/GameIndex.yaml`,
+  `bin/docs/GameIndex.pdf`, and `README.md`: `https://github.com/PCSX2/pcsx2`.
 - Dolphin: `Data/Sys/GameSettings`, commit `32a2b828`
   (2026-11-19 in the committer's time):
   `https://github.com/dolphin-emu/dolphin`; FAQ: `https://dolphin-emu.org/docs/faq/`; wiki, "Audio Emulation"
   (rev 177576)
   and "GameCube Main Menu" (rev 200620): `https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation&action=raw`.
-- Dolphin blog, read from captures because the live site refused automated requests
+- Dolphin blog, read from captures because the live posts, which still exist, refused automated requests
   (research log):
-  "Pixel Processing Problems" (2014-03-15), capture of 2026-07-01 13:21:19; "Ubershaders" (2017-07-30),
-  capture of 2026-11-03 20:18:59; "To the Screen with Hybrid XFB" (2017-11-19), capture of 2026-05-24 10:46:46:
+  "Pixel Processing Problems: On the Road to Pixel Perfection" (2014-03-15), capture of 2026-07-01 13:21:19;
+  "Ubershaders: A Ridiculous Solution to an Impossible Problem" (2017-07-30), capture of 2026-11-03 20:18:59;
+  "To the Screen with Hybrid XFB" (2017-11-19), capture of 2026-05-24 10:46:46:
   `http://web.archive.org/web/20261103201859/https://dolphin-emu.org/blog/2017/07/30/ubershaders/` and the others.
 - Xenia: `docs/cpu.md`, `docs/kernel.md`, and `.github/CONTRIBUTING.md`, commit `95a5c3ee` (2026-02-18):
   `https://github.com/xenia-project/xenia/tree/master/docs`; "Leaving No Pixel Behind" (2021-04-27):
@@ -966,13 +960,13 @@ Emulator projects' documentation and data (implementations' accounts):
 - PPSSPP: README, commit `77106069`: `https://github.com/hrydgard/ppsspp`;
   "The PSP Media Engine and its implementation":
   `https://www.ppsspp.org/docs/development/ppsspp-internals/media-engine`.
-- Play!, README: `https://github.com/jpd002/Play-`.
+- Play!, README, commit `1f272327`: `https://github.com/jpd002/Play-`.
 - Azahar, README, commit `cf42aef2`: `https://github.com/azahar-emu/azahar`.
 - Citra site archive (archive of 2024-03-04): "HLE Audio Comes to Citra" (2016-05-20),
   "Accurate Audio Emulation Has Arrived" (2018-12-07), "Hardware Renderer Updates" (2018-03-10), and the FAQ:
-  `https://citra.azahar-emu.org/entry/hle-audio-comes-to-citra/`, `.../entry/accurate-audio-emulation/`,
-  `.../entry/improvements-to-hardware-renderer/`, and `.../wiki/faq/`.
-- xemu, home page, FAQ, and "Required Files" (prose of a walled emulator): `https://xemu.app/docs/required-files/`.
+  `https://citra.azahar-emu.org/entry/hle-audio-comes-to-citra/` and sibling pages.
+- xemu, home page, FAQ, and "Required Files"
+  (prose of a walled emulator): `https://xemu.app/docs/required-files/` and sibling pages.
 
 Wikipedia, raw wikitext (tertiary):
 
