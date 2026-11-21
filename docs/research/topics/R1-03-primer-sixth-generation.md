@@ -23,17 +23,11 @@ Second, system software decides much of the design.
 High-level emulation of what games call avoids firmware, and the open-tier emulators read mostly take that route.
 
 Third, by the sources read, the Wii, Wii U, 3DS, PSP, Vita, and Xbox 360 encrypt retail content,
-within the limits under Media, while GameCube, Dreamcast, and PS2 games reach an emulator as plain images
-(inference, partly from silence).
+within the limits under [Media](#media-security-and-system-software), while GameCube, Dreamcast,
+and PS2 games reach an emulator as plain images (inference, partly from silence).
 This bears on [R0-02](R0-02-legal-baseline.md)'s options.
 
-No maker specification was found for any major graphics chip of the era in the
-[register](../../../.claude/hooks/source-register.txt)'s sources or [R0-05](R0-05-source-map.md)'s search.
-
-For the owner's decision, the note recommends high-level emulation of system software and of audio DSP programs,
-an interpreter as the reference with a recompiler after it,
-specialised shaders with a general shader while they compile, and content the user has decrypted with their own tools
-("Recommendation" under Options).
+For the owner's decision, the note recommends a design for each of these points ([Recommendation](#recommendation)).
 This note is not legal advice.
 
 ## Scope
@@ -60,7 +54,11 @@ This note is not legal advice.
   Each pass's findings were checked against the raw sources before the note was corrected.
   The claims the passes could not check are listed in the pull request.
 - Findings added in the rework rest on pages and files fetched on 2026-11-20 as raw text,
-  with each quotation confirmed in that text; they were not put through a second pass.
+  with each quotation confirmed in that text.
+  One further independent pass, of two verifiers,
+  fetched the sources of the rework's new and changed lines again and tested each claim, link, and quotation;
+  its findings were checked against the raw sources before the note was corrected.
+  So the rework's lines have had one independent pass, and the rest of the note two.
   On the 3dbrew and Free60 pages re-read then, hexadecimal runs of 16 or more characters were masked before display.
 - Markers are those of the [research conventions](../README.md#claim-status); Wikipedia read
   as wikitext is marked "(secondary)".
@@ -69,7 +67,8 @@ This note is not legal advice.
   The rework read source files of open-tier emulators,
   which [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) allows, for what they model;
   nothing from them is reproduced.
-  No walled or closed code, firmware, key, kit, game, leaked material, or tainted source was opened.
+  No walled or closed code, firmware, key, kit, game, leaked material, or tainted source was opened,
+  apart from the one Free60 page under [Pages next to restricted material](#pages-next-to-restricted-material).
   Patents were read from the patent office's copies, by optical recognition where needed.
 
 ## Findings
@@ -120,12 +119,26 @@ This note is not legal advice.
   [PCSX2, `common/FPControl.h`](https://github.com/PCSX2/pcsx2/blob/840774630f7a1a456e50575df62ec0b72cc00a98/common/FPControl.h)
   (observed).
   These are an implementation's settings, read as data; one global setting does not fit every game (inference).
-- An open PCSX2 pull request implements the PS2's arithmetic in software for the core's FPU, VU0, and VU1
-  ([PCSX2 pull request #12001](https://github.com/PCSX2/pcsx2/pull/12001), open, last updated 2026-10-21;
+- An open PCSX2 pull request implements the PS2's arithmetic in software in its interpreters, for the core's FPU, VU0,
+  and VU1 ([PCSX2 pull request #12001](https://github.com/PCSX2/pcsx2/pull/12001), open, last updated 2026-10-21;
   its file list touches `VUops.cpp` and `VUflags.cpp`), and testers there report games it fixes on VU0 and VU1.
-  Its author writes that the PS2's division rounds to nearest by default (comments of 2024-11-23; a lead).
-- No hardware results for vector-unit floating point were found in ps2autotests,
-  which has VU0 macro-mode integer and transfer tests only, or in the pull request above.
+  Its author writes: "The PS2 Div is a mess, they round to nearest by default,
+  but their 'rounding' is completely custom." (comment of 2024-11-23; a lead).
+- ps2autotests also holds vector-unit results recorded on a console: clipping, VU1's elementary functions,
+  division timing, integer and branch tests, and, under `games`, a routine of `MULi` and `ADDi` run on VU0 in micro mode
+  ([ps2autotests, `tests/vu`](https://github.com/unknownbrackets/ps2autotests/tree/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu),
+  observed).
+  The division results are all exact powers of two, so they say nothing about rounding (calculated).
+- That routine bears on rounding in VU0's multiply and add.
+  Three of its eight operations give different results under chopping and under round-to-nearest.
+  Both products match chopping and not nearest; the addition matches nearest,
+  one last bit above the chopped IEEE result, which fits ps2tek's "quirky" round towards zero whose last bit "may vary"
+  (calculated in exact arithmetic with Python 3.14.6 from the inputs in
+  [`tests/vu/games/triace.cpp`](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu/games/triace.cpp)
+  and the results in
+  [`triace.expected`](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu/games/triace.expected)).
+  So, on these three results, VU0 rounds towards zero as ps2tek says the core's FPU does (inference);
+  the tests do not cover VU1's arithmetic or the rule for the last bit.
 - The core's caches are not coherent with DMA, and "Certain games are so buggy, however,
   that they require cache emulation to work" (ps2tek, "Cache Coherency").
 - The I/O processor duplicates the PlayStation 1's CPU and runs slow I/O and PS1 compatibility
@@ -163,7 +176,7 @@ This note is not legal advice.
   ([Dolphin pull request #390](https://github.com/dolphin-emu/dolphin/pull/390), 2014-05-24).
   An earlier `frsqrte` table was described as "99% accurate"
   ([Dolphin commit `59e7c193`](https://github.com/dolphin-emu/dolphin/commit/59e7c1938079503724b68d78e1e5eb552cf056b7),
-  2010-01-17), and since 2023 a unit test checks the interpreter against a fixed list of known values
+  2010-01-17), and since 2023 a unit test checks the `frsqrte` model against a fixed list of known values
   ([Dolphin pull request #12259](https://github.com/dolphin-emu/dolphin/pull/12259)).
   Rustalgia can learn the method from that open-tier code and write its own; the table is not copied here.
   The hardware tests that the 2014 change planned live in
@@ -215,7 +228,9 @@ This note is not legal advice.
 - The same emitter notes two exceptions: `vmaddfp` flushes denormal inputs "regardless of NJM",
   which a contributor measured on POWER8 hardware, not on a console,
   and dot-product denormal outputs are always made zero (same file, observed).
-  Upstream Xenia leaves `mfvscr` and `mtvscr` unimplemented (Xenia, commit `95a5c3ee`, observed).
+  Upstream Xenia leaves `mfvscr` and `mtvscr` unimplemented
+  ([Xenia, `src/xenia/cpu/ppc/ppc_emit_altivec.cc`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/src/xenia/cpu/ppc/ppc_emit_altivec.cc),
+  commit `95a5c3ee`, observed).
 - The open-tier emulator's documentation calls the CPU "a 64-bit PowerPC chip running in 32-bit mode",
   close to the PlayStation 3's PPE, and describes translating it through an intermediate form to x64
   ([Xenia, `docs/cpu.md`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/docs/cpu.md);
@@ -237,7 +252,8 @@ This note is not legal advice.
   The manual lists errata in those instructions (6.7.2, 6.7.3) and in double-precision arithmetic
   (6.7.4, 6.7.5), and says the addition and subtraction erratum affects all SH-4 products (6.7.4).
   A host's arithmetic will not match bit for bit (inference);
-  whether games depend on the exact error was not found in the Dreamcast sources listed below (Open questions).
+  whether games depend on the exact error was not found in the Dreamcast sources listed below
+  ([Open questions](#open-questions)).
 
 #### PSP and Vita
 
@@ -252,9 +268,9 @@ This note is not legal advice.
   (same file),
   and two instructions write the wrong output registers on every model, an error that "seems to be deterministic"
   ([`docs/bugs.md`](https://github.com/pspdev/vfpu-docs/blob/f283bbb8d2ed39b6fa3414bd9f62632143b63e06/docs/bugs.md));
-  the README says each instruction statement has a test that runs on a PSP.
-  "Sony did not release any public documentation (nor SDK/toolchain) for the Sony PSP"
-  ([vfpu-docs, README](https://github.com/pspdev/vfpu-docs/blob/f283bbb8d2ed39b6fa3414bd9f62632143b63e06/README.md)).
+  the [README](https://github.com/pspdev/vfpu-docs/blob/f283bbb8d2ed39b6fa3414bd9f62632143b63e06/README.md) says each
+  instruction statement has a test that runs on a PSP.
+  "Sony did not release any public documentation (nor SDK/toolchain) for the Sony PSP" (vfpu-docs, README).
 - Games reach the Media Engine only through libraries, which the open-tier emulator has emulated at a high level
   ([PPSSPP, "The PSP Media Engine and its implementation"](https://www.ppsspp.org/docs/development/ppsspp-internals/media-engine));
   from 1.21 some run as real modules where available (same page).
@@ -265,7 +281,7 @@ This note is not legal advice.
 - The Vita runs most PSP games, but only those released digitally, because it has no UMD drive
   ([Wikipedia, PlayStation Vita](https://en.wikipedia.org/w/index.php?oldid=1386319237), "Backward compatibility",
   secondary).
-  The Vita wiki's "PSP Emulator" page maps a PSP-side memory layout of scratchpad, video memory, 64 MB of main memory,
+- The Vita wiki's "PSP Emulator" page maps a PSP-side memory layout of scratchpad, video memory, 64 MB of main memory,
   and an interrupt manager it says serves communication between the MIPS side and Kermit, on the ARM side;
   it also describes a shared SRAM mapped on the ARM side and an LCD DMA block
   ([Vita Development Wiki, "PSP Emulator"](https://web.archive.org/web/20261022170441/https://wiki.henkaku.xyz/vita/PSP_Emulator),
@@ -273,8 +289,8 @@ This note is not legal advice.
   "Kermit" is the wiki's name for the Vita's main system-on-chip
   ([same wiki, "Kermit"](https://web.archive.org/web/20261022163007/https://wiki.henkaku.xyz/vita/Kermit), oldid 21635).
   Both were read from captures because the live wiki refuses scripts with a bot check.
-  The page states no origin, so only the existence of a MIPS side that talks to the ARM cores is recorded,
-  and no addresses.
+- The "PSP Emulator" page states no origin,
+  so only the existence of a MIPS side that talks to the ARM cores is recorded, and no addresses.
 - So PSP software runs on a MIPS processor beside the ARM cores, served by the Vita's own system software,
   and an emulator of the Vita's PSP mode is a PSP emulator inside a Vita emulator (inference).
 
@@ -282,7 +298,7 @@ This note is not legal advice.
 
 - The original 3DS has a dual-core ARM11 MPCore at 268 MHz, "exactly twice the clock rate of the ARM9"
   ([3dbrew, "Hardware"](https://www.3dbrew.org/w/index.php?oldid=23948)).
-  The New 3DS has four cores that can run at 804 MHz,
+  The New 3DS has four cores, and those running the current application can run at 804 MHz,
   a clock the same page says was timed on a console with a long idle loop between two reads of the system tick
   (3dbrew, "Hardware"; [Wikipedia, Nintendo 3DS](https://en.wikipedia.org/w/index.php?oldid=1386371150),
   which cites that page, secondary).
@@ -375,7 +391,7 @@ This note is not legal advice.
   Wikipedia's own footnote marks that hardware as unconfirmed: "Neither Nintendo,
   IBM nor AMD has revealed detailed specifications"
   ([Wikipedia, Wii U](https://en.wikipedia.org/w/index.php?oldid=1386323270), secondary).
-  No maker statement exists to settle the cell type, and what an emulator models
+  No maker statement was found that settles the cell type, and what an emulator models
   (32 MiB, its address, and its fast access) is given by WiiUBrew's memory map whatever the cell type (inference).
 - Titles run under a kernel that gives each process its own address space
   ([WiiUBrew, "Cafe OS"](https://wiiubrew.org/w/index.php?oldid=4900)).
@@ -471,7 +487,9 @@ This note is not legal advice.
 
 #### How the era's graphics are documented
 
-- With no maker specification found (Summary), the record is wikis, maker talks and patents, and emulators' writing.
+- No maker specification was found for any major graphics chip of the era in the
+  [register](../../../.claude/hooks/source-register.txt)'s sources or [R0-05](R0-05-source-map.md)'s search, so the
+  record is wikis, maker talks and patents, and emulators' writing.
 - The era runs from fixed pipelines (Dreamcast, PS2, PSP) through configurable combiners
   (GameCube, Wii, Xbox)
   to programmable shaders (Xbox 360, Vita, Wii U),
@@ -600,9 +618,10 @@ This note is not legal advice.
 - In 3D mode the top screen interlaces two framebuffers by scanline
   ([3dbrew, "GPU/External Registers"](https://www.3dbrew.org/w/index.php?oldid=23708)).
   The GPU renders into tiled buffers that a transfer engine converts for display (same page).
-- The developers of Citra, predecessor of the open-tier Azahar,
-  wrote in 2018 that most PICA200 emulation had run on the CPU, and that all of it now ran on the host GPU,
-  the guest's shader programs translated into host shaders
+- The developers of Citra, predecessor of the open-tier
+  [Azahar](https://github.com/azahar-emu/azahar/blob/cf42aef23778d7e8bea6a468e12f53943dd87cd0/README.md), wrote in 2018
+  that most PICA200 emulation had run on the CPU, and that all of it now ran on the host GPU, the guest's shader
+  programs translated into host shaders
   ([Citra site archive, "Hardware Renderer Updates"](https://citra.azahar-emu.org/entry/improvements-to-hardware-renderer/)).
 - 3dbrew's register list has an "Official Name" column of unstated origin, whose form suggests a maker's document
   (3dbrew, "GPU/Internal Registers"; inference).
@@ -626,7 +645,11 @@ This note is not legal advice.
   AMD's [GPUOpen documentation page](https://gpuopen.com/amd-gpu-architecture-programming-documentation/) says its
   instruction-set manuals reach back to the Radeon R600, but none of its PDF links is an R600 or R700 document: they
   cover RDNA, CDNA, and GCN3 to Vega (observed).
-  The register layout can be learned from the open-tier Cemu and decaf-emu implementations instead (inference).
+  The register layout can be learned instead from the open-tier implementations, which define it in
+  [Cemu, `src/Cafe/HW/Latte/ISA/LatteReg.h`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/HW/Latte/ISA/LatteReg.h)
+  and
+  [decaf-emu, `src/libgpu/latte/`](https://github.com/decaf-emu/decaf-emu/tree/e6c528a20a41c34e0f9eb91dd3da40f119db2dee/src/libgpu/latte)
+  (file names observed in the listings; inference).
 
 #### What host-GPU emulation needs, across the era
 
@@ -634,7 +657,9 @@ This note is not legal advice.
   ([Khronos, `VkPipelineCache`](https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCache.html)),
   and an extension lets parts of a pipeline be compiled separately and linked later
   ([Khronos, `VK_EXT_graphics_pipeline_library`](https://registry.khronos.org/vulkan/specs/latest/man/html/VK_EXT_graphics_pipeline_library.html)),
-  which bears on the stutter Dolphin describes (inference).
+  which bears on the stutter Dolphin describes
+  ([Dolphin blog, "Ubershaders"](https://web.archive.org/web/20261103201859/https://dolphin-emu.org/blog/2017/07/30/ubershaders/);
+  inference).
 - With the fragment shader interlock extension,
   a fragment shader may read the destination by image loads and write the result by image stores,
   so blending the host cannot express can move into the shader
@@ -643,8 +668,9 @@ This note is not legal advice.
   ([Khronos, `VkPhysicalDeviceFeatures`](https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceFeatures.html)),
   so the set of hosts that can run an accurate renderer depends on them (inference).
 - The era's GPUs compute in formats hosts do not: integer texture-environment arithmetic (GameCube), 9-bit blends (PS2),
-  fixed-point combiners (NV2A, by NVIDIA's account of the NV10; inference), 24-bit floats
-  (PSP commands, Xbox 360 depth), and non-IEEE shaders (3DS) (findings above).
+  fixed-point combiners (NV2A, by NVIDIA's account of the NV10 in
+  [`NV_register_combiners`](https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt); inference),
+  24-bit floats (PSP commands, Xbox 360 depth), and non-IEEE shaders (3DS) (findings above).
   Across the projects read, emulators decode the command stream, track guest graphics memory in the console's layout,
   generate host shaders per configuration, and cache them (inference from the emulator writing cited above).
 
@@ -655,7 +681,9 @@ This note is not legal advice.
   a fixed voice synthesiser (PS2, the Xbox's voice processor, the 3DS's second sound unit);
   a fixed decoder plus mixing in software (Xbox 360); a media processor reached only through system libraries
   (PSP, and by its libraries the Vita);
-  and a DSP running fixed microcode from ROM (Wii U, by a WiiUBrew statement marked for checking).
+  and a DSP running fixed microcode from ROM
+  (Wii U, by a statement in [WiiUBrew, "Hardware/DSP"](https://wiiubrew.org/w/index.php?oldid=4300) marked for
+  checking).
   The first is where high-level against low-level emulation matters most.
 
 #### GameCube and Wii
@@ -751,9 +779,10 @@ This note is not legal advice.
 - KallistiOS's sound initialisation loads its own stream driver into sound RAM and "replaces the AICA program"
   ([KallistiOS, `kernel/arch/dreamcast/sound/snd_iface.c`](https://github.com/KallistiOS/KallistiOS/blob/9926b70aeafc8398675caef98813f10d15d8a329/kernel/arch/dreamcast/sound/snd_iface.c),
   commit `9926b70a`, observed).
-  So the ARM7's program is supplied by the software running on the SH-4,
-  and the AICA joins the uploaded-program class (inference). dreamcast.wiki has no "AICA" page
-  (its API reports the page missing), and Comstedt's site has none either.
+  So at least homebrew built on KallistiOS supplies the ARM7's program from the SH-4,
+  and the AICA joins the uploaded-program class (inference);
+  no source read says what retail games do. [dreamcast.wiki](https://dreamcast.wiki/Hardware_overview) has no "AICA"
+  page (its API reports the page missing), and [Comstedt's site](http://mc.pp.se/dc/) has none either.
 
 #### PSP and Vita
 
@@ -869,7 +898,9 @@ key layout, or secret value.
   ([3dbrew, "NCCH"](https://www.3dbrew.org/w/index.php?oldid=23516));
   [YAPSPD, 23.1.1.1](https://hitmen.c02.at/files/yapspd/psp_doc/chap23.html) marks a UMD's `EBOOT.BIN` encrypted
   but not its `BOOT.BIN`; [Vita Development Wiki, "Security"](https://wiki.henkaku.xyz/vita/Security);
-  and Free60 says "Section contents are encrypted", under the page heading "File Format Speculation"
+  and Free60 says "Section contents are encrypted",
+  under "Program / Section content" on the page titled "File Format Speculation",
+  which adds that debug XEX files can be unencrypted
   ([Free60, "XEX"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/System-Software/Formats/XEX.md)).
   The XEX page also holds a C listing under "Cryptography", which was neither read nor used.
 - The Wii U encrypts its retail content too:
@@ -881,7 +912,7 @@ key layout, or secret value.
 - Citra's FAQ also says it runs encrypted 3DS games only with keys the user dumps
   ([Citra site archive, FAQ](https://citra.azahar-emu.org/wiki/faq/)).
   This sorts the systems by [R0-02](R0-02-legal-baseline.md)'s options 1 to 3 (inference);
-  option 11 below recommends one, and the choice is the owner's.
+  [option 11](#11-plain-images-only-or-content-that-the-user-decrypts) recommends one, and the choice is the owner's.
 
 #### Boot chains and security processors
 
@@ -892,7 +923,7 @@ key layout, or secret value.
   and the 3DS from a boot ROM that checks a signed firmware image:
   the page says the header's RSA-2048 signature is checked when the boot ROM or Process9 launches a FIRM image
   ([3dbrew, "FIRM"](https://www.3dbrew.org/w/index.php?oldid=22193)).
-  The Xbox boots from bootstrap code in its I/O chip, which a Microsoft patent describes
+- The Xbox boots from bootstrap code in its I/O chip, which a Microsoft patent describes
   ([US 6,907,522](https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/6907522), Microsoft,
   patent office copy), and the Xbox 360 from a loader inside the CPU
   ([Free60, "Boot_Process"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/System-Software/Boot_Process.md)).
@@ -958,14 +989,13 @@ key layout, or secret value.
   (drive firmwares listed for dumping).
   They are named without links because they are closed.
 - These pages are not to be opened either, but the guard cannot match them, so they are named here instead,
-  without links: WiiUBrew "Boot0" and "Boot1"
-  (step-by-step pseudo-code of the boot ROM and loader, written from a dump;
-  a pattern short enough to block them would also block the cited "Boot process");
-  the raw `index.php?title=` forms of every page above, since a register pattern cannot hold "?";
-  ps2tek's "BIOS File Structure" section, which sits on the single page with the sections cited here;
-  Free60's 1BL and CB pseudo-code pages, linked from the cited "Boot_Process"
-  (not opened, names not recorded);
-  and the Citra FAQ's guide to dumping AES keys and Cemu's wiki page on keys (not opened).
+  without links:
+  - WiiUBrew "Boot0" and "Boot1": step-by-step pseudo-code of the boot ROM and loader, written from a dump;
+    a pattern short enough to block them would also block the cited "Boot process".
+  - The raw `index.php?title=` forms of every page above, since a register pattern cannot hold "?".
+  - ps2tek's "BIOS File Structure" section, which sits on the single page with the sections cited here.
+  - Free60's 1BL and CB pseudo-code pages, linked from the cited "Boot_Process" (not opened, names not recorded).
+  - The Citra FAQ's guide to dumping AES keys, and Cemu's wiki page on keys (not opened).
 - WiiBrew "Boot0" stays open and cited; only its link to a dump is a hazard,
   and it is not to be followed. xemu's "Required Files" stays open: its MD5 values are hashes, not keys,
   and this note records none of them.
@@ -1003,7 +1033,8 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 ### 3. High-level emulation of audio DSP programs
 
 - **What:** recognise the program a game uploads to its audio DSP and reimplement its effect on the host.
-- **Costs:** every program family must be identified; games with an unusual program break (Citra's account).
+- **Costs:** every program family must be identified; games with an unusual program break
+  ([Citra site archive, "HLE Audio Comes to Citra"](https://citra.azahar-emu.org/entry/hle-audio-comes-to-citra/)).
 - **Gains:** no DSP ROM needed; fast.
 - **Used by:** Citra by default in 2018
   ([Citra site archive, "Accurate Audio Emulation Has Arrived"](https://citra.azahar-emu.org/entry/accurate-audio-emulation/));
@@ -1014,9 +1045,11 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 ### 4. Low-level emulation of audio DSPs
 
 - **What:** emulate the DSP's instruction set, memory, and peripherals, and run the uploaded program.
-- **Costs:** "all or nothing" by Citra's account; on the GameCube and Wii, needs the DSP's ROMs or a replacement,
-  which the [register](../../../.claude/hooks/source-register.txt) closes,
-  and on the 3DS the program the title supplies; slow at first release, by Citra's account.
+- **Costs:** "all or nothing" by Citra's account
+  ([Citra site archive, "Accurate Audio Emulation Has Arrived"](https://citra.azahar-emu.org/entry/accurate-audio-emulation/));
+  on the GameCube and Wii, needs the DSP's ROMs or a replacement, which the
+  [register](../../../.claude/hooks/source-register.txt) closes, and on the 3DS the program the title supplies; slow at
+  first release, by Citra's account.
 - **Gains:** runs any program; serves as the reference for checking high-level emulation.
 - **Used by:** Dolphin; Citra, Azahar's predecessor, from 2018
   ([Dolphin wiki, "Audio Emulation"](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation);
@@ -1102,18 +1135,30 @@ These are recommendations for the owner, who decides; the pull request lists the
   at the cleanest boundary each offers: library and kernel exports on the PSP, Vita, Wii U, 3DS, and Xbox 360;
   kernel exports on the Xbox and IOS requests on the Wii; and nothing on the GameCube,
   whose games carry their own operating system.
+
   It needs no firmware, which the project never holds and whose law [R0-02](R0-02-legal-baseline.md) records
-  as unsettled, and every open-tier emulator read takes this route except PCSX2.
-  Low-level emulation of maker firmware is not built; if it is ever needed,
-  it waits for the firmware ADR named under Implications, because it needs a BIOS, boot ROM, flash,
-  or OTP image from a console, and the boot chains include security processors and per-console secrets.
+  as unsettled, and every open-tier emulator read takes this route except
+  [PCSX2](https://github.com/PCSX2/pcsx2/blob/840774630f7a1a456e50575df62ec0b72cc00a98/README.md).
+
+  Low-level emulation of maker firmware is not built.
+  If it is ever needed, it waits for the firmware ADR named under [Implications](#implications-for-rustalgia),
+  because it needs a BIOS, boot ROM, flash, or OTP image from a console,
+  and the boot chains include security processors and per-console secrets.
 - **Audio DSPs (options 3 and 4):** high-level emulation of DSP programs as the default on the GameCube, Wii, Wii U,
-  3DS, and Xbox, as Dolphin does by default and Citra did in 2018; it needs no DSP ROM,
-  and the register closes the replacement ROM.
+  and 3DS, as
+  [Dolphin](https://github.com/dolphin-emu/dolphin/blob/32a2b828e20612807531592002da4e7296fd2207/Source/Core/Core/Config/MainSettings.cpp)
+  does by default and [Citra](https://citra.azahar-emu.org/entry/accurate-audio-emulation/) did in 2018; it needs no DSP
+  ROM, and the register closes the replacement ROM.
+  The Xbox's two DSPs and the Dreamcast's ARM7 also run uploaded programs,
+  but no source read shows high-level emulation of either working,
+  so for them the choice waits for [`R1-23`](../../roadmap/research.md#system-family-surveys)
+  and [`R1-22`](../../roadmap/research.md#system-family-surveys).
   A low-level DSP core comes later, as a test reference only, run where the program is legally to hand,
-  since Dolphin's wiki says sound issues need confirming with low-level emulation and Citra calls it all or nothing.
+  since [Dolphin's wiki](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation) says sound issues need confirming
+  with low-level emulation and Citra calls it all or nothing.
 - **Shaders (options 5 and 6):** specialised shaders, cached per game, driver, and emulator version,
-  with a general shader standing in while they compile, as Dolphin's hybrid mode does;
+  with a general shader standing in while they compile, as Dolphin's hybrid mode does
+  ([Dolphin blog, "Ubershaders"](https://web.archive.org/web/20261103201859/https://dolphin-emu.org/blog/2017/07/30/ubershaders/));
   Vulkan pipeline caches and the graphics pipeline library shorten compiles.
   Specialised shaders are fastest once compiled,
   and the general shader removes compile stutter at a per-pixel cost that is acceptable only for the frames it covers.
@@ -1123,23 +1168,32 @@ These are recommendations for the owner, who decides; the pull request lists the
   24-bit depth), with fragment-shader interlock, dual-source blending,
   and logic operations detected at start-up and an exact slower path where they are missing.
   Host blend units saturate, and 32-bit floats cannot hold the 24-bit integer arithmetic
-  (Dolphin blog, "Pixel Processing Problems").
-- **Floating point (option 8):** a bit-exact software model of each guest's arithmetic in the interpreter,
-  as the reference; the recompiler uses the host FPU with the guest's mode corrections
+  ([Dolphin blog, "Pixel Processing Problems"](https://web.archive.org/web/20260701132119/https://dolphin-emu.org/blog/2014/03/15/pixel-processing-problems/)).
+- **Floating point (option 8):** a software model of each guest's arithmetic in the interpreter,
+  as exact as the published and tested behaviour allows, as the reference;
+  the recompiler uses the host FPU with the guest's mode corrections
   (flush-to-zero, rounding, clamping),
   is tested against that model, and keeps per-game settings only where a measured mismatch remains.
-  Both PCSX2 and Dolphin carry per-game databases, with hundreds of rounding overrides in PCSX2's,
-  and PCSX2's software-arithmetic work reports games fixed that per-game settings had patched (a lead).
+  The exact bits are not yet known everywhere: the PS2's last bit, its division, Gekko's estimates,
+  and the SH-4's approximate instructions (findings above).
+  Both
+  [PCSX2](https://github.com/PCSX2/pcsx2/blob/840774630f7a1a456e50575df62ec0b72cc00a98/bin/resources/GameIndex.yaml) and
+  [Dolphin](https://github.com/dolphin-emu/dolphin/tree/32a2b828e20612807531592002da4e7296fd2207/Data/Sys/GameSettings)
+  carry per-game databases, with hundreds of rounding overrides in PCSX2's, and
+  [PCSX2's software-arithmetic work](https://github.com/PCSX2/pcsx2/pull/12001) reports games fixed that per-game
+  settings had patched (a lead).
 - **Execution (option 9):** an interpreter first, as the reference,
   then a recompiler through an intermediate form for the fast guests.
   An interpreter cannot keep up with the era's faster guests,
-  one intermediate form can serve the Xbox 360's and the PS3's PowerPC cores
-  (Xenia, `docs/cpu.md`), and it gives one optimiser for several host back ends.
+  one intermediate form can serve the Xbox 360's and the PS3's PowerPC cores (inference from
+  [Xenia, `docs/cpu.md`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/docs/cpu.md)),
+  and it gives one optimiser for several host back ends.
 - **Threads (option 10):** deterministic interleaving on one host thread as the default for asymmetric guests
   (PS2, Wii, PSP),
   and host threads for the cores of symmetric multi-core guests
   (Xbox 360, Wii U, 3DS, Vita)
-  with the guest's memory ordering, plus the GPU and DSP on their own threads where Dolphin shows that works.
+  with the guest's memory ordering, plus the GPU and DSP on their own threads
+  where [Dolphin's FAQ](https://dolphin-emu.org/docs/faq/) shows that works.
   Interleaving is deterministic, which testing needs, but it is slower for symmetric guests.
 - **Content (option 11):** accept content the user has decrypted with their own tools, never embed or derive keys,
   and leave decryption out of the emulator: the first variant of
@@ -1147,10 +1201,11 @@ These are recommendations for the owner, who decides; the pull request lists the
   recorded there.
   Plain images alone leave out six of the ten systems
   (Wii, Wii U, 3DS, PSP, Vita, Xbox 360); the owner decides among R0-02's options.
-- **AMD's R600 and R700 register guides:** the copies outside AMD's portal are maker documents on third-party hosts,
-  which the proposed amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) recommends treating
-  as closed unless the maker's release is shown;
-  until then the Wii U GPU's register layout is learned from the open-tier Cemu and decaf-emu.
+- **AMD's R600 and R700 register guides:** this note treats the copies outside AMD's portal as closed,
+  because they are maker documents on third-party hosts and the maker's release of them was not shown;
+  the pull request lists this as a process call.
+  AMD may have released them through X.Org (from memory); that release, if shown, would reopen them.
+  Until then the Wii U GPU's register layout is learned from the open-tier Cemu and decaf-emu.
 
 ## Implications for Rustalgia
 
@@ -1180,22 +1235,20 @@ These follow from the findings (inference).
 
 ## Open questions
 
-- Do the PS2's vector units round exactly as the core's FPU does?
-  No hardware results exist in the sources searched; tests run on a PS2, which the project does not own,
-  would answer it ([`R1-19`](../../roadmap/research.md#system-family-surveys)).
+- Does VU1 round as VU0 does, and what rule sets the last bit after a round towards zero?
+  The console results in
+  [ps2autotests, `tests/vu`](https://github.com/unknownbrackets/ps2autotests/tree/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu)
+  cover VU0's multiply and add only; tests run on a PS2, which the project does not own, would answer it
+  ([`R1-19`](../../roadmap/research.md#system-family-surveys)).
 - Do the Xbox 360's NJ default and its per-instruction flushing match Xenia Canary's model?
   Tests on an Xbox 360, which the project does not own, would answer it
   ([`R1-23`](../../roadmap/research.md#system-family-surveys)).
-- Does the Wii U's DSP run fixed microcode from ROM?
-  WiiUBrew still marks the statement for checking, and only firmware analysis, which is closed to the project,
-  or hardware tests on a Wii U would settle it ([`R1-17`](../../roadmap/research.md#system-family-surveys)).
-  High-level emulation of AX does not depend on it (Cemu).
 - Do Dreamcast games depend on the SH-4's approximate inner-product and matrix results?
-  The only SH-4 test vectors found were generated by another emulator;
-  running games against an exact model
+  The only SH-4 test vectors found were generated by another emulator
+  ([SingleStepTests sh4 README](https://github.com/SingleStepTests/sh4/blob/48975cb1a9569abb5a0cba587013ea54edf79100/README.md)),
+  and the issue trackers of walled-tier Dreamcast emulators were not searched, because the guard blocks them.
+  Running games against an exact model
   and comparing them with a Dreamcast would answer it ([`R1-22`](../../roadmap/research.md#system-family-surveys)).
-- How does iOS's limit on dynamic recompilation affect this era?
-  [`R3-01`](../../roadmap/research.md#phase-3-host-platforms) answers it.
 
 ## Sources
 
@@ -1388,7 +1441,6 @@ Community references:
   ["APU"](https://xboxdevwiki.net/index.php?oldid=7415)
   (rev 7415), and ["Xbox Input Devices"](https://xboxdevwiki.net/index.php?oldid=7426) (rev 7426).
 - Free60 wiki, commit `f3d099ff` (2026-11-08):
-  ["Xenon (CPU)"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/Hardware/Console/Xenon_%28CPU%29.md),
   ["Xenos (GPU)"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/Hardware/Console/Xenos_%28GPU%29.md),
   ["Hypervisor"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/Hypervisor.md),
   ["NAND"](https://github.com/free60project/wiki/blob/f3d099ff10b732c6b5685ffbb1a9f50c66ae08b1/docs/Hardware/Console/NAND/index.md),
@@ -1419,9 +1471,14 @@ Tests:
 - ps2autotests, commit `97469ffb` (2019-11-16):
   [README](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/README.md),
   [`tests/cpu/ee_fpu/arithmetic.expected`](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/cpu/ee_fpu/arithmetic.expected),
+  [`tests/vu/games/triace.cpp`](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu/games/triace.cpp)
+  and
+  [`triace.expected`](https://github.com/unknownbrackets/ps2autotests/blob/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu/games/triace.expected),
   and the
   [`tests/dma`](https://github.com/unknownbrackets/ps2autotests/tree/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/dma)
-  listing.
+  and
+  [`tests/vu`](https://github.com/unknownbrackets/ps2autotests/tree/97469ffbed8631277b94e28d01dabd702aa97ef3/tests/vu)
+  listings.
 - [SingleStepTests sh4 README](https://github.com/SingleStepTests/sh4/blob/48975cb1a9569abb5a0cba587013ea54edf79100/README.md),
   commit `48975cb1`.
 - [Teakra README](https://github.com/wwylele/teakra/blob/3d697a18df504f4677b65129d9ab14c7c597e3eb/README.md),
@@ -1445,9 +1502,7 @@ Emulator projects' documentation, data, and code (implementations' accounts):
   commit `7dac5ec7`:
   [`Source/Core/Common/FloatUtils.cpp`](https://github.com/dolphin-emu/dolphin/blob/7dac5ec790496bb0b10944bcbf7eade65aad671d/Source/Core/Common/FloatUtils.cpp);
   [pull request #390](https://github.com/dolphin-emu/dolphin/pull/390),
-  [pull request #12259](https://github.com/dolphin-emu/dolphin/pull/12259), pull requests
-  [#12209](https://github.com/dolphin-emu/dolphin/pull/12209) and
-  [#12249](https://github.com/dolphin-emu/dolphin/pull/12249), and
+  [pull request #12259](https://github.com/dolphin-emu/dolphin/pull/12259), and
   [commit `59e7c193`](https://github.com/dolphin-emu/dolphin/commit/59e7c1938079503724b68d78e1e5eb552cf056b7), read
   through GitHub's interface for programs.
 - Dolphin, [FAQ](https://dolphin-emu.org/docs/faq/); wiki,
@@ -1467,8 +1522,9 @@ Emulator projects' documentation, data, and code (implementations' accounts):
   [`docs/cpu.md`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/docs/cpu.md),
   [`docs/kernel.md`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/docs/kernel.md),
   [`.github/CONTRIBUTING.md`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/.github/CONTRIBUTING.md),
+  [`src/xenia/apu/audio_system.cc`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/src/xenia/apu/audio_system.cc),
   and
-  [`src/xenia/apu/audio_system.cc`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/src/xenia/apu/audio_system.cc);
+  [`src/xenia/cpu/ppc/ppc_emit_altivec.cc`](https://github.com/xenia-project/xenia/blob/95a5c3ee250f80c3b9d139658649d9ffb6db3eec/src/xenia/cpu/ppc/ppc_emit_altivec.cc);
   ["Leaving No Pixel Behind"](https://xenia.jp/updates/2021/04/27/leaving-no-pixel-behind-new-render-target-cache-3x3-resolution-scaling.html)
   (2021-04-27).
 - Xenia Canary, commit `a4ef31cd`:
@@ -1478,7 +1534,13 @@ Emulator projects' documentation, data, and code (implementations' accounts):
 - Cemu, commit `2f49c079`:
   [`src/Cafe/OS/libs/snd_core/`](https://github.com/cemu-project/Cemu/tree/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/OS/libs/snd_core)
   and
-  [`src/Cafe/Filesystem/FST/FST.cpp`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/Filesystem/FST/FST.cpp).
+  [`src/Cafe/Filesystem/FST/FST.cpp`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/Filesystem/FST/FST.cpp),
+  and the file name
+  [`src/Cafe/HW/Latte/ISA/LatteReg.h`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/HW/Latte/ISA/LatteReg.h)
+  from the repository listing.
+- decaf-emu, commit `e6c528a2` (2023-11-09): the
+  [`src/libgpu/latte/`](https://github.com/decaf-emu/decaf-emu/tree/e6c528a20a41c34e0f9eb91dd3da40f119db2dee/src/libgpu/latte)
+  file listing only.
 - KallistiOS, commit `9926b70a`:
   [`kernel/arch/dreamcast/sound/snd_iface.c`](https://github.com/KallistiOS/KallistiOS/blob/9926b70aeafc8398675caef98813f10d15d8a329/kernel/arch/dreamcast/sound/snd_iface.c).
 - PPSSPP: [README](https://github.com/hrydgard/ppsspp/blob/77106069bf68fd80d4a7a5a519ae9d06b5677c4b/README.md),
