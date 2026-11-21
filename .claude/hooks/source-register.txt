@@ -62,10 +62,10 @@ walled | liji32/sameboy/tree/master/ios | Expat plus app-store condition | - | 2
 walled | liji32/sameboy/blob/master/ios | Expat plus app-store condition | - | 2026-11-17 | licence file
 
 # Emulators: walled tier. Open source under a licence that is not compatible with GPL-3.0, or not resolved.
-walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-17 | wiki FAQ
-walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | tasemulators/desmume | GPL-2.0, only or later not stated | - | 2026-11-20 | licence, README, wiki FAQ
+walled | pcsx-redux/pcsx-redux | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | grumpycoders/pcsx-redux | GPL-2.0, only or later not stated | old address | 2026-11-17 | redirect
-walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-17 | licence file
+walled | flyinghead/flycast | GPL-2.0, only or later not stated | - | 2026-11-20 | licence file, README
 walled | pokemon-speedrunning/gambatte-core | GPL-2.0 | fork of Gambatte | 2026-11-17 | README
 walled | libretro/gambatte-libretro | GPL-2.0 | fork of Gambatte | 2026-11-17 | licence metadata
 walled | rileytestut/delta | AGPL-3.0 | - | 2026-11-17 | README
@@ -561,7 +561,7 @@ open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies pag
 open | no-intro.org | own data licence, 2026-09-11 | database of hashes; no games | 2026-11-19 | home, terms pages
 open | redump.org | none; bare copyright notice | disc hash database; staff dispute | 2026-11-19 | front, downloads
 open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
-open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-19 | FAQ, refused on re-check
+open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-20 | FAQ; answers intermittently, HTTP 500
 open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | required-files page
 open | segaxtreme.net | forum terms | forum, a lead | 2026-11-19 | resources index, terms
 open | mail.atariage.com | none stated | fan transcription of a press release, a lead | 2026-11-19 | page
