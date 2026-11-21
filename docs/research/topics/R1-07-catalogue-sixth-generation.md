@@ -11,20 +11,27 @@ date: 2026-11-20
 
 This note asks which dedicated consoles and handhelds belong to the era of the sixth-generation primer,
 and what hardware, protection, firmware, and sources each has.
-It lists the seven home systems and three handheld families that this note places here by the roadmap's survey rule
-(Dreamcast, PlayStation 2, GameCube, Xbox, Wii, Wii U, Xbox 360; PSP, PlayStation Vita, and the Nintendo 3DS family),
-with their models and combined units, and 22 rows of minor, educational,
+It lists the seven home systems and three handheld families that this note places here
+(Dreamcast, PlayStation 2, GameCube, Xbox, Wii, Wii U, Xbox 360; PSP, PlayStation Vita, and the Nintendo 3DS family):
+most by the roadmap's era rules, and the Xbox 360 and 3DS family by the placement of the change that set the rule
+for surveys spanning several primers.
+It adds their models and combined units, and 22 rows of minor, educational,
 and boundary systems first sold from 2000 to 2011.
 Emulator hosts and cancelled systems are listed apart.
-Every major system here protects its software in some way: the Dreamcast by its disc format, scrambled executables,
+Every major home system here protects its software in some way: the Dreamcast by its disc format, scrambled executables,
 and region lock-out; the PlayStation 2 by copy protection in its drive and MagicGate memory cards;
-the GameCube by disc authentication and an XOR-encrypted disc and IPL; the Xbox, Wii,
-and Xbox 360 by boot chains that start in a chip and check hashes or signatures;
-and the Wii U by cryptographic engines in a security processor, though no source read describes its boot
-(rows below; the grouping is the note's).
-For the minor systems Wikipedia is the only source found, apart from Sega Retro's page on the Advanced Pico Beena.
-No maker document was found for the era's main GPUs among the hubs read and the register's maker lines;
-the register lists one paper by staff of the PICA200's maker, which was not read (research log).
+the GameCube by disc authentication and an XOR-encrypted disc and IPL; the Xbox by a chain from its MCPX boot ROM
+(none on the MCPX X2)
+that decrypts each stage, checks the flash loader by hash on MCPX 1.1, and runs only signed executables;
+the Wii and Xbox 360 by boot chains that start in a chip and check hashes or signatures;
+and the Wii U by a security processor (Starbuck) that WiiUBrew lists with AES and SHA-1 engines,
+though no source read says how they are used or describes its boot (rows below; the grouping is the note's).
+For the minor systems, Wikipedia is the only source found among the register's hubs,
+apart from Sega Retro's page on the Advanced Pico Beena (research log).
+No maker document for the era's main GPUs is available on the hubs read or at the register's maker lines;
+the registered PS2 Linux site says Sony's system manuals, the Graphics Synthesizer's among them,
+shipped with its Linux kit, and the register lists one paper by staff of the PICA200's maker, which was not read
+(research log).
 This note is not legal advice.
 
 ## Scope
@@ -43,63 +50,77 @@ This note is not legal advice.
 - How claims were checked: two research agents, one for home systems and one for handhelds,
   read every page as raw text on 2026-11-20, Wikipedia through its raw wikitext;
   no value here comes from a summarising tool.
-  One independent verification pass has run so far: seven verifiers, each taking a part of the note,
-  fetched the sources again and tested each claim and quotation.
-  Each of their findings was checked against the raw source once more before the text was changed;
-  the corrections were applied, and the claims they could not check are listed in the pull request.
+  Two independent verification passes have run so far, each of seven verifiers taking a part of the note;
+  each verifier fetched the sources again and tested each claim and quotation.
+  Each finding was checked against the raw source once more before the text was changed; the corrections were applied,
+  and the pull request lists the claims the verifiers could not check.
   Wikipedia is a tertiary source: a value with no hub named rests on the article's own text,
   whose citations were not followed.
   Markers follow the research guide (`docs/research/README.md`,
   "Claim status"): "(inference)" marks reasoning, "(from memory)" a claim no fetched page confirmed,
   "(research log)" an event while gathering the evidence,
-  and "(lead)" a fact from a personal site that the register marks as a lead (Comstedt and Copetti), not relied on.
+  and "(lead)" a fact found only on Comstedt's or Copetti's site, which the register marks as leads; not relied on.
+  In the Hub column, "(lead)" marks such a site.
   A Wikipedia article's opening paragraphs are called its "opening", to keep "lead" for the marker.
   A statement that nothing was found names what was searched;
-  "not stated" and "not established" in a table mean the system's article and its hub, where one is named,
-  give no value.
+  "not established" in a table means the system's article and its hub, where one is named, give no value.
+  Memory sizes that sources write in KB or MB are given in KiB and MiB, reading them as binary (inference);
+  storage and disc capacities keep the source's decimal unit.
 - What was not opened: firmware, BIOS or IPL images, key and exploit pages, bootloader listings, games,
-  maker manuals hosted by others, and emulator code.
+  maker manuals hosted by others, and emulator code; the XboxDevWiki boot page,
+  which holds bootloader listings after its prose, was read for its prose only.
   One fuse page, Free60's, was opened during research before it was found to show a console's key material;
-  nothing from it is recorded or cited, and it was not opened again.
+  nothing from it is recorded or cited, and it was not opened again (research log).
   Where a hub page described a security mechanism, only its prose paragraphs were read, and no key value was recorded.
 
 ## Findings
 
 ### How the catalogue is built
 
-- An era holds the systems whose family survey depends on its primer (roadmap, "Hardware primers").
-  That rule puts in this era three systems that Wikipedia's infoboxes place in the seventh and eighth generations,
-  the Wii, Wii U, and Xbox 360, and the PSP, Vita, and 3DS families; it leaves the PlayStation 3 to `R1-04`
-  (roadmap, `R1-21`).
-- Where a survey depends on more than one primer
-  (`R1-13`, `R1-19`, `R1-22`, `R1-23`),
-  this note takes only the survey's systems sold in the years of this era; that tie-break is the note's own rule.
-- Systems that no survey names are placed here by their years of sale, 1998 to 2013, unless `R1-05` already lists them.
+- An era holds the systems whose family survey depends on its primer; where a survey depends on more than one primer,
+  each of its systems belongs to the era of its own generation,
+  and the survey depends on the other primers for the hardware its systems contain or carry over
+  (roadmap, "Hardware primers").
+- The first rule places here the systems of `R1-17` and `R1-20`, whose surveys depend on `R1-03` alone,
+  although Wikipedia's infoboxes put the Wii and PSP in the seventh generation and the Wii U and Vita in the eighth;
+  it leaves the PlayStation 3 to `R1-04` (roadmap, `R1-21`).
+- The second rule places the PlayStation 2 (`R1-19`), the Dreamcast (`R1-22`), and the Xbox (`R1-23`) here,
+  all sixth generation by their infoboxes.
+  Read alone, it does not settle the 3DS family
+  (`R1-13`, on `R1-02` and `R1-03`),
+  whose eighth generation matches neither primer's title, or the Xbox 360
+  (`R1-23`, on `R1-03` and `R1-04`), a seventh-generation system (inference).
+  The change that added the rule places both here, with `R1-02` for the DS hardware inside the 3DS,
+  and starts `R1-04` at the Xbox One (pull request #22, "Decisions for you"); this note follows it.
+- Systems that no survey names are placed here by their years of sale, 1998 to 2013,
+  a window that is this note's own rule, unless `R1-05` already lists them.
   `R1-06` (its draft, on its branch) also lists five of them, the GP32, N-Gage, Tapwave Zodiac, Leapster, and Gizmondo;
   they are kept here only as flagged overlaps, and the owner decides which catalogue keeps them ("Boundary cases").
 - A row is one machine or one compatible family;
-  the handheld identity table gives each model its own row because their release dates differ.
+  in the handheld identity table most models get their own row because their release dates differ,
+  and models released close together share one.
   Revisions, regional models, and combined units, meaning a console built into another consumer device,
   are listed under the machine they run.
 - "Class": D is a dedicated console, "D (variants)" a row of its models, and "D (toy)" a toy sold as one;
   "combined" a dedicated console inside another device;
   "add-on" a unit attached to a console to run another system's games;
-  "boundary" a case the owner's rule does not settle, with the other kind of device in parentheses.
+  "boundary" a case the owner's rule does not settle, with the other kind of device in parentheses, or,
+  where there is none, a reason in the bullets.
 - "Survey" names the family survey whose title includes the system or its family; a dash means none does.
-- "Hub" names the best source other than Wikipedia, as registered, preferring an open-tier hub to a lead;
-  a dash means Wikipedia was the only one found.
+- "Hub" names the best source other than Wikipedia, as registered,
+  preferring a registered reference to a registered lead; a dash means Wikipedia was the only one found.
 - Regions: NA North America, US United States, EU Europe, PAL the PAL markets, UK United Kingdom, JP Japan,
   KR South Korea, CN China, HK Hong Kong, AU Australia, BR Brazil, MX Mexico, CA Canada.
 
 ### Home consoles
 
-Identity (each system's Wikipedia article, infobox):
+Identity (each system's Wikipedia article, infobox; Katana, Xenon, and the GameCube makers from the article body):
 
 | System (other names) | Maker | First release | Survey | Hub |
 |---|---|---|---|---|
 | Dreamcast (Katana) | Sega | JP 1998-11-27; NA 1999-09-09; EU 1999-10-14; AU 1999-11-30 | R1-22 | Comstedt (lead) |
 | PlayStation 2 | Sony Computer Entertainment | JP 2000-03-04; NA 2000-10-26; EU 2000-11-24 | R1-19 | ps2tek |
-| GameCube (Dolphin, DOL) | Nintendo (ArtX, IBM chips) | JP 2001-09-14; NA 2001-11-18; EU 2002-05-03 | R1-17 | YAGCD |
+| GameCube (Dolphin) | Nintendo (ArtX, IBM chips) | JP 2001-09-14; NA 2001-11-18; EU 2002-05-03 | R1-17 | YAGCD |
 | Xbox | Microsoft | NA 2001-11-15; JP 2002-02-22; PAL 2002-03-14 | R1-23 | XboxDevWiki |
 | Wii (Revolution, RVL) | Nintendo | NA 2006-11-19; JP 2006-12-02; AU 2006-12-07; EU 2006-12-08 | R1-17 | WiiBrew |
 | Xbox 360 (Xenon) | Microsoft | NA 2005-11-22; EU 2005-12-02; JP 2005-12-10 | R1-23 | Free60 |
@@ -121,18 +142,18 @@ Protection and firmware (sources in the bullets below):
 
 | System | Protection | Firmware |
 |---|---|---|
-| Dreamcast | GD-ROM format; scrambled executables; regional lock-out | system ROM and flash |
+| Dreamcast | GD-ROM format; scrambled executables; regional lock-out | BIOS and flash images |
 | PlayStation 2 | copy protection and region lock in the drive; MagicGate memory cards | BIOS of up to 4 MiB |
 | GameCube | disc barcode and drive-side decoding | IPL in an RTC/IPL chip, XOR-encrypted |
-| Xbox | MCPX boot ROM; chain of trust; signed executables; locked hard drive | 256 KiB flash, NT-based kernel |
+| Xbox | MCPX boot ROM; chain of trust, none on X2; signed executables; locked drive | 256 KiB flash, NT-based kernel |
 | Wii | encrypted, hashed, signed disc partitions; checked boot chain on Starlet | IOS on Starlet; System Menu |
 | Xbox 360 | loader in the CPU; encrypted chain, checked by signature and hash; eFuses | hypervisor and kernel |
-| Wii U | region lock; AES and SHA-1 engines in Latte's security processor; eFuses | Wii U system software; Wii mode |
+| Wii U | region lock; security processor listed with AES and SHA-1 engines; eFuses | Wii U system software; Wii mode |
 
 - Dreamcast: memory is 16 MiB main, 8 MiB video, and 2 MiB sound;
   the SH-4 has 8 KiB instruction and 16 KiB data caches and a 128-bit graphics-oriented FPU;
   the PowerVR2 can use deferred shading; the AICA has 64 voices
-  (Wikipedia, "Dreamcast", "Hardware"; Comstedt, "Hardware", lead).
+  (Wikipedia, "Dreamcast", "Hardware"; Comstedt, "Hardware", agrees).
   Sega Retro names the graphics chip PowerVR CLX2 (Sega Retro, "Sega Dreamcast/Technical specifications").
 - The GD-ROM holds up to 1 GB in a double-density area around a single-density one
   (Wikipedia, "GD-ROM", "Specification").
@@ -140,15 +161,16 @@ Protection and firmware (sources in the bullets below):
   and its disc security was undone through its support for the MIL-CD format, by an exploit released in June 2000
   (same article, "Dreamcast console").
   The console also has regional lock-out (Wikipedia, "Dreamcast", "Game library").
-- Sega Retro's technical page gives a 2 MB system ROM and 128 KB of flash, citing Sega documents hosted on Sega Retro,
+- Sega Retro's technical page gives a 2 MiB system ROM and 128 KiB of flash, citing Sega documents hosted on Sega Retro,
   which the register closes; those figures rest on closed material and are not relied on here
   (Sega Retro, technical specifications, citations).
-  The Flycast core's documentation lists the Dreamcast BIOS as optional and offers a high-level BIOS
-  (libretro documentation, "Flycast").
+  The Flycast core's documentation lists the Dreamcast BIOS as optional, offers a high-level BIOS,
+  and names BIOS and flash files (libretro documentation, "Flycast").
 - PlayStation 2: the Emotion Engine is 294.912 MHz in Wikipedia's specifications article and in ps2tek
   (ps2tek, "EE Architecture");
   a 299 MHz figure for later consoles appears untagged in "PlayStation 2", "Hardware",
-  and tagged "Failed verification" in the specifications article, and is not used.
+  and in the specifications article untagged in its overview
+  and tagged "Failed verification" in "Central processing unit"; it is not used.
   Sources disagree on the Graphics Synthesizer:
   147.456 MHz in the specifications article and the body of "PlayStation 2", and 150 MHz in that article's infobox
   (Wikipedia, "PlayStation 2 technical specifications"; "PlayStation 2", "Hardware" and infobox).
@@ -192,7 +214,8 @@ Protection and firmware (sources in the bullets below):
   Starlet, an ARM926EJ-S at 243 MHz inside Hollywood, handles input, output, and security, and the DSP runs at 121.5 MHz
   (WiiBrew, "Hardware" and "Hardware/Starlet").
   The boot chain starts in a mask ROM on Starlet, which checks boot1 by hash, and boot1 checks boot2 by signature;
-  IOS and the System Menu are checked when installed, not at launch (WiiBrew, "Boot process").
+  IOS and the System Menu are not checked by signature at launch,
+  and the System Menu's signature is checked only when it is installed (WiiBrew, "Boot process").
   Disc partitions are encrypted and hashed in a four-level SHA-1 tree whose top table is signed,
   and the page also describes unencrypted discs (WiiBrew, "Wii disc").
   Each title names the IOS version it runs on, and GameCube mode runs MIOS (Wikipedia, "Wii system software", "IOS").
@@ -202,15 +225,17 @@ Protection and firmware (sources in the bullets below):
   Sources disagree on its lineage: Wikipedia's "Xenos
   (graphics chip)" bases it on the R400 family, and its specifications article and Free60 relate it to the R500.
   A first-stage loader inside the CPU decrypts the next loader and checks its signature, and later loaders,
-  each checked against a known hash, lead to the hypervisor and kernel (Free60, "Boot process").
+  checked against known hashes or, for the kernel-patch loader, by signature, lead to the hypervisor and kernel
+  (Free60, "Boot process").
   The CPU holds 768 bits of eFuse-based one-time-programmable memory
   (Wikipedia, "Xenon (processor)"),
   and the hypervisor handles encryption and memory protection (Free60, "Hypervisor" and "360 System Software").
   No source read says whether the audio format XMA is decoded by dedicated hardware;
   the specifications article names XMA and Dolby Digital 5.1 only.
-- Wii U: memory is 2 GiB of DDR3, half reserved for the system, and Latte holds 32 MiB of eDRAM,
-  figures that Wikipedia marks as unconfirmed by the makers
-  (Wikipedia, "Wii U", "Console", note "Unconfirmed hardware");
+- Wii U: memory is 2 GiB of DDR3, half reserved for the system
+  (Wikipedia, "Wii U", "Console"),
+  and Latte holds 32 MiB of eDRAM, a figure that, with the clocks, Wikipedia marks as unconfirmed by the makers
+  (same section, note "Unconfirmed hardware");
   WiiUBrew gives 1243.125 MHz for Espresso and 549.999 MHz for the GPU, citing a researcher's social-media posts
   (WiiUBrew, "Hardware").
   The Latte chip holds a GX2 GPU and a GX GPU for Wii games (Wikipedia, "Wii U", "Console").
@@ -225,7 +250,7 @@ and "Panasonic Q"; "Game Boy Player"; "Wii"; "Xbox 360 technical specifications"
 |---|---|---|---|---|
 | Dreamcast models (R7, Divers 2000 CX-1, editions) | Sega | 1998 to 2001 | Dreamcast | D (variants); CX-1 combined |
 | PlayStation 2, original case (SCPH-10000 to 500xx) | Sony | 2000 to 2004 | PlayStation 2 | D |
-| PlayStation 2 slimline (SCPH-700xx to 9000x) | Sony | EU 2004-10-29 to 2013 | PlayStation 2 | D |
+| PlayStation 2 slimline (SCPH-700xx to 9000x) | Sony | 2004-10-29 to 2013 | PlayStation 2 | D |
 | PSX digital video recorder (DESR models) | Sony | JP 2003-12-13 | PlayStation 2 | combined |
 | VOD10PS2 car DVD player | Audiovox | US 2009 | PlayStation 2 | combined |
 | BRAVIA KDL-22PX300 television | Sony | EU 2010 | PlayStation 2 | combined |
@@ -258,20 +283,21 @@ and "Panasonic Q"; "Game Boy Player"; "Wii"; "Xbox 360 technical specifications"
 
 ### Minor and educational home systems
 
-Every row rests on the Wikipedia article on the system, unless it names another source.
+Every row rests on the Wikipedia article on the system, unless it names another source;
+the Beena's is a section of "Sega Pico".
 
 | System (other names) | Maker | First release | CPU | Media | Class |
 |---|---|---|---|---|---|
 | Nuon | VM Labs; Samsung, Toshiba, RCA, Motorola devices | 2000-07 | four MPEs, 54 or 108 MHz | DVD | combined |
 | XaviXPORT (Domyos Interactive System) | SSD Company | US 2004 | 6502 or 65C816 in cartridge | cartridge | D |
 | V.Smile (Motion, PC Pal; Pocket handhelds) | VTech | 2004-08-04 | Sunplus SPG200, 27 MHz | cartridge | D |
-| V.Smile Baby | VTech | 2006 | not stated | cartridge | D |
+| V.Smile Baby | VTech | 2006 | not established | cartridge | D |
 | Advanced Pico Beena (Beena Lite) | Sega Toys | JP 2005-08-06 | ARM7TDMI, 81 MHz | book cartridge | D |
-| E-kara (Pro, N, Mix) | Takara; Hasbro (US) | JP 2000-10-20; US 2001-10-06 | not stated | song cartridge | D (toy) |
+| E-kara (Pro, N, Mix) | Takara | JP 2000-10-20; US 2001-10-06 | not established | song cartridge | D (toy) |
 | Game Wave | ZAPiT Games | CA 2005-10 | Mediamatics 8611 | DVD-ROM | combined |
 | V.Flash (V.Smile Pro) | VTech | 2006-09 | ARM9 (LSI Logic) | CD in a case | D |
 | HyperScan | Mattel | NA 2006-10-23 | Sunplus SPG290, 108 MHz | CD-ROM and RFID cards | D |
-| ClickStart | LeapFrog | 2007 | not stated | cartridge | D |
+| ClickStart | LeapFrog | 2007 | not established | cartridge | D |
 | Zeebo | Zeebo Inc., with Qualcomm | BR 2009-05-25; MX 2009-11-14 | Qualcomm MSM, ARM11, 528 MHz | download | D |
 
 - Nuon devices have four 128-bit VLIW processors, each with local memory and no floating point, 32 MiB of DRAM,
@@ -288,13 +314,13 @@ Every row rests on the Wikipedia article on the system, unless it names another 
   (Wikipedia, "V.Smile", "V.Smile Pocket and V.Smile Cyber Pocket", "Games",
   and "V.Smile Baby Infant Development System").
 - The Advanced Pico Beena's chip is the Applause Technologies AP2010, with 128 KiB of on-chip ROM and 16 KiB of RAM,
-  from the chip maker's archived catalogue; its external SDRAM, which Sega Retro labels 16MB from linked datasheets,
-  comes to 16 Mbit (2 MiB) by the bank layout the page gives
-  (Sega Retro, "Advanced Pico Beena"; calculated from the layout).
-  Sales figures differ: Wikipedia's article gives both a Sega claim of over 350,000 Beena consoles (opening)
+  figures that Sega Retro attributes to the chip maker's product catalogue; its external SDRAM,
+  which Sega Retro labels 16MB beside links to the chips' datasheets, comes to 16 Mbit
+  (2 MiB) by the bank layout the page gives (Sega Retro, "Advanced Pico Beena"; calculated from the layout).
+  Sales figures differ: Wikipedia gives both a Sega claim of over 350,000 Beena consoles
   and a 2010 Sega estimate of 4.1 million, with a 2011 end
-  ("Advanced Pico Beena");
-  Sega Retro gives more than 350,000 by May 2008 and production to 2013 (Wikipedia, "Sega Pico"; Sega Retro, same page).
+  (Wikipedia, "Sega Pico", opening and section "Advanced Pico Beena");
+  Sega Retro gives more than 350,000 by May 2008 and production to 2013 (Sega Retro, same page).
 - The V.Flash's discs are ISO 9660 CDs in plastic shells "without any copy protection mechanism other than a simple
   sensor in the case jacket" (Wikipedia, "V.Flash", "CDs").
 - Zeebo sold games by download over cellular networks, 3G falling back to EDGE or GPRS,
@@ -303,15 +329,17 @@ Every row rests on the Wikipedia article on the system, unless it names another 
   Brazilian units came with three built-in games and Mexican units with five (same article, "Games").
 - The HyperScan's cards hold 96 bytes of user memory each (Wikipedia, "HyperScan", "Hardware").
 - E-kara's main unit is the microphone; its article names no processor
-  (Wikipedia, "E-kara", "Karaoke functions" and infobox).
+  (Wikipedia, "E-kara", "Karaoke functions" and infobox),
+  and Hasbro sold it in the United States (same article, opening).
 - Protection is described for none of these systems other than the V.Flash, Zeebo, and the V.Smile,
-  by a search of each article listed for "protect", "lock", "encrypt", and "security" (research log).
-  The V.Smile's article says its consoles are apparently not region-locked although their BIOS appears region-specific
-  (Wikipedia, "V.Smile", "Region protection and inter-compatibility").
+  by a search of each article listed for "protect", "lock", "encrypt", "security", "piracy", and "copy" (research log).
+  The V.Smile's article says its consoles are apparently not region-locked although their BIOS appears region-specific,
+  a clause it marks as needing a citation (Wikipedia, "V.Smile", "Region protection and inter-compatibility").
 
 ### Handhelds
 
-Identity (each system's Wikipedia article, infobox and model sections):
+Identity (each system's Wikipedia article, infobox and model sections; 3DS-family model codes from 3dbrew, "Hardware",
+"Specifications"):
 
 | System (other names) | Maker | First release | Survey | Hub |
 |---|---|---|---|---|
@@ -341,19 +369,19 @@ Hardware:
 |---|---|---|---|---|
 | PSP | Allegrex and Media Engine (MIPS32), 1 to 333 MHz | 166 MHz, 2 MiB eDRAM | 2 PCM channels (lead) | UMD, MS Duo |
 | PSP Go | as PSP | as PSP | as PSP | 16 GB flash, Memory Stick Micro |
-| PlayStation Vita | 4 Cortex-A9; PSP-family MIPS (lead) | SGX543MP4+ | not established | Vita card, memory card |
+| PlayStation Vita | 4 Cortex-A9; PSP-family MIPS (lead) | SGX543MP4+ | stereo; no chip named | Vita card, memory card |
 | 3DS, 3DS XL, 2DS | 2 ARM11, 268 MHz; ARM946; ARM7TDMI (lead) | PICA200, 268 MHz | DSP; DS unit (lead) | cards; SD |
 | New 3DS family | four ARM11 MPCore, up to 804 MHz | PICA200 | as 3DS | as 3DS; microSD |
 
-Sources: Wikipedia, "PlayStation Portable hardware", "PlayStation Vita", and "New Nintendo 3DS"; 3dbrew, "Hardware";
-Copetti for the cells marked (lead).
+Sources: Wikipedia, "PlayStation Portable", "PlayStation Portable hardware", "PlayStation Vita", "Nintendo 3DS",
+and "New Nintendo 3DS"; 3dbrew, "Hardware"; Copetti for the cells marked (lead).
 
 Protection and firmware:
 
 | System | Protection | Firmware |
 |---|---|---|
 | PSP | Sony-signed code; AES-encrypted UMD; boot ROM in the main chip (lead); region-free | XMB, last 6.61 (2015) |
-| PlayStation Vita | security blocks and TrustZone (lead); region-free | kernel with FreeBSD and NetBSD parts |
+| PlayStation Vita | security blocks with hidden ROM (lead); region-free | kernel with FreeBSD and NetBSD parts |
 | 3DS family | boot ROM checks; signed, AES-CTR-encrypted titles (lead); region lock | four FIRM modes; 11.17.0-50 |
 
 Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each system-software article.
@@ -369,9 +397,11 @@ Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each 
   (Wikipedia, "PlayStation Portable hardware", "CPU"; YAPSPD, chapter 2.1; Copetti, "PlayStation Portable Architecture",
   lead).
 - The PSP's vector unit has no public maker documentation: "Sony did not release any public documentation
-  (nor SDK/toolchain) for the Sony PSP", and vfpu-docs gives a test for each statement it makes (vfpu-docs README).
+  (nor SDK/toolchain)
+  for the Sony PSP", and vfpu-docs backs each statement of its instruction descriptions with a test run on a PSP
+  (vfpu-docs README).
 - PSP games are region-free while UMD films are region-coded (Wikipedia, "Region lock").
-  Copetti describes a hidden 4 KB boot ROM in the main chip
+  Copetti describes "a hidden, undocumented 4 KB ROM inside Tachyon", the main chip
   ("Operating System", "Architecture and design"),
   a boot that continues from NAND flash
   ("Boot process"),
@@ -380,8 +410,9 @@ Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each 
   PPSSPP needs no firmware: "No BIOS file required to play, PPSSPP is an 'HLE' emulator." (PPSSPP README).
 - The PSP Go has no UMD drive and adds Bluetooth; the PSP Street has no Wi-Fi
   (Wikipedia, "PlayStation Portable", "PSP Go (N1000)" and "PSP Street (E1000)").
-- PlayStation Vita: memory is 512 MB plus 128 MB of video memory; the screen is 960 × 544,
-  OLED on the PCH-1000 and LCD on the PCH-2000 (Wikipedia, "PlayStation Vita", "Hardware" and "Revised model").
+- PlayStation Vita: memory is 512 MiB plus 128 MiB of video memory; the screen is 960 × 544,
+  OLED on the PCH-1000 and LCD on the PCH-2000
+  (Wikipedia, "PlayStation Vita", "Hardware", infobox, and "Revised model").
   The processor clock is not settled: Wikipedia gives an "officially supported maximum of 444 MHz",
   and Copetti says it runs "at a clock speed of up to 500 MHz"
   (same article, "Hardware"; Copetti, "PlayStation Vita Architecture", "The main CPU"; lead).
@@ -394,10 +425,10 @@ Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each 
   and does not run Vita games that need the touch screen, rear pad, microphone, or camera
   (Wikipedia, "PlayStation TV", infobox; "PlayStation Vita", "PlayStation TV").
 - Nintendo 3DS: 3dbrew gives the ARM11 cores at twice the ARM9's clock,
-  one core running the system and the other the application, and 6 MB of VRAM in the SoC
+  one core running the system and the other the application, and 6 MiB of VRAM in the SoC
   (3dbrew, "Hardware", table and "SoC").
-  3dbrew attributes two of these statements to "official documents" without saying which
-  (same page, "SoC" and footnotes).
+  3dbrew attributes the dual-core 268 MHz CPU and the core split to "official documents" without naming them;
+  a footnote "Official Documentation" has no anchor in the table (same page, "SoC" and footnotes).
   Copetti adds an ARM7TDMI in the SoC for DS and Game Boy Advance modes (Copetti, "Nintendo 3DS Architecture"; lead).
 - Sources disagree on the 3DS's internal storage,
   2 GB in Wikipedia's 3DS article and 1 GB for the 3DS and 3DS XL in 3dbrew's table
@@ -413,15 +444,17 @@ Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each 
   (Copetti, 3DS, "Audio"; lead).
 - The 3DS has four firmware modes: NATIVE_FIRM, SAFE_MODE_FIRM, TWL_FIRM for DS and DSi games,
   and AGB_FIRM for Game Boy Advance Virtual Console games (Wikipedia, "Nintendo 3DS system software", "Firmware").
-  Its region lock "strictly applies to all software designed for it", with one application excepted,
-  while DS games stay region-free apart from those that cannot run on earlier DS models (Wikipedia, "Region lock").
-  Copetti reports, from 3dbrew, that boot ROMs check each firmware partition and that game data is signed
-  and encrypted with AES in counter mode (Copetti, 3DS, "Boot process" and "Anti-Piracy and Homebrew"; lead).
+  Its region lock "strictly applies to all software designed for it", with one application excepted;
+  the article says the DSi locks only games that cannot run on earlier DS models,
+  and does not say how a 3DS treats DS games (Wikipedia, "Region lock").
+  Copetti reports, from 3dbrew, that the Boot9 ROM checks the firmware partitions' signatures in turn until one passes,
+  and that game data is signed and encrypted with AES in counter mode
+  (Copetti, 3DS, "Boot process" and "Anti-Piracy and Homebrew"; lead).
   Azahar describes itself as a high-level 3DS emulator (Azahar README).
 - New 3DS models run at 804 MHz for the Home Menu and for titles that set a flag, and at 268 MHz otherwise;
-  the 2 MB L2 cache is listed as optional, with its use described on other 3dbrew pages
+  the 2 MiB L2 cache is listed as optional, with its use described on other 3dbrew pages
   (3dbrew, "Hardware", table and paragraphs after it);
-  Wikipedia's infobox gives them 256 MB of memory and 10 MB of VRAM, the VRAM figure unconfirmed by 3dbrew
+  Wikipedia's infobox gives them 256 MiB of memory and 10 MiB of VRAM, the VRAM figure unconfirmed by 3dbrew
   (Wikipedia, "New Nintendo 3DS", infobox).
   Some titles run only on New models (Wikipedia, "Nintendo 3DS", "New Nintendo 3DS").
 - The iQue 3DS XL was the only 3DS model sold in China and had no physical games
@@ -430,20 +463,21 @@ Sources: Copetti for the cells marked (lead); Wikipedia, "Region lock" and each 
 ### Other dedicated handhelds
 
 Every row rests on the Wikipedia article on the system, unless it names another source.
-The first five rows are also in the `R1-06` draft, and the owner decides which catalogue keeps them ("Boundary cases").
+The first five rows are also in the `R1-06` draft, except the Leapster2,
+and the owner decides which catalogue keeps them ("Boundary cases").
 
 | System (other names) | Maker | First release | CPU | Media | Class |
 |---|---|---|---|---|---|
 | GP32 (overlap with `R1-06`) | Game Park | KR 2001-11-23 | Samsung S3C2400X01 (ARM9) | SmartMedia | D |
 | N-Gage; N-Gage QD (overlap) | Nokia | 2003-10-07; 2004 | ARM, 104 MHz | MultiMediaCard | boundary (phone) |
-| Tapwave Zodiac 1, 2 (overlap) | Tapwave | 2003-11-01 | Motorola i.MX-1 (ARM9) | SD, MMC | boundary (PDA) |
-| Leapster; L-Max; Leapster2 (overlap) | LeapFrog | 2003-10-07; 2004; 2008-07-01 | ARCtangent, 96 MHz | cartridge | D |
+| Tapwave Zodiac 1, 2 (overlap) | Tapwave | 2003-10 or 2003-11-01 (note) | i.MX-1 (ARM9) | SD, MMC | boundary (PDA) |
+| Leapster; L-Max (overlap); Leapster2 | LeapFrog | 2003-10-07; 2004; 2008-07-01 | ARCtangent, 96 MHz | cartridge | D |
 | Gizmondo (overlap) | Tiger Telematics | UK 2005-03-19 | Samsung S3C2440 (ARM9) | SD, MMC | D |
 | GameKing (GM-218, GM-219, GM-220, GM-222) | Timetop | 2004-09 | 65C02 | cartridge | D |
 | digiBlast | Nikko | end of 2005 | not established | cartridge | D |
 | Pixter (Color, Pocket, Multi-Media) | Fisher-Price | 2000 | Sunplus 6502; Color: ARM7TDMI, 70 MHz | cartridge | D |
 | Didj; Leapster Explorer | LeapFrog | 2008-08-22; NA 2010 | LF-1000 (ARM9), 393 MHz; ARM9 | cartridge, download | D |
-| LeapPad Explorer | LeapFrog | 2011 | not established | download | boundary (tablet) |
+| LeapPad Explorer | LeapFrog | 2011-08-15 | ARM9 | cartridge, download | boundary (tablet) |
 | Pocket Dream Console; Mi2 | Conny; Planet Interactive | JP 2006-08-03; 2009-10 | SPG240; MIPS | built-in | boundary |
 
 - digiBlast rests on "List of commercial failures in video game consoles", which has the only description found.
@@ -453,10 +487,15 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
   The Mi2 also sold games for download from September 2010 (Wikipedia, "Mi2 (console)").
   The Pocket Dream Console was created by Conny in 2004 and released in Japan in 2006
   (Wikipedia, "Pocket Dream Console").
+  Both are marked boundary because their games are built in or downloaded, with no game media,
+  which the owner's rule does not address (inference).
+  Wikipedia's article on the LeapPad Explorer calls it a tablet (Wikipedia, "LeapPad Explorer", infobox).
 - The N-Gage's infobox names an ARM920T and its text an "ARM4T architecture" processor at 104 MHz,
   running Symbian OS 6.1 (Wikipedia, "N-Gage"); "N-Gage 2.0", planned from 2005 and released in April 2008,
   was a service on Nokia phones, not hardware (same article, "N-Gage 2.0").
-- The Tapwave Zodiac runs Palm OS 5, with Tapwave's own programming interfaces for graphics and sound;
+- The Zodiac's article says it began shipping in October 2003, and its infobox gives 2003-11-01
+  (Wikipedia, "Tapwave Zodiac", opening and infobox).
+  The Tapwave Zodiac runs Palm OS 5, with Tapwave's own programming interfaces for graphics and sound;
   its sales are given as "50,000+" in its infobox and as fewer than 200,000 in a generation table
   (Wikipedia, "Tapwave Zodiac"; "Sixth generation of video game consoles", "Sales").
 - The Gizmondo ran Windows CE; a cheaper model was sold to show advertisements, but the service never launched;
@@ -464,10 +503,12 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
 - The Leapster runs MQX and Macromedia Flash content; the Leapster Explorer runs Didj cartridges but not Leapster ones
   (Wikipedia, "Leapster"; "Leapster Explorer").
 - digiBlast's only description found calls its hardware "similar to the Game Boy Advance"
-  (Wikipedia, "List of commercial failures in video game consoles", "digiBlast"); no article of its own was found.
+  (Wikipedia, "List of commercial failures in video game consoles", "digiBlast");
+  no article of its own was found by a Wikipedia title search for "DigiBlast" and "Digiblast" (research log).
 - The Juice Box (Mattel, 2004) is a children's video player and is left out (Wikipedia, "Juice Box").
-- GP32 games came on SmartMedia cards encrypted to run only from those cards, or tied to the console
-  (Wikipedia, "GP32");
+- GP32 retail games came on SmartMedia cards encrypted to run only from those cards,
+  and downloaded games were encrypted to one console's ID
+  (Wikipedia, "GP32", "Commercial");
   pirated N-Gage games ran on other Nokia phones of the period (Wikipedia, "N-Gage", "Reception and legacy").
   No other protection is described for the N-Gage, Zodiac, Gizmondo, Leapster, or Didj,
   by a search of each article for "protect", "encrypt", "lock", and "DRM" (research log).
@@ -496,11 +537,12 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
 
 | System | Wikipedia generation | Rule that disagrees | Placed |
 |---|---|---|---|
-| Wii; Xbox 360; PSP | seventh | generation | here, by survey (`R1-17`, `R1-23`, `R1-20`) |
-| Wii U; Vita; 3DS family | eighth | generation | here, by survey (`R1-17`, `R1-20`, `R1-13`) |
-| New 2DS XL | eighth | years of sale (2017) | here, by survey `R1-13` |
+| Wii; PSP | seventh | generation | here, by survey (`R1-17`, `R1-20`) |
+| Wii U; Vita | eighth | generation | here, by survey (`R1-17`, `R1-20`) |
+| 3DS family | eighth | `R1-13` depends on `R1-02` and `R1-03` | here, by pull request #22 |
+| New 2DS XL | eighth | years of sale (2017) | here, with the 3DS family |
 | PlayStation 3 | seventh | GPU and years | not here: `R1-04`, by survey `R1-21` |
-| Xbox 360 | seventh | `R1-23` depends on `R1-03` and `R1-04` | here; the `R1-08` draft leaves it to this catalogue |
+| Xbox 360 | seventh | `R1-23` depends on `R1-03` and `R1-04` | here, by pull request #22; the `R1-08` draft agrees |
 | PlayStation TV | Wikipedia: "Microconsole" | owner's host rule | with the Vita, flagged |
 | Dreamcast VMU | sixth | memory card, not a console | with the Dreamcast (from `R1-05`) |
 | GameKing | sixth, by category | 8-bit processor | here, by years (from `R1-05`) |
@@ -534,7 +576,9 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
   by Copetti, the 3DS's ARM7TDMI for DS and Game Boy Advance modes and the Vita's MIPS core for PSP games (lead)
   (rows and findings above).
 - Four major home systems have a boot path whose first stage is code inside a chip: the Xbox's MCPX ROM,
-  the Wii's mask ROM on Starlet, and the Xbox 360's loader in the CPU, each checking what follows, and the GameCube,
+  which decrypts or, on MCPX 1.1, hashes what follows
+  (none on the MCPX X2),
+  the Wii's mask ROM on Starlet and the Xbox 360's loader in the CPU, each checking what follows, and the GameCube,
   whose IPL is decrypted by logic in Flipper.
   The Wii U has a security processor with cryptographic engines, but no source read describes its boot path;
   the PlayStation 2 protects discs in the drive and memory cards through MagicGate;
@@ -556,12 +600,14 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
   Dreamcast pages and Copetti's articles serve as leads; their tiers are in the register and `R0-05`.
 - ps2tek states no origin for its facts; YAGCD's author says it comes from games, patents, and public documents;
   WiiBrew bars leaked kit content, and WiiUBrew forbids leaked information (register lines for each).
-- Every minor home system and every other dedicated handheld rests on Wikipedia alone,
-  apart from Sega Retro's page on the Advanced Pico Beena.
+- Every minor home system and every other dedicated handheld rests on Wikipedia alone among the register's hubs,
+  apart from Sega Retro's page on the Advanced Pico Beena (research log).
 - Hubs that refused automated requests: the Vita Development Wiki and psdevwiki's PSP pages
   (bot challenges), GBATEK's 3DS sound page (HTTP 403), and 3dbrew after its first page (research log).
-- No maker document was found for the PowerVR2, Graphics Synthesizer, Flipper, NV2A, Hollywood, Xenos, Latte,
-  PSP graphics, or SGX543, among the hubs above and the register's maker lines (research log).
+- No maker document for the PowerVR2, Graphics Synthesizer, Flipper, NV2A, Hollywood, Xenos, Latte, PSP graphics,
+  or SGX543 is available on the hubs above or at the register's maker lines (research log).
+  The PS2 Linux site, registered as a copy of Sony's, says six Sony system manuals covering the Emotion Engine,
+  vector units, and Graphics Synthesizer shipped with the Linux kit, copyrighted by Sony (PS2 Linux site, FAQ).
   For the PICA200 the register lists a paper by staff of its maker, DMP, which was not read (register; `R0-05`).
   Sony's archived PSP specification page and Nintendo's 3DS specification pages are maker material that is not
   yet registered, so they are not cited.
@@ -573,9 +619,9 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
 ### Study every catalogued system, or only those with a survey
 
 - **What:** give each row a later study, or limit study to the systems the surveys name.
-- **Costs:** studying every row adds about 30 studies, most resting on Wikipedia; surveys only leaves out Nuon,
-  the XaviXPORT, the Beena, the V.Smile line, and the other minor home systems,
-  and leaves the other handhelds to `R1-25`, which does not depend on `R1-03`.
+- **Costs:** studying every row adds up to 22 studies, one for each row of the minor-home and other-handheld tables,
+  most resting on Wikipedia; surveys only leaves out Nuon, the XaviXPORT, the Beena, the V.Smile line,
+  and the other minor home systems, and leaves the other handhelds to `R1-25`, which does not depend on `R1-03`.
 - **Gains:** every row studied gives the widest choice for `R6-01`; surveys only keeps the research finite.
 - **Used by:** the roadmap today, whose surveys that depend on `R1-03` name Nintendo, Sony, Microsoft, and Sega only.
 
@@ -586,8 +632,8 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
 - **Costs:** one per family hides per-title clock and cache modes;
   one per model multiplies work for machines whose differences are ports and cases.
 - **Gains:** one per family matches how titles were written; one per model matches what a user owns.
-- **Used by:** none found; 3dbrew documents the original and New 3DS on one page and records the New 3DS clock mode
-  as a flag each title sets.
+- **Used by:** none found among the surveys' roadmap entries and the hubs read;
+  3dbrew documents the original and New 3DS on one page and records the New 3DS clock mode as a flag a title may set.
 
 ### Placing the 32-bit handhelds of 2001 to 2008
 
@@ -610,8 +656,10 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
 - **What:** accept Wikipedia's figures for catalogue rows, seek maker material and patents, or measure on hardware.
 - **Costs:** Wikipedia disagrees with itself or with hubs on several rows
   (the PlayStation 2's GPU clock, the 3DS's storage, the Beena's sales);
-  no maker document was found for the minor systems in their articles or the register's maker lines
-  (research log), apart from the chip maker's catalogue that Sega Retro cites for the Beena, which was not read.
+  the minor systems' articles cite maker pages and press releases
+  (VM Labs for Nuon, VTech, Mattel, Sega Toys),
+  which were not followed and are not registered; the register's maker lines hold none for these systems
+  (research log); Sega Retro attributes the Beena's chip figures to the chip maker's catalogue, which was not read.
 - **Gains:** Wikipedia is complete enough to identify the machines.
 - **Used by:** this catalogue, for identification and catalogue-level values only.
 
@@ -627,9 +675,9 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
   which the roadmap states only for `R1-23`.
 - Firmware needs differ: some emulators require dumped images, some take them as optional,
   and the PSP's runs without them, while for the Wii, Wii U, and Xbox 360 it is from memory; this feeds `R2-12`.
-- Backward-compatible hardware inside later systems ties `R1-13` and `R1-19` to the `R1-02` era,
-  as the roadmap's dependencies now say (inference); the Vita's MIPS core (lead) would tie `R1-20` the same way,
-  which the roadmap does not state.
+- Backward-compatible hardware inside later systems ties `R1-13` and `R1-19` to `R1-02`,
+  as the roadmap's rule for surveys that span primers states;
+  the Vita's MIPS core (lead) would tie `R1-20` the same way, which the roadmap does not state (inference).
 - Systems resting on Wikipedia alone need a better source before a study relies on them;
   this feeds `R1-25` for the handhelds, while the minor home systems have no survey (Open questions).
 
@@ -648,8 +696,9 @@ The first five rows are also in the `R1-06` draft, and the owner decides which c
   The primer and the family surveys.
 - How does the Wii U boot, and how are Vita game cards encrypted and signed, as public sources describe it?
   WiiUBrew and the Vita Development Wiki, if a session can reach it.
-- What processors do E-kara, ClickStart, digiBlast, the V.Smile Baby, and the LeapPad Explorer use?
-  No page read gives one; Wikipedia gives a processor only for a later LeapPad model.
+- What processors do E-kara, ClickStart, digiBlast, and the V.Smile Baby use,
+  and at what clock does the LeapPad Explorer's ARM9 run?
+  No page read gives them.
 
 ## Sources
 
@@ -692,8 +741,9 @@ Wikipedia, handhelds:
 - "Nintendo 3DS" 1386371150; "Nintendo 2DS" 1386358545; "New Nintendo 3DS" 1385688872; "New Nintendo 2DS XL" 1385689193;
   "Nintendo 3DS system software" 1384604386; "PICA200" 1358581711.
 - "GP32" 1379015467; "N-Gage" 1386180025; "Tapwave Zodiac" 1372920485; "Gizmondo" 1386173978; "Leapster" 1385502801;
-  "Leapster Explorer" 1368862108; "LeapFrog Didj" 1381158352; "LeapPad" 1384908069; "GameKing" 1353051015;
-  "Pixter" 1379566018; "Juice Box" 1381500242; "Pocket Dream Console" 1377687431; "Mi2 (console)" 1354286867.
+  "Leapster Explorer" 1368862108; "LeapFrog Didj" 1381158352; "LeapPad" 1384908069; "LeapPad Explorer" 1360396543;
+  "GameKing" 1353051015; "Pixter" 1379566018; "Juice Box" 1381500242; "Pocket Dream Console" 1377687431;
+  "Mi2 (console)" 1354286867.
 - "GP2X" 1385314903; "GP2X Wiz" 1377361946; "Caanoo" 1354286783; "Dingoo" 1379337765; "Pandora (computer)" 1382382856;
   "Game Gadget" 1353062161; "Neo Geo X" 1377484786; "GCW Zero" 1366037317; "Nvidia Shield Portable" 1381277348;
   "Xperia Play" 1385402596; "JXD" 1359557491; "XGP" 1363167423; "Red Jade" 1379733819; "Jungle (console)" 1384331938.
@@ -720,8 +770,8 @@ Hubs and references:
 - Yet another PlayStationPortable Documentation, index and chapters 2 and 3: `http://hitmen.c02.at/files/yapspd/`;
   last modified 2006-12-23.
 - vfpu-docs README: `https://raw.githubusercontent.com/pspdev/vfpu-docs/master/README.md`; commit `f283bbb8`.
-- 3dbrew, "Hardware", raw wikitext: `https://www.3dbrew.org/w/index.php?title=Hardware&action=raw`;
-  revision not obtained.
+- 3dbrew, "Hardware", raw wikitext: `https://www.3dbrew.org/w/index.php?title=Hardware&action=raw`; revision 23948,
+  last edited 2026-10-31.
 - R. Copetti, "PlayStation Portable Architecture", "Nintendo 3DS Architecture", and "PlayStation Vita Architecture"
   (part 1):
   `https://www.copetti.org/writings/consoles/playstation-portable/` and sibling pages;
@@ -730,7 +780,7 @@ Hubs and references:
 Emulator documentation, prose only:
 
 - libretro documentation, "Flycast", "Dolphin", and "LRPS2":
-  `https://docs.libretro.com/library/flycast/` and sibling pages; the pages show no version.
+  `https://docs.libretro.com/library/flycast/` and sibling pages; each shows "Last update" 2026-10-22.
 - xemu, "Required Files": `https://xemu.app/docs/required-files/`; the page shows no version.
 - Xenia README: `https://raw.githubusercontent.com/xenia-project/xenia/master/README.md`; commit `95a5c3ee`.
 - PPSSPP README: `https://raw.githubusercontent.com/hrydgard/ppsspp/master/README.md`;
@@ -738,6 +788,7 @@ Emulator documentation, prose only:
 - Azahar README: `https://raw.githubusercontent.com/azahar-emu/azahar/master/README.md`;
   the cited sentence confirmed at commit `cf42aef2`.
 - Teakra README: `https://raw.githubusercontent.com/wwylele/teakra/master/README.md`; commit `3d697a18`.
+- PS2 Linux site, FAQ: `http://ps2-linux.tensioncore.com/faq.html`; the page shows no version.
 
 Project documents:
 
@@ -747,5 +798,8 @@ Project documents:
 - The 8-bit and 16-bit catalogue, `R1-05`: `docs/research/topics/R1-05-catalogue-8-and-16-bit.md`, on `main`.
 - The 32-bit and 64-bit catalogue draft, `R1-06`: `docs/research/topics/R1-06-catalogue-32-and-64-bit.md`,
   branch `docs/r1-06-catalogue-32-64-bit`.
-- The modern catalogue draft, `R1-08`: branch `docs/r1-08-catalogue-modern`.
+- The modern catalogue draft, `R1-08`: `docs/research/topics/R1-08-catalogue-modern.md`,
+  branch `docs/r1-08-catalogue-modern`.
+- The source map, `R0-05`: `docs/research/topics/R0-05-source-map.md`.
+- Pull request #22, "docs: place systems of surveys that span several primers", "Decisions for you", merged to `main`.
 - The source register: `.claude/hooks/source-register.txt`.
