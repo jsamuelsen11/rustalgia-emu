@@ -461,7 +461,7 @@ closed | 3dodev.com/software/rom | none | ROM and BIOS images | 2026-11-19 | sta
 closed | 3dodev.com/software/sdk | none | the maker's development kits | 2026-11-19 | start page
 open | map.grauw.nl | copyright notice, no grant | origin unstated | 2026-11-19 | footer
 open | msx.org/wiki | copyright notice, no grant | origin unstated | 2026-11-19 | footer
-open | ws.nesdev.org | CC0, seen through a summary only | origin unstated | 2026-11-19 | footer
+open | ws.nesdev.org | CC0 | origin unstated | 2026-11-20 | footer, read raw by R1-05
 open | renesas.com/en/document | no reproduction without consent | chip maker's own manuals | 2026-11-19 | notice pages
 open | nxp.com/docs | copyright line only | maker's manual; site terms: personal use | 2026-11-19 | pages 1 to 3
 open | cdrdv2.intel.com | Intel notices | maker's manual; no legal analysis; patent licence back | 2026-11-19 | notices
@@ -531,7 +531,7 @@ closed | trapexit/portfolio_os | not read | described by a README as 3DO system 
 # Sega, arcade, Xbox, and other systems: tests.
 open | raxoft/z80test | MIT | results from a real Spectrum | 2026-11-19 | README
 open | singlesteptests/m68000 | MIT | generated with MAME's microcoded core | 2026-11-19 | README
-open | singlesteptests/z80 | MIT | generated with JSMoo | 2026-11-19 | description
+open | singlesteptests/z80 | MIT | translated from the ares core, by its README | 2026-11-20 | README, R1-01
 open | singlesteptests/8088 | MIT | captured from a physical processor with MartyPC | 2026-11-19 | README
 open | klaus2m5/6502_65c02_functional_tests | GPL-3.0 | self-checking programs | 2026-11-19 | licence file
 open | dirkwhoffmann/vamigats | GPL-3.0 | reference images from real machines; needs a system ROM | 2026-11-19 | README
@@ -609,4 +609,10 @@ closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firm
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
+# Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
+open | tixul/ngpcraft_dev_ref | MIT | Neo Geo Pocket reference; origin unstated; no leak rule | 2026-11-20 | README
+open | tixul.github.io/ngpcraft_dev_ref | MIT | site of the same reference | 2026-11-20 | home page
+# Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
+open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
+closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
