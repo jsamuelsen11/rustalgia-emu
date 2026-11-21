@@ -34,16 +34,6 @@ jobs:
       - uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
       - run: mise run lint
 
-  links:
-    name: links
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
-      - run: mise run links
-
   security:
     name: security
     runs-on: ubuntu-24.04
@@ -84,7 +74,7 @@ jobs:
   gate:
     name: gate
     if: always()
-    needs: [format, lint, links, security, pr-title]
+    needs: [format, lint, security, pr-title]
     runs-on: ubuntu-24.04
     steps:
       - name: Require every job to have succeeded

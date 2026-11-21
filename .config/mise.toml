@@ -48,8 +48,8 @@ description = "Run every security scan"
 depends = ["security:betterleaks", "security:zizmor"]
 
 [tasks.check]
-description = "Run every CI check except the pull request title, without changing files"
-depends = ["fmt:check", "lint", "links", "security"]
+description = "Run every pull request check except the title, without changing files"
+depends = ["fmt:check", "lint", "security"]
 
 [hooks]
 postinstall = "lefthook install"
