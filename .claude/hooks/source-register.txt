@@ -762,7 +762,6 @@ open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licenc
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
 # Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
-other | web.archive.org | - | an archive, not a source; captures cited with full time stamps | 2026-11-20 | -
 # Sources opened or evaluated while researching R1-02, and not cited by it.
 open | hitmen.c02.at/html | none stated | the host's index pages | 2026-11-20 | evidence of #27
 open | spicyjpeg/ps1-ram-tester | MIT | uses ps1-bare-metal; author states AI-free work; uncited | 2026-11-20 | README
