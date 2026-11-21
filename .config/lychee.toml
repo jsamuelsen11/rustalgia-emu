@@ -62,6 +62,4 @@ exclude = [
   '^https?://(www\.)?sega\.jp/', # 403 Forbidden (challenge page)
   '^https?://developer\.arm\.com/', # 403 Forbidden to automated requests
   '^https?://(www\.)?segaretro\.org/', # bot-check page in place of the article
-  '^https?://(www\.)?nxp\.com/', # 404 "Page not available" to scripted requests; the pages exist
-  '^https?://patents\.google\.com/', # 503 Service Unavailable to scripted requests
 ]
