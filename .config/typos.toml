@@ -12,6 +12,8 @@ sav = "sav" # the file extension of a battery save
 mata = "mata" # a party's name in Mata v Avianca
 Artic = "Artic" # Artic International, a party in Midway v Artic
 Yout = "Yout" # Yout LLC, a party in Yout v RIAA
+caf = "caf" # "cour d'appel fédérale", in the Federal Court of Appeal's host name
+repositorys = "repositorys" # heading anchor of "repository's", as in #what-this-repositorys-controls-cover
 
 [default.extend-identifiers]
 # Correctly spelled words that the checker splits into wrong parts. Each maps to itself.
