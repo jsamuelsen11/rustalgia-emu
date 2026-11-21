@@ -174,6 +174,10 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# The EFF's 2007 posts on a published disc key are closed; the rest of the site stays open.
+check 2 writer "$(fetch https://www.eff.org/deeplinks/2007/05/legal-primer)"
+check 2 writer "$(fetch https://eff.org/deeplinks/2007/05/legal-primer)"
+check 0 writer "$(fetch https://www.eff.org/files/geohotz-finaljudgmentpi.pdf)"
 # ReactOS code is closed, by Wine's account of how it was made; its README stays readable.
 check 2 writer "$(fetch https://github.com/reactos/reactos/blob/master/ntoskrnl/ke/bug.c)"
 check 2 reader "$(fetch https://raw.githubusercontent.com/reactos/reactos/master/ntoskrnl/ke/bug.c)"
