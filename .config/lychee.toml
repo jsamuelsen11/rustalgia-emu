@@ -28,4 +28,5 @@ exclude = [
   '^https?://(www\.)?gnu\.org/', # times out
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
+  '^https?://patents\.google\.com/', # 503 Service Unavailable
 ]

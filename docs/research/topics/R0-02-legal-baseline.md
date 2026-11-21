@@ -14,28 +14,14 @@ This note asks what law and enforcement history constrain an emulator project, b
 
 No contested ruling was found that decides
 whether distributing a console emulator is lawful under anti-circumvention law.
-The favourable appeals of 2000 were preliminary-injunction rulings, mainly on copyright fair use,
-about one console whose games the opinions do not describe as encrypted;
-a later ruling for Connectix on remand is known only from press accounts.
-One contested judgment held a free server emulator for an online game to be a trafficked circumvention tool
-(Davidson v Jung, 2005).
+The actions since 2023 rest mainly on that law and target emulators of consoles whose games are encrypted,
+almost all for the Switch, and only the yuzu action ended in a judgment against a developer, by consent.
 
-The actions against emulators since 2023 rest mainly on anti-circumvention law
-and concern emulators of consoles whose games are encrypted, almost all for the Switch.
-Only the yuzu action ended in a judgment against an emulator's developer, by consent.
-A default judgment held a streamer who linked to emulators liable for trafficking, and the rest ended through notices,
-a letter to a store, or private contact.
+For Rustalgia, whether a system's games are encrypted separates the systems on the [roadmap](../../roadmap/research.md)
+by risk (inference); firmware, keys, and game dumps have no settled lawful route from the user to the emulator in any
+jurisdiction examined; and patents and trade marks are separate risks that independent writing does not answer.
 
-Three things matter most to Rustalgia.
-Whether a system's games are encrypted, and perhaps whether they are authenticated,
-separates the systems on the roadmap by risk (inference).
-Firmware, keys, and game dumps have no settled lawful route from the user to the emulator in any jurisdiction examined.
-Patents and trade marks are separate risks that independent writing does not answer.
-
-"Options and trade-offs" ends with recommendations for the owner: take up unencrypted systems first,
-prefer replacement firmware, publish no dumping guides, read expired patents only,
-and plan around United States law first.
-This note is not legal advice.
+"Options and trade-offs" ends with [recommendations for the owner](#recommendation), and this note is not legal advice.
 
 ## Scope
 
@@ -43,7 +29,8 @@ This note is not legal advice.
   and the history of takedowns mean for an open-source emulator, and what risks do patents and trade marks add?
 - Covered: the United States in depth; the European Union, the United Kingdom, Germany, France, Japan, Canada,
   Australia, and South Korea for technological measures; enforcement history to November 2026.
-  The roadmap line named four subjects; patents and trade marks were added at the owner's request, as recorded risks.
+  Patents and trade marks were added to the [roadmap](../../roadmap/research.md#phase-0-ground-rules) line at the
+  owner's request, as recorded risks.
 - Left to other items: what [R0-01](R0-01-clean-room-policy.md) already records, which is cited by section name;
   licence strategy and contributor terms ([`R0-03`](../../roadmap/research.md#phase-0-ground-rules)); note conventions
   ([R0-04](R0-04-glossary-and-conventions.md)); the exposure of each system family
@@ -59,6 +46,9 @@ This note is not legal advice.
   and its corrections were applied.
   Findings added on 2026-11-20 rest on pages fetched that day with `curl`,
   or with a browser where a page renders by script, as marked, with each quotation confirmed in the raw text.
+  A third, independent pass on 2026-11-20 fetched the sources for those findings again and tested each claim, quotation,
+  link, and marker; its corrections were checked against the sources and applied.
+  So three independent passes have run in all.
   Claims that could not be checked are listed in the pull request.
 - Where only part of a source was read,
   the finding says so. "(secondary)" marks a claim that rests on commentary or press,
@@ -70,7 +60,8 @@ This note is not legal advice.
 - A process call for this note: it says that a protection exists, what it protects, and what kind of check it is,
   and never how to defeat it.
   Publishing such information is conduct that statutes and filings name
-  (section 296 of the United Kingdom's 1988 Act; the yuzu complaint),
+  ([section 296](https://www.legislation.gov.uk/ukpga/1988/48/section/296) of the United Kingdom's 1988 Act;
+  the [yuzu complaint](https://storage.courtlistener.com/recap/gov.uscourts.rid.56980/gov.uscourts.rid.56980.1.0.pdf)),
   and the research guide already bars keys and firmware bytes
   ([research conventions, "Constants and tables"](../README.md#constants-and-tables)).
 
@@ -233,7 +224,7 @@ This section adds what the emulator cases did and did not decide.
   Nobody argued the other side, and the text does not contain "1201(f)", "fair use", or "Connectix"
   (search of its text).
 - The $17,500 awarded is $10,000 in statutory damages for direct infringement of one game,
-  and $7,500 "for 15 violations" of § 1201 (ECF 36, pages 27 and 30).
+  and $7,500 "for 15 violations" of § 1201 (ECF 36, pages 25 and 27).
 - The magistrate judge refused two of the three parts of the injunction that Nintendo asked for
   (ECF 36, pages 30 and 31).
   An injunction against third parties was refused because "Plaintiff's Complaint does not allege
@@ -496,7 +487,7 @@ The table is a reading of the statute texts, and each row combines several provi
 | European Union | Barred for games, if knowing | Barred on three tests | A recital only | Devices: PC Box |
 | United Kingdom | Civil wrong for works other than programs | Civil and criminal | None in the text | Devices only |
 | Germany | Barred; no crime if private | Crime if commercial, else a fine | None read in section 95a | Devices only |
-| France | Fined, except for research | Crime | None in the criminal text | None read |
+| France | Fined unless by a ready-made tool; not for research | Crime | None in the criminal text | None read |
 | Japan | Deemed infringement; no penalty | Unfair competition; crime | None named; research | Devices only |
 | Canada | Barred for access controls | Barred; crime if commercial | Yes, section 41.12 | Devices: King |
 | Australia | Civil wrong for access controls | Civil; crime if for profit | Yes, section 116AN(3) | Statute only |
@@ -604,7 +595,8 @@ The table is a reading of the statute texts, and each row combines several provi
   (section 108b(2)), and other dealing outside one's personal circle is a regulatory offence with a fine (section 111a).
   The civil prohibition has no private-use words (inference).
 - Section 95a no longer stands excluded from computer programs by the text.
-  Section 69a(5) excluded sections 95a to 95d from programs between 1 March 2017 and 6 June 2021,
+  Section 69a(5) excluded sections 95a to 95d from programs in every version buzer.de holds, up to 6 June 2021;
+  the 2017 amendment only added other sections to that list,
   and the text in force since 7 June 2021 no longer lists them
   ([buzer.de record of section 69a's versions](https://www.buzer.de/69a_UrhG.htm);
   [current section 69a](https://www.gesetze-im-internet.de/urhg/__69a.html)).
@@ -613,22 +605,24 @@ The table is a reading of the statute texts, and each row combines several provi
   and that the relation between technological measures and programs follows in future from section 69f
   ([Drucksache 19/27426](https://dserver.bundestag.de/btd/19/274/1927426.pdf), 9 March 2021, page 107;
   the note's own translation).
-  [Section 69f(2)](https://www.gesetze-im-internet.de/urhg/__69f.html) reaches only means intended solely to make easier
-  the unauthorised removal or circumvention of technical program protection (the note's own translation).
-- So the stated intent keeps programs under section 69f's sole-purpose test, while games,
+  [Section 69f(2)](https://www.gesetze-im-internet.de/urhg/__69f.html) is a remedy, not a prohibition:
+  it extends the claim for destruction to means intended solely to make easier the unauthorised removal
+  or circumvention of technical program protection (the note's own translation).
+- So the stated intent leaves programs with that destruction remedy for sole-purpose means, while games,
   which the Federal Court of Justice treats as works with parts that are not programs,
   stay under [section 95a](https://www.gesetze-im-internet.de/urhg/__95a.html)
-  (inference from the reasoning and I ZR 124/11).
+  (inference from the reasoning and [I ZR 124/11](https://rws-verlag.de/fileadmin/zbb-volltexte-3/i_zr_124-11a.pdf)).
   No ruling on a pure program under section 95a after 2021 was found.
 - The Federal Court of Justice applied section 95a to games with a proportionality condition.
   Measures are protected only if their use is proportionate and does not unduly limit lawful uses
-  ([I ZR 124/11](https://rws-verlag.de/fileadmin/zbb-volltexte-3/i_zr_124-11a.pdf), 2014, headnote).
+  (I ZR 124/11, 2014, headnote).
   In guidance for the remand it said that the rightholder in principle bears the burden of showing
   that no other measure would interfere less with lawful acts while giving comparable protection,
   although the other side must first put forward such a measure (paragraph 107, paraphrased from the German).
 - On that remand the Munich Higher Regional Court largely dismissed the defendants' appeal
   ([I ZR 273/14](https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&docid=KORE300792017&psml=bsjrsprod.psml&max=true),
-  paragraph 10, the note's own translation).
+  paragraph 10, read in the full text of the [private mirror](https://gesetze.co/urteile/I_ZR_273-14) named below, as
+  the portal page shows only the headnote; the note's own translation).
   A law firm's announcement reports that this decision was final, the court having allowed no further appeal
   ([LTO, 20 October 2016](https://www.lto.de/recht/kanzleien-unternehmen/k/king-wood-mallesons-nintendo-kopierschutz-gewerblicher-rechtsschutz);
   secondary).
@@ -653,7 +647,8 @@ The table is a reading of the statute texts, and each row combines several provi
   Article L. 331-5, as amended by law 2021-1382, protects effective measures on "une oeuvre, autre qu'un logiciel",
   and still says measures must not prevent the effective use of interoperability, within respect for copyright.
 - Article L. 335-3-1 fines circumventing for purposes other than research €3,750,
-  and punishes supplying the means with six months' imprisonment and €30,000.
+  but only where it is done by means other than a ready-made application, device,
+  or component of the kind in its part II; it punishes supplying the means with six months' imprisonment and €30,000.
   Its part III exempts acts done for computer security, and it names no interoperability exemption,
   consistent with decision 2006-540 DC.
 - For software, article L.
@@ -825,8 +820,9 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
 #### Makers' system software and licence terms
 
 - Sony publishes system software update files for the PlayStation 3, 4, 5, and Vita on its support site
-  ([PlayStation 5 system software page](https://www.playstation.com/en-us/support/hardware/ps5/system-software/)).
+  (PlayStation 5 system software page, `https://www.playstation.com/en-us/support/hardware/ps5/system-software/`).
   The pages were read and no file was downloaded.
+  The address is not linked, because the page holds direct download links to the firmware.
 - The licences limit use to the console: Sony grants "a non-exclusive,
   non-commercial right to use System Software solely on your PS5 system", and the user "may not reverse engineer,
   decompile or disassemble System Software" ([PS5 licence](https://www.playstation.com/en-us/legal/ps5-ssla/)).
@@ -837,8 +833,10 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   that Sony "does not grant any license to System Software obtained by users in any manner other than through SIE's
   authorized distribution methods".
 - Microsoft publishes an offline system update file for Xbox consoles.
-  Its [error E101 page](https://support.xbox.com/en-US/help/errors/error-code-e101) says "You need to perform an offline
-  system update" and directs the user to "Download the XBOX OSU1 file", to be applied from a USB drive.
+  Its error E101 page, `https://support.xbox.com/en-US/help/errors/error-code-e101`,
+  not linked because it offers the firmware download,
+  says "You need to perform an offline system update" and directs the user to "Download the XBOX OSU1 file",
+  to be applied from a USB drive.
   The download itself was not opened, and its address is not given here
   (read with a browser, because the page renders by script).
 - The
@@ -992,7 +990,7 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   using trademark law", and that after Sega v Accolade "there is no danger for homebrew developers".
   The page calls itself advisory and not legal advice, and it restates the holding's condition loosely,
   as use that "is necessary for running programs on the console" (inference).
-- A replacement boot ROM for the Game Boy needs no copy of the logo to run unmodified games.
+- A replacement boot ROM for the Game Boy needs no copy of the logo to run unmodified games (inference).
   The logo bitmap sits in each cartridge's header at `0x0104` to `0x0133`, and "It must match ...,
   otherwise the boot ROM won't allow the game to run"
   ([Pan Docs, "The Cartridge Header"](https://gbdev.io/pandocs/The_Cartridge_Header.html)).
@@ -1000,6 +998,15 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   (inference from that description).
   The header layout is a cartridge fact; the details of the boot sequence, which come from boot ROM analysis,
   are not recorded here.
+- The Game Boy Advance check has the same shape.
+  Its BIOS compares the compressed logo in the cartridge header with its own copy and locks up on a mismatch
+  ([R1-02, "Game Boy Advance and DS"](R1-02-primer-32-and-64-bit.md#game-boy-advance-and-ds), citing GBATEK).
+  The comparison is the BIOS's gate, so a replacement BIOS that makes no comparison needs no copy (inference).
+- The Genesis check is of a string, not a logo image.
+  The Genesis III "searches the game program for four bytes of data consisting of the letters 'S-E-G-A'",
+  and then shows the message "PRODUCED BY OR UNDER LICENSE FROM SEGA ENTERPRISES LTD"
+  ([Sega v Accolade](https://law.resource.org/pub/us/case/reporter/F2/977/977.F2d.1510.92-15655.html)).
+  A replacement that does not draw that message needs no copy of it (inference).
 - The only project statement found on how a replacement boot ROM treats the logo is SameBoy's,
   whose boot ROMs have "Support for games with a non-Nintendo logo in the header"
   ([SameBoy](https://github.com/LIJI32/SameBoy)); none was found that says whether a replacement embeds or draws a
@@ -1060,19 +1067,22 @@ and [Delta](https://techcrunch.com/2024/05/17/adobe-comes-after-indie-game-emula
 #### What the notices allege
 
 - Nintendo's GitHub notices before 2022 do not plead anti-circumvention against an emulator.
-  The 2014 notice targeted the download site of the GBA4iOS emulator on the ground that it gave access to game copies.
+  The [2014 notice](https://github.com/github/dmca/blob/master/2014/2014-05-13-Nintendo.md) targeted the download site
+  of the GBA4iOS emulator on the ground that it gave access to game copies.
   The others read from 2014 to 2020 concern game content, fan games, and recreations,
-  one in 2016 pleads circumvention against a shop downloader,
-  and of two in 2019 whose authenticity the recipients disputed,
-  one alleges unauthorised documentation and "illegal emulation software" of an online service
-  (inference from the files read).
+  [one in 2016](https://github.com/github/dmca/blob/master/2016/2016-12-27-Nintendo.md) pleads circumvention against a
+  shop downloader, and of two in 2019 whose authenticity the recipients disputed, one alleges unauthorised documentation
+  and "illegal emulation software" of an online service (inference from the files read).
 - The emulator notices plead decryption, not copying.
-  The April 2024 notice says that yuzu "necessarily uses unauthorized copies of these cryptographic keys to decrypt
-  unauthorized copies of Nintendo Switch games, or ROMs, at or immediately before runtime".
+  The [April 2024 notice](https://github.com/github/dmca/blob/master/2024/04/2024-04-29-nintendo.md) says
+  that yuzu "necessarily uses unauthorized copies of these cryptographic keys to decrypt unauthorized copies of Nintendo
+  Switch games, or ROMs, at or immediately before runtime".
   No notice read alleges that an emulator's source code copies Nintendo's code, or that yuzu shipped keys.
 - Uncontested judgments are now cited as findings.
-  From February 2025 the notices cite the yuzu consent judgment as "finding that the distribution of software
-  which primarily decrypts Nintendo Switch games without authorization violated DMCA anti-trafficking provisions".
+  From February 2025 the notices
+  ([for example, 26 February 2025](https://github.com/github/dmca/blob/master/2025/02/2025-02-26-nintendo.md)) cite the
+  yuzu consent judgment as "finding that the distribution of software which primarily decrypts Nintendo Switch games
+  without authorization violated DMCA anti-trafficking provisions".
 - From February 2026 they add Keighin, a default judgment.
   The [notice of 12 February 2026](https://github.com/github/dmca/blob/master/2026/02/2026-02-12-nintendo.md) cites
   Keighin's "ECF Nos.
@@ -1084,19 +1094,22 @@ and [Delta](https://techcrunch.com/2024/05/17/adobe-comes-after-indie-game-emula
   guides, and compatibility lists (inference from names; none was opened).
   Nintendo notices rose from 8 files in 2023 to 28 in 2024 and 32 in 2026 to date (count of file names).
 - A library and a dormant project were both reached.
-  LibHac was described as "primarily designed to allow users to access and/or play Nintendo Switch games".
+  LibHac was described, in the
+  [notice of 15 May 2025](https://github.com/github/dmca/blob/master/2025/05/2025-05-15-nintendo.md), as "primarily
+  designed to allow users to access and/or play Nintendo Switch games".
   Skyline's repository was disabled in August 2026, three years after its developers stopped work.
 - One notice can disable every fork.
   For a network of more than 100 repositories,
   GitHub acts on the sender's statement that "all or most of the forks are infringing to the same extent
-  as the parent repository" (GitHub DMCA archive, README).
+  as the parent repository" ([GitHub DMCA archive, README](https://github.com/github/dmca)).
 - A decompilation has now been named as infringing.
-  The October 2026 notice alleges "unauthorized derivative, or decompiled, copies of the video game (i) code,
-  and (ii) audiovisual assets", citing Micro Star.
+  The [October 2026 notice](https://github.com/github/dmca/blob/master/2026/10/2026-10-23-nintendo.md) alleges
+  "unauthorized derivative, or decompiled, copies of the video game (i) code, and (ii) audiovisual assets", citing Micro
+  Star.
   No notice was found against the long-running Nintendo 64 or Pokémon decompilation repositories.
 - Nintendo describes its development kit as secret.
-  A February 2026 notice calls it "proprietary and confidential",
-  "subject to a valid and enforceable License and Non-Disclosure Agreement".
+  A [February 2026 notice](https://github.com/github/dmca/blob/master/2026/02/2026-02-27-nintendo.md) calls it
+  "proprietary and confidential", "subject to a valid and enforceable License and Non-Disclosure Agreement".
   This bears on R0-01's findings on leaked material
   ([R0-01, "Trade secrets, contracts, and leaked material"](R0-01-clean-room-policy.md#trade-secrets-contracts-and-leaked-material)).
 
@@ -1134,11 +1147,15 @@ and [Delta](https://techcrunch.com/2024/05/17/adobe-comes-after-indie-game-emula
   The counter-notice must be sworn, must give the subscriber's "name, address, and telephone number",
   and must consent "to the jurisdiction of Federal District Court" (§ 512(g)(3)).
 - In the one published sequence found that ran to its end,
-  a counter-notice was filed in April 2021 and the sender then sued developers of the project (GitHub DMCA archive;
+  a [counter-notice](https://github.com/github/dmca/blob/master/2021/04/2021-04-08-take-two-counternotice.md) was filed
+  in April 2021 and the sender then sued developers of the project (GitHub DMCA archive;
   [Take-Two v Papenhoff](https://storage.courtlistener.com/recap/gov.uscourts.cand.384429/gov.uscourts.cand.384429.47.0.pdf),
   recorded in
   [R0-01, "Policies of emulator and decompilation projects"](R0-01-clean-room-policy.md#policies-of-emulator-and-decompilation-projects)).
-  Whether the person who filed the counter-notice was among those sued was not checked.
+  The sender's complaint names the person who sent that counter-notice, on or about 8 April 2021, as a defendant,
+  and pleads the counter-notice as a misrepresentation made in bad faith
+  ([Take-Two complaint](https://storage.courtlistener.com/recap/gov.uscourts.cand.384429/gov.uscourts.cand.384429.1.0.pdf),
+  page 14; the plaintiff's allegations).
   No counter-notice naming yuzu, Ryujinx, their successors, Lockpick, or LibHac is in the archive.
 - The remedy for a wrongful notice is narrow.
   Section 512(f) reaches a person who "knowingly materially misrepresents ... that material or activity is infringing".
@@ -1162,8 +1179,10 @@ and [Delta](https://techcrunch.com/2024/05/17/adobe-comes-after-indie-game-emula
   It does not publish its reasoning.
 - Notices can be false.
   In 2019 recipients of two notices filed under Nintendo's name answered that the notices were fraudulent; of the first,
-  they said it "was fraudulent" and that their documentation was "all our own work"
-  (counter-notices of 10 September and 3 October 2019 in the GitHub DMCA archive; the recipients' allegations).
+  they said it "was fraudulent" and that their documentation was "all our own work" (counter-notices of
+  [10 September](https://github.com/github/dmca/blob/master/2019/09/2019-09-10-nintendo-counternotice.md) and
+  [3 October 2019](https://github.com/github/dmca/blob/master/2019/10/2019-10-03-nintendo-2-counternotice.md) in the
+  GitHub DMCA archive; the recipients' allegations).
 
 ### Patents, recorded as risks
 
@@ -1174,10 +1193,10 @@ and the role of knowledge in enhanced damages
 This note names patents that are shown as expired, and describes those shown as in force by subject only,
 without numbers or claim text.
 That limit is a choice made in writing this note, for the reason given in the knowledge finding below.
-The recommendation that the project keep it is part of the proposed amendment of
-[ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) ("Recommendation", below).
+This note recommends that the owner amend [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) to keep
+that limit (see [Recommendation](#recommendation)); no amendment exists yet.
 
-Patent status here is as shown by Google Patents on 2026-11-19,
+Patent status here is as shown by [Google Patents](https://patents.google.com/patent/US6672963B1/en) on 2026-11-19,
 which says its status "is an assumption and is not a legal conclusion".
 For the three patents named, the status was checked again on 2026-11-20 against the term rule,
 from the filing dates and adjustments on the Patent Office's front pages (calculated).
@@ -1248,9 +1267,10 @@ Statuses of patents not named here were not checked again.
   [19 May](https://www.theregister.com/2000/05/19/sony_hits_playstation_emulator_developer/),
   and [30 June 2000](https://www.theregister.com/2000/06/30/sony_surrenders_playstation_emulation_fight/), secondary;
   its reports differ on which of Sony's claims the judge rejected).
-  No complaint, docket, or patent number was found.
+- No complaint, docket, or patent number for those suits was found.
   Two emulator patents first filed by Connectix and by Bleem's developer are shown as assigned to Sony
-  (Google Patents in the first pass; not checked again).
+  (Google Patents in the first pass; not checked again,
+  because the Patent Office's assignment service did not resolve on 2026-11-20, research log).
 - No patent suit against a non-commercial, open-source emulator was found in any jurisdiction.
   That records the searches made; court dockets and the Japanese and European registers were not searched.
 - A patent holder has sued a free software project.
@@ -1339,12 +1359,13 @@ Statuses of patents not named here were not checked again.
   reaching "PlayStation consoles, Dual Shock controllers, and the 47 games found by the jury to infringe"
   ([Immersion's annual report](https://www.sec.gov/Archives/edgar/data/0001058811/000089161807000164/f27349e10vk.htm);
   the plaintiff's account).
-- Media formats that some consoles use (from memory) are still pooled.
+- Some media formats that some consoles use (from memory) are still pooled.
   The [H.264 pool's](https://www.via-la.com/licensing-2/avc-h-264/) list of active patents dated 1 November 2026 holds
   353 United States patent numbers and one reissue (count of the published list), and the
   [AAC pool](https://www.via-la.com/licensing-2/aac/) lists several hundred.
   The [VC-1 pool's](https://www.via-la.com/licensing-2/vc-1/) list dated 1 November 2026 holds 284 distinct United
-  States patent numbers, some shown with expiry dates in 2026 and 2027 (count of the published list).
+  States patent numbers, but 245 of them carry expiry dates that have passed, 4 carry dates from November 2026 to
+  January 2027, and 35 carry none (count of the published list), so it is not a count of patents still in force.
   The pools' lists do not say which patents a given game's decoding would touch.
 - Other formats have left their pools.
   For [MPEG-2](https://www.via-la.com/licensing-2/mpeg-2/), the pool says "the last US patent expired February 13,
@@ -1352,8 +1373,8 @@ Statuses of patents not named here were not checked again.
   The [MP3 licensing programme](https://www.iis.fraunhofer.de/en/ff/amm/consumer-electronics/mp3.html) "has been
   terminated" as of April 2017 (Fraunhofer).
   Press accounts say the last United States AC-3 patent expired in 2017
-  ([Gigazine, 21 March 2017](https://gigazine.net/gsc_news/en/20170321-ac-3-patent-expired); secondary),
-  and no patent holder's statement was found.
+  ([Gigazine, 21 March 2017](https://gigazine.net/gsc_news/en/20170321-ac-3-patent-expired); secondary).
+  Gigazine relays a statement by Dolby (secondary); none was read at first hand.
   For ATRAC and the ADPCM variants, a web search found no pool and no holder's statement.
 - The S3 texture compression patent was filed in October 1997, so its 20 years ended in 2017 (calculated).
   Mesa kept the feature out while the patent ran, and integrated it in December 2017,
@@ -1374,13 +1395,20 @@ Statuses of patents not named here were not checked again.
   ([Curver v Home Expressions](https://law.berkeley.edu/wp-content/uploads/2021/07/2019-09-12_Curver-HomeExpressions_FedCircuitOpinion.pdf),
   2019, slip opinion page 8, read in a university's copy).
   It affirmed a dismissal in which accused baskets "could not infringe" a design limited to chairs (page 2).
-  So a design patent for a controller would not reach an image on a screen
-  unless its claim covers a screen display (inference).
+  Curver's holding is limited to a claim naming an article that appears nowhere in the figures,
+  so it does not decide the case of a controller patent whose figures show a controller.
+  The wider ground is that a design patent is granted for a design "for an article of manufacture"
+  ([35 U.S.C. § 171(a)](https://www.law.cornell.edu/uscode/text/35/171)),
+  so a design patent for a controller would not reach an image on a screen unless its claim covers a screen display
+  (inference from that requirement).
 - [GPLv3's](https://www.gnu.org/licenses/gpl-3.0.html) grant does not reach these patents:
   it gives a licence under "the contributor's essential patent claims", which are a contributor's own (GPLv3 § 11).
-  Whether the Open Invention Network's cross-licence, whose members include Sony,
-  reaches any emulator was not established: it is scoped to "a list of software packages" that was not read
-  ([Open Invention Network, "Linux System"](https://openinventionnetwork.com/linux-system/)).
+  Whether the Open Invention Network's cross-licence, whose members include Sony, reaches any emulator is doubtful:
+  it is scoped to "a list of software packages"
+  ([Open Invention Network, "Linux System"](https://openinventionnetwork.com/linux-system/)),
+  and a search of that list's [package search](https://definition.openinventionnetwork.com/) on 2026-11-20
+  for some twenty console emulators, among them MAME, RetroArch, mGBA, PCSX2, PPSSPP, Dolphin, and Ryujinx, found none;
+  "dolphin" matched only a file manager, and QEMU, a general machine emulator, is listed.
   [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) covers licences.
 
 ### Trade marks and branding, recorded as risks
@@ -1569,7 +1597,9 @@ These are findings about the state of the law; the work that could change them i
 - Whether a replacement boot ROM or an emulator that draws a maker's logo infringes a trade mark or copyright.
 - Whether free distribution of emulator source code infringes a patent, and under which provision.
 - Whether the remedies for a wrongful takedown notice apply to a notice that alleges only circumvention.
-  One district court held that § 512(f) does not (Yout v RIAA); no appellate ruling was found by 2026-11-20.
+  One district court held that § 512(f) does not
+  ([Yout v RIAA](https://storage.courtlistener.com/recap/gov.uscourts.ctd.141714/gov.uscourts.ctd.141714.61.0.pdf));
+  no appellate ruling was found by 2026-11-20.
 - Whether a maker's licence terms bind a developer who never accepted them,
   where users who did accept them supply the dumps.
 
@@ -1593,8 +1623,12 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 ### 2. Emulate an encrypted system and require the user to supply keys
 
 - **What:** ship no keys; decrypt at run time with keys the user provides.
-- **Costs:** the design that the yuzu complaint, the agreed finding, the Keighin default ruling,
-  and the 2026 notices describe as trafficking; untested in a contested case; libraries and forks are reached too.
+- **Costs:** the design that the
+  [yuzu complaint](https://storage.courtlistener.com/recap/gov.uscourts.rid.56980/gov.uscourts.rid.56980.1.0.pdf), the
+  agreed finding, the
+  [Keighin](https://storage.courtlistener.com/recap/gov.uscourts.cod.238647/gov.uscourts.cod.238647.36.0.pdf) default
+  ruling, and the 2026 notices describe as trafficking; untested in a contested case; libraries and forks are reached
+  too.
 - **Gains:** covers encrypted systems; the project publishes no key.
 - **Used by:** yuzu and Ryujinx, by the court documents' account; both have ended.
 
@@ -1605,9 +1639,10 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   and the consent injunction bars trafficking in other circumvention software without naming links;
   an embedded key was cited in a maker's letter; neither variant has been tested.
 - **Gains:** in the first, the project's code performs no decryption; in the second, the emulator works unaided.
-- **Used by:** Azahar, for the first variant, since March 2025, giving legal challenges as its reason,
-  with no notice naming it found; Dolphin embeds the Wii common key and has "every reason to believe"
-  that § 1201(f) covers its decryption.
+- **Used by:** [Azahar](https://github.com/azahar-emu/azahar/releases/tag/2124.3), for the first variant,
+  since March 2025, giving legal challenges as its reason, with no notice naming it found;
+  Dolphin embeds the Wii common key and has "every reason to believe" that § 1201(f) covers its decryption
+  ([Dolphin blog, archived copy](https://web.archive.org/web/20241221001744/https://dolphin-emu.org/blog/2023/07/20/what-happened-to-dolphin-on-steam/)).
 
 ### 4. Require firmware that the user dumps
 
@@ -1615,18 +1650,21 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** no decision says the user's copy is lawful; maker licences forbid copying and use off the console;
   dumping can need a modified console.
 - **Gains:** the project distributes no maker code.
-- **Used by:** PCSX2, DuckStation, and melonDS for firmware boot.
+- **Used by:** [PCSX2](https://pcsx2.net/docs/setup/bios/), DuckStation
+  (closed tier, so not linked), and [melonDS](https://github.com/melonDS-emu/melonDS) for firmware boot.
 
 ### 5. Replace the firmware
 
 - **What:** ship an independently written BIOS or boot ROM, or emulate system calls at a high level.
-- **Costs:** lower accuracy, by SkyEmu's account; the replacement must be written independently,
+- **Costs:** lower accuracy, by [SkyEmu's](https://github.com/skylersaleh/SkyEmu) account;
+  the replacement must be written independently,
   and other projects' replacements are closed-tier material under
   [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md#closed-tier); any logo or message it draws is the
   project's own act.
 - **Gains:** nothing of the maker's is needed to run; the facts of Connectix;
   a Game Boy replacement needs no copy of the logo, because the cartridge supplies it.
-- **Used by:** mGBA, SkyEmu, SameBoy, and PPSSPP.
+- **Used by:** [mGBA](https://github.com/mgba-emu/mgba), SkyEmu, [SameBoy](https://github.com/LIJI32/SameBoy),
+  and [PPSSPP](https://www.ppsspp.org/docs/faq/).
 
 ### 6. Point users to firmware the maker publishes
 
@@ -1634,8 +1672,9 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** the licences read, Sony's
   and Microsoft's, limit use to the console; a maker can withdraw the page (inference); not available for every system.
 - **Gains:** no console modification and no third-party copy.
-- **Used by:** Vita3K, which leaves a second font package to the user;
-  Microsoft publishes such a file for Xbox consoles, and no emulator using it was looked for.
+- **Used by:** [Vita3K](https://vita3k.org/quickstart.html), which leaves a second font package to the user;
+  Microsoft publishes such a file for Xbox consoles, and a web search on 2026-11-20 found no emulator that uses it
+  (the results concerned repairing consoles).
 
 ### 7. Publish, or decline to publish, dumping guides and links
 
@@ -1643,18 +1682,24 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** of publishing: guides and links were pleaded as trafficking,
   and United Kingdom law names publishing information; of declining: users turn to third parties.
 - **Gains:** of publishing: usability; of declining: removes conduct that the filings rely on.
-- **Used by:** yuzu published a guide and links to key-dumping tools;
-  PCSX2 and Dolphin publish guides that name or link dumping tools for one's own console.
+- **Used by:** yuzu published a guide and links to key-dumping tools,
+  by the [complaint's](https://storage.courtlistener.com/recap/gov.uscourts.rid.56980/gov.uscourts.rid.56980.1.0.pdf)
+  account; [PCSX2](https://pcsx2.net/docs/setup/bios/) and [Dolphin](https://dolphin-emu.org/docs/faq/) publish guides
+  that name or link dumping tools for one's own console.
 
 ### 8. Take money, or not
 
 - **What:** paid builds, subscriptions, or donations tied to the emulator.
-- **Costs:** pleaded against yuzu as profit from circumvention;
+- **Costs:** pleaded against yuzu as profit from circumvention
+  ([yuzu complaint](https://storage.courtlistener.com/recap/gov.uscourts.rid.56980/gov.uscourts.rid.56980.1.0.pdf));
   the criminal provisions read mostly require a commercial purpose or gain; in the European Union,
   money moves use of a mark closer to "the course of trade" (inference).
 - **Gains:** funding.
-  Taking none does not remove civil exposure: a free server was a trafficked tool in Davidson,
-  and Keighin counted open-source status against the emulators.
+  Taking none does not remove civil exposure:
+  a free server was a trafficked tool in
+  [Davidson](https://law.resource.org/pub/us/case/reporter/F3/422/422.F3d.630.04-3654.html), and
+  [Keighin](https://storage.courtlistener.com/recap/gov.uscourts.cod.238647/gov.uscourts.cod.238647.36.0.pdf) counted
+  open-source status against the emulators.
 - **Used by:** yuzu took money; Connectix and Bleem were paid products and won their appeals on other facts.
 
 ### 9. Choose where the project is hosted and distributed
@@ -1663,7 +1708,8 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** one notice can disable a repository and every fork; a store can refuse a release with no notice;
   self-hosting moves the exposure to hosts and registrars.
 - **Gains:** a host with a published review process and counter-notice route; a store's reach.
-- **Used by:** Dolphin abandoned its Steam release.
+- **Used by:** Dolphin abandoned its Steam release
+  ([Dolphin blog, archived copy](https://web.archive.org/web/20241221001744/https://dolphin-emu.org/blog/2023/07/20/what-happened-to-dolphin-on-steam/)).
 
 ### 10. Respond to a claim by contesting, complying, or settling
 
@@ -1684,7 +1730,8 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   cannot be shown for an AI author whose training data is unknown.
 - **Gains:** no record of having read patents, for indirect infringement or enhanced damages;
   knowledge can still come from a letter, or be argued as wilful blindness.
-- **Used by:** FFmpeg; recommended by Debian's guidance.
+- **Used by:** [FFmpeg](https://ffmpeg.org/legal.html);
+  recommended by [Debian's guidance](https://www.debian.org/reports/patent-faq).
 
 ### 12. Read expired patents only, as documentation
 
@@ -1701,15 +1748,18 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **What:** omit a patented codec or technique, load it from an external library, or wait.
 - **Costs:** missing features; someone must track expiry in each country.
 - **Gains:** the project does not ship the feature while the patent runs.
-- **Used by:** Mesa for texture compression until 2017; Debian,
-  which "will not knowingly distribute software encumbered by patents" (Debian policy).
+- **Used by:** [Mesa](https://docs.mesa3d.org/relnotes/17.3.0.html) for texture compression until 2017; Debian,
+  which "will not knowingly distribute software encumbered by patents"
+  ([Debian policy](https://www.debian.org/legal/patent)).
 
 ### 14. Name the project without a maker's mark, and describe systems in plain words
 
 - **What:** a coined name; statements such as "emulates X" in text; a statement of non-affiliation.
 - **Costs:** the name does not say what is emulated; a disclaimer is relevant but not decisive.
 - **Gains:** the name is not a use of a maker's mark as a mark; plain reference is what the nominative tests address.
-- **Used by:** Dolphin, Azahar, Delta, and RetroArch for names; six of ten projects for disclaimers.
+- **Used by:** [Dolphin](https://dolphin-emu.org/docs/faq/), [Azahar](https://azahar-emu.org/),
+  [Delta](https://faq.deltaemulator.com/release-notes), and [RetroArch](https://www.retroarch.com/) for names;
+  six of ten projects for disclaimers.
 
 ### 15. Use no maker logos or game imagery, or use them under a stated position
 
@@ -1719,7 +1769,7 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   Nintendo's guidelines treat emulator content as inappropriate,
   and the others read cover only personal or legitimate use.
 - **Gains:** of abstaining: no third-party copyright or mark in the project's material.
-- **Used by:** PCSX2 states a position.
+- **Used by:** [PCSX2](https://pcsx2.net/intellectualproperty) states a position.
 
 ### 16. Handle boot logos by drawing what the game supplies, or by drawing none
 
@@ -1728,7 +1778,8 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** no decision covers any variant;
   a boot ROM that embeds a maker's logo makes the project the party reproducing it.
 - **Gains:** a path that holds no copy of the logo distributes none.
-- **Used by:** SkyEmu's replacements lack the start-up splashes; SameBoy supports a non-Nintendo logo in the header.
+- **Used by:** [SkyEmu's](https://github.com/skylersaleh/SkyEmu) replacements lack the start-up splashes;
+  [SameBoy](https://github.com/LIJI32/SameBoy) supports a non-Nintendo logo in the header.
 
 ### Recommendation
 
@@ -1741,8 +1792,8 @@ Each recommendation is for the owner to decide.
   Where an encrypted system is taken up, prefer option 3's first variant
   (accept only decrypted input, with no decryption code, keys, or links to tools) over option 2.
   Every filing, judgment, and notice found targets run-time decryption with user-supplied keys,
-  Azahar moved to decrypted input in March 2025 with no notice naming it found,
-  and an embedded key drew a maker's letter.
+  [Azahar](https://github.com/azahar-emu/azahar/releases/tag/2120) moved to decrypted input in March 2025 with no notice
+  naming it found, and an embedded key drew a maker's letter.
 - **Firmware (options 4 to 6):** prefer option 5, an independently written replacement or high-level emulation,
   wherever accuracy allows, with option 4 as an optional path, and option 6 where the maker publishes the file.
   Connectix's facts are a replacement, no decision makes a user's dump lawful, and the maker licences read
@@ -1751,16 +1802,25 @@ Each recommendation is for the owner to decide.
   take no money tied to the emulator at first; host on GitHub,
   with no store release until [`R3-03` and `R3-06`](../../roadmap/research.md#phase-3-host-platforms) report;
   and on a notice, comply and take the owner's decision before any counter-notice.
-  Guides, links, and paid builds are pleaded against yuzu,
-  and a counter-notice needs a named person and consent to a United States court, and was followed by a suit once.
+  Guides, links, and paid builds are pleaded against yuzu
+  ([complaint](https://storage.courtlistener.com/recap/gov.uscourts.rid.56980/gov.uscourts.rid.56980.1.0.pdf)), and a
+  counter-notice needs a named person and consent to a United States court, and was followed by a suit once.
+  GitHub is recommended for its published review process for circumvention claims,
+  under which it "will err on the side of the developer" where it cannot tell whether a claim is valid,
+  and for its put-back route
+  ([GitHub DMCA takedown policy](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy));
+  its cost is that one notice can disable the repository and every fork.
 - **Patents (options 11 to 13):** option 12, reading expired patents only, as documentation,
   with option 13 for codecs still pooled.
   The expired Nintendo emulation patents are confirmed expired by the term rule,
   reading in-force patents creates a record of knowledge
-  (Debian's guidance), and Mesa's handling of S3TC shows option 13 at work.
-  This matches the proposed amendment of ADR 0001: expired patents are maker material and open,
-  and patents shown in force are read for subject only, never for claims,
-  so no Patent Office status check is made for them.
+  ([Debian's guidance](https://www.debian.org/reports/patent-faq)),
+  and [Mesa's](https://docs.mesa3d.org/relnotes/17.3.0.html) handling of S3TC shows option 13 at work.
+  It is also R0-02's recommendation for an amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md),
+  for the owner to decide: expired patents are maker material and open,
+  and patents shown in force are read for subject only, never for claims.
+  The one exception in this note is a front page, without its claims, read for the term of one family
+  ("Patents on emulation").
 - **Names and imagery (options 14 to 16):** option 14 with a non-affiliation statement; option 15's abstaining variant
   (no maker logos or game imagery; homebrew and test programs only);
   and option 16's variants that hold no copy of a maker's logo (draw nothing, or the project's own mark).
@@ -1789,7 +1849,8 @@ Each recommendation is for the owner to decide.
   that is a recorded risk, not a finding that those systems are closed.
 - Firmware has three routes, options 4 to 6, and none is settled law.
   [`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering) weighs them technically;
-  the legal inputs are the findings on Connectix, maker licences, and Atari v JS&A.
+  the legal inputs are the findings on Connectix, maker licences,
+  and [Atari v JS&A](https://static.case.law/f-supp/597/cases/0005-01.json).
   This feeds an ADR on firmware and a requirement on what the project ships.
 - What the project says to users is itself conduct.
   Guides, links, compatibility lists, screenshots, and telemetry all appear in the filings.
@@ -1798,12 +1859,14 @@ Each recommendation is for the owner to decide.
   ([research conventions, "Constants and tables"](../README.md#constants-and-tables)),
   and this note says what a protection is without saying how to defeat it, as its Scope states.
 - Patents are a risk that [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md) does not address;
-  its row for maker material, which R0-01's source table says includes patents, treats them as open (inference).
-  The recommendation is the proposed amendment of ADR 0001: expired patents open, in-force patents by subject only.
+  its row for maker material, which [R0-01's source table](R0-01-clean-room-policy.md) says includes patents,
+  treats them as open (inference).
+  This note recommends that the owner amend ADR 0001 so that expired patents are open
+  and in-force patents are read by subject only ([Recommendation](#recommendation)).
   Until the owner decides, this note names no patent in force, as its patents section states.
 - Takedown history bears on how sources are recorded.
-  The recommendation, also for the proposed amendment of ADR 0001,
-  is that takedown history goes in a register line's note field and does not by itself change a tier.
+  This note also recommends, for the same amendment of [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md),
+  that takedown history goes in a register line's note field and does not by itself change a tier.
 - The project's licence, hosting, and funding choices carry legal weight found here:
   open-source status was counted against emulators in one default ruling, a single notice can disable all forks,
   and contesting a notice needs a named person.
@@ -1829,13 +1892,13 @@ Each recommendation is for the owner to decide.
 - Is a lock-out check on an unencrypted game an access control?
   Only a court ruling can answer it, and none exists; the family surveys record each check,
   so that the risk can be stated per system.
-- What is Keighin's document 40, of 5 November 2025, which the 2026 notices cite?
+- What is Keighin's document 40, of 5 November 2025 (inference from the notice's citation), which the 2026 notices cite?
   It is not in the public court archive
   (HTTP 404 for documents 39 to 42); buying it from the court's paid service, which needs an account, would answer it.
 - Which audio and video formats does each system's software use?
   The family surveys and [`R2-11`](../../roadmap/research.md#phase-2-cross-cutting-engineering).
-- Does a replacement boot ROM for a roadmap system other than the Game Boy need a maker's logo to run unmodified
-  software, as the Game Boy Advance, DS, and Genesis checks may require (from memory)?
+- Does a replacement boot path for the DS, or for a roadmap system other than the Game Boy, Game Boy Advance,
+  and Genesis, need a copy of a maker's logo or message to run unmodified software?
   [`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering) and the family surveys.
 - What enforcement has reached hosts other than GitHub?
   Lumen refuses automated searches; a Lumen researcher account, which the owner would have to request, would answer it.
@@ -1964,6 +2027,10 @@ United States court decisions and filings:
   747 F.3d 445 (6th Cir. 2014).
 - [DISH Network v SatFTA](https://cases.justia.com/federal/district-courts/california/candce/5:2008cv01561/201657/53/0.pdf),
   No. 5:08-cv-01561 (N.D. Cal., order of 9 March 2011), copy hosted by Justia.
+- Take-Two Interactive v Papenhoff, No. 3:21-cv-06831
+  (N.D. Cal.),
+  [complaint of 2 September 2021](https://storage.courtlistener.com/recap/gov.uscourts.cand.384429/gov.uscourts.cand.384429.1.0.pdf),
+  read 2026-11-20 for the counter-notice; R0-01 lists the case.
 - Yout v Recording Industry Association of America, No. 3:20-cv-1602 (D.
   Conn.,
   [ruling of 30 September 2022](https://storage.courtlistener.com/recap/gov.uscourts.ctd.141714/gov.uscourts.ctd.141714.61.0.pdf)),
@@ -2057,26 +2124,38 @@ Decisions outside the United States:
 
 Takedown notices and host policy:
 
-- [GitHub DMCA notice archive](https://github.com/github/dmca), README and the notices cited by month, among them the
-  [notice of 12 February 2026](https://github.com/github/dmca/blob/master/2026/02/2026-02-12-nintendo.md), read again
+- [GitHub DMCA notice archive](https://github.com/github/dmca), README and the notices cited by month,
+  among them those of [13 May 2014](https://github.com/github/dmca/blob/master/2014/2014-05-13-Nintendo.md),
+  [27 December 2016](https://github.com/github/dmca/blob/master/2016/2016-12-27-Nintendo.md),
+  [29 April 2024](https://github.com/github/dmca/blob/master/2024/04/2024-04-29-nintendo.md),
+  [26 February 2025](https://github.com/github/dmca/blob/master/2025/02/2025-02-26-nintendo.md),
+  [15 May 2025](https://github.com/github/dmca/blob/master/2025/05/2025-05-15-nintendo.md),
+  [12 February 2026](https://github.com/github/dmca/blob/master/2026/02/2026-02-12-nintendo.md),
+  [27 February 2026](https://github.com/github/dmca/blob/master/2026/02/2026-02-27-nintendo.md),
+  and [23 October 2026](https://github.com/github/dmca/blob/master/2026/10/2026-10-23-nintendo.md),
+  and the counter-notices of
+  [10 September 2019](https://github.com/github/dmca/blob/master/2019/09/2019-09-10-nintendo-counternotice.md),
+  [3 October 2019](https://github.com/github/dmca/blob/master/2019/10/2019-10-03-nintendo-2-counternotice.md), and
+  [8 April 2021](https://github.com/github/dmca/blob/master/2021/04/2021-04-08-take-two-counternotice.md); read again
   2026-11-20.
 - [GitHub DMCA Takedown Policy](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy).
 - [Google, "About Lumen"](https://support.google.com/legal/answer/12158374).
 
 Makers' terms, statements, and guidelines:
 
-- PlayStation system software pages and licence agreements:
-  [PS5 system software page](https://www.playstation.com/en-us/support/hardware/ps5/system-software/),
+- PlayStation system software pages and licence agreements: the PS5 system software page
+  (`https://www.playstation.com/en-us/support/hardware/ps5/system-software/`),
   [PS5 licence](https://www.playstation.com/en-us/legal/ps5-ssla/),
   [PS3 licence](https://doc.dl.playstation.net/doc/ps3-eula/ps3_eula_en.html),
-  [PS4 licence](https://doc.dl.playstation.net/doc/ps4-eula/ps4_eula_en.html),
-  and [Vita licence](https://doc.dl.playstation.net/doc/psvita-eula/psvita_eula_en.html).
-  The system software page describes downloads but is not one, and no file was opened.
+  [PS4 licence](https://doc.dl.playstation.net/doc/ps4-eula/ps4_eula_en.html), and
+  [Vita licence](https://doc.dl.playstation.net/doc/psvita-eula/psvita_eula_en.html).
+  The system software page is not linked because it holds firmware download links; no file was opened.
 - [PlayStation Software Usage Terms](https://www.playstation.com/en-us/legal/software-eula/).
 - [Xbox Software License Terms](https://support.xbox.com/en-US/help/hardware-network/warranty-service/xbox-software-license-agreement)
-  and [Xbox error E101 page](https://support.xbox.com/en-US/help/errors/error-code-e101), read 2026-11-20 with a
+  and the Xbox error E101 page (`https://support.xbox.com/en-US/help/errors/error-code-e101`), read 2026-11-20 with a
   browser, because the pages render by script.
-  The update file that the E101 page offers was not opened, and its address is not given.
+  The E101 page is not linked because it offers a firmware download; the update file was not opened,
+  and its address is not given.
 - [Microsoft Services Agreement](https://www.microsoft.com/en-us/servicesagreement), effective 30 September 2026.
 - [Microsoft Trademark and Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks),
   and [Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules).
@@ -2119,10 +2198,9 @@ Emulator projects, prose only:
 
 Patents and patent practice:
 
-- Google Patents page for US 6,672,963, `https://patents.google.com/patent/US6672963B1/en`,
+- [Google Patents page for US 6,672,963](https://patents.google.com/patent/US6672963B1/en),
   and sibling pages for US 7,445,551, US 7,988,556, and the others described.
-  The address is not linked for now only because the host refuses automated requests
-  (HTTP 503 on 2026-11-20) and is not yet in the link checker's list of such hosts; it is safe to open.
+  The host refuses automated requests (HTTP 503 on 2026-11-20), so the link checker skips it.
 - United States Patent Office copies of
   [US 6,672,963](https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/6672963),
   [US 7,445,551](https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/7445551), and
@@ -2138,7 +2216,9 @@ Patents and patent practice:
 - [VideoLAN, legal page](https://www.videolan.org/legal.html).
 - Debian, ["Position on Software Patents"](https://www.debian.org/legal/patent)
   and ["Community Distribution Patent Policy FAQ"](https://www.debian.org/reports/patent-faq).
-- [Open Invention Network, "Linux System"](https://openinventionnetwork.com/linux-system/).
+- [Open Invention Network, "Linux System"](https://openinventionnetwork.com/linux-system/),
+  and its [package search](https://definition.openinventionnetwork.com/), queried 2026-11-20
+  (Table 13, release of 27 January 2026).
 - [Open Source Initiative, statement on the GNOME settlement](https://opensource.org/?p=19712).
 - Pocketpair, statements of [8 November 2024](https://www.pocketpair.jp/en/news/report-on-patent-infringement-lawsuit/)
   and [8 May 2025](https://www.pocketpair.jp/en/news/regarding-the-lawsuit-changes-to-palworld-and-the-future/).
@@ -2152,9 +2232,9 @@ Secondary sources:
   (17 May 2000).
 - [PC Gamer, report on Ryujinx](https://www.pcgamer.com/gaming-industry/switch-emulator-ryujinx-goes-offline-after-creator-gets-an-offer-from-nintendo-they-cant-refuse)
   (1 October 2024).
-- Electronic Frontier Foundation, legal primer on the 2007 disc key
-  (May 2007): `https://www.eff.org/deeplinks/2007/05/09-f9-legal-primer`.
-  It is not linked, because the page discusses a published key and may reproduce it.
+- Electronic Frontier Foundation, legal primer on the 2007 disc key (May 2007), on the foundation's site.
+  It is cited by title and date only, with no address, because the page discusses a published key and may reproduce it,
+  and its address contains part of the key.
 - Association of Copyright for Computer Software,
   announcements of [2019](https://www2.accsjp.or.jp/activities/2019/news114.php)
   and [2020](https://www2.accsjp.or.jp/activities/2020/news120.php).

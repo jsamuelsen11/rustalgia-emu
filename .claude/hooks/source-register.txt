@@ -627,6 +627,9 @@ other | courthousenews.com | press | copy of a court order | 2026-11-20 | R0-02
 other | torrentfreak.com | press | copies of court filings; news site, secondary | 2026-11-20 | R0-02
 other | archive.org/download/gov.uscourts | court records | copies of court filings | 2026-11-20 | R0-02
 other | eff.org | none stated | copy of a court judgment; commentary | 2026-11-20 | R0-02
+# The EFF's 2007 posts on a published disc key: key material, closed so that the guard blocks them. Not opened.
+closed | eff.org/deeplinks/2007/05 | none stated | may reproduce a published key | 2026-11-20 | R0-02; not opened
+closed | www.eff.org/deeplinks/2007/05 | none stated | the same, www prefix | 2026-11-20 | R0-02; not opened
 other | adrforum.com | none stated | domain name decisions | 2026-11-20 | R0-02
 other | wipo.int/wipolex | none stated | treaty text and copies of judgments | 2026-11-20 | R0-02
 other | eur-lex.europa.eu | official publications | European Union law and judgments | 2026-11-20 | R0-02
@@ -659,6 +662,8 @@ other | via-la.com | none stated | patent pool pages and lists | 2026-11-20 | R0
 other | iis.fraunhofer.de | none stated | codec licensor's page | 2026-11-20 | R0-02
 other | debian.org | none stated | distribution's patent policy | 2026-11-20 | R0-02
 other | openinventionnetwork.com | none stated | patent cross-licence pages | 2026-11-20 | R0-02
+other | definition.openinventionnetwork.com | none stated | cross-licence package search | 2026-11-20 | R0-02
+other | gnu.org | none stated | licence texts | 2026-11-20 | R0-02
 other | opensource.org | none stated | statement on a patent settlement | 2026-11-20 | R0-02
 other | pocketpair.jp | none stated | game maker's statements on a patent suit | 2026-11-20 | R0-02
 other | sec.gov | public domain | annual report of a patent holder | 2026-11-20 | R0-02
@@ -691,8 +696,8 @@ open | nintendo.com/en-gb/legal-information | maker's pages | Nintendo of Europe
 open | sega.co.jp/en/streaming_guideline | maker's terms | Sega's streaming guideline | 2026-11-20 | R0-02
 # Emulator projects' own sites, read for prose only by R0-02.
 open | pcsx2.net | none stated | site of an open-tier emulator; prose | 2026-11-20 | BIOS and trade mark pages
-open | vita3k.org | none stated | site of a walled emulator; prose | 2026-11-20 | quickstart page
-open | faq.deltaemulator.com | none stated | site of a walled emulator; prose | 2026-11-20 | release notes
+open | vita3k.org | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | quickstart page
+open | faq.deltaemulator.com | none stated | walled emulator's site; holds prose, no code | 2026-11-20 | release notes
 open | retroarch.com | none stated | site of an open-tier frontend; prose | 2026-11-20 | home page
 open | azahar-emu.org | none stated | site of an open-tier emulator; prose | 2026-11-20 | home page
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
