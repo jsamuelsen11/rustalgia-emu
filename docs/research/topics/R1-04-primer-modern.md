@@ -9,31 +9,23 @@ date: 2026-11-20
 
 ## Summary
 
-This note asks how the consoles of the modern era work and what that asks of an emulator,
-using the systems the [roadmap][roadmap]'s era rule places here: the PlayStation 3, 4, and 5,
-the Xbox One and Xbox Series, and the Nintendo Switch and Switch 2.
+This note asks how the modern era's consoles work and what that asks of an emulator: the PlayStation 3, 4, and 5,
+the Xbox One and Xbox Series, and the Nintendo Switch and Switch 2, as the [roadmap][roadmap] places them.
 
-In this era a game is a user process of a full operating system,
-so the interface an emulator must reproduce is mostly the operating system's and its libraries',
-not the chips' registers (inference).
-For the Xbox, the maker documents part of that interface:
-Microsoft's public GDK pages describe the game's Win32 subset and the audio APIs.
+A game here is a user process of a full operating system,
+so an emulator mainly reproduces the operating system and its libraries, not the chips' registers (inference);
+for the Xbox, [Microsoft's GDK glossary][xbox-glossary] names the game's Win32 subset.
 
-The guest processors are general-purpose architectures
-(64-bit PowerPC with the Cell's SPUs, x86-64, and 64-bit Arm),
-so a host of the same architecture can run much guest code directly,
-and the PlayStation 3 needs translation on every host (inference).
-Some Switch games are 32-bit, so a Switch emulator needs a 32-bit Arm front end as well (inference).
+The processors are general-purpose (64-bit PowerPC with the Cell's SPUs, x86-64, and 64-bit Arm),
+so a host of the same architecture runs much guest code directly,
+while the PS3 needs translation on every host and some Switch games a 32-bit Arm front end (inference).
 
-Console games can ship pre-compiled shaders
-([Wikipedia, Micro stuttering][wp-stutter], secondary),
-which an emulator must translate for the host GPU, so shader translation
-and its compilation stutter are central costs (inference).
+Games ship pre-compiled shaders ([Wikipedia, Micro stuttering][wp-stutter], secondary),
+so shader translation and its compilation stutter are central costs (inference).
 
-Switch game containers are encrypted
-([SwitchBrew, NCA][sb-nca]); that the other systems' retail games are encrypted and signed is from memory.
-The legal side is in [`R0-02`][r0-02] and is not repeated here.
-This note is not legal advice.
+Switch game containers ([SwitchBrew, NCA][sb-nca]) and installed Xbox console games
+([Microsoft, "PC package encryption and content protection"][xbox-pkg-enc])
+are encrypted, the Sony systems' games by memory only; the law is in [`R0-02`][r0-02].
 
 ## Scope
 
@@ -41,12 +33,14 @@ This note is not legal advice.
 - Covered: processors, memory and storage, graphics, audio, operating systems and services, timing, threading and input,
   and online services, for the Switch and Switch 2 ([`R1-14`][roadmap]), PlayStation 3, 4, and 5 ([`R1-21`][roadmap]),
   and Xbox One and Xbox Series ([`R1-23`][roadmap]).
-  By the roadmap's era rule ([pull request #22][pr22]), the Xbox 360, of the seventh generation,
-  is placed in [`R1-03`][r1-03] with the Wii, and the PS3 here because `R1-21` depends on no other primer;
-  that split is the roadmap's grouping, not a hardware rule.
-  The [roadmap][roadmap] gives the listing of every console and handheld of the era to the catalogue, [`R1-08`][r1-08];
-  PC and Android handhelds, microconsoles, and FPGA devices are emulator hosts,
-  left to [`R3-07`][roadmap] and [`R3-12`][roadmap].
+- Placement: by the roadmap's era rule
+  ([pull request #22][pr22]),
+  the Xbox 360, of the seventh generation, is placed in [`R1-03`][r1-03] with the Wii,
+  and the PS3 here because `R1-21` depends on no other primer; that split is the roadmap's grouping,
+  not a hardware rule.
+- Catalogue and hosts: the [roadmap][roadmap] gives the listing of every console
+  and handheld of the era to the catalogue, [`R1-08`][r1-08]; PC and Android handhelds, microconsoles,
+  and FPGA devices are emulator hosts, left to [`R3-07`][roadmap] and [`R3-12`][roadmap].
 - Left to other items: the law on encryption, firmware, keys, and takedowns
   ([`R0-02`][r0-02], cited by section name);
   each family's emulators (`R1-14`, `R1-21`, `R1-23`); host platforms (phase 3); techniques in depth (phase 2).
@@ -62,8 +56,12 @@ This note is not legal advice.
   Each correction was checked against the source once more before it was applied;
   claims the passes could not check are weakened, marked, or listed in the pull request.
 - A later pass the same day answered the note's open questions where a source could:
-  it fetched the new sources as raw text or PDF, confirmed each quotation against that text, and checked each pinpoint;
-  the pull request lists what it changed.
+  it fetched the new sources as raw text or PDF, confirmed each quotation against that text, and checked each pinpoint.
+- A third independent verification pass, of two verifiers, then tested that rework:
+  one fetched every source again and tested each new claim, quotation, and register line,
+  and one tested every link and the note's shape.
+  Each of their corrections was checked against the source before it was applied,
+  and the pull request lists what the passes changed and what they could not check.
 - A claim marked "(secondary)" rests on Wikipedia or another summary of other sources,
   "(from memory)" on no page fetched for the note, "(inference)" on the author's reasoning,
   "(research log)" on an event while gathering the evidence,
@@ -72,7 +70,7 @@ This note is not legal advice.
   and walled emulators' prose.
   No emulator source code, key, fuse, exploit, firmware, title-list, or game page was opened on purpose.
   Code read outside emulators, header constants of `libnx`
-  (open tier) and part of a Linux sound driver, is named where used.
+  (open tier), part of a Linux sound driver, and Linux's PS3 time and repository code, is named where used.
 
 ## Findings
 
@@ -139,8 +137,10 @@ This note is not legal advice.
   IBM's own links return HTTP 404, and a web search found version 1.2
   (27 January 2007)
   only on university hosts, which are not linked here because no maker page shows that IBM released it (research log).
-  Sony's PS3 Linux directory on kernel.org holds only the eight Linux documents and no SPU instruction-set document
-  ([Sony, PS3 Linux directory][sony-dir], listing; observed).
+  The directory of Sony's PS3 Linux documents on kernel.org, kept by G.
+  Levand, holds the kit's eight documents and no SPU instruction-set document
+  ([Sony, PS3 Linux documents directory][sony-dir], listing; observed);
+  its parent directory adds how-tos, runtime documentation for MARS, and configuration files (observed).
 - All SPU code runs at one privilege level, and the SPE shares the PPE's address translation and protection
   (Gschwind et al., slides 7 and 23), so addresses in SPU DMA commands go through the guest's page tables (inference).
 - In the PlayStation 3 seven of the eight SPEs work, for manufacturing yield, and one of the seven is reserved:
@@ -211,7 +211,7 @@ This note is not legal advice.
   and 2 shared CPU cores" ([Microsoft, "System resources for UWP apps and games on Xbox One"][ms-uwp]);
   that page covers UWP games only, not native titles.
   Microsoft's GDK page that compares the consoles' CPU and memory requires a sign-in and was not read (research log).
-  Reports that a seventh Xbox One core was opened to games rest on a leaked kit and were not opened (research log).
+  Reports of a seventh Xbox One core opened to games were not read, because they rest on a leaked kit (from memory).
 - No page searched gives the cores left to PS5 games: Sony's blog post, the PS5 Wikipedia article,
   and [psdevwiki PS5, Hardware][pd-ps5-hw].
 - shadPS4, a walled PS4 emulator, credits help with "natively executing the x64 code of PS4 binaries",
@@ -256,7 +256,7 @@ This note is not legal advice.
   (from memory).
 - Arm's A78C manual lists AArch32 execution at EL0 only, and AArch64 at every exception level from EL0 to EL3
   ([Arm, Cortex-A78C Core Technical Reference Manual][arm-a78c-trm], 102226 r0p2, section A1.2 "Features",
-  and section A1.3, table A1-2).
+  and section A1.4, table A1-3).
   So the T239 can run 32-bit user processes in hardware,
   and an Arm64 host built on a core with the same limit could run them directly (inference).
 - The same Android Authority article adds that Arm confirmed the A78C supports 32-bit operations,
@@ -334,10 +334,12 @@ This note is not legal advice.
   and give about 2:1 lossless compression on BCn textures ([Andrews and Grossman, Hot Chips 32][hc32], slides 8 and 10).
 - No public specification of the Kraken or BCPack bitstreams was found.
   Searched: the [register][register], [`R0-05`][r0-05], the Wikipedia articles cited, the Hot Chips 32 slides,
-  Sony's blog post, and Microsoft's public GDK index,
-  whose page on the Xbox texture-compression archive format redirects to a page
-  that requires membership in a developer programme under a non-disclosure agreement;
-  that page was closed and its copy deleted (research log).
+  Sony's blog post, and [Microsoft's public GDK index][xbox-index].
+  The index's page on the Xbox texture-compression archive format redirects to Microsoft Learn's GDK path,
+  `learn.microsoft.com/gaming/gdk/`, which asks
+  for membership in a developer programme under a non-disclosure agreement.
+  That path is closed in the register and has no link here, and the page was not opened again (research log).
+  Open decoders reverse-engineered from Kraken streams are reported (from memory); none was evaluated or read.
 - The Switch has 4 GiB of LPDDR4, LPDDR4X in the X1+ models
   ([SwitchBrew, Hardware][sb-hardware]; [Wikipedia, Nintendo Switch][wp-switch], secondary);
   that CPU and GPU share it is inference from the GPU mapping process memory ([SwitchBrew, GPU][sb-gpu]).
@@ -507,7 +509,14 @@ This note is not legal advice.
   ([PlayStation Blog, "Unveiling new details of PlayStation 5"][psblog]).
   Wikipedia describes the Tempest engine as supporting "hundreds of simultaneous sound sources,
   compared to 50 on the PlayStation 4" ([Wikipedia, PlayStation 5][wp-ps5], secondary).
-  That it is a modified GPU compute unit is stated only in a video talk by Sony's architect (lead, not relied on).
+- Digital Foundry, reporting Mark Cerny's talk and its interview with him,
+  calls Tempest a revamped AMD compute unit at the GPU's clock, delivering 64 floating-point operations per cycle,
+  with no need for attached caches
+  ([Leadbetter, Digital Foundry, "PlayStation 5 uncovered: the Mark Cerny tech deep dive"][df-cerny], secondary).
+  The same article quotes Cerny that "the Tempest engine supports two" wavefronts:
+  "One wavefront is for the 3D audio and other system functionality, and one is for the game".
+  He adds that data is moved in and out by DMA, as on the PS3's SPUs (same).
+  A game can therefore run its own code on Tempest, which a PS5 emulator must also run (inference).
 
 #### Xbox One and Series
 
@@ -520,9 +529,9 @@ This note is not legal advice.
   (Scalable Hardware Audio Processing Engine)
   does most audio work in fixed-function blocks for XMA decoding, sample-rate conversion, equalisation and compression,
   and filtering and volume, with its own DMA to unified memory and internal mix buffers
-  ([Microsoft, "Overview of SHAPE"][xbox-shape]).
+  ([Microsoft, "Overview of SHAPE"][xbox-shape]; [Microsoft, "The audio architecture in XBOX One"][xbox-one-audio]).
   It works on 128-sample blocks, which at 48 kHz is a 2.67 ms audio frame
-  ([Microsoft, "The audio architecture in XBOX One"][xbox-one-audio]).
+  (Microsoft, "The audio architecture in XBOX One").
 - An Audio Control Processor schedules SHAPE, driven by the game through an API of its own;
   an Audio Scalar Processor and an Audio Vector Processor, the latter mainly for multichannel echo cancellation,
   sit beside it (Microsoft, "The audio architecture in XBOX One"; "Overview of SHAPE").
@@ -676,11 +685,17 @@ This note is not legal advice.
   The game's interface is therefore a subset of Win32 plus the GDK's libraries (inference).
 - The older Xbox One kit's documentation is not public,
   and which Win32 and GDK calls games use is not listed on the pages read.
+- Microsoft's packaging page says, below its table of PC package protection, "XBOX console games use XVC,
+  and their installed content remains encrypted"
+  ([Microsoft, "PC package encryption and content protection"][xbox-pkg-enc]).
+  Its `packageutil` page says the tool inspects XVC, MSIXVC, and MSIXVC2 packages and reports encryption key ids
+  ([Microsoft, "packageutil.exe"][xbox-packageutil]); neither describes the XVC layout.
 - Microsoft's directory of topics under a non-disclosure agreement, at `docs.xbox.com/nda/`,
   is closed in the [register][register] and has no link here, because its pages are for licensed developers only;
   pages behind Microsoft's sign-in are not opened for the same reason.
 - The `xboxoneresearch/` repositories, a community group whose list includes exploit and flash-dump tools,
-  are not in the register and are not linked; the guard blocks their code, and `R1-23` evaluates them (research log).
+  are not in the register and are not linked; the guard blocks their code, and [`R1-23`][roadmap] evaluates them
+  (research log).
 
 ### Timing, threading, and input
 
@@ -700,6 +715,13 @@ This note is not legal advice.
   semaphores, event flags, and event queues
   ([psdevwiki PS3, LV2 Functions and Syscalls][pd-ps3-lv2], group and call names);
   the PS4 adds Sony event flags and semaphores to FreeBSD's calls ([psdevwiki PS4, Syscalls][pd-ps4-syscalls]).
+- On the PS3, Linux reads the time-base frequency at boot from the hypervisor's repository,
+  a store of system settings it reaches through LV1, and takes the processor clock as 40 times that frequency;
+  the clock is read through an LV1 call that also returns a time-base value
+  ([Linux, `arch/powerpc/platforms/ps3/time.c`][linux-ps3time] and [`repository.c`][linux-ps3repo];
+  this description was written after reading that code).
+  With the PPE at 3.2 GHz ([Wikipedia, PlayStation 3 technical specifications][wp-ps3-specs], secondary),
+  the time base runs at 80 MHz (calculated from the ratio); an emulator reports the value its repository gives.
 - The Switch's tick counter runs at 19.2 MHz and is read directly by games;
   on the Switch 2 the compatibility layer "Returns 31250000 instead of 19200000" to Switch games
   (SwitchBrew, SVC; Switch 2: Compatibility Mode).
@@ -760,10 +782,14 @@ This note is not legal advice.
   ([RPCS3 ps3autotests README][rpcs3-tests], prose of a walled source).
   None was found for the PS4, PS5, Xbox One, Series, Switch, or Switch 2,
   in the [register][register] or [`R0-05`][r0-05] (research log).
-- RPCS3's approach to Sony's libraries and to the SPUs was not found:
-  the guard blocks RPCS3's main repository beyond its prose, and `rpcs3.net` refused an automated request with HTTP 403
-  (research log).
-- Of the maker material in the Sources, Sony's PS3 Linux documents are under GFDL 1.2.
+- RPCS3's blog, read in an existing Wayback Machine capture because its site refused an automated request with HTTP 403
+  (research log),
+  describes interpreters and LLVM-based recompilers for both the PPU and the SPUs,
+  and an Arm64 port of December 2024 that needs an Armv8.2-A processor
+  ([RPCS3, "Introducing RPCS3 for arm64"][rpcs3-blog], prose of a walled source).
+  It does not describe the approach to Sony's libraries, reservations, or DMA,
+  and the guard blocks RPCS3's main repository beyond its prose.
+- Of the maker material in the Sources, [Sony's PS3 Linux documents][sony-lko] are under GFDL 1.2.
   IBM's slides say that nothing in them operates "as an express or implied license"
   ([Gschwind et al., Hot Chips 17][hc17-gschwind], slide 31).
   Arm's manuals carry a notice that forbids reproduction without Arm's written permission
@@ -783,8 +809,9 @@ This note is not legal advice.
   and its PS4 libraries page reads like a maker's manual (research log).
   Both pages are closed in the [register][register], so they have no link:
   `www.psdevwiki.com/ps4/SELF_File_Format` and `www.psdevwiki.com/ps4/Libraries`.
-  The proposed amendment of [ADR 0001][adr1] recommends
-  that pages a source's author says came from leaked material are closed while the rest of the source keeps its tier.
+  The amendment of [ADR 0001][adr1] that [`R0-05`][r0-05] recommends
+  (its option 7, not yet adopted)
+  closes pages a source's author says came from leaked material while the rest of the source keeps its tier.
 
 ## Options and trade-offs
 
@@ -809,10 +836,13 @@ Costs and gains are the author's inference unless a source is named.
 
 High-level emulation for every system here,
 with PS3 library modules from Sony's published firmware as an option for each library.
-HLE needs no keys or dumped modules, which [`R0-02`][r0-02-fw] leaves unsettled,
-and the maker's own Switch 2 layer and Microsoft's public GDK pages show
-that the boundary is documented enough to reach; Sony publishes the PS3 firmware,
-so loading it fits [`R0-02` option 6][r0-02-opt6].
+HLE needs no keys or dumped modules, which [`R0-02`][r0-02-fw] leaves unsettled.
+The maker's own Switch 2 layer shows that a library-level boundary works,
+and [Microsoft's GDK glossary][xbox-glossary] names the Xbox one;
+for the Sony systems the boundary must be learned from community references.
+Sony publishes the PS3 firmware, so pointing users to it fits [`R0-02` option 6][r0-02-opt6];
+that its modules are encrypted, so that loading them would need keys, is from memory,
+and the option stands only if that is not so.
 
 ### Where the high-level boundary sits
 
@@ -828,11 +858,11 @@ so loading it fits [`R0-02` option 6][r0-02-opt6].
 
 #### Recommendation
 
-Each system's documented boundary: Switch services
+For each system, the boundary where the sources place the games' calls: Switch services
 (games carry their SDK),
-PS4 and PS5 system libraries, PS3 LV2 calls, and the Xbox `WINAPI_FAMILY_GAMES` Win32 subset plus GDK libraries.
-These are where the sources place the games' calls, and each is versioned,
-so the boundary must also track the system version a game targets.
+PS4 and PS5 system libraries, PS3 system libraries with LV2 below them when Sony's modules are loaded,
+and the Xbox `WINAPI_FAMILY_GAMES` Win32 subset plus GDK libraries.
+Each is versioned, so the boundary must also track the system version a game targets.
 
 ### How guest code is executed
 
@@ -851,7 +881,7 @@ so the boundary must also track the system version a game targets.
 A translator for each guest architecture as the base,
 with direct execution as an optimisation on hosts of the same architecture.
 The PS3 needs translation on every host, Arm hosts need it for x86 guests, and some Switch games need AArch32,
-which only some Arm64 hosts run directly; direct execution is faster where it applies.
+which only some Arm64 hosts run directly (from memory); direct execution is faster where it applies.
 
 ### The Cell's SPUs
 
@@ -859,16 +889,19 @@ which only some Arm64 hosts run directly; direct execution is faster where it ap
   emulate 128-byte reservations exactly or approximately; perform DMA at once or deferred.
 - **Costs:** exact reservations and deferred DMA cost speed; approximation fails games that race.
 - **Gains:** exactness follows Sony's documented rules; approximation is simpler.
-- **Used by:** RPCS3, whose approach was not found in the RPCS3 prose that could be fetched (research log).
+- **Used by:** RPCS3, with SPU interpreters and LLVM recompilers by [its blog][rpcs3-blog];
+  its reservation and DMA approach was not found in the prose that could be fetched (research log).
 
 #### Recommendation
 
 Host threads that block on SPU channels, exact detection of writes to a reserved 128-byte line,
 and DMA performed at once, with deferral added only where a test shows a game depends on overlap;
-Sony documents the reservation and alignment rules exactly, and blocking channel reads give natural switch points.
+Sony documents the SPE-side reservation and the alignment rules, and blocking channel reads give natural switch points;
+what breaks a reservation from the PPE or devices must be tested.
 IBM's SPU instruction-set copies on third-party hosts are not read:
-the proposed amendment of [ADR 0001][adr1] recommends
-that maker documents surviving only on third-party hosts are closed unless the maker's release is shown.
+the amendment of [ADR 0001][adr1] that [`R0-05`][r0-05] recommends
+(its option 5, not yet adopted)
+closes maker documents surviving only on third-party hosts unless the maker's release is shown.
 
 ### Shader translation and caching
 
@@ -929,17 +962,20 @@ That keeps games as shipped and limits the configurations to test; the makers' o
   low-level emulation needs firmware the project does not obtain;
   the patent status of audio formats such as AC-3 was not confirmed
   ([`R0-02`, "Patents, recorded as risks"][r0-02-pat]).
-- **Gains:** HLE needs no firmware, and the makers now document the API surfaces it answers for the Xbox
+- **Gains:** HLE needs no firmware; Microsoft's public pages describe the Xbox API surfaces it answers
   ([Microsoft, "Overview of SHAPE"][xbox-shape];
-  [Microsoft, "Overview of XBOX Series X\|S audio hardware"][xbox-series-audio]).
+  [Microsoft, "Overview of XBOX Series X\|S audio hardware"][xbox-series-audio]),
+  SwitchBrew describes the Switch renderer
+  ([SwitchBrew, Audio services][sb-audio]), and no source read describes Sony's audio libraries.
 - **Used by:** the [register][register] lists no open-tier emulator for these systems.
 
 #### Recommendation
 
 High-level emulation of the audio services and libraries, rendered on the host: the Switch audio renderer by revision,
 XAudio2 with the Xbox One control processor's and the Series XAPU APIs, and Sony's libraries.
-Low-level emulation needs DSP firmware the project does not obtain,
-and the makers' public pages describe the API surfaces.
+Low-level emulation needs DSP firmware the project does not obtain.
+Microsoft's public pages describe the Xbox API surfaces and SwitchBrew the Switch renderer;
+Sony's libraries are described by no source read, so they must be learned in [`R1-21`][roadmap].
 
 ### Online services
 
@@ -966,42 +1002,46 @@ and a replacement service carries the server-emulator risk in [`R0-02`][r0-02].
   This feeds an ADR on high-level against low-level emulation of system software, and [`R2-12`][roadmap].
 - The PS3, PS4, PS5, Switch, and Switch 2 have no open-tier emulator, and the Xbox One and Series have no hub
   ([register][register]; [`R0-05`][r0-05]);
-  the surveys will rest on prose, community wikis, the few maker documents, Microsoft's public GDK pages,
+  the surveys will rest on prose, community wikis, the few maker documents, [Microsoft's public GDK pages][xbox-index],
   and reader sessions for walled emulators (inference).
   This bears on [`R6-01`][roadmap], which weighs each system's risks.
 - Guest architecture decides which host runs a system fastest: x86-64 hosts for the Sony and Microsoft systems,
   Arm64 hosts for Nintendo's, and translation everywhere for the PS3 (inference).
-  A Switch emulator also needs a 32-bit Arm front end.
+  A Switch emulator also needs a 32-bit Arm front end (inference).
   This feeds [`R2-01`][roadmap], [`R3-01`][roadmap], [`R4-08`][roadmap], and the host notes in phase 3.
 - Shader translation and caching are central GPU work for every system here (inference).
   This feeds [`R2-05`][roadmap] and [`R4-05`][roadmap], and a quality target on first-run stutter in [`R6-02`][roadmap].
-- Switch games are encrypted, and the Switch 2's system software changes about monthly
-  (inference, as of 2026-11-20); encryption on the other systems is from memory.
+- Switch games and installed Xbox console games are encrypted
+  ([SwitchBrew, NCA][sb-nca]; [Microsoft's packaging page][xbox-pkg-enc]),
+  and the Switch 2's system software changes about monthly
+  (inference, as of 2026-11-20); encryption on the Sony systems is from memory.
   The legal record in [`R0-02`][r0-02] and the pace of change both feed `R6-01`.
 - Unified memory near host size feeds the host requirements in phase 3 and `R6-02` (inference).
 
 ## Open questions
 
 - Exact SPU floating-point deviations: IBM's instruction-set document,
-  if the proposed amendment of [ADR 0001][adr1] lets a capture of IBM's own address show its release;
-  otherwise [`R1-21`][roadmap] reader sessions.
-- Cores available to PS5 games: [`R1-21`][roadmap] (Sony's blog, Wikipedia, and psdevwiki searched).
+  if the amendment of [ADR 0001][adr1] that [`R0-05`][r0-05] recommends is adopted
+  and a capture of IBM's own address shows its release; otherwise [`R1-21`][roadmap] reader sessions.
+- Cores available to PS5 games: `R1-21`
+  ([Sony's blog][psblog], [Wikipedia][wp-ps5], and [psdevwiki][pd-ps5-hw] searched).
 - How Xbox One games place data in ESRAM: [`R1-23`][roadmap], from walled emulators' prose or reader sessions.
 - Kraken and BCPack bitstreams: no public specification
-  (register, `R0-05`, Microsoft's public GDK index searched); [`R2-11`][roadmap].
-- Which Win32 and GDK calls Xbox games use, and the MSIXVC and older kit formats: [`R1-23`][roadmap].
-- RPCS3's library and SPU approach: an `R1-21` reader session, or the prose of `rpcs3.net` once evaluated
-  (it refuses scripts).
-- Tempest's internals: `R1-21`.
-- The PS3's time-base frequency and its source: `R1-21`
-  (Linux's PS3 platform code is a candidate, `other` tier; Sony's kit documents searched).
+  ([register][register], `R0-05`, and [Microsoft's public GDK index][xbox-index] searched);
+  [`R2-11`][roadmap], which can also evaluate the reported reverse-engineered decoders.
+- Which Win32 and GDK calls Xbox games use, and the layout of XVC console packages,
+  which the public packaging pages do not describe: `R1-23`.
+- Whether Sony's published PS3 firmware modules can be loaded without keys: `R1-21`.
+- RPCS3's approach to Sony's libraries, reservations, and DMA: an `R1-21` reader session.
+- Tempest's instruction set and how a game submits its wavefront: `R1-21`.
 - PS3 audio middleware on the SPUs: `R1-21`.
 
 ## Sources
 
 Every source below was read on 2026-11-20. psdevwiki was read from existing Wayback Machine captures,
 because the live site refused automated requests (research log); each capture's time stamp is given.
-Sources that this note names but does not link are closed in the [register][register], and the text says why.
+Sources that this note names but does not link are closed in the [register][register], not yet evaluated, or not read,
+and the text gives the reason at each.
 
 Maker documents and talks:
 
@@ -1010,14 +1050,14 @@ Maker documents and talks:
   [Application Programming Environment][sony-ape] (revision 1.6), and [Cell Programming Primer][sony-cpp]
   (revision 1.6)
   chapters 1 to 4, GFDL 1.2; G. Levand's [PS3-Linux README][sony-readme] of 6 January 2024;
-  and the [directory listing][sony-dir].
+  and the [listing of the documents' directory][sony-dir] and of its parent.
 - M. Gschwind et al., ["A Novel SIMD Architecture for the Cell Heterogeneous Chip-Multiprocessor"][hc17-gschwind],
   Hot Chips 17 (2005).
 - R. Sakai et al., ["Programming and Performance Evaluation of the Cell Processor"][hc17-sakai], Hot Chips 17.
 - J. Sell and P.
   O'Connor, ["Xbox One Main SoC and Xbox One Kinect"][hc25], Hot Chips 25 (2013), slides, mostly images.
 - J. Sell, [Xbox One X ("Scorpio Engine") slides][hc29], Hot Chips 29 (2017), images, read by OCR and by eye;
-  found through the Wayback Machine's index of addresses and fetched from `old.hotchips.org`.
+  found through the Wayback Machine's index of addresses and fetched from old.hotchips.org.
 - J. Andrews and M.
   Grossman, ["Xbox Series X System Architecture"][hc32], Hot Chips 32
   (17 August 2020), © 2020 IEEE, personal use permitted.
@@ -1036,11 +1076,14 @@ Maker documents and talks:
   now under Microsoft Learn's previous versions.
 - Microsoft, GDK documentation: the [index][xbox-index] and its English topic lists, the [glossary][xbox-glossary],
   ["The audio architecture in XBOX One"][xbox-one-audio], ["Overview of SHAPE"][xbox-shape],
-  and ["Overview of XBOX Series X\|S audio hardware"][xbox-series-audio], read as Markdown.
+  ["Overview of XBOX Series X\|S audio hardware"][xbox-series-audio],
+  ["PC package encryption and content protection"][xbox-pkg-enc], and ["packageutil.exe"][xbox-packageutil],
+  read as Markdown.
 
 Press:
 
-- R. Leadbetter, Digital Foundry, ["Inside Xbox Series X: the full specs"][df], 16 March 2020.
+- R. Leadbetter, Digital Foundry, ["Inside Xbox Series X: the full specs"][df], 16 March 2020,
+  and ["PlayStation 5 uncovered: the Mark Cerny tech deep dive"][df-cerny], 2 April 2020.
 - N. Fernandez, Android Authority,
   ["Nintendo accidentally improved Switch emulation performance, thanks to Switch 2"][aa], 15 May 2025, updated the same
   day.
@@ -1066,8 +1109,7 @@ Community references:
   ["Dynlib Data"][oo-dynlib], ["Libkernel"][oo-libkernel].
 - dekuNukem, Nintendo Switch reverse-engineering notes at commit `b354f21a`: [README][deku-readme],
   [Bluetooth HID notes][deku-bt], [IMU notes][deku-imu].
-- `libnx` headers [`audren.h`][libnx-audren] and [`audout.h`][libnx-audout], from the master branch,
-  whose latest commit was `b156b477`.
+- `libnx` headers [`audren.h`][libnx-audren] and [`audout.h`][libnx-audout], at commit `b156b477`.
 - [NintendoClients README][nc-readme], at commit `d0965c88`.
 
 Open-source documentation and specifications:
@@ -1075,8 +1117,10 @@ Open-source documentation and specifications:
 - Linux kernel at commit `5f22fb20`: `Documentation/gpu/amdgpu/`
   ([`driver-core.rst`][linux-core], [`ring-buffer.rst`][linux-ring], [`gc/index.rst`][linux-gc]),
   [`Documentation/filesystems/spufs/spufs.rst`][linux-spufs], [`arch/powerpc/platforms/ps3/Kconfig`][linux-kconfig],
-  and [`sound/ppc/snd_ps3.c`][linux-sndps3]
-  (header and capabilities only);
+  [`sound/ppc/snd_ps3.c`][linux-sndps3]
+  (header and capabilities only),
+  and `arch/powerpc/platforms/ps3/` [`time.c`][linux-ps3time] and [`repository.c`][linux-ps3repo]
+  (time-base parts only);
   the last three were read from the master branch, whose head was `5f22fb20`, and none has changed since 2025.
 - Mesa documentation: [RADV][mesa-radv],
   and NVK's pages ["Hardware docs"][mesa-nvk-hw] and ["External Hardware Documentation and Resources"][mesa-nvk-ext].
@@ -1092,6 +1136,8 @@ Prose of walled emulators:
   so none is given.
 - [RPCS3 ps3autotests README][rpcs3-tests], from the master branch; the guard blocks the commit lookup,
   so none is given.
+- RPCS3, ["Introducing RPCS3 for arm64"][rpcs3-blog], 9 December 2024,
+  read on the blog's front page in the Wayback Machine capture 20251204030505, because the live site refuses scripts.
 
 Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 
@@ -1126,13 +1172,13 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [sony-ape]: https://kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/ApplicationProgrammingEnvironment.html
 [sony-cpp]: https://kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/CellProgrammingPrimer.html
 [sony-readme]: https://kernel.org/pub/linux/kernel/people/geoff/cell/README
-[sony-dir]: https://kernel.org/pub/linux/kernel/people/geoff/cell/
+[sony-dir]: https://kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/
 [hc17-gschwind]: https://old.hotchips.org/wp-content/uploads/hc_archives/hc17/2_Mon/HC17.S1/HC17.S1T1.pdf
 [hc17-sakai]: https://old.hotchips.org/wp-content/uploads/hc_archives/hc17/2_Mon/HC17.S1/HC17.S1T4.pdf
 [hc25]: https://old.hotchips.org/wp-content/uploads/hc_archives/hc25/HC25.10-SoC1-epub/HC25.26.121-fixed-%20XB1%2020130826gnn.pdf
 [hc29]: https://old.hotchips.org/wp-content/uploads/hc_archives/hc29/HC29.21-Monday-Pub/HC29.21.10-GPU-Gaming-Pub/HC29.21.110-Xbox-Sell-Microsoft.pdf
 [hc32]: https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf
-[arm-a57]: https://documentation-service.arm.com/documentation/ddi0488/h/
+[arm-a57]: https://developer.arm.com/documentation/ddi0488/h/
 [arm-a78c-sog]: https://documentation-service.arm.com/static/5fa2bd1eb1a7c5445f2906fd
 [arm-a78c-trm]: https://documentation-service.arm.com/static/6193c9bef45f0b1fbf3a85dd
 [amd-16h]: https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/48751_16h_bkdg.pdf
@@ -1146,7 +1192,10 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [xbox-one-audio]: https://docs.xbox.com/build/console-features/audio/overviews/xbox-one-audio-architecture
 [xbox-shape]: https://docs.xbox.com/build/console-features/audio/overviews/shape-overview
 [xbox-series-audio]: https://docs.xbox.com/build/console-features/audio/overviews/scarlett-audio
+[xbox-pkg-enc]: https://docs.xbox.com/build/core-features/common/packaging/packaging-encryption-msixvc2
+[xbox-packageutil]: https://docs.xbox.com/build/core-features/common/packaging/deployment/packageutil
 [df]: https://www.digitalfoundry.net/articles/digitalfoundry-2020-inside-xbox-series-x-full-specs
+[df-cerny]: https://www.digitalfoundry.net/articles/digitalfoundry-2020-playstation-5-the-mark-cerny-tech-deep-dive
 [aa]: https://www.androidauthority.com/mario-kart-8-deluxe-switch-emulation-3557965/
 [sb-hardware]: https://switchbrew.org/w/index.php?oldid=15339
 [sb-memlayout]: https://switchbrew.org/w/index.php?oldid=12866
@@ -1188,8 +1237,8 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [deku-readme]: https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/README.md
 [deku-bt]: https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/bluetooth_hid_notes.md
 [deku-imu]: https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/imu_sensor_notes.md
-[libnx-audren]: https://github.com/switchbrew/libnx/blob/master/nx/include/switch/services/audren.h
-[libnx-audout]: https://github.com/switchbrew/libnx/blob/master/nx/include/switch/services/audout.h
+[libnx-audren]: https://github.com/switchbrew/libnx/blob/b156b4774fb2df7b93402169509266da7547fc4c/nx/include/switch/services/audren.h
+[libnx-audout]: https://github.com/switchbrew/libnx/blob/b156b4774fb2df7b93402169509266da7547fc4c/nx/include/switch/services/audout.h
 [nc-readme]: https://github.com/Kinnay/NintendoClients/blob/d0965c8875ca09e1bfa5482ac8d41d1eccd59d75/README.md
 [linux-core]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/Documentation/gpu/amdgpu/driver-core.rst
 [linux-ring]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/Documentation/gpu/amdgpu/ring-buffer.rst
@@ -1197,6 +1246,8 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [linux-spufs]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/Documentation/filesystems/spufs/spufs.rst
 [linux-kconfig]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/arch/powerpc/platforms/ps3/Kconfig
 [linux-sndps3]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/sound/ppc/snd_ps3.c
+[linux-ps3time]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/arch/powerpc/platforms/ps3/time.c
+[linux-ps3repo]: https://github.com/torvalds/linux/blob/5f22fb20497f4983094131f00a734362300d22d2/arch/powerpc/platforms/ps3/repository.c
 [mesa-radv]: https://docs.mesa3d.org/drivers/radv.html
 [mesa-nvk-hw]: https://docs.mesa3d.org/drivers/nvk/hardware_docs.html
 [mesa-nvk-ext]: https://docs.mesa3d.org/drivers/nvk/external_hardware_docs.html
@@ -1209,6 +1260,7 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [box64]: https://github.com/ptitSeb/box64/blob/07e9e5c34420b3116913b44e3f38a5c8f6f4e546/README.md
 [shadps4]: https://github.com/shadps4-emu/shadPS4/blob/main/README.md
 [rpcs3-tests]: https://github.com/RPCS3/ps3autotests/blob/master/README.md
+[rpcs3-blog]: https://web.archive.org/web/20251204030505/https://rpcs3.net/blog/
 [wp-cell]: https://en.wikipedia.org/w/index.php?oldid=1386170292
 [wp-ps3-specs]: https://en.wikipedia.org/w/index.php?oldid=1386319161
 [wp-ps3-sys]: https://en.wikipedia.org/w/index.php?oldid=1386319155

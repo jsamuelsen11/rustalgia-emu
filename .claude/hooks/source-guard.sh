@@ -30,7 +30,8 @@ while IFS='|' read -r tier pattern _; do
   *) continue ;;
   esac
 
-  escaped=$(printf '%s' "$pattern" | sed 's/[.[\*^$]/\\&/g')
+  # Escape every character that is special in an extended regular expression, such as the '?' of a query.
+  escaped=$(printf '%s' "$pattern" | sed 's/[.[\*^$?+(){}|]/\\&/g')
   case "$pattern" in
   */) escaped="${escaped}[a-z0-9._-]+" ;;
   esac

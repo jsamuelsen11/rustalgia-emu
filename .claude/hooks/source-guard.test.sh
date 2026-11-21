@@ -173,7 +173,7 @@ check 2 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/mas
 check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/master/docs/Hardware/Fusesets.md')"
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 
-# psdevwiki's PS4 wrapper and libraries pages, closed, at every form they are reached by; other pages stay open.
+# psdevwiki's PS4 wrapper and libraries pages, closed, at the address forms tested here; other pages stay open.
 check 2 writer "$(fetch https://www.psdevwiki.com/ps4/SELF_File_Format)"
 check 2 writer "$(fetch https://psdevwiki.com/ps4/SELF_File_Format)"
 check 2 writer "$(fetch https://web.archive.org/web/20260220000705id_/https://www.psdevwiki.com/ps4/SELF_File_Format)"
@@ -184,6 +184,13 @@ check 0 writer "$(fetch https://web.archive.org/web/20260216085041id_/https://ww
 # Microsoft's directory of GDK topics under a non-disclosure agreement is closed; the public pages stay open.
 check 2 writer "$(fetch https://docs.xbox.com/nda/nda-overview.md)"
 check 2 writer "$(fetch https://docs.xbox.com/nda/nda-topic-directory.md)"
+check 2 writer "$(fetch https://devdocs.xbox.com/nda/nda-overview)"
+check 2 writer "$(fetch https://learn.microsoft.com/gaming/gdk/docs/features/graphics/xbtc)"
+check 0 writer "$(fetch https://learn.microsoft.com/en-us/previous-versions/windows/uwp/xbox-apps)"
+check 2 writer "$(fetch https://psdevwiki.com/ps4/index.php?title=SELF_File_Format)"
+check 2 writer "$(fetch https://www.psdevwiki.com/ps4/index.php?title=Libraries)"
+check 0 writer "$(fetch https://www.psdevwiki.com/ps4/index.php?title=Syscalls)"
+check 0 writer "$(fetch https://www.psdevwiki.com/ps4/indexXphpYtitle=SELF_File_Format)"
 check 0 writer "$(fetch https://docs.xbox.com/home/glossary.md)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
@@ -198,8 +205,8 @@ if [ -n "$bad" ]; then
   failed=1
 fi
 
-# No restricted pattern holds "~" or "?": the guard's matching cannot take them, and "~" stops the guard.
-special=$(grep -E '^(walled|closed|tainted) \| [^ |]*[~?]' "$register" || true)
+# No restricted pattern holds "~": it is the guard's sed delimiter. Other special characters are escaped.
+special=$(grep -E '^(walled|closed|tainted) \| [^ |]*[~]' "$register" || true)
 if [ -n "$special" ]; then
   echo "FAIL: restricted patterns with characters the guard cannot match:"
   echo "$special"

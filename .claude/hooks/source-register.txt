@@ -625,22 +625,30 @@ open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a
 open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README
 open | learn.microsoft.com/en-us/openspecs | copies to implement; no patent grant | maker's specs | 2026-11-20 | notice
 open | hc32.hotchips.org | (c) 2020 IEEE; personal use only | slides by the maker's engineers | 2026-11-20 | slide 1
-open | blog.playstation.com | none stated | maker's own blog | 2026-11-20 | post
-open | docs.xbox.com | none stated | maker's public GDK docs; NDA and sign-in pages closed | 2026-11-20 | index
+open | blog.playstation.com | all rights reserved | maker's own blog | 2026-11-20 | post
+open | docs.xbox.com | none stated | maker's public GDK docs; NDA pages and sign-in target closed | 2026-11-20 | index
 open | devdocs.xbox.com | none stated | same site under a second address | 2026-11-20 | index
 open | learn.microsoft.com/en-us/previous-versions/windows/uwp | none stated | maker's UWP docs | 2026-11-20 | page
-open | digitalfoundry.net | not stated on the page read | press; reports a maker briefing | 2026-11-20 | article
+open | digitalfoundry.net | (c) notice, no grant | press; reports maker briefings and talks | 2026-11-20 | footer
 open | androidauthority.com | not stated on the page read | press; secondary | 2026-11-20 | article page
+walled | rpcs3.net | none stated | site of the walled RPCS3 emulator; prose | 2026-11-20 | blog, capture 20251204030505
 other | web.archive.org | - | an archive, not a source; captures cited with their time stamps | 2026-11-20 | -
 # Pages closed so that the guard blocks them; the rest of each site keeps its tier. Patterns are cut short.
 # Microsoft's directory of GDK topics under a non-disclosure agreement, linked from its public index; not opened.
 closed | docs.xbox.com/nda | - | maker's directory of NDA topics | 2026-11-20 | linked from the public index; not opened
+closed | devdocs.xbox.com/nda | - | the same directory under the second address | 2026-11-20 | not opened
+# NDA pages of the public index redirect to Microsoft Learn's locale-free GDK path, which asks for a sign-in.
+closed | learn.microsoft.com/gaming/gdk | - | redirect target of NDA pages; sign-in | 2026-11-20 | 307 header only
 # psdevwiki PS4: the wrapper page says part of its layout came from a leaked kernel; the libraries page reads like
 # a maker's SDK manual. Each has a line for the www prefix.
 closed | psdevwiki.com/ps4/self_file | GFDL 1.2 | layout partly from a leaked kernel | 2026-11-20 | capture 20260220
 closed | www.psdevwiki.com/ps4/self_file | GFDL 1.2 | www prefix | 2026-11-20 | capture 20260220000705
 closed | psdevwiki.com/ps4/librarie | GFDL 1.2 | reads like a maker's SDK manual | 2026-11-20 | research log
 closed | www.psdevwiki.com/ps4/librarie | GFDL 1.2 | www prefix | 2026-11-20 | research log
+closed | psdevwiki.com/ps4/index.php?title=self_file | GFDL 1.2 | query form | 2026-11-20 | capture 20260220
+closed | www.psdevwiki.com/ps4/index.php?title=self_file | GFDL 1.2 | www query form | 2026-11-20 | capture 20260220
+closed | psdevwiki.com/ps4/index.php?title=librarie | GFDL 1.2 | query form | 2026-11-20 | research log
+closed | www.psdevwiki.com/ps4/index.php?title=librarie | GFDL 1.2 | www query form | 2026-11-20 | research log
 # Sources first cited by R1-03, the sixth-generation primer.
 open | learn.microsoft.com/en-us/archive/blogs/xboxteam | none stated | maker's team blog | 2026-11-20 | post
 open | ppsspp.org | notice, no grant | site of an open-tier emulator; prose | 2026-11-20 | footer, one page
