@@ -44,7 +44,7 @@ A note on law or policy says that it is not legal advice.
 
 **Leave out:** detail and anything not supported later in the note.
 
-**Length:** at most 150 words, in short paragraphs of one point each.
+**Length:** three to five sentences.
 
 **Example:**
 
