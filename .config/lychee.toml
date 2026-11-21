@@ -28,6 +28,24 @@ exclude = [
   '^https?://(www\.)?gnu\.org/', # times out
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
+  # Refuse GitHub's CI runners though they answer other clients (CI runs of #34 to #46, 2026-11-20).
+  '^https?://([a-z]+\.)?nesdev\.org/', # 403 to CI runners
+  '^https?://n64brew\.dev/', # 403 to CI runners
+  '^https?://image-ppubs\.uspto\.gov/', # 403 to CI runners
+  '^https?://wiki\.neogeodev\.org/', # connection error from CI runners
+  '^https?://docs\.vulkan\.org/', # 403 to CI runners
+  '^https?://registry\.khronos\.org/', # 403 to CI runners
+  '^https?://(www\.)?japaneselawtranslation\.go\.jp/', # 403 to CI runners
+  '^https?://(www\.)?gesetze-im-internet\.de/', # times out from CI runners
+  '^https?://(www\.)?rechtsprechung-im-internet\.de/', # times out from CI runners
+  '^https?://emulation\.gametechwiki\.com/', # 403 to CI runners
+  '^https?://doc\.dl\.playstation\.net/', # 403 to CI runners
+  '^https?://(www\.)?romhacking\.net/', # 403 to CI runners
+  '^https?://api\.github\.com/', # rate-limited for CI runners
+  '^https?://(www\.)?no-intro\.org/', # times out from CI runners
+  '^https?://elaw\.klri\.re\.kr/', # times out from CI runners
+  '^https?://(www\.)?androidauthority\.com/', # 403 to CI runners
+  '^https?://(www\.)?dragonminded\.com/', # times out from CI runners
   '^https?://github\.com/customer-terms/', # 500 Internal Server Error to automated requests
   '^https?://docs\.fedoraproject\.org/', # 200 with a bot-challenge page, so a fetch checks nothing
   '^https?://git\.kernel\.org/', # 200 with a bot-challenge page, so a fetch checks nothing
