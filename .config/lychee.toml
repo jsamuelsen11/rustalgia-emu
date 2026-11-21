@@ -28,4 +28,6 @@ exclude = [
   '^https?://(www\.)?gnu\.org/', # times out
   '^https?://pascal\.computer\.org/', # search form; times out
   '^https?://(docs\.|www\.)?mamedev\.org/', # unreachable from automated checks
+  '^https?://caselaw\.findlaw\.com/', # 403 Forbidden (challenge page)
+  '^https?://wiki\.desmume\.org/', # HTTP 500 to most requests (2026-11-20)
 ]

@@ -33,7 +33,7 @@ This note is not legal advice.
 - Covered: the kinds of source, the law that makes reading matter, what comparable projects do,
   what changes when AI agents read and write, and note-taking practice.
 - Left to other items: case law, anti-circumvention, firmware, and keys in depth ([R0-02](R0-02-legal-baseline.md));
-  licence strategy ([`R0-03`](../../roadmap/research.md#phase-0-ground-rules)); note conventions
+  licence strategy ([R0-03](../../roadmap/research.md#phase-0-ground-rules)); note conventions
   and the glossary ([R0-04](R0-04-glossary-and-conventions.md)); the reading list
   for each system ([R0-05](R0-05-source-map.md)); provenance controls
   for agent-written work ([R0-06](R0-06-provenance-controls.md)).
@@ -41,9 +41,12 @@ This note is not legal advice.
   Statutes and project policies are quoted as published on the day each was read.
   The Japanese statutes were read in unofficial English translations.
 - How claims were checked: each finding names its source, and every source was fetched on the date its entry gives.
-  For the first version, a second, independent pass fetched the sources again and tested each claim and quotation.
-  Findings added on 2026-11-20 rest on pages fetched that day, with each quotation confirmed in the raw text,
-  or on the repository notes they link, whose own checks apply.
+  Two independent passes have run so far, each after a research pass.
+  For the first version, a second pass fetched the sources again and tested each claim and quotation.
+  The findings added on 2026-11-20 rest on pages fetched that day, or on the repository notes they link.
+  A second pass on the same day fetched those sources again, tested each new claim, quotation, and link,
+  and its corrections were checked against the sources and applied.
+  Claims it could not check are marked where they stand and listed in the pull request.
 - A claim marked "(secondary)" rests on commentary, not on the original text.
   A claim marked "(from memory)" was not confirmed by any fetched page, and one marked "(inference)" is reasoning.
   Statements that nothing was found record a search, not proof of absence.
@@ -115,8 +118,8 @@ This note is not legal advice.
   By the account of the employees who wrote it,
   the resulting manual "contained only functional descriptions of the interface requirements
   and did not include any of Sega's code".
-  The court held disassembly a fair use where it is "the only way to gain access to the ideas and functional elements"
-  and there is "a legitimate reason".
+- The court in Sega held disassembly a fair use where it is "the only way to gain access to the ideas
+  and functional elements" and there is "a legitimate reason".
   It added that this did not "insulate Accolade from a claim of copyright infringement with respect to its finished
   products".
 - In [Sony v Connectix](https://law.resource.org/pub/us/case/reporter/F3/203/203.F3d.596.99-15852.html),
@@ -185,8 +188,9 @@ This note is not legal advice.
   by a lawful user, for information not "readily available" (Article 6(1)).
   The information may not be "given to others, except when necessary",
   nor used for a program "substantially similar in its expression" (Article 6(2)).
-- The directive defines interoperability as "the ability to exchange information and mutually to use the information
-  which has been exchanged", between parts of software and hardware (recital 10).
+- Recital 10 says that interoperability between parts of software and hardware "can be defined
+  as the ability to exchange information and mutually to use the information which has been exchanged".
+  A recital explains the directive; it is not one of its operative articles.
   No source read rules on whether a program that runs another's software in place of its hardware fits that definition
   (searched: the case law read for this note and for R0-02, and EUR-Lex for the judgment below).
 - Article 6(2)(b) bars giving the information to others "except when necessary
@@ -196,8 +200,8 @@ This note is not legal advice.
   as the last bullet of this section says.
 - Decompilation is not limited to Article 6.
   A lawful purchaser may decompile all or part of a program to "correct errors affecting its operation",
-  without meeting Article 6's conditions,
-  but "only to the extent necessary to effect that correction" and subject to the contract
+  without meeting Article 6's conditions, but "only to the extent necessary to effect that correction and in compliance,
+  where appropriate, with the conditions laid down in the contract"
   ([Top System v Belgian State](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:62020CJ0013),
   Court of Justice, judgment of 6 October 2021, operative part, points 1 and 2).
   The ruling was given under Directive 91/250/EEC, which 2009/24/EC codified, and concerns error correction,
@@ -237,6 +241,9 @@ This note is not legal advice.
   ([ADR 0001, "Closed tier"](../../adr/0001-restrict-reading-by-licence-tier.md#closed-tier)),
   and the research conventions bar any value known only from the code of a decompilation
   ([research conventions, "Constants and tables"](../README.md#constants-and-tables)).
+  The stronger reason is that the project never obtains or uses firmware or games at all,
+  so it has nothing of its own to decompile
+  ([ADR 0001, "Context"](../../adr/0001-restrict-reading-by-licence-tier.md#context)).
 
 ### Trade secrets, contracts, and leaked material
 
@@ -394,15 +401,16 @@ This note is not legal advice.
   [R0-05](R0-05-source-map.md) examines them.
 - Licences of community references range from CC0
   ([Pan Docs](https://gbdev.io/pandocs/History.html))
-  through a bare copyright notice with no grant ([GBATEK](https://problemkaputt.de/gbatek.htm)) to nothing stated
-  ([3dbrew](https://www.3dbrew.org/wiki/3dbrew:Copyrights), [WiiBrew](https://wiibrew.org/wiki/WiiBrew:Policy),
-  SwitchBrew).
+  through a bare copyright notice with no grant
+  ([GBATEK, About](https://problemkaputt.de/gbatek-about-this-document.htm))
+  to nothing stated ([3dbrew](https://www.3dbrew.org/wiki/3dbrew:Copyrights),
+  [WiiBrew](https://wiibrew.org/wiki/WiiBrew:Policy), [SwitchBrew](https://switchbrew.org/wiki/Main_Page)).
   Pan Docs' history pages do not say how its facts were first obtained (Pan Docs, History).
 - The maintainers of the community PlayStation reference say that "it isn't a clean room reverse engineering project",
   that "a good chunk of the original document has been either directly copy/pasted from the confidential code
   and documentation from Sony, or summarized and rephrased",
   and that "any work derived from it shouldn't be considered clean" (psx-spx home page).
-  The document it descends from carries the line "This hardware reference is reportedly based on confidential documents
+- The document it descends from carries the line "This hardware reference is reportedly based on confidential documents
   and source code.
   If anybody knows of such leaked information ... please let me know!", which reads as its author reporting the claim,
   not conceding it (Nocash PSX specifications).
@@ -413,7 +421,7 @@ This note is not legal advice.
   which the project never opens.
   R0-05 searched every hub's policy pages and found none
   ([R0-05, "What the evaluation cannot show"](R0-05-source-map.md#what-the-evaluation-cannot-show)).
-  The working test is ADR 0001's kinds table:
+- The working test is ADR 0001's kinds table:
   a reference is tainted when its maintainers say it copies confidential material,
   closed when a named project or rights holder has accused it publicly, and otherwise open, with the gap recorded
   ([ADR 0001, "Sources that are not emulators"](../../adr/0001-restrict-reading-by-licence-tier.md#sources-that-are-not-emulators)).
@@ -425,7 +433,12 @@ This note is not legal advice.
   ([3dbrew Copyrights](https://www.3dbrew.org/wiki/3dbrew:Copyrights);
   [WiiBrew Policy](https://wiibrew.org/wiki/WiiBrew:Policy);
   [WiiUBrew Policy](https://wiiubrew.org/wiki/WiiUBrew:Policy)).
-  NESdev, SNESdev, N64brew, DSiBrew, and SwitchBrew state none on the pages read.
+  [NESdev](https://www.nesdev.org/wiki/Nesdev_wiki:General_disclaimer),
+  [SNESdev](https://snes.nesdev.org/wiki/SNESdev_Wiki), [N64brew](https://n64brew.dev/wiki/Main_Page),
+  [DSiBrew](https://dsibrew.org/wiki/DSiBrew:Contributing),
+  and [SwitchBrew](https://switchbrew.org/wiki/Main_Page) state none on the pages read,
+  and R0-05 found the same across the hubs it evaluated
+  ([R0-05, "Patterns across the hubs"](R0-05-source-map.md#patterns-across-the-hubs)).
 - Test suites do not always record hardware.
   One suite's expected images are "screenshots from my Game Boy emulator (which I believe to be correct)"
   ([Mealybug README](https://github.com/mattcurrie/mealybug-tearoom-tests)),
@@ -435,6 +448,8 @@ This note is not legal advice.
   ([SingleStepTests README](https://github.com/SingleStepTests/65x02)).
 - Several test collections show no licence file where they are commonly obtained, including mirrors of blargg's tests
   (GitHub licence metadata).
+  They are not linked: with no licence they are closed tier,
+  as the [register](../../../.claude/hooks/source-register.txt) records for each mirror.
 - Official documents that are public are not always free to reuse.
   The known-issues document for a current Arm manual forbids reproduction without Arm's written permission
   and makes access conditional on not using it to assess infringement of third-party patents
@@ -460,16 +475,15 @@ This note is not legal advice.
   [R0-05's option 4](R0-05-source-map.md#4-makers-manuals-whose-notices-restrict-use).
 - A homebrew library can carry disputed origin.
   The authors of the Homebrew Channel state that large portions of libogc "were stolen directly from the Nintendo SDK
-  (decompiled and cleaned up)"
-  ([fail0verflow README](https://github.com/fail0verflow/hbc)),
-  and the RTEMS project alleges "a systematic effort to copy source code from RTEMS"
-  ([RTEMS 2025](https://www.rtems.org/news/2025-05-06-rtems-devkit-libogc-response/)).
-  The library's licence file now says its threading code was "inspired by and derived from code written
-  for the RTEMS project" (libogc `LICENSE`, closed tier, so not linked).
-  On the Nintendo allegation, its maintainer is reported as saying "There was no reading of source code
+  (decompiled and cleaned up)" ([fail0verflow README](https://github.com/fail0verflow/hbc)).
+  On that allegation, its maintainer is reported as saying "There was no reading of source code
   or tools to turn assembly into C"
   ([Hackaday 2025](https://hackaday.com/2025/05/01/libogc-allegations-rock-wii-homebrew-community/), secondary; the
   maintainer's own posts were not read).
+- The RTEMS project alleges "a systematic effort to copy source code from RTEMS"
+  ([RTEMS 2025](https://www.rtems.org/news/2025-05-06-rtems-devkit-libogc-response/)).
+  The library's licence file now says its threading code was "inspired by and derived from code written
+  for the RTEMS project" (libogc `LICENSE`, closed tier, so not linked).
 - Community sites can host a maker's documents next to their own. jgenesis lists such "official documentation" among its
   sources, and its README does not say how the documents became public
   ([jgenesis README](https://github.com/jsgroth/jgenesis)).
@@ -479,38 +493,65 @@ This note is not legal advice.
 
 ### Licences of the emulators on the roadmap
 
-Read from each repository's licence file and README on 2026-11-17
-([GitHub API](https://api.github.com)),
-and for three projects again on 2026-11-20. [`R0-03`](../../roadmap/research.md#phase-0-ground-rules) covers what the
-licences mean for reuse.
+Read from each repository's licence file and README on 2026-11-17, through the GitHub contents and licence API,
+and for three projects again on 2026-11-20.
+Each emulator is linked to its repository at first mention, except those in the closed tier.
+[R0-03](../../roadmap/research.md#phase-0-ground-rules) covers what the licences mean for reuse.
 
-- Permissive: SameBoy, SkyEmu, Play!, ares, rustboyadvance-ng, TetaNES, MartyPC, and BizHawk's own code.
+- Permissive: [SameBoy](https://github.com/LIJI32/SameBoy), [SkyEmu](https://github.com/skylersaleh/SkyEmu),
+  [Play!](https://github.com/jpd002/Play-), [ares](https://github.com/ares-emulator/ares),
+  [rustboyadvance-ng](https://github.com/michelhe/rustboyadvance-ng), [TetaNES](https://github.com/lukexor/tetanes),
+  [MartyPC](https://github.com/dbalsom/martypc), and [BizHawk](https://github.com/TASEmulators/BizHawk)'s own code.
   SameBoy adds a condition on app-store distribution of its iOS code.
-  Provenance uses a BSD-style licence with a clause on commercial use of its name.
-- MPL-2.0: mGBA.
-- GPL-3.0: melonDS, Azahar, Panda3DS, PCSX2, bsnes, Mesen, jgenesis, RetroArch, dust, gopher64. melonDS, bsnes,
+  [Provenance](https://github.com/Provenance-Emu/Provenance) uses a BSD-style licence with a clause on commercial use of
+  its name.
+- MPL-2.0: [mGBA](https://github.com/mgba-emu/mgba).
+- GPL-3.0: [melonDS](https://github.com/melonDS-emu/melonDS), [Azahar](https://github.com/azahar-emu/azahar),
+  [Panda3DS](https://github.com/wheremyfoodat/Panda3DS), [PCSX2](https://github.com/PCSX2/pcsx2),
+  [bsnes](https://github.com/bsnes-emu/bsnes), [Mesen](https://github.com/SourMesen/Mesen2),
+  [jgenesis](https://github.com/jsgroth/jgenesis), [RetroArch](https://github.com/libretro/RetroArch),
+  [dust](https://github.com/kelpsyberry/dust), and [gopher64](https://github.com/gopher64/gopher64). melonDS, bsnes,
   and Mesen state "or any later version".
   The Mesen2 repository is archived and points to a community fork under the same licence.
-- GPL-2.0 or later: PPSSPP, Dolphin, and MAME by its documentation.
-  MAME's `COPYING` file says "version 2" with no "or later".
-- GPL-2.0, with "only" or "or later" not stated: DeSmuME, PCSX-Redux, and Flycast.
+- GPL-2.0 or later: [PPSSPP](https://github.com/hrydgard/ppsspp), [Dolphin](https://github.com/dolphin-emu/dolphin),
+  and [MAME](https://github.com/mamedev/mame) by its [documentation](https://www.mamedev.org/legal.html).
+  [MAME's `COPYING` file](https://github.com/mamedev/mame/blob/master/COPYING) says "version 2" with no "or later".
+- GPL-2.0, with "only" or "or later" not stated: [DeSmuME](https://github.com/TASEmulators/desmume),
+  [PCSX-Redux](https://github.com/pcsx-redux/pcsx-redux), and [Flycast](https://github.com/flyinghead/flycast).
   Each licence file is the GPL version 2 text with nothing added, and each README says nothing about the licence
   (licence and README read through the GitHub API, 2026-11-20).
-  The three licence files are identical once white space is normalised (tested locally with `tr` and `sha256sum`).
-- DeSmuME's wiki says only that the program is "distributed under the GNU General Public License"
-  and links the version 2 text ([DeSmuME wiki, FAQ](http://wiki.desmume.org/index.php?title=Faq),
-  last modified 6 June 2022, revision 8944).
+  For Flycast this rests on one reading; the second pass's request was blocked by the source guard (research log).
+- The DeSmuME and PCSX-Redux licence files are identical once runs of white space are collapsed
+  (tested locally with `tr` and `sha256sum`, GNU coreutils 8.32, 2026-11-20).
+  The Flycast file was compared on the first reading only, with tool versions not recorded.
+- DeSmuME's wiki says that the program is distributed under the GNU General Public License, and links the version 2 text
+  ([DeSmuME wiki, FAQ](https://wiki.desmume.org/index.php?title=Faq), last modified 6 June 2022, revision 8944).
+  The page returned HTTP 500 to the second pass, which confirmed only the revision and date,
+  so its wording is paraphrased here (research log).
 - The version 2 text provides that if "the Program does not specify a version number of this License,
   you may choose any version ever published by the Free Software Foundation"
-  (section 9, as it stands in the three projects' licence files).
-  Whether shipping the version 2 text counts as specifying a version is not settled by any source read (inference).
-  The remaining evidence would be in per-file notices, which are code and walled; a reader session could read them.
-- Under ADR 0001 the three stay walled whichever answer the notices give,
-  because its walled test names "GPL-2.0 with 'only' or 'or later' not stated"
+  ([GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), section 9,
+  checked against the projects' licence files).
+- The Free Software Foundation's FAQ does not say whether shipping the version 2 text specifies a version.
+  It does say that a copy of the licence in a repository, on its own,
+  leaves it "not entirely clear" whether the licence applies to any particular file,
+  and asks for a notice in each source file
+  ([GPL FAQ, "LicenseCopyOnly"](https://www.gnu.org/licenses/gpl-faq.html#LicenseCopyOnly),
+  read in a web archive capture of 2026-11-18 02:35:56, because gnu.org timed out).
+  Searched: the FAQ, the version 2 text, the three READMEs, and DeSmuME's wiki.
+  On the FAQ's account the per-file notices decide the question.
+  They sit in code, which is walled, so only a reader session can read them.
+- Under [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md#open-tier),
+  notices saying "or later" would move the files they cover to the open tier on re-evaluation,
+  because the open test includes GPL-2.0 "or later".
+  Notices saying "only", or no notices, keep the three walled
   ([ADR 0001, "Walled tier"](../../adr/0001-restrict-reading-by-licence-tier.md#walled-tier)).
-- AGPL-3.0: Delta.
+  The recommendation below proposes the reader session.
+- AGPL-3.0: [Delta](https://github.com/rileytestut/Delta).
 - Not free software: DuckStation, under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 licence,
   and Snes9x, under its own non-commercial licence.
+  Neither is linked, because both are closed tier,
+  as the [register](../../../.claude/hooks/source-register.txt) records.
 - No licence shown upstream: Gambatte, whose README now reads "This project has been taken private."
   The upstream Gambatte repository is closed tier, so its address is in Sources as text.
 - The [GNU licence list](https://www.gnu.org/licenses/license-list.html) says GPLv2 alone "is, by itself,
@@ -520,7 +561,7 @@ licences mean for reuse.
   meaning material modified "in a manner requiring permission under the Copyright and Similar Rights"
   ([Creative Commons legal code, § 1(a)](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en)).
 - GitHub's licence metadata is missing or reads `NOASSERTION` for 13 of the 30 emulators,
-  so it cannot stand in for reading the licence file (GitHub API).
+  so it cannot stand in for reading the licence file (GitHub licence API, 2026-11-17).
 
 ### When AI agents read and write
 
@@ -536,7 +577,8 @@ licences mean for reuse.
   for copyright infringement"
   ([Doe v GitHub, 2026](https://cdn.ca9.uscourts.gov/datastore/opinions/2026/09/16/24-7700.pdf)), a reservation, since
   no infringement claim was before it.
-  The nearest decisions found are at the pleading stage, advisory, under appeal, or not final; R0-06 lists them
+- The nearest decisions found are mostly at the pleading stage, advisory, under appeal, or not final,
+  and none concerns a model's downstream user; R0-06 lists them
   ([R0-06, "Litigation and regulation on model memory, access, and output"](R0-06-provenance-controls.md#litigation-and-regulation-on-model-memory-access-and-output)).
   One law-journal article calls presence in the training set "powerful evidence of access"
   ([Lee, Cooper and Grimmelmann](https://arxiv.org/pdf/2309.08133), secondary).
@@ -568,21 +610,28 @@ licences mean for reuse.
   says "Copyright does not extend to purely AI-generated material", and "prompts do not alone provide sufficient
   control"; its report does not analyse source code.
 - By R0-06's account, the Office protects human-written material that stays perceptible in the output,
-  and human selection, arrangement, or modification of outputs.
-  The United Kingdom still deems an author for a computer-generated work
-  (CDPA section 9(3)),
-  European Union law requires the author's own intellectual creation by a natural person
-  (Directive 2009/24/EC, Articles 1(3) and 2(1)),
-  and Japan's guidance allows that iterative correction of prompts may count
+  and the creative selection, coordination, or arrangement of outputs, or creative modifications of them;
+  selecting among outputs is not in itself enough
   ([R0-06, "Authorship and ownership of agent-written code and text"](R0-06-provenance-controls.md#authorship-and-ownership-of-agent-written-code-and-text)).
+- Elsewhere the rules differ.
+  The United Kingdom still deems an author for a computer-generated work
+  ([CDPA section 9(3)](https://www.legislation.gov.uk/ukpga/1988/48/section/9)).
+  European Union law protects a program that is "the author's own intellectual creation",
+  and makes the author a natural person or group of them or, where national law permits, a legal person it designates
+  ([Directive 2009/24/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32009L0024),
+  Articles 1(3) and 2(1)).
+  Japan's guidance allows that iterative correction of prompts may count (as R0-06 reports).
   The same file can therefore be protected in one country and unprotected in another (inference, as R0-06 states).
 - A licence such as GPL-3.0 grants permissions under copyright,
-  so it binds only the parts of a work in which copyright subsists (inference).
-  What licence strategy follows is for [`R0-03`](../../roadmap/research.md#phase-0-ground-rules).
+  so under copyright it binds only the parts of a work in which copyright subsists (inference).
+  Whether it also binds as a contract is open:
+  the district court in Doe v GitHub let a contract claim for breach of open-source licences proceed
+  (order of 24 June 2024, as R0-06 records).
+  What licence strategy follows is for [R0-03](../../roadmap/research.md#phase-0-ground-rules).
 - Local comparison tools need a copy of the reference code
   ([JPlag](https://github.com/jplag/JPlag); [copydetect](https://github.com/blingenf/copydetect)).
   Hosted snippet-matching services compare against an index the project never holds and return a match report
-  ([GitHub code referencing](https://docs.github.com/en/copilot/concepts/completions/code-referencing);
+  ([GitHub code referencing](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides);
   [SCANOSS](https://osskb.org/)).
   Whether either counts as contact with the code is not addressed in any source read.
 
@@ -598,8 +647,9 @@ licences mean for reuse.
   the ReactOS audit page lists "undocumented magic numbers" as a warning sign
   ([ReactOS audit page](https://web.archive.org/web/20250423130230/https://reactos.org/wiki/Audit),
   archived copy captured 2025-04-23 13:02:30).
-- No source read addresses pseudo-code.
-  [R0-04](R0-04-glossary-and-conventions.md#pseudo-code-and-algorithm-descriptions-the-law) maps the law and practice,
+- No primary source read for the first version of this note addressed pseudo-code.
+  [R0-04](R0-04-glossary-and-conventions.md#pseudo-code-and-algorithm-descriptions-the-law) has since mapped the law
+  and [the practice](R0-04-glossary-and-conventions.md#pseudo-code-and-algorithm-descriptions-practice),
   and the [research conventions](../README.md#algorithms-and-pseudo-code) bar pseudo-code until the owner decides
   where it falls under ADR 0001.
 - Disassembly "is wholesale copying" (Sega v Accolade).
@@ -657,11 +707,13 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
 - **Costs:** concedes access to each work read; licences change and metadata is unreliable;
   open code can itself rest on methods or sources the project would not accept.
 - **Gains:** a clear test; if expression does carry over, the licence may permit it with attribution.
-- **Used by:** Wine and Mono ([Mono, Contributing](https://www.mono-project.com/community/contributing/))
+- **Used by:** [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Developer-FAQ) and Mono
+  ([Mono, Contributing](https://www.mono-project.com/community/contributing/))
   for compatibly licensed Microsoft code; FreeDOS after 2018
   ([Hall 2018](https://opensource.com/article/18/10/microsoft-open-source-old-versions-ms-dos));
-  Asahi, with the caveat above; [Panda3DS](https://github.com/wheremyfoodat/Panda3DS)
-  and [gopher64](https://github.com/gopher64/gopher64), which say they adapted code from other emulators.
+  [Asahi](https://asahilinux.org/copyright/), with the caveat above;
+  [Panda3DS](https://github.com/wheremyfoodat/Panda3DS) and [gopher64](https://github.com/gopher64/gopher64),
+  which say they adapted code from other emulators.
 
 ### 3. Read anything published, write independently
 
@@ -692,7 +744,8 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
 - **Used by:** Phoenix ([PC Magazine, 1984](https://archive.org/stream/PC-Mag-1984-07-10/PC-Mag-1984-07-10_djvu.txt));
   Compaq, by its co-founder's account
   ([Canion interview](https://www.internethistorypodcast.com/?p=444));
-  Altai's rewrite; Asahi for contributors who disassemble; described for AI agents by
+  Altai's rewrite; [Asahi](https://asahilinux.org/copyright/) for contributors who disassemble;
+  described for AI agents by
   [Marks & Clerk](https://www.marks-clerk.com/insights/latest-insights/102o6n6-the-clean-room-problem-ai-reverse-engineering-and-the-limits-of-safe-harbours/)
   (secondary).
 
@@ -715,7 +768,9 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
 - **Costs:** needs lawful access to hardware or software; some published expected results come from emulators,
   not hardware.
 - **Gains:** the evidence of origin is the test, and it doubles as a regression suite.
-- **Used by:** Wine, Mono, and Samba.
+- **Used by:** [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Clean-Room-Guidelines),
+  [Mono](https://www.mono-project.com/community/contributing/),
+  and [Samba](https://www.samba.org/ftp/tridge/misc/french_cafe.txt).
 
 ### 7. Session-level provenance records
 
@@ -726,8 +781,10 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
 - **Gains:** the record that exposed the leaks in the chardet rewrite
   ([Blanchard 2026](https://dan-blanchard.github.io/blog/chardet-rewrite-controversy/));
   lets a reviewer audit what an agent opened.
-- **Used by:** the chardet maintainer after the fact; recommended by Marks & Clerk (secondary);
-  NEC's log is the human equivalent.
+- **Used by:** the chardet maintainer after the fact; recommended by
+  [Marks & Clerk](https://www.marks-clerk.com/insights/latest-insights/102o6n6-the-clean-room-problem-ai-reverse-engineering-and-the-limits-of-safe-harbours/)
+  (secondary); NEC's log is the human equivalent
+  ([Harvard note](https://jolt.law.harvard.edu/articles/pdf/v03/03HarvJLTech209.pdf), secondary).
 
 ### 8. Enforce source limits in the agent tooling
 
@@ -747,9 +804,11 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   or AI allowed with disclosure, a responsible human, and similarity checks on the output.
 - **Costs:** the first two conflict with a project written mostly by agents;
   local similarity tools need the reference code, and translation between languages defeats token matching
-  ([JPlag](https://github.com/jplag/JPlag); [copydetect](https://github.com/blingenf/copydetect); Blanchard 2026).
+  ([JPlag](https://github.com/jplag/JPlag); [copydetect](https://github.com/blingenf/copydetect);
+  [Blanchard 2026](https://dan-blanchard.github.io/blog/chardet-rewrite-controversy/)).
 - **Gains:** addresses the memory problem that options 4 and 8 leave open; matches what several peer projects accept.
-- **Used by:** Wine, [Asahi](https://asahilinux.org/llm-policy/),
+- **Used by:** [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Developer-FAQ),
+  [Asahi](https://asahilinux.org/llm-policy/),
   and [mGBA](https://github.com/mgba-emu/mgba/blob/master/CONTRIBUTING.md) (none);
   [Cemu](https://github.com/cemu-project/Cemu/blob/main/CONTRIBUTING.md)
   (none from new contributors);
@@ -765,37 +824,68 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   or ask exposed people not to contribute, entirely or in the affected area.
 - **Costs:** rests on self-declaration; turns people away; no source defines exposure for an AI author.
 - **Gains:** addresses trade-secret and contract risk, which separating readers from writers does not.
-- **Used by:** Dolphin and ZeldaRET (exposed people asked not to contribute; ZeldaRET is closed tier, so not linked);
-  Wine and [ReactOS](https://raw.githubusercontent.com/reactos/reactos/master/CONTRIBUTING.md) (declaration);
-  ReactOS in 2006 ([ReactOS 2006](https://reactos.org/project-news/reset-reboot-restart-legal-issues-and-long-road-03/))
+- **Used by:** [Dolphin](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) and ZeldaRET
+  (exposed people asked not to contribute; ZeldaRET is closed tier, so not linked);
+  [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Developer-FAQ)
+  and [ReactOS](https://raw.githubusercontent.com/reactos/reactos/master/CONTRIBUTING.md) (declaration); ReactOS in 2006
+  ([ReactOS 2006](https://reactos.org/project-news/reset-reboot-restart-legal-issues-and-long-road-03/))
   and [GNU Classpath](https://www.gnu.org/software/classpath/faq/faq.html) (by area).
 
 ### Recommendation
 
 - **Which sources may be read (options 1 to 4):** decided, not recommended here.
   [ADR 0001](../../adr/0001-restrict-reading-by-licence-tier.md#decision) applies option 2 to open-tier code,
-  option 4 as a reader session to walled code, and option 1 to closed sources, and reads nothing of tainted ones.
-  Its reasons match the findings: reading cannot be undone,
-  a compatible licence gives a fallback if expression carries over, and a wall is credited only where it is kept
-  (Altai; [IBM v LzLabs](https://caselaw.nationalarchives.gov.uk/ewhc/tcc/2025/532)).
-- **How notes are taken (options 5 to 7):** combine options 5 and 6, and keep session records as option 7 describes.
+  option 4 as a reader session to walled code, and option 1 to closed sources, and reads nothing of tainted ones
+  (inference: the ADR does not number these options).
+  Its deciding factors are that reading cannot be undone,
+  so the strictest treatment goes where a licence gives no fallback,
+  and that a published open-source licence is its author's permission to study the work.
+  The findings support both: a compatible licence gives a fallback if expression carries over,
+  and a wall is credited only where it is kept
+  ([Altai](https://law.resource.org/pub/us/case/reporter/F2/982/982.F2d.693.91-7935.91-7893.762.html);
+  [IBM v LzLabs](https://caselaw.nationalarchives.gov.uk/ewhc/tcc/2025/532)).
+- **The three GPL-2.0 emulators:** commission one reader session to read the per-file licence notices of DeSmuME,
+  PCSX-Redux, and Flycast, and re-evaluate their tier from what it records.
+  The notices are the only evidence that can settle "only" or "or later",
+  the session records licence statements and no behaviour,
+  and an "or later" answer would open those files under ADR 0001's open test.
+  Starting a reader session is the owner's call.
+- **How notes are taken (options 5 to 7):** combine options 5 and 6, and keep session records as option 7 describes,
+  privately.
   Option 5 is already the project's rule and makes every claim re-checkable,
   and option 6 turns findings into evidence that doubles as a regression suite where lawful hardware
-  or freely licensed tests exist, as at Wine.
-  What is kept, and for how long, is mapped by
-  [R0-06's options 1 to 6](R0-06-provenance-controls.md#options-and-trade-offs).
+  or freely licensed tests exist, as at [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Clean-Room-Guidelines).
+  Option 7 gives the only record of what an agent opened, which is how the chardet leaks were found
+  ([Blanchard 2026](https://dan-blanchard.github.io/blog/chardet-rewrite-controversy/)).
+  Its costs set the form: transcripts hold the full text of what was read, including walled code a reader opened,
+  and the same record proves any access that did occur.
+  Keeping them outside the published repository, as R0-06's option 2 maps
+  ([R0-06, "Retain transcripts privately"](R0-06-provenance-controls.md#2-retain-transcripts-privately)),
+  answers the first cost; the second is the price of having evidence at all.
 - **AI agents (options 8 and 9):** keep option 8, the guard hook already in place, and adopt the third form of option 9:
-  disclosure, a responsible human, and similarity checks against code the project may hold.
+  disclosure, a responsible human, and similarity checks against open-tier code the project may hold.
   The first two forms conflict with a project written mostly by agents, and option 8 alone does not reach model memory.
-  Whether a machine-only check against closed-tier code counts as reading is for the proposed amendment of ADR 0001,
-  which recommends that it does, so that such a check is not run.
-- **Pseudo-code (option 5):** the proposed amendment of ADR 0001 recommends that pseudo-code counts as code,
+  Neither do those similarity checks reach memory of leaked kits,
+  the risk that [Dolphin](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md)
+  and [Cemu](https://github.com/cemu-project/Cemu/blob/main/CONTRIBUTING.md) name,
+  because the project never holds leaked material to compare against.
+  [R0-06](R0-06-provenance-controls.md#15-segregated-job-that-holds-restricted-code-and-reports-scores) maps a
+  machine-only check against restricted code; its revision now under review recommends that such a check count as
+  reading, for a future amendment of ADR 0001, so that it is not run.
+  No such amendment exists yet.
+- **Pseudo-code (option 5):** [R0-04](R0-04-glossary-and-conventions.md#options-and-trade-offs),
+  in its revision now under review, recommends that a future amendment of ADR 0001 count pseudo-code as code,
   so that notes keep to sentences, tables, formulas, and diagrams.
+  Until the owner decides, the [research conventions](../README.md#algorithms-and-pseudo-code) allow none.
 - **People (option 10):** ask every human contributor to declare exposure to leaked or confidential material
   and to past developer agreements before outside contributions arrive,
-  and keep exposed people out of the affected area, as Dolphin and ReactOS do.
-  It is the only option that addresses trade-secret and contract risk.
-  The contributor terms belong to [`R0-03`](../../roadmap/research.md#phase-0-ground-rules).
+  and keep exposed people out of the affected area,
+  as [ReactOS did in 2006](https://reactos.org/project-news/reset-reboot-restart-legal-issues-and-long-road-03/)
+  and [GNU Classpath](https://www.gnu.org/software/classpath/faq/faq.html) does;
+  Dolphin bars them from contributing code at all.
+  It is the option that most directly addresses trade-secret and contract risk,
+  alongside the standing exclusion of leaked material.
+  The contributor terms belong to [R0-03](../../roadmap/research.md#phase-0-ground-rules).
 
 ## Implications for Rustalgia
 
@@ -813,7 +903,7 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
   ([ADR 0001, "Evaluating a new source"](../../adr/0001-restrict-reading-by-licence-tier.md#evaluating-a-new-source)).
 - Agents write most of this repository, and no source shows how a model can be the unexposed side of a wall.
   Options 7, 8, and 9 feed an ADR on AI provenance controls, which [R0-06](R0-06-provenance-controls.md) maps,
-  and the authorship findings feed [`R0-03`](../../roadmap/research.md#phase-0-ground-rules).
+  and the authorship findings feed [R0-03](../../roadmap/research.md#phase-0-ground-rules).
   The published policies of [Wine](https://gitlab.winehq.org/wine/wine/-/wikis/Developer-FAQ),
   [Asahi](https://asahilinux.org/llm-policy/),
   and [Dolphin](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) exclude code produced this way;
@@ -827,9 +917,10 @@ Options 8 and 9 concern AI agents, and option 10 concerns people.
 ## Open questions
 
 - Does a model's training on a work count as access by the person who uses the model?
-  No ruling yet; a decision in one of the pending appeals and references
-  that [R0-06](R0-06-provenance-controls.md#litigation-and-regulation-on-model-memory-access-and-output) lists would
-  answer it.
+  No ruling yet, and no pending matter
+  that [R0-06](R0-06-provenance-controls.md#litigation-and-regulation-on-model-memory-access-and-output) lists presents
+  it.
+  It stays open until a case does; R0-06 tracks the litigation.
 - What did the court in NEC v Intel hold, in its own words?
   The 1989 decision (10 U.S.P.Q.2d 1177) is in subscription reporters only;
   a law library or a subscription would answer it, and until then the finding rests on the 1990 note (secondary).
@@ -859,11 +950,12 @@ Statutes, treaties, and regulations:
   [§ 271](https://www.law.cornell.edu/uscode/text/35/271), and [§ 284](https://www.law.cornell.edu/uscode/text/35/284).
 - [37 C.F.R. § 201.40](https://www.law.cornell.edu/cfr/text/37/201.40).
 - [Directive 2009/24/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32009L0024), read 2026-11-17,
-  and recital 10 and Article 6(2)(b) again on 2026-11-20.
+  and recital 10 and Articles 1(3), 2(1), and 6(2)(b) again on 2026-11-20.
 - [Directive (EU) 2016/943](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016L0943).
 - Copyright, Designs and Patents Act 1988, sections [50B](https://www.legislation.gov.uk/ukpga/1988/48/section/50B),
   [50C](https://www.legislation.gov.uk/ukpga/1988/48/section/50C),
-  and [296A](https://www.legislation.gov.uk/ukpga/1988/48/section/296A).
+  and [296A](https://www.legislation.gov.uk/ukpga/1988/48/section/296A),
+  and [section 9](https://www.legislation.gov.uk/ukpga/1988/48/section/9), read 2026-11-20.
 - [German Copyright Act (UrhG), English translation](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html).
 - [Australia, Copyright Act 1968](https://www.legislation.gov.au/C1968A00063/latest/text).
 - [Canada, Copyright Act section 30.61](https://laws-lois.justice.gc.ca/eng/acts/C-42/section-30.61.html).
@@ -968,14 +1060,29 @@ Project policies and statements:
   and [TetaNES](https://github.com/lukexor/tetanes).
 - Gambatte README, prose only: `https://github.com/sinamas/gambatte`.
   Not linked, because the upstream repository is closed tier.
-- [Licence files of the 30 roadmap emulators](https://api.github.com), read through the GitHub contents and licence API.
+- Licence files and READMEs of the 30 roadmap emulators, read through the GitHub contents and licence API,
+  from these repositories: [SameBoy](https://github.com/LIJI32/SameBoy), [Play!](https://github.com/jpd002/Play-),
+  [ares](https://github.com/ares-emulator/ares), [rustboyadvance-ng](https://github.com/michelhe/rustboyadvance-ng),
+  [MartyPC](https://github.com/dbalsom/martypc), [BizHawk](https://github.com/TASEmulators/BizHawk),
+  [Provenance](https://github.com/Provenance-Emu/Provenance), [mGBA](https://github.com/mgba-emu/mgba),
+  [melonDS](https://github.com/melonDS-emu/melonDS), [Azahar](https://github.com/azahar-emu/azahar),
+  [PCSX2](https://github.com/PCSX2/pcsx2), [bsnes](https://github.com/bsnes-emu/bsnes),
+  [Mesen](https://github.com/SourMesen/Mesen2), [RetroArch](https://github.com/libretro/RetroArch),
+  [dust](https://github.com/kelpsyberry/dust), [PPSSPP](https://github.com/hrydgard/ppsspp),
+  [Dolphin](https://github.com/dolphin-emu/dolphin),
+  [MAME](https://github.com/mamedev/mame) and its [`COPYING`](https://github.com/mamedev/mame/blob/master/COPYING),
+  [DeSmuME](https://github.com/TASEmulators/desmume), [PCSX-Redux](https://github.com/pcsx-redux/pcsx-redux),
+  [Flycast](https://github.com/flyinghead/flycast), and [Delta](https://github.com/rileytestut/Delta),
+  the five whose READMEs are listed above, and Gambatte.
+  DuckStation and Snes9x are closed tier and not linked:
+  `https://github.com/stenzek/duckstation` and `https://github.com/snes9xgit/snes9x`.
   For DeSmuME, PCSX-Redux, and Flycast,
   the licence and README were read again on 2026-11-20 through
   [`/repos/tasemulators/desmume/license`](https://api.github.com/repos/tasemulators/desmume/license),
   [`/repos/pcsx-redux/pcsx-redux/license`](https://api.github.com/repos/pcsx-redux/pcsx-redux/license),
   [`/repos/flyinghead/flycast/license`](https://api.github.com/repos/flyinghead/flycast/license), and the matching
   `/readme` endpoints.
-- [DeSmuME wiki, FAQ](http://wiki.desmume.org/index.php?title=Faq), last modified 6 June 2022, revision 8944,
+- [DeSmuME wiki, FAQ](https://wiki.desmume.org/index.php?title=Faq), last modified 6 June 2022, revision 8944,
   read 2026-11-20.
 - ZeldaRET, Majora's Mask decompilation README, prose only: `https://github.com/zeldaret/mm/blob/main/README.md`.
   Not linked, because ZeldaRET is closed tier.
@@ -983,7 +1090,12 @@ Project policies and statements:
 Documentation hubs, test suites, and licences:
 
 - [Pan Docs, History](https://gbdev.io/pandocs/History.html).
-- [GBATEK](https://problemkaputt.de/gbatek.htm).
+- [GBATEK, About this document](https://problemkaputt.de/gbatek-about-this-document.htm),
+  the chapter that holds the copyright notice.
+- [NESdev wiki, General disclaimer](https://www.nesdev.org/wiki/Nesdev_wiki:General_disclaimer),
+  [SNESdev wiki](https://snes.nesdev.org/wiki/SNESdev_Wiki), [N64brew wiki](https://n64brew.dev/wiki/Main_Page),
+  [DSiBrew, Contributing](https://dsibrew.org/wiki/DSiBrew:Contributing),
+  and [SwitchBrew](https://switchbrew.org/wiki/Main_Page), with their footers.
 - Nocash PSX specifications: `https://problemkaputt.de/psx-spx.htm`.
   Not linked, because it is tainted; its statement is recorded here so that it need not be opened again.
 - psx-spx home page: `https://psx-spx.consoledev.net/`.
@@ -1004,6 +1116,10 @@ Documentation hubs, test suites, and licences:
   Not linked, because libogc is closed tier.
 - [RTEMS, statement of 6 May 2025](https://www.rtems.org/news/2025-05-06-rtems-devkit-libogc-response/).
 - [GNU GPL version 3](https://www.gnu.org/licenses/gpl-3.0.html).
+- [GNU GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html);
+  section 9 was read on 2026-11-20 in the three projects' unmodified copies, because gnu.org timed out.
+- [GNU GPL FAQ](https://www.gnu.org/licenses/gpl-faq.html#LicenseCopyOnly),
+  read 2026-11-20 in the web archive capture of 2026-11-18 02:35:56 (`20261118023556`), because gnu.org timed out.
 - [GNU licence list](https://www.gnu.org/licenses/license-list.html).
 - [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 legal code](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en).
 - [Creative Commons, compatible licences](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/).
@@ -1020,7 +1136,7 @@ AI, authorship, and tooling:
 - [B. Kuhn, Software Freedom Conservancy, comment of 27 March 2026](https://github.com/chardet/chardet/issues/355#issuecomment-4145369025).
 - [JPlag README](https://github.com/jplag/JPlag).
 - [copydetect README](https://github.com/blingenf/copydetect).
-- [GitHub, code referencing](https://docs.github.com/en/copilot/concepts/completions/code-referencing).
+- [GitHub, code referencing](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides).
 - [SCANOSS open knowledge base](https://osskb.org/).
 - [Claude Code documentation, permissions](https://code.claude.com/docs/en/permissions.md),
   and its sibling pages on hooks, subagents, and memory.

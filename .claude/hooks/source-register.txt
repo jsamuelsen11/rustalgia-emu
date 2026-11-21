@@ -561,7 +561,7 @@ open | hackaday.com | none found | news blog, a lead | 2026-11-19 | policies pag
 open | no-intro.org | own data licence, 2026-09-11 | database of hashes; no games | 2026-11-19 | home, terms pages
 open | redump.org | none; bare copyright notice | disc hash database; staff dispute | 2026-11-19 | front, downloads
 open | marethyu/awesome-emu-resources | GPL-3.0 | list of links, a lead | 2026-11-19 | README
-open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-20 | FAQ; answered on re-check
+open | wiki.desmume.org | none stated | prose of a walled emulator | 2026-11-20 | FAQ; answers intermittently, HTTP 500
 open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | required-files page
 open | segaxtreme.net | forum terms | forum, a lead | 2026-11-19 | resources index, terms
 open | mail.atariage.com | none stated | fan transcription of a press release, a lead | 2026-11-19 | page
