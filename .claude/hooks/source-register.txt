@@ -635,6 +635,8 @@ closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-
 closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened
 # Sources first cited by R1-01, the 8-bit and 16-bit primer, in its rework.
 open | sega.jp/fb/segahard | none stated | maker's hardware encyclopaedia; read in a capture | 2026-11-20 | capture
+# The archive is a host, not a source: a capture takes the tier of the source captured, and the closed and tainted
+# patterns still match inside a capture's address, so the guard blocks them there.
 other | web.archive.org | - | an archive, not a source; captures of pages that refuse scripts | 2026-11-20 | -
 open | www.nesdev.org/w | disclaimer: public domain; none set | raw and revision paths | 2026-11-20 | disclaimer
 open | snes.nesdev.org/w | CC0 | raw and revision paths of the SNESdev wiki | 2026-11-20 | footer
@@ -642,3 +644,8 @@ open | snes.nesdev.org/w | CC0 | raw and revision paths of the SNESdev wiki | 20
 # the BIOS file names, which were not read. No note cites a file in the folder.
 closed | smspower.org/uploads/development | none | Development attachments, BIOS files among them | 2026-11-20 | links
 closed | www.smspower.org/uploads/development | none | same folder, www prefix | 2026-11-20 | SN76489 and BIOSes links
+# Intellivision routes, evaluated by the R1-01 verification pass.
+open | libretro/freeintv | GPL-2.0-or-later | libretro core; needs user's Exec and GROM | 2026-11-20 | LICENSE, README
+open | lutris/jzintv | GPL-2.0-or-later by its notice | mirror of jzIntv; COPYING.txt plain | 2026-11-20 | COPYRIGHT.txt
+walled | jeremiah-sypult/blissemu | GPL-2.0, only or later not stated | fork of Bliss | 2026-11-20 | README, LICENSE.txt
+walled | wiki.intellivision.us | not stated; project pages need a login | community wiki | 2026-11-20 | Main Page

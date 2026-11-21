@@ -17,19 +17,13 @@ so the order and timing of bus accesses are visible to software.
 For the NES and SNES the hubs name published games that fail unless components are interleaved per line,
 and often per dot or per cycle, and for the Game Boy games that depend on cycle-level quirks.
 
-Three points matter most to Rustalgia.
-A machine is a set of chip revisions and a region, not one model.
-Colour and sound output are analogue models, and for some systems the sources say no single answer is correct.
-Firmware dependence ranges from none to firmware every game calls,
+Three points matter most to Rustalgia: a machine is a set of chip revisions and a region, not one model;
+colour and sound output are analogue models, for some of which the sources say no single answer is correct;
+and firmware dependence ranges from none to firmware every game calls,
 so the questions [`R0-02`][r0-02] records reach several systems of this era.
-
-Among the hubs and patents this note read, no maker document was found for most of the era's custom chips,
-and no processor test-vector set read for this era's cores was captured from hardware:
-those that state a method name an emulator as the generator.
-
-The evidence favours a master-clock scheduler with catch-up and separate clock domains,
-selectable revisions and output models, and hardware-referenced test programs as the acceptance oracle;
-"Options and trade-offs" gives each recommendation and its reasons, for the owner to decide.
+This note recommends a master-clock scheduler with catch-up and separate clock domains,
+selectable revisions and output models, and hardware-referenced test programs as the acceptance oracle,
+each with its reasons in "Options and trade-offs" for the owner to decide.
 
 ## Scope
 
@@ -56,16 +50,28 @@ selectable revisions and output models, and hardware-referenced test programs as
   Each correction was checked against the source once more before it was applied;
   claims the passes could not check are weakened, marked, or listed in the pull request.
 - A later pass the same day answered the note's open questions.
-  It read [fullsnes][fullsnes], which refuses scripts, in a Web Archive capture, and [Sega Retro][sr-spec] live,
+  It read fullsnes, which refuses scripts, in a Web Archive capture, and [Sega Retro][sr-spec] live,
   so the claims that rested on them alone are now checked.
   The patents are read from the patent office's copies, because Google Patents refused the verification passes.
+  A third independent pass of two verifiers, one for claims and quotations and one for links and shape,
+  then fetched the sources again and tested that pass's text;
+  its corrections were checked against the sources and applied, so three independent verification passes have run.
+- Process calls settled here, and listed in the pull request:
+  - fullsnes and Pan Docs's "The Cartridge Header" are named without links,
+    their addresses in code spans in the Sources,
+    because fullsnes holds a disassembly of the SNES sound boot ROM and the Pan Docs page holds the boot logo's bytes;
+    the conventions keep a page that holds firmware out of links, and neither part was read.
+  - The Sharp datasheets and data books behind the SM83 identification are third-party copies,
+    which [ADR 0001][adr1]'s order of tests closes
+    ([`R0-05`][r0-05-o5], option 5),
+    so the identification is cited through [Gekkio's reference][gbctr] and they are not opened or linked.
 - A claim with no marker rests on the original text. "(lead)" marks a fact from a personal page
   that [`R0-05`][r0-05] labels a lead, which [the conventions][markers] treat as not relied on.
   Wikipedia is a tertiary source and is named wherever a fact rests on it alone.
   Statements that nothing was found record a search, not proof of absence.
-- Open-tier emulator code ([jgenesis][jgenesis], [BlastEm][blastem], [ares][ares-dma], and [bsnes][bsnes-hpp]) was read
-  only to see which value an emulator uses, as [ADR 0001][adr1] allows for the open tier; nothing was copied, and each
-  such finding says so.
+- Open-tier emulator code ([jgenesis][jgenesis], [BlastEm][blastem], [ares][ares-dma], [bsnes][bsnes-hpp],
+  and [SameBoy][sameboy-shader]) was read only to see which value an emulator uses,
+  as [ADR 0001][adr1] allows for the open tier; nothing was copied, and each such finding says so.
   No firmware, boot ROM, disassembly, game, key, closed code, or tainted source was opened.
   Where a hub says a fact comes from a maker's closed manual or from firmware, the finding says so.
 
@@ -81,21 +87,22 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The Game Boy, which drives its own LCD, can pause pixel output;
   home consoles "are on a schedule imposed by the screen they are hooked up to"
   (Pan Docs, ["Rendering"][pd-rend], footnote).
-- NTSC NES and Master System consoles derive their clocks from multiples of the 3.579545 MHz colour subcarrier,
-  and PAL models from the PAL subcarrier or a crystal of their own
-  (NESdev wiki, ["CPU"][nes-cpu]; SMS Power, ["Clock Rate"][sms-clockrate]),
-  but the Neo Geo AES's 24.167829 MHz is not a whole multiple
-  (NeoGeo Development Wiki, ["Framerate"][ngd-fps], a page that says its figures need scope measurements; calculated),
-  and the Game Boy's 4.194304 MHz and the WonderSwan's approximately 12.288 MHz are unrelated to television
-  (Pan Docs, ["Specifications"][pd-spec]; WSdev wiki, ["Timing"][ws-timing]; inference from the rates).
-- None of the frame rates found is exactly 60 Hz or 50 Hz: NES NTSC 60.0988 Hz
-  (NESdev wiki, ["Cycle reference chart"][nes-cyc]),
-  SNES NTSC 60.09880627 Hz ([fullsnes][fullsnes], "SNES Timing Oscillators";
-  21,477,270 / (262 × 1364 − 2) gives the same, calculated), Game Boy 59.73 Hz
-  (Pan Docs, "Specifications"),
-  Neo Geo MVS 59.1856 Hz, from the same page as the AES clock
-  (NeoGeo Development Wiki, "Framerate"), WonderSwan by default about 75.47 Hz (WSdev wiki, "Timing").
-  A host display cannot show these one-to-one, so frame pacing or resampling absorbs the difference (inference).
+- Master clocks come from three kinds of source:
+  - NTSC NES and Master System consoles use multiples of the 3.579545 MHz colour subcarrier,
+    and PAL models the PAL subcarrier or a crystal of their own
+    (NESdev wiki, ["CPU"][nes-cpu]; SMS Power, ["Clock Rate"][sms-clockrate]).
+  - The Neo Geo AES's 24.167829 MHz is not a whole multiple of a subcarrier
+    (NeoGeo Development Wiki, ["Framerate"][ngd-fps], a page that says its figures need scope measurements; calculated).
+  - The Game Boy's 4.194304 MHz and the WonderSwan's approximately 12.288 MHz are unrelated to television
+    (Pan Docs, ["Specifications"][pd-spec]; WSdev wiki, ["Timing"][ws-timing]; inference from the rates).
+- None of the frame rates found is exactly 60 Hz or 50 Hz:
+  - NES NTSC 60.0988 Hz (NESdev wiki, ["Cycle reference chart"][nes-cyc]);
+  - SNES NTSC 60.09880627 Hz (fullsnes, "SNES Timing Oscillators"; 21,477,270 / (262 × 1364 − 2) gives the same,
+    calculated);
+  - Game Boy 59.73 Hz (Pan Docs, "Specifications");
+  - Neo Geo MVS 59.1856 Hz, from the same page as the AES clock (NeoGeo Development Wiki, "Framerate");
+  - WonderSwan by default about 75.47 Hz (WSdev wiki, "Timing").
+- A host display cannot show these rates one-to-one, so frame pacing or resampling absorbs the difference (inference).
 
 ### Processors
 
@@ -115,8 +122,8 @@ selectable revisions and output models, and hardware-referenced test programs as
   among them mixtures of two instructions, nothing at all, or crashing the processor
   (Wikipedia, ["MOS Technology 6502"][wp-6502]),
   and some halt the CPU until reset (NESdev wiki, ["CPU unofficial opcodes"][nes-unof]).
-  NESdev says an accurate NES emulator must implement every instruction, official or not,
-  and lists games that use the unofficial ones (same page).
+- NESdev says an accurate NES emulator must implement every instruction, official or not,
+  and lists games that use the unofficial ones (NESdev wiki, "CPU unofficial opcodes").
   For one opcode the result "will depend on the exact model of CPU, the variations of chip manufacture,
   the power supply and the temperature"
   (Visual6502 wiki mirror on NESdev, ["6502 Opcode 8B (XAA, ANE)"][nes-xaa]),
@@ -132,7 +139,8 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The PC Engine (TurboGrafx-16)'s HuC6280 is a 65C02-based Hudson CPU with an on-chip timer, sound generator,
   and MMU of eight mapping registers giving a 2 MB physical address space in 8 KiB pages,
   and runs at 1.79 MHz or 7.16 MHz (Wikipedia, ["Hudson Soft HuC6280"][wp-huc6280], a page tagged as having one source,
-  a HuC6280 hardware manual hosted by a third party).
+  a HuC6280 hardware manual hosted by a third party,
+  which is not linked or opened because ADR 0001 closes maker manuals that others host).
   MacDonald, who gives the low speed as 1.78 MHz, says the CSL and CSH instructions switch the speed,
   and reports from tests that block-transfer instructions cannot be interrupted, so an interrupt waits until one ends
   ([MacDonald, "TurboGrafx-16 Hardware Notes"][macd], sections 1 and 2; lead).
@@ -177,19 +185,19 @@ selectable revisions and output models, and hardware-referenced test programs as
 - After SCF and CCF, flag bits 5 and 3 depend on whether the previous instruction changed the flags,
   a fact found in 2012; the behaviour differs between Zilog and some other makers' parts and on some boards is unstable
   ([z80test readme][z80test]).
-  A Z80 core keeps hidden state, including an internal register called MEMPTR
+- A Z80 core keeps hidden state, including an internal register called MEMPTR
   (z80test readme),
   which the SingleStepTests vectors record as WZ beside a field tracking whether the flags were modified
   and one tracking whether `LD A,I` or `LD A,R` ran last
   ([SingleStepTests z80 README][sst-z80]; that WZ is MEMPTR is from memory).
-  z80test compares results with "values obtained from a real 48K Spectrum with Zilog Z80 CPU"
+- z80test compares results with "values obtained from a real 48K Spectrum with Zilog Z80 CPU"
   (z80test readme), the only hardware-derived Z80 oracle among the test sets read (z80test, SingleStepTests z80).
 - The Game Boy's core "hasn't publicly been given a name by either Sharp or Nintendo"; Gekkio reports that,
   from Sharp datasheets and data books
-  (copies hosted by third parties, closed under [`R0-05`][r0-05-o5] option 5 until the proposed amendment of
-  [ADR 0001][adr1] settles such copies; see [Recommendation](#recommendation)), it has been identified as Sharp's SM83,
-  "or at least something that is 100% compatible with it" ([Gekkio, "GB: Complete Technical Reference"][gbctr], chapter
-  4).
+  (copies hosted by third parties, closed by [ADR 0001][adr1]'s order of tests ([`R0-05`][r0-05-o5], option 5),
+  so not opened; see [Scope](#scope)), it has been identified as Sharp's SM83,
+  "or at least something that is 100% compatible with it"
+  ([Gekkio, "GB: Complete Technical Reference"][gbctr], chapter 4).
 - The SM83 lacks the Z80's I/O instructions, index and alternate registers, and the DD, FD, and ED prefix groups,
   keeping most of the CB group, and adds its own loads; "The unused (-) opcodes will lock up the Game Boy CPU when used"
   (Pan Docs, ["CPU Comparison with Z80"][pd-z80]).
@@ -235,12 +243,15 @@ selectable revisions and output models, and hardware-referenced test programs as
 
 #### Others, and what they share
 
-- The Intellivision's CP1610 has 10-bit instruction words
-  (Wikipedia, ["General Instrument CP1600"][wp-cp1600]),
-  the WonderSwan's NEC V30MZ follows the 80186 and stalls for DMA
+- The Intellivision's CP1610 has 10-bit instruction words (Wikipedia, ["General Instrument CP1600"][wp-cp1600]).
+- The WonderSwan's NEC V30MZ stalls for DMA
   because only the CPU's quarter of the memory-access cycle can reach the cartridge bus
-  (WSdev wiki, ["NEC V30MZ"][ws-v30], ["Timing"][ws-timing]),
-  and for the Neo Geo Pocket's TLCS-900/H no maker manual was found among Wikipedia's references,
+  (WSdev wiki, ["NEC V30MZ"][ws-v30], ["Timing"][ws-timing]).
+  Unlike the V20 and V30, it is "fully compatible with the Intel 80186's documented behaviour,
+  as well as some of its undocumented behaviour", and lacks the V20's opcode extensions (WSdev wiki, "NEC V30MZ").
+  So the hardware-captured V20 test set does not fit it, and the 80186 set fits at most its documented results;
+  the 80186's cycle counts are a different chip's (inference).
+- For the Neo Geo Pocket's TLCS-900/H no maker manual was found among Wikipedia's references,
   whose Toshiba product page was not opened, and [the register][register] closes or walls the two test sets
   (Wikipedia, ["Neo Geo Pocket"][wp-ngp]).
 - On the 6502, CLI, SEI, and PLP can delay an IRQ by one instruction, while RTI takes effect at once
@@ -298,8 +309,8 @@ selectable revisions and output models, and hardware-referenced test programs as
 
 - On the SNES, RAM and I/O mirrors sit in banks `0x00`–`0x3F` and `0x80`–`0xBF`,
   and banks `0x7E`–`0x7F` hold the whole 128 KiB of work RAM (SNESdev wiki, ["Memory map"][sd-map]).
-  Sound RAM belongs to the sound CPU, which the main CPU reaches only through four ports, `0x2140`–`0x2143`,
-  mirrored up to `0x217F` (SNESdev wiki, ["S-SMP"][sd-ssmp]; [fullsnes][fullsnes], "SNES Memory").
+  Sound RAM belongs to the sound CPU, which the main CPU reaches only through four ports
+  (SNESdev wiki, ["S-SMP"][sd-ssmp]), at `0x2140`–`0x2143` and mirrored up to `0x217F` (fullsnes, "SNES I/O Map").
 - Cartridges use LoROM, HiROM, or ExHiROM layouts, and the internal header's place varies with the layout;
   it "is not needed by the SNES hardware", and emulators locate it by checking each candidate's checksum,
   with scoring heuristics when no checksum is valid (SNESdev wiki, "Memory map", ["ROM header"][sd-header]).
@@ -352,12 +363,13 @@ selectable revisions and output models, and hardware-referenced test programs as
   Plutiedev's ["Hardware issues"][pl-issues] and ["Using the Z80"][pl-z80], or [jgenesis's bus comments][jgenesis-bus].
 - During video DMA from 68000 memory "the 68000 is frozen"
   ([MacDonald, "Sega Genesis VDP documentation"][macd], section 11; lead),
-  and a source cannot cross a 128 KiB boundary
-  (Plutiedev, ["DMA transfers"][pl-dma]; lead); each fact rests on one lead.
+  and a source cannot cross a 128 KiB boundary (Plutiedev, ["DMA transfer"][pl-dma]; lead); each fact rests on one lead.
 - For a length of zero, MacDonald gives `0xFFFF` (same, section 11; lead) and Plutiedev 65536
   (Plutiedev, ["Hardware issues"][pl-issues]; lead).
   The open-tier emulators [jgenesis][jgenesis], [BlastEm][blastem], and [ares][ares-dma] all run 65536 transfers
   (observed in their code at the commits in the Sources; for ares, inference from its 16-bit length counter).
+  Plutiedev adds that early emulators treating a zero length as no transfer made many old Sonic hacks load garbage,
+  which implies consoles transfer 65536 (Plutiedev, "Hardware issues"; lead, and the implication is inference).
   No hardware test was found among the test suites in the Sources.
 - Saves use battery RAM on odd bytes (Plutiedev, ["Saving progress with SRAM"][pl-sram]; lead)
   or a serial EEPROM in a few games (MacDonald, "Sega Genesis hardware notes", section 4.1; lead).
@@ -368,12 +380,11 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The WonderSwan's "SoC features an unified memory architecture"
   (WSdev wiki, ["Memory map"][ws-map]),
   and the Lynx copies cartridge data to RAM before use (Wikipedia, ["Atari Lynx"][wp-lynx]).
-- The Atari 2600 addresses 4 KiB of cartridge
-  (from memory);
+- Without hardware in the cartridge, an Atari 2600 game can occupy at most 4 KB of address space;
   larger games switch banks, the first 8K game being *Asteroids*, which switches two 4K segments
-  (Wikipedia, ["Atari 2600"][wp-2600]).
+  (Wikipedia, ["Atari 2600"][wp-2600], the 4 KB limit in a footnote).
   The page dates *Asteroids* to 1980 in one place and 1981 in another (observed).
-  Its schemes, one per cartridge maker, are left to [`R1-25`][fam].
+  The bank-switching schemes are left to [`R1-25`][fam].
 
 ### Video
 
@@ -439,9 +450,13 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The Mealybug Tearoom tests check mid-line changes; their expected images come from the author's emulator,
   with photographs of devices alongside ([Mealybug Tearoom README][mealybug]).
 - The Color's colours look different on an sRGB screen without correction (Pan Docs, ["Palettes"][pd-pal]).
-- How the original Game Boy's LCD blends successive frames was not found:
-  every Pan Docs source file at the commit read was searched for "ghost", "blur", "motion",
-  and words beginning "persist".
+- No measurement of how the original Game Boy's LCD blends successive frames was found:
+  every Pan Docs source file at the commit read, and the text of [GB: Complete Technical Reference][gbctr],
+  were searched for "ghost", "blur", "motion", and words beginning "persist".
+- The open-tier [SameBoy][sameboy-shader] offers frame blending off, an even mix of the current and previous frames,
+  and an "accurate" setting that gives the previous frame a weight of one third or two thirds on alternate lines
+  (observed in its shader at the commit in the Sources; nothing copied).
+  That is one emulator's model, not a hardware measurement.
 
 #### Sega
 
@@ -503,7 +518,7 @@ selectable revisions and output models, and hardware-referenced test programs as
   implemented in a way that causes non-linearity and interaction between channels"
   (NESdev wiki, ["APU Mixer"][nes-mixer]).
 - The wiki gives an approximate output level from 0.0 to 1.0, the sum of a pulse group and a group of the other three,
-  credited to blargg's APU reference, a forum author's document (lead) (same page).
+  credited by the page to blargg's `apu_ref.txt`, which was not read (same page).
   The pulse group is 95.88 / (8128 / (pulse1 + pulse2) + 100).
   The other group is 159.79 / (1 / (triangle / 8227 + noise / 12241 + dmc / 22638) + 100).
   The page also gives a faster form from two lookup tables, of 31 and 203 entries with adjusted numerators,
@@ -633,7 +648,7 @@ selectable revisions and output models, and hardware-referenced test programs as
 
 #### SNES
 
-- [fullsnes][fullsnes] lists the events of a frame by beam position, among them the end of vertical blank at line 0,
+- fullsnes lists the events of a frame by beam position, among them the end of vertical blank at line 0,
   its start at line 225 or 240 with the NMI and the automatic joypad read, and short and long lines
   ("SNES Timing H/V Events"); its origin for that list is not stated.
 - "The S-SMP runs on its own clock, independent of the main CPU" (SNESdev wiki, ["Timing"][sd-timing]).
@@ -649,14 +664,17 @@ selectable revisions and output models, and hardware-referenced test programs as
   and the Super Scope latches the beam counters, which games calibrate for (SNESdev wiki, ["Super Scope"][sd-scope]).
 - The SNESdev multitap page rests mainly on the closed SNES Development Manual and is not used here
   (SNESdev wiki, ["Multitap"][sd-multitap]).
-  fullsnes describes the five-player adaptor, whose origin its section does not state
-  (fullsnes, "SNES Controllers Multiplayer 5 (MP5)"; observed):
-  it plugs into one port, usually port 2, with four ports and a pass-through switch.
-  Bit 7 of the I/O port register at `0x4201` selects players 2 and 3 or players 4 and 5 on two data lines of `0x4017`.
-  Players 2 and 3 are read first, because some adaptors respond slowly when that bit goes from 0 to 1,
-  and one adaptor always clocks player 2.
-  Software detects the adaptor by reading 8 bits of data line 1 with the latch on, all ones from an adaptor,
-  and 8 with it off, not all ones (same section).
+  The five-player adaptor is described instead from fullsnes, whose section does not state its origin
+  (fullsnes, "SNES Controllers Multiplayer 5 (MP5)"; observed).
+- What an emulator must present, by that section: with the latch held on,
+  eight reads of data line 1 return all ones from an adaptor, and with it off, a value that is not all ones,
+  which is how software finds one.
+  One port, usually port 2, carries four players: two at a time on two data lines of `0x4017`,
+  the pair chosen by bit 7 of the I/O port register at `0x4201`.
+- Timing explains the order games use: the pair of players 2 and 3 comes first,
+  since some adaptors are slow to follow that bit rising from 0 to 1,
+  and one adaptor clocks player 2 whatever the bit says.
+  The adaptor also has a pass-through switch (same section).
 
 #### Game Boy
 
@@ -697,7 +715,7 @@ selectable revisions and output models, and hardware-referenced test programs as
   ([MacDonald, "TurboGrafx-16 Hardware Notes"][macd], section 2.2; lead).
   The Neo Geo has a pixel-clock timer for raster effects (NeoGeo Development Wiki, ["Timer interrupt"][ngd-timer]).
 - Some SNES cartridges and the Neo Geo MVS keep real time from their own crystals
-  ([fullsnes][fullsnes], "External Oscillators (in Cartridges)"; NeoGeo Development Wiki, ["Clock"][ngd-clock]);
+  (fullsnes, "External Oscillators (in Cartridges)"; NeoGeo Development Wiki, ["Clock"][ngd-clock]);
   whether such clocks follow host or emulated time matters to save states and fast-forward (inference).
 
 ### Media, protection, and firmware
@@ -707,8 +725,8 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The Game Boy header is the console's own: the boot ROM of most models checks a logo and a checksum,
   the Super Game Boy's leaving the check to its SNES program,
   and the header names the controller and Color and Super Game Boy support
-  (Pan Docs, ["The Cartridge Header"][pd-header], ["Power Up Sequence"][pd-boot]).
-  The logo's bytes are not recorded here.
+  (Pan Docs, "The Cartridge Header", ["Power Up Sequence"][pd-boot]).
+  The logo's bytes are not recorded here, and the header page, which holds them, is not linked.
 - The SNES header serves developers and tools
   (SNESdev wiki, ["ROM header"][sd-header]),
   and copier files add 512 bytes that loaders strip (SNESdev wiki, ["ROM file formats"][sd-files]).
@@ -739,11 +757,11 @@ selectable revisions and output models, and hardware-referenced test programs as
   (Pan Docs, "Power Up Sequence").
   The page warns that "some of it may contain errors" (same page).
 - This note records those post-boot values only as far as a hardware test confirms them,
-  as the research conventions' rule on firmware-derived facts requires.
+  as [the research conventions' rule on firmware-derived facts][consts] requires.
   The [Mooneye Test Suite][mooneye-tree] holds post-boot tests by model: `acceptance/boot_regs-dmg0`, `-dmgABC`, `-mgb`,
   `-sgb`, and `-sgb2`; `acceptance/boot_hwio-dmg0`, `-dmgABCmgb`, and `-S`; and `acceptance/boot_div-*`
   (observed in its tree).
-  For the Color and Advance its `misc` folder holds `boot_regs-cgb`, `boot_regs-A`, `boot_hwio-C`,
+- For the Color and Advance its `misc` folder holds `boot_regs-cgb`, `boot_regs-A`, `boot_hwio-C`,
   and `boot_div` tests (observed), and the README calls that folder "extra tests for CGB / AGB hardware
   that are not part of the main suite", with not all tests passing on those models
   ([Mooneye Test Suite README][mooneye]).
@@ -751,11 +769,13 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The Color's boot ROM colours monochrome games whose header names Nintendo
   as licensee from a table chosen by a checksum of the title; other games get one default palette set,
   and the player can override it at boot (Pan Docs, "Power Up Sequence").
-  Pan Docs points only to the boot ROM's disassembly, TCRF (walled), and a replacement boot ROM (closed),
-  and no hardware test of the tables was found, so the tables are not recorded and this behaviour is stated in words.
+  Pan Docs's only sources for the tables are the boot ROM's disassembly, a TCRF page
+  (TCRF is walled),
+  and a replacement boot ROM (closed), named here as its citations and not opened;
+  no hardware test of the tables was found, so the tables are not recorded and this behaviour is stated in words.
 - The SNES sound CPU starts in a 64-byte boot ROM that accepts a program by handshake
   (SNESdev wiki, ["S-SMP"][sd-ssmp], ["Booting the SPC700"][sd-boot]); every game depends on it (inference).
-  "Booting the SPC700" cites a superfamicom.org article, blargg's upload code, and [fullsnes][fullsnes],
+  "Booting the SPC700" cites a superfamicom.org article and blargg's upload code, neither opened, and fullsnes,
   which it says includes a disassembly of the boot ROM, and the S-SMP page's list of boot steps cites nothing,
   so the description traces at least partly to firmware analysis (inference).
 - "The first version of the Game Gear, the Mark III and all SG-1000 and SC-3000 variants have no BIOS"
@@ -793,7 +813,7 @@ selectable revisions and output models, and hardware-referenced test programs as
 - The SNES uses the same scheme, with a console "lock" and a cartridge "key" chip exchanging bit streams
   and the lock resetting the console on a mismatch;
   fullsnes says the same 4-bit CPU is used in NES consoles and cartridges, with slightly different code in its ROM
-  ([fullsnes][fullsnes], "SNES Cartridge CIC Lockout Chip").
+  (fullsnes, "SNES Cartridge CIC Lockout Chip").
   An emulator emulates neither chip (inference).
 - The Game Boy compares character data held in the console with data in the cartridge
   ([US 5,134,391][us5134391]; Pan Docs, ["Power Up Sequence"][pd-boot]);
@@ -831,10 +851,24 @@ selectable revisions and output models, and hardware-referenced test programs as
     registers, graphics, and audio, by its description; [`R1-05`][r1-05] registered it.
 - Code from these is open tier: it may be read and cited as what an emulator does, and is never copied
   ([ADR 0001][adr1]).
-- For the Intellivision, the emulators found are GPL-2.0 by licence metadata,
-  and their licence files are the plain GPL-2.0 text, so
-  whether they allow later versions was not established (observed); they stay walled until evaluated.
-  No open documentation of the Intellivision was found (GitHub repository search, top five by stars).
+- For the Intellivision, a GitHub repository search for "intellivision", sorted by stars
+  (top ten read),
+  and a community wiki ([`R1-05`][r1-05] records "an Intellivision wiki" among the sites it found) give these routes;
+  each is now in [the register][register]:
+  - [FreeIntv][freeintv], a libretro core, is GPL-2.0 "or
+    (at your option)
+    any later version" by its `LICENSE`, so open tier; it needs the user's Executive and graphics ROM images,
+    by its README.
+  - [jzIntv][jzintv], in a mirror last changed in 2014, states "either version 2 of the License, or
+    (at your option)
+    any later version" in `COPYRIGHT.txt`, though `COPYING.txt` is the plain GPL-2.0 text,
+    so open tier by its own notice.
+  - [BlissEmu][blissemu]'s README says only "licensed under the GPL v2", so it is walled.
+  - The [Intellivision Wiki][intv-wiki] calls itself "a compilation of the technical details about the Intellivision",
+    with hardware pages such as one on the STIC video chip (Main Page, revision 14936; the STIC page read raw).
+    Its pages about the wiki itself, which would state a licence and origin, require a login, so it is walled,
+    and its prose may be read; no page on the Executive ROM was opened,
+    because R1-05 found that such sites host firmware (research log).
 
 ### Tests and their oracles
 
@@ -872,7 +906,7 @@ selectable revisions and output models, and hardware-referenced test programs as
   (NESdev wiki, ["Catch-up"][nes-catchup]);
   per-dot and per-cycle are what the timing entries in the tricky-games lists need (inference).
 - **Used by:** the NESdev wiki describes per-cycle and per-scanline emulation as practised,
-  and per-frame as hiding raster effects; the family surveys record which emulators use which.
+  and per-frame as hiding raster effects; [the family surveys][fam] record which emulators use which.
 
 ### Lockstep or catch-up
 
@@ -886,7 +920,7 @@ selectable revisions and output models, and hardware-referenced test programs as
 
 - **What:** count all time in system master clocks, or keep a cycle count per component.
 - **Costs:** master clocks still need separate domains for the SNES sound unit and cartridge crystals;
-  per-component counts convert at every interaction (inference; the cartridge crystals rest on [fullsnes][fullsnes]).
+  per-component counts convert at every interaction (inference; the cartridge crystals rest on fullsnes).
 - **Gains:** master clocks follow run-time speed changes without conversion (inference).
 - **Used by:** no emulator's design was read for this note;
   [bsnes][bsnes-hpp] and [ares][ares-sfc] set a sound-unit frequency of their own beside the CPU's (observed).
@@ -927,8 +961,8 @@ selectable revisions and output models, and hardware-referenced test programs as
 - **Gains:** skipping needs no image for the Game Boy and WonderSwan, whose post-boot state is documented,
   and for the other second-group systems if their state can be established (inference);
   a replacement removes the need for an image in the third.
-- **Used by:** `R0-02` options [4][r0-02-o4] and [5][r0-02-o5] list projects that require an image
-  or ship a replacement; `R0-02` lists none for starting from post-boot state,
+- **Used by:** [`R0-02`][r0-02] options [4][r0-02-o4] and [5][r0-02-o5] list projects that require an image
+  or ship a replacement; [`R0-02`][r0-02] lists none for starting from post-boot state,
   and this note read no emulator's documentation on it.
 
 ### Colour and sound output
@@ -941,17 +975,22 @@ selectable revisions and output models, and hardware-referenced test programs as
 - **Gains:** fidelity to what players saw and heard; selection avoids choosing one answer.
 - **Used by:** the [NESdev][nes-ntsc] and [Plutiedev][pl-ramp] (lead) pages describe models,
   and Pan Docs describes the Color's departures from sRGB
-  (Pan Docs, ["Palettes"][pd-pal]); the surveys record which emulators offer them.
+  (Pan Docs, ["Palettes"][pd-pal]),
+  and [SameBoy][sameboy-shader] models LCD frame blending; [the family surveys][fam] record which emulators offer them.
 
 ### Recommendation
 
 The owner decides each of these; the pull request lists them.
 
-- **Timing granularity:** interleave at the finest unit each system's evidence demands:
-  per CPU cycle and per dot for the NES, SNES, and Game Boy, where named games fail at coarser units,
-  and per line elsewhere until a title is found that needs more.
+- **Timing granularity:** interleave at the finest unit each system's evidence demands.
+  Use per CPU cycle and per dot for the NES, SNES, and Game Boy, where named games fail at coarser units,
+  and for the Atari 2600, whose CPU waits for the end of a line so that CPU timing is display timing.
+  Time the Neo Geo's timer interrupt to the dot, since it counts pixel clocks for raster effects (inference),
+  and use per line only where the findings show nothing finer, as for the Genesis,
+  until a title is found that needs more.
   The tricky-games lists ([NESdev][nes-tricky], [SNESdev][sd-tricky]) and Pan Docs ["STAT"][pd-stat] name failing games,
   [NESdev][nes-catchup] says per-line runs well-behaved games imperfectly,
+  the 2600 and Neo Geo findings rest on ["Television Interface Adaptor"][wp-tia] and ["Timer interrupt"][ngd-timer],
   and no Genesis title needing finer than per-line was found in the pages read.
 - **Lockstep or catch-up:** use catch-up whose synchronisation points fall on the exact cycle of each interaction,
   and keep a lockstep mode as a reference for tests.
@@ -960,11 +999,11 @@ The owner decides each of these; the pull request lists them.
 - **Master-clock or per-component time:** count time in each system's master clock,
   with separate clock domains for independent crystals: the SNES sound unit, cartridge oscillators,
   and real-time clocks.
-  The SNES sound clock is configurable and defaults to 24.60672 MHz
+  Make the SNES sound clock configurable, defaulting to 24.60672 MHz
   (32040 Hz output),
   inside the [measured range][sd-apupin] and the value [two][bsnes-hpp] [open-tier emulators][ares-sfc] use,
   since the nominal 24.576 MHz breaks one game and [bsnes][bsnes-cpp] lowers the rate for another.
-  CPU cycle length changes at run time on the PC Engine, Game Boy Color, SNES, and Neo Geo.
+  CPU cycle length changes at run time on the PC Engine, Game Boy Color, and SNES, and by cartridge on the Neo Geo.
 - **Revisions and models:** model a selectable set of revisions,
   with one default per system chosen to match the hardware-referenced test that targets it,
   such as RP2A03G and RP2C02G for [AccuracyCoin][accoin] and [Mooneye][mooneye]'s model letters for the Game Boy.
@@ -979,9 +1018,9 @@ The owner decides each of these; the pull request lists them.
   the [Mealybug Tearoom][mealybug] photographs) as the acceptance oracle,
   and emulator-generated single-step vectors as a development check whose pass is recorded
   as agreement with the named generator, never as proof of hardware behaviour.
-  Every vector set read for this era that states its method names an emulator generator,
+  Every vector set read for this era that states its method describes an emulator, named or not, as the generator,
   and the [m68000 README][sst-m68000] says its generator's bugs carry over,
-  while the program tests were run on consoles, though they cover less.
+  while the program tests were run on hardware, though they cover less.
 - **Firmware:** start from post-boot state where a hardware test confirms it,
   as for the Game Boy with [Mooneye's boot tests][mooneye-tree]
   and the WonderSwan within [WSdev's][ws-boot] stated limits,
@@ -990,10 +1029,6 @@ The owner decides each of these; the pull request lists them.
   the legal choice stays with [`R0-02`][r0-02] and [`R2-12`][ph2].
   Firmware-derived facts are admitted only where a test confirms them,
   and others' replacements are closed under [ADR 0001][adr1].
-- **Maker documents known only as third-party copies:** keep the Sharp datasheets
-  and data books behind the SM83 identification closed, and cite the fact through [Gekkio's reference][gbctr],
-  as the proposed amendment of ADR 0001 recommends for maker documents that survive only on third-party hosts,
-  unless the maker's release is shown.
 - **Colour and sound output:** offer selectable output models with a documented default per system,
   not one fixed palette or linear mix.
   [NESdev][nes-pal] says no single composite palette suits every NES game,
@@ -1017,16 +1052,12 @@ The owner decides each of these; the pull request lists them.
 
 ## Open questions
 
-- Does hardware agree with the 65536 transfers that three open-tier emulators run
-  for a Genesis video DMA of length zero?
-  A hardware test, which [`R1-22`][fam] may find; the project owns no Genesis.
-- Is there open documentation of the Intellivision?
-  Only GPL-2.0 emulators were found, walled until evaluated; [`R1-25`][fam].
+- Does a Genesis video DMA of length zero make 65536 transfers on hardware?
+  A hardware test; [`R1-22`][fam].
 - Could single-step vectors be captured from this era's processors?
-  It needs owned hardware and a bus-capture rig: a spike after [`R2-15`][ph2].
-  Whether the hardware-captured 80186 and V20 sets fit the WonderSwan's V30MZ is for [`R1-25`][fam].
-- How does the original Game Boy's LCD blend successive frames?
-  No source was found in [Pan Docs][pandocs]; [`R1-10`][fam], or a measurement on owned hardware.
+  A bus-capture spike after [`R2-15`][ph2].
+- How does the original Game Boy's LCD blend frames, as measured?
+  [`R1-10`][fam], or a measurement.
 
 ## Sources
 
@@ -1044,8 +1075,8 @@ Maker material:
   (Hudson Soft); [US 5,086,475][us5086475] and [US 5,761,643][us5761643] (Sony).
 - Western Design Center, [W65C02S datasheet][wdc02] (8 April 2022) and [W65C816S datasheet][wdc816] (13 March 2024).
 - Motorola, ["M68000 8-/16-/32-Bit Microprocessors User's Manual"][m68k], ninth edition (1993), on NXP's site,
-  which serves it to browsers and refuses the link checker.
-- Sega, ["セガハード大百科: メガＣＤ 各種データ"][segajp]
+  which served the file to curl and refused the link checker's user agent on 2026-11-20.
+- Sega, ["[セガハード大百科] メガＣＤ 各種データ"][segajp]
   (Sega hardware encyclopaedia: Mega-CD data, the note's own translation),
   read in the Web Archive capture of 16 October 2013 14:28:54 UTC, because [the live page][segajp-live] refuses scripts.
 
@@ -1077,19 +1108,22 @@ except the NeoGeo Development Wiki's, which refuses revision links to scripts an
   ["S-DSP registers"][sd-sdsp] (1428), ["BRR samples"][sd-brr] (902), ["APU pinout"][sd-apupin] (1523),
   ["Controller reading"][sd-ctrl] (942), ["Super Scope"][sd-scope] (1529), ["Mode 7 transform"][sd-mode7] (1410),
   ["Multitap"][sd-multitap] (884).
-- [fullsnes][fullsnes], Martin Korth, extracted from no$sns version 1.5,
-  read by the research agents at [its live address][fullsnes-live]
+- fullsnes, Martin Korth, extracted from no$sns version 1.5, read by the research agents at its live address,
+  `https://problemkaputt.de/fullsnes.htm`,
   and by the later pass in the Web Archive capture of 5 November 2026 22:45:18 UTC,
+  `https://web.archive.org/web/20261105224518/https://problemkaputt.de/fullsnes.htm`,
   because the live page refuses scripts with HTTP 403; three captures since 18 October 2026 share one digest.
   Only the sections named in the findings were read; the boot ROM disassembly section was not.
+  Neither address is linked, because the page holds that disassembly (see [Scope](#scope)).
 - Pan Docs source files at commit `f7f7b064`: ["Rendering"][pd-rend], ["Specifications"][pd-spec],
   ["CPU Comparison with Z80"][pd-z80], ["Interrupts"][pd-int], ["halt"][pd-halt], ["CGB Registers"][pd-cgbregs],
   ["Memory Map"][pd-map], ["Accessing VRAM and OAM"][pd-vram], ["MBCs"][pd-mbcs], ["OAM DMA Transfer"][pd-oamdma],
   ["Pixel FIFO"][pd-fifo], ["OAM"][pd-oam], ["STAT"][pd-stat], ["Palettes"][pd-pal], ["Audio"][pd-audio],
   ["Audio Details"][pd-audiodet], ["Audio Registers"][pd-audioreg], ["SGB Functions"][pd-sgb],
   ["Interrupt Sources"][pd-intsrc], ["Timer Obscure Behaviour"][pd-timer],
-  ["Serial Data Transfer (Link Cable)"][pd-serial], ["The Cartridge Header"][pd-header], ["Power Up Sequence"][pd-boot],
-  ["SGB Unlocking"][pd-sgbunlock].
+  ["Serial Data Transfer (Link Cable)"][pd-serial], ["Power Up Sequence"][pd-boot], ["SGB Unlocking"][pd-sgbunlock],
+  and "The Cartridge Header", `src/The_Cartridge_Header.md` at the same commit,
+  not linked because it holds the boot logo's bytes.
 - Gekkio, ["GB: Complete Technical Reference"][gbctr], revision 199 (6 November 2026).
 - Breaks (emu-russia), [`BreakingNESWiki_DeepL/Ricoh.md`][breaks],
   an English machine translation of `BreakingNESWiki/Ricoh.md` by the folder's name (observed),
@@ -1111,6 +1145,8 @@ except the NeoGeo Development Wiki's, which refuses revision links to scripts an
   (721).
 - libretro documentation, ["Dynamic Rate Control"][drc].
 - [NgpCraft][ngpcraft], NGPC developer reference, repository description and licence metadata.
+- [Intellivision Wiki][intv-wiki], Main Page
+  (revision 14936) and the STIC page, read raw; its project pages refused access without a login.
 
 Leads:
 
@@ -1118,7 +1154,7 @@ Leads:
   "TurboGrafx-16 Hardware Notes" (`pcetech.txt`), "Sega Genesis hardware notes" version 0.8 (`gen-hw.txt`),
   "Sega Genesis VDP documentation" version 1.5f (`genvdp.txt`), "Sega Master System VDP documentation" (`msvdp.txt`),
   and `vdpint.txt`.
-- Plutiedev, ["Hardware issues"][pl-issues], ["DMA transfers"][pl-dma], ["Saving progress with SRAM"][pl-sram],
+- Plutiedev, ["Hardware issues"][pl-issues], ["DMA transfer"][pl-dma], ["Saving progress with SRAM"][pl-sram],
   ["Sprites"][pl-sprites], ["Sonic water"][pl-water], ["VDP color ramp"][pl-ramp], ["Common YM2612 operations"][pl-ym],
   ["Controllers"][pl-ctrl], ["ROM header reference"][pl-header], ["Using the Z80"][pl-z80],
   and ["Using the Sub-CPU in mode 1"][pl-subcpu].
@@ -1150,6 +1186,11 @@ Open-tier emulator code (read for the value used, not copied):
   and [the `ares` folder's tree][ares-tree], commit `ef33a804`.
 - bsnes, [`bsnes/sfc/system/system.hpp`][bsnes-hpp] and [`bsnes/sfc/system/system.cpp`][bsnes-cpp], commit `78474e5d`.
 - [Mesen2][mesen2], repository description.
+- SameBoy, [`Shaders/MasterShader.fsh`][sameboy-shader], commit `ea667ad7`.
+- Intellivision emulators, prose only: [FreeIntv][freeintv] `LICENSE` and README
+  (commit `ef3e0fe3`),
+  [jzIntv][jzintv] `COPYRIGHT.txt` and `COPYING.txt`
+  (commit `d373ec28`), and [BlissEmu][blissemu] README and `LICENSE.txt` (commit `9767e463`).
 
 Tertiary (Wikipedia, raw wikitext, with the revision read; each link opens that revision):
 
@@ -1182,6 +1223,7 @@ Project documents:
 [register]: ../../../.claude/hooks/source-register.txt
 [conv]: ../README.md#conventions
 [markers]: ../README.md#claim-status
+[consts]: ../README.md#constants-and-tables
 [roadmap]: ../../roadmap/research.md
 [fam]: ../../roadmap/research.md#system-family-surveys
 [synth]: ../../roadmap/research.md#landscape-synthesis
@@ -1258,7 +1300,6 @@ Project documents:
 [sd-mode7]: https://snes.nesdev.org/w/index.php?title=Mode_7_transform&oldid=1410
 [sd-multitap]: https://snes.nesdev.org/w/index.php?title=Multitap&oldid=884
 [pd-rend]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Rendering.md
-[pandocs]: https://github.com/gbdev/pandocs/tree/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src
 [pd-spec]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Specifications.md
 [pd-z80]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/CPU_Comparison_with_Z80.md
 [pd-int]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Interrupts.md
@@ -1279,7 +1320,6 @@ Project documents:
 [pd-intsrc]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Interrupt_Sources.md
 [pd-timer]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Timer_Obscure_Behaviour.md
 [pd-serial]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Serial_Data_Transfer_(Link_Cable).md
-[pd-header]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/The_Cartridge_Header.md
 [pd-boot]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/Power_Up_Sequence.md
 [pd-sgbunlock]: https://github.com/gbdev/pandocs/blob/f7f7b064f4de36cf9cb1372d1937e8e662a065cb/src/SGB_Unlocking.md
 [sms-clockrate]: https://www.smspower.org/Development/ClockRate
@@ -1343,8 +1383,6 @@ Project documents:
 [pl-z80]: https://plutiedev.com/using-the-z80
 [pl-kabuto]: https://plutiedev.com/mirror/kabuto-hardware-notes
 [macd]: http://dreamjam.co.uk/emuviews/docindex.php
-[fullsnes]: https://web.archive.org/web/20261105224518/https://problemkaputt.de/fullsnes.htm
-[fullsnes-live]: https://problemkaputt.de/fullsnes.htm
 [segajp]: https://web.archive.org/web/20131016142854/http://sega.jp/fb/segahard/mcd/data.html
 [segajp-live]: https://sega.jp/fb/segahard/mcd/data.html
 [gbctr]: https://gekkio.fi/files/gb-docs/gbctr.pdf
@@ -1375,6 +1413,11 @@ Project documents:
 [bsnes-hpp]: https://github.com/bsnes-emu/bsnes/blob/78474e5d39f58872dc21aca18cf9eb583b147fe7/bsnes/sfc/system/system.hpp
 [bsnes-cpp]: https://github.com/bsnes-emu/bsnes/blob/78474e5d39f58872dc21aca18cf9eb583b147fe7/bsnes/sfc/system/system.cpp
 [mesen2]: https://github.com/SourMesen/Mesen2
+[sameboy-shader]: https://github.com/LIJI32/SameBoy/blob/ea667ad79aa28409f034b1fd6da7304e1844750d/Shaders/MasterShader.fsh
+[freeintv]: https://github.com/libretro/FreeIntv/blob/ef3e0fe322bec62a7f916c0bb0834c08c348d0b4/LICENSE
+[jzintv]: https://github.com/lutris/jzintv/blob/d373ec286e76028b720534af318f8905ea4b7da7/COPYRIGHT.txt
+[blissemu]: https://github.com/jeremiah-sypult/BlissEmu/blob/9767e4632d1a0ff1611d29338bcabc7a4a5698a7/README.md
+[intv-wiki]: http://wiki.intellivision.us/index.php/Main_Page
 [ngpcraft]: https://github.com/tixul/NgpCraft_dev_ref
 [us3991307]: https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/3991307
 [us4949298]: https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/4949298
