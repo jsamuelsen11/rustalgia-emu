@@ -762,6 +762,20 @@ open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licenc
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
 # Sources first cited by R1-02, the 32-bit and 64-bit primer.
 open | nec.co.jp/press | none stated | maker's own news releases, read in a capture | 2026-11-20 | release page
+# Sources opened or evaluated while researching R1-02, and not cited by it.
+open | hitmen.c02.at/html | none stated | the host's index pages | 2026-11-20 | evidence of #27
+open | spicyjpeg/ps1-ram-tester | MIT | uses ps1-bare-metal; author states AI-free work; uncited | 2026-11-20 | README
+walled | libretro/beetle-psx-libretro | GPL-2.0 by licence metadata | fork of Mednafen PSX | 2026-11-20 | metadata
+walled | gonetz/gliden64 | not determined; metadata NOASSERTION | N64 graphics plugin | 2026-11-20 | metadata
+closed | rasky/n64_pi_dma_test | none | test with no licence | 2026-11-20 | metadata
+# Pages the R1-02 evidence named that hold closed material, closed so that the guard blocks them. Patterns are cut
+# short, as the guard allows a bare page that matches a pattern exactly. Never reopened.
+# The N64brew pages' "index.php?title=" forms cannot be matched; the note names them as pages not to open.
+closed | n64brew.dev/wiki/initial_program_loa | CC BY-SA 4.0 | PIF boot ROM disassembly | 2026-11-20 | #27
+closed | n64brew.dev/wiki/cic-nu | CC BY-SA 4.0 | shows CIC key and seed material | 2026-11-20 | evidence of #27
+closed | n64brew.dev/wiki/pif-nu | CC BY-SA 4.0 | CIC table shows seed values | 2026-11-20 | R1-02 verification
+closed | ext.3dodev.com | none | the 3DO repository's internal-document host | 2026-11-20 | evidence of #27
+closed | 3dodev.com/documentation/hardware/opera/memory_configuration | CC BY-SA 4.0 | 3DO code | 2026-11-20 | #27
 # Sources first cited by R1-04, the modern consoles primer.
 open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a host tool | 2026-11-20 | README
 open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README

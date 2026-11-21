@@ -207,6 +207,16 @@ check 2 reader "$(fetch https://www.xboxdevwiki.net/Microsoft_XDK)"
 check 0 writer "$(fetch https://xboxdevwiki.net/OpenXDK)"
 check 2 writer "$(fetch https://developer.nvidia.com/embedded/downloads)"
 check 0 reader "$(fetch https://developer.nvidia.com/embedded/downloads)"
+# Pages closed by R1-02: an N64 boot ROM listing, CIC key and seed material, 3DO internal material; others stay open.
+check 2 writer "$(fetch https://n64brew.dev/wiki/Initial_Program_Load)"
+check 2 writer "$(fetch https://n64brew.dev/wiki/CIC-NUS)"
+check 2 writer "$(fetch https://n64brew.dev/wiki/PIF-NUS)"
+check 0 writer "$(fetch https://n64brew.dev/wiki/Joybus_Protocol)"
+check 2 writer "$(fetch https://ext.3dodev.com/)"
+check 2 writer "$(fetch https://3dodev.com/documentation/hardware/opera/memory_configurations)"
+check 0 writer "$(fetch https://3dodev.com/documentation/hardware/opera/madam/matrix_engine)"
+check 2 writer "$(fetch https://github.com/rasky/n64_pi_dma_test/blob/master/main.c)"
+check 2 writer "$(fetch https://github.com/libretro/beetle-psx-libretro/blob/master/libretro.cpp)"
 
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
