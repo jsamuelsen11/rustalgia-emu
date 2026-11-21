@@ -46,6 +46,7 @@ pre-commit:
           - name: vale
             exclude:
               - LICENSE
+              - "LICENSES/**"
               - "**/*.lock"
             run: mise run lint:vale -- {staged_files}
           - name: typos

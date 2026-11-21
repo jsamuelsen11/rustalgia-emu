@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#MISE description="Check that every file declares its copyright and licence (REUSE)"
+set -eu
+
+reuse lint

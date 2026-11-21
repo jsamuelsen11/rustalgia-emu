@@ -68,7 +68,7 @@ indent_size = unset
 max_line_length = off
 
 # Files this project does not write by hand.
-[{LICENSE,*.lock}]
+[{LICENSE,LICENSES/*,*.lock}]
 indent_style = unset
 indent_size = unset
 max_line_length = off
