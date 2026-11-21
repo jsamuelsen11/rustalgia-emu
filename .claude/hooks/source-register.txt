@@ -617,3 +617,7 @@ open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's o
 # Sources first cited by R1-08, the catalogue of modern consoles and handhelds.
 open | play.date/dev/sdk-license | Playdate SDK License 1.0 | the maker's licence text | 2026-11-20 | page
 closed | sdk.play.date | Playdate SDK License 1.0 | API docs; licence bars other platforms | 2026-11-20 | licence
+# Sources first cited by R1-04, the modern consoles primer.
+open | fex-emu/fex | MIT by licence metadata | x86 translator for Arm64 Linux; a host tool | 2026-11-20 | README
+open | ptitseb/box64 | MIT by licence metadata | x86-64 translator for Arm hosts; a host tool | 2026-11-20 | README
+open | learn.microsoft.com/en-us/openspecs | copies to implement; no patent grant | maker's specs | 2026-11-20 | notice
