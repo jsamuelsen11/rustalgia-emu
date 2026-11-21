@@ -19,6 +19,8 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-01](R1-01-primer-8-and-16-bit.md) | How 8-bit and 16-bit consoles and handhelds work, and what that asks of an emulator |
 | [R1-04](R1-04-primer-modern.md) | How modern consoles work, and what that asks of an emulator |
 | [R1-05](R1-05-catalogue-8-and-16-bit.md) | Which consoles and handhelds the 8-bit and 16-bit era sold, and their hardware and sources |
+| [R1-06](R1-06-catalogue-32-and-64-bit.md) | Which consoles and handhelds the 32-bit and 64-bit era sold, and their hardware and sources |
+| [R1-07](R1-07-catalogue-sixth-generation.md) | Every console and handheld of the sixth-generation era, with sources |
 | [R1-08](R1-08-catalogue-modern.md) | Which consoles and handhelds were sold from the seventh generation on, and their hardware |
 
 ## Conventions
