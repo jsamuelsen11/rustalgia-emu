@@ -24,6 +24,7 @@ exclude = [
   '^https?://(www\.)?consolemods\.org/', # 403 Forbidden
   '^https?://(www\.)?console5\.com/', # 403 Forbidden
   '^https?://archive\.dni\.gov/', # 403 Forbidden
+  '^https?://(www\.)?dni\.gov/', # 403 Forbidden to the checker; curl's default agent gets the file
   '^https?://(www\.)?psdevwiki\.com/', # 403 Forbidden (challenge page)
   '^https?://(www\.)?gnu\.org/', # times out
   '^https?://pascal\.computer\.org/', # search form; times out

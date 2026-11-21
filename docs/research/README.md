@@ -165,8 +165,8 @@ Any other claim carries one of these markers:
 - Behaviour is described in sentences, in tables of inputs and outputs, in formulas, and in state or timing diagrams.
 - Notes hold no code.
   Until the owner decides where pseudo-code falls under ADR 0001, they hold no pseudo-code;
-  [R0-04](topics/R0-04-glossary-and-conventions.md#recommendation) recommends
-  that the proposed amendment of ADR 0001 count it as code.
+  [R0-04](topics/R0-04-glossary-and-conventions.md#recommendation) recommends that an amendment of ADR 0001,
+  which the owner has yet to decide, count it as code.
   A code block holds only a command and its output, a path, or configuration.
 - A description says what a system does as seen from outside it: inputs, outputs, state, and timing.
   No note gives the order of steps or the internal names of an implementation;

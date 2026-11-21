@@ -610,9 +610,11 @@ walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.google
 # Added by the rework of R0-04 on 2026-11-20.
 other | web.archive.org | - | an archive, not a source; existing captures only | 2026-11-20 | -
 open | nesdev.org/w/ | disclaimer: public domain | raw wikitext paths of nesdev.org/wiki | 2026-11-20 | disclaimer
-walled | wiki.winehq.org | none seen in capture | Wine's wiki; refuses scripts | 2026-11-20 | capture of 17 July 2024
+open | gitlab.winehq.org/wine/wine | LGPL-2.1-or-later | Wine; wiki licence not stated | 2026-11-20 | LICENSE, wiki page
+open | wiki.winehq.org | not stated | Wine's old wiki; 301 to gitlab.winehq.org | 2026-11-20 | HTTP response
 walled | reactos.org | not read | project site; Wine bars ReactOS code | 2026-11-20 | Wine Clean Room Guidelines
-closed | reactos/reactos | not checked | Wine: reverse-engineered by unfit methods | 2026-11-20 | Wine guidelines
+# ReactOS reimplements Windows' libraries, and Wine publicly disputes how it was made: closed as a disputed library.
+closed | reactos/reactos | GPL-2.0, or later not stated | origin disputed by Wine | 2026-11-20 | README, Wine page
 # Maker material that its maker published: open tier. Patents are read under the limits in R0-02.
 open | patents.google.com | public patent documents | status shown is not a legal conclusion | 2026-11-19 | page
 # Sources first cited by R1-05, the 8-bit and 16-bit catalogue.
