@@ -1,8 +1,8 @@
 ---
 title: "The sixth generation and the move to programmable graphics: primer"
 roadmap_item: R1-03
-status: draft
-date: 2026-11-20
+status: approved
+date: 2026-11-21
 ---
 
 # The sixth generation and the move to programmable graphics: primer

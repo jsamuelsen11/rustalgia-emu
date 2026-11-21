@@ -1,8 +1,8 @@
 ---
 title: "Modern consoles and handhelds, including systems on sale today: catalogue"
 roadmap_item: R1-08
-status: draft
-date: 2026-11-20
+status: approved
+date: 2026-11-21
 ---
 
 # Modern consoles and handhelds, including systems on sale today: catalogue

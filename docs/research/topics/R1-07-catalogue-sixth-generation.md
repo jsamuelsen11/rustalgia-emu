@@ -1,8 +1,8 @@
 ---
 title: "The sixth generation and the move to programmable graphics: catalogue"
 roadmap_item: R1-07
-status: draft
-date: 2026-11-20
+status: approved
+date: 2026-11-21
 ---
 
 # The sixth generation and the move to programmable graphics: catalogue

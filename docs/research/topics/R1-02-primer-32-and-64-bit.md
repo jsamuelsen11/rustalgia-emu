@@ -1,8 +1,8 @@
 ---
 title: "The 32-bit and 64-bit era: primer"
 roadmap_item: R1-02
-status: draft
-date: 2026-11-20
+status: approved
+date: 2026-11-21
 ---
 
 # The 32-bit and 64-bit era: primer
