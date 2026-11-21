@@ -645,10 +645,6 @@ closed | psdevwiki.com/ps4/self_file | GFDL 1.2 | layout partly from a leaked ke
 closed | www.psdevwiki.com/ps4/self_file | GFDL 1.2 | www prefix | 2026-11-20 | capture 20260220000705
 closed | psdevwiki.com/ps4/librarie | GFDL 1.2 | reads like a maker's SDK manual | 2026-11-20 | research log
 closed | www.psdevwiki.com/ps4/librarie | GFDL 1.2 | www prefix | 2026-11-20 | research log
-closed | psdevwiki.com/ps4/index.php?title=self_file | GFDL 1.2 | query form | 2026-11-20 | capture 20260220
-closed | www.psdevwiki.com/ps4/index.php?title=self_file | GFDL 1.2 | www query form | 2026-11-20 | capture 20260220
-closed | psdevwiki.com/ps4/index.php?title=librarie | GFDL 1.2 | query form | 2026-11-20 | research log
-closed | www.psdevwiki.com/ps4/index.php?title=librarie | GFDL 1.2 | www query form | 2026-11-20 | research log
 # Sources first cited by R1-03, the sixth-generation primer.
 open | learn.microsoft.com/en-us/archive/blogs/xboxteam | none stated | maker's team blog | 2026-11-20 | post
 open | ppsspp.org | notice, no grant | site of an open-tier emulator; prose | 2026-11-20 | footer, one page
