@@ -147,5 +147,17 @@ Run it by hand with `mise run label-pr`.
 
 ## License
 
-Rustalgia is licensed under the GNU General Public License v3.0.
+Rustalgia is licensed under the GNU General Public License, version 3 or
+(at your option) any later version (`GPL-3.0-or-later`).
 See [LICENSE](LICENSE).
+[LICENSE-EXCEPTIONS](LICENSE-EXCEPTIONS) adds a permission to convey Rustalgia through app stores,
+and declines any trade mark right in the name.
+
+The project's own documents, the source register, and the configuration are also available, at your option,
+under the Creative Commons Attribution-ShareAlike 4.0 licence (`GPL-3.0-or-later OR CC-BY-SA-4.0`).
+Quotations in the documents stay under their sources' terms.
+
+The decisions are recorded in ADRs [0002](docs/adr/0002-license-under-gpl-3-0-or-later.md),
+[0003](docs/adr/0003-permit-conveying-through-app-stores.md),
+[0004](docs/adr/0004-take-contributions-on-the-outbound-licence.md),
+and [0005](docs/adr/0005-dual-license-the-project-documents.md).

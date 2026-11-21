@@ -324,7 +324,8 @@ Each depends on every item in phases 1 to 5.
   If so, it limits which systems can run there.
   R3-01 and R5-07 settle it.
 - **The licence may conflict with app stores.**
-  R0-03 must finish before outside contributions arrive.
+  R0-03 recommended a section 7 permission, recorded in [ADR 0003](../adr/0003-permit-conveying-through-app-stores.md);
+  it must be approved before outside contributions arrive.
 - **No Rust emulator for several systems appears to ship on both iOS and Android.**
   Phase 5 is where that gap is tested.
 - **Is one note for each item the right size?**

@@ -13,6 +13,10 @@ One file for each decision, numbered in the order the decisions were made.
 | File | Decides |
 |---|---|
 | [0001](0001-restrict-reading-by-licence-tier.md) | Which sources may be read, by licence tier |
+| [0002](0002-license-under-gpl-3-0-or-later.md) | The licence's versions: GPL-3.0-or-later |
+| [0003](0003-permit-conveying-through-app-stores.md) | A section 7 permission for app stores |
+| [0004](0004-take-contributions-on-the-outbound-licence.md) | The terms contributions are made on |
+| [0005](0005-dual-license-the-project-documents.md) | The documents' licence: GPL or CC BY-SA 4.0 |
 
 ## Conventions
 
