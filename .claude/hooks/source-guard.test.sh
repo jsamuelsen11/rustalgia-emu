@@ -255,6 +255,18 @@ check 2 writer "$(fetch https://xboxdevwiki.net/Xbox_Game_Disc)"
 check 2 writer "$(fetch https://www.xboxdevwiki.net/Xbox_Game_Disc)"
 check 0 writer "$(fetch https://xboxdevwiki.net/Kernel)"
 check 0 writer "$(fetch https://xboxdevwiki.net/Xbox_Input_Devices)"
+# R1-05's protective lines: a ROM site, SMS Power's attachments, and a collector's folder of maker manuals.
+check 2 writer "$(fetch https://retrostic.com/)"
+check 2 writer "$(fetch https://www.retrostic.com/roms/sega-game-gear)"
+check 2 writer "$(fetch https://www.smspower.org/uploads/Development/bios13.zip)"
+check 2 reader "$(fetch https://smspower.org/uploads/Development/bios13.asm)"
+check 0 writer "$(fetch https://www.smspower.org/Development/ClockRate)"
+check 2 writer "$(fetch https://www.handheldmuseum.com/Manuals/Entex-SAG.pdf)"
+check 2 writer "$(bash 'curl -sL https://handheldmuseum.com/Manuals/Entex-SAG.pdf')"
+check 0 writer "$(fetch https://www.handheldmuseum.com/Entex/SAG.htm)"
+check 2 writer "$(fetch https://www.ballyalley.com/rom_images/rom_images.html)"
+check 2 writer "$(fetch https://channelf.se/veswiki/index.php?title=Main_Page)"
+check 0 writer "$(fetch https://commons.wikimedia.org/wiki/File:BBC-bridge-companion-pcb.jpg)"
 
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
