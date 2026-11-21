@@ -1,7 +1,7 @@
 ---
 title: Licence strategy
 roadmap_item: R0-03
-status: draft
+status: approved
 date: 2026-11-21
 ---
 
