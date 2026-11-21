@@ -174,6 +174,19 @@ check 2 writer "$(bash 'curl -sL raw.githubusercontent.com/free60project/wiki/ma
 check 0 writer "$(fetch https://free60.org/Hypervisor/)"
 check 0 writer "$(fetch https://raw.githubusercontent.com/free60project/wiki/master/docs/Hypervisor.md)"
 
+# R1-07's protective lines: a Vita card page and a 3DS memory-layout page, at every form the guard can match;
+# the rest of each wiki stays open. NuanceResurrection is closed: its code is blocked, its README is not.
+check 2 writer "$(fetch https://wiki.henkaku.xyz/vita/Game_Card)"
+check 2 writer "$(fetch https://web.archive.org/web/20261022161817/https://wiki.henkaku.xyz/vita/Game_Card)"
+check 0 writer "$(fetch https://wiki.henkaku.xyz/vita/Security)"
+check 2 writer "$(fetch https://www.3dbrew.org/wiki/Memory_layout)"
+check 2 reader "$(fetch https://3dbrew.org/wiki/Memory_layout)"
+check 2 writer "$(fetch https://web.archive.org/web/20251227195852/https://www.3dbrew.org/wiki/Memory_layout)"
+check 0 writer "$(fetch https://www.3dbrew.org/wiki/Hardware)"
+check 2 writer "$(fetch https://github.com/andkrau/NuanceResurrection/blob/master/NuanceMain.cpp)"
+check 0 writer "$(fetch https://raw.githubusercontent.com/andkrau/NuanceResurrection/master/README.md)"
+check 0 writer "$(fetch http://web.archive.org/web/20111016181020/http://www.nintendo.com/3ds/hardware/specs)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'

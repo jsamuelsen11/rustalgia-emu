@@ -633,3 +633,13 @@ closed | free60.org/hardware/fuseset | none stated | key material | 2026-11-20 |
 closed | www.free60.org/hardware/fuseset | none stated | www prefix | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/blob/master/docs/hardware/fuseset | - | file | 2026-11-20 | fuses and CPU key; not reopened
 closed | free60project/wiki/master/docs/hardware/fuseset | - | raw file | 2026-11-20 | fuses and CPU key; not reopened
+# Sources first cited by R1-07, the sixth-generation catalogue, in its rework of 2026-11-20.
+other | web.archive.org | - | an archive, not a source; each capture keeps its page's tier | 2026-11-20 | -
+open | learn.microsoft.com/en-us/windows/win32 | CC BY 4.0; samples MIT | maker's API docs | 2026-11-20 | licence files
+open | nintendo.com | none stated | maker's own site; spec pages read in captures | 2026-11-20 | 3DS, Wii U specs
+closed | andkrau/nuanceresurrection | own: unmodified, no profit; then BSD-3-Clause | BIOS code | 2026-11-20 | README
+# Pages met in captures that hold key or boot-ROM material, closed so that the guard blocks them. Patterns are cut
+# short. Their "index.php?title=" forms cannot be matched; R1-07 names the pages as pages not to open.
+closed | wiki.henkaku.xyz/vita/game_car | CC BY, no version | card authentication; key data | 2026-11-20 | capture
+closed | 3dbrew.org/wiki/memory_layou | none stated | boot-ROM copies and key locations | 2026-11-20 | capture; deleted
+closed | www.3dbrew.org/wiki/memory_layou | none stated | www prefix | 2026-11-20 | capture; copy deleted
