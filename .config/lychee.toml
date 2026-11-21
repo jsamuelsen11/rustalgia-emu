@@ -48,6 +48,8 @@ exclude = [
   '^https?://(www\.)?dragonminded\.com/', # times out from CI runners
   '^https?://(www\.)?internethistorypodcast\.com/', # times out from CI runners
   '^https?://wiki\.desmume\.org/', # 500 Internal Server Error
+  '^https?://(www\.)?law\.berkeley\.edu/', # 403 to CI runners
+  '^https?://(www\.)?retrodev\.com/', # 502 Bad Gateway to CI runners
   '^https?://(www\.)?nxp\.com/', # 404 "Page not available" to scripted requests; the pages exist
   '^https?://patents\.google\.com/', # 503 Service Unavailable to scripted requests
 ]
