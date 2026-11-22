@@ -1,6 +1,6 @@
 ---
 title: Permit conveying Rustalgia through app stores
-status: draft
+status: approved
 date: 2026-11-21
 ---
 

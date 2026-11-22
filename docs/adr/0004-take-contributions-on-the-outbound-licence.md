@@ -1,6 +1,6 @@
 ---
 title: Take contributions on the outbound licence
-status: draft
+status: approved
 date: 2026-11-21
 ---
 
