@@ -1,6 +1,6 @@
 ---
 title: Dual-license the project's documents under the GPL or CC BY-SA 4.0
-status: draft
+status: approved
 date: 2026-11-21
 ---
 
