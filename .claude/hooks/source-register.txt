@@ -431,6 +431,70 @@ walled | rpcs3/rpcs3 | GPL-2.0-only, some files differ | - | 2026-11-19 | README
 walled | rpcs3/ps3autotests | GPL-2.0, or later not stated | output "preferably from a real PS3" | 2026-11-19 | README
 walled | shadps4-emu/shadps4 | GPL-2.0; prose says or-later | credits a PS4 emulator and yuzu | 2026-11-19 | README
 
+# Sources first cited by R1-18, the PlayStation 1 survey (2026-11-22).
+# The survey read every emulator from its prose and repository metadata only, whatever its tier.
+# An emulator that names the tainted reference as its only or main documentation is walled, whatever its licence,
+# and so is one that rewrote several parts from it.
+open | libretro/swanstation | GPL-3.0 | DuckStation fork before relicensing | 2026-11-22 | licence file, README
+walled | notaz/pcsx_rearmed | GPL-2.0, or later not stated | PCSX-R fork; HLE closed | 2026-11-22 | licence file, README
+walled | libretro/pcsx_rearmed | GPL-2.0, or later not stated | fork of the line above | 2026-11-22 | metadata
+walled | mirror/pcsxr | GPL-3.0 here; others differ | PCSX-R mirror; HLE BIOS closed | 2026-11-22 | licence file, README
+walled | jaczekanski/avocado | GPL-2.0, or later not stated | needs a BIOS from a console | 2026-11-22 | licence, README
+walled | simias/rustation-ng | not read | successor of simias/rustation | 2026-11-22 | Rustation README
+walled | flio/rustation-ng | not read | GitLab address of the same successor | 2026-11-22 | starpsx README
+walled | kaezrr/starpsx | GPL-3.0 | names psx-spx as its PS1 documentation | 2026-11-22 | licence metadata, README
+walled | amjad50/trapezoid | MIT | "most of the documentation" from psx-spx | 2026-11-22 | licence metadata, README
+walled | bluestormdna/projectpsx | MIT | "mainly used" the Nocash document | 2026-11-22 | licence metadata, README
+walled | unknowall/scepsx | MIT | core based on ProjectPSX, by a user wiki (lead) | 2026-11-22 | metadata
+walled | ebonura/psoxide-emulator | GPL-2.0; README: or later | not clean-room; part psx-spx | 2026-11-22 | README
+walled | pcercuei/lightrec | LGPL-2.1, or later unchecked | recompiler in ReARMed and Beetle PSX | 2026-11-22 | COPYING
+walled | mentalfoundry/pokket | MIT core; GPL-3.0 rest | uses psx-spx for PS1 and PocketStation | 2026-11-22 | README
+walled | mentalfoundry/pokketstation | MIT core; GPL-3.0 rest | old name of the same repository | 2026-11-22 | redirect
+walled | mentalfoundry/pokketsx | GPL-3.0 by metadata | PS1 fork with the same core | 2026-11-22 | Pokket README
+closed | openemu/openemu | none found | macOS frontend; no licence file or statement | 2026-11-22 | README
+walled | codeberg.org/jsgroth/coffeepsx | not read | new home of jsgroth/coffeepsx; not evaluated | 2026-11-22 | README
+open | jsgroth/coffeepsx | GPL-3.0 | archived; moved to Codeberg | 2026-11-22 | licence metadata, README
+open | marcosatti/psx-rs | GPL-3.0 | no documentation named; last push 2021 | 2026-11-22 | licence metadata, README
+open | allkern/psxe | MIT | no documentation named | 2026-11-22 | licence metadata, README
+walled | kootstra-rene/enge-js | MIT | tests ported from closed nugget; folder unknown | 2026-11-22 | README
+open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend; PS1 by PCSX ReARMed | 2026-11-22 | COPYING, README
+open | pcsx-redux.consoledev.net | none stated | docs of a walled emulator; prose | 2026-11-22 | home, OpenBIOS pages
+open | duckstation.org | copyright notice, no grant | site of a closed emulator; prose | 2026-11-22 | home page
+open | downloads.duckstation.org | none stated | beta changelog of a closed emulator | 2026-11-22 | page
+open | notaz.gp2x.de | none stated | site of a walled emulator; prose | 2026-11-22 | project page
+open | epsxe.com | none stated | site of a closed, proprietary emulator; prose | 2026-11-22 | home, Android pages
+open | fpsece.net | none stated | site of a closed, proprietary emulator; prose | 2026-11-22 | FAQ
+open | psxemulator.gazaxian.com | none stated | site of pSX, closed; read in a 2013 capture | 2026-11-22 | home page
+open | drhell.web.fc2.com | none stated | author's console tests; XEBRA closed | 2026-11-22 | PS1, XEBRA pages
+open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | home page
+open | ares-emu.net | none stated | site of an open emulator; compatibility list | 2026-11-22 | home, list
+open | libretro.com | none stated | libretro's project blog; prose | 2026-11-22 | one post
+open | forums.libretro.com | none | forum, a lead | 2026-11-22 | one thread
+open | wiki.redump.org | none stated | live host 404; read in a capture | 2026-11-22 | LibCrypt page
+open | playstation.com/en-au/legal | maker's terms | Sony's PlayStation Classic licence | 2026-11-22 | page
+other | gamingonlinux.com | press | news site, secondary | 2026-11-22 | article
+other | arstechnica.com | press | news site, secondary | 2026-11-22 | article
+other | macrumors.com | press | news site, secondary | 2026-11-22 | article
+other | kotaku.com | press | news site, secondary | 2026-11-22 | article
+walled | mister-devel/psx_mister | GPL-2.0, only or later not stated | FPGA core | 2026-11-22 | licence metadata
+other | metadata.ftp-master.debian.org | none stated | packaging metadata; copyright files | 2026-11-22 | one file
+# Restricted lines. The PS Classic source archives sit under the open pattern doc.dl.playstation.net/doc.
+closed | simias/psx-hardware-tests | none | console tests, by Rustation's README; results usable | 2026-11-22 | metadata
+walled | doc.dl.playstation.net/doc/content/dam/corporate/eula/psclassic | per package | Classic code | 2026-11-22 | OSS
+# Protective lines: sources the survey met and did not open, because they offer firmware or games.
+closed | abdess/retrobios | NOASSERTION | "BIOS and firmware files"; never open | 2026-11-22 | search
+closed | hadobedo/myrient-downloader-gui | not read | game-site downloader; never open | 2026-11-22 | search
+closed | libreboot.org/docs/install/playstation | none checked | offers BIOS reimplementation builds | 2026-11-22 | page
+closed | www.libreboot.org/docs/install/playstation | none checked | same page, www prefix | 2026-11-22 | page
+closed | psx.rules.org | not read | PADUA; said to excerpt Sony manuals | 2026-11-22 | Dr. Hell
+closed | www.psx.rules.org | not read | same site, www prefix | 2026-11-22 | Dr. Hell
+# The XEBRA archives bundle a replacement OS ROM; the pattern leaves the xebra/ prose pages open.
+closed | drhell.web.fc2.com/ps1/xebra2 | none | XEBRA archive; holds a replacement OS ROM | 2026-11-22 | PS1 page
+closed | www.drhell.web.fc2.com/ps1/xebra2 | none | same archive, www prefix | 2026-11-22 | PS1 page
+# no$psx is proprietary and not open source, so its page is closed.
+closed | problemkaputt.de/psx.htm | not read | no$psx, proprietary; fetch refused | 2026-11-22 | user wiki (lead)
+closed | www.problemkaputt.de/psx.htm | not read | same page, www prefix | 2026-11-22 | user wiki (lead)
+
 # PlayStation family: closed tier.
 closed | lameguy64/psn00bsdk | MPL-2.0 core | README: parts "lifted as-is from Sony libraries" | 2026-11-19 | README
 closed | psx.arthus.net | none stated | hosts Sony kits, a BIOS folder, a Sony reference disc | 2026-11-19 | indexes
