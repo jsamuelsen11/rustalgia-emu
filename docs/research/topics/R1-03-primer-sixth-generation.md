@@ -698,7 +698,7 @@ This note is not legal advice.
   (US 6,606,689, column 8).
   The open-tier emulator reimplements the common program families at a high level
   and says "LLE uses DSP ROM files to emulate the DSP's hardware behavior."
-  ([Dolphin wiki, "Audio Emulation"](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation)).
+  (Dolphin wiki, "Audio Emulation", unlinked (see Sources)).
   Its replacement DSP ROM is closed in the [register](../../../.claude/hooks/source-register.txt),
   so the note gives no link to it.
 - On the Wii, "ARAM does not physically exist in Wii hardware."
@@ -707,8 +707,7 @@ This note is not legal advice.
   per-title", marked for checking ([WiiUBrew, "Hardware/DSP"](https://wiiubrew.org/w/index.php?oldid=4300)).
 - High-level emulation does not depend on that answer: Cemu reimplements the `snd_core` AX library in host code,
   including ADPCM decoding and mixing
-  ([Cemu, `src/Cafe/OS/libs/snd_core/`](https://github.com/cemu-project/Cemu/tree/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/OS/libs/snd_core),
-  commit `2f49c079`, observed).
+  (Cemu, `src/Cafe/OS/libs/snd_core/`, unlinked (see Sources), commit `2f49c079`, observed).
 
 #### Nintendo 3DS
 
@@ -732,7 +731,7 @@ This note is not legal advice.
   Citra kept high-level emulation as the default in 2018
   (the 2018 post),
   and Dolphin's wiki says "all sound issues need to be confirmed with LLE."
-  ([Dolphin wiki, "Audio Emulation"](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation)).
+  (Dolphin wiki, "Audio Emulation", unlinked (see Sources)).
 
 #### PlayStation 2
 
@@ -1052,7 +1051,7 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
   first release, by Citra's account.
 - **Gains:** runs any program; serves as the reference for checking high-level emulation.
 - **Used by:** Dolphin; Citra, Azahar's predecessor, from 2018
-  ([Dolphin wiki, "Audio Emulation"](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation);
+  (Dolphin wiki, "Audio Emulation", unlinked (see Sources);
   [Citra site archive, "Accurate Audio Emulation Has Arrived"](https://citra.azahar-emu.org/entry/accurate-audio-emulation/)).
 
 ### 5. A specialised host shader for each guest configuration
@@ -1154,8 +1153,8 @@ These are recommendations for the owner, who decides; the pull request lists the
   so for them the choice waits for [`R1-23`](../../roadmap/research.md#system-family-surveys)
   and [`R1-22`](../../roadmap/research.md#system-family-surveys).
   A low-level DSP core comes later, as a test reference only, run where the program is legally to hand,
-  since [Dolphin's wiki](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation) says sound issues need confirming
-  with low-level emulation and Citra calls it all or nothing.
+  since Dolphin's wiki ("Audio Emulation", unlinked; see Sources) says sound issues need confirming with low-level
+  emulation and Citra calls it all or nothing.
 - **Shaders (options 5 and 6):** specialised shaders, cached per game, driver, and emulator version,
   with a general shader standing in while they compile, as Dolphin's hybrid mode does
   ([Dolphin blog, "Ubershaders"](https://web.archive.org/web/20261103201859/https://dolphin-emu.org/blog/2017/07/30/ubershaders/));
@@ -1505,8 +1504,9 @@ Emulator projects' documentation, data, and code (implementations' accounts):
   [pull request #12259](https://github.com/dolphin-emu/dolphin/pull/12259), and
   [commit `59e7c193`](https://github.com/dolphin-emu/dolphin/commit/59e7c1938079503724b68d78e1e5eb552cf056b7), read
   through GitHub's interface for programs.
-- Dolphin, [FAQ](https://dolphin-emu.org/docs/faq/); wiki,
-  ["Audio Emulation"](https://wiki.dolphin-emu.org/index.php?title=Audio_Emulation)
+- Dolphin, [FAQ](https://dolphin-emu.org/docs/faq/); wiki, "Audio Emulation",
+  `wiki.dolphin-emu.org/index.php?title=Audio_Emulation`, not linked:
+  [R1-17](R1-17-gamecube-wii-wii-u-family.md) closed the page in the register, because it gives DSP ROM dumping steps
   (rev 177576)
   and ["GameCube Main Menu"](https://wiki.dolphin-emu.org/index.php?title=GameCube_Main_Menu)
   (rev 200620); the links go to the current pages.
@@ -1531,9 +1531,8 @@ Emulator projects' documentation, data, and code (implementations' accounts):
   [`src/xenia/cpu/thread_state.cc`](https://github.com/xenia-canary/xenia-canary/blob/a4ef31cdf7ceb5a1890daabd34fa281c9cd58693/src/xenia/cpu/thread_state.cc)
   and
   [`src/xenia/cpu/ppc/ppc_emit_altivec.cc`](https://github.com/xenia-canary/xenia-canary/blob/a4ef31cdf7ceb5a1890daabd34fa281c9cd58693/src/xenia/cpu/ppc/ppc_emit_altivec.cc).
-- Cemu, commit `2f49c079`:
-  [`src/Cafe/OS/libs/snd_core/`](https://github.com/cemu-project/Cemu/tree/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/OS/libs/snd_core)
-  and
+- Cemu, commit `2f49c079`: `src/Cafe/OS/libs/snd_core/` at commit `2f49c079`, not linked:
+  [R1-17](R1-17-gamecube-wii-wii-u-family.md) closed Cemu's high-level Cafe OS in the register and
   [`src/Cafe/Filesystem/FST/FST.cpp`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/Filesystem/FST/FST.cpp),
   and the file name
   [`src/Cafe/HW/Latte/ISA/LatteReg.h`](https://github.com/cemu-project/Cemu/blob/2f49c079da1d50b85cea0ed99aedda58846b3523/src/Cafe/HW/Latte/ISA/LatteReg.h)

@@ -104,7 +104,7 @@ Each row's sources are linked in the paragraphs below.
 | Panda3DS | open | GPL-3.0 | v0.9, 2024-12-25; nightlies | Decrypted, or keys | Win, Mac, Linux, Android, libretro |
 | Tanuki3DS | open | GPL-3.0 | v0.5.1, 2026-04-13 | Decrypted only; open replacements | Win, Mac, Linux |
 | Mikage | closed | none | Developer Edition, 2025-01-02 | Keys; NAND from update data | PC (developers only) |
-| ScarletNX | open | GPL-3.0+ | created 2026-10-11 | Keys | Linux, Win, Android, BSD, Solaris |
+| ScarletNX | walled | GPL-3.0+ | created 2026-10-11 | Keys | Linux, Win, Android, BSD, Solaris |
 | 3Beans | open | GPL-3.0 | rolling, 2026-08-05 | Boot ROMs, NAND, encrypted cards | Win, Mac, Linux |
 | Corgi3DS | open | GPL-3.0 | none; pushed 2023-07-13 | Boot ROMs, NAND | Win, Mac, Linux; source only |
 | VitaminC | closed | none | archived; last push 2025-01-22 | Boot ROMs | none released |
@@ -276,6 +276,8 @@ A 2020 post put it on hiatus for lack of funding, declining a seven-figure offer
 The [README][scarletnx] calls it "A GPLv3 static ARM64 to x86 recompiler" with a Switch ABI layer,
 whose "Experimental drivers run 3DS games, DS games and PS Vita homebrew the same way",
 taking the user's 3DS key file and Switch keys; it was created on 2026-10-11 (observed).
+[R1-20](R1-20-psp-and-vita-family.md) later found that its credits list code ported from the walled Vita3K,
+so the register now walls it.
 
 ### Low-level emulators
 
