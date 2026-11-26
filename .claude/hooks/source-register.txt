@@ -1330,8 +1330,8 @@ closed | xenia-canary/xenia-canary/canary_experimental/src/xenia/cpu/xex_module 
 closed | xenia-canary/xenia-canary/contents/src/xenia/cpu/xex_module | BSD-3-Clause | - | 2026-11-25 | -
 # Closed repositories: no licence, source withheld, derived from maker code, or exploits.
 closed | patrickvl/dxbx | none found | Delphi translation of Cxbx; own kernel | 2026-11-25 | licence 404
-closed | sourceforge.net/projects/dxbx/files | none | downloads of a closed emulator | 2026-11-25 | project page
-closed | www.sourceforge.net/projects/dxbx/files | none | the same, www prefix | 2026-11-25 | project page
+closed | sourceforge.net/projects/dxbx/file | none | downloads of a closed emulator | 2026-11-25 | project page
+closed | www.sourceforge.net/projects/dxbx/file | none | the same, www prefix | 2026-11-25 | project page
 closed | mborgerson/openxbox | none | archived proof of concept | 2026-11-25 | licence 404, README
 closed | xenia-project/release-builds-windows | none | binary builds of Xenia's master branch | 2026-11-25 | metadata
 closed | cxbx-reloaded/xbsymboldatabase | MIT | signatures of maker code from retail games | 2026-11-25 | README
@@ -1339,13 +1339,13 @@ closed | ashnar2602/x360-mobile---official | none | source not published | 2026-
 closed | leviidev/utsuro | none found | runs the console's userland | 2026-11-25 | README
 closed | xboxoneresearch/ | mixed | exploits, flash dumpers; precaution | 2026-11-25 | organisation list
 # Dumping guides and possible firmware hosts, named by the sources read; not opened.
-closed | xenia-project/xenia/wiki/quickstart | none | game-dumping guide | 2026-11-25 | linked from the FAQ
-closed | xenia-project/xenia/wiki/how-to-rip-games | none | game-dumping guide | 2026-11-25 | wiki navigation
-closed | xenia-canary/xenia-canary/wiki/quickstart | none | the same in Canary's wiki | 2026-11-25 | FAQ link
-closed | xenia.jp/development/quickstart | none | the same on Xenia's site | 2026-11-25 | search result
-closed | www.xenia.jp/development/quickstart | none | www prefix | 2026-11-25 | search result
-closed | xenios.jp/faq | none stated | holds a game-dumping how-to | 2026-11-25 | page
-closed | www.xenios.jp/faq | none stated | www prefix | 2026-11-25 | page
+closed | xenia-project/xenia/wiki/quickstar | none | game-dumping guide | 2026-11-25 | linked from the FAQ
+closed | xenia-project/xenia/wiki/how-to-rip-game | none | game-dumping guide | 2026-11-25 | wiki navigation
+closed | xenia-canary/xenia-canary/wiki/quickstar | none | the same in Canary's wiki | 2026-11-25 | FAQ link
+closed | xenia.jp/development/quickstar | none | the same on Xenia's site | 2026-11-25 | search result
+closed | www.xenia.jp/development/quickstar | none | www prefix | 2026-11-25 | search result
+closed | xenios.jp/fa | none stated | holds a game-dumping how-to | 2026-11-25 | page
+closed | www.xenios.jp/fa | none stated | www prefix | 2026-11-25 | page
 closed | emulator-zone.com | not read | Xeon download; may host BIOS files | 2026-11-25 | wiki link
 closed | www.emulator-zone.com | not read | www prefix | 2026-11-25 | wiki link
 closed | xbins.org | not read | homebrew file host | 2026-11-25 | Free60 link
@@ -1375,8 +1375,10 @@ closed | free60project/wiki/master/docs/system-software/xdk_kerne | - | raw file
 # Wiki pages that mention leaked Xbox source or kits; their oldid and "index.php?title=" forms cannot be matched.
 closed | en.wikipedia.org/wiki/xbox_system_softwar | CC BY-SA 4.0 | mentions the 2020 source leak | 2026-11-25 | raw
 closed | en.wikipedia.org/wiki/xbox_%28consol | CC BY-SA 4.0 | the same; "(" form not matched | 2026-11-25 | raw
-closed | emulation.gametechwiki.com/index.php/xbox_emulators | none named | mentions stolen kits | 2026-11-25 | raw
-closed | emulation.gametechwiki.com/index.php/emulator_scams | none named | mentions a kit leak | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/xbox_emulator | none named | mentions stolen kits | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/emulator_scam | none named | mentions a kit leak | 2026-11-25 | raw
+closed | title=xbox_emulator | none named | the Xbox emulators page's "?title=" form | 2026-11-25 | raw
+closed | title=emulator_scam | none named | the emulator scams page's "?title=" form | 2026-11-25 | raw
 
 # Sega, arcade, Xbox, and other systems: emulators, cores, and kits.
 open | retrodev.com/repos/blastem | GPL-3.0-or-later | credits community documents | 2026-11-19 | README, COPYING
