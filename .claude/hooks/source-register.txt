@@ -1287,6 +1287,96 @@ closed | finalburnneo/fbneo | own non-commercial licence plus old MAME terms | -
 closed | srg320/saturn_mister | none | - | 2026-11-19 | README
 closed | mister-devel/saturn_mister | none | - | 2026-11-19 | README
 
+# Sources first cited by R1-24, the arcade hardware survey (2026-11-25).
+# The block also holds sources the survey evaluated but does not cite, so that the guard knows them.
+# The survey read every emulator from its prose and repository metadata only, whatever its tier.
+# Every replacement or high-level BIOS, boot code, or system software is closed inside any repository below,
+# and so is any decryption code or key data they hold; the paths are not known, so the written rule applies.
+open | docs.mamedev.org | see the mamedev/mame line | MAME docs; not matched by mamedev.org | 2026-11-25 | licence page
+walled | libretro/mame | GPL-2.0 file, no or later; docs disagree | libretro fork of MAME | 2026-11-25 | COPYING
+walled | libretro/mame2016-libretro | GPL-2.0+; defers to file headers | MAME 0.174 | 2026-11-25 | LICENSE.md, upstream
+walled | libretro/hbmame-libretro | GPL-2.0, no or later | libretro port of HBMAME | 2026-11-25 | COPYING
+walled | robbbert/hbmame | GPL-2.0, no or later | MAME derivative for homebrew and hacks | 2026-11-25 | COPYING, README
+walled | robbbert/mameui | GPL-2.0, no or later | MAME with a Windows interface | 2026-11-25 | COPYING
+walled | antonioginer/groovymame | GPL-2.0, no or later | MAME fork; README is MAME's | 2026-11-25 | COPYING
+walled | seleuco/mame4droid-current | bare GPL-2.0 text; README: or later | Android MAME 0.289 | 2026-11-25 | LICENSE
+walled | yoshisuga/mame4ios | GPL-2.0, no version | MAME 0.238 and 0.139u1; 0.139u1 build closed | 2026-11-25 | LICENSE
+open | trzy/supermodel | GPL-3.0; Model 1 and 2 parts BSD-3-Clause | has 315-5881 decryption | 2026-11-25 | licence
+open | supermodel3.com | none read | Supermodel's site; host does not resolve | 2026-11-25 | DNS failure; README
+open | skmp/reicast-emulator | BSD-3-Clause | archived; Flycast's parent; HLE BIOS closed | 2026-11-25 | LICENSE
+closed | thearcadestriker/flycast-wiki | none | Flycast user guide wiki; no licence; unread | 2026-11-25 | metadata
+open | flyinghead.github.io | none stated | Flycast builds page; prose | 2026-11-25 | page
+open | demul.emulation64.com | none stated | site of a closed emulator; prose only | 2026-11-25 | home, FAQ, team pages
+open | fba.emuunlim.com | none stated | site of a closed emulator; prose | 2026-11-25 | capture 20090314
+open | raine.1emulation.com | none stated | site of a closed emulator | 2026-11-25 | home page
+open | ps2homebrew-arcade/pcsx2x6 | GPL-3.0 | PCSX2 fork for Namco System 246 and 256 | 2026-11-25 | licence file, site
+open | ps2homebrew-arcade.github.io | none stated | PCSX2x6 site; dumping pages not opened | 2026-11-25 | home, FAQ
+open | discostarslayer/pcsx2-reliquary | GPL-3.0 | Konami Python fork; key section unread | 2026-11-25 | licence, README
+open | teknogods/openparrot | GPL-3.0 | detects PC games by PE CRC; loads into them | 2026-11-25 | licence, README
+open | teknoparrot.com | proprietary terms | site of a closed commercial emulator; prose | 2026-11-25 | home, terms
+open | dirtbagxon/hypseus-singe | GPL-3.0-or-later | fork of Daphne; mark reserved | 2026-11-25 | licence file, README
+open | icculus/dirksimple | Zlib | reimplements laserdisc game logic in Lua; no ROMs | 2026-11-25 | licence file, README
+open | mister-devel/arcade-cave_mister | GPL-3.0 | Cave core; walled by mister-devel/ line | 2026-11-25 | licence
+walled | mister-devel/arcade-iremm72_mister | GPL-2.0, version not stated | FPGA core | 2026-11-25 | licence metadata
+walled | mister-devel/arcade-robotron_mister | per-file notices, no licence file | FPGA core | 2026-11-25 | README
+open | mametesters.org | none stated | MAME's bug tracker; bug pages unread | 2026-11-25 | FAQ, rules
+open | artemiourbina.itch.io/240p-test-suite | none stated | 240p Test Suite release notes | 2026-11-25 | devlog
+open | retrorgb.com | none stated | news blog, a lead; CPS-1 board audio comparison | 2026-11-25 | one article
+other | siliconera.com | press | news site, secondary | 2026-11-25 | one article
+other | www.siliconera.com | press | the same, www prefix | 2026-11-25 | one article
+open | arcadeheroes.com | none stated | arcade operator's blog, a lead | 2026-11-25 | one post
+
+# Closed by R1-24: non-commercial or no licence, a gone or disabled repository, binary cores, a replacement
+# bootloader, and repositories named in makers' notices. READMEs and metadata only.
+closed | libretro/mame2015-libretro | none | MAME 0.160, before 0.172 | 2026-11-25 | licence 404; pre-0.172 rule
+closed | libretro/mame2010-libretro | none; docs: MAME non-commercial | MAME 0.139 | 2026-11-25 | licence 404, README
+closed | libretro/mame2003-plus-libretro | MAME 0.78 non-commercial | hard fork of MAME 2003 | 2026-11-25 | LICENSE.md
+closed | libretro/mame2003-libretro | MAME 0.78 non-commercial | from xmame 0.78 | 2026-11-25 | LICENSE.md
+closed | libretro/mame2000-libretro | none; docs: MAME licence | MAME 0.37b5 | 2026-11-25 | licence 404, docs
+closed | libretro/fbalpha2012 | none; docs: non-commercial | FB Alpha; variants unlisted | 2026-11-25 | docs
+closed | libretro/fbneo | FBNeo non-commercial licence | libretro port of FBNeo | 2026-11-25 | LICENSE.md, docs
+closed | p1pkin/demul | none found | Google Code export; closed Demul's tracker | 2026-11-25 | metadata; licence 404
+closed | skmp/nulldc-v1 | none found | archived Dreamcast emulator before Reicast | 2026-11-25 | metadata, README
+closed | skmp/nulldc | none found | redirects to skmp/nulldc-v1 | 2026-11-25 | metadata
+closed | zelurker/raine | none found | Raine arcade emulator; active | 2026-11-25 | metadata, README
+closed | teknogods/teknoparrot | none | proprietary TeknoParrot; paid tiers | 2026-11-25 | metadata, terms of service
+closed | teknogods/teknoparrotui | none now | HTTP 404; was the TeknoParrot interface | 2026-11-25 | metadata
+closed | teknogods/teknogods.github.io | none | disabled for Taito's notice (HTTP 451) | 2026-11-25 | API, github/dmca
+closed | teknogods.github.io | none | TeknoParrot compatibility pages; Taito notice | 2026-11-25 | github/dmca
+closed | soyandroid/segatools | none found | loaders for Sega Nu and ALLS PC games | 2026-11-25 | metadata
+closed | lindbergh-loader/lindbergh-loader | CC BY-NC-SA 4.0 | runs Lindbergh games natively | 2026-11-25 | LICENSE.md
+closed | lindbergh-loader/linuxloader | CC BY-NC-SA by README | successor; Linux and Windows | 2026-11-25 | README
+closed | jotego/jtbin | use-condition notice only | binary cores; MRA files may carry keys | 2026-11-25 | README
+closed | mister-devel/arcade-galaga_mister | none | FPGA core | 2026-11-25 | metadata, README
+closed | firewave/mame_regtest | none detected | MAME mass-test tool; MAME as oracle | 2026-11-25 | licence 404, README
+closed | ps2homebrew-arcade/proverb | AFL-3.0 by metadata | arcade PS2 bootloader | 2026-11-25 | metadata; EGW
+closed | fluffyquack/rexglue-metalslugxx | NOASSERTION | game recompilation; SNK notice | 2026-11-25 | github/dmca
+closed | geordan9/bbtag_decrypter | not read | game decryption tool; Arc System Works notice | 2026-11-25 | github/dmca
+
+# Protective lines, never opened beyond what each says: sites that link decryption tables or invite ROM downloads,
+# key and suicide-battery research, a seller of a replacement Neo Geo system ROM, and a host of hacked game sets.
+# Subdomains have no www form. The junkerhq page is linked as index.php?title=CPS-III, which cannot be matched,
+# so its path form is cut short instead. The unibios.com address is from memory, not confirmed.
+closed | nebula.emulatronia.com | none | ElSemi's site; links CPS-2 decryption tables | 2026-11-25 | captures
+closed | kawaks.org | none | WinKawaks site; invites ROM downloads | 2026-11-25 | capture 20130312
+closed | www.kawaks.org | none | the same, www prefix | 2026-11-25 | capture 20130312
+closed | cps2shock.emu-france.info | not read | distributed CPS-2 decryption tables | 2026-11-25 | Wikipedia
+closed | arcadehacker.blogspot.com | not read | CPS-2 de-suicide work; key hazard | 2026-11-25 | Wikipedia CP System II
+closed | andreasnaive.blogspot.com | not read | CPS-2 and CPS-3 cipher research; key hazard | 2026-11-25 | Wikipedia
+closed | 64darksoft.blogspot.com | not read | CPS-3 cartridge and BIOS changes; key hazard | 2026-11-25 | Wikipedia
+closed | junkerhq.net/xrgb/index.php/cps-ii | not read | CPS-3 suicide page; key hazard | 2026-11-25 | Wikipedia
+closed | www.junkerhq.net/xrgb/index.php/cps-ii | not read | the same, www prefix | 2026-11-25 | Wikipedia
+closed | unibios.free.fr | not read | sells a replacement Neo Geo system ROM | 2026-11-25 | libretro FBNeo docs
+closed | unibios.com | not read | the same BIOS; address from memory | 2026-11-25 | from memory
+closed | www.unibios.com | not read | the same, www prefix | 2026-11-25 | from memory
+closed | hbmame.1emulation.com | not read | HBMAME site, presumed to host hacked game sets | 2026-11-25 | HBMAME README
+# Daphne's site is closed because its loader auto-downloaded game files; only its home page and FAQ questions were read.
+# The PCSX2x6 site's BIOS and game dumping pages are closed; the rest of that site stays open for prose.
+closed | daphne-emu.com | none read | Daphne site; DaphneLoader downloaded game files | 2026-11-25 | FAQ index
+closed | www.daphne-emu.com | none read | the same, www prefix | 2026-11-25 | FAQ index
+closed | ps2homebrew-arcade.github.io/pcsx2x6/getting_a_bios | not read | BIOS dumping page | 2026-11-25 | site menu
+closed | ps2homebrew-arcade.github.io/pcsx2x6/how_to_dump_games | not read | game dumping page | 2026-11-25 | site menu
+
 # Sega, arcade, and other systems: maker material that others host. Closed tier.
 closed | smspower.org/development/officialdoc | none | Sega developer documents | 2026-11-19 | Documents index
 closed | www.smspower.org/development/officialdoc | none | same page with the www prefix | 2026-11-19 | Documents index
