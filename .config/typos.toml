@@ -18,6 +18,8 @@ flate = "flate" # part of flate2, a Rust compression crate
 Noo = "Noo" # part of NooDS, a DS and Game Boy Advance emulator
 ue = "ue" # the "UE" of Nestopia UE, an NES emulator, and its link labels
 thar = "thar" # part of Thar0, a test author's handle, in repository names
+damon = "damon" # part of DamonPS2, an Android PS2 emulator, and its link labels
+Damon = "Damon" # the same name, capitalised
 
 [default.extend-identifiers]
 # Correctly spelled words that the checker splits into wrong parts. Each maps to itself.
