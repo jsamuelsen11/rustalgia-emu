@@ -252,12 +252,7 @@ closed | aappleby/metroboy | none | gate-level simulation from die photographs |
 # Sources first cited by R1-11, the Game Boy Advance survey (2026-11-22).
 # Emulators read from prose only. GPL-2.0 licence files whose only "or later" is the licence's own appendix are
 # treated as stating no version, so those projects are walled.
-walled | visualboyadvance-m/visualboyadvance-m | GPL-2.0, version not stated | VBA fork | 2026-11-22 | LICENSE
-open | visualboyadvance-m.org | none stated | site of a walled emulator; prose | 2026-11-22 | home page
-open | www.visualboyadvance-m.org | none stated | same site, www prefix | 2026-11-22 | home page
-walled | sourceforge.net/projects/vba | GPLv2, version not stated | original VBA; matches vbam | 2026-11-22 | metadata
-walled | www.sourceforge.net/projects/vba | GPLv2, version not stated | same, www prefix | 2026-11-22 | metadata
-walled | sourceforge.net/rest/p/vba | GPLv2, version not stated | metadata address of the same | 2026-11-22 | metadata
+walled | sourceforge.net/rest/p/vba | GPLv2, version not stated | metadata of the original VBA | 2026-11-22 | metadata
 walled | hades-emu/hades | GPL-2.0, version not stated | emulator | 2026-11-22 | licence file, README
 open | hades-emu.org | none stated | site of a walled emulator; prose | 2026-11-22 | features, download, blog
 open | hydr8gon/noods | GPL-3.0 | DS and GBA emulator; its GBA HLE BIOS is closed | 2026-11-22 | metadata, README
@@ -272,15 +267,8 @@ open | blastrock/meteor | GPL-3.0 | Meteor emulator | 2026-11-22 | licence metad
 open | libretro/meteor-libretro | GPL-3.0 | libretro port of Meteor | 2026-11-22 | COPYING
 open | jsmolka/eggvance | GPL-3.0 | its bundled replacement BIOS is closed | 2026-11-22 | metadata, README
 walled | alyosha-tas/gbahawk | unresolved mix | BizHawk fork; console-verified research | 2026-11-22 | licence file
-closed | openemu/openemu | none found | macOS frontend; no licence file or statement | 2026-11-22 | README
-open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | release notes
-open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend | 2026-11-22 | licence file
-walled | rakashazi/emu-ex-plus-alpha | GPL-3.0 root; VBA-M part GPL-2.0 | unresolved mix | 2026-11-22 | COPYING.GPL
-open | emulatorjs/emulatorjs | GPL-3.0 | web frontend for libretro cores | 2026-11-22 | licence metadata, README
-open | emulatorjs.org | none stated | site of an open-tier web frontend | 2026-11-22 | cores page
 open | mesen.ca | none stated | site of an open-tier emulator; prose | 2026-11-22 | home page
 open | www.mesen.ca | none stated | same site, www prefix | 2026-11-22 | home page
-open | ares-emu.net | none stated | site of an open-tier emulator; prose | 2026-11-22 | four pages
 open | higan.readthedocs.io | none stated | documentation of an open-tier emulator | 2026-11-22 | import guide
 open | problemkaputt.de/gba.htm | notice, no grant | no$gba page; the program is closed | 2026-11-22 | capture
 open | problemkaputt.de/gbanew.htm | notice, no grant | no$gba release notes | 2026-11-22 | capture
@@ -414,13 +402,9 @@ open | libretro/bsnes-jg | GPL-3.0-or-later | mirror of jgemu/bsnes; bundles LGP
 walled | jgemu/bsnes | GPL-3.0-or-later, by its mirror's README | bsnes v115 fork | 2026-11-22 | mirror README
 walled | libretro/supafaust | GPL-2.0, or later not stated | port of Mednafen snes_faust | 2026-11-22 | COPYING
 walled | xyproto/zsnes | GPL-2.0, or later not stated | ZSNES ported to C | 2026-11-22 | README, COPYING
-open | swordfish90/lemuroid | GPL-3.0 | Android frontend; fetches cores | 2026-11-22 | metadata, README, F-Droid
-walled | rakashazi/emu-ex-plus-alpha | GPL-3.0 file; bundles Snes9x | mix not resolved | 2026-11-22 | README
-open | emulatorjs/emulatorjs | GPL-3.0 | web frontend for libretro cores | 2026-11-22 | metadata, README
 open | bfirsh/jsnes | Apache-2.0 | JavaScript NES emulator | 2026-11-22 | metadata, README
 # No licence detected and none in the prose read: closed ("there is no licence"), as for dillonb/n64.
 closed | quietust/nintendulator | none found; site says "open source" | - | 2026-11-22 | metadata, site
-closed | openemu/openemu | none detected; Wikipedia says BSD | macOS frontend | 2026-11-22 | metadata, README
 closed | symphoniae.com/nrs | none found | NintendulatorNRS builds; listing only | 2026-11-22 | index
 closed | www.symphoniae.com/nrs | none found | same path, www prefix | 2026-11-22 | index
 # Forks of the closed Snes9x inherit its non-commercial licence.
@@ -431,20 +415,14 @@ closed | libretro/snes9x2002 | none detected; docs say non-commercial | from Sne
 # A reimplementation of firmware is closed whatever its licence (ADR 0006, closed tier).
 closed | jamesathey/freedisksysrom | LGPL-3.0 | reimplementation of the FDS BIOS | 2026-11-22 | README
 # Project sites and documentation: prose.
-open | www.mesen.ca | none stated | Mesen site; 0.9.9 docs | 2026-11-22 | home, docs pages
 open | fceux.com | none stated | FCEUX site and help | 2026-11-22 | home, version, help pages
 open | 0ldsk00l.ca | none stated | Nestopia UE site and changelog | 2026-11-22 | page
 open | jgemu.gitlab.io | none stated | Jolly Good Emulation site | 2026-11-22 | home page
-open | ares-emu.net | none stated | ares site and compatibility list | 2026-11-22 | home, about, compatibility
-open | higan.readthedocs.io | none stated | documentation of higan | 2026-11-22 | three pages
 open | problemkaputt.de/sns.htm | notice, no grant | no$sns page; program closed | 2026-11-22 | capture
 open | www.snes9x.com | none stated | site of a closed emulator; prose | 2026-11-22 | home, downloads
 open | www.zsnes.com | none stated | site of Super ZSNES, a closed emulator; prose | 2026-11-22 | home page
 open | zsnes.com | none stated | same site without www | 2026-11-22 | home page
 open | wiki.provenance-emu.com | none stated | wiki of a walled project; prose | 2026-11-22 | two pages
-open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | home page
-open | www.explusalpha.com | none stated | pages of a walled project | 2026-11-22 | two pages
-open | emulatorjs.org | none stated | site of an open web frontend | 2026-11-22 | cores page
 open | sites.google.com/site/johnemulators | none stated | pages for closed apps; prose | 2026-11-22 | two pages
 open | byuunews.blogspot.com | none stated | byuu's news posts; personal blog, a lead | 2026-11-22 | one post
 open | www.nerd.nintendo.com | maker's pages | Nintendo European R&D articles | 2026-11-22 | four pages
@@ -452,7 +430,6 @@ other | arstechnica.com | press | news site; two articles by bsnes's author | 20
 other | metadata.ftp-master.debian.org | - | Debian packagers' copyright summaries | 2026-11-22 | three files
 other | flathub.org | - | app store metadata and install statistics | 2026-11-22 | API
 other | store.steampowered.com | - | Steam store listings | 2026-11-22 | one page
-other | itunes.apple.com | - | App Store search API | 2026-11-22 | lookups
 # Protective lines, not opened unless noted. Page patterns are cut short, so the full address continues past them.
 # Game Tech Wiki pages that mention leaked source or a leaked BIOS, closed as a precaution (ADR 0006); read first.
 closed | emulation.gametechwiki.com/index.php/nintendo_entertainment_system_emulator | - | leak | 2026-11-22 | -
@@ -877,13 +854,11 @@ walled | pcercuei/lightrec | LGPL-2.1, or later unchecked | recompiler in ReARMe
 walled | mentalfoundry/pokket | MIT core; GPL-3.0 rest | uses psx-spx for PS1 and PocketStation | 2026-11-22 | README
 walled | mentalfoundry/pokketstation | MIT core; GPL-3.0 rest | old name of the same repository | 2026-11-22 | redirect
 walled | mentalfoundry/pokketsx | GPL-3.0 by metadata | PS1 fork with the same core | 2026-11-22 | Pokket README
-closed | openemu/openemu | none found | macOS frontend; no licence file or statement | 2026-11-22 | README
 walled | codeberg.org/jsgroth/coffeepsx | not read | new home of jsgroth/coffeepsx; not evaluated | 2026-11-22 | README
 open | jsgroth/coffeepsx | GPL-3.0 | archived; moved to Codeberg | 2026-11-22 | licence metadata, README
 open | marcosatti/psx-rs | GPL-3.0 | no documentation named; last push 2021 | 2026-11-22 | licence metadata, README
 open | allkern/psxe | MIT | no documentation named | 2026-11-22 | licence metadata, README
 walled | kootstra-rene/enge-js | MIT | tests ported from closed nugget; folder unknown | 2026-11-22 | README
-open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend; PS1 by PCSX ReARMed | 2026-11-22 | COPYING, README
 open | pcsx-redux.consoledev.net | none stated | docs of a walled emulator; prose | 2026-11-22 | home, OpenBIOS pages
 open | duckstation.org | copyright notice, no grant | site of a closed emulator; prose | 2026-11-22 | home page
 open | downloads.duckstation.org | none stated | beta changelog of a closed emulator | 2026-11-22 | page
@@ -892,18 +867,14 @@ open | epsxe.com | none stated | site of a closed, proprietary emulator; prose |
 open | fpsece.net | none stated | site of a closed, proprietary emulator; prose | 2026-11-22 | FAQ
 open | psxemulator.gazaxian.com | none stated | site of pSX, closed; read in a 2013 capture | 2026-11-22 | home page
 open | drhell.web.fc2.com | none stated | author's console tests; XEBRA closed | 2026-11-22 | PS1, XEBRA pages
-open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | home page
-open | ares-emu.net | none stated | site of an open emulator; compatibility list | 2026-11-22 | home, list
 open | libretro.com | none stated | libretro's project blog; prose | 2026-11-22 | one post
 open | forums.libretro.com | none | forum, a lead | 2026-11-22 | one thread
 open | wiki.redump.org | none stated | live host 404; read in a capture | 2026-11-22 | LibCrypt page
 open | playstation.com/en-au/legal | maker's terms | Sony's PlayStation Classic licence | 2026-11-22 | page
 other | gamingonlinux.com | press | news site, secondary | 2026-11-22 | article
-other | arstechnica.com | press | news site, secondary | 2026-11-22 | article
 other | macrumors.com | press | news site, secondary | 2026-11-22 | article
 other | kotaku.com | press | news site, secondary | 2026-11-22 | article
 walled | mister-devel/psx_mister | GPL-2.0, only or later not stated | FPGA core | 2026-11-22 | licence metadata
-other | metadata.ftp-master.debian.org | none stated | packaging metadata; copyright files | 2026-11-22 | one file
 # Restricted lines. The PS Classic source archives sit under the open pattern doc.dl.playstation.net/doc.
 closed | simias/psx-hardware-tests | none | console tests, by Rustation's README; results usable | 2026-11-22 | metadata
 walled | doc.dl.playstation.net/doc/content/dam/corporate/eula/psclassic | per package | Classic code | 2026-11-22 | OSS
