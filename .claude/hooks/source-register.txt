@@ -1219,6 +1219,73 @@ closed | idc/ps4libdoc | none | library data organised by firmware version | 202
 closed | peterlemon/psx | none | tested on a console; results usable | 2026-11-19 | README
 closed | hrydgard/pspautotests | placeholder only | "preferably from a real PSP"; results usable | 2026-11-19 | README
 
+# Sources first cited by R1-23, the Sega Saturn and Dreamcast survey (2026-11-26).
+walled | libretro/beetle-saturn-libretro | bare GPL-2.0 text | fork of Mednafen Saturn | 2026-11-26 | COPYING
+walled | libretro/yabause | bare GPL-2.0; no root licence | Kronos, YabaSanshiro branches | 2026-11-26 | COPYING
+walled | libretro/parallel-dc | bare GPL-2.0 text | libretro's Flycast fork; HLE BIOS closed | 2026-11-26 | LICENSE
+walled | libretro/flycast | bare GPL-2.0 text | old name; redirects to libretro/parallel-dc | 2026-11-26 | metadata
+open | git.libretro.com/libretro/emir | GPL-3.0-or-later (GitLab) | libretro port of Ymir | 2026-11-26 | LICENSE, README
+open | fcare.github.io | none stated | site of a walled emulator, Kronos; prose | 2026-11-26 | home page
+open | www.yabasanshiro.com | GPL, no version, non-commercial term | YabaSanshiro site | 2026-11-26 | terms
+open | yabasanshiro.com | the same | the same site without www | 2026-11-26 | terms
+open | yabause.org | none stated | lapsed domain; old site copy with casino ads; cite captures | 2026-11-26 | home page
+open | rtoumazet/saturnin | Apache-2.0 | Saturn emulator by Runik | 2026-11-26 | licence endpoint, README
+open | user-none/erings | GPL-3.0 | Go Saturn emulator; built-in HLE BIOS closed | 2026-11-26 | LICENSE, README
+open | www.segasaturnshiro.com | none checked | fan news site; a lead | 2026-11-26 | two articles
+walled | reicast/reicast-emulator | as skmp/reicast-emulator | old name; redirects there | 2026-11-26 | licence files
+open | reicast.com | none stated | Reicast's site; refuses scripts; read in captures | 2026-11-26 | capture
+walled | blueminder/flycast-dojo | bare GPL-2.0 text | Flycast fork for netplay | 2026-11-26 | licence endpoint, README
+walled | nexus382/hollycast | bare GPL-2.0 text | Flycast fork | 2026-11-26 | licence endpoint, README
+walled | brinootk/castation | GPL-3.0 file on Flycast's GPL-2.0 code | PS5 port of Flycast | 2026-11-26 | LICENSE
+walled | rinnegatamante/flycast-vita | bare GPL-2.0 text | PS Vita port of Flycast | 2026-11-26 | licence endpoint
+open | inolen/redream | GPL-3.0 | old open code of Redream; its HLE BIOS closed | 2026-11-26 | LICENSE.txt, README
+open | redream.io | none stated | site of a closed-source emulator; prose | 2026-11-26 | home, download, help pages
+walled | lxdream/lxdream | bare GPL-2.0 text | Lxdream; dormant since 2021 | 2026-11-26 | COPYING, site FAQ
+open | www.lxdream.org | none stated | site of a walled emulator; prose | 2026-11-26 | news, FAQ, 0.9.1 notes
+walled | rzkowskii/mxdream | bare GPL-2.0 text | macOS fork of lxdream | 2026-11-26 | licence endpoint
+walled | senryoku/deecy | MIT; MAME data and CHD ports | names a boot ROM disassembly, Sega papers | 2026-11-26 | README
+open | senryoku.github.io | none stated | Deecy's site | 2026-11-26 | home page
+open | storage.googleapis.com/google-code-archive | none stated | Google Code project metadata | 2026-11-26 | JSON
+walled | storage.googleapis.com/google-code-archive- | varies | Google Code source and downloads | 2026-11-26 | JSON
+open | nulldc.emudev.org | none stated | revived nullDC's site; user BIOS and flash | 2026-11-26 | home, builds
+other | www.pinsentmasons.com/out-law | press | law firm's news site; secondary | 2026-11-26 | one article
+open | strikerx3/saturn-tests | MIT | Saturn test apps by Ymir's author; no oracle stated | 2026-11-26 | LICENSE, README
+open | washingtondc-emu/dctest | BSD-3-Clause | Dreamcast test programs; no oracle stated | 2026-11-26 | LICENSE, README
+# R1-23: closed repositories, closed by having no licence, by being gone, or by a takedown notice.
+closed | libretro/yabasanshiro | none now; HTTP 404 | YabaSanshiro core named by libretro docs | 2026-11-26 | metadata
+closed | libretro/redream | none now; HTTP 404 | libretro fork of Redream; docs said GPLv3 | 2026-11-26 | metadata
+closed | devmiyax/yabause | none now; HTTP 404 | YabaSanshiro source named by its terms | 2026-11-26 | HTTP 404
+closed | shimazzz/segasaturnemulator-ssf | none found | SSF binary releases | 2026-11-26 | README, licence 404
+closed | openemu/mednafen-core | none found | OpenEmu's Saturn plugin wrapping Mednafen | 2026-11-26 | metadata
+closed | openemu/flycast-core | none found | OpenEmu's Dreamcast plugin | 2026-11-26 | metadata, README
+closed | openemu/reicast-core | none found | OpenEmu's older Dreamcast plugin | 2026-11-26 | metadata, README
+closed | openemu/yabause | none found | archived, deprecated Saturn plugin | 2026-11-26 | metadata
+closed | snickerbockers/dc-arm7wrestler | none | AICA ARM7 test; results usable | 2026-11-26 | README, metadata
+closed | woodu/sg_f | not read | Sega notice: game source posted without permission | 2026-11-26 | github/dmca
+# R1-23: protective lines; page and folder patterns are cut short so that they block.
+closed | www.yabasanshiro.com/backupcdrom_lates | none | disc-dumping tool the site recommends | 2026-11-26 | page
+closed | yabasanshiro.com/backupcdrom_lates | none | the same, without www | 2026-11-26 | download page
+closed | www.yabasanshiro.com/pds-recompil | none | PC builds made from Panzer Dragoon games | 2026-11-26 | page
+closed | yabasanshiro.com/pds-recompil | none | the same, without www | 2026-11-26 | download page
+closed | www.yabasanshiro.com/howt | none | how-to pages; making disc images | 2026-11-26 | download page
+closed | yabasanshiro.com/howt | none | the same, without www | 2026-11-26 | download page
+closed | www.yabasanshiro.com/game | not read | games page, unopened; a precaution | 2026-11-26 | site menu
+closed | yabasanshiro.com/game | not read | the same, without www | 2026-11-26 | site menu
+closed | senryoku/deecy/blob/main/src/gdrom_sec | MIT; MAME data | GD-ROM security data from MAME | 2026-11-26 | README
+closed | senryoku/deecy/main/src/gdrom_sec | MIT; MAME data | the same, as raw files | 2026-11-26 | README
+closed | lars-olsson.sizious.co | not read | Dreamcast boot ROM disassembly, named by Deecy | 2026-11-26 | Deecy README
+closed | www.lars-olsson.sizious.co | not read | the same, www prefix | 2026-11-26 | Deecy README
+closed | dknute.livejournal.co | not read | Makaron author's blog; NAOMI key brute-force post | 2026-11-26 | capture
+closed | www.dknute.livejournal.co | not read | the same, www prefix | 2026-11-26 | capture
+closed | dcnet.flyca.s | none | redirects to the closed Flycast wiki | 2026-11-26 | HTTP redirect
+closed | www.dcnet.flyca.s | none | the same, www prefix | 2026-11-26 | HTTP redirect
+closed | emulation.gametechwiki.com/index.php/sega_saturn_emulator | none | links leaked Sega papers | 2026-11-26 | raw
+closed | emulation.gametechwiki.com/index.php/girigir | none named | links hacked official builds | 2026-11-26 | raw
+closed | archive.org/details/segamanual | none | "leaked, official documentation" per a wiki | 2026-11-26 | wiki raw
+closed | www.archive.org/details/segamanual | none | the same, www prefix | 2026-11-26 | wiki raw
+closed | archive.org/download/segamanual | none | the same item's files | 2026-11-26 | wiki raw
+closed | en.wikipedia.org/wiki/blee | CC BY-SA 4.0 | mentions a leaked Bleemcast beta | 2026-11-26 | raw wikitext
+
 # Sega, arcade, Xbox, and other systems: references, open tier.
 open | smspower.org/development | none stated | origin unstated; its Sega documents are closed | 2026-11-19 | index
 open | dreamjam.co.uk/emuviews | notice, no grant | author: reverse engineered; a lead | 2026-11-19 | index
@@ -1384,7 +1451,7 @@ closed | title=emulator_scam | none named | the emulator scams page's "?title=" 
 open | retrodev.com/repos/blastem | GPL-3.0-or-later | credits community documents | 2026-11-19 | README, COPYING
 open | rogersanders/exodus | MIT | author: own reverse engineering | 2026-11-19 | licence file, site
 open | stephane-d/sgdk | MIT | points to a hosted Sega manual | 2026-11-19 | README
-open | yabause/yabause | GPL-2.0-or-later by its wiki | headers not read | 2026-11-19 | wiki, COPYING
+walled | yabause/yabause | bare GPL-2.0 text; wiki: "under GNU GPL" | headers not read | 2026-11-26 | COPYING, wiki
 open | ymir-emu/ymir | GPL-3.0 | - | 2026-11-19 | licence file
 open | strikerx3/ymir | GPL-3.0 | old address of ymir-emu/ymir | 2026-11-19 | redirect
 open | kallistios/kallistios | new BSD for its own files | "developed independently from Sega" | 2026-11-19 | LICENSE.md
@@ -1433,7 +1500,7 @@ walled | seleuco/mame4droid-current | bare GPL-2.0 text; README: or later | Andr
 walled | yoshisuga/mame4ios | GPL-2.0, no version | MAME 0.238 and 0.139u1; 0.139u1 build closed | 2026-11-25 | LICENSE
 open | trzy/supermodel | GPL-3.0; Model 1 and 2 parts BSD-3-Clause | has 315-5881 decryption | 2026-11-25 | licence
 open | supermodel3.com | none read | Supermodel's site; host does not resolve | 2026-11-25 | DNS failure; README
-open | skmp/reicast-emulator | BSD-3-Clause | archived; Flycast's parent; HLE BIOS closed | 2026-11-25 | LICENSE
+walled | skmp/reicast-emulator | BSD-3; bare GPL-2.0, LGPL-2.1 texts | archived; HLE BIOS closed | 2026-11-26 | LICENSE
 closed | thearcadestriker/flycast-wiki | none | Flycast user guide wiki; no licence; unread | 2026-11-25 | metadata
 open | flyinghead.github.io | none stated | Flycast builds page; prose | 2026-11-25 | page
 open | demul.emulation64.com | none stated | site of a closed emulator; prose only | 2026-11-25 | home, FAQ, team pages
@@ -1466,8 +1533,8 @@ closed | libretro/mame2000-libretro | none; docs: MAME licence | MAME 0.37b5 | 2
 closed | libretro/fbalpha2012 | none; docs: non-commercial | FB Alpha; variants unlisted | 2026-11-25 | docs
 closed | libretro/fbneo | FBNeo non-commercial licence | libretro port of FBNeo | 2026-11-25 | LICENSE.md, docs
 closed | p1pkin/demul | none found | Google Code export; closed Demul's tracker | 2026-11-25 | metadata; licence 404
-closed | skmp/nulldc-v1 | none found | archived Dreamcast emulator before Reicast | 2026-11-25 | metadata, README
-closed | skmp/nulldc | none found | redirects to skmp/nulldc-v1 | 2026-11-25 | metadata
+walled | skmp/nulldc-v1 | gpl2 label, version unstated | archived nullDC, before Reicast | 2026-11-26 | Google Code JSON
+walled | skmp/nulldc | as skmp/nulldc-v1 | redirects to skmp/nulldc-v1 | 2026-11-26 | metadata
 closed | zelurker/raine | none found | Raine arcade emulator; active | 2026-11-25 | metadata, README
 closed | teknogods/teknoparrot | none | proprietary TeknoParrot; paid tiers | 2026-11-25 | metadata, terms of service
 closed | teknogods/teknoparrotui | none now | HTTP 404; was the TeknoParrot interface | 2026-11-25 | metadata
