@@ -1555,6 +1555,125 @@ open | zilog.com | not read | chip maker; manual address redirects to a page tha
 open | image-ppubs.uspto.gov | patent office | patents filed by the makers | 2026-11-19 | front pages
 open | diglib.eg.org | catalogue record | paper by the 3DS GPU maker's staff; not read | 2026-11-19 | record page
 
+# Sources first cited by R1-09, the home computers catalogue survey (2026-11-26).
+# Material that a maker or rights holder published, and their own statements: open tier, limits noted.
+open | microsoft/basic-m6502 | MIT | maker's 6502 BASIC 1.1 source; archived; not ROMs | 2026-11-26 | licence, README
+open | microsoft/ms-dos | MIT | maker's MS-DOS 1.25, 2.0, 4.0 sources; archived | 2026-11-26 | licence, README
+open | microsoft/gw-basic | MIT | maker's GW-BASIC source of 1983; archived | 2026-11-26 | licence, metadata
+open | computerhistory.org/blog | none stated | Apple's permission; its code files closed | 2026-11-26 | CHM post
+open | www.amigaforever.com/kb | none stated | Cloanto's own licensing statements | 2026-11-26 | KB 13-122, 13-114
+open | www.c64forever.com/kb | none stated | the same knowledge base | 2026-11-26 | KB 13-122
+open | www.riscosopen.org | Apache-2.0 for most of RISC OS | RISC OS Open, for the owner | 2026-11-26 | licences, news
+open | web.ukonline.co.uk/cliff.lawson | none stated | Amstrad staff pages; ROM permission | 2026-11-26 | capture
+open | galapagosstore.com | not read | Sharp's own store; X68000 service manual | 2026-11-26 | INTERNET Watch
+open | wiki.amigaos.net | all rights reserved, Hyperion | AmigaOS 4 docs by its licensee | 2026-11-26 | copyrights page
+# Community references and databases: open tier. The Altirra site is the prose of a walled emulator.
+open | virtualdub.org | GPL-2.0, or later not stated; manual non-commercial | Altirra; 800XL tests | 2026-11-26 | pages
+open | www.virtualdub.org | the same | the same, www prefix | 2026-11-26 | pages
+open | beebwiki.mdfs.net | none stated | community wiki; hosted Acorn documents closed | 2026-11-26 | oldid 4892
+open | www.webtech.co.jp/company/doc/undocumented_mem | notice, no grant | own experiments | 2026-11-26 | preface
+open | mobygames.com | none read; refuses scripts | game database; offers no games | 2026-11-26 | capture
+open | www.mobygames.com | none read; refuses scripts | the same, www prefix | 2026-11-26 | capture
+other | internet.watch.impress.co.jp | press | Japanese news site, secondary | 2026-11-26 | one article
+other | ftp.netbsd.org | - | package collection's copies of licence texts | 2026-11-26 | one file
+# Emulators, read from prose and metadata only: walled tier.
+walled | simonowen/simcoupe | GPL-2.0, "or later" not stated | ships SAM ROMs by permission | 2026-11-26 | README
+walled | tursilion/classic99 | no licence file; README: restrictive | ships ROMs licensed by TI | 2026-11-26 | README
+walled | tursilion/classic99v4 | none detected | Classic99 version 4 | 2026-11-26 | README, metadata
+walled | dosbox-staging/dosbox-staging | NOASSERTION | DOS emulator; DOS and BIOS layers closed | 2026-11-26 | metadata
+walled | joncampbell123/dosbox-x | GPL-2.0, version not read | DOS and BIOS layers closed | 2026-11-26 | metadata
+# Closed: reimplementations of a home computer's firmware or system software (ADR 0006's closed test, by
+# analogy), and repositories holding the makers' firmware code. The sites serve the replacements themselves.
+closed | cbios.sourceforge.net | BSD-2-Clause | replacement MSX-BIOS | 2026-11-26 | capture of 2026-11-13
+closed | sourceforge.net/projects/cbio | BSD License | C-BIOS project files; cut short | 2026-11-26 | project page
+closed | www.sourceforge.net/projects/cbio | BSD License | the same, www prefix | 2026-11-26 | project page
+closed | emutos.sourceforge.io | GPL-2.0 | replacement Atari TOS | 2026-11-26 | capture of 2026-09-17
+closed | aros.sourceforge.io | AROS Public License | AmigaOS and Kickstart replacement | 2026-11-26 | capture
+closed | aros.org | AROS Public License | the same project | 2026-11-26 | capture of 2026-07-30
+closed | www.aros.org | AROS Public License | the same, www prefix | 2026-11-26 | capture of 2026-08-26
+closed | mega65/open-roms | GPL-3.0, by the X16 licence | C64 KERNAL and BASIC replacement | 2026-11-26 | X16 licence
+closed | commanderx16/x16-rom | Commodore code by licence; GPL-3.0 parts | holds KERNAL code | 2026-11-26 | LICENSE.md
+closed | mist64/c64rom | not read | said to match the C64 ROMs; not opened | 2026-11-26 | search result
+closed | sourceforge.net/projects/msxsyssr | not read | disassembled MSX system ROMs | 2026-11-26 | MAP index
+closed | www.sourceforge.net/projects/msxsyssr | not read | the same, www prefix | 2026-11-26 | MAP index
+closed | tobylobster.github.io/mo | not read | reassembly of the BBC Micro MOS; cut short | 2026-11-26 | search result
+closed | elite.bbcelite.com | not read | disassembly of a game | 2026-11-26 | search result
+# Closed: paths of the open MSX Assembly Page that host a BIOS listing or maker documents; cut short.
+closed | map.grauw.nl/resources/system/msxbioslistin | none | listing of the MSX BIOS | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/system/msxtec | none | ASCII's MSX Technical Data Book | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/datapac | none | ASCII's MSX Datapack and its disks | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/vide | none | chip makers' video manuals | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/soun | none | chip makers' sound manuals | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/cp | none | Zilog and R800 manuals | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/dis | none | disk controller datasheets | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/mid | none | MIDI and timer chip datasheets | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/pp | none | 8255 PPI datasheets | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/rt | none | Ricoh clock chip datasheet | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/seria | none | Philips serial interface manual | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/engin | none | Yamaha and Toshiba engine datasheets | 2026-11-26 | MAP index
+closed | map.grauw.nl/resources/system/msx-expansion-io-port-manua | none | maker's port manual | 2026-11-26 | MAP index
+closed | konamiman.github.io/msx2-technical-handboo | not read | MSX2 Technical Handbook copy | 2026-11-26 | MAP index
+closed | konamiman/msx2-technical-handbook | not read | the same as a repository | 2026-11-26 | MAP index
+closed | ngs.no.coocan.jp/doc/wiki.cgi | not read | copies of ASCII handbooks | 2026-11-26 | MAP index
+closed | dai3car.sakura.ne.jp/msxpage/msxtr_handboo | not read | turbo R handbook copy | 2026-11-26 | MAP index
+closed | archive.org/details/msxdatapackvolum | not read | ASCII manual scans | 2026-11-26 | MAP index
+closed | www.archive.org/details/msxdatapackvolum | not read | same items, www prefix | 2026-11-26 | MAP index
+closed | archive.org/download/msxdatapackvolum | not read | the same items' files | 2026-11-26 | MAP index
+closed | archive.org/details/msxturbo | not read | turbo R handbook scan | 2026-11-26 | MAP index
+closed | www.archive.org/details/msxturbo | not read | same item, www prefix | 2026-11-26 | MAP index
+closed | archive.org/download/msxturbo | not read | the same item's files | 2026-11-26 | MAP index
+closed | archive.org/details/msx-dos-2-command-specificatio | not read | ASCII's MSX-DOS 2 spec | 2026-11-26 | MAP index
+closed | www.archive.org/details/msx-dos-2-command-specificatio | not read | www prefix | 2026-11-26 | MAP index
+closed | archive.org/download/msx-dos-2-command-specificatio | not read | the item's files | 2026-11-26 | MAP index
+# Closed: sites that offer games or firmware, and hosts of maker material with no sign of release. None opened
+# but the Miné pages, read once in error; their older address holds "~", so the written rule closes it.
+closed | worldofspectrum.org | not read | offers Spectrum games | 2026-11-26 | search results
+closed | www.worldofspectrum.org | not read | the same, www prefix | 2026-11-26 | search results
+closed | spectrumcomputing.co.uk | not read | offers Spectrum games | 2026-11-26 | search results
+closed | www.spectrumcomputing.co.uk | not read | the same, www prefix | 2026-11-26 | search results
+closed | worldofsam.org | not read | offers SAM Coupé software and ROMs | 2026-11-26 | search results
+closed | www.worldofsam.org | not read | the same, www prefix | 2026-11-26 | search results
+closed | old.worldofsam.org | not read | old copy of the same site | 2026-11-26 | search results
+closed | cpcwiki.eu | not read; refused scripts | links ROM downloads, hosts manuals | 2026-11-26 | search results
+closed | www.cpcwiki.eu | not read; refused scripts | the same, www prefix | 2026-11-26 | search results
+closed | amstrad.eu/wp-content/uploads/ftp_cpcscene/resources/rom | not read | ROM folder | 2026-11-26 | search
+closed | www.amstrad.eu/wp-content/uploads/ftp_cpcscene/resources/rom | not read | www prefix | 2026-11-26 | search
+closed | macintoshrepository.org | not read | offers Mac system software | 2026-11-26 | search results
+closed | www.macintoshrepository.org | not read | the same, www prefix | 2026-11-26 | search results
+closed | bombjack.org | none | scanned maker manuals and schematics | 2026-11-26 | home page
+closed | www.bombjack.org | none | the same, www prefix | 2026-11-26 | home page
+closed | commodore.bombjack.org | none | Commodore manual scans | 2026-11-26 | home page link
+closed | files.commodore.software | not read | fan host of Commodore manuals | 2026-11-26 | search result
+closed | amigadev.grimore.org | not read | Amiga Developer CD mirror | 2026-11-26 | search result
+closed | discmaster.textfiles.com | not read | contents of commercial discs | 2026-11-26 | search results
+closed | msxarchive.nl | not read | MSX file archive, presumed to host software | 2026-11-26 | MAP index
+closed | www.msxarchive.nl | not read | the same, www prefix | 2026-11-26 | MAP index
+closed | retropc.net/x68000/software/shar | not read | Sharp's X68000 software and ROMs | 2026-11-26 | Wikipedia link
+closed | www.retropc.net/x68000/software/shar | not read | the same, www prefix | 2026-11-26 | Wikipedia link
+closed | mine.perso.lip6.fr/mes | none seen | Thomson pages linking ROMs and games | 2026-11-26 | index page
+closed | dcexel.free.fr | not read | EXL 100 site offering ROM and tapes | 2026-11-26 | French Wikipedia
+closed | alice32.free.fr | not read | DCAlice site with software images | 2026-11-26 | French Wikipedia
+closed | riscosopen.org/content/download | Apache-2.0 for most | ROM images, never obtained | 2026-11-26 | licences page
+closed | www.riscosopen.org/content/download | Apache-2.0 for most | the same, www prefix | 2026-11-26 | licences page
+# Closed: download paths on open sites. Altirra's builds and sources hold AltirraOS; the CHM files are Apple's code
+# for non-commercial use; Acid800 is Altirra's test suite, not evaluated. None opened.
+closed | virtualdub.org/downloads/altirra- | GPL-2.0 | builds and sources with AltirraOS | 2026-11-26 | home page
+closed | www.virtualdub.org/downloads/altirra- | GPL-2.0 | the same, www prefix | 2026-11-26 | home page
+walled | virtualdub.org/downloads/acid80 | not read | Altirra's Acid800 test suite; cut short | 2026-11-26 | home page
+walled | www.virtualdub.org/downloads/acid80 | not read | the same, www prefix | 2026-11-26 | home page
+closed | d1yx3ys82bpsa0.cloudfront.net/atchm/documents/10272398 | non-commercial | DOS scans | 2026-11-26 | CHM
+closed | d1yx3ys82bpsa0.cloudfront.net/atchm/documents/apple_dos_ | non-commercial | DOS files | 2026-11-26 | CHM
+closed | d1yx3ys82bpsa0.cloudfront.net/atchm/documents/labombard_8dec1 | non-commercial | DOS zip | 2026-11-26 | CHM
+# Closed: paths of open sites that may host maker files or documents, not opened; cut short.
+closed | web.ukonline.co.uk/cliff.lawson/file | not read | Amstrad staff file pages | 2026-11-26 | capture menu
+closed | web.ukonline.co.uk/cliff.lawson/bi | not read | Amstrad staff file folder | 2026-11-26 | capture link
+closed | beebwiki.mdfs.net/category:documentatio | none stated | Acorn documents, hosted | 2026-11-26 | main page
+# Wikipedia pages that mention leaked material, closed as a precaution; their index.php?title= and oldid forms
+# cannot be matched. The AmigaOS pattern also blocks AmigaOne pages.
+closed | en.wikipedia.org/wiki/atari_to | CC BY-SA 4.0 | mentions leaked TOS prototypes | 2026-11-26 | raw wikitext
+closed | en.wikipedia.org/wiki/emuto | CC BY-SA 4.0 | redirects to the Atari TOS page | 2026-11-26 | raw wikitext
+closed | en.wikipedia.org/wiki/amigao | CC BY-SA 4.0 | mentions an AmigaOS source leak | 2026-11-26 | raw wikitext
+
 # Cross-system sources: references and leads, open tier.
 open | emulation.gametechwiki.com | none named | user wiki, a lead; BIOS pages unread | 2026-11-19 | Copyrights page
 open | stackexchange.com | CC BY-SA 2.5, 3.0, or 4.0 by date | forum, a lead | 2026-11-19 | licensing help page
