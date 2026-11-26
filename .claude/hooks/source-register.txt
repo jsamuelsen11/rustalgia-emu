@@ -880,12 +880,12 @@ closed | emuparadise.me | - | site offering games and kit copies | 2026-11-25 | 
 closed | www.emuparadise.me | - | www prefix | 2026-11-25 | EGW link
 closed | edx.ipeindia.org | - | pages titled as Wii U key lists | 2026-11-25 | search result titles
 closed | www.edx.ipeindia.org | - | www prefix | 2026-11-25 | search result titles
-closed | scribd.com/document/406756037 | - | document titled as a key list | 2026-11-25 | search result
-closed | www.scribd.com/document/406756037 | - | www prefix | 2026-11-25 | search result
-closed | pokecheats.net/db/wiiu | - | NFC figure dumps linked by WiiUBrew | 2026-11-25 | link seen
-closed | www.pokecheats.net/db/wiiu | - | www prefix | 2026-11-25 | link seen
+closed | scribd.com/document/40675603 | - | document titled as a key list | 2026-11-25 | search result
+closed | www.scribd.com/document/40675603 | - | www prefix | 2026-11-25 | search result
+closed | pokecheats.net/db/wii | - | NFC figure dumps linked by WiiUBrew | 2026-11-25 | link seen
+closed | www.pokecheats.net/db/wii | - | www prefix | 2026-11-25 | link seen
 closed | loyahdev/wiiudownloaderandroid | - | tool for downloading titles | 2026-11-25 | repository name
-closed | en.wikipedia.org/wiki/super_mario_3d_all-stars | CC BY-SA 4.0 | mentions a leak | 2026-11-25 | raw wikitext
+closed | en.wikipedia.org/wiki/super_mario_3d_all-star | CC BY-SA 4.0 | mentions a leak | 2026-11-25 | raw wikitext
 closed | wiiubrew.org/wiki/hardware/seepro | none stated | SEEPROM page | 2026-11-25 | "Hardware" links
 closed | www.wiiubrew.org/wiki/hardware/seepro | none stated | www prefix | 2026-11-25 | "Hardware" links
 closed | wiiubrew.org/wiki/hardware/efus | none stated | eFuse page; key storage | 2026-11-25 | "Hardware" links
