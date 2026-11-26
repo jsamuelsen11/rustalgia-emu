@@ -34,6 +34,9 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-16](R1-16-nintendo-64-family.md) | Which Nintendo 64 emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-17](R1-17-gamecube-wii-wii-u-family.md) | Which GameCube, Wii, and Wii U emulators matter, and the family's legal exposure and difficulty |
 | [R1-18](R1-18-playstation-1-family.md) | Which emulators the PlayStation 1 family has, and its legal exposure and difficulty |
+| [R1-19](R1-19-playstation-2-family.md) | Which PlayStation 2 emulators matter, how they work, and the family's legal exposure and difficulty |
+| [R1-20](R1-20-psp-and-vita-family.md) | Which PSP and Vita emulators matter, how they work, and the family's legal exposure and difficulty |
+| [R1-21](R1-21-playstation-3-4-5-family.md) | Which PS3, PS4, and PS5 emulators matter, and the family's legal exposure and difficulty |
 
 ## Conventions
 

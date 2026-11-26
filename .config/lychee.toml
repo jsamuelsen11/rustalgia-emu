@@ -70,4 +70,5 @@ exclude = [
   '^https?://(www\.)?desmume\.org/', # 500 Internal Server Error intermittently (2026-11-25)
   '^https?://(www\.)?loeb\.com/', # 403 Forbidden to browser agents; times out for others (2026-11-25)
   '^https?://(www\.)?tweaktown\.com/', # 403 Forbidden (challenge page) (2026-11-25)
+  '^https?://(www\.)?rpcs3\.net/', # 403 Forbidden (Cloudflare challenge page) (2026-11-25)
 ]
