@@ -1364,8 +1364,8 @@ closed | cps2shock.emu-france.info | not read | distributed CPS-2 decryption tab
 closed | arcadehacker.blogspot.com | not read | CPS-2 de-suicide work; key hazard | 2026-11-25 | Wikipedia CP System II
 closed | andreasnaive.blogspot.com | not read | CPS-2 and CPS-3 cipher research; key hazard | 2026-11-25 | Wikipedia
 closed | 64darksoft.blogspot.com | not read | CPS-3 cartridge and BIOS changes; key hazard | 2026-11-25 | Wikipedia
-closed | junkerhq.net/xrgb/index.php/cps-ii | not read | CPS-3 suicide page; key hazard | 2026-11-25 | Wikipedia
-closed | www.junkerhq.net/xrgb/index.php/cps-ii | not read | the same, www prefix | 2026-11-25 | Wikipedia
+closed | junkerhq.net/xrgb/index.php/cps-i | not read | CPS-3 suicide page; key hazard | 2026-11-25 | Wikipedia
+closed | www.junkerhq.net/xrgb/index.php/cps-i | not read | the same, www prefix | 2026-11-25 | Wikipedia
 closed | unibios.free.fr | not read | sells a replacement Neo Geo system ROM | 2026-11-25 | libretro FBNeo docs
 closed | unibios.com | not read | the same BIOS; address from memory | 2026-11-25 | from memory
 closed | www.unibios.com | not read | the same, www prefix | 2026-11-25 | from memory
@@ -1374,8 +1374,8 @@ closed | hbmame.1emulation.com | not read | HBMAME site, presumed to host hacked
 # The PCSX2x6 site's BIOS and game dumping pages are closed; the rest of that site stays open for prose.
 closed | daphne-emu.com | none read | Daphne site; DaphneLoader downloaded game files | 2026-11-25 | FAQ index
 closed | www.daphne-emu.com | none read | the same, www prefix | 2026-11-25 | FAQ index
-closed | ps2homebrew-arcade.github.io/pcsx2x6/getting_a_bios | not read | BIOS dumping page | 2026-11-25 | site menu
-closed | ps2homebrew-arcade.github.io/pcsx2x6/how_to_dump_games | not read | game dumping page | 2026-11-25 | site menu
+closed | ps2homebrew-arcade.github.io/pcsx2x6/getting_a_bio | not read | BIOS dumping page | 2026-11-25 | site menu
+closed | ps2homebrew-arcade.github.io/pcsx2x6/how_to_dump_game | not read | game dumping page | 2026-11-25 | site menu
 
 # Sega, arcade, and other systems: maker material that others host. Closed tier.
 closed | smspower.org/development/officialdoc | none | Sega developer documents | 2026-11-19 | Documents index
