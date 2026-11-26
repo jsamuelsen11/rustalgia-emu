@@ -25,7 +25,13 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-06](R1-06-catalogue-32-and-64-bit.md) | Which consoles and handhelds the 32-bit and 64-bit era sold, and their hardware and sources |
 | [R1-07](R1-07-catalogue-sixth-generation.md) | Every console and handheld of the sixth-generation era, with sources |
 | [R1-08](R1-08-catalogue-modern.md) | Which consoles and handhelds were sold from the seventh generation on, and their hardware |
+| [R1-10](R1-10-game-boy-family.md) | Which Game Boy and Game Boy Color emulators matter, how they work, and the family's risks |
+| [R1-11](R1-11-game-boy-advance-family.md) | Which Game Boy Advance emulators matter, and the family's legal exposure and difficulty |
+| [R1-12](R1-12-nintendo-ds-family.md) | Which DS and DSi emulators matter, how they work, and the family's legal exposure and difficulty |
+| [R1-13](R1-13-nintendo-3ds-family.md) | Which emulators matter for the Nintendo 3DS family, its legal exposure, and how hard it is |
 | [R1-14](R1-14-nintendo-switch-family.md) | Which Switch and Switch 2 emulators matter, and how exposed and hard the family is |
+| [R1-15](R1-15-nes-and-snes-family.md) | Which NES and SNES emulators matter, how they work, and the families' legal exposure and difficulty |
+| [R1-18](R1-18-playstation-1-family.md) | Which emulators the PlayStation 1 family has, and its legal exposure and difficulty |
 
 ## Conventions
 

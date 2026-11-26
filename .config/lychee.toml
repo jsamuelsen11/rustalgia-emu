@@ -67,5 +67,7 @@ exclude = [
   '^https?://(www\.)?govinfo\.gov/', # 502 Bad Gateway to CI runners (2026-11-21)
   '^https?://(www\.)?playstation\.com/', # 403 to CI runners (2026-11-21)
   '^https?://(www\.)?fsf\.org/', # TLS handshake failure for the link checker; curl answers (2026-11-21)
+  '^https?://(www\.)?desmume\.org/', # 500 Internal Server Error intermittently (2026-11-25)
+  '^https?://(www\.)?loeb\.com/', # 403 Forbidden to browser agents; times out for others (2026-11-25)
   '^https?://(www\.)?tweaktown\.com/', # 403 Forbidden (challenge page) (2026-11-25)
 ]
