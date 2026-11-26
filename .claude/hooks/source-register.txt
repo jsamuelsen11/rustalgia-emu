@@ -56,7 +56,7 @@ open | nesdev-org/mesence | GPL-3.0-or-later | community fork of Mesen | 2026-11
 open | jsgroth/jgenesis | GPL-3.0 | cites hosted official documents | 2026-11-17 | README
 open | libretro/retroarch | GPL-3.0 | frontend only; cores vary | 2026-11-17 | COPYING
 open | kelpsyberry/dust | GPL-3.0 | - | 2026-11-17 | licence file
-open | gopher64/gopher64 | GPL-3.0 | adapts mupen64plus and ares code | 2026-11-17 | README
+walled | gopher64/gopher64 | GPL-3.0 with adapted GPL-2.0 parts | unresolved mix | 2026-11-25 | README
 open | michelhe/rustboyadvance-ng | MIT | - | 2026-11-17 | licence file
 open | lukexor/tetanes | MIT OR Apache-2.0 | - | 2026-11-17 | README
 open | dbalsom/martypc | MIT | - | 2026-11-17 | licence file
@@ -478,6 +478,61 @@ closed | www.64dd.org | none stated | same site with the www prefix | 2026-11-19
 closed | decompals/ultralib | none | decompilation of the maker's library | 2026-11-19 | README
 closed | modernn64sdkarchives/n64sdkmod | none | the maker's kit repackaged | 2026-11-19 | README, N64brew page
 closed | crashoveride95/n64sdkmod | none | old address of the same | 2026-11-19 | redirect
+
+# Sources first cited by R1-16, the Nintendo 64 survey (2026-11-25).
+walled | project64/project64 | GPL-2.0, version unstated | bare licence text; Windows | 2026-11-25 | license.md, README
+walled | mupen64plus/mupen64plus-core | GPL-2.0, version unstated | holds a lock-out chip file | 2026-11-25 | LICENSES
+walled | mupen64plus/mupen64plus-rsp-hle | GPL-2.0, version unstated | HLE RSP plugin | 2026-11-25 | LICENSES
+walled | mupen64plus/mupen64plus-ui-console | GPL-2.0, version unstated | command-line frontend | 2026-11-25 | LICENSES
+open | mupen64plus/mupen64plus-rsp-cxd4 | CC0-1.0 | LLE RSP interpreter | 2026-11-25 | COPYING, README
+open | libretro/parallel-rsp | MIT or LGPL-3.0 | LLE RSP recompiler; no README | 2026-11-25 | LICENSE
+open | themaister/parallel-rsp | MIT or LGPL-3.0 | redirects to libretro/parallel-rsp | 2026-11-25 | metadata
+walled | libretro/mupen64plus-libretro-nx | GPL-2.0 file; docs: GPLv3 | bundles closed parts | 2026-11-25 | LICENSE
+walled | libretro/parallel-n64 | no file; docs say GPLv2, GPLv3 | bundles closed parts | 2026-11-25 | metadata, docs
+open | rosalie241/rmg | GPL-3.0 | frontend; bundled parts keep their tiers | 2026-11-25 | README, licence metadata
+open | mupen64plus-ae/mupen64plus-ae | GPL-3.0 | Android frontend; parts keep their tiers | 2026-11-25 | licence
+walled | schibo/1964 | GPL-2.0, version unstated | official 1.1 source of 1964 | 2026-11-25 | licence file, README
+walled | schibo/1964js | GPL-2.0 by metadata | JavaScript emulator after 1964 | 2026-11-25 | metadata, README
+walled | daedalusx64/daedalus | GPL-2.0, version unstated | continues Daedalus | 2026-11-25 | copying.txt
+open | hydr8gon/rokuyon | GPL-3.0 | experimental; needs no firmware | 2026-11-25 | licence metadata, README
+open | rt64/rt64 | MIT | renderer for emulators and native ports | 2026-11-25 | licence metadata, README
+walled | simple64/simple64 | GPLv3 by a wiki | repository gone; licence unread | 2026-11-25 | API 404, capture
+open | pj64-emu.com | none stated | site of a walled emulator | 2026-11-25 | home, downloads
+open | www.pj64-emu.com | none stated | same site, www prefix | 2026-11-25 | home, downloads
+open | mupen64plus.org | none stated | site of a walled emulator | 2026-11-25 | home, wiki
+open | simple64.github.io | none stated | defunct site; read in a capture | 2026-11-25 | capture of 2025-01-23
+open | parallel-launcher.ca | notice, no grant | site of an N64 frontend | 2026-11-25 | home page
+other | cs.stanford.edu/people/eroberts | none stated | 1999 student project, a lead | 2026-11-25 | page footer
+other | techweb.com | press | news site, secondary; read in a capture | 2026-11-25 | one capture
+other | ign64.ign.com | press | news site, secondary; read in a capture | 2026-11-25 | one capture
+open | www.nintendo.com/corp | site terms | maker's legal FAQ and a press release | 2026-11-25 | captures
+open | thar0/n64-cpu-tests | CC-BY-SA-4.0 | VR4300 tests; oracle hardware | 2026-11-25 | README, licence
+open | thar0/rdp-timing-tests | MIT | RDP timing; oracle hardware | 2026-11-25 | README, licence
+open | thar0/n64-integermuldiv-test | CC0-1.0 | multiply and divide; oracle not stated | 2026-11-25 | README, licence
+open | sauraen/rsp_inval_instrs | Unlicense | invalid RSP instructions; oracle hardware | 2026-11-25 | README, licence
+# Closed by R1-16: no licence, admitted maker or decompiled material, a lock-out chip's answers, or boot code.
+closed | hulkholden/n64js | MIT | README: microcode disassembly, maker headers | 2026-11-25 | README
+closed | rileytestut/n64deltacore | none | Delta's N64 core | 2026-11-25 | licence metadata
+closed | zelda64recomp/zelda64recomp | GPL-3.0 | uses a game decompilation | 2026-11-25 | README
+closed | harbourmasters/shipwright | NOASSERTION | built on a game decompilation | 2026-11-25 | README
+closed | rasky/n64-systemcrash | none | crash test; oracle hardware; results usable | 2026-11-25 | README
+closed | hacktarux/n64-systembench | none | no README; oracle not stated | 2026-11-25 | metadata
+closed | decompals/n64-ipl | none checked | boot code disassembly, by its path | 2026-11-25 | N64brew link
+closed | mupen64plus/mupen64plus-core/blob/master/src/memory/n64_cic_nus_610 | BSD | CIC | 2026-11-25 | LICENSES
+closed | mupen64plus/mupen64plus-core/master/src/memory/n64_cic_nus_610 | BSD | raw path | 2026-11-25 | LICENSES
+closed | mupen64plus/mupen64plus-core/contents/src/memory/n64_cic_nus_610 | BSD | API | 2026-11-25 | LICENSES
+closed | dragonminded/libdragon/tree/trunk/boot | Unlicense | replacement boot code | 2026-11-25 | metadata
+closed | dragonminded/libdragon/blob/trunk/boot | Unlicense | the same | 2026-11-25 | metadata
+closed | dragonminded/libdragon/trunk/boot | Unlicense | the same, as raw files | 2026-11-25 | metadata
+closed | dragonminded/libdragon/contents/boot | Unlicense | the same, contents API | 2026-11-25 | metadata
+# Pages closed by R1-16 as a precaution, or as presumed maker ROM; patterns cut short. Wiki subdomains have
+# no www form; the index.php?title= forms cannot be matched, and the note names them as not to open.
+closed | en.wikipedia.org/wiki/ultrahl | CC BY-SA 4.0 | mentions a leak of source | 2026-11-25 | raw wikitext
+closed | emulation.gametechwiki.com/index.php/nintendo_64_emulator | none named | mentions a leak | 2026-11-25 | raw
+closed | archive.org/details/n64_testcar | none checked | presumed maker ROM | 2026-11-25 | wiki link
+closed | www.archive.org/details/n64_testcar | none checked | www prefix | 2026-11-25 | wiki link
+closed | archive.org/download/n64_testcar | none checked | same item's files | 2026-11-25 | wiki link
+closed | emulation.gametechwiki.com/index.php/user:sczther/n64_test | none named | links maker ROM | 2026-11-25 | raw
 
 # NES, SNES, Nintendo 64: tests.
 open | 100thcoin/accuracycoin | MIT | designed for one console revision | 2026-11-19 | licence file, README
@@ -1280,7 +1335,7 @@ open | nec.co.jp/press | none stated | maker's own news releases, read in a capt
 open | hitmen.c02.at/html | none stated | the host's index pages | 2026-11-20 | evidence of #27
 open | spicyjpeg/ps1-ram-tester | MIT | uses ps1-bare-metal; author states AI-free work; uncited | 2026-11-20 | README
 walled | libretro/beetle-psx-libretro | GPL-2.0 by licence metadata | fork of Mednafen PSX | 2026-11-20 | metadata
-walled | gonetz/gliden64 | not determined; metadata NOASSERTION | N64 graphics plugin | 2026-11-20 | metadata
+walled | gonetz/gliden64 | GPL-2.0, version unstated | N64 graphics plugin | 2026-11-25 | LICENSE
 closed | rasky/n64_pi_dma_test | none | test with no licence | 2026-11-20 | metadata
 # Pages the R1-02 evidence named that hold closed material, closed so that the guard blocks them. Patterns are cut
 # short, as the guard allows a bare page that matches a pattern exactly. Never reopened.
