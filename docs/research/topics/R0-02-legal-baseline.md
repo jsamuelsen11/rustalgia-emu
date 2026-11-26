@@ -957,7 +957,7 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
 | Replacement built in | "bundles open source replacement BIOS/stubs" | [SkyEmu](https://github.com/skylersaleh/SkyEmu) |
 | Replacement built in | "Includes open source DMG and CGB boot ROMs" | [SameBoy](https://github.com/LIJI32/SameBoy) |
 | High-level emulation | "simulates the BIOS and the entire internal operating system" | [PPSSPP](https://www.ppsspp.org/docs/faq/) |
-| Maker's download | "can be downloaded from the official PlayStation website" | [Vita3K](https://vita3k.org/quickstart.html) |
+| Maker's download | "can be downloaded from the official PlayStation website" | Vita3K, quickstart (see Sources) |
 
 - Vita3K's page adds that a second package, of system fonts, must be found by the user: "we couldn't get the URL for it,
   so you will have to find it yourself".
@@ -1672,9 +1672,9 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
 - **Costs:** the licences read, Sony's
   and Microsoft's, limit use to the console; a maker can withdraw the page (inference); not available for every system.
 - **Gains:** no console modification and no third-party copy.
-- **Used by:** [Vita3K](https://vita3k.org/quickstart.html), which leaves a second font package to the user;
-  Microsoft publishes such a file for Xbox consoles, and a web search on 2026-11-20 found no emulator that uses it
-  (the results concerned repairing consoles).
+- **Used by:** Vita3K (its quickstart page, unlinked as Sources explains),
+  which leaves a second font package to the user; Microsoft publishes such a file for Xbox consoles,
+  and a web search on 2026-11-20 found no emulator that uses it (the results concerned repairing consoles).
 
 ### 7. Publish, or decline to publish, dumping guides and links
 
@@ -2184,7 +2184,9 @@ Emulator projects, prose only:
 - PCSX2, [BIOS documentation](https://pcsx2.net/docs/setup/bios/)
   and ["Trademark and Copyright"](https://pcsx2.net/intellectualproperty).
 - [PPSSPP, FAQ](https://www.ppsspp.org/docs/faq/).
-- [Vita3K, quickstart](https://vita3k.org/quickstart.html).
+- Vita3K, quickstart, `vita3k.org/quickstart.html`, not linked:
+  [R1-20](R1-20-psp-and-vita-family.md) closed the page in the register on 2026-11-25,
+  because it holds a game-dumping guide and a guide to making licence files.
 - [Delta, release notes](https://faq.deltaemulator.com/release-notes).
 - Websites of [RetroArch](https://www.retroarch.com/), [Azahar](https://azahar-emu.org/), and [mGBA](https://mgba.io/).
 - Azahar release notes, [2120](https://github.com/azahar-emu/azahar/releases/tag/2120)

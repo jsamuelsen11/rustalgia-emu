@@ -197,7 +197,8 @@ This note is not legal advice.
 - The PS3's system software was at version 4.93, dated 2026-03-18,
   and Wikipedia says it "continues to be updated as of 2026 for performance and security enhancements,
   and to renew the Blu-ray encryption key"
-  (["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155), lead section and infobox).
+  (Wikipedia, "PlayStation 3 system software", revision 1386319155, lead section and infobox; not linked,
+  because the register closes the page, which mentions leaked kits).
   Purchased PlayStation Network content is limited to two activated consoles per account,
   the OtherOS feature was removed by firmware 3.21 of 2010-04-01, and every PS3 game but one is region-free
   ("PlayStation 3", "Digital rights management" and "OtherOS support";
@@ -777,8 +778,8 @@ which has no article and rests on
   (findings above).
   The PS3 was discontinued in Japan on 2017-05-29
   (["PlayStation 3"](https://en.wikipedia.org/w/index.php?oldid=1386319117), infobox)
-  and still receives updates (["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155),
-  lead section).
+  and still receives updates (Wikipedia, "PlayStation 3 system software", revision 1386319155, lead section; not linked,
+  as above).
 - Processor families: Cell in the PS3; AMD Jaguar in the PS4 and Xbox One families,
   the One X's cores being Jaguar-compatible; AMD Zen 2 with RDNA 2 in the PS5, Xbox Series, Steam Deck,
   and the base ROG Xbox Ally (Z2 A); Arm cores with Nvidia graphics in the Switch, Switch 2, and Shield devices
@@ -983,9 +984,9 @@ Wikipedia articles were read as raw wikitext; each title links to the revision r
 Wikipedia, surveyed families:
 
 - ["PlayStation 3"](https://en.wikipedia.org/w/index.php?oldid=1386319117);
-  ["PlayStation 3 models"](https://en.wikipedia.org/w/index.php?oldid=1386319150);
-  ["PlayStation 3 system software"](https://en.wikipedia.org/w/index.php?oldid=1386319155);
-  ["RSX Reality Synthesizer"](https://en.wikipedia.org/w/index.php?oldid=1318869943).
+  ["PlayStation 3 models"](https://en.wikipedia.org/w/index.php?oldid=1386319150); "PlayStation 3 system software",
+  `en.wikipedia.org/w/index.php?oldid=1386319155`, not linked: the register closes the page as a precaution,
+  because it mentions leaked kits; ["RSX Reality Synthesizer"](https://en.wikipedia.org/w/index.php?oldid=1318869943).
 - ["PlayStation 4"](https://en.wikipedia.org/w/index.php?oldid=1386319169);
   ["PlayStation 4 system software"](https://en.wikipedia.org/w/index.php?oldid=1385538186);
   ["PlayStation 5"](https://en.wikipedia.org/w/index.php?oldid=1385515902);

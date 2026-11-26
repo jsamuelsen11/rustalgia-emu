@@ -594,7 +594,8 @@ are encrypted, the Sony systems' games by memory only; the law is in [`R0-02`][r
   ([Wikipedia, RPCS3][wp-rpcs3], secondary).
   This matches [`R0-02` option 6, "Point users to firmware the maker publishes"][r0-02-opt6].
 - The PS3 shipped with "OtherOS", which booted Linux under the same hypervisor; Sony removed it in system software 3.21
-  ([Wikipedia, PlayStation 3 system software][wp-ps3-sys], secondary),
+  (Wikipedia, PlayStation 3 system software, revision 1386319155, secondary; not linked,
+  because the register closes the page, which mentions leaked kits),
   and the README beside Sony's kit says it is not available on the CECH-2000 series or later
   ([Levand, PS3-Linux README][sony-readme]).
   OtherOS is why maker-published hypervisor documentation exists for the PS3 and for no later console (inference).
@@ -1142,7 +1143,8 @@ Prose of walled emulators:
 Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 
 - [Cell (processor)][wp-cell] [1386170292]; [PlayStation 3 technical specifications][wp-ps3-specs] [1386319161];
-  [PlayStation 3 system software][wp-ps3-sys] [1386319155]; [RSX Reality Synthesizer][wp-rsx] [1318869943];
+  PlayStation 3 system software [1386319155], `en.wikipedia.org/w/index.php?oldid=1386319155`,
+  not linked because the register closes it; [RSX Reality Synthesizer][wp-rsx] [1318869943];
   [PlayStation 4][wp-ps4] [1386319169]; [PlayStation 4 technical specifications][wp-ps4-specs] [1386319175];
   [PlayStation 4 system software][wp-ps4-sys] [1385538186]; [PlayStation 5][wp-ps5] [1385515902];
   [Xbox One][wp-xboxone] [1386323575]; [Xbox Series X and Series S][wp-series] [1386594308];
@@ -1263,7 +1265,6 @@ Wikipedia, raw wikitext (tertiary; each link is the revision read, in brackets):
 [rpcs3-blog]: https://web.archive.org/web/20251204030505/https://rpcs3.net/blog/
 [wp-cell]: https://en.wikipedia.org/w/index.php?oldid=1386170292
 [wp-ps3-specs]: https://en.wikipedia.org/w/index.php?oldid=1386319161
-[wp-ps3-sys]: https://en.wikipedia.org/w/index.php?oldid=1386319155
 [wp-rsx]: https://en.wikipedia.org/w/index.php?oldid=1318869943
 [wp-ps4]: https://en.wikipedia.org/w/index.php?oldid=1386319169
 [wp-ps4-specs]: https://en.wikipedia.org/w/index.php?oldid=1386319175

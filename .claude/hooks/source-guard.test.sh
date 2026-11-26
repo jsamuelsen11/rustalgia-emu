@@ -316,6 +316,17 @@ check 2 writer "$(fetch https://github.com/andkrau/NuanceResurrection/blob/maste
 check 0 writer "$(fetch https://raw.githubusercontent.com/andkrau/NuanceResurrection/master/README.md)"
 check 0 writer "$(fetch http://web.archive.org/web/20111016181020/http://www.nintendo.com/3ds/hardware/specs)"
 
+# A closed page is blocked at its full address. The guard lets an address equal to a pattern through,
+# so each page pattern is cut short; these cases catch a pattern that names its page in full.
+check 2 writer "$(fetch https://problemkaputt.de/psx.htm)"
+check 2 writer "$(fetch https://www.psdevwiki.com/ps3/PS2_Emulation)"
+check 2 writer "$(fetch https://pcsx2.net/docs/setup/gather)"
+check 2 writer "$(fetch https://emulation.gametechwiki.com/index.php/Nintendo_DS_emulators)"
+check 2 writer "$(fetch 'https://emulation.gametechwiki.com/index.php?title=Nintendo_DS_emulators')"
+check 2 writer "$(fetch 'https://playstationdev.wiki/pspdevwiki/index.php?title=Keys')"
+check 0 writer "$(fetch https://emulation.gametechwiki.com/index.php/GBA_Tests)"
+check 0 writer "$(fetch https://pcsx2.net/docs/setup/bios/)"
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'
