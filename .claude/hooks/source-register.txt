@@ -687,6 +687,82 @@ walled | dolphin-emu/hwtests | GPL-2.0, or later not stated | oracle not stated;
 closed | ioncodes/gamecube-wii-tests | none | README records hardware results; results usable | 2026-11-19 | README
 closed | geotale/gc-like-research | none | "expected results by hardware"; results usable | 2026-11-19 | README
 
+# Sources first cited by R1-21, the PlayStation 3, 4, and 5 survey (2026-11-25).
+# The survey read every emulator from its prose and repository metadata only, whatever its tier.
+# A high-level reimplementation of PS3, PS4, or PS5 libraries or kernels is closed inside any repository below;
+# the rest of each repository keeps the tier its line gives.
+walled | aenu1/aps3e | no root licence file; Play says GPLv2 | RPCS3 port, Android; paid build | 2026-11-25 | README
+walled | armsx2/armsx3 | GPL-2.0-only by README | RPCS3 port, Android and iOS; XMB mode closed | 2026-11-25 | README
+walled | rpcsx/rpcsx-ui-android | GPLv2, version not stated | Android interface for an RPCS3 fork | 2026-11-25 | README
+walled | rpcsx/rpcsx | GPL-2.0, version unstated | PS4, PS5; has RPCS3 code; orbis-kernel closed | 2026-11-25 | README
+walled | emelin2004/rpcs3-xbox | GPL-2.0-only by README, some files differ | Xbox port of RPCS3 | 2026-11-25 | README
+walled | kamb205/kb-rpcs3 | GPL-2.0-only core, GPL-3.0 parts; unresolved | RPCS3 as PS5 homebrew | 2026-11-25 | README
+walled | alexaltea/nucleus | GPLv2, version not stated | archived PS3 emulator; LV2 HLE closed | 2026-11-25 | README
+walled | alexaltea/ps3autotests | GPL-2.0, version unstated | output "preferably from a real PS3" | 2026-11-25 | README
+open | liuk7071/chonkystation3 | GPL-3.0 | loads the user's decrypted Sony modules | 2026-11-25 | LICENSE.md, README
+open | liuk7071/chonkystation4 | GPL-3.0 | needs the user's decrypted firmware modules | 2026-11-25 | LICENSE.md, README
+open | allkern/allity | MIT | toy PS3 emulator | 2026-11-25 | licence file, README
+open | rcebits.com/ps3emu | none stated | site of the closed ps3emu; decryption pages unread | 2026-11-25 | two pages
+open | red-prig/fpps4 | LGPL-2.1, version unstated | GNU: GPLv3-compatible; kern kernel closed | 2026-11-25 | licence
+open | fpps4.net | none stated | fpPS4's site; prose | 2026-11-25 | home page
+open | inorirus/kyty | MIT | PS4 and PS5; dormant since 2024 | 2026-11-25 | licence file, README
+open | inori/gpcs4 | GPL-3.0 | PS4; halted in 2023 | 2026-11-25 | licence file, README
+open | alexaltea/orbital | MIT | needs the user's console keys; QEMU part unevaluated | 2026-11-25 | licence, README
+open | idc/uplift | MIT | early PS4 compatibility layer; dormant since 2019 | 2026-11-25 | licence file, README
+open | sysray/psoff_public | GPL-3.0 | archived PS4 layer; its successor is closed | 2026-11-25 | licence file, README
+walled | force67/prosperity | GPL-2.0, version unstated | runs the user's decrypted system modules | 2026-11-25 | README
+walled | sharpemu/sharpemu | GPL-2.0; README says or-later | PS5 and PS4 emulator in C# | 2026-11-25 | licence, README
+open | sharpemu.app | none stated | SharpEmu's site and FAQ; prose | 2026-11-25 | home page, FAQ
+walled | kytyps5/kytyps5 | GPL-2.0-only | PS5 layer from Kyty | 2026-11-25 | licence file, README
+walled | nmzik/kytyps5 | GPL-2.0-only | former name; redirects to kytyps5/kytyps5 | 2026-11-25 | metadata
+walled | boykopovar/anyps5 | GPL-2.0-only | PS5 relinker; its prx libraries closed | 2026-11-25 | licence file, README
+walled | keklick1337/rps5e | GPL-2.0-only | RustPS5Emu, PS5 HLE in Rust | 2026-11-25 | licence file, README
+walled | jica98/bachata-s4 | GPL-2.0; README says or-later | shadPS4 port, Android and iOS; sold | 2026-11-25 | README
+walled | mircowuffwuff/sharpdroid | GPL-2.0; README says or-later | Android host for SharpEmu | 2026-11-25 | README
+open | shadps4.net | none stated | site of the walled shadPS4; prose | 2026-11-25 | home page, v0.21.0 post
+open | www.obliteration.net | none stated | site of the closed Obliteration; prose | 2026-11-25 | home page
+open | aenu.cc/aps3e | none stated | aPS3e's site; user comments are leads | 2026-11-25 | page
+other | atlus.com/atlus-and-emulation | publisher's statement | Atlus on its 2017 RPCS3 notice | 2026-11-25 | page
+other | www.tomshardware.com | press | news site, secondary | 2026-11-25 | one article
+other | www.gamesradar.com | press | news site, secondary | 2026-11-25 | one article
+walled | wiki.rpcs3.net | none stated | RPCS3's wiki; refused scripts (HTTP 403), unread | 2026-11-25 | refusal page
+# Closed by R1-21: no licence, no source shown, boot firmware, kit-derived data, and key instructions.
+closed | nongeneric/ps3emu | none | PS3 porting framework | 2026-11-25 | licence 404, README
+closed | sp00nznet/ps3recomp | MIT | HLE of PS3 libraries; changelog cites the SDK | 2026-11-25 | README, changelog
+closed | claimore22/ps5rs | GPL-2.0-only | firmware and SDK databases of unstated origin | 2026-11-25 | README
+closed | devofspine/ | binary-only licence, or none | Spine, PS4 emulator; no source | 2026-11-25 | licence, README
+closed | sysray/psoff_compatibility | none | closed psOff's releases; needs a console key | 2026-11-25 | README
+closed | shadps4-compatibility/shadps4-game-compatibility | none | shadPS4 reports; results usable | 2026-11-25 | README
+closed | hernan0078/magnusps5 | GPL-2.0 by metadata | claimed iOS PS5 emulator; no source shown | 2026-11-25 | metadata
+closed | alexaltea/orbital-bios | LGPL-3.0 by metadata | SeaBIOS fork for the PS4; boot firmware | 2026-11-25 | metadata
+closed | alexaltea/nucleus/blob/master/docs/user/keys | GPLv2 | key file instructions; not opened | 2026-11-25 | README
+closed | alexaltea/nucleus/master/docs/user/keys | GPLv2 | the same, as a raw file | 2026-11-25 | README link
+closed | guernica4u/pkg-master | MIT | toolbox that decrypts PS4 packages; not opened | 2026-11-25 | search result
+closed | zenithblue-oss/shadps4-arm64 | none now | Bachata S4's stated client source; gone | 2026-11-25 | HTTP 404
+# Repositories named in Sony's and Unity's GitHub notices: keys, kit material, NDA code, exploits, or tools.
+# None was opened; the 1,159 copies of fail0verflow's tools in the 2011-02-03 notice are not listed one by one.
+closed | kakaroto/ps3keys | not read | in SCEA's 2011 notice; keys by its name | 2026-11-25 | github/dmca 2011-01-27
+closed | kakaroto/ps3tools | not read | SCEA: circumvention tools | 2026-11-25 | github/dmca 2011-01-27
+closed | kakaroto/ps3utils | not read | SCEA: circumvention tools | 2026-11-25 | github/dmca 2011-01-27
+closed | kmeaw/lv2patcher | not read | SCEA: circumvention tools | 2026-11-25 | github/dmca 2011-01-27
+closed | kmeaw/gaiamanager | not read | SCEA: circumvention tools | 2026-11-25 | github/dmca 2011-01-27
+closed | grafchokolo/psgroove | not read | SCEA: PS3 exploit | 2026-11-25 | github/dmca 2011-01-27
+closed | aerialx/scekrit | not read | named beside fail0verflow's tools | 2026-11-25 | github/dmca 2011-02-03
+closed | hermeseol/fail0verflow | not read | copy of fail0verflow's tools | 2026-11-25 | github/dmca 2011 counter-notice
+closed | andreesito69/ps4-hen | not read | SIE Europe: PS4 exploit | 2026-11-25 | github/dmca 2020-07-30
+closed | sonyps3/scedev | not read | SCEA: "proprietary code and firmware" | 2026-11-25 | github/dmca 2011-06-07
+closed | dlloyd1/llgpps4 | not read | said to be confidential PS5 system code | 2026-11-25 | github/dmca 2019-09-06
+closed | dlloyd1/llgpwin | not read | the same notice | 2026-11-25 | github/dmca 2019-09-06
+closed | d4rkmoons/cus4-03173-bl00dborn | not read | SIE: "Bloodborne's access keys" | 2026-11-25 | dmca 2023-11-29
+closed | lienby/ps5-lib-il2cpp | not read | Unity: PS5 NDA code | 2026-11-25 | github/dmca 2026-11-13
+closed | 42ow0rm/ps5-lib-il2cpp | not read | Unity: PS5 NDA code | 2026-11-25 | github/dmca 2026-11-19
+closed | ds4user/ds4 | not read | Sony: DUALSHOCK 4 firmware copies | 2026-11-25 | github/dmca 2017-01-12
+# Pages closed by R1-21 as a precaution; patterns cut short, so the RPCS3 one also covers an RPCSX page.
+# Wiki subdomains have no www form, and the index.php?title= forms cannot be matched.
+# Nor can the oldid form, index.php?oldid=1386319155, by which R1-04 and R1-08 link the Wikipedia page below.
+closed | en.wikipedia.org/wiki/playstation_3_system_softwar | CC BY-SA 4.0 | mentions leaked PS3 kits | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/rpcs | none named | RAP and cracked files from others | 2026-11-25 | raw
+
 # PlayStation family: references and maker material, open tier.
 open | hitmen.c02.at/files/docs/psx | none; one text given away | Walker denies Sony documents | 2026-11-19 | intro
 closed | hitmen.c02.at/files/docs/psx/3467 | none | an R3000A maker manual hosted by others | 2026-11-19 | listing page
@@ -1229,7 +1305,7 @@ open | devdocs.xbox.com | none stated | same site under a second address | 2026-
 open | learn.microsoft.com/en-us/previous-versions/windows/uwp | none stated | maker's UWP docs | 2026-11-20 | page
 open | digitalfoundry.net | (c) notice, no grant | press; reports maker briefings and talks | 2026-11-20 | footer
 open | androidauthority.com | not stated on the page read | press; secondary | 2026-11-20 | article page
-walled | rpcs3.net | none stated | site of the walled RPCS3 emulator; prose | 2026-11-20 | blog, capture 20251204030505
+open | rpcs3.net | none stated | walled emulator's site; prose; dumping links not followed | 2026-11-25 | as vita3k.org
 # Pages closed so that the guard blocks them; the rest of each site keeps its tier. Patterns are cut short.
 # Microsoft's directory of GDK topics under a non-disclosure agreement, linked from its public index; not opened.
 closed | docs.xbox.com/nda | - | maker's directory of NDA topics | 2026-11-20 | linked from the public index; not opened

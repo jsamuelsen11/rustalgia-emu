@@ -31,6 +31,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-13](R1-13-nintendo-3ds-family.md) | Which emulators matter for the Nintendo 3DS family, its legal exposure, and how hard it is |
 | [R1-15](R1-15-nes-and-snes-family.md) | Which NES and SNES emulators matter, how they work, and the families' legal exposure and difficulty |
 | [R1-18](R1-18-playstation-1-family.md) | Which emulators the PlayStation 1 family has, and its legal exposure and difficulty |
+| [R1-21](R1-21-playstation-3-4-5-family.md) | Which PS3, PS4, and PS5 emulators matter, and the family's legal exposure and difficulty |
 
 ## Conventions
 
