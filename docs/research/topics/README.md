@@ -37,6 +37,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-19](R1-19-playstation-2-family.md) | Which PlayStation 2 emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-20](R1-20-psp-and-vita-family.md) | Which PSP and Vita emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-21](R1-21-playstation-3-4-5-family.md) | Which PS3, PS4, and PS5 emulators matter, and the family's legal exposure and difficulty |
+| [R1-23](R1-23-xbox-family.md) | Which Xbox, Xbox 360, and later emulators matter, and the family's legal exposure and difficulty |
 | [R1-24](R1-24-arcade-family.md) | Which arcade emulators matter, how they work, and the family's legal exposure and difficulty |
 
 ## Conventions
