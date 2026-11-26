@@ -32,7 +32,7 @@ are encrypted, the Sony systems' games by memory only; the law is in [`R0-02`][r
 - Question: how do the consoles of the modern era work, and what does that ask of an emulator?
 - Covered: processors, memory and storage, graphics, audio, operating systems and services, timing, threading and input,
   and online services, for the Switch and Switch 2 ([`R1-14`][roadmap]), PlayStation 3, 4, and 5 ([`R1-21`][roadmap]),
-  and Xbox One and Xbox Series ([`R1-23`][roadmap]).
+  and Xbox One and Xbox Series ([`R1-24`][roadmap]).
 - Placement: by the roadmap's era rule
   ([pull request #22][pr22]),
   the Xbox 360, of the seventh generation, is placed in [`R1-03`][r1-03] with the Wii,
@@ -43,7 +43,7 @@ are encrypted, the Sony systems' games by memory only; the law is in [`R0-02`][r
   and FPGA devices are emulator hosts, left to [`R3-07`][roadmap] and [`R3-12`][roadmap].
 - Left to other items: the law on encryption, firmware, keys, and takedowns
   ([`R0-02`][r0-02], cited by section name);
-  each family's emulators (`R1-14`, `R1-21`, `R1-23`); host platforms (phase 3); techniques in depth (phase 2).
+  each family's emulators (`R1-14`, `R1-21`, `R1-24`); host platforms (phase 3); techniques in depth (phase 2).
 - Researched on 2026-11-20, when Wikipedia recorded no end of sales for the Switch 2, PlayStation 5, or Xbox Series,
   Nintendo's plan to end Switch sales in Europe in February 2027, the PS4 discontinued only in Japan (2024),
   and the Xbox One discontinued in 2020 (Wikipedia, each system's article, secondary).
@@ -695,7 +695,7 @@ are encrypted, the Sony systems' games by memory only; the law is in [`R0-02`][r
   is closed in the [register][register] and has no link here, because its pages are for licensed developers only;
   pages behind Microsoft's sign-in are not opened for the same reason.
 - The `xboxoneresearch/` repositories, a community group whose list includes exploit and flash-dump tools,
-  are not in the register and are not linked; the guard blocks their code, and [`R1-23`][roadmap] evaluates them
+  are not in the register and are not linked; the guard blocks their code, and [`R1-24`][roadmap] evaluates them
   (research log).
 
 ### Timing, threading, and input
@@ -998,7 +998,7 @@ and a replacement service carries the server-emulator risk in [`R0-02`][r0-02].
 
 - The operating system is the main interface for every system here (inference),
   so the family surveys [`R1-14`][roadmap], [`R1-21`][roadmap],
-  and [`R1-23`][roadmap] need to record which boundary each studied emulator chose
+  and [`R1-24`][roadmap] need to record which boundary each studied emulator chose
   and how it handles system-software versions.
   This feeds an ADR on high-level against low-level emulation of system software, and [`R2-12`][roadmap].
 - The PS3, PS4, PS5, Switch, and Switch 2 have no open-tier emulator, and the Xbox One and Series have no hub
@@ -1026,12 +1026,12 @@ and a replacement service carries the server-emulator risk in [`R0-02`][r0-02].
   and a capture of IBM's own address shows its release; otherwise [`R1-21`][roadmap] reader sessions.
 - Cores available to PS5 games: `R1-21`
   ([Sony's blog][psblog], [Wikipedia][wp-ps5], and [psdevwiki][pd-ps5-hw] searched).
-- How Xbox One games place data in ESRAM: [`R1-23`][roadmap], from walled emulators' prose or reader sessions.
+- How Xbox One games place data in ESRAM: [`R1-24`][roadmap], from walled emulators' prose or reader sessions.
 - Kraken and BCPack bitstreams: no public specification
   ([register][register], `R0-05`, and [Microsoft's public GDK index][xbox-index] searched);
   [`R2-11`][roadmap], which can also evaluate the reported reverse-engineered decoders.
 - Which Win32 and GDK calls Xbox games use, and the layout of XVC console packages,
-  which the public packaging pages do not describe: `R1-23`.
+  which the public packaging pages do not describe: `R1-24`.
 - Whether Sony's published PS3 firmware modules can be loaded without keys: `R1-21`.
 - RPCS3's approach to Sony's libraries, reservations, and DMA: an `R1-21` reader session.
 - Tempest's instruction set and how a game submits its wavefront: `R1-21`.

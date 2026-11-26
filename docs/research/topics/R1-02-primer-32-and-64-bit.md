@@ -37,7 +37,7 @@ This note is not legal advice.
   [`R1-12`](../../roadmap/research.md#system-family-surveys),
   [`R1-16`](../../roadmap/research.md#system-family-surveys),
   [`R1-18`](../../roadmap/research.md#system-family-surveys),
-  [`R1-22`](../../roadmap/research.md#system-family-surveys)) depend on this item;
+  [`R1-23`](../../roadmap/research.md#system-family-surveys)) depend on this item;
   and the DS and PlayStation 1 hardware inside the 3DS and the PlayStation 2,
   because by the roadmap's rule for surveys that span several primers those systems belong to a later era,
   and [`R1-13`](../../roadmap/research.md#system-family-surveys)
@@ -48,13 +48,13 @@ This note is not legal advice.
 - Left to other items: every system of the era
   and its hardware in one row each ([`R1-06`](R1-06-catalogue-32-and-64-bit.md));
   the Jaguar's custom processors in depth
-  ([`R1-25`](../../roadmap/research.md#system-family-surveys), which takes the systems no other survey names);
+  ([`R1-26`](../../roadmap/research.md#system-family-surveys), which takes the systems no other survey names);
   the Dreamcast ([`R1-03`](R1-03-primer-sixth-generation.md)); the law on firmware, keys,
   and lock-outs ([`R0-02`](R0-02-legal-baseline.md)); techniques in depth
   ([`R2-01` to `R2-15`](../../roadmap/research.md#phase-2-cross-cutting-engineering));
   the emulators themselves ([`R1-30`](../../roadmap/research.md#emulator-studies) onward);
   and the instruction sets of the Saturn control unit's DSP and the SCSP's DSP,
-  and the SCSP's envelope rates ([`R1-22`](../../roadmap/research.md#system-family-surveys)):
+  and the SCSP's envelope rates ([`R1-23`](../../roadmap/research.md#system-family-surveys)):
   a primer records that they exist and are programmable.
 - Researched on 2026-11-20.
 - How claims were checked: research agents fetched every source on 2026-11-20 as raw text
@@ -1176,7 +1176,7 @@ The owner decides each of these; the pull request lists them.
   ([Mednafen, `ss.html`](https://mednafen.github.io/documentation/ss.html)) and timing on the DS (inference).
   Whether to model them feeds [`R1-12`](../../roadmap/research.md#system-family-surveys),
   [`R1-16`](../../roadmap/research.md#system-family-surveys),
-  [`R1-22`](../../roadmap/research.md#system-family-surveys),
+  [`R1-23`](../../roadmap/research.md#system-family-surveys),
   and the quality targets ([`R6-02`](../../roadmap/research.md#phase-6-synthesis)).
 - The PlayStation 1's published test results give [`R1-18`](../../roadmap/research.md#system-family-surveys) an oracle
   for the GPU's dither, fill rule, and drawing time, frame length, disc timing, and the geometry engine;

@@ -33,11 +33,13 @@ each with its reasons in "Options and trade-offs" for the owner to decide.
   The worked examples are the systems of three family surveys that depend on this item: Game Boy
   and Game Boy Color ([`R1-10`][fam]), NES and SNES ([`R1-15`][fam]), and Master System, Game Gear, and Genesis
   (Mega Drive) ([`R1-22`][fam]).
-  [`R1-24`][fam] (arcade) and [`R1-25`][fam] (other handhelds and home computers) also depend on this item.
+  [`R1-25`][fam] (arcade) and [`R1-26`][fam]
+  (other consoles and handhelds)
+  and the home computers catalogue ([`R1-09`](../../roadmap/research.md#hardware-primers)) also depend on this item.
   Other systems of the era appear where they differ in kind.
 - Left to other items: one row for every system sold ([`R1-05`][r1-05]); emulators of each family
-  ([`R1-10`][fam] to [`R1-25`][fam]);
-  arcade boards ([`R1-24`][fam]); the law on firmware, lock-outs, and logos
+  ([`R1-10`][fam] to [`R1-27`][fam]);
+  arcade boards ([`R1-25`][fam]); the law on firmware, lock-outs, and logos
   ([`R0-02`][r0-02], cited by section);
   scheduling, rendering, and audio as engineering topics ([`R2-01`][ph2] to [`R2-15`][ph2]).
 - Researched on 2026-11-20; most wiki pages are pinned by revision and most repositories by commit in the Sources,
@@ -384,7 +386,7 @@ each with its reasons in "Options and trade-offs" for the owner to decide.
   larger games switch banks, the first 8K game being *Asteroids*, which switches two 4K segments
   (Wikipedia, ["Atari 2600"][wp-2600], the 4 KB limit in a footnote).
   The page dates *Asteroids* to 1980 in one place and 1981 in another (observed).
-  The bank-switching schemes are left to [`R1-25`][fam].
+  The bank-switching schemes are left to [`R1-26`][fam].
 
 ### Video
 
@@ -827,7 +829,7 @@ each with its reasons in "Options and trade-offs" for the owner to decide.
   PAL consoles lack the check (Wikipedia, ["Atari 7800"][wp-7800]); no key is described here.
 - TurboGrafx-16 HuCards reverse eight of their 38 pins as a region lock-out (Wikipedia, ["TurboGrafx-16"][wp-tg16]).
   Wikipedia's "Atari Lynx" says nothing of the Lynx's boot encryption
-  (searched for "encrypt", "RSA", "sign", and "boot"), so it is left to [`R1-25`][fam].
+  (searched for "encrypt", "RSA", "sign", and "boot"), so it is left to [`R1-26`][fam].
 - [`R0-02`][r0-02] covers the law and is not repeated: no § 1201 decision found on a cartridge-era lock-out
   (["Anti-circumvention law in the United States"][r0-02-1201]),
   the boot-logo questions (["Firmware, keys, and game copies"][r0-02-fw]), and options 4, 5, 6, and 16

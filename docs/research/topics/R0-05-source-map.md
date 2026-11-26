@@ -1301,7 +1301,7 @@ The last subsection gives the recommendation for each.
 ## Implications for Rustalgia
 
 - The hardware primers ([R1-01][r101] to [R1-04][r104]) and family surveys
-  ([R1-10 to R1-25][rmsurv]) read from this map.
+  ([R1-10 to R1-27][rmsurv]) read from this map.
   Each should cite the hub's register line and repeat the hub's gaps, not the tier alone.
 - The PlayStation 1 primer and survey ([R1-02][r102], [R1-18][rmsurv]) cannot lean on one reference.
   This feeds the decision on [option 8][opt8] and the measurements of [R5-12][rm5].
@@ -1327,7 +1327,7 @@ The last subsection gives the recommendation for each.
   ([Console5][console5], [ConsoleMods][consolemods]), and the die-photograph archive ([siliconpr0n][siliconpr0n]) say?
   Their tier allows their prose to anyone, but the [guard][guard] blocks a walled site's prose to a writer.
   The guard change in [issue 32][iss32], or a session the owner allows to read their prose, would let the family surveys
-  ([R1-10 to R1-25][rmsurv]) evaluate them.
+  ([R1-10 to R1-27][rmsurv]) evaluate them.
 - Which GPL-2.0 projects are "only" and which "or later"?
   The prose a writer may read does not settle it: [openMSX][openmsx] says "GNU Public License (GPL)" with no version,
   and the [Stella][stella] and [Kronos][kronos] READMEs have no licence wording.

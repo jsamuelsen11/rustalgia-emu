@@ -39,7 +39,7 @@ This note is not legal advice.
   the SNES and Super Famicom with the Satellaview, the SuFami Turbo, and the cartridge coprocessors,
   and the Super Game Boy as SNES cartridge hardware.
   [`R1-05`][r1-05-addons] also places the Family Computer Network System here;
-  no evidence on its emulation was gathered, and it is left to [`R1-25`][fam] if no emulator for it is found.
+  no evidence on its emulation was gathered, and it is left to [`R1-26`][fam] if no emulator for it is found.
 - Left to other items: how the hardware works to [`R1-01`][r1-01] and the list of models to [`R1-05`][r1-05];
   the Super Game Boy's Game Boy side to [`R1-10`][fam]; each emulator's internals to its study
   ([`R1-50`, `R1-51`, `R1-60`, `R1-61`, `R1-64`, `R1-67`][studies]);

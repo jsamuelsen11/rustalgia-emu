@@ -51,7 +51,7 @@ This note is not legal advice.
   and Transfer Paks where emulators model them; Nintendo's own emulators of the console;
   static recompilers as a boundary technique.
   The iQue Player is covered as a model of the family, as [R1-06][r106-boundary] places it.
-  The Aleck64 arcade board belongs to [R1-24][surveys], as R1-06 says; ares supports it since v142
+  The Aleck64 arcade board belongs to [R1-25][surveys], as R1-06 says; ares supports it since v142
   ([v142 notes][ares-v142]) and ParaLLEl N64 has options for it ([documentation][lr-paralleln64]).
 - Builds on: the hardware in [R1-02][r102]
   ("Processors", "Video", "Audio", "Media, protection, and firmware", "Tests and their oracles"),

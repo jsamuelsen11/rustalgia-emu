@@ -32,6 +32,8 @@ Every system, platform, and technique stays in scope until the owner rules it ou
 ### How items work
 
 - Each item has a stable ID.
+  The family surveys were renumbered once, on 2026-11-26, when the Sega survey was split in two:
+  the old R1-23 to R1-25 became R1-24 to R1-26, and R1-23 took the Saturn and Dreamcast.
   The phase number is the first digit.
 - Each item produces one research note, named for its ID, in `docs/research/`.
   Emulator studies go in `emulators/`, topic studies in `topics/`, and spike reports in `spikes/`.
@@ -73,6 +75,7 @@ using the systems that have a family survey as its examples.
 A catalogue lists every dedicated console and handheld sold in the era, with its hardware and its best sources.
 PC and Android handhelds, microconsoles, FPGA devices, and retro "mini" consoles are listed as emulator hosts,
 which `R3-07` and `R3-12` cover, not as systems to emulate.
+The home computers catalogue (`R1-09`) lists the home computers that `R1-27` surveys.
 An era holds the systems whose family survey depends on its primer.
 Where a survey depends on more than one primer, each of its systems belongs to the era of its own generation,
 and the survey depends on the other primers for the hardware that its systems contain or carry over.
@@ -85,6 +88,8 @@ and the survey depends on the other primers for the hardware that its systems co
 - [x] **R1-06** The 32-bit and 64-bit era: catalogue.
 - [x] **R1-07** The sixth generation and the move to programmable graphics: catalogue.
 - [x] **R1-08** Modern consoles and handhelds, including systems on sale today: catalogue.
+- [ ] **R1-09** Home computers: catalogue.
+      Depends on R1-01, R1-02, R1-03, R1-04.
 
 #### System family surveys
 
@@ -116,14 +121,18 @@ It also records the family's legal exposure and how hard it is to emulate.
       Depends on R1-03, R0-02.
 - [ ] **R1-21** PlayStation 3, 4, and 5.
       Depends on R1-04, R0-02.
-- [ ] **R1-22** Sega: Master System, Game Gear, Genesis, Saturn, Dreamcast.
-      Depends on R1-01, R1-02, R1-03.
-- [ ] **R1-23** Xbox, Xbox 360, and later.
+- [ ] **R1-22** Sega: Master System, Game Gear, and Genesis, with the Sega CD and 32X.
+      Depends on R1-01, R1-02.
+- [ ] **R1-23** Sega: Saturn and Dreamcast.
+      Depends on R1-02, R1-03.
+- [ ] **R1-24** Xbox, Xbox 360, and later.
       Depends on R1-03, R1-04, R0-02.
-- [ ] **R1-24** Arcade hardware.
+- [ ] **R1-25** Arcade hardware.
       Depends on R1-01, R1-02, R1-03, R1-04.
-- [ ] **R1-25** Other consoles, handhelds, and home computers: the systems that no other survey names.
+- [ ] **R1-26** Other consoles and handhelds: the systems that no other survey names.
       Depends on R1-01, R1-02, R1-03, R1-04, R1-05, R1-06, R1-07, R1-08.
+- [ ] **R1-27** Home computers.
+      Depends on R1-09, R0-02.
 
 #### Emulator studies
 

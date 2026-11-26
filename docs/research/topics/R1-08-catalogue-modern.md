@@ -47,7 +47,7 @@ This note is not legal advice.
 - Covered: every model and revision of the systems whose family surveys depend on [`R1-04`](R1-04-primer-modern.md)
   ([`R1-14`](../../roadmap/research.md#system-family-surveys),
   [`R1-21`](../../roadmap/research.md#system-family-surveys),
-  [`R1-23`](../../roadmap/research.md#system-family-surveys),
+  [`R1-24`](../../roadmap/research.md#system-family-surveys),
   as ["How the catalogue is built"](#how-the-catalogue-is-built) sets out), from the PlayStation 3, Xbox One,
   and Switch onward; other dedicated game devices first sold after 2005-11-21,
   and lines of them that continue from earlier years; emulator hosts as a list; and systems announced but not sold.
@@ -93,10 +93,10 @@ This note is not legal advice.
   (Switch and Switch 2),
   [`R1-21`](../../roadmap/research.md#system-family-surveys)
   (PlayStation 3, 4, and 5),
-  and [`R1-23`](../../roadmap/research.md#system-family-surveys)
+  and [`R1-24`](../../roadmap/research.md#system-family-surveys)
   (Xbox, Xbox 360, and later)
   depend on [`R1-04`](R1-04-primer-modern.md);
-  [`R1-23`](../../roadmap/research.md#system-family-surveys) also depends on
+  [`R1-24`](../../roadmap/research.md#system-family-surveys) also depends on
   [`R1-03`](R1-03-primer-sixth-generation.md), so the rule places its systems in both eras.
   The two catalogues place the original Xbox and the Xbox 360 in [`R1-07`](R1-07-catalogue-sixth-generation.md)
   and start this one at the Xbox One (inference; [`R1-07`](R1-07-catalogue-sixth-generation.md), Scope,
@@ -122,7 +122,7 @@ This note is not legal advice.
   This note reads that answer as a test, a process call that the pull request lists:
   a device sold to run emulators of other systems is a host.
   A clone that reproduces an older system is listed under that system,
-  and a home computer goes to [`R1-25`](../../roadmap/research.md#system-family-surveys).
+  and a home computer goes to [`R1-27`](../../roadmap/research.md#system-family-surveys).
 - A row is one model, or a model with its revisions where they run the same software.
   "Hub" names the best registered hardware source other than Wikipedia;
   a dash means no hardware source other than Wikipedia was cited.
@@ -273,12 +273,12 @@ This note is not legal advice.
 
 | Model (model number) | First release | Survey | Hub |
 |---|---|---|---|
-| Xbox One (1540; Elite SKU) | 13 markets 2013-11-22; JP 2014-09-04; CN 2014-09-29 | [`R1-23`] | Hot Chips 25 |
-| Xbox One S (1681); One S All-Digital | 2016-08-02 (2 TB); All-Digital 2019-05-07 | [`R1-23`] | — |
-| Xbox One X (1787) | 2017-11-07 | [`R1-23`] | — |
-| Xbox Series X | 2020-11-10; CN 2021-06-10 | [`R1-23`] | Hot Chips 32; Microsoft product page |
-| Xbox Series S | 2020-11-10; CN 2021-06-10 | [`R1-23`] | Xbox Wire spec sheet |
-| Series refresh models; Series X25 edition | 2023-09-01 (1 TB Series S); 2024-10-15; X25 2026-11-12 | [`R1-23`] | — |
+| Xbox One (1540; Elite SKU) | 13 markets 2013-11-22; JP 2014-09-04; CN 2014-09-29 | [`R1-24`] | Hot Chips 25 |
+| Xbox One S (1681); One S All-Digital | 2016-08-02 (2 TB); All-Digital 2019-05-07 | [`R1-24`] | — |
+| Xbox One X (1787) | 2017-11-07 | [`R1-24`] | — |
+| Xbox Series X | 2020-11-10; CN 2021-06-10 | [`R1-24`] | Hot Chips 32; Microsoft product page |
+| Xbox Series S | 2020-11-10; CN 2021-06-10 | [`R1-24`] | Xbox Wire spec sheet |
+| Series refresh models; Series X25 edition | 2023-09-01 (1 TB Series S); 2024-10-15; X25 2026-11-12 | [`R1-24`] | — |
 
 | Model | CPU | Graphics | Memory | Media and storage |
 |---|---|---|---|---|
@@ -384,7 +384,7 @@ This note is not legal advice.
   terms between a customer and its publisher.
   So a test program the project wrote may fall within the clause's purpose, if a console counts
   as such a device (inference); the risk that a test seeks more than an app's access is recorded
-  for [`R1-23`](../../roadmap/research.md#system-family-surveys) and [`R0-02`](R0-02-legal-baseline.md).
+  for [`R1-24`](../../roadmap/research.md#system-family-surveys) and [`R0-02`](R0-02-legal-baseline.md).
 - Series models as of 2026-11-20: a 1 TB Series S of 2023-09-01; on 2024-10-15 a white 1 TB Series S,
   a white all-digital Series X, and a 2 TB Series X; with a price rise on 2026-08-01,
   Microsoft said it was discontinuing the 2 TB Series X;
@@ -697,7 +697,7 @@ which has no article and rests on
 |---|---|---|---|
 | Analogue Nt (2015) | Analogue | 2015 | the NES, as a variant ([`R1-05`]; survey [`R1-15`]) |
 | Atari Flashback 2, 2+ | Legacy Engineering | 2005-08; 2+ due 2010-02-22 | the Atari 2600, as a variant ([`R1-05`]) |
-| ZX Spectrum Next | SpecNext | 2017-12 (board) | home computers ([`R1-25`]) |
+| ZX Spectrum Next | SpecNext | 2017-12 (board) | home computers ([`R1-27`]) |
 
 - The Analogue Nt's article lists a Ricoh 2A03 and 2C02, the NES's own chips, so it is a clone of the NES
   (["Analogue Nt"](https://en.wikipedia.org/w/index.php?oldid=1366437670)).
@@ -745,7 +745,7 @@ which has no article and rests on
 
 | System | By survey | By date | Placed |
 |---|---|---|---|
-| Xbox 360 | [`R1-23`], which depends on [`R1-03`] and [`R1-04`] | seventh generation | [`R1-07`], shared placement |
+| Xbox 360 | [`R1-24`], which depends on [`R1-03`] and [`R1-04`] | seventh generation | [`R1-07`], shared placement |
 | Wii; Wii U; 3DS; Vita and PS TV | [`R1-17`], [`R1-13`], [`R1-20`] (on [`R1-03`]) | seventh and eighth | [`R1-07`] |
 | Devices first sold to 2005-11-21 | none | 2001 to 2005-11-21 | [`R1-07`]; cross-reference rows here |
 | GP2X line | none | KR 2005-11-10, then later models | here, with its successors |
@@ -753,7 +753,7 @@ which has no article and rests on
 | PlayStation Portal | [`R1-21`] names PS3, 4, 5 only | 2023 | here, listed as a client |
 | Nex Playground | none; Android-based, closed library | 2023 | here, as a dedicated console (inference) |
 | Analogue Nt; Flashback 2 | [`R1-15`] for the NES; none for the 2600 | 2005, 2015 | under the NES and the 2600 |
-| ZX Spectrum Next | [`R1-25`] | 2017 | [`R1-25`] |
+| ZX Spectrum Next | [`R1-26`] | 2017 | [`R1-26`] |
 
 - The placements follow the roadmap's survey dependencies
   (["System family surveys"](../../roadmap/research.md#system-family-surveys)),
@@ -868,7 +868,7 @@ which has no article and rests on
 
 - **What:** the test applied: a device sold to run its own games is a dedicated console,
   a device sold to run emulators of other systems is a host, a clone of a system is a variant of it,
-  and a home computer goes to [`R1-25`](../../roadmap/research.md#system-family-surveys).
+  and a home computer goes to [`R1-27`](../../roadmap/research.md#system-family-surveys).
 - **Costs:** a host reading leaves devices with their own cartridges, such as the Evercade, without a system study;
   their few native titles are not catalogued as a system (inference).
 - **Gains:** one test classes every device, and keeps the research finite (inference).
@@ -914,7 +914,7 @@ which has no article and rests on
   is drafted and when each family survey
   ([`R1-14`](../../roadmap/research.md#system-family-surveys),
   [`R1-21`](../../roadmap/research.md#system-family-surveys),
-  [`R1-23`](../../roadmap/research.md#system-family-surveys)) starts.
+  [`R1-24`](../../roadmap/research.md#system-family-surveys)) starts.
   2026 alone brought the Switch's European end of sale, the 2 TB Series X's discontinuation,
   Sony's end of disc production, the Series X25, and new system software in every family,
   so a frozen catalogue would mislead the scope proposal.
@@ -924,7 +924,7 @@ which has no article and rests on
 - Every surveyed family is still sold or updated, which bears on all three surveys
   ([`R1-14`](../../roadmap/research.md#system-family-surveys),
   [`R1-21`](../../roadmap/research.md#system-family-surveys),
-  [`R1-23`](../../roadmap/research.md#system-family-surveys))
+  [`R1-24`](../../roadmap/research.md#system-family-surveys))
   and on the system scope proposal ([`R6-01`](../../roadmap/research.md#phase-6-synthesis)).
   [`R0-02`](R0-02-legal-baseline.md) sorts risk by encryption, the common fact in every console emulator filing,
   judgment, and notice it found, not by whether a system is on sale
@@ -943,13 +943,13 @@ which has no article and rests on
   (["PlayStation 4"](https://en.wikipedia.org/w/index.php?oldid=1386319169), "Technical specifications"; findings
   above); whether the formats are documented is a question for [`R1-04`](R1-04-primer-modern.md),
   [`R1-21`](../../roadmap/research.md#system-family-surveys), and
-  [`R1-23`](../../roadmap/research.md#system-family-surveys), and their licensing for
+  [`R1-24`](../../roadmap/research.md#system-family-surveys), and their licensing for
   [`R0-03`](R0-03-licence-strategy.md) (inference).
 - Three processor families, AMD x86, Nvidia Tegra, and Altera Cyclone FPGAs, cover 16 of the 49 host rows,
   which [`R3-07`](../../roadmap/research.md#phase-3-host-platforms)
   and [`R3-12`](../../roadmap/research.md#phase-3-host-platforms) can test by family
   (counted from the table; inference).
-- [`R1-23`](../../roadmap/research.md#system-family-surveys) can start the Xbox One
+- [`R1-24`](../../roadmap/research.md#system-family-surveys) can start the Xbox One
   and Series X from Microsoft's Hot Chips slides
   ([Sell and O'Connor](https://old.hotchips.org/wp-content/uploads/hc_archives/hc25/HC25.10-SoC1-epub/HC25.26.121-fixed-%20XB1%2020130826gnn.pdf);
   [Andrews and Grossman](https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_GPU_Microsoft_Jeff_Andrews_v2.pdf))
@@ -1178,5 +1178,5 @@ Project documents:
 [`R1-17`]: ../../roadmap/research.md#system-family-surveys
 [`R1-20`]: ../../roadmap/research.md#system-family-surveys
 [`R1-21`]: ../../roadmap/research.md#system-family-surveys
-[`R1-23`]: ../../roadmap/research.md#system-family-surveys
-[`R1-25`]: ../../roadmap/research.md#system-family-surveys
+[`R1-24`]: ../../roadmap/research.md#system-family-surveys
+[`R1-26`]: ../../roadmap/research.md#system-family-surveys

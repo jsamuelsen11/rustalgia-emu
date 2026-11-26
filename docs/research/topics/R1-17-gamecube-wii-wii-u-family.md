@@ -42,7 +42,7 @@ This note is not legal advice.
   and how hard is it to emulate?
 - Covered: the GameCube and the Panasonic Q, the Wii with the Wii Mini and the Korean model, and the Wii U,
   as [R1-07](R1-07-catalogue-sixth-generation.md#home-consoles) lists them; Nintendo's own emulation.
-  The Triforce arcade board is left to [R1-24](../../roadmap/research.md#system-family-surveys),
+  The Triforce arcade board is left to [R1-25](../../roadmap/research.md#system-family-surveys),
   with only Dolphin's support for it noted here.
 - Builds on: the hardware in [R1-03](R1-03-primer-sixth-generation.md)
   (its "GameCube, Wii, and Wii U" sections and options 1 to 11),
@@ -208,7 +208,7 @@ and that analysis of the builds made on it found no sign that they were altered
 crediar's long-running fork reached mainline through a pull request and code review;
 the board boots through a modified GameCube IPL that loads Sega's Segaboot
 ([Dolphin blog, "Rise of the Triforce"][dolphin-triforce], 2026-02-16).
-The post links a dumping guide, not followed; the board is [R1-24's](../../roadmap/research.md#system-family-surveys).
+The post links a dumping guide, not followed; the board is [R1-25's](../../roadmap/research.md#system-family-surveys).
 
 ### Dolphin's forks and ports
 
