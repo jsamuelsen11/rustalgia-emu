@@ -15,7 +15,8 @@ Yout = "Yout" # Yout LLC, a party in Yout v RIAA
 caf = "caf" # "cour d'appel fédérale", in the Federal Court of Appeal's host name
 repositorys = "repositorys" # heading anchor of "repository's", as in #what-this-repositorys-controls-cover
 flate = "flate" # part of flate2, a Rust compression crate
-Noo = "Noo" # part of NooDS, a DS emulator, which the checker splits as "Noo" and "DS"
+Noo = "Noo" # part of NooDS, a DS and Game Boy Advance emulator
+ue = "ue" # the "UE" of Nestopia UE, an NES emulator, and its link labels
 
 [default.extend-identifiers]
 # Correctly spelled words that the checker splits into wrong parts. Each maps to itself.
