@@ -786,6 +786,121 @@ closed | www.onejailbreak.com | - | same site, www prefix | 2026-11-25 | wiki pa
 closed | atmosphere-nx/ | GPL-2.0, or later not stated | replaces Switch system software | 2026-11-19 | README
 closed | fail0verflow/mini | GPL-2.0 | "replacement for IOS" | 2026-11-19 | README
 
+# Sources first cited by R1-17, the GameCube, Wii, and Wii U survey (2026-11-25).
+open | tinob/ishiiruka | GPL-2.0-or-later by README | Dolphin fork; async shaders | 2026-11-25 | licence, README
+open | project-slippi/ishiiruka | GPL-2.0-or-later by README | Slippi's Melee fork | 2026-11-25 | licence, README
+open | project-slippi/dolphin | GPL-2.0-or-later, as Dolphin | Slippi on mainline Dolphin | 2026-11-25 | COPYING, README
+open | shiiion/dolphin | GPL-2.0-or-later, as Dolphin | PrimeHack, a Dolphin fork | 2026-11-25 | COPYING, README
+open | weihuoya/dolphin | GPL-2.0-or-later by README | Dolphin MMJ, Android fork; dormant | 2026-11-25 | licence, README
+closed | bankaimaster999/dolphin-mmjr | none now | Dolphin MMJR, Android fork; gone | 2026-11-25 | HTTP 404
+open | mato00kan/dolphin-mmjr2 | GPL-2.0-or-later, as Dolphin | Android fork; dormant | 2026-11-25 | COPYING
+open | libretro/dolphin | GPL-2.0-or-later; docs say GPLv2 | libretro core of Dolphin | 2026-11-25 | COPYING, README
+open | oatmealdome/dolphin-ios | GPL-2.0-or-later, as Dolphin | DolphiniOS; sideloaded | 2026-11-25 | COPYING, README
+open | sternxd/dolphin | GPL-2.0-or-later, as Dolphin | DolphinUWP, an Xbox fork | 2026-11-25 | COPYING, README
+closed | openemu/dolphin | none found | OpenEmu's GameCube core, a Dolphin fork | 2026-11-25 | licence endpoint, README
+open | ssimco/cemu | MPL-2.0 | Cemu's community Android port | 2026-11-25 | licence file, README
+open | kinnay/wii-u-firmware-emulator | MIT | low-level; asks for OTP, SEEPROM, a key | 2026-11-25 | licence, README
+open | ioncodes/gecko | GPL-3.0 | Rust; IPL and Starlet HLE, DSP ROM closed | 2026-11-25 | LICENSE, README
+open | vxpm/lazuli | GPL-3.0 and MIT by README | Rust; no root licence file; IPL HLE closed | 2026-11-25 | README
+walled | shonumi/gekko-gc-emu | GPL-2.0, version not stated | Gekko; a 2015 import | 2026-11-25 | licence, README
+walled | moras-p/gcube | GPL-2.0, version not stated | mirror of gcube, historical | 2026-11-25 | COPYING, README
+closed | zaydlang/beanwii | none shown | Wii emulator | 2026-11-25 | metadata
+closed | codeberg.org/equinox-emu/solstice | none shown | Rust emulator of the family | 2026-11-25 | repository page
+closed | www.codeberg.org/equinox-emu/solstice | none shown | www prefix | 2026-11-25 | repository page
+closed | codeberg.org/hazelwiss/solstice | none read | solstice at the address Gecko links; not read | 2026-11-25 | link
+closed | www.codeberg.org/hazelwiss/solstice | none read | www prefix | 2026-11-25 | link
+open | dolphin-emu/fifoci | BSD-2-Clause | Dolphin's graphics regression CI | 2026-11-25 | README, licence
+open | fifo.ci | none stated | FifoCI site; refuses scripts | 2026-11-25 | captured About page
+open | dolphinios.oatmealdome.me | none stated | site of an open-tier iOS port | 2026-11-25 | four pages
+open | oatmealdome.me | none stated | DolphiniOS developer's blog; a lead | 2026-11-25 | one post
+open | cemu.info | none stated | site of an open-tier emulator | 2026-11-25 | home, FAQ, changelog
+open | compat.cemu.info | none stated | Cemu compatibility list | 2026-11-25 | list page
+other | videogameschronicle.com | press | news site, secondary | 2026-11-25 | one article
+# Closed system software inside open repositories (ADR 0006): Cemu's high-level Cafe OS, at the path R1-03 listed.
+# Also closed by rule, paths not yet known: Dolphin's high-level IOS, its emulated GameCube boot, and its embedded
+# Wii common key; decaf-emu's high-level Cafe OS; Gecko's IPL and Starlet replacements and its copy of the DSP ROM;
+# and Lazuli's IPL replacement.
+closed | cemu-project/cemu/tree/main/src/cafe/os | MPL-2.0 | high-level Cafe OS | 2026-11-25 | R1-03 path
+closed | cemu-project/cemu/blob/main/src/cafe/os | MPL-2.0 | the same | 2026-11-25 | R1-03 path
+closed | cemu-project/cemu/main/src/cafe/os | MPL-2.0 | the same, as raw files | 2026-11-25 | R1-03 path
+closed | cemu-project/cemu/contents/src/cafe/os | MPL-2.0 | the same, contents API | 2026-11-25 | R1-03 path
+closed | cemu-project/cemu/tree/2f49c079da1d50b85cea0ed99aedda58846b3523/src/cafe/os | MPL-2.0 | - | 2026-11-25 | R1-03
+# Dolphin's replacement DSP ROM in forks, as upstream's lines; paths inferred from upstream, trees not listed.
+closed | libretro/dolphin/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | libretro/dolphin/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | libretro/dolphin/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | libretro/dolphin/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | oatmealdome/dolphin-ios/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | oatmealdome/dolphin-ios/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | oatmealdome/dolphin-ios/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | oatmealdome/dolphin-ios/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | sternxd/dolphin/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | sternxd/dolphin/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | sternxd/dolphin/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | sternxd/dolphin/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | shiiion/dolphin/tree/primehack-master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | shiiion/dolphin/blob/primehack-master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | shiiion/dolphin/blob/primehack-master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | shiiion/dolphin/primehack-master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | tinob/ishiiruka/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | tinob/ishiiruka/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | tinob/ishiiruka/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | tinob/ishiiruka/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | project-slippi/ishiiruka/tree/slippi/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | project-slippi/ishiiruka/blob/slippi/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | project-slippi/ishiiruka/blob/slippi/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | project-slippi/ishiiruka/slippi/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | project-slippi/dolphin/tree/slippi/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | project-slippi/dolphin/blob/slippi/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | project-slippi/dolphin/blob/slippi/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | project-slippi/dolphin/slippi/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | weihuoya/dolphin/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | weihuoya/dolphin/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | weihuoya/dolphin/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | weihuoya/dolphin/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+closed | mato00kan/dolphin-mmjr2/tree/master/docs/dsp/free_dsp_rom | GPL-2.0+ | DSP ROM | 2026-11-25 | upstream
+closed | mato00kan/dolphin-mmjr2/blob/master/docs/dsp/free_dsp_rom | GPL-2.0+ | the same | 2026-11-25 | upstream
+closed | mato00kan/dolphin-mmjr2/blob/master/data/sys/gc/dsp_ | GPL-2.0+ | built images | 2026-11-25 | upstream
+closed | mato00kan/dolphin-mmjr2/master/data/sys/gc/dsp_ | GPL-2.0+ | the same, raw | 2026-11-25 | upstream
+# Protective lines, none opened: dumping guides linked by Cemu, a wiki page that links a game site's copy of a maker
+# kit's emulator, that game site, pages titled as key lists, a figure dump site, a title downloader,
+# a Wikipedia page that mentions a leak, and wiki pages on console secrets or an IOS disassembly script.
+# Titles marked "from memory" were not confirmed; a pattern that matches no page blocks nothing else.
+closed | cemu.cfw.guide | - | key and game dumping guide linked by Cemu | 2026-11-25 | Cemu FAQ link
+closed | www.cemu.cfw.guide | - | www prefix | 2026-11-25 | Cemu FAQ link
+closed | compat.cemu.info/wiki/tutorial:online_pla | - | system-file dumping guide | 2026-11-25 | Cemu FAQ link
+closed | wiki.cemu.info/wiki/tutorial:online_pla | - | the same on the wiki's host | 2026-11-25 | Cemu FAQ link
+closed | emulation.gametechwiki.com/index.php/nintendo_gamecube_emulator | none | kit copy | 2026-11-25 | raw
+closed | title=nintendo_gamecube_emulator | none | same page; "?" cannot be matched | 2026-11-25 | raw
+# A Dolphin wiki page, read before its last section, on dumping DSP ROMs, was seen; it is closed as a dumping guide.
+# "title=" stands in for its "index.php?title=" address, so the same title on another wiki is caught too.
+closed | title=audio_emulatio | CC BY-SA 3.0 | Dolphin wiki page with DSP ROM dumping steps | 2026-11-25 | capture
+closed | wiki.dolphin-emu.org/wiki/audio_emulatio | CC BY-SA 3.0 | the same page, short address | 2026-11-25 | capture
+closed | emuparadise.me | - | site offering games and kit copies | 2026-11-25 | EGW link
+closed | www.emuparadise.me | - | www prefix | 2026-11-25 | EGW link
+closed | edx.ipeindia.org | - | pages titled as Wii U key lists | 2026-11-25 | search result titles
+closed | www.edx.ipeindia.org | - | www prefix | 2026-11-25 | search result titles
+closed | scribd.com/document/406756037 | - | document titled as a key list | 2026-11-25 | search result
+closed | www.scribd.com/document/406756037 | - | www prefix | 2026-11-25 | search result
+closed | pokecheats.net/db/wiiu | - | NFC figure dumps linked by WiiUBrew | 2026-11-25 | link seen
+closed | www.pokecheats.net/db/wiiu | - | www prefix | 2026-11-25 | link seen
+closed | loyahdev/wiiudownloaderandroid | - | tool for downloading titles | 2026-11-25 | repository name
+closed | en.wikipedia.org/wiki/super_mario_3d_all-stars | CC BY-SA 4.0 | mentions a leak | 2026-11-25 | raw wikitext
+closed | wiiubrew.org/wiki/hardware/seepro | none stated | SEEPROM page | 2026-11-25 | "Hardware" links
+closed | www.wiiubrew.org/wiki/hardware/seepro | none stated | www prefix | 2026-11-25 | "Hardware" links
+closed | wiiubrew.org/wiki/hardware/efus | none stated | eFuse page; key storage | 2026-11-25 | "Hardware" links
+closed | www.wiiubrew.org/wiki/hardware/efus | none stated | www prefix | 2026-11-25 | "Hardware" links
+closed | wiiubrew.org/wiki/hardware/aes_engin | none stated | AES engine page | 2026-11-25 | "Hardware" links
+closed | www.wiiubrew.org/wiki/hardware/aes_engin | none stated | www prefix | 2026-11-25 | "Hardware" links
+closed | wiiubrew.org/wiki/hardware/ot | none stated | OTP page; title from memory | 2026-11-25 | precaution
+closed | www.wiiubrew.org/wiki/hardware/ot | none stated | www prefix | 2026-11-25 | precaution
+closed | wiibrew.org/wiki/hardware/ot | none stated | OTP page; title from memory | 2026-11-25 | precaution
+closed | www.wiibrew.org/wiki/hardware/ot | none stated | www prefix | 2026-11-25 | precaution
+closed | wiibrew.org/wiki/common_ke | none stated | common-key page; title from memory | 2026-11-25 | precaution
+closed | www.wiibrew.org/wiki/common_ke | none stated | www prefix | 2026-11-25 | precaution
+closed | wiibrew.org/wiki/ios/syscall_idapytho | none stated | IOS disassembly script | 2026-11-25 | "IOS" links
+closed | www.wiibrew.org/wiki/ios/syscall_idapytho | none stated | www prefix | 2026-11-25 | "IOS" links
+
 # GameCube and Wii: tests.
 walled | dolphin-emu/hwtests | GPL-2.0, or later not stated | oracle not stated; needs libogc | 2026-11-19 | README
 closed | ioncodes/gamecube-wii-tests | none | README records hardware results; results usable | 2026-11-19 | README
