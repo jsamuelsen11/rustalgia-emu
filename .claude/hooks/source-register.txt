@@ -37,7 +37,7 @@ other | curl/curl | curl | transfer tool and library; its AI rules cited | 2026-
 open | mgba-emu/mgba | MPL-2.0 | - | 2026-11-17 | licence file
 open | skylersaleh/skyemu | MIT | - | 2026-11-17 | licence file
 open | melonds-emu/melonds | GPL-3.0-or-later | - | 2026-11-17 | README
-open | azahar-emu/azahar | GPL-3.0 | - | 2026-11-17 | licence file
+open | azahar-emu/azahar | GPL-3.0-or-later from 2127.0 | was Lime3DS; its keys closed | 2026-11-25 | licence, notes
 open | wheremyfoodat/panda3ds | GPL-3.0 | adapts Citra code | 2026-11-17 | README
 walled | wheremyfoodat/panda3ds/tree/master/third_party/duckstation | not read | from DuckStation | 2026-11-19 | listing
 walled | wheremyfoodat/panda3ds/blob/master/third_party/duckstation | not read | from DuckStation | 2026-11-19 | listing
@@ -328,6 +328,56 @@ closed | devkitpro/nds-examples | none found | no README or licence found | 2026
 closed | smealum/aemstro | none | tool for 3DS shaders | 2026-11-19 | metadata, README
 closed | lumateam/luma3ds | GPL-3.0; parts MIT | reimplements parts of the 3DS system software | 2026-11-19 | README
 closed | plutooo/3dmoo | none | 3DS emulator prototype | 2026-11-19 | metadata
+
+# Sources first cited by R1-13, the Nintendo 3DS survey (2026-11-25).
+# Emulators read from prose only. Each high-level 3DS kernel and its service modules reimplement system software,
+# so they are closed inside every repository below, as are bundled replacement system archives, fonts, and Mii data;
+# the guard cannot match those paths, so the written rule applies, and the rest of each repository keeps its tier.
+open | citra-emu/citra | GPL-2.0-or-later by its FAQ | Citra; removed 2024-03-04 | 2026-11-25 | FAQ, README copies
+open | citra-emu.org | none stated | Citra's site; only the 2024-03-04 shutdown statement | 2026-11-25 | home page
+open | libretro/citra | GPL-2.0-or-later by README | libretro fork of Citra | 2026-11-25 | licence file, README
+open | weihuoya/citra | GPL-2.0-or-later by README | Citra MMJ, Android fork | 2026-11-25 | licence, README
+walled | lime3ds/lime3ds-archive | GPL-2.0 by metadata; version not read | archived Lime3DS | 2026-11-25 | org listing
+closed | lime3ds/.github | none | Lime3DS organisation profile; no licence | 2026-11-25 | README, org listing
+open | lime3ds.github.io | none stated | Lime3DS site; redirects to azahar-emu.org | 2026-11-25 | page, capture
+walled | pablomk7/citra | not read; returns 404 | PabloMK7's Citra fork, merged into Azahar | 2026-11-25 | API 404
+walled | mandarine3ds/mandarine | not read; returns 404 | Citra fork | 2026-11-25 | organisation listing
+open | mandarine3ds.github.io | GPL-3.0 by its repository's metadata | site of a Citra fork | 2026-11-25 | pages
+open | azaharplus/azaharplus | GPL-3.0 | Azahar fork; encrypted input; Nintendo's servers | 2026-11-25 | licence, README
+walled | borked3ds/borked3ds | GPL-2.0, or later not stated | Citra fork | 2026-11-25 | metadata, README
+open | azahar-emu/dynarmic | 0BSD | fork of Dynarmic, an ARM recompiler | 2026-11-25 | README, metadata
+open | panda3ds.com | MIT for the website, per its FAQ | site of an open-tier emulator | 2026-11-25 | FAQ
+open | burhanr13/tanuki3ds | GPL-3.0 | HLE 3DS emulator; decrypted input only | 2026-11-25 | licence, README
+open | hydr8gon/3beans | GPL-3.0 | LLE 3DS emulator; needs the user's boot ROMs and NAND | 2026-11-25 | licence, README
+open | scarletnx/scarletnx | GPL-3.0-or-later | static recompiler; experimental 3DS driver | 2026-11-25 | README
+open | mikage.app | none stated | site of a closed-tier emulator; prose | 2026-11-25 | FAQ, posts
+open | folium-app/folium | GPL-3.0 | iOS multi-system app, paid on the App Store | 2026-11-25 | metadata
+open | folium-app/cytrus | GPL-3.0 | Folium's port of Azahar | 2026-11-25 | licence, README
+open | jarrodnorwell.com | none stated | Folium developer's site; script-rendered | 2026-11-25 | page bundle
+walled | manic-emu/manicemu | AGPL-3.0 | iOS multi-system app; some cores binary | 2026-11-25 | metadata, README
+open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend | 2026-11-25 | licence file, README
+open | wiki.provenance-emu.com | none stated | wiki of a walled project; prose | 2026-11-25 | supported-systems page
+open | archive.fosdem.org | none stated on the slides | conference slides; Panda3DS author's talk | 2026-11-25 | one PDF
+
+open | azahar-emu/compatibility-list | none | play reports rated 0 to 5; oracle: players | 2026-11-25 | README
+open | pablomk7/3ds_input_lag_checker | CC0-1.0 by README | input-lag test; oracle: the user | 2026-11-25 | README
+other | flathub.org | none stated | Linux app store; listings and install statistics | 2026-11-25 | API
+other | itunes.apple.com | none stated | App Store search and lookup API | 2026-11-25 | API
+# Closed: emulators with no licence, Mikage now published without one; replacement system data; dumping tools and
+# guides; a key downloader; and an impostor site. None was opened beyond what the lines say.
+closed | mikage-emu/mikage-dev | none found | Mikage Developer Edition, published 2025-01-02 | 2026-11-25 | README
+closed | jaklyy/vitaminc | none | archived LLE research emulator | 2026-11-25 | metadata, README
+closed | citra-emu/citra-web | none | source of Citra's site; archived | 2026-11-25 | metadata
+
+closed | b3n30/citra_system_archives | not read | makes replacement system archives | 2026-11-25 | Tanuki3DS README
+closed | panda3ds-emu/citra_system_archives | GPL-2.0 by metadata | by its name, replacements | 2026-11-25 | metadata
+closed | burhanr13/tanuki3ds/tree/master/tools/dumper | not read | system-file dumping tool | 2026-11-25 | README
+closed | burhanr13/tanuki3ds/blob/master/tools/dumper | not read | same tool, file path | 2026-11-25 | README
+closed | azahar-emu/articsetuptool | MIT by metadata | copies system files and keys from a console | 2026-11-25 | 2120
+closed | azahar-emu/azahar/wiki/dumping | none stated | game and system-file dumping guides | 2026-11-25 | page list
+closed | blue49974/3dsaeskd | not opened | downloads 3DS AES keys | 2026-11-25 | search result
+closed | azahar-emulator.org | none | impostor site, per Azahar | 2026-11-25 | Azahar blog
+closed | www.azahar-emulator.org | none | same site, www prefix | 2026-11-25 | Azahar blog
 
 # Nintendo DS, DSi, and 3DS: tests.
 open | jaklyy/polyrastertest | MIT | data recorded on a New 3DS XL in DS mode | 2026-11-19 | README

@@ -25,6 +25,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-06](R1-06-catalogue-32-and-64-bit.md) | Which consoles and handhelds the 32-bit and 64-bit era sold, and their hardware and sources |
 | [R1-07](R1-07-catalogue-sixth-generation.md) | Every console and handheld of the sixth-generation era, with sources |
 | [R1-08](R1-08-catalogue-modern.md) | Which consoles and handhelds were sold from the seventh generation on, and their hardware |
+| [R1-13](R1-13-nintendo-3ds-family.md) | Which emulators matter for the Nintendo 3DS family, its legal exposure, and how hard it is |
 
 ## Conventions
 
