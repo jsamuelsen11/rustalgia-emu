@@ -784,9 +784,8 @@ which [option 9](#9-rules-adr-0001-does-not-yet-state) gathers for the owner.
   Hasbro Interactive's 1999 release says it "has released all rights
   that it may have to the vintage Atari hardware platform, the Jaguar";
   it does not say "public domain" or mention documentation ([fan-site transcription][hasbro], secondary).
-- Amstrad's 1999 [newsgroup post][amstrad] says it is "happy
-  for emulator writers to include images of our copyrighted code as long as the (c)opyright messages are not altered"
-  (archived copy).
+- Amstrad's 1999 newsgroup post says it is "happy for emulator writers to include images of our copyrighted code as long
+  as the (c)opyright messages are not altered" (archived copy).
   The same post welcomes copies of manuals, saying it is glad of "People scanning, OCRing,
   HTMLing & PDFing any manuals that are genuinely (c)Amstrad",
   and its author thinks it covers only the machines whose rights Amstrad bought or made,
@@ -1576,7 +1575,9 @@ Sega, arcade, Xbox, and other systems:
 - A. Huang, [MIT AI Memo 2002-008, record page](https://dspace.mit.edu/handle/1721.1/6694);
   [free edition of "Hacking the Xbox"](https://nostarch.com/xboxfree).
 - [Hasbro Interactive press release of 14 May 1999, transcription][hasbro].
-- [C. Lawson, "Amstrad ROM permissions"][amstrad], newsgroup post of 31 August 1999, archived copy.
+- C. Lawson, "Amstrad ROM permissions", newsgroup post of 31 August 1999, archived copy,
+  not linked because R1-09 closed its host:
+  `web.archive.org/web/20130115052219/http://www.worldofspectrum.org/permits/amstrad-roms.txt`.
 - Stella Programmer's Guide transcription, header only: `https://alienbill.com/2600/101/docs/stella.html`
   (closed: no release by Atari is shown, so not linked).
 - Amiga developer disc pages, front page: `http://amigadev.elowar.com/`
@@ -1868,7 +1869,6 @@ Project documents:
 [nxp-m68k]: https://www.nxp.com/docs/en/reference-manual/M68000PRM.pdf
 [zilog]: https://www.zilog.com/docs/z80/um0080.pdf
 [hasbro]: https://mail.atariage.com/Jaguar/archives/HasbroRights.html
-[amstrad]: https://web.archive.org/web/20130115052219/http://www.worldofspectrum.org/permits/amstrad-roms.txt
 [sdcard]: https://www.sdcard.org/downloads/pls/
 [stackex]: https://retrocomputing.stackexchange.com/help/licensing
 [ia-rights]: https://help.archive.org/help/rights/
