@@ -17,7 +17,10 @@ repositorys = "repositorys" # heading anchor of "repository's", as in #what-this
 flate = "flate" # part of flate2, a Rust compression crate
 Noo = "Noo" # part of NooDS, a DS and Game Boy Advance emulator
 ue = "ue" # the "UE" of Nestopia UE, an NES emulator, and its link labels
+thar = "thar" # part of Thar0, a test author's handle, in repository names
 
 [default.extend-identifiers]
 # Correctly spelled words that the checker splits into wrong parts. Each maps to itself.
 PDFing = "PDFing" # making PDF copies, in a quoted newsgroup post
+ther4card = "ther4card" # a seller site's domain name, named by a Dutch court case
+StikDebug = "StikDebug" # an iOS debugging tool, by its own name
