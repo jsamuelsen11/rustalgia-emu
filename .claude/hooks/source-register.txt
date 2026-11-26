@@ -160,7 +160,7 @@ closed | archive.org/download/bitsavers_sharpdatabomputer | not read | the same 
 # Game Boy and Game Boy Advance: emulators and kits met while evaluating.
 open | gekkio/mooneye-gb | GPL-3.0 | research emulator; needs a boot ROM | 2026-11-19 | README
 open | wilbertpol/mooneye-gb | GPL-3.0 | fork with more tests | 2026-11-19 | licence metadata
-open | nba-emu/nanoboyadvance | GPL-3.0-or-later | archived on GitHub | 2026-11-19 | README
+open | nba-emu/nanoboyadvance | GPL-3.0-or-later; BSD-2-Clause on phoenix | moved to Codeberg | 2026-11-22 | LICENSE
 open | gbdev/rgbds | MIT | assembler | 2026-11-19 | licence metadata
 open | gvaliente/butano | zlib | bundles other libraries under their own licences | 2026-11-19 | README
 open | felixjones/gba-toolchain | zlib | - | 2026-11-19 | licence file
@@ -176,6 +176,53 @@ walled | devkitpro/libgba | Library GPL v2 with exceptions | or later not establ
 closed | devkitpro/libtonc | none shown | - | 2026-11-19 | metadata
 closed | devkitpro/buildscripts | none shown | toolchain build scripts | 2026-11-19 | metadata
 closed | aappleby/metroboy | none | gate-level simulation from die photographs | 2026-11-19 | README
+
+# Sources first cited by R1-11, the Game Boy Advance survey (2026-11-22).
+# Emulators read from prose only. GPL-2.0 licence files whose only "or later" is the licence's own appendix are
+# treated as stating no version, so those projects are walled.
+walled | visualboyadvance-m/visualboyadvance-m | GPL-2.0, version not stated | VBA fork | 2026-11-22 | LICENSE
+open | visualboyadvance-m.org | none stated | site of a walled emulator; prose | 2026-11-22 | home page
+open | www.visualboyadvance-m.org | none stated | same site, www prefix | 2026-11-22 | home page
+walled | sourceforge.net/projects/vba | GPLv2, version not stated | original VBA; matches vbam | 2026-11-22 | metadata
+walled | www.sourceforge.net/projects/vba | GPLv2, version not stated | same, www prefix | 2026-11-22 | metadata
+walled | sourceforge.net/rest/p/vba | GPLv2, version not stated | metadata address of the same | 2026-11-22 | metadata
+walled | hades-emu/hades | GPL-2.0, version not stated | emulator | 2026-11-22 | licence file, README
+open | hades-emu.org | none stated | site of a walled emulator; prose | 2026-11-22 | features, download, blog
+open | hydr8gon/noods | GPL-3.0 | DS and GBA emulator; its GBA HLE BIOS is closed | 2026-11-22 | metadata, README
+walled | notaz/gpsp | GPL-2.0, version not stated | gpSP by Exophase | 2026-11-22 | COPYING.DOC, readme
+walled | libretro/gpsp | GPL-2.0, version not stated | its replacement BIOS is closed | 2026-11-22 | COPYING, README
+walled | davidgfnet/gpsp | GPL-2.0, version not stated | maintainer's fork of libretro/gpsp | 2026-11-22 | metadata
+walled | libretro/vba-next | GPL-2.0, version not stated | VBA-M of 2011, patched | 2026-11-22 | metadata, libretro docs
+walled | libretro/vbam-libretro | GPLv2 by libretro docs; no licence file | VBA-M fork | 2026-11-22 | libretro docs
+walled | libretro/beetle-gba-libretro | GPL-2.0, version not stated | Mednafen GBA, from VBA | 2026-11-22 | metadata
+open | libretro/mgba | MPL-2.0 | fork of mgba-emu/mgba as a libretro core | 2026-11-22 | licence metadata
+open | blastrock/meteor | GPL-3.0 | Meteor emulator | 2026-11-22 | licence metadata, README
+open | libretro/meteor-libretro | GPL-3.0 | libretro port of Meteor | 2026-11-22 | COPYING
+open | jsmolka/eggvance | GPL-3.0 | its bundled replacement BIOS is closed | 2026-11-22 | metadata, README
+walled | alyosha-tas/gbahawk | unresolved mix | BizHawk fork; console-verified research | 2026-11-22 | licence file
+closed | openemu/openemu | none found | macOS frontend; no licence file or statement | 2026-11-22 | README
+open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | release notes
+open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend | 2026-11-22 | licence file
+walled | rakashazi/emu-ex-plus-alpha | GPL-3.0 root; VBA-M part GPL-2.0 | unresolved mix | 2026-11-22 | COPYING.GPL
+open | emulatorjs/emulatorjs | GPL-3.0 | web frontend for libretro cores | 2026-11-22 | licence metadata, README
+open | emulatorjs.org | none stated | site of an open-tier web frontend | 2026-11-22 | cores page
+open | mesen.ca | none stated | site of an open-tier emulator; prose | 2026-11-22 | home page
+open | www.mesen.ca | none stated | same site, www prefix | 2026-11-22 | home page
+open | ares-emu.net | none stated | site of an open-tier emulator; prose | 2026-11-22 | four pages
+open | higan.readthedocs.io | none stated | documentation of an open-tier emulator | 2026-11-22 | import guide
+open | problemkaputt.de/gba.htm | notice, no grant | no$gba page; the program is closed | 2026-11-22 | capture
+open | problemkaputt.de/gbanew.htm | notice, no grant | no$gba release notes | 2026-11-22 | capture
+open | problemkaputt.de/gba-dev.htm | notice, no grant | no$gba debugger page | 2026-11-22 | capture
+open | boycottadvance.emuunlim.org | notice, no grant | site of a closed emulator; host down | 2026-11-22 | captures
+open | fms.komkon.org/vgba | none stated | site of VGBA, a closed emulator; prose | 2026-11-22 | home page
+open | forums.mgba.io | none stated | forum of an open-tier emulator; posts are leads | 2026-11-22 | one thread
+open | www.nintendo.com/en-gb/news | site terms | maker's news pages; one page, read in a capture | 2026-11-22 | capture
+# Closed by purpose, and protective lines: a repository holding a replacement GBA BIOS, a test cartridge
+# decompilation, and a BIOS dumping guide. None was opened.
+closed | nebuleon/regba | none | gpSP-derived; holds a replacement GBA BIOS | 2026-11-22 | metadata
+closed | densinh/agstests | not read | called a decompilation of the AGS cartridge | 2026-11-22 | EGW GBA Tests 146557
+closed | wiki.pocketheaven.com/gba_bios | none | BIOS dumping guide | 2026-11-22 | gpSP readme
+closed | www.wiki.pocketheaven.com/gba_bios | none | same page, www prefix | 2026-11-22 | gpSP readme
 
 # Game Boy and Game Boy Advance: firmware, and maker software that others host. Closed tier.
 closed | gbdev.gg8.se/files/roms/bootroms | - | folder of boot ROM images | 2026-11-19 | folder index
@@ -264,6 +311,89 @@ closed | arm9/bass | none shown; upstream said ISC | fork of an assembler; a too
 closed | ata4/angrylion-rdp-plus | old MAME non-commercial terms | fork of Angrylion | 2026-11-19 | licence text
 closed | project64/angrylion-rdp | none shown | parent of the fork above | 2026-11-19 | licence metadata
 closed | dillonb/n64 | none | source of n64.readthedocs.io | 2026-11-19 | licence metadata
+
+# Sources first cited by R1-15, the NES and SNES survey (2026-11-22).
+# Some lines record sources that the survey's research read and evaluated but the note does not cite.
+# Emulators and frontends: read from prose and metadata only by the survey; tiers by ADR 0006.
+open | sourmesen/mesen | GPL-3.0-or-later | archived Mesen 0.9.9; parent of a libretro core | 2026-11-22 | README
+open | libretro/mesen | GPL-3.0-or-later | fork of Mesen 0.9.9; libretro core | 2026-11-22 | README, metadata
+open | libretro/mesence | GPL-3.0 | libretro port of MesenCE | 2026-11-22 | licence metadata, libretro docs
+open | sourmesen/mesen-s | GPL-3.0-or-later | archived; merged into Mesen 2 | 2026-11-22 | README
+open | libretro/nestopia | GPL-2.0-or-later | port of Nestopia JG; nes_ntsc LGPL-2.1+ | 2026-11-22 | README
+# The two jgemu lines: own prose not yet read (the guard blocked it); the libretro READMEs say GPL-2.0+ and GPL-3.0+.
+walled | jgemu/nestopia | GPL-2.0-or-later, by its port's README | Nestopia JG on GitLab | 2026-11-22 | libretro README
+# The two lines below: Debian and Flathub read GPL-2.0+; a packager's summary does not settle "or later".
+walled | 0ldsk00l/nestopia | GPL-2.0, or later not stated | legacy Windows Nestopia UE | 2026-11-22 | README, licence
+walled | tasemulators/fceux | GPL-2.0, or later not stated | merges FCE Ultra forks | 2026-11-22 | licence, site
+walled | punesemu/punes | GPL-2.0, only or later not stated | - | 2026-11-22 | licence file, README, Flathub
+walled | libretro/libretro-fceumm | GPL-2.0, only or later not stated | FCEU-mm, mapper fork | 2026-11-22 | metadata
+walled | kode54/quicknes | GPL-2.0, only or later not stated | Shay Green's QuickNES; archived | 2026-11-22 | metadata
+walled | libretro/quicknes_core | GPL-2.0, only or later not stated | fork of QuickNES | 2026-11-22 | metadata
+walled | toolassisted-run/chimera-core-quickernes | GPL-2.0, only or later not stated | quickerNES | 2026-11-22 | README
+walled | sergiomartin86/quickernes | GPL-2.0, only or later not stated | redirects to the line above | 2026-11-22 | API
+# RustyNES states it holds code derived from walled projects, a mix not resolved; it relicensed after review.
+walled | doublegate/rustynes | GPL-3.0-or-later; derived code | AI-assisted | 2026-11-22 | README, libretro docs
+open | l-spiro/beesnes | MIT | sub-cycle aim; several clone timings | 2026-11-22 | licence metadata, README
+open | 100thcoin/tricnes | MIT | by the AccuracyCoin author; NTSC only | 2026-11-22 | licence file, README
+open | derkoun/bsnes-hd | GPL-3.0 | fork of bsnes with HD video features | 2026-11-22 | licence file, README
+open | libretro/bsnes-libretro | GPL-3.0-or-later | fork of bsnes; libretro core | 2026-11-22 | LICENSE.txt, README
+open | libretro/bsnes-mercury | GPL-3.0 | fork of higan; optional HLE, closed | 2026-11-22 | licence metadata, README
+open | libretro/bsnes-jg | GPL-3.0-or-later | mirror of jgemu/bsnes; bundles LGPL, Expat | 2026-11-22 | COPYING, README
+walled | jgemu/bsnes | GPL-3.0-or-later, by its mirror's README | bsnes v115 fork | 2026-11-22 | mirror README
+walled | libretro/supafaust | GPL-2.0, or later not stated | port of Mednafen snes_faust | 2026-11-22 | COPYING
+walled | xyproto/zsnes | GPL-2.0, or later not stated | ZSNES ported to C | 2026-11-22 | README, COPYING
+open | swordfish90/lemuroid | GPL-3.0 | Android frontend; fetches cores | 2026-11-22 | metadata, README, F-Droid
+walled | rakashazi/emu-ex-plus-alpha | GPL-3.0 file; bundles Snes9x | mix not resolved | 2026-11-22 | README
+open | emulatorjs/emulatorjs | GPL-3.0 | web frontend for libretro cores | 2026-11-22 | metadata, README
+open | bfirsh/jsnes | Apache-2.0 | JavaScript NES emulator | 2026-11-22 | metadata, README
+# No licence detected and none in the prose read: closed ("there is no licence"), as for dillonb/n64.
+closed | quietust/nintendulator | none found; site says "open source" | - | 2026-11-22 | metadata, site
+closed | openemu/openemu | none detected; Wikipedia says BSD | macOS frontend | 2026-11-22 | metadata, README
+closed | symphoniae.com/nrs | none found | NintendulatorNRS builds; listing only | 2026-11-22 | index
+closed | www.symphoniae.com/nrs | none found | same path, www prefix | 2026-11-22 | index
+# Forks of the closed Snes9x inherit its non-commercial licence.
+closed | libretro/snes9x | Snes9x non-commercial licence | libretro fork | 2026-11-22 | licence file
+closed | libretro/snes9x2010 | Snes9x non-commercial licence | from Snes9x 1.52 | 2026-11-22 | licence file
+closed | libretro/snes9x2005 | Snes9x non-commercial licence | from Snes9x 1.43 | 2026-11-22 | copyright file
+closed | libretro/snes9x2002 | none detected; docs say non-commercial | from Snes9x 1.39 | 2026-11-22 | metadata
+# A reimplementation of firmware is closed whatever its licence (ADR 0006, closed tier).
+closed | jamesathey/freedisksysrom | LGPL-3.0 | reimplementation of the FDS BIOS | 2026-11-22 | README
+# Project sites and documentation: prose.
+open | www.mesen.ca | none stated | Mesen site; 0.9.9 docs | 2026-11-22 | home, docs pages
+open | fceux.com | none stated | FCEUX site and help | 2026-11-22 | home, version, help pages
+open | 0ldsk00l.ca | none stated | Nestopia UE site and changelog | 2026-11-22 | page
+open | jgemu.gitlab.io | none stated | Jolly Good Emulation site | 2026-11-22 | home page
+open | ares-emu.net | none stated | ares site and compatibility list | 2026-11-22 | home, about, compatibility
+open | higan.readthedocs.io | none stated | documentation of higan | 2026-11-22 | three pages
+open | problemkaputt.de/sns.htm | notice, no grant | no$sns page; program closed | 2026-11-22 | capture
+open | www.snes9x.com | none stated | site of a closed emulator; prose | 2026-11-22 | home, downloads
+open | www.zsnes.com | none stated | site of Super ZSNES, a closed emulator; prose | 2026-11-22 | home page
+open | zsnes.com | none stated | same site without www | 2026-11-22 | home page
+open | wiki.provenance-emu.com | none stated | wiki of a walled project; prose | 2026-11-22 | two pages
+open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | home page
+open | www.explusalpha.com | none stated | pages of a walled project | 2026-11-22 | two pages
+open | emulatorjs.org | none stated | site of an open web frontend | 2026-11-22 | cores page
+open | sites.google.com/site/johnemulators | none stated | pages for closed apps; prose | 2026-11-22 | two pages
+open | byuunews.blogspot.com | none stated | byuu's news posts; personal blog, a lead | 2026-11-22 | one post
+open | www.nerd.nintendo.com | maker's pages | Nintendo European R&D articles | 2026-11-22 | four pages
+other | arstechnica.com | press | news site; two articles by bsnes's author | 2026-11-22 | articles
+other | metadata.ftp-master.debian.org | - | Debian packagers' copyright summaries | 2026-11-22 | three files
+other | flathub.org | - | app store metadata and install statistics | 2026-11-22 | API
+other | store.steampowered.com | - | Steam store listings | 2026-11-22 | one page
+other | itunes.apple.com | - | App Store search API | 2026-11-22 | lookups
+# Protective lines, not opened unless noted. Page patterns are cut short, so the full address continues past them.
+# Game Tech Wiki pages that mention leaked source or a leaked BIOS, closed as a precaution (ADR 0006); read first.
+closed | emulation.gametechwiki.com/index.php/nintendo_entertainment_system_emulator | - | leak | 2026-11-22 | -
+closed | emulation.gametechwiki.com/index.php/super_nintendo_entertainment_system_emulator | - | leak | 2026-11-22 | -
+closed | emulation.gametechwiki.com/index.php/legal_status_and_history_of_emulatio | - | leak | 2026-11-22 | -
+closed | www.snes9x.com/freeroms | not read | named for free ROMs | 2026-11-22 | home page link
+closed | snes9x.com/freeroms | not read | same page without www | 2026-11-22 | home page link
+closed | www.zsnes.com/files | none stated; ZEMU Software Inc. | Super ZSNES binaries; no source | 2026-11-22 | site
+closed | zsnes.com/files | none stated; copyright ZEMU Software Inc. | same folder without www | 2026-11-22 | home page
+closed | unlicensed.games | not read | named as a host of builds; may offer games | 2026-11-22 | wiki link
+closed | www.unlicensed.games | not read | same site, www prefix | 2026-11-22 | wiki link
+closed | abdess.github.io/retrobios | not read | appears to list BIOS files | 2026-11-22 | search result
+closed | filthypants.blogspot.com/2010/12/snes-emulation-reaches | - | links firmware, by a snippet | 2026-11-22 | -
 
 # NES, SNES, Nintendo 64: maker material that others host, decompilations, and sites of game images. Closed tier.
 closed | ultra64.ca | all rights reserved | hosts the maker's manuals and kits | 2026-11-19 | home page, a list
