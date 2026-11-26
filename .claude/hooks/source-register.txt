@@ -634,7 +634,7 @@ open | azahar-emu/dynarmic | 0BSD | fork of Dynarmic, an ARM recompiler | 2026-1
 open | panda3ds.com | MIT for the website, per its FAQ | site of an open-tier emulator | 2026-11-25 | FAQ
 open | burhanr13/tanuki3ds | GPL-3.0 | HLE 3DS emulator; decrypted input only | 2026-11-25 | licence, README
 open | hydr8gon/3beans | GPL-3.0 | LLE 3DS emulator; needs the user's boot ROMs and NAND | 2026-11-25 | licence, README
-open | scarletnx/scarletnx | GPL-3.0-or-later | static recompiler; experimental 3DS driver | 2026-11-25 | README
+walled | scarletnx/scarletnx | GPL-3.0-or-later by README | ports walled Vita3K code | 2026-11-25 | README, CREDITS
 open | mikage.app | none stated | site of a closed-tier emulator; prose | 2026-11-25 | FAQ, posts
 open | folium-app/folium | GPL-3.0 | iOS multi-system app, paid on the App Store | 2026-11-25 | metadata
 open | folium-app/cytrus | GPL-3.0 | Folium's port of Azahar | 2026-11-25 | licence, README
@@ -949,6 +949,71 @@ closed | www.drhell.web.fc2.com/ps1/xebra2 | none | same archive, www prefix | 2
 # no$psx is proprietary and not open source, so its page is closed.
 closed | problemkaputt.de/psx.htm | not read | no$psx, proprietary; fetch refused | 2026-11-22 | user wiki (lead)
 closed | www.problemkaputt.de/psx.htm | not read | same page, www prefix | 2026-11-22 | user wiki (lead)
+
+# Sources first cited by R1-20, the PSP and PlayStation Vita survey (2026-11-25).
+# Emulators read from prose and metadata only. Each high-level PSP operating system and each set of Vita system
+# modules reimplements system software, so it is closed inside every repository below, and the rest of each
+# repository keeps its tier. Folders that prose names are closed in the block below; for the others the written
+# rule applies, because the guard cannot match them.
+open | jpcsp/jpcsp | GPL-3.0-or-later | Java PSP emulator; decrypts EBOOT and PGD files | 2026-11-25 | COPYING, README
+open | jpcsp.net | none stated | site of an open-tier emulator; prose, builds | 2026-11-25 | home, about, news
+open | noumidev/kanastation | GPL-3.0 | LLE PSP emulator; needs boot ROM, NAND, fuse ID | 2026-11-25 | licence, README
+walled | unknowall/scepsp | GPL-2.0, version not stated | C# HLE PSP emulator; KIRK decoding | 2026-11-25 | README
+open | soywiz-archive/kpspemu | MIT | archived Kotlin PSP emulator | 2026-11-25 | licence endpoint, README
+open | ihaideez/m33 | GPL-2.0-or-later by README | PPSSPP port for jailbroken PS4 | 2026-11-25 | licence file, README
+open | cretz/vitaslop | MIT | AI-written Vita emulator for the web; says clean-room | 2026-11-25 | licence, README
+open | anubis-rs/anubis | MIT OR Apache-2.0 | abandoned Rust Vita emulator | 2026-11-25 | README, licence endpoint
+walled | sashkinbro/emucorev | GPL-2.0-or-later by README | fork of walled Vita3K; on Google Play | 2026-11-25 | README
+walled | oledz-i/revita | GPL-2.0-or-later new code | Vita3K port for Xbox Developer Mode | 2026-11-25 | README
+walled | jagerdesu/vios | GPL-2.0, version not stated | stalled Vita emulator on Unicorn | 2026-11-25 | licence, README
+walled | wizzardsk/vita3k-libretro | GPL-2.0, or later not stated | libretro core of Vita3K | 2026-11-25 | COPYING.txt
+walled | danprice142/vita3k-libretro | GPL-2.0, or later not stated | Vita3K fork | 2026-11-25 | COPYING.txt
+other | pspreverse/pspemu | GPL-3.0 | AMD Secure Processor emulator, not the Sony PSP | 2026-11-25 | README
+open | manuals.playstation.net | maker's terms | Sony's user guides; one Vita page read | 2026-11-25 | page
+# Closed: emulators with no licence, frame dumps that hold game data, and custom firmware that patches Sony's
+# PSP emulator on the Vita (system software). Their READMEs were read; their results are usable.
+closed | soywiz-archive/cspspemu | none detected | archived C# PSP emulator; a wiki says GPLv3 | 2026-11-25 | metadata
+closed | soywiz-archive/jspspemu | none detected | archived web PSP emulator; a wiki says GPLv3 | 2026-11-25 | metadata
+closed | ioncodes/peespee | none | Rust HLE PSP emulator; no licence or README | 2026-11-25 | metadata
+closed | openemu/ppsspp-core | none found | OpenEmu's PPSSPP plugin | 2026-11-25 | metadata; licence 404
+closed | hrydgard/ppsspp-framedumps | none | GE frame dumps of games, PSP references | 2026-11-25 | README, metadata
+closed | theofficialflow/adrenaline | GPL-3.0 | custom firmware; patches Sony's PSP emulator | 2026-11-25 | README
+closed | isage/adrenaline | GPL-3.0 | maintained fork of Adrenaline; custom firmware | 2026-11-25 | README, licence
+# PPSSPP's KIRK engine folder, which Copetti links beside two key pages: closed as a key hazard (inferred);
+# the rest of PPSSPP stays open. The last line is the pinned path Copetti links.
+closed | hrydgard/ppsspp/tree/master/ext/libkirk | GPL-2.0-or-later | KIRK emulation; keys | 2026-11-25 | Copetti
+closed | hrydgard/ppsspp/blob/master/ext/libkirk | GPL-2.0-or-later | the same | 2026-11-25 | Copetti
+closed | hrydgard/ppsspp/master/ext/libkirk | GPL-2.0-or-later | the same, as raw files | 2026-11-25 | Copetti
+closed | hrydgard/ppsspp/blob/a1964ca1a108b1340e54ae30262f317c9dd6999b/ext/libkirk | GPL-2.0+ | pinned | 2026-11-25 | -
+# Vita system modules reimplemented at a high level (system software), in Vita3K and in ScarletNX: closed.
+# The EGW Vita page and ScarletNX's credits and Vita notes name the folders, which were not opened.
+closed | vita3k/vita3k/tree/master/vita3k/modules | GPL-2.0 | Vita system modules | 2026-11-25 | EGW
+closed | vita3k/vita3k/blob/master/vita3k/modules | GPL-2.0 | the same | 2026-11-25 | EGW
+closed | vita3k/vita3k/master/vita3k/modules | GPL-2.0 | the same, as raw files | 2026-11-25 | EGW
+closed | scarletnx/scarletnx/tree/main/src/vita/hle | GPL-3.0-or-later | Vita system libraries | 2026-11-25 | notes
+closed | scarletnx/scarletnx/blob/main/src/vita/hle | GPL-3.0-or-later | the same | 2026-11-25 | notes
+closed | scarletnx/scarletnx/main/src/vita/hle | GPL-3.0-or-later | the same, as raw files | 2026-11-25 | notes
+closed | scarletnx/scarletnx/tree/main/src/vita/runtime | GPL-3.0-or-later | Vita kernel | 2026-11-25 | notes
+closed | scarletnx/scarletnx/blob/main/src/vita/runtime | GPL-3.0-or-later | the same | 2026-11-25 | notes
+closed | scarletnx/scarletnx/main/src/vita/runtime | GPL-3.0-or-later | the same, as raw files | 2026-11-25 | notes
+# Protective lines, never opened unless noted: key pages, dumping guides, and dumping tools. Page patterns are cut
+# short so the full address continues past them; index.php stands in for a page whose address needs "?".
+closed | playstationdev.wiki/pspdevwiki/index.php | none checked | its "Keys" page | 2026-11-25 | Copetti
+closed | www.playstationdev.wiki/pspdevwiki/index.php | none checked | the same, www prefix | 2026-11-25 | Copetti
+closed | pastie.org/146791 | none checked | paste titled "UMD keys decrypted" | 2026-11-25 | Copetti
+closed | www.pastie.org/146791 | none checked | the same, www prefix | 2026-11-25 | Copetti
+closed | vita3k.org/quickstar | none stated | game dumping and licence-file guide; read once | 2026-11-25 | page
+closed | www.vita3k.org/quickstar | none stated | the same, www prefix | 2026-11-25 | page
+closed | ppsspp.org/docs/getting-started/dumping-game | notice, no grant | game dumping guide | 2026-11-25 | FAQ link
+closed | www.ppsspp.org/docs/getting-started/dumping-game | notice, no grant | the same, www prefix | 2026-11-25 | FAQ
+closed | ppsspp.org/docs/reference/psp-custom-firmwar | notice, no grant | custom-firmware links | 2026-11-25 | index
+closed | www.ppsspp.org/docs/reference/psp-custom-firmwar | notice, no grant | the same, www | 2026-11-25 | index
+closed | theofficialflow/nonpdrm | not read | Vita licence-file bypass, linked by Vita3K | 2026-11-25 | Vita3K README
+closed | celesteblue-dev/psvita-re-tools | not read | holds FAGDec, a Vita decrypter | 2026-11-25 | Vita3K README
+closed | oestriot/gctoolkit | not read | Vita game-card dumping tool, linked by Vita3K | 2026-11-25 | quickstart
+closed | theofficialflow/vitashell | not read | Vita file manager used for dumping, linked by Vita3K | 2026-11-25 | FAQ
+closed | playstation.com/en-us/support/hardware/psvita/system-softwar | maker's | Vita firmware | 2026-11-25 | -
+closed | www.playstation.com/en-us/support/hardware/psvita/system-softwar | maker's | the same | 2026-11-25 | -
 
 # PlayStation family: closed tier.
 closed | lameguy64/psn00bsdk | MPL-2.0 core | README: parts "lifted as-is from Sony libraries" | 2026-11-19 | README
