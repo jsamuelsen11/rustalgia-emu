@@ -678,6 +678,78 @@ walled | reswitched/mephisto | GPL-2.0-only | - | 2026-11-19 | licence file
 walled | reswitched/switch-oss | none | copy of Nintendo's source releases | 2026-11-19 | description
 closed | extremscorner/libogc2 | zlib-style | libogc fork; dispute inherited by inference | 2026-11-19 | README
 
+# Sources first cited by R1-14, the Nintendo Switch and Switch 2 survey (2026-11-25).
+# Their high-level emulation of Horizon is reimplemented system software, closed by ADR 0006; the rest keeps its tier.
+open | strato-emu/strato | GPL-3.0-or-later | Skyline continuation; yuzu's shader compiler | 2026-11-25 | README
+open | samoz256/hydra | GPL-3.0 | macOS emulator; README links firmware decryption tools | 2026-11-25 | licence file
+open | pound-emu/pound | GPL-3.0 | early; a wiki's GPLv2 conflicts with the file | 2026-11-25 | licence file
+walled | pound-emu/ballistic | GPL-2.0 by metadata; version not read | Pound's Arm recompiler | 2026-11-25 | metadata
+open | 0xnikilite/oboromi | GPL-3.0 | Switch 2 emulator in Rust; runs no games | 2026-11-25 | licence file
+open | vricosti/ruzu-emu | GPL-3.0-or-later | Rust port of yuzu and Eden made with language models | 2026-11-25 | README
+open | ghael-v/lemon-project | GPL-3.0-or-later | Eden fork for Android; a mirror | 2026-11-25 | README
+open | eglantine-community/eglantine | GPL-3.0-or-later | Eden fork for Switch 2 | 2026-11-25 | README
+open | zortos293/lichii | GPL-3.0 by file; README or-later | Eglantine fork; warns of scams | 2026-11-25 | LICENSE.txt
+walled | v380-ori/astris.binaries | MIT by metadata | Ryujinx-based binaries; no source | 2026-11-25 | metadata, README
+walled | azuredominus/melonx | AGPL-3.0-or-later by file; GPLv3 by README | MeloNX copy | 2026-11-25 | LICENSE.txt
+walled | altrew/melonx | GPLv3 by README; MIT file at first read | MeloNX copy; links dump guides | 2026-11-25 | README
+walled | starforgejo.dev | not read; refused scripts | MeloNX's stated source host | 2026-11-25 | HTTP response
+walled | www.starforgejo.dev | not read | same host, www prefix | 2026-11-25 | -
+open | melonx.org | none stated | site of a walled emulator; prose | 2026-11-25 | page
+walled | kenji-nx/ | MIT by a wiki (lead); not read | Ryujinx fork for Android; releases blocked | 2026-11-25 | metadata
+open | git.eden-emu.dev/eden-emu/eden | GPL-3.0-or-later; yuzu's lines GPL-2.0+ | yuzu fork | 2026-11-25 | LICENSE.txt
+open | git.eden-emu.dev/takoroka/eden-nx2 | GPL-3.0 by licence file | Switch 2 fork | 2026-11-25 | LICENSE.txt
+open | eden-emulator/ | GPL-3.0 by metadata | Eden's mirror; two repositories blocked | 2026-11-25 | metadata
+open | eden-emu.dev | none stated; footer names Utopia LLC | Eden's site and blog; prose | 2026-11-25 | pages
+open | git.mythrax-rs.org/citron-neo/emulator | GPL-3.0-or-later by README | Citron continuation | 2026-11-25 | README
+open | citron-neo.org | none stated | Citron Neo's site; its dump section not read | 2026-11-25 | page
+open | citron-neo.github.io | none stated | the same site's Pages address | 2026-11-25 | redirect
+walled | git.citron-emu.org | not read; GPL-2.0-or-later by AUR | original Citron host; unreachable | 2026-11-25 | AUR
+walled | docs.ryujinx.app | MIT by its site; file not read | Ryubing's documentation | 2026-11-25 | home page
+walled | blog.ryujinx.app | not read; refused scripts | Ryubing's blog | 2026-11-25 | challenge page
+open | reswitched/cagetheunicorn | ISC | 2017 debugging emulator for Switch code | 2026-11-25 | licence metadata
+open | rkx1209/nsemu | GPL-3.0 by metadata | early Switch emulator; dormant since 2022 | 2026-11-25 | metadata
+open | daeken/psychopompnx | Apache-2.0 by metadata | Switch emulator for Apple silicon, 2020 | 2026-11-25 | metadata
+walled | kentjhall/horizon-linux | GPL-2.0 WITH Linux-syscall-note | runs Switch programs | 2026-11-25 | COPYING
+walled | merryhime/dynarmic | not established | dynarmic's original repository; returns 404 | 2026-11-25 | metadata
+walled | reinuseslisp/nxgfxtests | GPL-2.0, version not stated | libnx tests; oracle not stated | 2026-11-25 | README
+walled | fernando-granco/switch2-homebrew | MIT, GPL-2.0+; notices not read | input tester | 2026-11-25 | README
+walled | nat-carbonara/nyx-2-emulator | GPL-3.0 by README | claim before launch; possible lure | 2026-11-25 | README
+other | estem01/echonx | - | parody, not an emulator | 2026-11-25 | README
+other | stikdebug/stikdebug | AGPL-3.0 | iOS JIT enabler; not a console source | 2026-11-25 | README
+other | stephendev0/stikdebug | AGPL-3.0 | old name of the same; redirects | 2026-11-25 | metadata
+open | yuzu-emu.org | none read | yuzu's site, offline; prose read in captures | 2026-11-25 | three captures
+open | blog.ryujinx.org | none stated | Ryujinx's former blog; prose read in captures | 2026-11-25 | two captures
+open | blogs.nvidia.com | none stated | chip maker's own blog; Switch 2 processor post | 2026-11-25 | one post
+other | flathub/ | per app | Flathub's packaging manifests | 2026-11-25 | metadata
+other | aur.archlinux.org | per package | Arch Linux user package catalogue | 2026-11-25 | package pages
+other | search.f-droid.org | none stated | F-Droid's search host | 2026-11-25 | page
+other | tweaktown.com | press | news site, secondary | 2026-11-25 | one article
+other | wccftech.com | press | news site, secondary | 2026-11-25 | one article
+other | notebookcheck.net | press | news site, secondary | 2026-11-25 | one article
+other | android.com.pl | press | Polish news site; a lead here | 2026-11-25 | one article
+other | data.rechtspraak.nl | none stated | Dutch judiciary's open-data service for judgments | 2026-11-25 | API
+# A gone repository has no licence now, so yuzu's and Ryujinx's are closed like Skyline's; pegasus has none.
+closed | yuzu-emu/ | none now; was GPL-3.0+ or GPL-2.0+ | gone after the consent judgment | 2026-11-25 | HTTP 404
+closed | ryujinx/ryujinx | none now; was MIT by Wikipedia | ended 2024-10-01 under Nintendo | 2026-11-25 | HTTP 404
+closed | xortroll/pegasus | none | archived Rust Switch emulator | 2026-11-25 | metadata
+# Closed as a precaution and never opened: dumping guides, device sellers, and scam or jailbreak sites.
+closed | docs.ryujinx.app/guides/dumping | - | key, firmware, and game dumping guides | 2026-11-25 | navigation
+closed | docs.ryujinx.app/info/dumping | - | dumping page | 2026-11-25 | navigation
+closed | git.ryujinx.app/ryubing/ryujinx/-/wikis/dumping | - | dumping wiki pages | 2026-11-25 | MeloNX README
+closed | nh-server.github.io/switch-guide | - | hacking and dumping guide | 2026-11-25 | MeloNX README
+closed | yuzu-emu.org/help/quickstart | - | key and firmware dumping guide | 2026-11-25 | capture
+closed | www.yuzu-emu.org/help/quickstart | - | same guide, www prefix | 2026-11-25 | capture
+closed | r4switch.nl | - | sells MIG Switch devices, per a Dutch court | 2026-11-25 | Nintendo Life
+closed | www.r4switch.nl | - | same site, www prefix | 2026-11-25 | Nintendo Life
+closed | ther4card.com | - | sells MIG Switch devices, per a Dutch court | 2026-11-25 | Nintendo Life
+closed | www.ther4card.com | - | same site, www prefix | 2026-11-25 | Nintendo Life
+closed | r4switch.co.uk | - | sells MIG Switch devices, per a Dutch court | 2026-11-25 | Nintendo Life
+closed | www.r4switch.co.uk | - | same site, www prefix | 2026-11-25 | Nintendo Life
+closed | lichii.org | - | uses Lichii's name; may carry malware, by Lichii's README | 2026-11-25 | README
+closed | www.lichii.org | - | same site, www prefix | 2026-11-25 | README
+closed | onejailbreak.com | - | jailbreak and dump articles linked by a wiki | 2026-11-25 | wiki page
+closed | www.onejailbreak.com | - | same site, www prefix | 2026-11-25 | wiki page
+
 # GameCube, Wii, Switch: reimplementations of system software. Closed tier.
 closed | atmosphere-nx/ | GPL-2.0, or later not stated | replaces Switch system software | 2026-11-19 | README
 closed | fail0verflow/mini | GPL-2.0 | "replacement for IOS" | 2026-11-19 | README
