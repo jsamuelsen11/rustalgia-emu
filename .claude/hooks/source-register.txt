@@ -160,7 +160,7 @@ closed | archive.org/download/bitsavers_sharpdatabomputer | not read | the same 
 # Game Boy and Game Boy Advance: emulators and kits met while evaluating.
 open | gekkio/mooneye-gb | GPL-3.0 | research emulator; needs a boot ROM | 2026-11-19 | README
 open | wilbertpol/mooneye-gb | GPL-3.0 | fork with more tests | 2026-11-19 | licence metadata
-open | nba-emu/nanoboyadvance | GPL-3.0-or-later | archived on GitHub | 2026-11-19 | README
+open | nba-emu/nanoboyadvance | GPL-3.0-or-later; BSD-2-Clause on phoenix | moved to Codeberg | 2026-11-22 | LICENSE
 open | gbdev/rgbds | MIT | assembler | 2026-11-19 | licence metadata
 open | gvaliente/butano | zlib | bundles other libraries under their own licences | 2026-11-19 | README
 open | felixjones/gba-toolchain | zlib | - | 2026-11-19 | licence file
@@ -176,6 +176,53 @@ walled | devkitpro/libgba | Library GPL v2 with exceptions | or later not establ
 closed | devkitpro/libtonc | none shown | - | 2026-11-19 | metadata
 closed | devkitpro/buildscripts | none shown | toolchain build scripts | 2026-11-19 | metadata
 closed | aappleby/metroboy | none | gate-level simulation from die photographs | 2026-11-19 | README
+
+# Sources first cited by R1-11, the Game Boy Advance survey (2026-11-22).
+# Emulators read from prose only. GPL-2.0 licence files whose only "or later" is the licence's own appendix are
+# treated as stating no version, so those projects are walled.
+walled | visualboyadvance-m/visualboyadvance-m | GPL-2.0, version not stated | VBA fork | 2026-11-22 | LICENSE
+open | visualboyadvance-m.org | none stated | site of a walled emulator; prose | 2026-11-22 | home page
+open | www.visualboyadvance-m.org | none stated | same site, www prefix | 2026-11-22 | home page
+walled | sourceforge.net/projects/vba | GPLv2, version not stated | original VBA; matches vbam | 2026-11-22 | metadata
+walled | www.sourceforge.net/projects/vba | GPLv2, version not stated | same, www prefix | 2026-11-22 | metadata
+walled | sourceforge.net/rest/p/vba | GPLv2, version not stated | metadata address of the same | 2026-11-22 | metadata
+walled | hades-emu/hades | GPL-2.0, version not stated | emulator | 2026-11-22 | licence file, README
+open | hades-emu.org | none stated | site of a walled emulator; prose | 2026-11-22 | features, download, blog
+open | hydr8gon/noods | GPL-3.0 | DS and GBA emulator; its GBA HLE BIOS is closed | 2026-11-22 | metadata, README
+walled | notaz/gpsp | GPL-2.0, version not stated | gpSP by Exophase | 2026-11-22 | COPYING.DOC, readme
+walled | libretro/gpsp | GPL-2.0, version not stated | its replacement BIOS is closed | 2026-11-22 | COPYING, README
+walled | davidgfnet/gpsp | GPL-2.0, version not stated | maintainer's fork of libretro/gpsp | 2026-11-22 | metadata
+walled | libretro/vba-next | GPL-2.0, version not stated | VBA-M of 2011, patched | 2026-11-22 | metadata, libretro docs
+walled | libretro/vbam-libretro | GPLv2 by libretro docs; no licence file | VBA-M fork | 2026-11-22 | libretro docs
+walled | libretro/beetle-gba-libretro | GPL-2.0, version not stated | Mednafen GBA, from VBA | 2026-11-22 | metadata
+open | libretro/mgba | MPL-2.0 | fork of mgba-emu/mgba as a libretro core | 2026-11-22 | licence metadata
+open | blastrock/meteor | GPL-3.0 | Meteor emulator | 2026-11-22 | licence metadata, README
+open | libretro/meteor-libretro | GPL-3.0 | libretro port of Meteor | 2026-11-22 | COPYING
+open | jsmolka/eggvance | GPL-3.0 | its bundled replacement BIOS is closed | 2026-11-22 | metadata, README
+walled | alyosha-tas/gbahawk | unresolved mix | BizHawk fork; console-verified research | 2026-11-22 | licence file
+closed | openemu/openemu | none found | macOS frontend; no licence file or statement | 2026-11-22 | README
+open | openemu.org | none stated | site of a closed frontend; prose | 2026-11-22 | release notes
+open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend | 2026-11-22 | licence file
+walled | rakashazi/emu-ex-plus-alpha | GPL-3.0 root; VBA-M part GPL-2.0 | unresolved mix | 2026-11-22 | COPYING.GPL
+open | emulatorjs/emulatorjs | GPL-3.0 | web frontend for libretro cores | 2026-11-22 | licence metadata, README
+open | emulatorjs.org | none stated | site of an open-tier web frontend | 2026-11-22 | cores page
+open | mesen.ca | none stated | site of an open-tier emulator; prose | 2026-11-22 | home page
+open | www.mesen.ca | none stated | same site, www prefix | 2026-11-22 | home page
+open | ares-emu.net | none stated | site of an open-tier emulator; prose | 2026-11-22 | four pages
+open | higan.readthedocs.io | none stated | documentation of an open-tier emulator | 2026-11-22 | import guide
+open | problemkaputt.de/gba.htm | notice, no grant | no$gba page; the program is closed | 2026-11-22 | capture
+open | problemkaputt.de/gbanew.htm | notice, no grant | no$gba release notes | 2026-11-22 | capture
+open | problemkaputt.de/gba-dev.htm | notice, no grant | no$gba debugger page | 2026-11-22 | capture
+open | boycottadvance.emuunlim.org | notice, no grant | site of a closed emulator; host down | 2026-11-22 | captures
+open | fms.komkon.org/vgba | none stated | site of VGBA, a closed emulator; prose | 2026-11-22 | home page
+open | forums.mgba.io | none stated | forum of an open-tier emulator; posts are leads | 2026-11-22 | one thread
+open | www.nintendo.com/en-gb/news | site terms | maker's news pages; one page, read in a capture | 2026-11-22 | capture
+# Closed by purpose, and protective lines: a repository holding a replacement GBA BIOS, a test cartridge
+# decompilation, and a BIOS dumping guide. None was opened.
+closed | nebuleon/regba | none | gpSP-derived; holds a replacement GBA BIOS | 2026-11-22 | metadata
+closed | densinh/agstests | not read | called a decompilation of the AGS cartridge | 2026-11-22 | EGW GBA Tests 146557
+closed | wiki.pocketheaven.com/gba_bios | none | BIOS dumping guide | 2026-11-22 | gpSP readme
+closed | www.wiki.pocketheaven.com/gba_bios | none | same page, www prefix | 2026-11-22 | gpSP readme
 
 # Game Boy and Game Boy Advance: firmware, and maker software that others host. Closed tier.
 closed | gbdev.gg8.se/files/roms/bootroms | - | folder of boot ROM images | 2026-11-19 | folder index
