@@ -512,7 +512,6 @@ closed | problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | BPTWL; firmware l
 closed | www.problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | same page, www prefix | 2026-11-19 | search
 
 # Sources first cited by R1-12, the Nintendo DS and DSi survey (2026-11-25).
-open | hydr8gon/noods | GPL-3.0 | own HLE BIOS, closed; modelled on DraStic's BIOS | 2026-11-25 | licence file, README
 open | jaklyy/dualsoup | MPL-2.0 | cycle-accurate DS emulator, alpha | 2026-11-25 | licence file, README
 open | jessetg/melonds-ds | GPL-3.0 | libretro core on melonDS; its BIOS closed | 2026-11-25 | licence, README
 open | libretro/melonds | GPL-3.0 | legacy libretro fork of melonDS, unmaintained | 2026-11-25 | licence file, docs
@@ -520,25 +519,16 @@ open | rafaelvcaetano/melonds-android | GPL-3.0 | Android port of melonDS | 2026
 open | psi-rockin/corgids | GPL-3.0 | needs BIOS and firmware dumps; stopped 2018 | 2026-11-25 | metadata, README
 open | cydrak/dasshiny | GPL-3.0-or-later | built on bsnes's framework; stopped 2013 | 2026-11-25 | LICENSE.txt
 open | rasky/ndsemu | MIT | DS emulator in Go | 2026-11-25 | metadata, README
-open | swordfish90/lemuroid | GPL-3.0 | Android libretro frontend; cores vary | 2026-11-25 | COPYING, README
-open | emulatorjs/emulatorjs | GPL-3.0 | web frontend; origin not checked | 2026-11-25 | licence, README
 walled | libretro/desmume | GPL-2.0, only or later not stated | libretro fork of DeSmuME | 2026-11-25 | licence file
 walled | openemu/desmume-core | GPL-2.0 by licence metadata | OpenEmu's DeSmuME plugin | 2026-11-25 | metadata
 walled | libretro/desmume2015 | GPLv2 by libretro docs | DeSmuME port of 2015; no licence file | 2026-11-25 | docs
-closed | openemu/openemu | none found | "open-source" by README; no licence file | 2026-11-25 | metadata; licence 404
 closed | rileytestut/melondsdeltacore | none found | Delta's melonDS core | 2026-11-25 | metadata; licence 404
 closed | rileytestut/dsdeltacore | none found | Delta's earlier DS core | 2026-11-25 | metadata; licence 404
 closed | inds-team/inds | none found | iOS DeSmuME port; unmaintained | 2026-11-25 | metadata; licence 404
 closed | desperateprogrammer/dsmemorycyclecounter | none | DS timing test; no oracle stated | 2026-11-25 | readme 404
 open | desmume.org | none stated | site of a walled emulator; prose | 2026-11-25 | home and download pages
-open | problemkaputt.de/gba.htm | none stated; freeware | site of the closed emulator no$gba; prose | 2026-11-25 | page
-open | problemkaputt.de/gbanew.htm | none stated | no$gba version history; prose | 2026-11-25 | page
-open | problemkaputt.de/gba-dev.htm | none stated | no$gba debugger page; prose | 2026-11-25 | page
-open | emulatorjs.org | none stated | site of a frontend; documentation | 2026-11-25 | docs pages
-open | wiki.provenance-emu.com | none stated | wiki of a walled project; prose | 2026-11-25 | BIOS page
 open | buildbot.libretro.com/nightly | none stated | build server; nightly listings only | 2026-11-25 | listings
 open | drastic-ds.com | none stated | site of a closed app; now parked | 2026-11-25 | redirect
-other | itunes.apple.com | none stated | Apple's store lookup interface | 2026-11-25 | API output
 other | www.timeextension.com | press | news site, secondary | 2026-11-25 | one article
 other | www.gamingonlinux.com | press | news site, secondary | 2026-11-25 | one article
 other | gamedeveloper.com | press | games trade news, secondary | 2026-11-25 | one article
