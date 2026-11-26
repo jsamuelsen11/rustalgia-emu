@@ -81,8 +81,8 @@ This note is not legal advice.
 - [R1-11, R1-12, R1-16, and R1-18][surveys]
   (Game Boy Advance, Nintendo DS and DSi, Nintendo 64, PlayStation 1)
   depend on no primer but [R1-02][r102] ([roadmap, "System family surveys"][surveys]).
-- R1-22 (Sega) depends on [R1-01][r101], R1-02, and [R1-03][r103], so by #22 the Saturn is here, the Master System,
-  Game Gear, and Genesis are in [R1-05][r105], and the Dreamcast is in [R1-07][r107].
+- R1-22 and R1-23 (Sega) depend on [R1-01][r101], R1-02, and [R1-03][r103], so by #22 the Saturn is here,
+  the Master System, Game Gear, and Genesis are in [R1-05][r105], and the Dreamcast is in [R1-07][r107].
   R1-13 (3DS) and R1-19 (PlayStation 2) depend on R1-02 and R1-03; the sixth-generation PlayStation 2
   ([Wikipedia, "PlayStation 2"][w-ps2], infobox)
   and the eighth-generation 3DS ([Wikipedia, "Nintendo 3DS"][w-3ds], infobox) are in R1-07
@@ -97,7 +97,7 @@ This note is not legal advice.
   from 2001 to 21 November 2005, the day before the Xbox 360's first sale, in [R1-07][r107]; later in [R1-08][r108]
   (the project's rule for every catalogue, set on 2026-11-20).
   Each device is listed in one catalogue; the others carry a one-line cross-reference.
-- [R1-25][surveys] covers "the systems that no other survey names" and depends on every primer and catalogue
+- [R1-26][surveys] covers "the systems that no other survey names" and depends on every primer and catalogue
   (roadmap, as [pull request #30][pr30] set it), so it is the survey for those rows.
 - A device that runs emulators of other systems is a host, not a system to emulate.
   The N-Gage and Tapwave Zodiac are dedicated game devices,
@@ -105,7 +105,7 @@ This note is not legal advice.
   (the owner's rule as applied on 2026-11-20).
 - A row is one machine or one compatible family; revisions and licensed models are folded into it.
 - "Survey" names the family survey whose title includes the system, or the system it is a model
-  or add-on of; "(inference)" marks a family survey that does not name the system, and R1-25 takes the rest.
+  or add-on of; "(inference)" marks a family survey that does not name the system, and R1-26 takes the rest.
 - "Hub" names the best source other than Wikipedia, with its tier in the [register][register];
   a dash means Wikipedia was the only source found.
 - Regions: NA North America, UK United Kingdom, JP Japan, KR South Korea, CN China, SG Singapore.
@@ -119,15 +119,15 @@ Identity, with the hub where one exists:
 | PlayStation 1 (PS one) | Sony | JP 1994-12-03; NA 1995-09-09 | [R1-18][surveys] | [Sony patent][us6304971] (open) |
 | Nintendo 64 (Hyundai Comboy 64) | Nintendo | JP 1996-06-23; NA 1996-09-29 | R1-16 | [N64brew][n64-vr4300] (open) |
 | iQue Player | iQue (Nintendo and Wei Yen) | CN 2003-11-18 | R1-16 (inference) | — |
-| Sega Saturn (Samsung Saturn) | Sega | JP 1994-11-22; NA 1995-05-11 | R1-22 | [Copetti][cop-ss] (open; lead) |
-| 3DO | The 3DO Company | NA 1993-10-04; JP 1994-03-20 | R1-25 | [3DO Development Repo][3do-start] (open) |
-| Atari Jaguar | Atari Corporation | NA 1993-11-23 | R1-25 | — |
-| PC-FX | NEC, with Hudson Soft | JP 1994-12-23 | R1-25 | [Mednafen documentation][mdf-pcfx] (open) |
-| Amiga CD32 | Commodore | 1993-09-17 | R1-25 | — |
-| FM Towns Marty (Marty 2, Car Marty) | Fujitsu | JP 1993-02-20 | R1-25 | — |
-| Playdia | Bandai | JP 1994-09-23 | R1-25 | — |
-| Casio Loopy | Casio | JP 1995-10-19 | R1-25 | — |
-| Pippin (ATMARK, @WORLD, KMP 2000) | Apple; Bandai and Katz Media | JP 1996 | R1-25 | — |
+| Sega Saturn (Samsung Saturn) | Sega | JP 1994-11-22; NA 1995-05-11 | R1-23 | [Copetti][cop-ss] (open; lead) |
+| 3DO | The 3DO Company | NA 1993-10-04; JP 1994-03-20 | R1-26 | [3DO Development Repo][3do-start] (open) |
+| Atari Jaguar | Atari Corporation | NA 1993-11-23 | R1-26 | — |
+| PC-FX | NEC, with Hudson Soft | JP 1994-12-23 | R1-26 | [Mednafen documentation][mdf-pcfx] (open) |
+| Amiga CD32 | Commodore | 1993-09-17 | R1-26 | — |
+| FM Towns Marty (Marty 2, Car Marty) | Fujitsu | JP 1993-02-20 | R1-26 | — |
+| Playdia | Bandai | JP 1994-09-23 | R1-26 | — |
+| Casio Loopy | Casio | JP 1995-10-19 | R1-26 | — |
+| Pippin (ATMARK, @WORLD, KMP 2000) | Apple; Bandai and Katz Media | JP 1996 | R1-26 | — |
 
 Hardware:
 
@@ -327,10 +327,10 @@ Other home consoles:
 | Add-on | Base | First release | Adds | Firmware | Survey |
 |---|---|---|---|---|---|
 | 64DD | Nintendo 64 | JP 1999-12 | disk drive, 32-bit coprocessor | IPL ROM in drive | [R1-16][surveys] (inference) |
-| Jaguar CD | Atari Jaguar | 1995-09-21 | 2× CD drive | CD BIOS | R1-25 |
+| Jaguar CD | Atari Jaguar | 1995-09-21 | 2× CD drive | CD BIOS | R1-26 |
 | PocketStation | PlayStation 1 | JP 1999-01-23 | ARM7T, 32 × 32 LCD | not described | R1-18 (inference) |
-| 3DO Blaster | PC (ISA) | 1994 | a 3DO on a card | as 3DO (inference) | R1-25 |
-| PC-FXGA | PC (PC-9800, DOS/V) | JP 1995-12-08; DOS/V 1996-06 | PC-FX plus HuC6273 3D chip | not described | R1-25 |
+| 3DO Blaster | PC (ISA) | 1994 | a 3DO on a card | as 3DO (inference) | R1-26 |
+| PC-FXGA | PC (PC-9800, DOS/V) | JP 1995-12-08; DOS/V 1996-06 | PC-FX plus HuC6273 3D chip | not described | R1-26 |
 
 - Sources by row: each add-on's Wikipedia article, and the PC-FXGA's dates from Japanese Wikipedia;
   the 64DD's firmware cell from [N64brew, "64DD"][n64-64dd], "Physical Memory Map",
@@ -360,7 +360,7 @@ Identity:
 
 | System (other names) | Maker | First release | Survey | Hub (tier) |
 |---|---|---|---|---|
-| Virtual Boy | Nintendo | JP 1995-07-21; NA 1995-08-14 | [R1-25][surveys] | [Sacred Tech Scroll][sts] (open) |
+| Virtual Boy | Nintendo | JP 1995-07-21; NA 1995-08-14 | [R1-26][surveys] | [Sacred Tech Scroll][sts] (open) |
 | Game Boy Advance (iQue GBA) | Nintendo | JP 2001-03-21; NA 2001-06-11 | R1-11 | [GBATEK copy][gbatek-gba] (open) |
 | Game Boy Advance SP (AGS-001, AGS-101) | Nintendo | JP 2003-02-14; NA 2003-03-23 | R1-11 | GBATEK copy (open) |
 | Game Boy Micro | Nintendo | JP 2005-09-13; NA 2005-09-19 | R1-11 | GBATEK copy (open) |
@@ -444,9 +444,9 @@ Nintendo DS family:
 
 | System (other names) | Maker | First release | CPU | Media | Survey |
 |---|---|---|---|---|---|
-| Nuon | VM Labs; device makers | 2000-07 | four Nuon MPEs, 54 or 108 MHz | DVD | [R1-25][surveys] |
-| E-kara | Takara (Hasbro in the US) | JP 2000-10-20; NA 2001-10-06 | not named | song cartridge | R1-25 |
-| Pixter and its models | Rehco; Mattel | 2000 | 6502-based; Color: ARM7TDMI, 70 MHz | cartridge | R1-25 |
+| Nuon | VM Labs; device makers | 2000-07 | four Nuon MPEs, 54 or 108 MHz | DVD | [R1-26][surveys] |
+| E-kara | Takara (Hasbro in the US) | JP 2000-10-20; NA 2001-10-06 | not named | song cartridge | R1-26 |
+| Pixter and its models | Rehco; Mattel | 2000 | 6502-based; Color: ARM7TDMI, 70 MHz | cartridge | R1-26 |
 
 - [R1-07][r107] first listed these three; they are here because each was first sold in 2000.
   None has a hub beyond Wikipedia.
@@ -499,7 +499,7 @@ Nintendo DS family:
   ([Wikipedia, "Super NES CD-ROM"][w-snescd]; ["Atari Panther"][w-panther]; ["Konix Multisystem"][w-konix];
   [the fifth-generation article][w-fifth], "Other consoles").
 - Arcade boards built from these consoles, such as the ST-V, CoJag, Aleck 64, and Konami's M2 board,
-  belong to [R1-24][surveys] (each base system's article).
+  belong to [R1-25][surveys] (each base system's article).
 
 ### Boundary cases
 
@@ -584,15 +584,15 @@ Nintendo DS family:
 
 ## Options and trade-offs
 
-### How deeply R1-25 studies the rows it takes
+### How deeply R1-26 studies the rows it takes
 
-- **What:** [R1-25][surveys] studies each of its rows here in full,
+- **What:** [R1-26][surveys] studies each of its rows here in full,
   or treats them at catalogue depth and studies in full only those that [R6-01][phase6] selects.
-- **Costs:** in full adds 15 studies (the 12 consoles and handhelds and 3 add-ons whose survey is R1-25),
+- **Costs:** in full adds 15 studies (the 12 consoles and handhelds and 3 add-ons whose survey is R1-26),
   most of them resting on Wikipedia (counted from the rows above); catalogue depth leaves the 3DO, Jaguar, PC-FX,
   Virtual Boy, and Nuon, among others, without an emulator survey.
 - **Gains:** in full gives R6-01 the widest choice; catalogue depth keeps the research finite.
-- **Used by:** the roadmap, which gives every unnamed system to R1-25 ([pull request #30][pr30]).
+- **Used by:** the roadmap, which gives every unnamed system to R1-26 ([pull request #30][pr30]).
 
 ### Firmware for systems that need it
 
@@ -618,7 +618,7 @@ Nintendo DS family:
 
 ### Recommendation
 
-- **Depth of R1-25:** treat its rows here at catalogue depth, and study in full any row [R6-01][phase6] selects.
+- **Depth of R1-26:** treat its rows here at catalogue depth, and study in full any row [R6-01][phase6] selects.
   These rows rest mostly on Wikipedia
   ([Coverage of sources](#coverage-of-sources)),
   and the systems the roadmap requires (Nintendo handhelds) and wants (PlayStation 1) all have family surveys
@@ -667,7 +667,7 @@ Nintendo DS family:
 - Which parts of the 3DO's Portfolio operating system sit in the console's CPU ROM, and which load from disc?
   [R2-12][phase2], from the 3DO Company's patents or an open-tier emulator's prose documentation.
 - What services does the Saturn's firmware provide to games?
-  [R1-22][surveys], from [Mednafen's prose][mdf-ss], or a [phase 5][phase5] test on a console; MacDonald's Saturn notes,
+  [R1-23][surveys], from [Mednafen's prose][mdf-ss], or a [phase 5][phase5] test on a console; MacDonald's Saturn notes,
   read for this, mention the boot ROM only in a memory map.
 - Can the iQue Player run any title without its per-console keys, for example from a copy already decrypted?
   [R1-16][surveys], with [R0-02][r002] for the exposure;

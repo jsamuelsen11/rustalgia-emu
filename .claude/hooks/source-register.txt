@@ -1250,7 +1250,7 @@ open | cdrdv2.intel.com | Intel notices | maker's manual; no legal analysis; pat
 open | dspace.mit.edu/handle/1721.1/6694 | not read | published research on the Xbox | 2026-11-19 | record page
 open | nostarch.com/xboxfree | not found on the pages read | free edition of a published book | 2026-11-19 | publisher
 
-# Sources first cited by R1-23, the Xbox, Xbox 360, and later survey (2026-11-25).
+# Sources first cited by R1-24, the Xbox, Xbox 360, and later survey (2026-11-25).
 walled | cxbx-reloaded/cxbx-reloaded | GPL-2.0, version not stated | HLE; also matches -legacy | 2026-11-25 | COPYING
 open | cxbx-reloaded.co.uk | none stated | site of a walled emulator | 2026-11-25 | home, compatibility pages
 walled | echelon9/cxbx-shogun | GPL-2.0, version not stated | branch of the original Cxbx | 2026-11-25 | COPYING, README
@@ -1417,7 +1417,7 @@ closed | finalburnneo/fbneo | own non-commercial licence plus old MAME terms | -
 closed | srg320/saturn_mister | none | - | 2026-11-19 | README
 closed | mister-devel/saturn_mister | none | - | 2026-11-19 | README
 
-# Sources first cited by R1-24, the arcade hardware survey (2026-11-25).
+# Sources first cited by R1-25, the arcade hardware survey (2026-11-25).
 # The block also holds sources the survey evaluated but does not cite, so that the guard knows them.
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
 # Every replacement or high-level BIOS, boot code, or system software is closed inside any repository below,
@@ -1456,7 +1456,7 @@ other | siliconera.com | press | news site, secondary | 2026-11-25 | one article
 other | www.siliconera.com | press | the same, www prefix | 2026-11-25 | one article
 open | arcadeheroes.com | none stated | arcade operator's blog, a lead | 2026-11-25 | one post
 
-# Closed by R1-24: non-commercial or no licence, a gone or disabled repository, binary cores, a replacement
+# Closed by R1-25: non-commercial or no licence, a gone or disabled repository, binary cores, a replacement
 # bootloader, and repositories named in makers' notices. READMEs and metadata only.
 closed | libretro/mame2015-libretro | none | MAME 0.160, before 0.172 | 2026-11-25 | licence 404; pre-0.172 rule
 closed | libretro/mame2010-libretro | none; docs: MAME non-commercial | MAME 0.139 | 2026-11-25 | licence 404, README

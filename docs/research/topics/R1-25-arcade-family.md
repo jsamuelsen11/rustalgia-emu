@@ -1,6 +1,6 @@
 ---
 title: "Arcade hardware: family survey"
-roadmap_item: R1-24
+roadmap_item: R1-25
 status: draft
 date: 2026-11-25
 ---
@@ -128,7 +128,7 @@ This table sets out the boards named in the evidence by era, with its source in 
   "Released in multiple 'steps' with improving specifications"
   (Wikipedia, ["List of Sega arcade system boards"][w-sega]; secondary).
   It calls Hikaru a "Custom modified version of NAOMI hardware" and Chihiro "Based on Xbox architecture" (same);
-  no Chihiro emulator was surveyed here; Chihiro belongs with the Xbox in [R1-23][roadmap].
+  no Chihiro emulator was surveyed here; Chihiro belongs with the Xbox in [R1-24][roadmap].
 - Namco's list gives System 22 a 68020, two TMS32025 DSPs at 49.152 MHz "although the exact number of DSPs may vary",
   and Namco's TR3 renderer; System 23 an IDT R4650 with PowerVR chips; and System 246 a PS2 base with a security dongle
   (Wikipedia, ["List of Namco arcade system boards"][w-namco]; secondary).

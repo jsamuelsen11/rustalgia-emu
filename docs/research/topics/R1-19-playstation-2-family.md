@@ -32,7 +32,7 @@ and building firmware support around the user's own dump while leaving MagicGate
   licence, tier, techniques, and hosts; what legal exposure does the family carry; and how hard is it to emulate?
 - Covered: every SCPH model, original and slim, and the PSX video recorder
   (DESR models), as [R1-07][r107-home] lists them, with PlayStation 1 compatibility only as PS2 emulators model it.
-  The Namco System 246 family and other PS2-based arcade boards belong to [R1-24][surveys] and appear here only
+  The Namco System 246 family and other PS2-based arcade boards belong to [R1-25][surveys] and appear here only
   as features of emulators.
   How the hardware works is in [R1-03][r103-ee] and, for the PlayStation 1 parts, [R1-02][r102];
   the PS1 emulators are in [R1-18][r118]; the law is in [R0-02][r002].
@@ -623,7 +623,7 @@ The owner decides each of these; the pull request lists them.
   so a measurement spike is needed before any accuracy target for it can be set in [R6-02][phase6].
 - [R2-09][phase2] should note DNAS before planning online play for PS2 games ([Sony, DNAS release][dnas]).
 - [R6-01][phase6] can weigh the PSX video recorder and PS2-based arcade boards apart from the core console:
-  only [Iris][iris] models the first, and the boards belong to [R1-24][surveys].
+  only [Iris][iris] models the first, and the boards belong to [R1-25][surveys].
 
 ## Open questions
 

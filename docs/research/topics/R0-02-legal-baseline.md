@@ -34,7 +34,7 @@ jurisdiction examined; and patents and trade marks are separate risks that indep
 - Left to other items: what [R0-01](R0-01-clean-room-policy.md) already records, which is cited by section name;
   licence strategy and contributor terms ([`R0-03`](R0-03-licence-strategy.md)); note conventions
   ([R0-04](R0-04-glossary-and-conventions.md)); the exposure of each system family
-  ([`R1-10` to `R1-25`](../../roadmap/research.md#system-family-surveys)); firmware emulation as a technique
+  ([`R1-10` to `R1-27`](../../roadmap/research.md#system-family-surveys)); firmware emulation as a technique
   ([`R2-12`](../../roadmap/research.md#phase-2-cross-cutting-engineering)); store policy
   ([`R3-03`, `R3-06`](../../roadmap/research.md#phase-3-host-platforms)).
 - Researched on 2026-11-19, and reworked on 2026-11-20 to answer the open questions.
@@ -1837,7 +1837,7 @@ Each recommendation is for the owner to decide.
 ## Implications for Rustalgia
 
 - Encryption is the common fact in every console emulator filing, judgment, and notice found.
-  Each family survey ([`R1-10` to `R1-25`](../../roadmap/research.md#system-family-surveys)) needs to record
+  Each family survey ([`R1-10` to `R1-27`](../../roadmap/research.md#system-family-surveys)) needs to record
   whether a system's games or firmware are encrypted or authenticated, and by what kind of check.
   This feeds the system scope proposal ([`R6-01`](../../roadmap/research.md#phase-6-synthesis))
   and an ADR on protected content.
@@ -1888,7 +1888,7 @@ Each recommendation is for the owner to decide.
 - Which roadmap systems encrypt or authenticate their games or firmware, and by what kind of check?
   [R1-03](R1-03-primer-sixth-generation.md#media-security-and-system-software) records that Wii, 3DS, PSP, Vita,
   and Xbox 360 retail content is encrypted, and [R1-04](R1-04-primer-modern.md) that Switch game containers are;
-  the rest is for the family surveys, [`R1-10` to `R1-25`](../../roadmap/research.md#system-family-surveys).
+  the rest is for the family surveys, [`R1-10` to `R1-27`](../../roadmap/research.md#system-family-surveys).
 - Is a lock-out check on an unencrypted game an access control?
   Only a court ruling can answer it, and none exists; the family surveys record each check,
   so that the risk can be stated per system.

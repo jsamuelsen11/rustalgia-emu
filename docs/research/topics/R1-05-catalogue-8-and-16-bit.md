@@ -44,7 +44,7 @@ This note is not legal advice.
 - Left to other items: how the hardware works to the primer ([R1-01](R1-01-primer-8-and-16-bit.md));
   each family's emulators to its survey
   ([R1-10](../../roadmap/research.md#system-family-surveys) to
-  [R1-25](../../roadmap/research.md#system-family-surveys)); the law on lock-outs and firmware to
+  [R1-26](../../roadmap/research.md#system-family-surveys)); the law on lock-outs and firmware to
   [R0-02](R0-02-legal-baseline.md); each hub's evaluation to [R0-05](R0-05-source-map.md).
   PC and Android handhelds, microconsoles, FPGA devices, and retro "mini" consoles are emulator hosts,
   left to [R3-07](../../roadmap/research.md#phase-3-host-platforms)
@@ -87,9 +87,9 @@ This note is not legal advice.
 - A device placed in another catalogue keeps one cross-reference row here, so that each device is listed once.
 - "Survey" names the family survey whose title includes the system, or the system it is a model
   or add-on of. "(inference)" marks a survey that does not name the system;
-  "R1-25 (inference)" marks a console built from a home computer.
+  "R1-26 (inference)" marks a console built from a home computer.
   A dash means no survey's title names the system,
-  so it falls to [R1-25](../../roadmap/research.md#system-family-surveys), "Other consoles, handhelds,
+  so it falls to [R1-26](../../roadmap/research.md#system-family-surveys), "Other consoles, handhelds,
   and home computers: the systems that no other survey names";
   "Options and trade-offs" recommends four family surveys for some of them.
 - "Hub" names the best open-tier source other than Wikipedia, as registered;
@@ -315,21 +315,21 @@ Identity:
 | SG-1000 (SC-3000; SG-1000 II) | Sega | JP 1983-07-15; AU 1983-11 | — | SMS Power |
 | Mark III / Master System | Sega; Tectoy, Samsung | JP 1985-10-20; NA 1986; EU 1987; BR 1989 | [R1-22](../../roadmap/research.md#system-family-surveys) | SMS Power |
 | 7800 ProSystem | Atari Corp., by GCC | NA 1986-05; EU 1987 | — | — |
-| XEGS | Atari Corp. | 1987 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| XEGS | Atari Corp. | 1987 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | PV-1000 | Casio | JP 1983-10 | — | — |
 | Super Cassette Vision | Epoch | JP 1984-07-17; EU 1984 | — | — |
 | My Vision | Nichibutsu | JP 1983 | — | — |
 | Videopac+ G7400 (Jopac) | Philips | 1983 | — | — |
-| Pyūta Jr. | Tomy | JP 1983 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| Pyūta Jr. | Tomy | JP 1983 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | Dina (Personal Arcade) | Bit Corporation | 1986 | — | — |
 | BBC Bridge Companion | Heber | UK 1985 | — | — |
 | Video Art | LJN | 1987 | — | — |
 | Socrates | VTech | 1988 | — | — |
 | Action Max; Video Challenger | Worlds of Wonder; Takara | 1987 | — | — |
 | Interactive Vision | View-Master | 1989 | — | — |
-| Zemmix | Daewoo | KR 1985 to 1995 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| GX4000 | Amstrad | EU 1990-09 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| C64 Games System | Commodore | 1990-12 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| Zemmix | Daewoo | KR 1985 to 1995 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| GX4000 | Amstrad | EU 1990-09 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| C64 Games System | Commodore | 1990-12 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 
 Hardware:
 
@@ -433,15 +433,15 @@ Identity:
 | PC Engine / TurboGrafx-16 (Duo, Shuttle) | NEC, Hudson Soft | JP 1987-10-30; NA 1989-08-29; EU 1989 | — | — |
 | SuperGrafx | NEC | JP 1989-12-08 | — | — |
 | Super Famicom / SNES | Nintendo | JP 1990-11-21; NA 1991-08-23; EU 1992 | [R1-15](../../roadmap/research.md#system-family-surveys) | SNESdev wiki |
-| Neo Geo AES (MVS arcade) | SNK | JP 1990-04-26; NA 1991, doubted | [R1-24](../../roadmap/research.md#system-family-surveys) for MVS (inference) | NeoGeo wiki |
+| Neo Geo AES (MVS arcade) | SNK | JP 1990-04-26; NA 1991, doubted | [R1-25](../../roadmap/research.md#system-family-surveys) for MVS (inference) | NeoGeo wiki |
 | Neo Geo CD, CDZ | SNK | JP 1994-09-09; EU 1994-12; NA 1996-01-15 | — | NeoGeo wiki |
 | TeraDrive | IBM, with Sega | JP 1991-05-31 | [R1-22](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| CDTV | Commodore | NA 1991 (shown 03, launched 04); UK 1991 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| CDTV | Commodore | NA 1991 (shown 03, launched 04); UK 1991 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | CD-i (players by many makers) | Philips | NA 1991-12-03; JP 1992; EU 1992 | — | — |
-| Video Information System | Tandy | 1992 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| Video Information System | Tandy | 1992 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | Sega Pico (Kids Computer Pico) | Sega Toys | JP 1993-06; NA 1994-11; EU 1994 | — | — |
 | LaserActive | Pioneer | JP 1993-08-20; NA 1993-09-13 | — | — |
-| CPS Changer | Capcom | JP 1994-11 | [R1-24](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| CPS Changer | Capcom | JP 1994-11 | [R1-25](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | Super A'Can | Funtech | TW, CN 1995-10-25 | — | — |
 
 Hardware:
@@ -918,7 +918,7 @@ The placement rule, a process call settled in this note:
   - The Intellivision Wiki, AtariAge, Pong-Story, 20th Century Video Games, 7800.8bitdev.org,
     and pokemon-mini.net are not evaluated, so they are not linked or cited;
     their evaluation goes to the family surveys recommended below
-    and to [R1-25](../../roadmap/research.md#system-family-surveys),
+    and to [R1-26](../../roadmap/research.md#system-family-surveys),
     and pokemon-mini.net's to [R1-07](R1-07-catalogue-sixth-generation.md) with the Pokémon Mini.
 - Of the chip makers' successors that answered a probe on 2026-11-20,
   only Renesas still serves a datasheet for a part in these rows; Microchip refused scripted requests.
@@ -952,7 +952,7 @@ The placement rule, a process call settled in this note:
 
 - **What:** give each row a later study, or limit study to the systems the surveys name and keep the rest as rows.
 - **Costs:** every row means about 100 studies;
-  about 70 rows name no survey and 7 more name [R1-25](../../roadmap/research.md#system-family-surveys) only by
+  about 70 rows name no survey and 7 more name [R1-26](../../roadmap/research.md#system-family-surveys) only by
   inference, most resting on Wikipedia (counted from the rows above).
   Surveys only leaves out every first- and second-generation console and most third- and fourth-generation
   and handheld rows, among them the Atari, NEC, SNK, and Bandai machines.
@@ -973,14 +973,14 @@ The placement rule, a process call settled in this note:
 
 ### Family surveys for some of the systems no survey names
 
-- **What:** leave every unnamed console and handheld to [R1-25](../../roadmap/research.md#system-family-surveys),
+- **What:** leave every unnamed console and handheld to [R1-26](../../roadmap/research.md#system-family-surveys),
   or add family surveys for Atari, NEC, SNK, and Bandai and leave the rest there.
-- **Costs:** [R1-25](../../roadmap/research.md#system-family-surveys) alone mixes home computers with whole console
+- **Costs:** [R1-26](../../roadmap/research.md#system-family-surveys) alone mixes home computers with whole console
   families; new surveys add roadmap items.
-- **Gains:** R1-25 alone keeps the roadmap short; family surveys give the PC Engine, Lynx, Neo Geo,
+- **Gains:** R1-26 alone keeps the roadmap short; family surveys give the PC Engine, Lynx, Neo Geo,
   and WonderSwan lines a study of their own.
 - **Used by:** the [roadmap](../../roadmap/research.md#system-family-surveys),
-  whose R1-25 covers "the systems that no other survey names".
+  whose R1-26 covers "the systems that no other survey names".
 
 ### How a boundary system is placed
 
@@ -1015,16 +1015,16 @@ The placement rule, a process call settled in this note:
 - **Surveys:** add four family surveys: Atari (2600, 5200, 7800, Lynx); NEC
   (PC Engine, SuperGrafx, CD-ROM², TurboExpress);
   SNK (Neo Geo AES and CD, Neo Geo Pocket,
-  with the MVS left to [R1-24](../../roadmap/research.md#system-family-surveys)); and Bandai
+  with the MVS left to [R1-25](../../roadmap/research.md#system-family-surveys)); and Bandai
   (the WonderSwan line, with the Pocket Challenge V2).
-  Leave the other unnamed systems to [R1-25](../../roadmap/research.md#system-family-surveys),
+  Leave the other unnamed systems to [R1-26](../../roadmap/research.md#system-family-surveys),
   as the roadmap's wording already does: among them the SG-1000, CD-i, Sega Pico, LaserActive, Super A'Can,
   the other Z80 and 6502 machines, the Mega Duck, and the first- and second-generation consoles.
   - The reason: these four are the largest console families with no survey,
     14 rows with an open-tier hub or a processor test set behind them
     (Atari 4, NEC 5, SNK 3, Bandai 2; counted from the rows above).
     About 15 other such rows are scattered single systems,
-    which R1-25 can take without mixing whole families into a survey of home computers.
+    which R1-26 can take without mixing whole families into a survey of home computers.
   - The cost is four new roadmap items in phase 1.
 - **Boundaries:** none needed from the owner: the rule in "Boundary cases" is a process call,
   settled in this note and listed in the pull request.
@@ -1056,7 +1056,7 @@ The placement rule, a process call settled in this note:
 - The sources record clone and regional timing variants separately, so each is its own target (inference);
   this feeds the system scope proposal and the quality targets ([R6-02](../../roadmap/research.md#phase-6-synthesis)).
 - Systems that rest on Wikipedia alone need a better source before a study relies on them;
-  this feeds [R1-25](../../roadmap/research.md#system-family-surveys) and the four surveys recommended above,
+  this feeds [R1-26](../../roadmap/research.md#system-family-surveys) and the four surveys recommended above,
   if the owner adds them.
 
 ## Open questions
@@ -1064,19 +1064,19 @@ The placement rule, a process call settled in this note:
 - Does the BBC Bridge Companion make sound, and through which part?
   Its article names none, and its board photograph shows no sound chip on the side shown; the other side of the board,
   or a reader session on the walled MiSTer core's documentation,
-  in [R1-25](../../roadmap/research.md#system-family-surveys).
+  in [R1-26](../../roadmap/research.md#system-family-surveys).
 - What is the LJN Video Art's sound source, and what is its Thomson TSGB01019ACP?
   The board photographs' uploader could not identify that part; its markings in a Thomson data book,
-  or a reader session on MAME's prose documentation, in [R1-25](../../roadmap/research.md#system-family-surveys).
+  or a reader session on MAME's prose documentation, in [R1-26](../../roadmap/research.md#system-family-surveys).
 - What processors are in the other five Select-A-Game cartridges, and in the Palmtex and R-Zone cartridges?
   No page read names a type, and the [Handheld Museum](https://www.handheldmuseum.com/Entex/SAG.htm)'s photograph of the
   Select-A-Game's inside shows only the console, which holds none; chip markings on photographs of opened cartridges, in
-  [R1-25](../../roadmap/research.md#system-family-surveys).
+  [R1-26](../../roadmap/research.md#system-family-surveys).
 - What processor does the Digi Casse use?
   Its article's fields are empty, and none of the pages it cites that were read names one:
   the [Handheld Museum page](https://www.handheldmuseum.com/Bandai/DigiCasseA.htm),
   and the Pad and Pixel and Game Medium pages, which are unregistered and were read as prose only
-  (research log); board inspection, in [R1-25](../../roadmap/research.md#system-family-surveys).
+  (research log); board inspection, in [R1-26](../../roadmap/research.md#system-family-surveys).
 
 ## Sources
 

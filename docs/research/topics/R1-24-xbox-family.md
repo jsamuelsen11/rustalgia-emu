@@ -1,6 +1,6 @@
 ---
 title: "Xbox, Xbox 360, and later: family survey"
-roadmap_item: R1-23
+roadmap_item: R1-24
 status: draft
 date: 2026-11-25
 ---
@@ -46,7 +46,7 @@ those two suites as oracles, the Xbox 360 second, and the Xbox One and Series no
   and how hard is it to emulate?
 - Covered: every model in [R1-07][r107-home] and [R1-08][r108-xbox],
   the Sega Chihiro arcade board only where an Xbox emulator also runs it
-  ([R1-24][surveys] holds arcade hardware), and Microsoft's backward compatibility as an official emulator.
+  ([R1-25][surveys] holds arcade hardware), and Microsoft's backward compatibility as an official emulator.
   How the hardware works is in [R1-03][r103-cpu] and [R1-04][r104-x86]; the law in [R0-02][r002];
   the hubs in [R0-05][r005-xbox].
   This note cites those sections and does not repeat them.
@@ -264,7 +264,7 @@ not linked.
   the media board's flash, and the boards' EEPROMs by MAME's file names (README);
   [XQEMU][xqemu-site] names Chihiro as a target (site); and Cxbx-Reloaded aims to run it "eventually" (above).
 - MAME's own Chihiro driver is marked as not working
-  (Emulation General; lead), so the arcade board itself belongs to [R1-24][surveys].
+  (Emulation General; lead), so the arcade board itself belongs to [R1-25][surveys].
 
 ### Ports, forks, and frontends for the original Xbox
 

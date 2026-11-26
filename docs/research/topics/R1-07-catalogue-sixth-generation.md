@@ -26,8 +26,8 @@ The minor systems rest on Wikipedia almost alone, and no maker document read giv
 ("Coverage of sources").
 
 The note recommends later study only of the systems that have a family survey,
-leaving the minor systems to [R1-25][surveys], which the roadmap now widens to them, one emulation target per family,
-and a dependency on [R0-02][r002] for R1-19 and R1-22; the owner decides.
+leaving the minor systems to [R1-26][surveys], which the roadmap now widens to them, one emulation target per family,
+and a dependency on [R0-02][r002] for R1-19 and R1-23; the owner decides.
 This note is not legal advice.
 
 ## Scope
@@ -35,8 +35,8 @@ This note is not legal advice.
 - Question: which dedicated consoles and handhelds of this era were sold, and for each, what are its maker, release,
   processor, video, audio, media, protection, firmware, survey, class, and sources?
 - Covered: the systems whose family surveys depend on [R1-03][r103]
-  ([R1-13][surveys], [R1-17][surveys], [R1-19][surveys], [R1-20][surveys], [R1-22][surveys] for the Dreamcast,
-  and [R1-23][surveys] for the Xbox and Xbox 360), their models and combined units,
+  ([R1-13][surveys], [R1-17][surveys], [R1-19][surveys], [R1-20][surveys], [R1-23][surveys] for the Dreamcast,
+  and [R1-24][surveys] for the Xbox and Xbox 360), their models and combined units,
   and the minor systems placed here by first sale ("How the catalogue is built").
 - Left to other notes: how the hardware works to the primer; each family's emulators to its survey;
   the law on encryption, firmware, and keys to [R0-02][r002]; each hub's evaluation to [R0-05][r005].
@@ -88,12 +88,12 @@ This note is not legal advice.
   whose surveys depend on no primer but [R1-03][r103],
   although Wikipedia's infoboxes put the Wii and PSP in the seventh generation and the Wii U and Vita in the eighth;
   it leaves the PlayStation 3 to [R1-04][r104] ([R1-21][surveys]).
-- The second rule places the PlayStation 2 ([R1-19][surveys]), the Dreamcast ([R1-22][surveys]),
-  and the Xbox ([R1-23][surveys]) here, all sixth generation by their infoboxes.
+- The second rule places the PlayStation 2 ([R1-19][surveys]), the Dreamcast ([R1-23][surveys]),
+  and the Xbox ([R1-24][surveys]) here, all sixth generation by their infoboxes.
   Read alone, it does not settle the 3DS family
   ([R1-13][surveys], on [R1-02][r102] and R1-03),
   whose eighth generation matches neither primer's title, or the Xbox 360
-  (R1-23, on R1-03 and R1-04), a seventh-generation system (inference).
+  (R1-24, on R1-03 and R1-04), a seventh-generation system (inference).
   The change that added the rule places both here, with R1-02 for the DS hardware inside the 3DS,
   and starts R1-04 at the Xbox One ([pull request #22][pr22], "Decisions for you"); this note follows it.
 - A system that no survey names goes by its first sale: to 2000 in [R1-06][r106], from 2001 to 21 November 2005,
@@ -142,12 +142,12 @@ Identity (each system's Wikipedia article, infobox; Katana, Xenon, and the GameC
 
 | System (other names) | Maker | First release | Survey | Hub |
 |---|---|---|---|---|
-| Dreamcast (Katana) | Sega | JP 1998-11-27; NA 1999-09-09; EU 1999-10-14; AU 1999-11-30 | R1-22 | Comstedt (lead) |
+| Dreamcast (Katana) | Sega | JP 1998-11-27; NA 1999-09-09; EU 1999-10-14; AU 1999-11-30 | R1-23 | Comstedt (lead) |
 | PlayStation 2 | Sony Computer Entertainment | JP 2000-03-04; NA 2000-10-26; EU 2000-11-24 | R1-19 | ps2tek |
 | GameCube (Dolphin) | Nintendo (ArtX, IBM chips) | JP 2001-09-14; NA 2001-11-18; EU 2002-05-03 | R1-17 | YAGCD |
-| Xbox | Microsoft | NA 2001-11-15; JP 2002-02-22; PAL 2002-03-14 | R1-23 | XboxDevWiki |
+| Xbox | Microsoft | NA 2001-11-15; JP 2002-02-22; PAL 2002-03-14 | R1-24 | XboxDevWiki |
 | Wii (Revolution, RVL) | Nintendo | NA 2006-11-19; JP 2006-12-02; AU 2006-12-07; EU 2006-12-08 | R1-17 | WiiBrew |
-| Xbox 360 (Xenon) | Microsoft | NA 2005-11-22; EU 2005-12-02; JP 2005-12-10 | R1-23 | Free60 |
+| Xbox 360 (Xenon) | Microsoft | NA 2005-11-22; EU 2005-12-02; JP 2005-12-10 | R1-24 | Free60 |
 | Wii U (Project Café) | Nintendo | NA 2012-11-18; EU 2012-11-30; JP 2012-12-08 | R1-17 | WiiUBrew |
 
 Hardware (each system's Wikipedia article, infobox and "Hardware" or specifications article; hubs as in the bullets):
@@ -600,7 +600,7 @@ Pixter (2000) is listed in R1-06 ("How the catalogue is built").
   ([Phantom Entertainment][w-phantom])
   (home); [XGP][w-xgp], [Red Jade][w-red-jade], and Panasonic's [Jungle][w-jungle] (handheld)
   (Wikipedia, [list of home consoles][w-home-list], cancelled systems, and the articles linked).
-- Arcade boards built on these consoles belong to [R1-24][surveys]:
+- Arcade boards built on these consoles belong to [R1-25][surveys]:
   Wikipedia says the [Dreamcast][w-dc] shared hardware with NAOMI (opening), and XboxDevWiki lists Chihiro with the Xbox
   ([XboxDevWiki, "Main Page"][xdw-main]).
 
@@ -613,7 +613,7 @@ Pixter (2000) is listed in R1-06 ("How the catalogue is built").
 | 3DS family | eighth | R1-13 depends on R1-02 and R1-03 | here, by pull request #22 |
 | New 2DS XL | eighth | years of sale (2017) | here, with the 3DS family |
 | PlayStation 3 | seventh | GPU and years | not here: R1-04, by survey R1-21 |
-| Xbox 360 | seventh | R1-23 depends on R1-03 and R1-04 | here, by pull request #22; R1-08 agrees |
+| Xbox 360 | seventh | R1-24 depends on R1-03 and R1-04 | here, by pull request #22; R1-08 agrees |
 | PlayStation TV | Wikipedia: "Microconsole" | owner's host rule | with the Vita family (the note's call) |
 | Dreamcast VMU | sixth | memory card, not a console | with the Dreamcast (from R1-05) |
 | GameKing | sixth, by category | 8-bit processor | here, by years (from R1-05) |
@@ -629,7 +629,7 @@ Pixter (2000) is listed in R1-06 ("How the catalogue is built").
 | Game Boy Player | sixth | add-on with Game Boy Advance hardware | here, also relevant to R1-11 |
 
 The roadmap items in the table are [R1-02][r102], [R1-04][r104], [R1-05][r105], [R1-06][r106], [R1-08][r108],
-and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
+and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-24][surveys].
 
 - The PlayStation TV runs Vita game cards and the Vita's system software on the Vita's processor and GPU
   ([Wikipedia, "PlayStation TV"][w-pstv], infobox),
@@ -715,10 +715,10 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
 - **What:** give each row a later study, or limit study to the systems the surveys name.
 - **Costs:** studying every row adds up to 19 studies, one for each row of the minor-home and other-handheld tables,
   most resting on Wikipedia; surveys only leaves the XaviXPORT, the Beena, the V.Smile line,
-  and the other minor systems to one survey, [R1-25][surveys].
+  and the other minor systems to one survey, [R1-26][surveys].
 - **Gains:** every row studied gives the widest choice for [R6-01][phase6]; surveys only keeps the research finite.
 - **Used by:** the roadmap, whose surveys that depend on [R1-03][r103] name Nintendo, Sony, Microsoft, and Sega only,
-  and whose R1-25 takes the systems no other survey names, depending on every primer and catalogue
+  and whose R1-26 takes the systems no other survey names, depending on every primer and catalogue
   ([pull request #30][pr30], merged).
 
 ### One target per family, or one per model
@@ -736,7 +736,7 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
 
 - **What:** keep the GP32, P/ECE, N-Gage, Zodiac, Gizmondo, and Leapster here, or move them to [R1-06][r106].
 - **Costs:** either way each needs one placement, and the other catalogue a cross-reference.
-- **Gains:** a single placement avoids duplicate rows; their survey, R1-25,
+- **Gains:** a single placement avoids duplicate rows; their survey, R1-26,
   already depends on [R1-02][r102] and R1-03 for their hardware.
 - **Used by:** this catalogue, which keeps their rows by the placement rule, while R1-06 keeps cross-references.
 
@@ -762,7 +762,7 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
 
 ### Recommendation
 
-- **Study:** study only the surveyed systems, and leave the minor and educational systems to [R1-25][surveys],
+- **Study:** study only the surveyed systems, and leave the minor and educational systems to [R1-26][surveys],
   as the roadmap now does ([pull request #30][pr30], merged), instead of up to 19 studies.
   Those rows rest on Wikipedia almost alone: only the Beena also has Sega Retro, and the P/ECE its maker's page.
 - **Targets:** one target per family, with model differences, such as the New 3DS clock and cache modes,
@@ -770,7 +770,7 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
   3dbrew documents the original and New 3DS on one page and records the New 3DS clock mode as a flag a title sets,
   and the Xbox 360 boards differ in process and in which chips are merged
   ([Wikipedia, "Xbox 360 technical specifications"][w-x360-spec], "List of revisions").
-- **32-bit handhelds:** none needed; the placement rule settles them, and R1-25 already depends on every primer.
+- **32-bit handhelds:** none needed; the placement rule settles them, and R1-26 already depends on every primer.
 - **Combined units:** list combined units as variants of the game hardware they run,
   and note in the row any firmware or drive that differs,
   such as the PSX's merged chip and XrossMediaBar or the Panasonic Q's drive;
@@ -795,10 +795,10 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
   or a region check, is an access control,
   and it records that Divineo treated a disc authentication check as an access control, on the console.
   The Dreamcast's GD-ROM format check is a disc check, closer to Divineo's than to a cartridge lock-out (inference).
-- That exposure feeds [R1-13][surveys], [R1-17][surveys], [R1-19][surveys], [R1-20][surveys], [R1-22][surveys],
-  and [R1-23][surveys].
-  R1-13, R1-17, R1-20, and R1-23 depend on R0-02 ([pull request #30][pr30] added three of them).
-  Recommendation: add R0-02 to the dependencies of R1-19 and R1-22.
+- That exposure feeds [R1-13][surveys], [R1-17][surveys], [R1-19][surveys], [R1-20][surveys], [R1-23][surveys],
+  and [R1-24][surveys].
+  R1-13, R1-17, R1-20, and R1-24 depend on R0-02 ([pull request #30][pr30] added three of them).
+  Recommendation: add R0-02 to the dependencies of R1-19 and R1-23.
 - Firmware needs differ: some emulators require dumped images, some take them as optional,
   and the PSP's runs without them, as does the Xbox 360's by its high-level kernel (inference);
   this feeds [R2-12][phase2].
@@ -807,7 +807,7 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
   The PSP's processors are not carried over from an earlier system, and [R1-03][r103] covers them,
   so R1-20 needs no dependency on R1-02 (inference).
 - Systems resting on Wikipedia almost alone need a better source before a study relies on them;
-  this feeds [R1-25][surveys], the survey for the minor home systems and other handhelds.
+  this feeds [R1-26][surveys], the survey for the minor home systems and other handhelds.
 
 ## Open questions
 
@@ -819,7 +819,7 @@ and the surveys [R1-11, R1-13, R1-17, R1-20, R1-21, and R1-23][surveys].
   but MAME is walled, so only a session the owner starts as a reader could read them,
   writing functional descriptions only; a teardown or board photograph, found and registered under [ADR 0001][adr1],
   is the other route.
-  [R1-25][surveys], which takes these systems, would do that work.
+  [R1-26][surveys], which takes these systems, would do that work.
 
 ## Sources
 
