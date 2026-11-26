@@ -1135,6 +1135,134 @@ open | cdrdv2.intel.com | Intel notices | maker's manual; no legal analysis; pat
 open | dspace.mit.edu/handle/1721.1/6694 | not read | published research on the Xbox | 2026-11-19 | record page
 open | nostarch.com/xboxfree | not found on the pages read | free edition of a published book | 2026-11-19 | publisher
 
+# Sources first cited by R1-23, the Xbox, Xbox 360, and later survey (2026-11-25).
+walled | cxbx-reloaded/cxbx-reloaded | GPL-2.0, version not stated | HLE; also matches -legacy | 2026-11-25 | COPYING
+open | cxbx-reloaded.co.uk | none stated | site of a walled emulator | 2026-11-25 | home, compatibility pages
+walled | echelon9/cxbx-shogun | GPL-2.0, version not stated | branch of the original Cxbx | 2026-11-25 | COPYING, README
+open | sourceforge.net/projects/cxbx | GPLv2 per page | original Cxbx project page | 2026-11-25 | 2024 capture
+walled | sourceforge.net/projects/cxbx/files | GPLv2 per page | its downloads | 2026-11-25 | project page
+walled | www.sourceforge.net/projects/cxbx/files | GPLv2 per page | the same, www prefix | 2026-11-25 | project page
+open | sourceforge.net/projects/dxbx | none shown | Dxbx project page | 2026-11-25 | 2024 capture
+open | xqemu.com | none stated | prose of a walled emulator | 2026-11-25 | welcome, getting-started pages
+open | xemu-project.github.io/xemu-nxdk_pgraph_tests_results | none stated | xemu's test runs | 2026-11-25 | index
+walled | izzy2lost/xemu | GPL-2.0 as a whole, as xemu | X1 BOX, paid Android fork | 2026-11-25 | licence, README, Play
+walled | rfandango/hakux | GPL-3.0-or-later; one unversioned GPL file | own kernel | 2026-11-25 | LICENSE, README
+walled | crazyriddler/xbased | GPL-3.0-or-later; parts as hakuX | started from hakuX | 2026-11-25 | LICENSE, README
+open | xbased-emu.com | none stated | site of a walled emulator | 2026-11-25 | home page, compatibility data
+walled | zizc3/xpsemu | GPL-3.0 licence file | hakuX core on PS5; asks for Chihiro keys | 2026-11-25 | licence, README
+walled | ihaideez/xemu-ps4 | GPL-2.0, version not stated | xemu port to a jailbroken PS4 | 2026-11-25 | licence
+walled | ashnar2602/x-og_mobile | GPL-2.0, version not stated | Android port of xemu | 2026-11-25 | licence, README
+walled | wizzardsk/xemu-libretro | GPL-2.0 as a whole, as xemu | libretro core | 2026-11-25 | licence, README
+walled | danprice142/xemu-uwp | GPL-2.0 as a whole, as xemu | xemu fork | 2026-11-25 | licence, metadata
+open | strikerx3/strikebox | BSD-2-Clause | LLE fork of OpenXBOX; user MCPX and BIOS | 2026-11-25 | licence, README
+open | abaire/nxdk_pgraph_tests | MIT | NV2A tests; oracle: hardware | 2026-11-25 | LICENSE, README
+open | abaire/nxdk_pgraph_tests_golden_results | CC0-1.0 | results on Xbox 1.0 hardware | 2026-11-25 | licence
+open | abaire.github.io/nxdk_pgraph_tests_golden_results | CC0-1.0 | Pages site of the results | 2026-11-25 | index
+open | abaire/nxdk_low_level_nv2a_tests | Unlicense | NV2A tests; oracle not stated | 2026-11-25 | licence, README
+open | cxbx-reloaded/xbox_kernel_test_suite | GPL-3.0 | kernel tests; oracle: hardware | 2026-11-25 | licence, README
+open | has207/xenia-edge | BSD-3-Clause | fork of Canary; runs the user's xefu | 2026-11-25 | licence, README
+open | xenios-jp/xenios | BSD-3-Clause | Apple fork of Xenia Edge | 2026-11-25 | licence, README
+open | xenios.jp | none stated | XeniOS site; its FAQ is closed | 2026-11-25 | home, compatibility pages
+open | adriancassar/xenia-canary | BSD-3-Clause text | Netplay fork of Canary | 2026-11-25 | licence, README
+open | sirmangler/xenia | BSD-3-Clause text | Canary port for Xbox Developer Mode | 2026-11-25 | licence, README
+open | xenia-canary/game-compatibility | BSD-3-Clause | oracle: playthroughs | 2026-11-25 | metadata, README
+open | xenia-android/xenia-android | BSD-3-Clause | Android port of Canary; archived | 2026-11-25 | licence, README
+open | chuckstation/xeo | BSD-3-Clause | Android port of Canary; archived | 2026-11-25 | licence, README, metadata
+open | libaerto/xeo | BSD-3-Clause | former address of chuckstation/xeo | 2026-11-25 | licence
+walled | aenu1/ax360e | no root licence; per-file headers | Xenia port for Android; paid | 2026-11-25 | README
+open | aenu.cc/ax360e | none stated | site of a walled emulator | 2026-11-25 | page
+walled | rfandango/xendroid | no root licence; per-file headers | Android port of Edge | 2026-11-25 | README
+walled | xenon-emu/xenon | GPL-2.0, version not stated | Xbox 360 LLE; boots 1BL; key hazard | 2026-11-25 | licence
+open | hedge-dev/xenonrecomp | MIT | static recompiler of 360 executables | 2026-11-25 | licence, README
+open | windurango/windurango | LGPL-3.0 | Xbox One layer; uses console files | 2026-11-25 | licence, README
+open | learn.microsoft.com/en-us/windows/apps/publish | maker's terms | Store Policies | 2026-11-25 | v7.20
+open | xbox.com/en-us/games | site terms | maker's product pages | 2026-11-25 | backward-compatibility page
+open | www-128.ibm.com/developerworks/power/library/pa-fpfxbox | not read | chip maker's article | 2026-11-25 | capture
+other | www.justice.gov | public domain | US Department of Justice press releases | 2026-11-25 | one capture
+other | malwarebytes.com | none stated | security vendor's blog, secondary | 2026-11-25 | one post
+# Closed system software inside open or walled repositories (ADR 0006): high-level kernels and replacement dashboards.
+# Also closed by rule, paths not yet known: Cxbx-Reloaded's and Dxbx's kernels, XPSemu's hakuX kernel,
+# the kernels of every Xenia fork above, WinDurango's KernelX and WinRT, and Cromwell, a replacement BIOS
+# that XQEMU's site names without an address. Pinned blob/<sha>/ forms are not matched.
+closed | xenia-project/xenia/tree/master/src/xenia/kernel | BSD-3-Clause | 360 kernel and XAM | 2026-11-25 | docs
+closed | xenia-project/xenia/blob/master/src/xenia/kernel | BSD-3-Clause | the same | 2026-11-25 | docs
+closed | xenia-project/xenia/master/src/xenia/kernel | BSD-3-Clause | the same, raw | 2026-11-25 | docs
+closed | xenia-project/xenia/contents/src/xenia/kernel | BSD-3-Clause | the same, contents API | 2026-11-25 | docs
+closed | xenia-canary/xenia-canary/tree/canary_experimental/src/xenia/kernel | BSD-3-Clause | - | 2026-11-25 | docs
+closed | xenia-canary/xenia-canary/blob/canary_experimental/src/xenia/kernel | BSD-3-Clause | - | 2026-11-25 | docs
+closed | xenia-canary/xenia-canary/canary_experimental/src/xenia/kernel | BSD-3-Clause | raw | 2026-11-25 | docs
+closed | xenia-canary/xenia-canary/contents/src/xenia/kernel | BSD-3-Clause | contents API | 2026-11-25 | docs
+closed | rfandango/hakux/tree/master/native/kernel | - | Xbox kernel; key hazard | 2026-11-25 | LICENSE
+closed | rfandango/hakux/blob/master/native/kernel | - | the same, files | 2026-11-25 | LICENSE
+closed | crazyriddler/xbased/tree/main/native/kernel | - | Xbox kernel; re-signs saves | 2026-11-25 | LICENSE
+closed | crazyriddler/xbased/blob/main/native/kernel | - | the same, files | 2026-11-25 | LICENSE
+closed | rfandango/hakux/master/native/kernel | - | hakuX kernel, raw | 2026-11-25 | LICENSE
+closed | rfandango/hakux/contents/native/kernel | - | hakuX kernel, contents API | 2026-11-25 | LICENSE
+closed | crazyriddler/xbased/main/native/kernel | - | xbased kernel, raw | 2026-11-25 | LICENSE
+closed | crazyriddler/xbased/contents/native/kernel | - | xbased kernel, contents API | 2026-11-25 | LICENSE
+closed | izzy2lost/xemu/tree/master/android/hakux/core | GPL-3.0-or-later | X1 BOX's hakuX kernel | 2026-11-25 | README
+closed | izzy2lost/xemu/blob/master/android/hakux/core | GPL-3.0-or-later | the same, files | 2026-11-25 | README
+closed | izzy2lost/xemu/master/android/hakux/core | GPL-3.0-or-later | the same, raw | 2026-11-25 | README
+closed | izzy2lost/xemu/contents/android/hakux/core | GPL-3.0-or-later | the same, contents API | 2026-11-25 | README
+closed | xemu-project/xemu-dashboard | MIT, second-hand | replacement Xbox dashboard | 2026-11-25 | xemu.app
+closed | xemu-project/xemu-hdd-image | not read | disk image holding that dashboard | 2026-11-25 | xemu.app
+# Key precaution: Xenia's XEX loader is recalled to embed the console-wide XEX key (from memory; path not opened).
+closed | xenia-project/xenia/blob/master/src/xenia/cpu/xex_module | BSD-3-Clause | XEX key | 2026-11-25 | -
+closed | xenia-project/xenia/master/src/xenia/cpu/xex_module | BSD-3-Clause | the same, raw | 2026-11-25 | -
+closed | xenia-project/xenia/contents/src/xenia/cpu/xex_module | BSD-3-Clause | contents API | 2026-11-25 | -
+closed | xenia-canary/xenia-canary/blob/canary_experimental/src/xenia/cpu/xex_module | BSD-3-Clause | - | 2026-11-25 | -
+closed | xenia-canary/xenia-canary/canary_experimental/src/xenia/cpu/xex_module | BSD-3-Clause | raw | 2026-11-25 | -
+closed | xenia-canary/xenia-canary/contents/src/xenia/cpu/xex_module | BSD-3-Clause | - | 2026-11-25 | -
+# Closed repositories: no licence, source withheld, derived from maker code, or exploits.
+closed | patrickvl/dxbx | none found | Delphi translation of Cxbx; own kernel | 2026-11-25 | licence 404
+closed | sourceforge.net/projects/dxbx/files | none | downloads of a closed emulator | 2026-11-25 | project page
+closed | www.sourceforge.net/projects/dxbx/files | none | the same, www prefix | 2026-11-25 | project page
+closed | mborgerson/openxbox | none | archived proof of concept | 2026-11-25 | licence 404, README
+closed | xenia-project/release-builds-windows | none | binary builds of Xenia's master branch | 2026-11-25 | metadata
+closed | cxbx-reloaded/xbsymboldatabase | MIT | signatures of maker code from retail games | 2026-11-25 | README
+closed | ashnar2602/x360-mobile---official | none | source not published | 2026-11-25 | README
+closed | leviidev/utsuro | none found | runs the console's userland | 2026-11-25 | README
+closed | xboxoneresearch/ | mixed | exploits, flash dumpers; precaution | 2026-11-25 | organisation list
+# Dumping guides and possible firmware hosts, named by the sources read; not opened.
+closed | xenia-project/xenia/wiki/quickstart | none | game-dumping guide | 2026-11-25 | linked from the FAQ
+closed | xenia-project/xenia/wiki/how-to-rip-games | none | game-dumping guide | 2026-11-25 | wiki navigation
+closed | xenia-canary/xenia-canary/wiki/quickstart | none | the same in Canary's wiki | 2026-11-25 | FAQ link
+closed | xenia.jp/development/quickstart | none | the same on Xenia's site | 2026-11-25 | search result
+closed | www.xenia.jp/development/quickstart | none | www prefix | 2026-11-25 | search result
+closed | xenios.jp/faq | none stated | holds a game-dumping how-to | 2026-11-25 | page
+closed | www.xenios.jp/faq | none stated | www prefix | 2026-11-25 | page
+closed | emulator-zone.com | not read | Xeon download; may host BIOS files | 2026-11-25 | wiki link
+closed | www.emulator-zone.com | not read | www prefix | 2026-11-25 | wiki link
+closed | xbins.org | not read | homebrew file host | 2026-11-25 | Free60 link
+closed | www.xbins.org | not read | www prefix | 2026-11-25 | Free60 link
+closed | xbox-scene.xbins.org | not read | forum on the same host | 2026-11-25 | Free60 link
+# Free60 pages named for boot-loader code, keys, or the maker's kit; closed by file name, not opened (tree f3d099ff).
+closed | free60.org/system-software/1bl_cod | none stated | boot loader pseudo-code | 2026-11-25 | listing
+closed | www.free60.org/system-software/1bl_cod | none stated | www prefix | 2026-11-25 | listing
+closed | free60project/wiki/blob/master/docs/system-software/1bl_cod | - | file | 2026-11-25 | listing
+closed | free60project/wiki/master/docs/system-software/1bl_cod | - | raw file | 2026-11-25 | listing
+closed | free60.org/system-software/cb_cod | none stated | boot loader pseudo-code | 2026-11-25 | listing
+closed | www.free60.org/system-software/cb_cod | none stated | www prefix | 2026-11-25 | listing
+closed | free60project/wiki/blob/master/docs/system-software/cb_cod | - | file | 2026-11-25 | listing
+closed | free60project/wiki/master/docs/system-software/cb_cod | - | raw file | 2026-11-25 | listing
+closed | free60.org/system-software/reversing_the_bootloader | none stated | boot loader analysis | 2026-11-25 | listing
+closed | www.free60.org/system-software/reversing_the_bootloader | none stated | www prefix | 2026-11-25 | listing
+closed | free60project/wiki/blob/master/docs/system-software/reversing_the_bootloader | - | file | 2026-11-25 | listing
+closed | free60project/wiki/master/docs/system-software/reversing_the_bootloader | - | raw file | 2026-11-25 | listing
+closed | free60.org/system-software/hvxkeysexecut | none stated | key handling | 2026-11-25 | listing
+closed | www.free60.org/system-software/hvxkeysexecut | none stated | www prefix | 2026-11-25 | listing
+closed | free60project/wiki/blob/master/docs/system-software/hvxkeysexecut | - | file | 2026-11-25 | listing
+closed | free60project/wiki/master/docs/system-software/hvxkeysexecut | - | raw file | 2026-11-25 | listing
+closed | free60.org/system-software/xdk_kerne | none stated | named after the maker's kit | 2026-11-25 | listing
+closed | www.free60.org/system-software/xdk_kerne | none stated | www prefix | 2026-11-25 | listing
+closed | free60project/wiki/blob/master/docs/system-software/xdk_kerne | - | file | 2026-11-25 | listing
+closed | free60project/wiki/master/docs/system-software/xdk_kerne | - | raw file | 2026-11-25 | listing
+# Wiki pages that mention leaked Xbox source or kits; their oldid and "index.php?title=" forms cannot be matched.
+closed | en.wikipedia.org/wiki/xbox_system_softwar | CC BY-SA 4.0 | mentions the 2020 source leak | 2026-11-25 | raw
+closed | en.wikipedia.org/wiki/xbox_%28consol | CC BY-SA 4.0 | the same; "(" form not matched | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/xbox_emulators | none named | mentions stolen kits | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/emulator_scams | none named | mentions a kit leak | 2026-11-25 | raw
+
 # Sega, arcade, Xbox, and other systems: emulators, cores, and kits.
 open | retrodev.com/repos/blastem | GPL-3.0-or-later | credits community documents | 2026-11-19 | README, COPYING
 open | rogersanders/exodus | MIT | author: own reverse engineering | 2026-11-19 | licence file, site
