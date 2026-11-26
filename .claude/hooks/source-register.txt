@@ -1530,6 +1530,72 @@ closed | mist64/c64ref | BSD-2-Clause | holds ROM disassemblies and comments fro
 closed | trapexit/3do-devkit | none | ships original 3DO kit libraries | 2026-11-19 | README
 closed | trapexit/portfolio_os | not read | described by a README as 3DO system source | 2026-11-19 | a README
 
+# Sources first cited by R1-22, the Sega Master System, Game Gear, and Genesis survey (2026-11-26).
+# The survey read every emulator from its prose and repository metadata only, whatever its tier.
+# Every replacement or high-level BIOS or boot code is closed inside any repository below; the paths are not known.
+# ares's MAME-derived ROM decryption code is closed by the rule R1-25 applied; its path is not known either.
+# BizHawk's Genplus-gx and PicoDrive32x cores are closed inside it, being non-commercial; paths not read.
+open | drhelius/gearsystem | GPL-3.0 | Sega 8-bit emulator and debugger; optional BIOS | 2026-11-26 | LICENSE, README
+open | www.geardome.com | none stated | Gearsystem author's host; test screenshots | 2026-11-26 | README images
+walled | ocornut/meka | "BSD-like" by its site; no licence file | altered BIOS, by a lead | 2026-11-26 | README, site
+open | smspower.org/meka | none stated | Meka's site; prose | 2026-11-26 | home, download pages
+open | www.smspower.org/meka | none stated | same site, www prefix | 2026-11-26 | home, download pages
+# Closed as a precaution and never opened: an unlabelled zip on Meka's page that may hold games.
+closed | smspower.org/meka/gamepac | not read | Meka page's unlabelled zip; may hold games | 2026-11-26 | page link
+closed | www.smspower.org/meka/gamepac | not read | same file, www prefix | 2026-11-26 | home page link
+walled | libretro/smsplus-gx | GPLv2+ by README; GPL-2.0 file; a GPLv2 part | SMS Plus GX port | 2026-11-26 | README
+closed | ekeeke/smsplus-gx | none found | Google Code export of SMS Plus GX | 2026-11-26 | metadata; README, licence 404
+closed | stevemaddison/dega | none found | Pandora port of Dega | 2026-11-26 | metadata; README 404
+open | anisse/gears | MIT | Rust Game Gear emulator with a web build | 2026-11-26 | README, metadata
+open | joppyfurr/snepulator | MIT | SG-1000, SMS, GG, and ColecoVision emulator | 2026-11-26 | README, metadata
+walled | jgemu/cega | MPL-2.0 by a wiki lead; not read | SG-1000, SMS, and GG emulator | 2026-11-26 | jgemu.gitlab.io
+walled | libretro/emux | GPL-2.0, or later not read | Emux SMS core; fork of sronsse/emux | 2026-11-26 | metadata, docs
+open | fms.komkon.org/mg | none; source not public | site of MasterGear, a closed emulator | 2026-11-26 | home page
+open | carpeludum.com | none stated | site of Kega Fusion, a closed emulator; prose | 2026-11-26 | Kega Fusion page
+open | www.carpeludum.com | none stated | same site, www prefix | 2026-11-26 | Kega Fusion page, FAQ
+closed | notaz/picodrive | MAME-style non-commercial | from fdave's PicoDrive; CD code from Gens | 2026-11-26 | COPYING
+closed | irixxxx/picodrive | the same non-commercial text | fork where PicoDrive is developed | 2026-11-26 | COPYING
+closed | libretro/picodrive | the same non-commercial text | libretro fork of PicoDrive | 2026-11-26 | COPYING, docs
+closed | openemu/picodrive | non-commercial, by its parent | OpenEmu's PicoDrive fork, for the 32X | 2026-11-26 | parent
+closed | libretro/genesis-plus-gx | own non-commercial licence | libretro fork of Genesis Plus GX | 2026-11-26 | licence
+closed | libretro/genesis-plus-gx-wide | own non-commercial licence | widescreen Genesis Plus GX | 2026-11-26 | licence
+closed | openemu/genesisplus-core | none found | OpenEmu plug-in wrapping Genesis Plus GX | 2026-11-26 | metadata
+closed | rileytestut/gpgxdeltacore | none found | Delta's Genesis core; wraps Genesis Plus GX | 2026-11-26 | licence 404
+closed | gerbilsoft/gens-gs-ii | none found | Gens/GS II rewrite; last push 2019 | 2026-11-26 | metadata; licence 404
+walled | clownacy/clownmdemu-core | AGPL-3.0-or-later | says it uses only original code | 2026-11-26 | README, metadata
+walled | clownacy/clownmdemu-frontend | AGPL-3.0-or-later | standalone frontend of ClownMDEmu | 2026-11-26 | README
+walled | clownacy/clownmdemu-libretro | AGPL-3.0 by metadata | libretro frontend of ClownMDEmu | 2026-11-26 | metadata
+walled | clownacy/clownmdemu | AGPL-3.0-or-later | old name; redirects to the core | 2026-11-26 | metadata
+open | clownacy.wordpress.com | none stated | ClownMDEmu author's blog, a lead | 2026-11-26 | tag page, one post
+open | libretro/blastem | GPL-3.0 | libretro tracking repository of BlastEm | 2026-11-26 | COPYING, metadata
+open | retrodev.com/blastem | none stated | BlastEm's site; prose | 2026-11-26 | home, changes, 1.0.0 post
+open | www.retrodev.com/blastem | none stated | same site, www prefix | 2026-11-26 | home, changes, 1.0.0 post
+open | exodusemulator.com | none stated | Exodus's site; prose | 2026-11-26 | news posts
+open | www.exodusemulator.com | none stated | same site, www prefix | 2026-11-26 | news posts
+walled | nemesis.exodusemulator.com | not read | Nemesis's test ROMs | 2026-11-26 | Exodus 2.0 post
+walled | www.nemesis.exodusemulator.com | not read | same host, www prefix | 2026-11-26 | Exodus 2.0 post
+open | aamirm.hacking-cult.org | none stated | Regen author's site, gone; read in a capture | 2026-11-26 | capture
+open | flamewing/68k-bcd-verifier | GPL-3.0 | test ROM; oracle Model 1 and Model 3 consoles | 2026-11-26 | README
+walled | maxim-zhao/zexall-sms | GPL-2.0, version not stated | SMS ZEXALL; oracle Sega consoles | 2026-11-26 | README
+walled | dasutin/32x240ptestsuite | GPL-2.0 by metadata | 32X 240p suite port; oracle not stated | 2026-11-26 | metadata
+# SMS Power's homebrew index also lists fan ports of commercial games, so its pages are registered one at a time.
+open | smspower.org/homebrew/zexall-sms | none stated | ZEXALL-SMS; oracle SMS, Mark III, Genesis 2 | 2026-11-26 | page
+open | www.smspower.org/homebrew/zexall-sms | none stated | same page, www prefix | 2026-11-26 | page
+open | smspower.org/homebrew/smsvdptest-sms | none stated | SMS VDP test page; oracle not stated | 2026-11-26 | page
+open | www.smspower.org/homebrew/smsvdptest-sms | none stated | same page, www prefix | 2026-11-26 | page
+open | smspower.org/homebrew/index | none stated | homebrew index; technical list read | 2026-11-26 | page
+open | www.smspower.org/homebrew/index | none stated | same page, www prefix | 2026-11-26 | page
+other | www.mcvuk.com | press | news site, secondary | 2026-11-26 | article
+other | www.vice.com | press | news site, secondary | 2026-11-26 | article
+# Closed as a precaution and never opened: maker manuals hosted by others, a game-copy item, and maker samples.
+closed | smspower.org/maxim/document | none | hosted maker manuals (Yamaha YM2413) | 2026-11-26 | jgenesis README link
+closed | www.smspower.org/maxim/document | none | same folder, www prefix | 2026-11-26 | jgenesis README link
+closed | archive.org/details/doom-32x-all-versio | not read | game copies by its name | 2026-11-26 | PicoDrive README
+closed | www.archive.org/details/doom-32x-all-versio | not read | same item, www prefix | 2026-11-26 | PicoDrive README
+closed | archive.org/download/doom-32x-all-versio | not read | the same item's files | 2026-11-26 | PicoDrive README
+closed | notaz.gp2x.de/misc/sdsp_ | none | Samsung DSP sample files hosted by others | 2026-11-26 | SVP page links
+closed | www.notaz.gp2x.de/misc/sdsp_ | none | same files, www prefix | 2026-11-26 | SVP page links
+
 # Sega, arcade, Xbox, and other systems: tests.
 open | raxoft/z80test | MIT | results from a real Spectrum | 2026-11-19 | README
 open | singlesteptests/m68000 | MIT | generated with MAME's microcoded core | 2026-11-19 | README
