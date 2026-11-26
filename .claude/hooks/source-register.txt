@@ -1281,6 +1281,8 @@ closed | dcnet.flyca.s | none | redirects to the closed Flycast wiki | 2026-11-2
 closed | www.dcnet.flyca.s | none | the same, www prefix | 2026-11-26 | HTTP redirect
 closed | emulation.gametechwiki.com/index.php/sega_saturn_emulator | none | links leaked Sega papers | 2026-11-26 | raw
 closed | emulation.gametechwiki.com/index.php/girigir | none named | links hacked official builds | 2026-11-26 | raw
+closed | title=sega_saturn_emulator | none | the Saturn emulators page's "?title=" form | 2026-11-26 | raw
+closed | title=girigir | none named | the GiriGiri page's "?title=" form | 2026-11-26 | raw
 closed | archive.org/details/segamanual | none | "leaked, official documentation" per a wiki | 2026-11-26 | wiki raw
 closed | www.archive.org/details/segamanual | none | the same, www prefix | 2026-11-26 | wiki raw
 closed | archive.org/download/segamanual | none | the same item's files | 2026-11-26 | wiki raw

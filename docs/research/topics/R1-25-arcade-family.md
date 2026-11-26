@@ -351,8 +351,9 @@ Sources by row: each project's README, licence file, site, or Flathub entry, as 
   and a "HLE BIOS" option, and loads NAOMI GD-ROM games as "MAME zip + chd" ([libretro, Flycast][lr-flycast]).
   The high-level BIOS is closed system software.
   That cartridge decryption takes its key from the security chip dump in the user's set is from memory.
-- Its parent [Reicast][reicast] is archived under the 3-Clause BSD licence and points users to Flycast;
-  its predecessor nullDC (`skmp/nullDC-v1`) has no licence and is closed.
+- Its parent [Reicast][reicast] is archived and points users to Flycast; its `LICENSE` grants the 3-Clause BSD licence,
+  but bare GPL-2.0 and LGPL-2.1 texts sit beside it, so [R1-23](R1-23-saturn-and-dreamcast-family.md) walls it.
+  Its predecessor nullDC (`skmp/nullDC-v1`) is labelled "gpl2" with no version, so R1-23 walls it too.
   The roadmap's [R1-52][studies] covers Flycast.
 
 ### Dolphin's Triforce support
