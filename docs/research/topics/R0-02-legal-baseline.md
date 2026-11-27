@@ -942,6 +942,10 @@ No firmware, key, or game was obtained for this section, and no replacement BIOS
   (29 January 2026)
   says "support for encrypted ROMs is still disabled",
   because "encrypted ROMs still present actual legal challenges that we do not want to take on".
+  [R1-13](R1-13-nintendo-3ds-family.md#legal-exposure) later found that Azahar also ships built-in keys
+  and decrypts content obtained through Nintendo's own applications, such as the eShop
+  (its game-loading post of 12 December 2024 and release 2125.1),
+  so it uses both variants of option 3 (correction of 2026-11-26).
 
 #### How projects handle firmware and games
 
@@ -1041,12 +1045,14 @@ No repository named in a notice was opened, and none is linked here.
 | 2023-05 | Skyline halts development | Voluntary | Cites the Lockpick notice (secondary) | Press |
 | 2023-05 | Dolphin's Steam release blocked | Letter to Valve | § 1201; no notice, no suit | Dolphin |
 | 2024-03 | Nintendo against yuzu's company | Consent judgment | $2,400,000; agreed findings | Court |
+| 2024-03 | Citra taken offline by its developers | Voluntary | After the yuzu judgment; lead was a member | Citra |
 | 2024-03 | Pizza Boy emulators leave Google Play | Voluntary | No notice reported (secondary) | Press |
 | 2024-04 | Nintendo against yuzu copies | § 1201 notice | 8,535 repositories disabled | GitHub |
 | 2024-04 | Apple removes iGBA | Store rules | Copy of another app (secondary) | Press |
 | 2024-05 | Adobe against Delta's icon | Trade mark | Icon changed (secondary) | Press |
 | 2024-10 | Ryujinx removed by its creator | Private contact | Terms not public (secondary) | Press |
 | 2025-02 | Nintendo against Ryujinx copies | § 1201 notices | 4,238 repositories in one notice | GitHub |
+| 2025-02 | DraStic leaves Google Play | Voluntary or unexplained | No notice reported (secondary) | Press |
 | 2025-05 | Nintendo against LibHac, a file-format library | § 1201 notice | Cites the yuzu judgment | GitHub |
 | 2025-09 | Nintendo against a modchip seller, Daly | Consent judgment | $2,000,000 | News-site copy |
 | 2025-10 | Nintendo against a streamer, Keighin | Default judgment | $17,500; links to emulators | Court |
@@ -1063,6 +1069,10 @@ the [LoveROMs judgment form](https://torrentfreak.com/images/romsjudg.pdf),
 and TechCrunch on
 [iGBA](https://techcrunch.com/2024/04/15/apple-pulls-a-game-boy-emulator-for-app-store-violations-but-says-game-emulators-are-allowed)
 and [Delta](https://techcrunch.com/2024/05/17/adobe-comes-after-indie-game-emulator-delta-for-copying-its-logo).
+The Citra and DraStic rows were added on 2026-11-26 from the family surveys:
+Citra's [shutdown statement](https://citra-emu.org/), as [R1-13](R1-13-nintendo-3ds-family.md#legal-exposure) reads it,
+and [Android Authority on DraStic](https://www.androidauthority.com/drastic-ds-emulator-removed-3526330/),
+as [R1-12](R1-12-nintendo-ds-family.md) reads it.
 
 #### What the notices allege
 
@@ -1640,8 +1650,10 @@ Options 11 to 13 concern patents, and options 14 to 16 concern names and imagery
   an embedded key was cited in a maker's letter; neither variant has been tested.
 - **Gains:** in the first, the project's code performs no decryption; in the second, the emulator works unaided.
 - **Used by:** [Azahar](https://github.com/azahar-emu/azahar/releases/tag/2124.3), for the first variant,
-  since March 2025, giving legal challenges as its reason, with no notice naming it found;
-  Dolphin embeds the Wii common key and has "every reason to believe" that § 1201(f) covers its decryption
+  since March 2025, giving legal challenges as its reason, with no notice naming it found, and for the second,
+  with keys built in for content from Nintendo's own applications
+  ([R1-13](R1-13-nintendo-3ds-family.md#legal-exposure)); Dolphin embeds the Wii common key and has "every reason to
+  believe" that § 1201(f) covers its decryption
   ([Dolphin blog, archived copy](https://web.archive.org/web/20241221001744/https://dolphin-emu.org/blog/2023/07/20/what-happened-to-dolphin-on-steam/)).
 
 ### 4. Require firmware that the user dumps
@@ -1792,8 +1804,10 @@ Each recommendation is for the owner to decide.
   Where an encrypted system is taken up, prefer option 3's first variant
   (accept only decrypted input, with no decryption code, keys, or links to tools) over option 2.
   Every filing, judgment, and notice found targets run-time decryption with user-supplied keys,
-  [Azahar](https://github.com/azahar-emu/azahar/releases/tag/2120) moved to decrypted input in March 2025 with no notice
-  naming it found, and an embedded key drew a maker's letter.
+  [Azahar](https://github.com/azahar-emu/azahar/releases/tag/2120) moved to decrypted input
+  for dumps in March 2025 with no notice naming it found
+  (it embeds keys only for content from Nintendo's own applications,
+  [R1-13](R1-13-nintendo-3ds-family.md#legal-exposure)), and an embedded key drew a maker's letter.
 - **Firmware (options 4 to 6):** prefer option 5, an independently written replacement or high-level emulation,
   wherever accuracy allows, with option 4 as an optional path, and option 6 where the maker publishes the file.
   Connectix's facts are a replacement, no decision makes a user's dump lawful, and the maker licences read
@@ -2189,6 +2203,9 @@ Emulator projects, prose only:
   because it holds a game-dumping guide and a guide to making licence files.
 - [Delta, release notes](https://faq.deltaemulator.com/release-notes).
 - Websites of [RetroArch](https://www.retroarch.com/), [Azahar](https://azahar-emu.org/), and [mGBA](https://mgba.io/).
+- Added with the corrections of 2026-11-26, as read by R1-12 and R1-13: [Citra, home page](https://citra-emu.org/)
+  (shutdown statement);
+  [Android Authority on DraStic](https://www.androidauthority.com/drastic-ds-emulator-removed-3526330/) (2025-02-14).
 - Azahar release notes, [2120](https://github.com/azahar-emu/azahar/releases/tag/2120)
   and [2124.3](https://github.com/azahar-emu/azahar/releases/tag/2124.3), read 2026-11-20.
 - README files, read as raw files from each repository: [mGBA](https://github.com/mgba-emu/mgba),

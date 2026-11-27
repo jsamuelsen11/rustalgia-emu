@@ -123,8 +123,8 @@ Identity, with the hub where one exists:
 | 3DO | The 3DO Company | NA 1993-10-04; JP 1994-03-20 | R1-26 | [3DO Development Repo][3do-start] (open) |
 | Atari Jaguar | Atari Corporation | NA 1993-11-23 | R1-26 | — |
 | PC-FX | NEC, with Hudson Soft | JP 1994-12-23 | R1-26 | [Mednafen documentation][mdf-pcfx] (open) |
-| Amiga CD32 | Commodore | 1993-09-17 | R1-26 | — |
-| FM Towns Marty (Marty 2, Car Marty) | Fujitsu | JP 1993-02-20 | R1-26 | — |
+| Amiga CD32 | Commodore | 1993-09-17 | R1-27 | — |
+| FM Towns Marty (Marty 2, Car Marty) | Fujitsu | JP 1993-02-20 | R1-27 | — |
 | Playdia | Bandai | JP 1994-09-23 | R1-26 | — |
 | Casio Loopy | Casio | JP 1995-10-19 | R1-26 | — |
 | Pippin (ATMARK, @WORLD, KMP 2000) | Apple; Bandai and Katz Media | JP 1996 | R1-26 | — |

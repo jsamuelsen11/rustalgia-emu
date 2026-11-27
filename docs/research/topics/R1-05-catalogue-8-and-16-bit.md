@@ -87,11 +87,11 @@ This note is not legal advice.
 - A device placed in another catalogue keeps one cross-reference row here, so that each device is listed once.
 - "Survey" names the family survey whose title includes the system, or the system it is a model
   or add-on of. "(inference)" marks a survey that does not name the system;
-  "R1-26 (inference)" marks a console built from a home computer.
+  "R1-27 (inference)" marks a console built from a home computer,
+  which [R1-09](R1-09-catalogue-home-computers.md) places with its host (correction of 2026-11-26).
   A dash means no survey's title names the system,
-  so it falls to [R1-26](../../roadmap/research.md#system-family-surveys), "Other consoles, handhelds,
-  and home computers: the systems that no other survey names";
-  "Options and trade-offs" recommends four family surveys for some of them.
+  so it falls to [R1-26](../../roadmap/research.md#system-family-surveys), "Other consoles and handhelds:
+  the systems that no other survey names"; "Options and trade-offs" recommends four family surveys for some of them.
 - "Hub" names the best open-tier source other than Wikipedia, as registered;
   a dash means Wikipedia was the only source found.
 - Regions: NA North America, EU Europe, UK United Kingdom, DE Germany, RU Russia, PL Poland, JP Japan, KR South Korea,
@@ -315,21 +315,21 @@ Identity:
 | SG-1000 (SC-3000; SG-1000 II) | Sega | JP 1983-07-15; AU 1983-11 | — | SMS Power |
 | Mark III / Master System | Sega; Tectoy, Samsung | JP 1985-10-20; NA 1986; EU 1987; BR 1989 | [R1-22](../../roadmap/research.md#system-family-surveys) | SMS Power |
 | 7800 ProSystem | Atari Corp., by GCC | NA 1986-05; EU 1987 | — | — |
-| XEGS | Atari Corp. | 1987 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| XEGS | Atari Corp. | 1987 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | PV-1000 | Casio | JP 1983-10 | — | — |
 | Super Cassette Vision | Epoch | JP 1984-07-17; EU 1984 | — | — |
 | My Vision | Nichibutsu | JP 1983 | — | — |
 | Videopac+ G7400 (Jopac) | Philips | 1983 | — | — |
-| Pyūta Jr. | Tomy | JP 1983 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| Pyūta Jr. | Tomy | JP 1983 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | Dina (Personal Arcade) | Bit Corporation | 1986 | — | — |
 | BBC Bridge Companion | Heber | UK 1985 | — | — |
 | Video Art | LJN | 1987 | — | — |
 | Socrates | VTech | 1988 | — | — |
 | Action Max; Video Challenger | Worlds of Wonder; Takara | 1987 | — | — |
 | Interactive Vision | View-Master | 1989 | — | — |
-| Zemmix | Daewoo | KR 1985 to 1995 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| GX4000 | Amstrad | EU 1990-09 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| C64 Games System | Commodore | 1990-12 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| Zemmix | Daewoo | KR 1985 to 1995 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| GX4000 | Amstrad | EU 1990-09 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| C64 Games System | Commodore | 1990-12 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
 
 Hardware:
 
@@ -436,7 +436,7 @@ Identity:
 | Neo Geo AES (MVS arcade) | SNK | JP 1990-04-26; NA 1991, doubted | [R1-25](../../roadmap/research.md#system-family-surveys) for MVS (inference) | NeoGeo wiki |
 | Neo Geo CD, CDZ | SNK | JP 1994-09-09; EU 1994-12; NA 1996-01-15 | — | NeoGeo wiki |
 | TeraDrive | IBM, with Sega | JP 1991-05-31 | [R1-22](../../roadmap/research.md#system-family-surveys) (inference) | — |
-| CDTV | Commodore | NA 1991 (shown 03, launched 04); UK 1991 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
+| CDTV | Commodore | NA 1991 (shown 03, launched 04); UK 1991 | [R1-27](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | CD-i (players by many makers) | Philips | NA 1991-12-03; JP 1992; EU 1992 | — | — |
 | Video Information System | Tandy | 1992 | [R1-26](../../roadmap/research.md#system-family-surveys) (inference) | — |
 | Sega Pico (Kids Computer Pico) | Sega Toys | JP 1993-06; NA 1994-11; EU 1994 | — | — |

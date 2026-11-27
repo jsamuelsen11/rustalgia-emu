@@ -45,8 +45,8 @@ MAME, and BizHawk ones, and taking up the unencrypted, firmware-free systems fir
   what legal exposure does the family carry; and how hard is it to emulate?
 - Covered: every row of those catalogues that no other survey names, listed in "The systems this note covers".
   Consoles built from home computers (XEGS, CDTV, CD32, FM Towns Marty, GX4000, C64 Games System, Zemmix, Pyūta Jr.) go
-  to [R1-27][surveys], as R1-09 settles in its "Consoles built from home computers" table, merged after this branch; the
-  SG-1000 and the Pico go to [R1-22][surveys]; the MVS and Neo Geo X to [R1-25][r125].
+  to [R1-27][surveys], as [R1-09](R1-09-catalogue-home-computers.md) settles in its "Consoles built from home computers"
+  table; the SG-1000 and the Pico go to [R1-22][surveys]; the MVS and Neo Geo X to [R1-25][r125].
 - Researched on 2026-11-26 by four research agents, one each for the multi-system emulators,
   the Atari and early systems, the NEC, SNK, Bandai, and later systems, and law and difficulty;
   each read sources as raw text and quoted only from it.
