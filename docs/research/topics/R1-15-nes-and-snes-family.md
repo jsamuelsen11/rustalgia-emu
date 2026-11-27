@@ -1,8 +1,8 @@
 ---
 title: "NES and SNES: family survey"
 roadmap_item: R1-15
-status: draft
-date: 2026-11-22
+status: approved
+date: 2026-11-26
 ---
 
 # NES and SNES: family survey

@@ -1,7 +1,7 @@
 ---
 title: "Home computers: catalogue"
 roadmap_item: R1-09
-status: draft
+status: approved
 date: 2026-11-26
 ---
 

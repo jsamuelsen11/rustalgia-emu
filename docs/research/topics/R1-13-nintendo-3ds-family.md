@@ -1,8 +1,8 @@
 ---
 title: "Nintendo 3DS: family survey"
 roadmap_item: R1-13
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # Nintendo 3DS: family survey

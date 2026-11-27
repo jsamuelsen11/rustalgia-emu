@@ -1,8 +1,8 @@
 ---
 title: "Xbox, Xbox 360, and later: family survey"
 roadmap_item: R1-24
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # Xbox, Xbox 360, and later: family survey

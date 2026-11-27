@@ -1,7 +1,7 @@
 ---
 title: "Other consoles and handhelds: family survey"
 roadmap_item: R1-26
-status: draft
+status: approved
 date: 2026-11-26
 ---
 

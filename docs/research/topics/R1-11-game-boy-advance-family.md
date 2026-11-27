@@ -1,8 +1,8 @@
 ---
 title: "Game Boy Advance: family survey"
 roadmap_item: R1-11
-status: draft
-date: 2026-11-22
+status: approved
+date: 2026-11-26
 ---
 
 # Game Boy Advance: family survey

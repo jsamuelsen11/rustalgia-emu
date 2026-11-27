@@ -88,7 +88,7 @@ and the survey depends on the other primers for the hardware that its systems co
 - [x] **R1-06** The 32-bit and 64-bit era: catalogue.
 - [x] **R1-07** The sixth generation and the move to programmable graphics: catalogue.
 - [x] **R1-08** Modern consoles and handhelds, including systems on sale today: catalogue.
-- [ ] **R1-09** Home computers: catalogue.
+- [x] **R1-09** Home computers: catalogue.
       Depends on R1-01, R1-02, R1-03, R1-04.
 
 #### System family surveys
@@ -98,38 +98,38 @@ Each lists the popular and the respected emulators for one family.
 For each emulator it records status, licence, techniques, and host platforms.
 It also records the family's legal exposure and how hard it is to emulate.
 
-- [ ] **R1-10** Game Boy and Game Boy Color.
+- [x] **R1-10** Game Boy and Game Boy Color.
       Depends on R1-01.
-- [ ] **R1-11** Game Boy Advance.
+- [x] **R1-11** Game Boy Advance.
       Depends on R1-02.
-- [ ] **R1-12** Nintendo DS and DSi.
+- [x] **R1-12** Nintendo DS and DSi.
       Depends on R1-02, R0-02.
-- [ ] **R1-13** Nintendo 3DS.
+- [x] **R1-13** Nintendo 3DS.
       Depends on R1-02, R1-03, R0-02.
-- [ ] **R1-14** Nintendo Switch and Switch 2.
+- [x] **R1-14** Nintendo Switch and Switch 2.
       Depends on R1-04, R0-02.
-- [ ] **R1-15** NES and SNES.
+- [x] **R1-15** NES and SNES.
       Depends on R1-01.
-- [ ] **R1-16** Nintendo 64.
+- [x] **R1-16** Nintendo 64.
       Depends on R1-02.
-- [ ] **R1-17** GameCube, Wii, and Wii U. Depends on R1-03, R0-02.
-- [ ] **R1-18** PlayStation 1.
+- [x] **R1-17** GameCube, Wii, and Wii U. Depends on R1-03, R0-02.
+- [x] **R1-18** PlayStation 1.
       Depends on R1-02.
-- [ ] **R1-19** PlayStation 2.
+- [x] **R1-19** PlayStation 2.
       Depends on R1-02, R1-03.
-- [ ] **R1-20** PSP and Vita.
+- [x] **R1-20** PSP and Vita.
       Depends on R1-03, R0-02.
-- [ ] **R1-21** PlayStation 3, 4, and 5.
+- [x] **R1-21** PlayStation 3, 4, and 5.
       Depends on R1-04, R0-02.
-- [ ] **R1-22** Sega: Master System, Game Gear, and Genesis, with the Sega CD and 32X.
+- [x] **R1-22** Sega: Master System, Game Gear, and Genesis, with the Sega CD and 32X.
       Depends on R1-01, R1-02.
-- [ ] **R1-23** Sega: Saturn and Dreamcast.
+- [x] **R1-23** Sega: Saturn and Dreamcast.
       Depends on R1-02, R1-03.
-- [ ] **R1-24** Xbox, Xbox 360, and later.
+- [x] **R1-24** Xbox, Xbox 360, and later.
       Depends on R1-03, R1-04, R0-02.
-- [ ] **R1-25** Arcade hardware.
+- [x] **R1-25** Arcade hardware.
       Depends on R1-01, R1-02, R1-03, R1-04.
-- [ ] **R1-26** Other consoles and handhelds: the systems that no other survey names.
+- [x] **R1-26** Other consoles and handhelds: the systems that no other survey names.
       Depends on R1-01, R1-02, R1-03, R1-04, R1-05, R1-06, R1-07, R1-08.
 - [ ] **R1-27** Home computers.
       Depends on R1-09, R0-02.

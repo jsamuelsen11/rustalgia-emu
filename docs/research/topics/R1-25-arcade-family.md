@@ -1,8 +1,8 @@
 ---
 title: "Arcade hardware: family survey"
 roadmap_item: R1-25
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # Arcade hardware: family survey
