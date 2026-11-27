@@ -753,7 +753,7 @@ which has no article and rests on
 | PlayStation Portal | [`R1-21`] names PS3, 4, 5 only | 2023 | here, listed as a client |
 | Nex Playground | none; Android-based, closed library | 2023 | here, as a dedicated console (inference) |
 | Analogue Nt; Flashback 2 | [`R1-15`] for the NES; none for the 2600 | 2005, 2015 | under the NES and the 2600 |
-| ZX Spectrum Next | [`R1-26`] | 2017 | [`R1-26`] |
+| ZX Spectrum Next | [`R1-27`] | 2017 | [`R1-27`] |
 
 - The placements follow the roadmap's survey dependencies
   (["System family surveys"](../../roadmap/research.md#system-family-surveys)),
@@ -1179,4 +1179,4 @@ Project documents:
 [`R1-20`]: ../../roadmap/research.md#system-family-surveys
 [`R1-21`]: ../../roadmap/research.md#system-family-surveys
 [`R1-24`]: ../../roadmap/research.md#system-family-surveys
-[`R1-26`]: ../../roadmap/research.md#system-family-surveys
+[`R1-27`]: ../../roadmap/research.md#system-family-surveys

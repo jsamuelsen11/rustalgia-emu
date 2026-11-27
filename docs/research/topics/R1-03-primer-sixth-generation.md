@@ -1123,8 +1123,9 @@ Costs and gains are the note's reasoning from the findings (inference) unless a 
 - **Costs:** the first leaves out the Wii, Wii U, 3DS, PSP, Vita, and Xbox 360; the second is the first variant of
   [R0-02's option 3](R0-02-legal-baseline.md#3-accept-only-decrypted-input-or-embed-a-published-key), with its risks.
 - **Gains:** the first keeps the project away from decryption; the second covers the era.
-- **Used by:** [R0-02](R0-02-legal-baseline.md) found no project that states it accepts only user-decrypted input,
-  and records Dolphin as embedding a published key instead.
+- **Used by:** Azahar accepts only decrypted 3DS dumps and embeds keys for Nintendo's own downloads,
+  so it uses both variants ([R1-13](R1-13-nintendo-3ds-family.md#legal-exposure); correction of 2026-11-26);
+  [R0-02](R0-02-legal-baseline.md) records Dolphin as embedding a published key.
 
 ### Recommendation
 

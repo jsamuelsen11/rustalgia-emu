@@ -525,8 +525,9 @@ which [option 9](#9-rules-adr-0001-does-not-yet-state) gathers for the owner.
   title-list, and dumping pages on the wikis and on emulator sites.
 - Gaps: no maker-hosted processor manual for the GameCube, Wii, or Wii U;
   no maker document beyond patents for their graphics chips; no hardware test suite for the Wii U, Switch, or Switch 2;
-  no open-tier Switch emulator; and no Switch wiki with a stated origin,
-  although one set of controller notes states its own captures.
+  no open-tier Switch emulator when this note was written
+  ([R1-14](R1-14-nintendo-switch-family.md) later found Eden, Strato, Hydra, and Citron Neo open);
+  and no Switch wiki with a stated origin, although one set of controller notes states its own captures.
 
 ### PlayStation family
 
