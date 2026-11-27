@@ -1,7 +1,7 @@
 ---
 title: "Sega Master System, Game Gear, and Genesis: family survey"
 roadmap_item: R1-22
-status: draft
+status: approved
 date: 2026-11-26
 ---
 

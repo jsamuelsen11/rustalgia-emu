@@ -1,8 +1,8 @@
 ---
 title: "Nintendo Switch and Switch 2: family survey"
 roadmap_item: R1-14
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # Nintendo Switch and Switch 2: family survey

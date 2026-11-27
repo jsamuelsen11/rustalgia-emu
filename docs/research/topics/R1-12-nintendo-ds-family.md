@@ -1,8 +1,8 @@
 ---
 title: "Nintendo DS and DSi: family survey"
 roadmap_item: R1-12
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # Nintendo DS and DSi: family survey

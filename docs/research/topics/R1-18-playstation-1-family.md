@@ -1,8 +1,8 @@
 ---
 title: "PlayStation 1: family survey"
 roadmap_item: R1-18
-status: draft
-date: 2026-11-22
+status: approved
+date: 2026-11-26
 ---
 
 # PlayStation 1: family survey

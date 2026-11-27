@@ -1,8 +1,8 @@
 ---
 title: "Game Boy and Game Boy Color: family survey"
 roadmap_item: R1-10
-status: draft
-date: 2026-11-22
+status: approved
+date: 2026-11-26
 ---
 
 # Game Boy and Game Boy Color: family survey

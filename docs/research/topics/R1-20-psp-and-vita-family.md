@@ -1,8 +1,8 @@
 ---
 title: "PSP and PlayStation Vita: family survey"
 roadmap_item: R1-20
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # PSP and PlayStation Vita: family survey

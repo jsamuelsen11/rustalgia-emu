@@ -1,8 +1,8 @@
 ---
 title: "PlayStation 3, 4, and 5: family survey"
 roadmap_item: R1-21
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # PlayStation 3, 4, and 5: family survey

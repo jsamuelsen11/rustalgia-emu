@@ -1,7 +1,7 @@
 ---
 title: "Sega Saturn and Dreamcast: family survey"
 roadmap_item: R1-23
-status: draft
+status: approved
 date: 2026-11-26
 ---
 

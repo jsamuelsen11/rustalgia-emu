@@ -1,8 +1,8 @@
 ---
 title: "GameCube, Wii, and Wii U: family survey"
 roadmap_item: R1-17
-status: draft
-date: 2026-11-25
+status: approved
+date: 2026-11-26
 ---
 
 # GameCube, Wii, and Wii U: family survey
