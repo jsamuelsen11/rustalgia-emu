@@ -42,6 +42,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-23](R1-23-saturn-and-dreamcast-family.md) | Which Saturn and Dreamcast emulators matter, and the family's legal exposure and difficulty |
 | [R1-24](R1-24-xbox-family.md) | Which Xbox, Xbox 360, and later emulators matter, and the family's legal exposure and difficulty |
 | [R1-25](R1-25-arcade-family.md) | Which arcade emulators matter, how they work, and the family's legal exposure and difficulty |
+| [R1-26](R1-26-other-consoles-family.md) | Which other console and handheld emulators matter, and the family's legal exposure and difficulty |
 
 ## Conventions
 

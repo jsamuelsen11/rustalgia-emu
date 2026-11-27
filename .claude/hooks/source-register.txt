@@ -1823,6 +1823,155 @@ open | xemu.app | none stated | prose of a walled emulator | 2026-11-19 | requir
 open | segaxtreme.net | forum terms | forum, a lead | 2026-11-19 | resources index, terms
 open | mail.atariage.com | none stated | fan transcription of a press release, a lead | 2026-11-19 | page
 
+# Sources first cited by R1-26, the other consoles and handhelds survey (2026-11-26).
+# The block also holds sources the survey evaluated but does not cite, so that the guard knows them.
+# The survey read every emulator from its prose and repository metadata only, whatever its tier.
+# Every replacement or high-level BIOS, boot ROM, or system software is closed inside any repository below,
+# and so is any maker firmware a repository ships; the paths are not known, so the written rule applies.
+open | drhelius/geargrafx | GPL-3.0 | PC Engine emulator; user's System Card | 2026-11-26 | licence file, README
+open | drhelius/gearlynx | GPL-3.0 | Lynx emulator; user's boot ROM | 2026-11-26 | licence file, README
+open | drhelius/gearcoleco | GPL-3.0 | ColecoVision and Adam emulator; user's BIOS | 2026-11-26 | licence file, README
+open | drhelius/lynx-tests | MIT | Lynx tests made on hardware by Gearlynx's author | 2026-11-26 | licence file, README
+open | jetsetilly/gopher2600 | GPL-3.0 | 2600 emulator; read Stella's source as reference | 2026-11-26 | COPYING
+open | 6502ts/6502.ts | MIT by metadata | 2600 emulator; source of Stella's TIA core | 2026-11-26 | metadata, README
+open | warmenhoven/tia | GPL-2.0+ by README | 2600 core; oracle folder walled below | 2026-11-26 | COPYING, README
+open | gregjames/sim2600 | MIT text in README | 2600 transistor simulation on Visual6502 data | 2026-11-26 | README
+open | lleny/holani | GPL-3.0 | Rust Lynx emulator; embedded boot ROM closed | 2026-11-26 | licence file, README
+open | lleny/holani-retro | GPL-3.0 | libretro core of Holani | 2026-11-26 | licence file, README
+open | laoo/felix | MIT | Lynx emulator, Windows only | 2026-11-26 | LICENSE.txt, README
+open | libretro/virtualjaguar-libretro | GPL-3.0 | ships Atari firmware, HLE BIOSes; closed | 2026-11-26 | LICENSE
+open | mirror/virtualjaguar | GPL-3.0+ by README | mirror of Virtual Jaguar 2.1.3 | 2026-11-26 | README
+open | jaguar.provenance-emu.com | none stated | site of the Virtual Jaguar core | 2026-11-26 | home page
+open | www.richwhitehouse.com/jaguar | none stated | site of BigPEmu, a closed emulator | 2026-11-26 | home, FAQ
+open | www.arts-union.ru | notice, no grant | Phoenix's site; game page unread | 2026-11-26 | nodes 23, 24, 29
+open | arts-union.ru | notice, no grant | the same, without www | 2026-11-26 | nodes 23, 24, 29
+open | atari800.github.io | none stated | site of a walled emulator | 2026-11-26 | home page
+open | 7800.8bitdev.org | none stated | 7800 wiki; some pages closed below | 2026-11-26 | Main Page, A7800 page
+open | spatula-city.org | "Free Software" | host of jzIntv's site; "~" path unmatchable | 2026-11-26 | jzIntv page
+open | fms.komkon.org/colem | non-commercial terms | site of ColEm, a closed emulator | 2026-11-26 | home page
+open | libretro/jollycv | BSD-3-Clause | ColecoVision, CreatiVision, My Vision | 2026-11-26 | licence file, docs
+open | libretro/libretro-vecx | GPL-3.0 | vecx port; embedding not checked | 2026-11-26 | LICENSE.md, docs
+open | jhawthorn/vecx | GPL-3.0 by metadata | SDL port of vecx | 2026-11-26 | metadata, README
+open | amaiorano/vectrexy | MIT by metadata | Vectrex emulator; bundled boot ROMs closed | 2026-11-26 | metadata, README
+open | www.vectrex.fr/parajve/release/release_notes | non-commercial | closed emulator's notes | 2026-11-26 | page
+open | libretro/libretro-o2em | Artistic-2.0 | O2EM port; GNU list: compatible | 2026-11-26 | COPYING
+open | libretro/freechaf | GPL-3.0-or-later | Channel F core; user's BIOS | 2026-11-26 | LICENSE, README
+open | mittonk/pd777 | MIT | Cassette Vision emulator | 2026-11-26 | licence metadata
+open | ouma.jp/ootake | none stated | site of Ootake, a closed emulator | 2026-11-26 | home page, Readme
+open | www.ouma.jp/ootake | none stated | the same, www prefix | 2026-11-26 | home page, Readme
+open | magicengine.com | none stated | site of closed shareware; certificate self-signed | 2026-11-26 | three pages
+open | www.magicengine.com | none stated | the same, www prefix | 2026-11-26 | three pages
+open | chrismcovell.com | none stated | PC Engine timing results from a console | 2026-11-26 | CPUTest page
+open | www.chrismcovell.com | none stated | the same, www prefix | 2026-11-26 | CPUTest page
+open | libretro/geolith-libretro | BSD-3-Clause | Geolith port; accepts the Universe BIOS | 2026-11-26 | LICENSE, README
+open | libretro/neocd_libretro | LGPL-3.0 | HLE BIOS closed; MAME-era credits unresolved | 2026-11-26 | LICENSE.md
+open | xdanieldzd/stoicgoose | MIT | WonderSwan emulator; boot ROM optional | 2026-11-26 | LICENSE.md, README
+open | libretro/pokemini | GPL-3.0-or-later | PokeMini port; FreeBIOS closed | 2026-11-26 | LICENSE, README
+open | sourceforge.net/projects/pokemini | GPLv3 per metadata | project page; files closed | 2026-11-26 | REST, page
+open | sourceforge.net/rest/p/pokemini | GPLv3 per metadata | metadata of PokeMini | 2026-11-26 | REST
+open | sourceforge.net/rest/p/handy | zlib/libpng per metadata | metadata of Handy | 2026-11-26 | REST
+open | libretro/potator | Unlicense | Watara Supervision core | 2026-11-26 | LICENSE
+open | fourdo.com | none stated | site of 4DO, from FreeDO | 2026-11-26 | home page
+open | www.cdiemu.org | none stated | site of CD-i Emulator, closed shareware | 2026-11-26 | four pages
+open | cdiemu.org | none stated | the same, without www | 2026-11-26 | redirect
+open | sigsantilio/opencdi | MIT | Rust CD-i emulator; 68HC05 HLE closed | 2026-11-26 | LICENSE, README
+open | psi-rockin/loopymse | GPL-3.0 | Casio Loopy emulator; user's BIOS | 2026-11-26 | LICENSE, README
+open | loopymse/loopymse | GPL-3.0 | maintained fork of the same | 2026-11-26 | LICENSE, README
+open | psgm-romhacking/v-bear | GPL-3.0-or-later | Super A'Can; follows MAME and MiSTer | 2026-11-26 | LICENSE, README
+open | onlyusemefeet/cub-spiele.com | MIT text | Game.com emulator; shipped BIOS closed | 2026-11-26 | LICENSE, README
+open | aloyshf/playdiaemu | BSD-3-Clause | Playdia emulator; HLE player closed | 2026-11-26 | LICENSE, README
+open | aloyshf/hyperscanemu | BSD-3-Clause | HyperScan emulator; user's BIOS | 2026-11-26 | LICENSE, README
+open | eka2l1/eka2l1 | GPL-3.0 | N-Gage emulator; HLE kernel and servers closed | 2026-11-26 | LICENSE, README
+open | eka2l1.github.io | none stated | EKA2L1's site; set-up pages closed | 2026-11-26 | home page
+open | wiki.mamedev.org | none stated | MAME's community wiki | 2026-11-26 | one page
+other | games.slashdot.org | none stated | news aggregator; reader story, a lead | 2026-11-26 | one story
+walled | libretro/beetle-pce-libretro | GPL-2.0, version not stated | Mednafen PCE fork | 2026-11-26 | COPYING
+walled | libretro/beetle-pce-fast-libretro | GPL-2.0, version not stated | Mednafen pce_fast | 2026-11-26 | COPYING
+walled | libretro/beetle-supergrafx-libretro | GPL-2.0, version not stated | Mednafen SGX | 2026-11-26 | COPYING
+walled | libretro/beetle-pcfx-libretro | GPL-2.0, version not stated | Mednafen PC-FX | 2026-11-26 | COPYING
+walled | libretro/beetle-lynx-libretro | GPL-2.0, version not stated | Mednafen Lynx | 2026-11-26 | COPYING
+walled | libretro/libretro-handy | none in repository; docs zlib | Handy port | 2026-11-26 | licence 404, docs
+walled | libretro/beetle-ngp-libretro | GPL-2.0, version not stated | Mednafen NGP | 2026-11-26 | COPYING
+walled | libretro/race | GPL-2.0, version not stated | RACE PSP fork | 2026-11-26 | license.txt
+walled | libretro/beetle-wswan-libretro | GPL-2.0, version not stated | Mednafen WonderSwan | 2026-11-26 | COPYING
+walled | libretro/beetle-vb-libretro | GPL-2.0, version not stated | Mednafen VB | 2026-11-26 | COPYING
+walled | libretro/prosystem-libretro | bare GPL-2.0 text | ProSystem | 2026-11-26 | License.txt
+walled | libretro/stella2014-libretro | GPL-2.0 per docs; no licence file | Stella 3.9.3 fork | 2026-11-26 | docs
+walled | libretro/stella2023 | bare GPL-2.0 text | Stella fork | 2026-11-26 | License.txt
+walled | libretro/libretro-atari800 | none detected; docs GPL-2.0 | AltirraOS built in, closed | 2026-11-26 | docs
+walled | libretro/a5200 | bare GPL-2.0 text | AltirraOS built in, closed | 2026-11-26 | License.txt, docs
+walled | libretro/bluemsx-libretro | zlib-style, GPL, freeware | blueMSX port; C-BIOS closed | 2026-11-26 | license.txt
+walled | libretro/same_cdi | GPL-2.0, no or later | MAME's CD-i driver | 2026-11-26 | COPYING
+walled | atari800/atari800 | bare GPL-2.0 text | 8-bit and 5200 emulator | 2026-11-26 | COPYING, README
+walled | raz0red/js7800 | GPL-2.0 by metadata | web port of ProSystem | 2026-11-26 | metadata, README
+walled | 7800-devtools/a7800 | GPL-2.0+ file; defers to headers | MAME 7800 fork | 2026-11-26 | LICENSE.md
+walled | ppeccin/javatari.js | AGPL-3.0 by metadata | web 2600 emulator | 2026-11-26 | metadata
+walled | kallisti5/huexpress | GPL-2.0, version not stated | Hu-Go! fork | 2026-11-26 | COPYING, README
+walled | nih-at/neopop-sdl | GPL-2.0, version not checked | NeoPop SDL port | 2026-11-26 | License.txt
+walled | jgemu/geolith | BSD-3-Clause by its port | GitLab; own prose blocked | 2026-11-26 | port's LICENSE
+walled | warmenhoven/tia/tree/main/tests/oracle/csi | Visual6502 netlists | Tia's oracle | 2026-11-26 | README
+walled | warmenhoven/tia/blob/main/tests/oracle/csi | the same | the same, file form | 2026-11-26 | README
+
+# Closed by R1-26: non-commercial or no licence, FreeDO's terms, a replacement boot ROM, and boot ROM stubs.
+# READMEs, licence files, and metadata only. Phoenix's FreeDO page (node 30) links a 3DO key file: node/3 closes
+# nodes 30 to 39 and lets only node 3 itself through. Its game page, node 7, cannot be closed by pattern: the guard
+# lets through an address equal to a pattern, and cutting the number short would close every node.
+closed | www.arts-union.ru/node/3 | notice, no grant | FreeDO page links a 3DO key file; 30 to 39 | 2026-11-26 | node 30
+closed | arts-union.ru/node/3 | notice, no grant | the same, without www | 2026-11-26 | node 30
+closed | www.arts-union.ru/sites/default/file | none | 3DO key file, FreeDO archives | 2026-11-26 | node 30
+closed | arts-union.ru/sites/default/file | none | the same, without www | 2026-11-26 | node 30
+closed | libretro/opera-libretro | FreeDO terms, non-commercial | 3DO core; embeds a boot ROM | 2026-11-26 | LICENSE
+closed | maxakaaltmer/freedo | none; FreeDO terms | FreeDO, the first 3DO emulator | 2026-11-26 | licence 404
+closed | purelogiccode/5do | FreeDO terms, non-commercial | C# port of FreeDO | 2026-11-26 | README
+closed | trapexit/opera-boot | GPL-2.0 by metadata | replacement 3DO boot ROM | 2026-11-26 | metadata, README
+closed | warmenhoven/amiarcadia | none; docs non-commercial | Arcadia 2001 emulator | 2026-11-26 | licence 404
+closed | theflav/race-ngpc-emulator-psp | none | RACE PSP source | 2026-11-26 | licence 404
+closed | godzil/newoswan | none | Oswan fork; ships boot ROM stubs | 2026-11-26 | licence 404, README
+closed | flubbaofward/wstimingtest | none | V30MZ timing test; results usable | 2026-11-26 | licence 404
+closed | flubbaofward/wshwtest | none | WonderSwan tests; README has step listings | 2026-11-26 | licence 404
+closed | skyfloogle/red-viper | Reality Boy non-commercial | Virtual Boy emulator for 3DS | 2026-11-26 | README
+closed | git.virtual-boy.com/pvb/lemur | none found | Rust Virtual Boy frontend | 2026-11-26 | Gitea API
+closed | stovent/cedimu | none | experimental CD-i emulator | 2026-11-26 | licence 404
+
+# Protective lines, never opened: a maker manual hosted by others, a replacement boot ROM's source, game and
+# firmware downloads, dumping tools and guides, firmware set-up pages, key and circumvention threads, and hosts
+# of prototypes and cracks. Page and folder patterns are cut short; subdomains have no www form.
+# 7800.8bitdev.org also serves its pages as index.php?title=, which cannot be matched.
+closed | lynxdev.atari.org | not read | source of a replacement Lynx boot ROM | 2026-11-26 | Holani README
+closed | hillsoftware.com/files/atari/jaguar/jag_v | none | Atari's Jaguar manual, by name | 2026-11-26 | FAQ link
+closed | www.hillsoftware.com/files/atari/jaguar/jag_v | none | the same, www prefix | 2026-11-26 | FAQ link
+closed | 7800.8bitdev.org/index.php/7800_software_guid | none | Atari and GCC documents | 2026-11-26 | Main Page
+closed | 7800.8bitdev.org/index.php/assembly_source_cod | none | reverse-engineered listings | 2026-11-26 | Main Page
+closed | 7800.8bitdev.org/index.php/historic_document | none | Atari documents by others | 2026-11-26 | Main Page
+closed | 7800.8bitdev.org/index.php/7800_pal_bio | none | PAL BIOS firmware analysis | 2026-11-26 | Wikipedia
+closed | www.vectrex.fr/parajve/release/downloa | none | downloads bundling games | 2026-11-26 | release notes
+closed | vectrex.fr/parajve/release/downloa | none | the same, without www | 2026-11-26 | release notes
+closed | ouma.jp/cgi-bin/downootak | business use barred | Ootake installer | 2026-11-26 | home page link
+closed | www.ouma.jp/cgi-bin/downootak | business use barred | the same, www prefix | 2026-11-26 | home page link
+closed | www.cdiemu.org/site/cdilin | none | CD-i Link, a ROM-dumping tool | 2026-11-26 | emulator page
+closed | cdiemu.org/site/cdilin | none | the same, without www | 2026-11-26 | emulator page
+closed | www.cdiemu.org/site/downloa | none | downloads, with the dumping tool | 2026-11-26 | emulator page
+closed | cdiemu.org/site/downloa | none | the same, without www | 2026-11-26 | emulator page
+closed | sourceforge.net/projects/pokemini/file | GPLv3 | archives bundling the FreeBIOS | 2026-11-26 | file listing
+closed | www.sourceforge.net/projects/pokemini/file | GPLv3 | the same, www prefix | 2026-11-26 | file listing
+closed | onlyusemefeet.github.io/cub-spiele.co | none | web build embedding a BIOS | 2026-11-26 | README
+closed | eka2l1.github.io/quickstart/basic/installdevic | none | device firmware set-up | 2026-11-26 | quickstart
+closed | eka2l1.github.io/quickstart/ngag | none | N-Gage set-up page | 2026-11-26 | quickstart
+closed | eka2l1.github.io/jekyll/update/2023/01/21/new-tutorials-for-setting-up-n-g | none | guide | 2026-11-26 | home
+closed | eka2l1.github.io/jekyll/update/2021/01/19/new-tutorials-for-setting-up | none | older copy | 2026-11-26 | home
+closed | 3ds.hacks.guide | not read | modding guide; firmware and key dumping | 2026-11-26 | Red Viper README
+closed | forums.atariage.com/topic/12903 | not read | Lynx thread 129030; key hazard | 2026-11-26 | search result
+closed | forums.atariage.com/topic/10479 | not read | Lynx thread 104790; key hazard | 2026-11-26 | search result
+closed | mupf.dev/ngage-copy-protection-analysi | not read | defeating N-Gage protection | 2026-11-26 | search result
+closed | tgames.fr | not read | hosts a crack for CD-i Emulator | 2026-11-26 | wiki link
+closed | www.tgames.fr | not read | the same, www prefix | 2026-11-26 | wiki link
+closed | hiddenpalace.org | not read | hosts maker tools and unreleased games | 2026-11-26 | wiki link
+closed | www.hiddenpalace.org | not read | the same, www prefix | 2026-11-26 | wiki link
+closed | emulator.games | not read | ROM and emulator download site | 2026-11-26 | wiki link
+closed | www.emulator.games | not read | the same, www prefix | 2026-11-26 | wiki link
+closed | emulationrealm.net | not read | download site for WonderSwan emulators | 2026-11-26 | wiki link
+closed | www.emulationrealm.net | not read | the same, www prefix | 2026-11-26 | wiki link
+
 # Cross-system sources: not evaluated, so walled. Each refused access or could not be established.
 walled | tcrf.net | not determined | game wiki; a page carried instructions for AI agents | 2026-11-19 | summary only
 walled | www.tcrf.net | not determined | same wiki, www prefix | 2026-11-19 | summary only
