@@ -20,54 +20,79 @@ block() {
   exit 2
 }
 
-while IFS='|' read -r tier pattern _; do
-  tier=${tier%% *}
-  pattern=${pattern# }
-  pattern=${pattern%% *}
-  case "$tier" in
-  closed | tainted) ;;
-  walled) [ "$role" = reader ] && continue ;;
-  *) continue ;;
-  esac
+# One awk pass reads the register and tests every restricted line against the call, line by line of the call.
+# For each pattern it finds the occurrences that start the call or follow a character that cannot be part of a name,
+# replaces them with a mark, and blocks unless every mark is an allowed prose read.
+# It prints the tier and pattern of the first line that blocks, in register order, or nothing.
+hit=$(
+  GUARD_INPUT=$input GUARD_ROLE=$role GUARD_PROSE=$prose awk '
+    BEGIN {
+      mark = "@@restricted@@"
+      n = split(ENVIRON["GUARD_INPUT"], line, "\n")
+      prose = ENVIRON["GUARD_PROSE"]
+      endc = "([\"'"'"' )?#\\\\]|$)"
+      allowed = "^((/(blob|raw|contents)(/[^/\"'"'"' ]+)?|/[^/\"'"'"' ]+)?/(" prose ")[a-z0-9._-]*" endc \
+        "|/(license|readme)" endc "|" endc ")"
+      # The owner and repository fields of GitHub tool calls, on any line.
+      for (i = 1; i <= n; i++) {
+        s = line[i]
+        while (match(s, /"owner"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
+          v = substr(s, RSTART, RLENGTH); sub(/^"owner"[[:space:]]*:[[:space:]]*"/, "", v); sub(/"$/, "", v)
+          owners[v] = 1; s = substr(s, RSTART + RLENGTH)
+        }
+        s = line[i]
+        while (match(s, /"repo"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
+          v = substr(s, RSTART, RLENGTH); sub(/^"repo"[[:space:]]*:[[:space:]]*"/, "", v); sub(/"$/, "", v)
+          repos[v] = 1; s = substr(s, RSTART + RLENGTH)
+        }
+      }
+    }
+    /^[[:space:]]*(#|$)/ { next }
+    {
+      split($0, field, "|")
+      tier = field[1]; sub(/^[[:space:]]+/, "", tier); sub(/[[:space:]].*$/, "", tier)
+      pattern = field[2]; sub(/^[[:space:]]+/, "", pattern); sub(/[[:space:]].*$/, "", pattern)
+      if (tier == "walled") { if (ENVIRON["GUARD_ROLE"] == "reader") next }
+      else if (tier != "closed" && tier != "tainted") next
 
-  escaped=$(printf '%s' "$pattern" | sed 's/[.[\*^$]/\\&/g')
-  case "$pattern" in
-  */) escaped="${escaped}[a-z0-9._-]+" ;;
-  esac
+      # A call to a GitHub tool names the owner and the repository in separate fields.
+      owner = pattern; sub(/\/.*$/, "", owner)
+      repo = pattern; if (index(repo, "/")) sub(/^[^\/]*\//, "", repo)
+      if (owner in owners && (repo == "" || repo in repos)) { print tier " " pattern; exit }
 
-  # A call to a GitHub tool names the owner and the repository in separate fields.
-  owner=${pattern%%/*}
-  repo=${pattern#*/}
-  if printf '%s' "$input" | grep -Eq "\"owner\"[[:space:]]*:[[:space:]]*\"$owner\""; then
-    if [ -z "$repo" ] || printf '%s' "$input" | grep -Eq "\"repo\"[[:space:]]*:[[:space:]]*\"$repo\""; then
-      block "$tier" "$pattern"
-    fi
-  fi
-
-  marked=$(printf '%s' "$input" | sed -E "s~(^|[^a-z0-9_.-])${escaped}~\\1${mark}~g")
-  case "$marked" in
-  *"$mark"*) ;;
-  *) continue ;;
-  esac
-
-  [ "$tier" = tainted ] && block "$tier" "$pattern"
-
-  # Copying a whole repository, or searching inside it, is never a prose read.
-  if printf '%s' "$marked" | grep -Eq 'clone|tarball|zipball|archive|codeload|search'; then
-    block "$tier" "$pattern"
-  fi
-
-  # Remove what is allowed: prose files, the licence and README endpoints, and the bare repository page.
-  rest=$(printf '%s' "$marked" | sed -E \
-    -e "s~${mark}(/(blob|raw|contents)(/[^/\"' ]+)?|/[^/\"' ]+)?/(${prose})[a-z0-9._-]*${end}~\\5~g" \
-    -e "s~${mark}/(license|readme)${end}~\\2~g" \
-    -e "s~${mark}${end}~\\1~g")
-  case "$rest" in
-  *"$mark"*) block "$tier" "$pattern" ;;
-  esac
-done <<LIST
-$(grep -Ev '^[[:space:]]*(#|$)' "$list")
-LIST
+      slash = (substr(pattern, length(pattern)) == "/")
+      for (i = 1; i <= n; i++) {
+        s = line[i]; out = ""; pos = 1; found = 0
+        while ((k = index(substr(s, pos), pattern)) > 0) {
+          start = pos + k - 1
+          len = length(pattern)
+          before = (start == 1) ? "" : substr(s, start - 1, 1)
+          ok = (start == 1 && pos == 1) || (start > pos && before !~ /[a-z0-9_.-]/)
+          if (ok && slash) {
+            if (match(substr(s, start + len), /^[a-z0-9._-]+/)) len += RLENGTH; else ok = 0
+          }
+          if (!ok) { out = out substr(s, pos, k); pos = start + 1; continue }
+          out = out substr(s, pos, start - pos) mark
+          pos = start + len; found = 1
+        }
+        if (!found) continue
+        marked = out substr(s, pos)
+        if (tier == "tainted") { print tier " " pattern; exit }
+        # Copying a whole repository, or searching inside it, is never a prose read.
+        if (marked ~ /clone|tarball|zipball|archive|codeload|search/) { print tier " " pattern; exit }
+        # Every mark must be an allowed read: a prose file, the licence or README endpoint, or the bare page.
+        rest = marked
+        while ((k = index(rest, mark)) > 0) {
+          rest = substr(rest, k + length(mark))
+          if (rest !~ allowed) { print tier " " pattern; exit }
+        }
+      }
+    }
+  ' "$list"
+)
+if [ -n "$hit" ]; then
+  block "${hit%% *}" "${hit#* }"
+fi
 
 # Fallback: code in a repository that is not in the register has not been evaluated, so it is walled.
 # Prose stays open, so that the licence and the README can be read to evaluate it.
