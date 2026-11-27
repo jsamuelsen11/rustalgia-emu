@@ -115,11 +115,15 @@ open | wiibrew.org | none stated | bars leaked kit content; origin not stated | 
 # ---- Added by the source map (R0-05), docs/research/topics/R0-05-source-map.md. ----
 # A web address is matched as written: "example.org/wiki" does not match "www.example.org/wiki".
 # "none stated" means none on the pages read; the note lists the pages.
-# The guard lets through an address that equals a closed or walled pattern exactly, as it does a bare repository page.
-# A pattern for one page or one archive item is therefore cut short, so that the full address continues past it.
+# How the guard matches (source-guard.sh states the full rules; changed by issue #32 on 2026-11-27):
+# a pattern is plain text, so "~" and "?" are fine, and it matches as a prefix of the address, except that
+# "owner/repository" needs a name boundary after it. Closed and tainted web addresses are blocked page and host alike,
+# exact address included; a pattern ending in "/" blocks the pages below it but not the page it names.
+# Where lines overlap, the longest decides, so an open line can carve a path out of a restricted one.
+# A page reached by "index.php?title=" is also matched in its "/wiki/" and "/index.php/" forms.
 # Each restricted web pattern has a second line for the www prefix, and archive items a line for their download path.
-# A pattern must not hold "~" or "?", which the guard's matching cannot take; a shorter pattern stands in, as noted.
-# The address ending in "/" of a closed site's home page is blocked; the address with no "/" passes.
+# Comments below that call a pattern "cut short", or say an "index.php?title=" form cannot be matched, predate #32:
+# the cut-short patterns still match by prefix, and those forms are now matched.
 
 # Game Boy and Game Boy Advance: references and research, open tier.
 open | gbdev/pandocs | CC0-1.0 | Pan Docs repository; no origin or source rule | 2026-11-19 | README, CONTRIBUTING
@@ -203,15 +207,15 @@ open | problemkaputt.de/gmb | freeware and shareware | prose of a closed-tier em
 open | kigb.emuunlim.com | none; copyright notice | prose of a closed-tier emulator | 2026-11-22 | home page
 open | mattcurrie.com | none found | prose of a closed-tier emulator; its build is run only | 2026-11-22 | BDM pages
 # Beaten Dying Moon's web build: its script is the compiled program of a closed emulator, so it is closed.
-closed | mattcurrie.com/bdm-demo/inde | none | compiled build of a closed emulator | 2026-11-22 | page loads it
-closed | www.mattcurrie.com/bdm-demo/inde | none | the same, www prefix | 2026-11-22 | page loads it
+closed | mattcurrie.com/bdm-demo/index | none | compiled build of a closed emulator | 2026-11-22 | page loads it
+closed | www.mattcurrie.com/bdm-demo/index | none | the same, www prefix | 2026-11-22 | page loads it
 open | fms.komkon.org/vgb | none; source not public | prose of a closed-tier emulator | 2026-11-22 | home page
 open | openemu.org | none stated | site of a closed-tier frontend; prose, no code | 2026-11-22 | home page
 open | www.explusalpha.com | none stated | site of a walled project; prose | 2026-11-22 | GBC.emu page
 open | www.dwedit.org/gba | not stated | prose page of a closed-tier emulator | 2026-11-22 | page
 # Goomba Color's source archives state no licence, so they are closed (ADR 0006: there is no licence).
-closed | www.dwedit.org/gba/goombacolor_sourc | none | Goomba Color source archives | 2026-11-22 | page links
-closed | dwedit.org/gba/goombacolor_sourc | none | the same, no www prefix | 2026-11-22 | page links
+closed | www.dwedit.org/gba/goombacolor_source | none | Goomba Color source archives | 2026-11-22 | page links
+closed | dwedit.org/gba/goombacolor_source | none | the same, no www prefix | 2026-11-22 | page links
 open | sourceforge.net/projects/gambatte | GPLv2 per page | Gambatte's first project page | 2026-11-22 | page
 walled | sourceforge.net/projects/gambatte/files | GPLv2 per page | its downloads | 2026-11-22 | project page
 walled | www.sourceforge.net/projects/gambatte/files | GPLv2 per page | the same, www prefix | 2026-11-22 | project page
@@ -281,8 +285,8 @@ open | www.nintendo.com/en-gb/news | site terms | maker's news pages; one page, 
 # decompilation, and a BIOS dumping guide. None was opened.
 closed | nebuleon/regba | none | gpSP-derived; holds a replacement GBA BIOS | 2026-11-22 | metadata
 closed | densinh/agstests | not read | called a decompilation of the AGS cartridge | 2026-11-22 | EGW GBA Tests 146557
-closed | wiki.pocketheaven.com/gba_bio | none | BIOS dumping guide | 2026-11-22 | gpSP readme
-closed | www.wiki.pocketheaven.com/gba_bio | none | same page, www prefix | 2026-11-22 | gpSP readme
+closed | wiki.pocketheaven.com/gba_bios | none | BIOS dumping guide | 2026-11-22 | gpSP readme
+closed | www.wiki.pocketheaven.com/gba_bios | none | same page, www prefix | 2026-11-22 | gpSP readme
 
 # Game Boy and Game Boy Advance: firmware, and maker software that others host. Closed tier.
 closed | gbdev.gg8.se/files/roms/bootroms | - | folder of boot ROM images | 2026-11-19 | folder index
@@ -405,8 +409,8 @@ walled | xyproto/zsnes | GPL-2.0, or later not stated | ZSNES ported to C | 2026
 open | bfirsh/jsnes | Apache-2.0 | JavaScript NES emulator | 2026-11-22 | metadata, README
 # No licence detected and none in the prose read: closed ("there is no licence"), as for dillonb/n64.
 closed | quietust/nintendulator | none found; site says "open source" | - | 2026-11-22 | metadata, site
-closed | symphoniae.com/nr | none found | NintendulatorNRS builds; listing only | 2026-11-22 | index
-closed | www.symphoniae.com/nr | none found | same path, www prefix | 2026-11-22 | index
+closed | symphoniae.com/nrs | none found | NintendulatorNRS builds; listing only | 2026-11-22 | index
+closed | www.symphoniae.com/nrs | none found | same path, www prefix | 2026-11-22 | index
 # Forks of the closed Snes9x inherit its non-commercial licence.
 closed | libretro/snes9x | Snes9x non-commercial licence | libretro fork | 2026-11-22 | licence file
 closed | libretro/snes9x2010 | Snes9x non-commercial licence | from Snes9x 1.52 | 2026-11-22 | licence file
@@ -435,13 +439,13 @@ other | store.steampowered.com | - | Steam store listings | 2026-11-22 | one pag
 closed | emulation.gametechwiki.com/index.php/nintendo_entertainment_system_emulator | - | leak | 2026-11-22 | -
 closed | emulation.gametechwiki.com/index.php/super_nintendo_entertainment_system_emulator | - | leak | 2026-11-22 | -
 closed | emulation.gametechwiki.com/index.php/legal_status_and_history_of_emulatio | - | leak | 2026-11-22 | -
-closed | www.snes9x.com/freerom | not read | named for free ROMs | 2026-11-22 | home page link
-closed | snes9x.com/freerom | not read | same page without www | 2026-11-22 | home page link
-closed | www.zsnes.com/file | none stated; ZEMU Software Inc. | Super ZSNES binaries; no source | 2026-11-22 | site
-closed | zsnes.com/file | none stated; copyright ZEMU Software Inc. | same folder without www | 2026-11-22 | home page
+closed | www.snes9x.com/freeroms | not read | named for free ROMs | 2026-11-22 | home page link
+closed | snes9x.com/freeroms | not read | same page without www | 2026-11-22 | home page link
+closed | www.zsnes.com/files | none stated; ZEMU Software Inc. | Super ZSNES binaries; no source | 2026-11-22 | site
+closed | zsnes.com/files | none stated; copyright ZEMU Software Inc. | same folder without www | 2026-11-22 | home page
 closed | unlicensed.games | not read | named as a host of builds; may offer games | 2026-11-22 | wiki link
 closed | www.unlicensed.games | not read | same site, www prefix | 2026-11-22 | wiki link
-closed | abdess.github.io/retrobio | not read | appears to list BIOS files | 2026-11-22 | search result
+closed | abdess.github.io/retrobios | not read | appears to list BIOS files | 2026-11-22 | search result
 closed | filthypants.blogspot.com/2010/12/snes-emulation-reaches | - | links firmware, by a snippet | 2026-11-22 | -
 
 # NES, SNES, Nintendo 64: maker material that others host, decompilations, and sites of game images. Closed tier.
@@ -509,7 +513,7 @@ closed | emulation.gametechwiki.com/index.php/nintendo_64_emulator | none named 
 closed | archive.org/details/n64_testcar | none checked | presumed maker ROM | 2026-11-25 | wiki link
 closed | www.archive.org/details/n64_testcar | none checked | www prefix | 2026-11-25 | wiki link
 closed | archive.org/download/n64_testcar | none checked | same item's files | 2026-11-25 | wiki link
-closed | emulation.gametechwiki.com/index.php/user:sczther/n64_tes | none named | links maker ROM | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/user:sczther/n64_test | none named | links maker ROM | 2026-11-25 | raw
 
 # NES, SNES, Nintendo 64: tests.
 open | 100thcoin/accuracycoin | MIT | designed for one console revision | 2026-11-19 | licence file, README
@@ -588,11 +592,10 @@ closed | problemkaputt.de/gbatek-dsi-sd-mmc-dsiware | notice | DSiWare tickets a
 closed | www.problemkaputt.de/gbatek-dsi-sd-mmc-dsiware | notice | www prefix | 2026-11-25 | index
 closed | problemkaputt.de/gbatek-dsi-exploits | notice | DSi exploits | 2026-11-25 | index
 closed | www.problemkaputt.de/gbatek-dsi-exploits | notice | www prefix | 2026-11-25 | index
-closed | melonds.kuribo64.net/downloads/dsibiosdumpe | - | DSi BIOS dumping tool | 2026-11-25 | FAQ link, not opened
+closed | melonds.kuribo64.net/downloads/dsibiosdumper | - | DSi BIOS dumping tool | 2026-11-25 | FAQ link, not opened
 closed | ideasemu.biz | none | closed emulator's site; carries a game search box | 2026-11-25 | 2011 capture
 closed | www.ideasemu.biz | none | same site, www prefix | 2026-11-25 | 2011 capture
-closed | emulation.gametechwiki.com/index.php/nintendo_ds_emulator | none | names a leaked emulator | 2026-11-25 | raw
-closed | title=nintendo_ds_emulator | none | same page; "?" cannot be matched | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/nintendo_ds_emulators | none | names a leaked emulator | 2026-11-25 | raw
 
 # Nintendo DS, DSi, and 3DS: libraries, tools, and emulators.
 open | devkitpro/libctru | zlib text in README | origin not stated; no dispute found for it | 2026-11-19 | README
@@ -765,12 +768,12 @@ closed | yuzu-emu/ | none now; was GPL-3.0+ or GPL-2.0+ | gone after the consent
 closed | ryujinx/ryujinx | none now; was MIT by Wikipedia | ended 2024-10-01 under Nintendo | 2026-11-25 | HTTP 404
 closed | xortroll/pegasus | none | archived Rust Switch emulator | 2026-11-25 | metadata
 # Closed as a precaution and never opened: dumping guides, device sellers, and scam or jailbreak sites.
-closed | docs.ryujinx.app/guides/dumpin | - | key, firmware, and game dumping guides | 2026-11-25 | navigation
-closed | docs.ryujinx.app/info/dumpin | - | dumping page | 2026-11-25 | navigation
-closed | git.ryujinx.app/ryubing/ryujinx/-/wikis/dumpin | - | dumping wiki pages | 2026-11-25 | MeloNX README
-closed | nh-server.github.io/switch-guid | - | hacking and dumping guide | 2026-11-25 | MeloNX README
-closed | yuzu-emu.org/help/quickstar | - | key and firmware dumping guide | 2026-11-25 | capture
-closed | www.yuzu-emu.org/help/quickstar | - | same guide, www prefix | 2026-11-25 | capture
+closed | docs.ryujinx.app/guides/dumping | - | key, firmware, and game dumping guides | 2026-11-25 | navigation
+closed | docs.ryujinx.app/info/dumping | - | dumping page | 2026-11-25 | navigation
+closed | git.ryujinx.app/ryubing/ryujinx/-/wikis/dumping | - | dumping wiki pages | 2026-11-25 | MeloNX README
+closed | nh-server.github.io/switch-guide | - | hacking and dumping guide | 2026-11-25 | MeloNX README
+closed | yuzu-emu.org/help/quickstart | - | key and firmware dumping guide | 2026-11-25 | capture
+closed | www.yuzu-emu.org/help/quickstart | - | same guide, www prefix | 2026-11-25 | capture
 closed | r4switch.nl | - | sells MIG Switch devices, per a Dutch court | 2026-11-25 | Nintendo Life
 closed | www.r4switch.nl | - | same site, www prefix | 2026-11-25 | Nintendo Life
 closed | ther4card.com | - | sells MIG Switch devices, per a Dutch court | 2026-11-25 | Nintendo Life
@@ -870,22 +873,21 @@ closed | cemu.cfw.guide | - | key and game dumping guide linked by Cemu | 2026-1
 closed | www.cemu.cfw.guide | - | www prefix | 2026-11-25 | Cemu FAQ link
 closed | compat.cemu.info/wiki/tutorial:online_pla | - | system-file dumping guide | 2026-11-25 | Cemu FAQ link
 closed | wiki.cemu.info/wiki/tutorial:online_pla | - | the same on the wiki's host | 2026-11-25 | Cemu FAQ link
-closed | emulation.gametechwiki.com/index.php/nintendo_gamecube_emulator | none | kit copy | 2026-11-25 | raw
-closed | title=nintendo_gamecube_emulator | none | same page; "?" cannot be matched | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/nintendo_gamecube_emulators | none | kit copy | 2026-11-25 | raw
 # A Dolphin wiki page, read before its last section, on dumping DSP ROMs, was seen; it is closed as a dumping guide.
-# "title=" stands in for its "index.php?title=" address, so the same title on another wiki is caught too.
-closed | title=audio_emulatio | CC BY-SA 3.0 | Dolphin wiki page with DSP ROM dumping steps | 2026-11-25 | capture
+# Its "index.php?title=" address is listed as well as its path form.
+closed | wiki.dolphin-emu.org/index.php?title=audio_emulation | CC BY-SA 3.0 | DSP ROM dumping | 2026-11-25 | capture
 closed | wiki.dolphin-emu.org/wiki/audio_emulatio | CC BY-SA 3.0 | the same page, short address | 2026-11-25 | capture
 closed | emuparadise.me | - | site offering games and kit copies | 2026-11-25 | EGW link
 closed | www.emuparadise.me | - | www prefix | 2026-11-25 | EGW link
 closed | edx.ipeindia.org | - | pages titled as Wii U key lists | 2026-11-25 | search result titles
 closed | www.edx.ipeindia.org | - | www prefix | 2026-11-25 | search result titles
-closed | scribd.com/document/40675603 | - | document titled as a key list | 2026-11-25 | search result
-closed | www.scribd.com/document/40675603 | - | www prefix | 2026-11-25 | search result
-closed | pokecheats.net/db/wii | - | NFC figure dumps linked by WiiUBrew | 2026-11-25 | link seen
-closed | www.pokecheats.net/db/wii | - | www prefix | 2026-11-25 | link seen
+closed | scribd.com/document/406756037 | - | document titled as a key list | 2026-11-25 | search result
+closed | www.scribd.com/document/406756037 | - | www prefix | 2026-11-25 | search result
+closed | pokecheats.net/db/wiiu | - | NFC figure dumps linked by WiiUBrew | 2026-11-25 | link seen
+closed | www.pokecheats.net/db/wiiu | - | www prefix | 2026-11-25 | link seen
 closed | loyahdev/wiiudownloaderandroid | - | tool for downloading titles | 2026-11-25 | repository name
-closed | en.wikipedia.org/wiki/super_mario_3d_all-star | CC BY-SA 4.0 | mentions a leak | 2026-11-25 | raw wikitext
+closed | en.wikipedia.org/wiki/super_mario_3d_all-stars | CC BY-SA 4.0 | mentions a leak | 2026-11-25 | raw wikitext
 closed | wiiubrew.org/wiki/hardware/seepro | none stated | SEEPROM page | 2026-11-25 | "Hardware" links
 closed | www.wiiubrew.org/wiki/hardware/seepro | none stated | www prefix | 2026-11-25 | "Hardware" links
 closed | wiiubrew.org/wiki/hardware/efus | none stated | eFuse page; key storage | 2026-11-25 | "Hardware" links
@@ -1000,7 +1002,7 @@ open | kernel.org/pub/linux/kernel/people/geoff/cell | GFDL 1.2 | Sony's PS3 Lin
 open | playstation.com/en-us/oss | per package | Sony's open-source disclosure pages | 2026-11-19 | PS3, PS4, PS5 pages
 open | old.hotchips.org | none stated | conference talks by maker engineers | 2026-11-19 | 1999 programme
 open | emudev.org | none stated | community hub, a lead | 2026-11-19 | home page
-closed | cgi.cse.unsw.edu.au | notices, no grant | IDT manual copy; the host, as "~" fails | 2026-11-19 | title pages
+closed | cgi.cse.unsw.edu.au/~cs3231/doc/r3000.pdf | notices, no grant | IDT manual copy | 2026-11-19 | title pages
 
 # Sources first cited by R1-19, the PlayStation 2 survey (2026-11-25).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
@@ -1042,23 +1044,22 @@ closed | trixarian/nethersx2-classic | Unlicense on a patch | the same, from bui
 closed | aethersx2-backup/aethersx2-builds | none | rehosted AetherSX2 binaries | 2026-11-25 | metadata
 closed | tamaribaemu/openps2bios | MIT by PS5SX2 README | replacement PS2 BIOS | 2026-11-25 | credits; not opened
 closed | lineage-shell/lineage-ps2-for-ps5 | GPL-3.0 | PS2 system menu; system software | 2026-11-25 | search metadata
-closed | pcsx2.net/docs/setup/gathe | - | BIOS dumping guide; not opened | 2026-11-25 | XBSX2 README link
-closed | www.pcsx2.net/docs/setup/gathe | - | www prefix | 2026-11-25 | XBSX2 README link
-closed | aethersx2.com/archiv | - | binaries of a closed app; not opened | 2026-11-25 | site capture
-closed | www.aethersx2.com/archiv | - | www prefix | 2026-11-25 | site capture
-closed | armsx2.net/docs/dumping-bio | - | BIOS dumping guide; not opened | 2026-11-25 | README link
-closed | www.armsx2.net/docs/dumping-bio | - | www prefix | 2026-11-25 | README link
-closed | armsx2.net/docs/dumping-disc | - | game dumping guide; not opened | 2026-11-25 | docs menu
-closed | www.armsx2.net/docs/dumping-disc | - | www prefix | 2026-11-25 | docs menu
-closed | archive.org/details/pcsx2x6-collectio | - | arcade games linked by PCEE2; not opened | 2026-11-25 | README
-closed | www.archive.org/details/pcsx2x6-collectio | - | www prefix | 2026-11-25 | README
-closed | archive.org/download/pcsx2x6-collectio | - | the same item's files | 2026-11-25 | README
+closed | pcsx2.net/docs/setup/gather | - | BIOS dumping guide; not opened | 2026-11-25 | XBSX2 README link
+closed | www.pcsx2.net/docs/setup/gather | - | www prefix | 2026-11-25 | XBSX2 README link
+closed | aethersx2.com/archive | - | binaries of a closed app; not opened | 2026-11-25 | site capture
+closed | www.aethersx2.com/archive | - | www prefix | 2026-11-25 | site capture
+closed | armsx2.net/docs/dumping-bios | - | BIOS dumping guide; not opened | 2026-11-25 | README link
+closed | www.armsx2.net/docs/dumping-bios | - | www prefix | 2026-11-25 | README link
+closed | armsx2.net/docs/dumping-discs | - | game dumping guide; not opened | 2026-11-25 | docs menu
+closed | www.armsx2.net/docs/dumping-discs | - | www prefix | 2026-11-25 | docs menu
+closed | archive.org/details/pcsx2x6-collection | - | arcade games linked by PCEE2; not opened | 2026-11-25 | README
+closed | www.archive.org/details/pcsx2x6-collection | - | www prefix | 2026-11-25 | README
+closed | archive.org/download/pcsx2x6-collection | - | the same item's files | 2026-11-25 | README
 # Pages closed by R1-19 as a precaution: a key hazard and a page that names a leak, in both of the wiki's
 # address forms.
-closed | psdevwiki.com/ps3/ps2_emulatio | GFDL 1.2 | decrypted emulator files; key script | 2026-11-25 | capture
-closed | www.psdevwiki.com/ps3/ps2_emulatio | GFDL 1.2 | www prefix | 2026-11-25 | capture
-closed | emulation.gametechwiki.com/index.php/emulation_issues_and_roadbloc | none | names a leak | 2026-11-25 | raw
-closed | title=emulation_issues_and_roadbloc | none | same page; "?" cannot be matched | 2026-11-25 | raw
+closed | psdevwiki.com/ps3/ps2_emulation | GFDL 1.2 | decrypted emulator files; key script | 2026-11-25 | capture
+closed | www.psdevwiki.com/ps3/ps2_emulation | GFDL 1.2 | www prefix | 2026-11-25 | capture
+closed | emulation.gametechwiki.com/index.php/emulation_issues_and_roadblocks | none | names a leak | 2026-11-25 | raw
 
 # PlayStation family: kits, emulators, and tests.
 open | spicyjpeg/ps1-bare-metal | MIT | origin of hardware facts not stated | 2026-11-19 | README
@@ -1130,16 +1131,16 @@ walled | doc.dl.playstation.net/doc/content/dam/corporate/eula/psclassic | per p
 # Protective lines: sources the survey met and did not open, because they offer firmware or games.
 closed | abdess/retrobios | NOASSERTION | "BIOS and firmware files"; never open | 2026-11-22 | search
 closed | hadobedo/myrient-downloader-gui | not read | game-site downloader; never open | 2026-11-22 | search
-closed | libreboot.org/docs/install/playstatio | none checked | offers BIOS reimplementation builds | 2026-11-22 | page
-closed | www.libreboot.org/docs/install/playstatio | none checked | same page, www prefix | 2026-11-22 | page
+closed | libreboot.org/docs/install/playstation | none checked | offers BIOS reimplementation builds | 2026-11-22 | page
+closed | www.libreboot.org/docs/install/playstation | none checked | same page, www prefix | 2026-11-22 | page
 closed | psx.rules.org | not read | PADUA; said to excerpt Sony manuals | 2026-11-22 | Dr. Hell
 closed | www.psx.rules.org | not read | same site, www prefix | 2026-11-22 | Dr. Hell
 # The XEBRA archives bundle a replacement OS ROM; the pattern leaves the xebra/ prose pages open.
 closed | drhell.web.fc2.com/ps1/xebra2 | none | XEBRA archive; holds a replacement OS ROM | 2026-11-22 | PS1 page
 closed | www.drhell.web.fc2.com/ps1/xebra2 | none | same archive, www prefix | 2026-11-22 | PS1 page
 # no$psx is proprietary and not open source, so its page is closed.
-closed | problemkaputt.de/psx.ht | not read | no$psx, proprietary; fetch refused | 2026-11-22 | user wiki (lead)
-closed | www.problemkaputt.de/psx.ht | not read | same page, www prefix | 2026-11-22 | user wiki (lead)
+closed | problemkaputt.de/psx.htm | not read | no$psx, proprietary; fetch refused | 2026-11-22 | user wiki (lead)
+closed | www.problemkaputt.de/psx.htm | not read | same page, www prefix | 2026-11-22 | user wiki (lead)
 
 # Sources first cited by R1-20, the PSP and PlayStation Vita survey (2026-11-25).
 # Emulators read from prose and metadata only. Each high-level PSP operating system and each set of Vita system
@@ -1189,10 +1190,10 @@ closed | scarletnx/scarletnx/blob/main/src/vita/runtime | GPL-3.0-or-later | the
 closed | scarletnx/scarletnx/main/src/vita/runtime | GPL-3.0-or-later | the same, as raw files | 2026-11-25 | notes
 # Protective lines, never opened unless noted: key pages, dumping guides, and dumping tools. Page patterns are cut
 # short so the full address continues past them; index.php stands in for a page whose address needs "?".
-closed | playstationdev.wiki/pspdevwiki/index.ph | none checked | its "Keys" page | 2026-11-25 | Copetti
-closed | www.playstationdev.wiki/pspdevwiki/index.ph | none checked | the same, www prefix | 2026-11-25 | Copetti
-closed | pastie.org/14679 | none checked | paste titled "UMD keys decrypted" | 2026-11-25 | Copetti
-closed | www.pastie.org/14679 | none checked | the same, www prefix | 2026-11-25 | Copetti
+closed | playstationdev.wiki/pspdevwiki/index.php?title=keys | none checked | its "Keys" page | 2026-11-25 | Copetti
+closed | www.playstationdev.wiki/pspdevwiki/index.php?title=keys | none | www prefix | 2026-11-25 | Copetti
+closed | pastie.org/146791 | none checked | paste titled "UMD keys decrypted" | 2026-11-25 | Copetti
+closed | www.pastie.org/146791 | none checked | the same, www prefix | 2026-11-25 | Copetti
 closed | vita3k.org/quickstar | none stated | game dumping and licence-file guide; read once | 2026-11-25 | page
 closed | www.vita3k.org/quickstar | none stated | the same, www prefix | 2026-11-25 | page
 closed | ppsspp.org/docs/getting-started/dumping-game | notice, no grant | game dumping guide | 2026-11-25 | FAQ link
@@ -1279,10 +1280,8 @@ closed | dknute.livejournal.co | not read | Makaron author's blog; NAOMI key bru
 closed | www.dknute.livejournal.co | not read | the same, www prefix | 2026-11-26 | capture
 closed | dcnet.flyca.s | none | redirects to the closed Flycast wiki | 2026-11-26 | HTTP redirect
 closed | www.dcnet.flyca.s | none | the same, www prefix | 2026-11-26 | HTTP redirect
-closed | emulation.gametechwiki.com/index.php/sega_saturn_emulator | none | links leaked Sega papers | 2026-11-26 | raw
-closed | emulation.gametechwiki.com/index.php/girigir | none named | links hacked official builds | 2026-11-26 | raw
-closed | title=sega_saturn_emulator | none | the Saturn emulators page's "?title=" form | 2026-11-26 | raw
-closed | title=girigir | none named | the GiriGiri page's "?title=" form | 2026-11-26 | raw
+closed | emulation.gametechwiki.com/index.php/sega_saturn_emulators | none | links leaked Sega papers | 2026-11-26 | raw
+closed | emulation.gametechwiki.com/index.php/girigiri | none named | links hacked official builds | 2026-11-26 | raw
 closed | archive.org/details/segamanual | none | "leaked, official documentation" per a wiki | 2026-11-26 | wiki raw
 closed | www.archive.org/details/segamanual | none | the same, www prefix | 2026-11-26 | wiki raw
 closed | archive.org/download/segamanual | none | the same item's files | 2026-11-26 | wiki raw
@@ -1399,8 +1398,8 @@ closed | xenia-canary/xenia-canary/canary_experimental/src/xenia/cpu/xex_module 
 closed | xenia-canary/xenia-canary/contents/src/xenia/cpu/xex_module | BSD-3-Clause | - | 2026-11-25 | -
 # Closed repositories: no licence, source withheld, derived from maker code, or exploits.
 closed | patrickvl/dxbx | none found | Delphi translation of Cxbx; own kernel | 2026-11-25 | licence 404
-closed | sourceforge.net/projects/dxbx/file | none | downloads of a closed emulator | 2026-11-25 | project page
-closed | www.sourceforge.net/projects/dxbx/file | none | the same, www prefix | 2026-11-25 | project page
+closed | sourceforge.net/projects/dxbx/files | none | downloads of a closed emulator | 2026-11-25 | project page
+closed | www.sourceforge.net/projects/dxbx/files | none | the same, www prefix | 2026-11-25 | project page
 closed | mborgerson/openxbox | none | archived proof of concept | 2026-11-25 | licence 404, README
 closed | xenia-project/release-builds-windows | none | binary builds of Xenia's master branch | 2026-11-25 | metadata
 closed | cxbx-reloaded/xbsymboldatabase | MIT | signatures of maker code from retail games | 2026-11-25 | README
@@ -1408,13 +1407,13 @@ closed | ashnar2602/x360-mobile---official | none | source not published | 2026-
 closed | leviidev/utsuro | none found | runs the console's userland | 2026-11-25 | README
 closed | xboxoneresearch/ | mixed | exploits, flash dumpers; precaution | 2026-11-25 | organisation list
 # Dumping guides and possible firmware hosts, named by the sources read; not opened.
-closed | xenia-project/xenia/wiki/quickstar | none | game-dumping guide | 2026-11-25 | linked from the FAQ
-closed | xenia-project/xenia/wiki/how-to-rip-game | none | game-dumping guide | 2026-11-25 | wiki navigation
-closed | xenia-canary/xenia-canary/wiki/quickstar | none | the same in Canary's wiki | 2026-11-25 | FAQ link
-closed | xenia.jp/development/quickstar | none | the same on Xenia's site | 2026-11-25 | search result
-closed | www.xenia.jp/development/quickstar | none | www prefix | 2026-11-25 | search result
-closed | xenios.jp/fa | none stated | holds a game-dumping how-to | 2026-11-25 | page
-closed | www.xenios.jp/fa | none stated | www prefix | 2026-11-25 | page
+closed | xenia-project/xenia/wiki/quickstart | none | game-dumping guide | 2026-11-25 | linked from the FAQ
+closed | xenia-project/xenia/wiki/how-to-rip-games | none | game-dumping guide | 2026-11-25 | wiki navigation
+closed | xenia-canary/xenia-canary/wiki/quickstart | none | the same in Canary's wiki | 2026-11-25 | FAQ link
+closed | xenia.jp/development/quickstart | none | the same on Xenia's site | 2026-11-25 | search result
+closed | www.xenia.jp/development/quickstart | none | www prefix | 2026-11-25 | search result
+closed | xenios.jp/faq | none stated | holds a game-dumping how-to | 2026-11-25 | page
+closed | www.xenios.jp/faq | none stated | www prefix | 2026-11-25 | page
 closed | emulator-zone.com | not read | Xeon download; may host BIOS files | 2026-11-25 | wiki link
 closed | www.emulator-zone.com | not read | www prefix | 2026-11-25 | wiki link
 closed | xbins.org | not read | homebrew file host | 2026-11-25 | Free60 link
@@ -1444,10 +1443,8 @@ closed | free60project/wiki/master/docs/system-software/xdk_kerne | - | raw file
 # Wiki pages that mention leaked Xbox source or kits; their oldid and "index.php?title=" forms cannot be matched.
 closed | en.wikipedia.org/wiki/xbox_system_softwar | CC BY-SA 4.0 | mentions the 2020 source leak | 2026-11-25 | raw
 closed | en.wikipedia.org/wiki/xbox_%28consol | CC BY-SA 4.0 | the same; "(" form not matched | 2026-11-25 | raw
-closed | emulation.gametechwiki.com/index.php/xbox_emulator | none named | mentions stolen kits | 2026-11-25 | raw
-closed | emulation.gametechwiki.com/index.php/emulator_scam | none named | mentions a kit leak | 2026-11-25 | raw
-closed | title=xbox_emulator | none named | the Xbox emulators page's "?title=" form | 2026-11-25 | raw
-closed | title=emulator_scam | none named | the emulator scams page's "?title=" form | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/xbox_emulators | none named | mentions stolen kits | 2026-11-25 | raw
+closed | emulation.gametechwiki.com/index.php/emulator_scams | none named | mentions a kit leak | 2026-11-25 | raw
 
 # Sega, arcade, Xbox, and other systems: emulators, cores, and kits.
 open | retrodev.com/repos/blastem | GPL-3.0-or-later | credits community documents | 2026-11-19 | README, COPYING
@@ -1563,8 +1560,8 @@ closed | cps2shock.emu-france.info | not read | distributed CPS-2 decryption tab
 closed | arcadehacker.blogspot.com | not read | CPS-2 de-suicide work; key hazard | 2026-11-25 | Wikipedia CP System II
 closed | andreasnaive.blogspot.com | not read | CPS-2 and CPS-3 cipher research; key hazard | 2026-11-25 | Wikipedia
 closed | 64darksoft.blogspot.com | not read | CPS-3 cartridge and BIOS changes; key hazard | 2026-11-25 | Wikipedia
-closed | junkerhq.net/xrgb/index.php/cps-i | not read | CPS-3 suicide page; key hazard | 2026-11-25 | Wikipedia
-closed | www.junkerhq.net/xrgb/index.php/cps-i | not read | the same, www prefix | 2026-11-25 | Wikipedia
+closed | junkerhq.net/xrgb/index.php/cps-ii | not read | CPS-3 suicide page; key hazard | 2026-11-25 | Wikipedia
+closed | www.junkerhq.net/xrgb/index.php/cps-ii | not read | the same, www prefix | 2026-11-25 | Wikipedia
 closed | unibios.free.fr | not read | sells a replacement Neo Geo system ROM | 2026-11-25 | libretro FBNeo docs
 closed | unibios.com | not read | the same BIOS; address from memory | 2026-11-25 | from memory
 closed | www.unibios.com | not read | the same, www prefix | 2026-11-25 | from memory
@@ -1573,8 +1570,8 @@ closed | hbmame.1emulation.com | not read | HBMAME site, presumed to host hacked
 # The PCSX2x6 site's BIOS and game dumping pages are closed; the rest of that site stays open for prose.
 closed | daphne-emu.com | none read | Daphne site; DaphneLoader downloaded game files | 2026-11-25 | FAQ index
 closed | www.daphne-emu.com | none read | the same, www prefix | 2026-11-25 | FAQ index
-closed | ps2homebrew-arcade.github.io/pcsx2x6/getting_a_bio | not read | BIOS dumping page | 2026-11-25 | site menu
-closed | ps2homebrew-arcade.github.io/pcsx2x6/how_to_dump_game | not read | game dumping page | 2026-11-25 | site menu
+closed | ps2homebrew-arcade.github.io/pcsx2x6/getting_a_bios | not read | BIOS dumping page | 2026-11-25 | site menu
+closed | ps2homebrew-arcade.github.io/pcsx2x6/how_to_dump_games | not read | game dumping page | 2026-11-25 | site menu
 
 # Sega, arcade, and other systems: maker material that others host. Closed tier.
 closed | smspower.org/development/officialdoc | none | Sega developer documents | 2026-11-19 | Documents index
@@ -1761,7 +1758,7 @@ closed | archive.org/details/msx-dos-2-command-specificatio | not read | ASCII's
 closed | www.archive.org/details/msx-dos-2-command-specificatio | not read | www prefix | 2026-11-26 | MAP index
 closed | archive.org/download/msx-dos-2-command-specificatio | not read | the item's files | 2026-11-26 | MAP index
 # Closed: sites that offer games or firmware, and hosts of maker material with no sign of release. None opened
-# but the Miné pages, read once in error; their older address holds "~", so the written rule closes it.
+# but the Miné pages, read once in error, at both their addresses.
 closed | worldofspectrum.org | not read | offers Spectrum games | 2026-11-26 | search results
 closed | www.worldofspectrum.org | not read | the same, www prefix | 2026-11-26 | search results
 closed | spectrumcomputing.co.uk | not read | offers Spectrum games | 2026-11-26 | search results
@@ -1786,6 +1783,7 @@ closed | www.msxarchive.nl | not read | the same, www prefix | 2026-11-26 | MAP 
 closed | retropc.net/x68000/software/shar | not read | Sharp's X68000 software and ROMs | 2026-11-26 | Wikipedia link
 closed | www.retropc.net/x68000/software/shar | not read | the same, www prefix | 2026-11-26 | Wikipedia link
 closed | mine.perso.lip6.fr/mes | none seen | Thomson pages linking ROMs and games | 2026-11-26 | index page
+closed | www.di.ens.fr/~mine/mess | none | the same pages' older address | 2026-11-27 | R1-09 note
 closed | dcexel.free.fr | not read | EXL 100 site offering ROM and tapes | 2026-11-26 | French Wikipedia
 closed | alice32.free.fr | not read | DCAlice site with software images | 2026-11-26 | French Wikipedia
 closed | riscosopen.org/content/download | Apache-2.0 for most | ROM images, never obtained | 2026-11-26 | licences page
@@ -2003,9 +2001,9 @@ walled | singlesteptests/ares_tcls900h_ssts | unclear | fork of ares; a generato
 closed | singlesteptests/680x0 | none found | emulator-generated; results usable | 2026-11-19 | licence metadata
 closed | singlesteptests/tlcs900h | none found | experimental; results usable | 2026-11-19 | licence metadata
 
-# Cross-system tests: author's own copy, closed for want of a licence. The guard cannot match "~", so the host is named.
-closed | slack.net | none | blargg's own copy of his tests, under ~ant; whole host | 2026-11-19 | index, one readme
-closed | www.slack.net | none | same host, www prefix | 2026-11-19 | index, one readme
+# Cross-system tests: author's own copy, closed for want of a licence.
+closed | slack.net/~ant | none | blargg's own copy of his tests | 2026-11-19 | index, one readme
+closed | www.slack.net/~ant | none | same host, www prefix | 2026-11-19 | index, one readme
 
 # Added when R0-05's questions were worked down (2026-11-20).
 other | web.archive.org | - | an archive, not a source; captures cited with their time stamps | 2026-11-20 | -
@@ -2048,7 +2046,7 @@ other | jackchuka/mdschema | MIT | structure checker used here | 2026-11-19 | RE
 other | lycheeverse/lychee | Apache-2.0 OR MIT | link checker used here | 2026-11-19 | README
 open | n64recomp/n64recomp | MIT | static recompiler; takes a disassembly as input | 2026-11-19 | README, licence file
 open | docs.libretro.com | MIT | documentation of RetroArch and libretro | 2026-11-19 | licence file of its repository
-closed | emulation.gametechwiki.com/index.php/emulator_file | - | links to firmware downloads | 2026-11-19 | page index
+closed | emulation.gametechwiki.com/index.php/emulator_files | - | links to firmware downloads | 2026-11-19 | page index
 walled | maz/aarchmrs | BSD-style notice | Arm package mirrored at kernel.googlesource.com | 2026-11-19 | README, notice
 # Added by the rework of R0-04 on 2026-11-20.
 other | web.archive.org | - | an archive, not a source; existing captures only | 2026-11-20 | -
@@ -2193,8 +2191,8 @@ open | archive.org/details/centerofboardbottom | none stated | owner's photograp
 open | aquaplus.jp/piece | maker's notice; code reuse for P/ECE only | maker's own P/ECE pages | 2026-11-20 | intr.html
 # 3DO Development Repo: key, maker-document, and source paths, closed so that the guard blocks them.
 # A pattern with no trailing "/" blocks the pages below it; the index page at the path itself stays readable.
-closed | 3dodev.com/documentation/encryption | none | key and signing pages | 2026-11-20 | encryption index
-closed | 3dodev.com/_export/raw/documentation/encryption | none | same, raw export | 2026-11-20 | encryption index
+closed | 3dodev.com/documentation/encryption/ | none | key and signing pages | 2026-11-20 | encryption index
+closed | 3dodev.com/_export/raw/documentation/encryption/ | none | same, raw export | 2026-11-20 | encryption index
 closed | 3dodev.com/_media/documentation/encryption | none | key archives | 2026-11-20 | encryption index
 closed | 3dodev.com/documentation/development | none | maker's documents; and their index | 2026-11-20 | index
 closed | 3dodev.com/_export/raw/documentation/development | none | same, raw export | 2026-11-20 | index

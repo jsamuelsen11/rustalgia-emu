@@ -1,8 +1,24 @@
 #!/usr/bin/env sh
 # Claude Code PreToolUse hook: refuse a tool call that would open a restricted source.
 # It reads the call as JSON on standard input and exits 2, with the reason on standard error, to block it.
-# The list is source-register.txt in this folder; entries in the open tier are ignored here.
-# The rule is docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md.
+# The list is source-register.txt in this folder. The rule is
+# docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md.
+#
+# How a call is matched against the register:
+# - Only calls that fetch are checked: WebFetch, every MCP tool except GitHub tools that only write, and Bash
+#   commands that run a fetching program (curl, wget, an interpreter, git clone or fetch, gh api or repo or search,
+#   and the like). A command that only names an address, such as writing a file or opening an issue, passes.
+# - A pattern is plain text, matched in lower case after the start of a line or a character that cannot be part of
+#   a name. "owner/repository" also needs a name boundary after it, so it does not match "owner/repository-fork".
+#   "owner/" matches every repository of the owner. Every other pattern matches as a prefix.
+# - Where several lines match at the same place, the longest decides the tier, so an open line can carve a path out
+#   of a restricted one, and a restricted line can close a path inside an open one.
+# - Closed and tainted web addresses are blocked outright, page and host alike. A walled web site's prose is open to
+#   a writer; its downloads (archives, source files, download paths) are not. Tainted sources are blocked in every
+#   role, walled ones only for a writer.
+# - In a repository, a restricted line still allows its prose: the bare repository page, the licence and README
+#   endpoints, and files named README, LICENSE, COPYING, CONTRIBUTING, CODE_OF_CONDUCT, or AI-POLICY.
+#   Cloning, archive downloads, and searches inside it are blocked.
 set -eu
 
 # The guard fails closed: whatever stops it from checking a call blocks the call.
@@ -30,9 +46,26 @@ case "$trimmed" in
 '{'*'"tool_name"'*'}'*) ;;
 *) refuse "the call is not a JSON object with a tool name." ;;
 esac
-mark='@@restricted@@'
-prose='readme|license|licence|copying|contributing|code_of_conduct|ai-policy'
-end="([\"' )?#\\\\]|\$)"
+
+# A call that only names an address, without fetching it, passes.
+if printf '%s' "$input" | grep -Eq '"tool_name"[[:space:]]*:[[:space:]]*"bash"'; then
+  fetchers='curl|wget|aria2c|lynx|w3m|elinks|xh|svn|hg|scp|rsync|sftp|ftp|ncat|socat|telnet|python[0-9.]*|node|nodejs'
+  fetchers="$fetchers|deno|bun|ruby|perl|php|lua|tclsh|osascript|xdg-open|powershell|pwsh|wsl"
+  b='(^|[^a-z0-9_.-])'
+  a='([^a-z0-9_.-]|$)'
+  gh='(api|repo|search|browse|release|gist|run|workflow|codespace|extension|attestation|cache|ruleset|project|org)'
+  gitfetch='(clone|fetch|pull|ls-remote|archive|submodule)'
+  fetch="${b}(${fetchers})${a}|${b}git[^;&|]*[[:space:]]${gitfetch}${a}|${b}gh[[:space:]]+${gh}${a}"
+  if ! printf '%s' "$input" | grep -Eq "$fetch"; then
+    exit 0
+  fi
+elif
+  writes='(issue_write|sub_issue_write|create_|update_|add_|delete_|push_files|merge_pull_request'
+  writes="$writes|pull_request_review_write|request_copilot|assign_copilot)"
+  printf '%s' "$input" | grep -Eq "\"tool_name\"[[:space:]]*:[[:space:]]*\"mcp__[a-z0-9_]*github[a-z0-9_]*__${writes}"
+then
+  exit 0
+fi
 
 block() {
   echo "Blocked by .claude/hooks/source-guard.sh: '$2' is a $1 source." >&2
@@ -40,71 +73,125 @@ block() {
   exit 2
 }
 
-# One awk pass reads the register and tests every restricted line against the call, line by line of the call.
-# For each pattern it finds the occurrences that start the call or follow a character that cannot be part of a name,
-# replaces them with a mark, and blocks unless every mark is an allowed prose read.
-# It prints the tier and pattern of the first line that blocks, in register order, or nothing.
+# One awk pass reads the register and tests the call against every line.
+# It prints the tier and pattern of the line that blocks, or nothing.
 hit=$(
-  GUARD_INPUT=$input GUARD_ROLE=$role GUARD_PROSE=$prose awk '
+  GUARD_INPUT=$input GUARD_ROLE=$role awk '
+    function restricted(t) { return t == "tainted" || t == "closed" || (t == "walled" && role != "reader") }
+    function isweb(p) { return p ~ /^[^\/]*\./ }
+    # Where a match of pattern p starting at position st of string s ends, or 0 if p does not match there.
+    function endofmatch(s, st, p,    len, c, r) {
+      len = length(p)
+      if (substr(s, st, len) != p) return 0
+      if (st > 1 && substr(s, st - 1, 1) ~ /[a-z0-9_.-]/) return 0
+      if (substr(p, len) == "/") {
+        if (!match(substr(s, st + len), /^[a-z0-9._-]+/)) return 0
+        return st + len + RLENGTH - 1
+      }
+      if (!isweb(p) && p ~ /^[^\/]+\/[^\/]+$/) {
+        r = substr(s, st + len)
+        if (r ~ /^\.git([^a-z0-9_.-]|$)/) return st + len + 3
+        c = substr(r, 1, 1)
+        if (c ~ /[a-z0-9_-]/ || r ~ /^\.[a-z0-9_-]/) return 0
+      }
+      return st + len - 1
+    }
     BEGIN {
-      mark = "@@restricted@@"
+      role = ENVIRON["GUARD_ROLE"]
+      q = sprintf("%c", 39)
+      endc = "([\"" q " )?#\\\\]|$)"
+      prose = "(readme|license|licence|copying|contributing|code_of_conduct|ai-policy)"
+      seg = "[^/\"" q " ]+"
+      proseread = "^(/(blob|raw|contents)(/" seg ")?|/" seg ")?/" prose "[a-z0-9._-]*" endc "|^/(license|readme)" endc
+      bareread = "^" endc
+      code = "\\.(zip|7z|rar|tar|gz|tgz|bz2|xz|zst|lzh|lha|c|h|cc|cpp|cxx|hpp|hh|rs|s|asm|inc|py|java|go|cs"
+      code = code "|swift|m|mm|kt|lua|js|mjs|ts|wasm|patch|diff|bin|rom|iso)([?#&]|$)|/downloads?([/?#]|$)"
+      keyword = "(git|gh repo)[^;&|]*[[:space:]]clone([^a-z0-9_.-]|$)|tarball|zipball|codeload"
+      keyword = keyword "|git[^;&|]*[[:space:]]archive([^a-z0-9_.-]|$)|gh[[:space:]]+search|search/code"
       n = split(ENVIRON["GUARD_INPUT"], line, "\n")
-      prose = ENVIRON["GUARD_PROSE"]
-      endc = "([\"'"'"' )?#\\\\]|$)"
-      allowed = "^((/(blob|raw|contents)(/[^/\"'"'"' ]+)?|/[^/\"'"'"' ]+)?/(" prose ")[a-z0-9._-]*" endc \
-        "|/(license|readme)" endc "|" endc ")"
-      # The owner and repository fields of GitHub tool calls, on any line.
+      # A wiki page reached by "index.php?title=" is also tested in its "/wiki/" and "/index.php/" forms,
+      # so that a page closed by its path form is closed in every form.
+      m = n
+      for (i = 1; i <= n; i++) {
+        if (index(line[i], "index.php?title=")) {
+          s = line[i]; gsub(/(\/w|\/mediawiki)?\/index\.php\?title=/, "/wiki/", s); line[++m] = s
+          s = line[i]; gsub(/(\/w|\/mediawiki)?\/index\.php\?title=/, "/index.php/", s); line[++m] = s
+        }
+      }
+      n = m
       for (i = 1; i <= n; i++) {
         s = line[i]
-        while (match(s, /"owner"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
-          v = substr(s, RSTART, RLENGTH); sub(/^"owner"[[:space:]]*:[[:space:]]*"/, "", v); sub(/"$/, "", v)
-          owners[v] = 1; s = substr(s, RSTART + RLENGTH)
-        }
-        s = line[i]
-        while (match(s, /"repo"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
-          v = substr(s, RSTART, RLENGTH); sub(/^"repo"[[:space:]]*:[[:space:]]*"/, "", v); sub(/"$/, "", v)
-          repos[v] = 1; s = substr(s, RSTART + RLENGTH)
+        while (match(s, /"(owner|repo|path)"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
+          v = substr(s, RSTART, RLENGTH); k = v
+          sub(/^"/, "", k); sub(/".*$/, "", k)
+          sub(/^"[a-z]*"[[:space:]]*:[[:space:]]*"/, "", v); sub(/"$/, "", v)
+          if (!(k in field)) field[k] = v
+          s = substr(s, RSTART + RLENGTH)
         }
       }
     }
     /^[[:space:]]*(#|$)/ { next }
     {
-      split($0, field, "|")
-      tier = field[1]; sub(/^[[:space:]]+/, "", tier); sub(/[[:space:]].*$/, "", tier)
-      pattern = field[2]; sub(/^[[:space:]]+/, "", pattern); sub(/[[:space:]].*$/, "", pattern)
-      if (tier == "walled") { if (ENVIRON["GUARD_ROLE"] == "reader") next }
-      else if (tier != "closed" && tier != "tainted") next
-
-      # A call to a GitHub tool names the owner and the repository in separate fields.
-      owner = pattern; sub(/\/.*$/, "", owner)
-      repo = pattern; if (index(repo, "/")) sub(/^[^\/]*\//, "", repo)
-      if (owner in owners && (repo == "" || repo in repos)) { print tier " " pattern; exit }
-
-      slash = (substr(pattern, length(pattern)) == "/")
-      for (i = 1; i <= n; i++) {
-        s = line[i]; out = ""; pos = 1; found = 0
-        while ((k = index(substr(s, pos), pattern)) > 0) {
-          start = pos + k - 1
-          len = length(pattern)
-          before = (start == 1) ? "" : substr(s, start - 1, 1)
-          ok = (start == 1 && pos == 1) || (start > pos && before !~ /[a-z0-9_.-]/)
-          if (ok && slash) {
-            if (match(substr(s, start + len), /^[a-z0-9._-]+/)) len += RLENGTH; else ok = 0
+      split($0, f, "|")
+      t = f[1]; sub(/^[[:space:]]+/, "", t); sub(/[[:space:]].*$/, "", t)
+      p = f[2]; sub(/^[[:space:]]+/, "", p); sub(/[[:space:]].*$/, "", p)
+      if (p == "") next
+      np++; tier[np] = t; pat[np] = p
+    }
+    END {
+      # GitHub tool calls name the owner, the repository, and a path in separate fields.
+      if ("owner" in field) {
+        best = 0; blen = -2
+        for (j = 1; j <= np; j++) {
+          p = pat[j]
+          if (isweb(p)) continue
+          ns = split(p, part, "/")
+          if (part[1] != field["owner"]) continue
+          if (p ~ /\/$/) { l = -1 }
+          else if (ns == 2) { if (part[2] != field["repo"]) continue; l = 0 }
+          else {
+            if (part[2] != field["repo"]) continue
+            from = (part[3] == "tree" || part[3] == "blob") ? 5 : 4
+            inner = ""; sep = ""
+            for (x = from; x <= ns; x++) { inner = inner sep part[x]; sep = "/" }
+            if (inner == "" || index(field["path"], inner) != 1) continue
+            l = length(inner)
           }
-          if (!ok) { out = out substr(s, pos, k); pos = start + 1; continue }
-          out = out substr(s, pos, start - pos) mark
-          pos = start + len; found = 1
+          if (l > blen) { blen = l; best = j }
         }
-        if (!found) continue
-        marked = out substr(s, pos)
-        if (tier == "tainted") { print tier " " pattern; exit }
-        # Copying a whole repository, or searching inside it, is never a prose read.
-        if (marked ~ /clone|tarball|zipball|archive|codeload|search/) { print tier " " pattern; exit }
-        # Every mark must be an allowed read: a prose file, the licence or README endpoint, or the bare page.
-        rest = marked
-        while ((k = index(rest, mark)) > 0) {
-          rest = substr(rest, k + length(mark))
-          if (rest !~ allowed) { print tier " " pattern; exit }
+        if (best && restricted(tier[best])) {
+          if (tier[best] == "tainted" || blen > 0 || ENVIRON["GUARD_INPUT"] ~ /search/ \
+            || field["path"] !~ ("^(" prose "[a-z0-9._-]*)?$")) { print tier[best] " " pat[best]; exit }
+        }
+      }
+      for (i = 1; i <= n; i++) {
+        s = line[i]
+        delete bestj; delete bestend
+        for (j = 1; j <= np; j++) {
+          p = pat[j]; pos = 1
+          while ((k = index(substr(s, pos), p)) > 0) {
+            st = pos + k - 1
+            e = endofmatch(s, st, p)
+            if (e && (!(st in bestj) || e - st > bestend[st] - st || \
+              (e - st == bestend[st] - st && length(p) > length(pat[bestj[st]])))) { bestj[st] = j; bestend[st] = e }
+            pos = st + 1
+          }
+        }
+        for (st in bestj) {
+          j = bestj[st]; t = tier[j]; p = pat[j]
+          if (!restricted(t)) continue
+          if (t == "tainted") { print t " " p; exit }
+          rest = substr(s, bestend[st] + 1)
+          if (isweb(p)) {
+            if (t == "closed") { print t " " p; exit }
+            tok = rest; sub(/[\042\047 )#\\].*$/, "", tok)
+            if ((p tok) ~ code || s ~ keyword) { print t " " p; exit }
+            continue
+          }
+          if (s ~ keyword || substr(s, st - 5, 5) == "repo:") { print t " " p; exit }
+          if (rest ~ proseread) continue
+          if (p ~ /^[^\/]+\/[^\/]*$/ && rest ~ bareread) continue
+          print t " " p; exit
         }
       }
     }
@@ -118,43 +205,70 @@ fi
 # Prose stays open, so that the licence and the README can be read to evaluate it.
 hosts='github\.com|raw\.githubusercontent\.com|gitlab\.com|codeberg\.org'
 name='[a-z0-9][a-z0-9._-]*'
-reserved='^(orgs|search|settings|features|topics|about|login|marketplace|sponsors|notifications|explore)/'
+reserved='^(orgs|search|settings|features|topics|about|login|marketplace|sponsors|notifications|explore|customer-terms'
+reserved="$reserved|site|site-policy|pricing|enterprise|security|apps|collections|trending|events|codespaces|new|join"
+reserved="$reserved|account|team|readme|contact|mobile|copilot|solutions|resources|premium-support|github|api)/"
 found=$(
   {
     printf '%s' "$input" | grep -oE "(^|[^a-z0-9.-])(${hosts})/${name}/${name}" | sed -E "s~^.*(${hosts})/~~"
-    printf '%s' "$input" | grep -oE "(api\.github\.com/|gh api +/?)repos/${name}/${name}" | sed -E 's~^.*repos/~~'
+    api="(api\.github\.com/|gh api +(\\\\?[\"'])?/?)repos/"
+    printf '%s' "$input" | grep -oE "${api}${name}/${name}" | sed -E 's~^.*repos/~~'
     printf '%s' "$input" | grep -oE "(--repo|-r|gh repo (clone|view)) +${name}/${name}" | sed -E 's~^.* ~~'
     printf '%s' "$input" | grep -E '"owner"[[:space:]]*:' | sed -nE \
       "s~.*\"owner\"[[:space:]]*:[[:space:]]*\"(${name})\".*\"repo\"[[:space:]]*:[[:space:]]*\"(${name})\".*~\1/\2~p"
   } | sed -E 's~\.git$~~' | grep -Ev "$reserved" | sort -u
 )
 
+unevaluated() {
+  {
+    echo "Blocked by .claude/hooks/source-guard.sh: '$1' is not in the source register."
+    echo "Evaluate it first. Its licence, README, and policy pages may be read now."
+    echo "Follow 'Evaluating a new source' in docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md,"
+    echo "add a line to .claude/hooks/source-register.txt, then try again."
+    echo "A repository that has nothing to do with consoles or emulation is registered as 'other'."
+  } >&2
+  exit 2
+}
+
 for repository in $found; do
   owner=${repository%%/*}
   if grep -Eq "^[a-z]+ \| (${repository}|${owner}/) \|" "$list"; then
     continue
   fi
-  escaped=$(printf '%s' "$repository" | sed 's/[.[\*^$]/\\&/g')
-  marked=$(printf '%s' "$input" | sed -E "s~(^|[^a-z0-9_.-])${escaped}~\\1${mark}~g")
-  rest=$(printf '%s' "$marked" | sed -E \
-    -e "s~${mark}(/(blob|raw|contents)(/[^/\"' ]+)?|/[^/\"' ]+)?/(${prose})[a-z0-9._-]*${end}~\\5~g" \
-    -e "s~${mark}/(license|readme)${end}~\\2~g" \
-    -e "s~${mark}${end}~\\1~g")
-  unevaluated=no
-  case "$rest" in *"$mark"*) unevaluated=yes ;; esac
-  if printf '%s' "$marked" | grep -Eq 'clone|tarball|zipball|archive|codeload|search|"owner"'; then
-    unevaluated=yes
-  fi
-  if [ "$unevaluated" = yes ]; then
-    {
-      echo "Blocked by .claude/hooks/source-guard.sh: '$repository' is not in the source register."
-      echo "Evaluate it first. Its licence, README, and policy pages may be read now."
-      echo "Follow 'Evaluating a new source' in docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md,"
-      echo "add a line to .claude/hooks/source-register.txt, then try again."
-      echo "A repository that has nothing to do with consoles or emulation is registered as 'other'."
-    } >&2
-    exit 2
-  fi
+  verdict=$(
+    GUARD_INPUT=$input GUARD_REPO=$repository awk '
+      BEGIN {
+        q = sprintf("%c", 39)
+        endc = "([\"" q " )?#\\\\]|$)"
+        prose = "(readme|license|licence|copying|contributing|code_of_conduct|ai-policy)"
+        seg = "[^/\"" q " ]+"
+        allowed = "^((/(blob|raw|contents)(/" seg ")?|/" seg ")?/" prose "[a-z0-9._-]*" endc
+        allowed = allowed "|/(license|readme)" endc "|(\\.git)?" endc ")"
+        keyword = "clone|tarball|zipball|codeload|git[^;&|]*[[:space:]]archive|gh[[:space:]]+search|search/code"
+        r = ENVIRON["GUARD_REPO"]; n = split(ENVIRON["GUARD_INPUT"], line, "\n")
+        for (i = 1; i <= n; i++) {
+          s = line[i]; pos = 1
+          if (s ~ /"owner"[[:space:]]*:/ && index(s, "\"" substr(r, index(r, "/") + 1) "\"")) { print "yes"; exit }
+          while ((k = index(substr(s, pos), r)) > 0) {
+            st = pos + k - 1; pos = st + 1
+            if (st > 1 && substr(s, st - 1, 1) ~ /[a-z0-9_.-]/) continue
+            if (s ~ keyword) { print "yes"; exit }
+            if (substr(s, st + length(r)) !~ allowed) { print "yes"; exit }
+          }
+        }
+      }'
+  )
+  [ "$verdict" = yes ] && unevaluated "$repository"
 done
+
+# An organisation-wide code search reaches every repository of the owner, so the owner needs an open line.
+if printf '%s' "$input" | grep -Eq 'search'; then
+  by='(--owner[= ]+|org:|user:)'
+  for owner in $(printf '%s' "$input" | grep -oE "${by}${name}" | sed -E "s~^${by}~~" | sort -u); do
+    if ! grep -Eq "^(open|other) \| ${owner}/ " "$list"; then
+      unevaluated "$owner/"
+    fi
+  done
+fi
 
 exit 0

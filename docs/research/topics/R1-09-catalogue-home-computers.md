@@ -861,8 +861,7 @@ and licence files were read through GitHub's API; closed addresses are in code s
 - Closed, read once in captures and not linked: C-BIOS's home page, `cbios.sourceforge.net`,
   capture of 2026-11-13 09:59:29; EmuTOS's home page, `emutos.sourceforge.io`, capture of 2026-09-17 05:35:47.
   Opened in error, closed: `mine.perso.lip6.fr/mess/index.html.en`;
-  its older address `www.di.ens.fr/~mine/mess` holds "~", which no register pattern can carry,
-  so the written rule closes it.
+  its older address `www.di.ens.fr/~mine/mess` is closed too, by a register line added once patterns could hold "~".
 - Leads, not linked: RISC OS Open forum thread "Copyright status of Acorn ROMs?" (2020-12-02).
 
 [adr6]: ../../adr/0006-read-sources-by-tier-under-a-compatibility-test.md

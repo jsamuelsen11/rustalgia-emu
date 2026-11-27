@@ -86,9 +86,11 @@ check 0 writer "$(fetch https://github.com/gbadev-org/tonc/blob/master/README.md
 check 2 writer "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
 check 0 reader "$(fetch https://github.com/c-sp/game-boy-test-roms/tree/master/src)"
 
-# Web sites: a walled site is closed to a writer and open to a reader.
-check 2 writer "$(fetch https://tcrf.net/Help:Contents)"
+# Web sites: a walled site's prose is open to a writer and a reader; its downloads are not open to a writer.
+check 0 writer "$(fetch https://tcrf.net/Help:Contents)"
 check 0 reader "$(fetch https://tcrf.net/Help:Contents)"
+check 2 writer "$(fetch https://tcrf.net/images/files/example.zip)"
+check 0 reader "$(fetch https://tcrf.net/images/files/example.zip)"
 
 # Web sites, from the verification pass: www forms, download paths, and file pages of closed items.
 check 2 writer "$(fetch https://www.segaretro.org/images/a/a2/manual.pdf)"
@@ -109,9 +111,11 @@ check 0 writer "$(fetch 'https://psx.amidog.se/doku.php?id=psx:download')"
 check 2 writer "$(fetch https://www.mamedev.org/roms/)"
 check 0 writer "$(fetch https://www.mamedev.org/legal.html)"
 
-# A host named in place of a path with "~", which a pattern cannot hold.
+# Patterns that hold "~" match their own addresses, and the rest of each host stays open.
 check 2 writer "$(fetch https://cgi.cse.unsw.edu.au/~cs3231/doc/R3000.pdf)"
 check 2 writer "$(fetch https://www.slack.net/~ant/old/gb-tests/)"
+check 0 writer "$(fetch https://cgi.cse.unsw.edu.au/~cs3231/)"
+check 0 writer "$(fetch https://www.slack.net/~someone-else/)"
 
 # Closed or walled folders inside open repositories, in page and raw form.
 check 2 writer "$(fetch https://github.com/wheremyfoodat/Panda3DS/blob/master/third_party/duckstation/window_info.cpp)"
@@ -366,10 +370,66 @@ if [ -n "$bad" ]; then
   failed=1
 fi
 
-# No restricted pattern holds "~" or "?": the guard's matching cannot take them, and "~" stops the guard.
-special=$(grep -E '^(walled|closed|tainted) \| [^ |]*[~?]' "$register" || true)
+# Issue #32: what the register means, and only that.
+# A pattern holding "?" matches its address; so does a page's "index.php?title=" form of a path pattern.
+check 2 writer "$(fetch 'https://emulation.gametechwiki.com/index.php?title=Nintendo_DS_emulators&action=raw')"
+check 2 writer "$(fetch 'https://playstationdev.wiki/pspdevwiki/index.php?title=Keys')"
+check 0 writer "$(fetch 'https://playstationdev.wiki/pspdevwiki/index.php?title=Main_Page')"
+check 2 writer "$(fetch 'https://n64brew.dev/index.php?title=PIF-NUS')"
+check 2 writer "$(fetch 'https://en.wikipedia.org/w/index.php?title=Xbox_system_software')"
+check 0 writer "$(fetch 'https://en.wikipedia.org/w/index.php?title=Xbox_360')"
+# A repository pattern matches only at a name boundary, not inside a longer repository name.
+check 2 writer "$(fetch https://github.com/OpenEmu/OpenEmu/blob/master/Source/x.m)"
+check 0 writer "$(fetch https://github.com/simias/rustation-libretro/blob/master/README.md)"
+check 2 writer "$(bash 'git clone https://github.com/stenzek/duckstation.git')"
+# The longest line decides: an open line carves a repository out of a walled owner, and a closed folder inside an open
+# repository is blocked through a GitHub tool's separate path field too.
+check 0 writer "$(fetch https://github.com/MiSTer-devel/Arcade-Cave_MiSTer/blob/master/rtl/cave.vhd)"
+check 2 writer "$(fetch https://github.com/MiSTer-devel/Arcade-Galaga_MiSTer/blob/master/rtl/galaga.vhd)"
+path_call() {
+  printf '{"tool_name":"mcp__plugin_github_github__get_file_contents",'
+  printf '"tool_input":{"owner":"%s","repo":"%s","path":"%s"}}' "$1" "$2" "$3"
+}
+check 2 writer "$(path_call dolphin-emu dolphin docs/DSP/free_dsp_rom/dsp_rom.ds)"
+check 0 writer "$(path_call dolphin-emu dolphin Source/Core/Core/HW/DSP.cpp)"
+check 0 writer "$(path_call stenzek duckstation README.md)"
+check 2 writer "$(path_call stenzek duckstation src/core/cpu_core.cpp)"
+# A quoted "gh api" call and an organisation-wide code search reach the unregistered-repository fallback.
+check 2 writer "$(bash 'gh api \"repos/example-org/new-emulator/contents/src\"')"
+check 0 writer "$(bash 'gh api \"repos/example-org/new-emulator/license\"')"
+check 2 writer "$(bash 'gh search code cpu --owner example-org')"
+check 2 writer "$(bash 'gh search code cpu --owner pret')"
+# GitHub pages that are not repositories are not treated as unregistered repositories.
+check 0 writer "$(fetch https://github.com/customer-terms/github-copilot-product-specific-terms)"
+check 0 writer "$(fetch https://github.com/site-policy/github-terms/blob/main/github-terms-of-service.md)"
+# A command that only names an address, without fetching it, passes; fetching it is still checked.
+check 0 writer "$(bash 'printf %s github.com/stenzek/duckstation/blob/master/src/core/cpu_core.cpp > notes.txt')"
+check 0 writer "$(bash 'gh issue create --title x --body \"see github.com/stenzek/duckstation/tree/master/src\"')"
+check 0 writer "$(bash 'grep -rn problemkaputt.de/psx-spx docs')"
+check 0 writer "$(bash 'printf %s {} | sh .claude/hooks/source-guard.sh # tcrf.net/x.zip')"
+check 2 writer "$(bash 'curl -sL https://github.com/stenzek/duckstation/blob/master/src/core/cpu_core.cpp')"
+check 2 writer "$(bash 'python3 -c \"import urllib\" https://psx-spx.consoledev.net/')"
+issue_call='{"tool_name":"mcp__plugin_github_github__issue_write","tool_input":{"body":"psx-spx.consoledev.net"}}'
+check 0 writer "$issue_call"
+# The words "archive", "search", and "research" do not block by themselves; clones and archive downloads still do.
+check 0 writer "$(fetch https://github.com/geotale/gc-like-research/blob/main/README.md)"
+check 0 writer "$(fetch https://web.archive.org/web/2024/https://www.mamedev.org/legal.html)"
+check 0 writer "$(bash 'curl -sL https://api.github.com/search/repositories?q=emulator')"
+check 2 writer "$(fetch https://github.com/stenzek/duckstation/archive/refs/heads/master.zip)"
+check 2 writer "$(fetch https://codeload.github.com/stenzek/duckstation/zip/refs/heads/master)"
+# A walled web site's code files are not open to a writer, though its pages are.
+check 2 writer "$(fetch https://visual6502.org/JSSim/expertWires.js)"
+check 0 writer "$(fetch https://visual6502.org/JSSim/)"
+# A closed web address is blocked at its exact address and its home page; a trailing "/" leaves its index open.
+check 2 writer "$(fetch https://pcsx2.net/docs/setup/gather)"
+check 2 writer "$(fetch https://kawaks.org)"
+check 0 writer "$(fetch https://3dodev.com/documentation/encryption)"
+check 2 writer "$(fetch https://3dodev.com/documentation/encryption/keys)"
+
+# No pattern holds a space or a "|", which would split its register line.
+special=$(grep -Ev '^[[:space:]]*(#|$)' "$register" | awk -F' [|] ' '$2 ~ /[ |]/' || true)
 if [ -n "$special" ]; then
-  echo "FAIL: restricted patterns with characters the guard cannot match:"
+  echo "FAIL: register patterns with a space or a bar:"
   echo "$special"
   failed=1
 fi
