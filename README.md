@@ -76,6 +76,7 @@ Run `mise tasks` to list them.
 | YAML, JSON, and TOML formatting | dprint |
 | Whitespace, line endings, and line length | editorconfig-checker |
 | Shell scripts | shellcheck, shfmt |
+| The source guard's behaviour and the register's format | `lint:guard` |
 | CI workflows | actionlint, zizmor |
 | Secrets | betterleaks |
 | Commit messages and pull request titles | committed |

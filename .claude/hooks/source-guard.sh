@@ -5,11 +5,31 @@
 # The rule is docs/adr/0006-read-sources-by-tier-under-a-compatibility-test.md.
 set -eu
 
+# The guard fails closed: whatever stops it from checking a call blocks the call.
+# A crash or a timeout blocks too, through "onFailure": "block" in .claude/settings.json.
+refuse() {
+  echo "Blocked by .claude/hooks/source-guard.sh: $1" >&2
+  echo "The guard cannot check this call, so it blocks it. Fix the cause and try again." >&2
+  exit 2
+}
+
 list="$(dirname "$0")/source-register.txt"
-[ -f "$list" ] || exit 0
+[ -f "$list" ] || refuse "the source register is missing ($list)."
+[ -r "$list" ] || refuse "the source register cannot be read ($list)."
 
 role=${RUSTALGIA_SOURCE_ROLE:-writer}
 input=$(tr '[:upper:]' '[:lower:]')
+
+# A tool call arrives as one JSON object that names its tool.
+case "$input" in
+*[![:space:]]*) ;;
+*) refuse "the call arrived empty." ;;
+esac
+trimmed=${input#"${input%%[![:space:]]*}"}
+case "$trimmed" in
+'{'*'"tool_name"'*'}'*) ;;
+*) refuse "the call is not a JSON object with a tool name." ;;
+esac
 mark='@@restricted@@'
 prose='readme|license|licence|copying|contributing|code_of_conduct|ai-policy'
 end="([\"' )?#\\\\]|\$)"

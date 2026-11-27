@@ -327,6 +327,34 @@ check 2 writer "$(fetch 'https://playstationdev.wiki/pspdevwiki/index.php?title=
 check 0 writer "$(fetch https://emulation.gametechwiki.com/index.php/GBA_Tests)"
 check 0 writer "$(fetch https://pcsx2.net/docs/setup/bios/)"
 
+# The guard fails closed: empty or malformed input blocks.
+check 2 writer ''
+check 2 writer '   '
+check 2 writer 'not json'
+check 2 writer '{"tool_input":{"command":"git status"}}'
+check 2 writer '['
+check 0 writer "$(bash 'git status')"
+
+# The guard fails closed: a missing register blocks every call, with a message that says so.
+copy=$(mktemp -d)
+cp "$guard" "$copy/source-guard.sh"
+code=0
+message=$(printf '%s' "$(bash 'git status')" | sh "$copy/source-guard.sh" 2>&1) || code=$?
+if [ "$code" -ne 2 ] || ! printf '%s' "$message" | grep -q 'register is missing'; then
+  echo "FAIL: a missing register gave exit $code: $message"
+  failed=1
+fi
+rm -rf "$copy"
+
+# The project settings make a crash or a timeout block, and keep user settings from switching hooks off.
+settings="$(dirname "$0")/../settings.json"
+for key in '"onFailure": "block"' '"timeout": [0-9]' '"disableAllHooks": false'; do
+  if ! grep -Eq "$key" "$settings"; then
+    echo "FAIL: .claude/settings.json lacks $key"
+    failed=1
+  fi
+done
+
 # Every register line has a known tier, six fields, and a date.
 register="$(dirname "$0")/source-register.txt"
 fields='[^| ]+ \| [^|]+ \| [^|]+ \| [0-9]{4}-[0-9]{2}-[0-9]{2} \| [^|]+'

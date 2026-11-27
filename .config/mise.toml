@@ -38,6 +38,7 @@ depends = [
   "lint:actionlint",
   "lint:shellcheck",
   "lint:reuse",
+  "lint:guard",
   "links:offline",
 ]
 

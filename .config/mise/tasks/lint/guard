@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+#MISE description="Test the source guard and check the source register"
+set -eu
+
+sh .claude/hooks/source-guard.test.sh

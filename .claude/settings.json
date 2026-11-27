@@ -1,4 +1,5 @@
 {
+  "disableAllHooks": false,
   "hooks": {
     "PreToolUse": [
       {
@@ -6,7 +7,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/source-guard.sh"
+            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/source-guard.sh",
+            "timeout": 30,
+            "onFailure": "block"
           }
         ]
       }
