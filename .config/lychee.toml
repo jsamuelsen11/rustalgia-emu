@@ -71,5 +71,6 @@ exclude = [
   '^https?://(www\.)?loeb\.com/', # 403 Forbidden to browser agents; times out for others (2026-11-25)
   '^https?://(www\.)?tweaktown\.com/', # 403 Forbidden (challenge page) (2026-11-25)
   '^https?://(www\.)?rpcs3\.net/', # 403 Forbidden (Cloudflare challenge page) (2026-11-25)
+  '^https?://git\.libretro\.com/', # 403 Forbidden to the link checker's agent (2026-11-26)
   '^https?://(www\.)?richwhitehouse\.com/', # 406 Not Acceptable to non-browser agents (Mod_Security) (2026-11-26)
 ]

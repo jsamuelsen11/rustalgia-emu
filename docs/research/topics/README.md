@@ -25,6 +25,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-06](R1-06-catalogue-32-and-64-bit.md) | Which consoles and handhelds the 32-bit and 64-bit era sold, and their hardware and sources |
 | [R1-07](R1-07-catalogue-sixth-generation.md) | Every console and handheld of the sixth-generation era, with sources |
 | [R1-08](R1-08-catalogue-modern.md) | Which consoles and handhelds were sold from the seventh generation on, and their hardware |
+| [R1-09](R1-09-catalogue-home-computers.md) | Which home computers games were sold for, and their hardware, firmware, and sources |
 | [R1-10](R1-10-game-boy-family.md) | Which Game Boy and Game Boy Color emulators matter, how they work, and the family's risks |
 | [R1-11](R1-11-game-boy-advance-family.md) | Which Game Boy Advance emulators matter, and the family's legal exposure and difficulty |
 | [R1-12](R1-12-nintendo-ds-family.md) | Which DS and DSi emulators matter, how they work, and the family's legal exposure and difficulty |
@@ -37,6 +38,8 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-19](R1-19-playstation-2-family.md) | Which PlayStation 2 emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-20](R1-20-psp-and-vita-family.md) | Which PSP and Vita emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-21](R1-21-playstation-3-4-5-family.md) | Which PS3, PS4, and PS5 emulators matter, and the family's legal exposure and difficulty |
+| [R1-22](R1-22-sega-8-and-16-bit-family.md) | Which Sega 8-bit and 16-bit emulators matter, and the family's legal exposure and difficulty |
+| [R1-23](R1-23-saturn-and-dreamcast-family.md) | Which Saturn and Dreamcast emulators matter, and the family's legal exposure and difficulty |
 | [R1-24](R1-24-xbox-family.md) | Which Xbox, Xbox 360, and later emulators matter, and the family's legal exposure and difficulty |
 | [R1-25](R1-25-arcade-family.md) | Which arcade emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-26](R1-26-other-consoles-family.md) | Which other console and handheld emulators matter, and the family's legal exposure and difficulty |
