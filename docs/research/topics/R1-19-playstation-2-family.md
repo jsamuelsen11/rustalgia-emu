@@ -125,6 +125,10 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   ([PCSX2, "AetherSX2 brings PCSX2 to mobile"][pcsx2-aether]),
   while Wikipedia says GPL-3.0-or-later from 0.9.7 in 2009 ([Wikipedia, "PCSX2"][w-pcsx2]; tertiary).
   When the core moved from LGPL to GPL was not found in any prose read.
+  The PCSX2 study has since found a commit of 2009-09-08 titled as the upgrade to GPLv3,
+  and a member's statement that the later LGPL label was a mistake
+  ([R1-42, "Project history and governance"](../emulators/R1-42-pcsx2.md#project-history-and-governance);
+  corrected 2026-11-27).
 - Graphics are its largest area of work.
   It renders through Direct3D 11 and 12, Vulkan, OpenGL, and software, which "Renders graphics on your CPU,
   instead of your GPU, for maximum accuracy" ([PCSX2, "General" settings][pcsx2-gen]), and through Metal on macOS
@@ -139,6 +143,10 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   on M-series Macs "PCSX2 runs via the translation layer Rosetta 2" ([PCSX2, "Requirements"][pcsx2-req]).
   ARMSX2's README says upstream ships an ARM64 interpreter build but recompiles only to x86-64 ([ARMSX2][armsx2]);
   the asset names of the five latest releases name no arm64 build (observed), so the interpreter build is not confirmed.
+  The PCSX2 study confirms the build and corrects "ships": upstream compiles a macOS ARM64 configuration in CI,
+  publishes no artefact from it, and has no recompiler there but the one for VIF unpacking
+  ([R1-42, "Project history and governance"](../emulators/R1-42-pcsx2.md#project-history-and-governance);
+  corrected 2026-11-27).
   PCSX2 itself has no Android, iOS, or console build.
 - It requires a BIOS: "a BIOS dump from a legitimately-owned PS2 console is required to use the emulator" (README),
   and its BIOS page, which [R0-02][r002-how] quotes, says "no open-source alternative exists".
@@ -153,6 +161,9 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   ([libretro, "LRPS2"][lr-lrps2], last updated 2026-10-22), as does [RetroArch's PS2 page][ra-ps2].
   Its README now leads with an AArch64 port, with estimated coverage of about 89 % for the EE recompiler,
   98 % for the IOP, and 70 % for VU1, and a VU1 recompiler taken from ARMSX2 ([LRPS2 README][lrps2]).
+  The PCSX2 study found that all of its vector-unit and VIF code comes from the ARMSX2 line, not VU1 alone
+  ([R1-42, "Comparison"](../emulators/R1-42-pcsx2.md#comparison-the-arm64-recompilers-of-armsx2-and-lrps2);
+  corrected 2026-11-27).
   The libretro build server already lists the core for Android arm64, iOS, and tvOS
   (observed, [libretro nightly builds][buildbot], 2026-11-25); whether those builds run was not established.
 - The same README describes a software model of the PS2's floating point, with no NaN or infinity, chopped rounding,
@@ -215,6 +226,8 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   That component is closed by rule, and the rest of the repository stays open.
   Its site adds "Easy configuration.
   No custom settings to fix specific games." ([purei.org, "About"][purei-about]).
+  There are no user settings of that kind, but the repository ships a file of 47 per-game entries, applied by itself
+  ([R1-43, "What works poorly"](../emulators/R1-43-play.md#what-works-poorly); corrected 2026-11-27).
 - It runs on Windows, macOS, Linux, Android, iOS, and the web, uses JIT code generation,
   and on iOS crashes without JIT (README).
   Its web build cannot invalidate its JIT cache when games load EE modules,
@@ -224,6 +237,8 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   playable" in 0.61 (2023), which also added preliminary Namco System 246 support; 0.62 added System 256
   ([purei.org][purei]).
   Its compatibility tracker is a repository of issues and was not opened.
+  The emulator's study has since read it: 1,309 of the 2,652 games with a state were labelled playable on 2026-11-27
+  ([R1-43, "Published results"](../emulators/R1-43-play.md#published-results); corrected 2026-11-27).
 
 ### Accuracy work and new emulators
 
@@ -519,6 +534,12 @@ It is not legal advice.
   It is built with ps2sdk, which is walled, and was last pushed in 2019 (metadata).
 - No emulator's results on ps2autotests were found
   (web search for the suite with PCSX2, Play!, and DobieStation, and the prose read).
+  That holds for a table of the whole suite.
+  The studies found results for single tests in PCSX2's pull requests and issues, a runner in each emulator's tree,
+  and neither runner in CI
+  ([R1-42, "Tests and published results"](../emulators/R1-42-pcsx2.md#tests-and-published-results);
+  [R1-43, "Tests and continuous integration"](../emulators/R1-43-play.md#tests-and-continuous-integration); corrected
+  2026-11-27).
 - The GS dump runner compares "a large number of GS dumps
   and output any differences found with pictures" between a baseline and a modified build
   ([PCSX2, "GS dump runner"][pcsx2-gsdr]), so it detects regressions only (inference).
@@ -536,9 +557,9 @@ The options answer five separate questions, and the recommendation takes one ans
 
 ### Which emulators the PlayStation 2 studies cover
 
-- **What:** keep the roadmap's studies of [PCSX2][pcsx2] ([R1-42][studies]) and [Play!][play] ([R1-43][studies]);
-  add a third of [DobieStation][dobie] or [Iris][iris]; or fold the ARM64 lineages, [ARMSX2][armsx2] and [LRPS2][lrps2],
-  into the PCSX2 study.
+- **What:** keep the roadmap's studies of [PCSX2][pcsx2] ([R1-42](../emulators/R1-42-pcsx2.md))
+  and [Play!][play] ([R1-43](../emulators/R1-43-play.md)); add a third of [DobieStation][dobie] or [Iris][iris];
+  or fold the ARM64 lineages, [ARMSX2][armsx2] and [LRPS2][lrps2], into the PCSX2 study.
 - **Costs:** Play!'s distinctive part, its high-level BIOS, is closed, so R1-43 can study only its other parts;
   DobieStation has not moved since 2021 and Iris is young; ARMSX2 and LRPS2 change weekly.
 - **Gains:** PCSX2 is open, dominant, and the base of most widely used emulators; Play!

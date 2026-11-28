@@ -186,6 +186,8 @@ GPL-2.0 means GPL-2.0 with neither "only" nor "or later" stated, as the register
   The earlier GPL version is not in the article; GPL-3.0 is from memory, consistent with its fork below.
 - The Android app seemed to end in March 2026 and returned, rewritten, in November 2026
   ([Android Authority, 11 March 2026][aa-mar] and [3 November 2026][aa-nov], in captures; secondary).
+  November is the date of the press report: the project's beta page dates the rewrite's first alpha 2026/10/11
+  ([R1-40, "History and maintenance"](../emulators/R1-40-duckstation.md#history-and-maintenance); corrected 2026-11-27).
   The beta page says the rewrite needs Android 7 and forbids redistribution of its APK ([DuckStation beta][ds-beta]).
   Desktop builds are for Windows, macOS 13.3 and later, and Linux (README).
 - SwanStation is "a hard fork and open-source Libretro core implementation of DuckStation"
@@ -497,8 +499,8 @@ The options answer four separate questions, and the recommendation takes one ans
 
 ### Which emulators the PlayStation 1 studies cover
 
-- **What:** keep the roadmap's two studies, DuckStation ([R1-40][studies]) and PCSX-Redux ([R1-41][studies]);
-  add a study of [Mednafen's module][mdf-psx];
+- **What:** keep the roadmap's two studies, DuckStation ([R1-40](../emulators/R1-40-duckstation.md))
+  and PCSX-Redux ([R1-41](../emulators/R1-41-pcsx-redux.md)); add a study of [Mednafen's module][mdf-psx];
   or replace PCSX-Redux with it. [ares][ares-site]'s core falls to [R1-60][studies] either way.
 - **Costs:** DuckStation can be studied only from prose and behaviour; [PCSX-Redux][redux] and Mednafen are walled,
   so their code needs a reader session unless Mednafen's "or later" is confirmed; a third study adds one item.
@@ -567,7 +569,7 @@ The owner decides each of these; the pull request lists them.
 
 ## Implications for Rustalgia
 
-- [R1-40][studies] should scope DuckStation to its prose and observed behaviour,
+- [R1-40](../emulators/R1-40-duckstation.md) should scope DuckStation to its prose and observed behaviour,
   and R1-41 to a reader session's description of [PCSX-Redux][redux]'s debugger and structure; a Mednafen study,
   if the owner adds it, feeds [R2-03][phase2]'s scheduling and [R2-12][phase2]'s firmware decisions.
 - [R5-12][phase5] should cover what this survey found no clean source for: disc seek timing,
