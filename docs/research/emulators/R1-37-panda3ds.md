@@ -57,10 +57,13 @@ so owning the recompiler is a real option beside wrapping a library.
   These paths are code spans, not links, because a reader bound by ADR 0006 must not open them.
   The operating-system layer is described from prose and file names only.
 - Six files that were read mix machine parts with operating-system behaviour,
-  and the evidence gatherers propose that the owner consider closing them: [`include/memory.hpp`][p-mem-h],
-  [`src/core/memory.cpp`][p-mem], [`src/core/audio/null_core.cpp`][p-null],
-  [`src/core/audio/teakra_core.cpp`][p-teakra], [`src/lua.cpp`][p-lua], and Tanuki3DS's [`src/3ds.c`][t-3ds-c].
+  and the evidence gatherers proposed that the owner consider closing them: [`include/memory.hpp`][p-mem-h],
+  [`src/core/memory.cpp`][p-mem], `src/core/audio/null_core.cpp`, [`src/core/audio/teakra_core.cpp`][p-teakra],
+  [`src/lua.cpp`][p-lua], and Tanuki3DS's `src/3ds.c`.
   This note describes only their machine-facing parts.
+  Two of them, `src/core/audio/null_core.cpp` and Tanuki3DS's `src/3ds.c`,
+  stand in for system behaviour and were closed in the [register](../../../.claude/hooks/source-register.txt) on
+  2026-11-27, after they were read; they are named in code spans and no longer linked.
 - How the claims were checked: five evidence gatherers each read a share, fetching files as raw text.
   The writer wrote from their reports alone.
   Four independent verifiers, who saw only the note, then checked it, and a fix pass applied their findings.
@@ -332,8 +335,8 @@ DSP memory access, and the operations the DSP service needs
 and the core holds a reference to that service to raise its events.
 The low-level core wraps the Teakra DSP emulator and runs the DSP program that each application supplies;
 its header says the integration is based on Citra's ([`teakra_core.hpp`][p-teakra-h]).
-The null core makes no sound but answers enough of the protocol
-for games to proceed ([`src/core/audio/null_core.cpp`][p-null]).
+The null core makes no sound but answers enough of the protocol for games to proceed
+(`src/core/audio/null_core.cpp`, read before it was closed).
 The high-level core is closed and was not read.
 
 Every core pushes stereo 16-bit samples into one ring buffer of 8,192 frames.
@@ -410,8 +413,8 @@ Neither emulator has save states (observed for Tanuki3DS in the files read).
 Tanuki3DS builds from one Makefile of 98 lines, and its README ("Building") lists five dependencies.
 
 The frame loop has the same shape as Panda3DS's: run the processor until the earliest event,
-advance the clock by the cycles consumed, then run due events;
-when no thread is ready it skips from event to event ([`src/3ds.c`][t-3ds-c]).
+advance the clock by the cycles consumed, then run due events; when no thread is ready it skips from event to event
+(`src/3ds.c`, read before it was closed).
 The scheduler stores handler addresses, so its queue would need a handler table before it could be saved
 (inference from [`scheduler.h`][t-sched-h]).
 
@@ -699,8 +702,8 @@ Panda3DS repository, [wheremyfoodat/Panda3DS][p-repo]:
   [`src/core/renderer_mtl/renderer_mtl.cpp`][p-mtl]; [`src/core/renderer_vk/renderer_vk.cpp`][p-vk];
   [`src/core/renderer_sw/renderer_sw.cpp`][p-sw]; [`src/core/renderer_null/renderer_null.cpp`][p-rnull].
 - Audio: [`include/audio/dsp_core.hpp`][p-dsp-h]; [`include/audio/teakra_core.hpp`][p-teakra-h];
-  [`src/core/audio/teakra_core.cpp`][p-teakra]; [`src/core/audio/null_core.cpp`][p-null];
-  [`src/core/audio/miniaudio_device.cpp`][p-ma].
+  [`src/core/audio/teakra_core.cpp`][p-teakra]; `src/core/audio/null_core.cpp`
+  (closed since; not linked); [`src/core/audio/miniaudio_device.cpp`][p-ma].
 - Build and tests: [`CMakeLists.txt`][p-cmake]; [`.gitmodules`][p-gitmodules]; [`tests/shader.cpp`][p-tests];
   [`.github/workflows/Test_Build.yml`][p-testwf]; [`.github/workflows/Android_Build.yml`][p-androidwf];
   the eight other workflow files and the OpenGL ES patch, searched only.
@@ -721,8 +724,9 @@ Panda3DS elsewhere:
 Tanuki3DS repository, [burhanr13/Tanuki3DS][t-repo]:
 
 - Documents: [README][t-readme]; [`TODO.txt`][t-todo]; [releases][t-rel] (v0.2.2 to v0.5.1).
-- Source: [`Makefile`][t-make]; [`src/3ds.h`][t-3ds-h]; [`src/3ds.c`][t-3ds-c]; [`src/scheduler.h`][t-sched-h];
-  the [recompiler folder `src/arm/jit`][t-jit]
+- Source: [`Makefile`][t-make]; [`src/3ds.h`][t-3ds-h]; `src/3ds.c`
+  (closed since; not linked);
+  [`src/scheduler.h`][t-sched-h]; the [recompiler folder `src/arm/jit`][t-jit]
   (translator, intermediate form, optimiser, register allocator, driver, and x86-64 back end;
   the ARM64 back end by its head only; every file counted); the [assembler folder `src/ras`][t-ras]
   (one header read; every file counted);
@@ -778,7 +782,6 @@ Project documents:
 [p-mem-h]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/include/memory.hpp
 [p-mem]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/src/core/memory.cpp
 [p-mtl]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/src/core/renderer_mtl/renderer_mtl.cpp
-[p-null]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/src/core/audio/null_core.cpp
 [p-pr319]: https://github.com/wheremyfoodat/Panda3DS/pull/319
 [p-pr341]: https://github.com/wheremyfoodat/Panda3DS/pull/341
 [p-pr373]: https://github.com/wheremyfoodat/Panda3DS/pull/373
@@ -804,7 +807,6 @@ Project documents:
 [p-uber]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/src/host_shaders/opengl_fragment_shader.frag
 [p-v09]: https://github.com/wheremyfoodat/Panda3DS/releases/tag/v0.9
 [p-vk]: https://github.com/wheremyfoodat/Panda3DS/blob/b18e6586a56b4d35ac0953be6359beed93586dfe/src/core/renderer_vk/renderer_vk.cpp
-[t-3ds-c]: https://github.com/burhanr13/Tanuki3DS/blob/879a1e788ab90f449ac539f72e69ca6f3ba376d9/src/3ds.c
 [t-3ds-h]: https://github.com/burhanr13/Tanuki3DS/blob/879a1e788ab90f449ac539f72e69ca6f3ba376d9/src/3ds.h
 [t-config]: https://github.com/burhanr13/Tanuki3DS/blob/879a1e788ab90f449ac539f72e69ca6f3ba376d9/src/config.inc
 [t-gl]: https://github.com/burhanr13/Tanuki3DS/blob/879a1e788ab90f449ac539f72e69ca6f3ba376d9/src/video/renderer_gl.c
