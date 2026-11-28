@@ -237,8 +237,7 @@ GPL-3.0 means a licence file with neither "only" nor "or later" in the repositor
   playable" in 0.61 (2023), which also added preliminary Namco System 246 support; 0.62 added System 256
   ([purei.org][purei]).
   Its compatibility tracker is a repository of issues and was not opened.
-  The study of Play!
-  has since read it: 1,309 of the 2,652 games with a state were labelled playable on 2026-11-27
+  The emulator's study has since read it: 1,309 of the 2,652 games with a state were labelled playable on 2026-11-27
   ([R1-43, "Published results"](../emulators/R1-43-play.md#published-results); corrected 2026-11-27).
 
 ### Accuracy work and new emulators
