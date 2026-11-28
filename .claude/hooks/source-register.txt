@@ -659,6 +659,34 @@ closed | smealum/aemstro | none | tool for 3DS shaders | 2026-11-19 | metadata, 
 closed | lumateam/luma3ds | GPL-3.0; parts MIT | reimplements parts of the 3DS system software | 2026-11-19 | README
 closed | plutooo/3dmoo | none | 3DS emulator prototype | 2026-11-19 | metadata
 
+# Sources first cited by R1-34, the melonDS study (2026-11-27).
+# melonDS's replacement BIOS and generated firmware are closed by ADR 0006; DSi key handling and the
+# high-level DSP programs are closed as a precaution, unread. A file pattern has no tree form.
+closed | melonds-emu/melonds/tree/master/freebios | GPL-3.0+ | replacement DS BIOS source | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/freebios | GPL-3.0+ | same | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/freebios | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/freebios | GPL-3.0+ | replacement DS BIOS | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/freebios | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/spi_firmware | GPL-3.0+ | firmware; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/spi_firmware | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsi_aes | GPL-3.0+ | DSi key handling; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsi_aes | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsi_nand | GPL-3.0+ | DSi key handling; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsi_nand | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsi_tmd | GPL-3.0+ | DSi key handling; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsi_tmd | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsi.cpp | GPL-3.0+ | DSi key handling; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsi.cpp | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsi.h | GPL-3.0+ | DSi key handling; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsi.h | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | melonds-emu/melonds/tree/master/src/dsp_hle | GPL-3.0+ | DSP; precaution | 2026-11-27 | listing
+closed | melonds-emu/melonds/blob/master/src/dsp_hle | GPL-3.0+ | same | 2026-11-27 | listing
+closed | melonds-emu/melonds/master/src/dsp_hle | GPL-3.0+ | same, raw | 2026-11-27 | listing
+walled | melonds-emu/melonds/tree/master/src/frontend/duckstation | not read | from DuckStation | 2026-11-27 | listing
+walled | melonds-emu/melonds/blob/master/src/frontend/duckstation | not read | same | 2026-11-27 | listing
+walled | melonds-emu/melonds/master/src/frontend/duckstation | not read | same, raw | 2026-11-27 | listing
+open | problemkaputt.de/gbahlp.htm | notice, no grant | no$gba help text; the program is closed | 2026-11-27 | capture
+
 # Sources first cited by R1-13, the Nintendo 3DS survey (2026-11-25).
 # Emulators read from prose only. Each high-level 3DS kernel and its service modules reimplement system software,
 # so they are closed inside every repository below, as are bundled replacement system archives, fonts, and Mii data;
