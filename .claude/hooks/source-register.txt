@@ -1302,6 +1302,19 @@ walled | rpcs3/rpcs3 | GPL-2.0-only, some files differ | - | 2026-11-19 | README
 walled | rpcs3/ps3autotests | GPL-2.0, or later not stated | output "preferably from a real PS3" | 2026-11-19 | README
 walled | shadps4-emu/shadps4 | GPL-2.0; prose says or-later | credits a PS4 emulator and yuzu | 2026-11-19 | README
 
+# Sources first cited by R1-40, the DuckStation study (2026-11-27).
+# SwanStation, the open fork read for comparison, bundles OpenBIOS, a replacement BIOS: closed by ADR 0006.
+# Its BIOS image handling and its copy-protection key table are closed as a precaution, unread.
+closed | libretro/swanstation/blob/main/dep/openbios | not read | bundled OpenBIOS image | 2026-11-27 | listing
+closed | libretro/swanstation/blob/main/src/core/bios. | GPL-3.0 | BIOS handling; precaution | 2026-11-27 | listing
+closed | libretro/swanstation/blob/main/src/core/libcrypt_game_codes | GPL-3.0 | keys; precaution | 2026-11-27 | listing
+# DuckStation's other repositories, evaluated from licence, README, and metadata only, and a core said to derive
+# from its closed code, not opened.
+closed | duckstation/old-releases | CC BY-NC-ND 4.0 by README | copy of the code; old builds | 2026-11-27 | README
+closed | duckstation/chtdb | no grant on tables; scripts MIT | cheat and patch tables | 2026-11-27 | licence, README
+closed | duckstation/dependencies | Personal Use License | dependency build scripts | 2026-11-27 | licence, README
+walled | codeberg.org/hueponik/goosestation | not read | core said to be based on DuckStation | 2026-11-27 | AUR listing
+
 # Sources first cited by R1-18, the PlayStation 1 survey (2026-11-22).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
 # An emulator that names the tainted reference as its only or main documentation is walled, whatever its licence,
