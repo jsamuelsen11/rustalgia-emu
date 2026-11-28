@@ -131,7 +131,7 @@ It also records the family's legal exposure and how hard it is to emulate.
       Depends on R1-01, R1-02, R1-03, R1-04.
 - [x] **R1-26** Other consoles and handhelds: the systems that no other survey names.
       Depends on R1-01, R1-02, R1-03, R1-04, R1-05, R1-06, R1-07, R1-08.
-- [ ] **R1-27** Home computers.
+- [x] **R1-27** Home computers.
       Depends on R1-09, R0-02.
 
 #### Emulator studies
