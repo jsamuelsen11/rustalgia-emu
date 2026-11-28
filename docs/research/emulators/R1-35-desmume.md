@@ -2,7 +2,7 @@
 title: DeSmuME
 subject: DeSmuME
 roadmap_item: R1-35
-status: draft
+status: approved
 date: 2026-11-27
 ---
 

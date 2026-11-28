@@ -141,14 +141,14 @@ Each depends on the survey for its family and on R0-01.
 
 Nintendo handhelds:
 
-- [ ] **R1-30** SameBoy.
-- [ ] **R1-31** Gambatte.
-- [ ] **R1-32** mGBA.
-- [ ] **R1-33** SkyEmu.
-- [ ] **R1-34** melonDS.
-- [ ] **R1-35** DeSmuME.
-- [ ] **R1-36** Azahar.
-- [ ] **R1-37** Panda3DS.
+- [x] **R1-30** SameBoy.
+- [x] **R1-31** Gambatte.
+- [x] **R1-32** mGBA.
+- [x] **R1-33** SkyEmu.
+- [x] **R1-34** melonDS.
+- [x] **R1-35** DeSmuME.
+- [x] **R1-36** Azahar.
+- [x] **R1-37** Panda3DS.
 
 PlayStation:
 

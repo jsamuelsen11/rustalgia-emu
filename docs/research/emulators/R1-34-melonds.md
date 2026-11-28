@@ -2,7 +2,7 @@
 title: melonDS
 subject: melonDS
 roadmap_item: R1-34
-status: draft
+status: approved
 date: 2026-11-27
 ---
 
