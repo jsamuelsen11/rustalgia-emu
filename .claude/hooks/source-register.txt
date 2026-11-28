@@ -1047,6 +1047,55 @@ walled | dolphin-emu/hwtests | GPL-2.0, or later not stated | oracle not stated;
 closed | ioncodes/gamecube-wii-tests | none | README records hardware results; results usable | 2026-11-19 | README
 closed | geotale/gc-like-research | none | "expected results by hardware"; results usable | 2026-11-19 | README
 
+# Sources first cited by R1-37, the Panda3DS study (2026-11-27).
+# The high-level kernels and services of Panda3DS and Tanuki3DS are replacement system software,
+# closed by ADR 0006; key handling and the high-level DSP models are closed as a precaution.
+# A file pattern has no tree form.
+closed | wheremyfoodat/panda3ds/tree/master/src/core/kernel | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/src/core/kernel | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/src/core/kernel | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/include/kernel | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/include/kernel | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/include/kernel | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/src/core/services | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/src/core/services | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/src/core/services | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/include/services | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/include/services | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/include/services | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/src/core/applets | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/src/core/applets | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/src/core/applets | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/include/applets | GPL-3.0 | system software | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/include/applets | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/include/applets | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/src/core/crypto | GPL-3.0 | keys; not read | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/src/core/crypto | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/src/core/crypto | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/tree/master/include/crypto | GPL-3.0 | keys; not read | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/include/crypto | GPL-3.0 | same | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/include/crypto | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/src/core/audio/hle_ | GPL-3.0 | DSP; precaution | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/src/core/audio/hle_ | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/blob/master/include/audio/hle_ | GPL-3.0 | DSP; precaution | 2026-11-27 | listing
+closed | wheremyfoodat/panda3ds/master/include/audio/hle_ | GPL-3.0 | same, raw | 2026-11-27 | listing
+walled | wheremyfoodat/panda3ds/master/third_party/duckstation | not read | same folder, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/tree/master/src/kernel | GPL-3.0 | system software | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/blob/master/src/kernel | GPL-3.0 | same | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/src/kernel | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/tree/master/src/services | GPL-3.0 | system software | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/blob/master/src/services | GPL-3.0 | same | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/src/services | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/blob/master/src/audio/dsp | GPL-3.0 | DSP; precaution | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/src/audio/dsp | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/tree/master/sys_files | GPL-3.0 | replacement system archives | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/blob/master/sys_files | GPL-3.0 | same | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/sys_files | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/blob/master/tools/extract | GPL-3.0 | extraction tools; precaution | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/tools/extract | GPL-3.0 | same, raw | 2026-11-27 | listing
+closed | burhanr13/tanuki3ds/master/tools/dumper | not read | same tool, raw | 2026-11-27 | listing
+walled | panda3ds-emu/panda3ds-games-list | not established | compatibility reports; unread | 2026-11-27 | README, FAQ
+
 # Sources first cited by R1-21, the PlayStation 3, 4, and 5 survey (2026-11-25).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
 # A high-level reimplementation of PS3, PS4, or PS5 libraries or kernels is closed inside any repository below;
