@@ -426,6 +426,52 @@ check 2 writer "$(fetch https://kawaks.org)"
 check 0 writer "$(fetch https://3dodev.com/documentation/encryption)"
 check 2 writer "$(fetch https://3dodev.com/documentation/encryption/keys)"
 
+# Issue #83: a line for a path inside a repository closes it in every address form and on every ref.
+raw=https://raw.githubusercontent.com
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/ea667ad79aa28409f034b1fd6da7304e1844750d/BootROMs/x.asm)"
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/tree/v1.0.2/BootROMs)"
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/blame/master/BootROMs/dmg_boot.asm)"
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/raw/master/BootROMs/dmg_boot.asm)"
+check 2 writer "$(fetch https://github.com/LIJI32/SameBoy/raw/refs/heads/master/BootROMs/dmg_boot.asm)"
+check 2 writer "$(fetch $raw/LIJI32/SameBoy/refs/heads/master/BootROMs/dmg_boot.asm)"
+check 2 writer "$(fetch $raw/LIJI32/SameBoy/refs/tags/v1.0.2/BootROMs/dmg_boot.asm)"
+check 2 writer "$(bash 'gh api repos/LIJI32/SameBoy/contents/BootROMs/dmg_boot.asm')"
+check 2 writer "$(bash 'curl -s https://api.github.com/repos/LIJI32/SameBoy/contents/BootROMs')"
+check 2 writer "$(bash 'gh api repos/mgba-emu/mgba/contents/src/gba/bios.c?ref=0.10.5')"
+check 2 writer "$(fetch https://github.com/wheremyfoodat/Panda3DS/blob/b18e658/third_party/duckstation/gl/context.cpp)"
+check 0 writer "$(fetch https://github.com/LIJI32/SameBoy/blob/ea667ad79aa28409f034b1fd6da7304e1844750d/Core/gb.c)"
+check 0 writer "$(fetch $raw/LIJI32/SameBoy/refs/heads/master/Core/gb.c)"
+check 0 writer "$(bash 'gh api repos/mgba-emu/mgba/contents/src/gba/gba.c')"
+# A restricted repository's prose stays open in those forms, and its code stays blocked.
+check 0 writer "$(fetch $raw/stenzek/duckstation/refs/heads/master/README.md)"
+check 0 writer "$(fetch https://github.com/stenzek/duckstation/blob/0123abc/LICENSE)"
+check 2 writer "$(fetch https://github.com/stenzek/duckstation/blob/0123abc/src/core/cpu_core.cpp)"
+check 2 writer "$(fetch $raw/stenzek/duckstation/refs/heads/master/src/core/cpu_core.cpp)"
+
+# Issue #95: release notes and metadata of a walled or closed repository are prose; code, diffs, and downloads are not.
+check 0 writer "$(fetch https://github.com/TASEmulators/desmume/blob/master/desmume/ChangeLog)"
+check 0 writer "$(fetch $raw/TASEmulators/desmume/master/CHANGELOG.md)"
+check 0 writer "$(fetch $raw/pokemon-speedrunning/gambatte-core/master/NEWS)"
+check 0 writer "$(bash 'gh api repos/TASEmulators/desmume/contents/RELEASE-NOTES.txt')"
+check 0 writer "$(fetch https://github.com/TASEmulators/desmume/releases)"
+check 0 writer "$(fetch https://github.com/TASEmulators/desmume/releases/tag/release_0_9_13)"
+check 0 writer "$(fetch https://github.com/stenzek/duckstation/releases/latest)"
+check 0 writer "$(bash 'gh api repos/TASEmulators/desmume/releases?per_page=5')"
+check 0 writer "$(bash 'gh api repos/TASEmulators/desmume/commits?per_page=1')"
+check 0 writer "$(bash 'gh api repos/TASEmulators/desmume/branches/master')"
+check 0 writer "$(bash 'gh api repos/TASEmulators/desmume/tags')"
+check 0 writer "$(fetch https://github.com/TASEmulators/desmume/commits/master)"
+check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/commits/master')"
+check 2 writer "$(fetch https://github.com/TASEmulators/desmume/commit/b549f71b83287f265b6d74b9e77ef5d98a617190)"
+check 2 writer "$(fetch https://github.com/TASEmulators/desmume/releases/download/release_0_9_13/desmume.zip)"
+check 2 writer "$(bash 'gh release download release_0_9_13 --repo TASEmulators/desmume')"
+check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/releases/assets/1234')"
+check 2 writer "$(fetch $raw/TASEmulators/desmume/master/desmume/src/history.cpp)"
+check 2 writer "$(fetch $raw/TASEmulators/desmume/master/desmume/src/changes.h)"
+check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/git/trees/master?recursive=1')"
+check 2 writer "$(fetch https://github.com/TASEmulators/desmume/compare/a...b)"
+check 2 writer "$(fetch https://github.com/stenzek/duckstation/issues/1)"
+
 # No pattern holds a space or a "|", which would split its register line.
 special=$(grep -Ev '^[[:space:]]*(#|$)' "$register" | awk -F' [|] ' '$2 ~ /[ |]/' || true)
 if [ -n "$special" ]; then

@@ -18,7 +18,14 @@
 #   role, walled ones only for a writer.
 # - In a repository, a restricted line still allows its prose: the bare repository page, the licence and README
 #   endpoints, and files named README, LICENSE, COPYING, CONTRIBUTING, CODE_OF_CONDUCT, or AI-POLICY.
-#   Cloning, archive downloads, and searches inside it are blocked.
+#   A line for a whole repository or owner also allows its release notes and metadata: a changelog file
+#   (CHANGELOG, CHANGES, NEWS, HISTORY, or release notes, bare or as .md, .txt, .rst, .markdown, or .adoc), the
+#   releases pages and endpoint, and the lists of commits, branches, and tags. One commit is not allowed, because
+#   it comes with its diff. Cloning, archive and release downloads, and searches inside it are blocked.
+# - A line for a path inside a repository, written in any one form ("owner/repo/blob/<ref>/path",
+#   "owner/repo/tree/<ref>/path", "owner/repo/<ref>/path" as the raw host has it, or "owner/repo/contents/path"),
+#   matches that path in every form and on every ref: blob, tree, raw, and blame pages, the raw host with or without
+#   "refs/heads/", the contents endpoint, a branch, a tag, or a commit.
 set -eu
 
 # The guard fails closed: whatever stops it from checking a call blocks the call.
@@ -96,6 +103,17 @@ hit=$(
       }
       return st + len - 1
     }
+    # The line with every by-ref file address rewritten to "<host>/owner/repo/blob/@/path".
+    function canon(s,    out, hit, c) {
+      out = ""
+      while (match(s, refre)) {
+        hit = substr(s, RSTART, RLENGTH)
+        split(hit, c, "/")
+        out = out substr(s, 1, RSTART - 1) c[1] "/" c[2] "/" c[3] "/blob/@/"
+        s = substr(s, RSTART + RLENGTH)
+      }
+      return out s
+    }
     BEGIN {
       role = ENVIRON["GUARD_ROLE"]
       q = sprintf("%c", 39)
@@ -104,10 +122,23 @@ hit=$(
       seg = "[^/\"" q " ]+"
       proseread = "^(/(blob|raw|contents)(/" seg ")?|/" seg ")?/" prose "[a-z0-9._-]*" endc "|^/(license|readme)" endc
       bareread = "^" endc
+      # Release notes and metadata of a whole repository: prose under the rule, with no code and no diff.
+      notes = "(changelog|changes|news|history|release[-_]?notes)(\\.(md|txt|rst|markdown|adoc))?"
+      notesread = "^/blob/@/(" seg "/)*" notes endc
+      relread = "^/releases(/latest|/tags?/" seg "|/[0-9]+)?" endc
+      apimeta = "^/(commits|branches|tags)" endc "|^/branches/" seg endc
+      webmeta = "^/(commits|branches|tags)(/" seg ")?" endc
+      # Every way to address a file by ref is rewritten to one form, "owner/repo/blob/@/path",
+      # so that one line for a path closes it on every ref and in every form.
+      nm = "[a-z0-9_.-]+"
+      refseg = "(refs/(heads|tags)/)?[^/\"" q " ?#)]+/"
+      refre = "(github\\.com|gitlab\\.com|codeberg\\.org)/" nm "/" nm "/(-/)?(blob|tree|raw|blame)/" refseg
+      refre = refre "|raw\\.githubusercontent\\.com/" nm "/" nm "/" refseg "|repos/" nm "/" nm "/contents/"
       code = "\\.(zip|7z|rar|tar|gz|tgz|bz2|xz|zst|lzh|lha|c|h|cc|cpp|cxx|hpp|hh|rs|s|asm|inc|py|java|go|cs"
       code = code "|swift|m|mm|kt|lua|js|mjs|ts|wasm|patch|diff|bin|rom|iso)([?#&]|$)|/downloads?([/?#]|$)"
       keyword = "(git|gh repo)[^;&|]*[[:space:]]clone([^a-z0-9_.-]|$)|tarball|zipball|codeload"
       keyword = keyword "|git[^;&|]*[[:space:]]archive([^a-z0-9_.-]|$)|gh[[:space:]]+search|search/code"
+      keyword = keyword "|gh[[:space:]]+release[[:space:]]+download|/releases/(download|assets)"
       n = split(ENVIRON["GUARD_INPUT"], line, "\n")
       # A wiki page reached by "index.php?title=" is also tested in its "/wiki/" and "/index.php/" forms,
       # so that a page closed by its path form is closed in every form.
@@ -119,6 +150,7 @@ hit=$(
         }
       }
       n = m
+      for (i = 1; i <= n; i++) line[i] = canon(line[i])
       for (i = 1; i <= n; i++) {
         s = line[i]
         while (match(s, /"(owner|repo|path)"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
@@ -137,6 +169,16 @@ hit=$(
       p = f[2]; sub(/^[[:space:]]+/, "", p); sub(/[[:space:]].*$/, "", p)
       if (p == "") next
       np++; tier[np] = t; pat[np] = p
+      # A line for a path inside a repository also gets the one form that canon() rewrites addresses to.
+      if (!isweb(p)) {
+        ns = split(p, part, "/")
+        from = (part[3] == "tree" || part[3] == "blob") ? 5 : 4
+        if (ns >= from && part[3] != "wiki" && part[3] != "-") {
+          inner = ""; sep = ""
+          for (x = from; x <= ns; x++) { inner = inner sep part[x]; sep = "/" }
+          np++; tier[np] = t; pat[np] = part[1] "/" part[2] "/blob/@/" inner
+        }
+      }
     }
     END {
       # GitHub tool calls name the owner, the repository, and a path in separate fields.
@@ -190,7 +232,10 @@ hit=$(
           }
           if (s ~ keyword || substr(s, st - 5, 5) == "repo:") { print t " " p; exit }
           if (rest ~ proseread) continue
-          if (p ~ /^[^\/]+\/[^\/]*$/ && rest ~ bareread) continue
+          if (p ~ /^[^\/]+\/[^\/]*$/) {
+            if (rest ~ bareread || rest ~ notesread || rest ~ relread) continue
+            if (rest ~ (substr(s, st - 6, 6) == "repos/" ? apimeta : webmeta)) continue
+          }
           print t " " p; exit
         }
       }
