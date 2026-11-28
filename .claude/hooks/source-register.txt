@@ -755,6 +755,13 @@ walled | reswitched/mephisto | GPL-2.0-only | - | 2026-11-19 | licence file
 walled | reswitched/switch-oss | none | copy of Nintendo's source releases | 2026-11-19 | description
 closed | extremscorner/libogc2 | zlib-style | libogc fork; dispute inherited by inference | 2026-11-19 | README
 
+# Sources first cited by R1-35, the DeSmuME study (2026-11-27).
+walled | sourceforge.net/projects/desmume | GPLv2 per page, no or later | page; summary read | 2026-11-27 | page
+walled | www.sourceforge.net/projects/desmume | GPLv2 per page, no or later | the same, www prefix | 2026-11-27 | page
+walled | sourceforge.net/rest/p/desmume | GPLv2 per metadata, no or later | metadata, tracker prose | 2026-11-27 | REST
+walled | sourceforge.net/p/desmume | GPLv2 per metadata | news read; trackers, code unopened | 2026-11-27 | news page
+open | forums.desmume.org | none stated | forum of a walled emulator; leads; builds unopened | 2026-11-27 | five threads
+
 # Sources first cited by R1-14, the Nintendo Switch and Switch 2 survey (2026-11-25).
 # Their high-level emulation of Horizon is reimplemented system software, closed by ADR 0006; the rest keeps its tier.
 open | strato-emu/strato | GPL-3.0-or-later | Skyline continuation; yuzu's shader compiler | 2026-11-25 | README
