@@ -2,7 +2,7 @@
 title: Gambatte
 subject: Gambatte
 roadmap_item: R1-31
-status: draft
+status: approved
 date: 2026-11-27
 ---
 

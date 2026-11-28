@@ -2,7 +2,7 @@
 title: SkyEmu
 subject: SkyEmu
 roadmap_item: R1-33
-status: draft
+status: approved
 date: 2026-11-27
 ---
 

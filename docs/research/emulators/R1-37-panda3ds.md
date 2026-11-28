@@ -2,7 +2,7 @@
 title: Panda3DS
 subject: Panda3DS
 roadmap_item: R1-37
-status: draft
+status: approved
 date: 2026-11-27
 ---
 
