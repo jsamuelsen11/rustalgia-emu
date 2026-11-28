@@ -468,6 +468,20 @@ check 2 writer "$(bash 'gh release download release_0_9_13 --repo TASEmulators/d
 check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/releases/assets/1234')"
 check 2 writer "$(fetch $raw/TASEmulators/desmume/master/desmume/src/history.cpp)"
 check 2 writer "$(fetch $raw/TASEmulators/desmume/master/desmume/src/changes.h)"
+# The same holds for the files that name a project's people and its unfinished work, and for the contributors list
+# (R1-41 met both blocks). A code file with such a name stays blocked, and so does everything in a tainted source
+# and under a closed path.
+check 0 writer "$(fetch $raw/pcsx-redux/pcsx-redux/main/TODO.md)"
+check 0 writer "$(bash 'gh api repos/pcsx-redux/pcsx-redux/contents/AUTHORS')"
+check 0 writer "$(fetch https://github.com/TASEmulators/desmume/blob/master/desmume/AUTHORS)"
+check 0 writer "$(fetch https://github.com/stenzek/duckstation/blob/master/CREDITS.txt)"
+check 0 writer "$(bash 'gh api repos/pcsx-redux/pcsx-redux/contributors?per_page=100')"
+check 2 writer "$(fetch $raw/pcsx-redux/pcsx-redux/main/src/core/todo.cc)"
+check 2 writer "$(fetch $raw/pcsx-redux/pcsx-redux/main/src/support/authors.h)"
+check 2 writer "$(fetch $raw/pcsx-redux/pcsx-redux/main/TODOLIST)"
+check 2 writer "$(bash 'gh api repos/pcsx-redux/pcsx-redux/contributors/1')"
+check 2 writer "$(fetch $raw/psx-spx/psx-spx.github.io/master/TODO.md)"
+check 2 writer "$(fetch $raw/hrydgard/ppsspp/master/ext/libkirk/AUTHORS)"
 check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/git/trees/master?recursive=1')"
 check 2 writer "$(fetch https://github.com/TASEmulators/desmume/compare/a...b)"
 check 2 writer "$(fetch https://github.com/stenzek/duckstation/issues/1)"

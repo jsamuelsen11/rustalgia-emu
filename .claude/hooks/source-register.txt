@@ -126,7 +126,8 @@ open | wiibrew.org | none stated | bars leaked kit content; origin not stated | 
 # "owner/repo/<ref>/path", or "owner/repo/contents/path". Since issue #83 (2026-11-27) it matches that path in every
 # address form and on every branch, tag, and commit; the two or three lines older blocks give each path still work.
 # A line for a whole repository leaves its release notes, changelog, and lists of commits, branches, and tags open
-# (issue #95); a single commit, a comparison, and a release download stay blocked.
+# (issue #95); a single commit, a comparison, and a release download stay blocked. It also leaves open a file
+# named AUTHORS, CONTRIBUTORS, CREDITS, THANKS, or TODO, and the contributors list (2026-11-27).
 # Comments below that call a pattern "cut short", or say an "index.php?title=" form cannot be matched, predate #32:
 # the cut-short patterns still match by prefix, and those forms are now matched.
 
