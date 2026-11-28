@@ -122,6 +122,11 @@ open | wiibrew.org | none stated | bars leaked kit content; origin not stated | 
 # Where lines overlap, the longest decides, so an open line can carve a path out of a restricted one.
 # A page reached by "index.php?title=" is also matched in its "/wiki/" and "/index.php/" forms.
 # Each restricted web pattern has a second line for the www prefix, and archive items a line for their download path.
+# A path inside a repository needs one line, in any form: "owner/repo/blob/<ref>/path", "owner/repo/tree/<ref>/path",
+# "owner/repo/<ref>/path", or "owner/repo/contents/path". Since issue #83 (2026-11-27) it matches that path in every
+# address form and on every branch, tag, and commit; the two or three lines older blocks give each path still work.
+# A line for a whole repository leaves its release notes, changelog, and lists of commits, branches, and tags open
+# (issue #95); a single commit, a comparison, and a release download stay blocked.
 # Comments below that call a pattern "cut short", or say an "index.php?title=" form cannot be matched, predate #32:
 # the cut-short patterns still match by prefix, and those forms are now matched.
 
