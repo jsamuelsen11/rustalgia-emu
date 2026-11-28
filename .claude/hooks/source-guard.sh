@@ -22,6 +22,8 @@
 #   (CHANGELOG, CHANGES, NEWS, HISTORY, or release notes, bare or as .md, .txt, .rst, .markdown, or .adoc), the
 #   releases pages and endpoint, and the lists of commits, branches, and tags. One commit is not allowed, because
 #   it comes with its diff. Cloning, archive and release downloads, and searches inside it are blocked.
+#   A GitHub tool call on such a repository may do the same and no more: an issue, a pull request, and one commit
+#   are blocked.
 # - A line for a path inside a repository, written in any one form ("owner/repo/blob/<ref>/path",
 #   "owner/repo/tree/<ref>/path", "owner/repo/<ref>/path" as the raw host has it, or "owner/repo/contents/path"),
 #   matches that path in every form and on every ref: blob, tree, raw, and blame pages, the raw host with or without
@@ -202,8 +204,17 @@ hit=$(
           if (l > blen) { blen = l; best = j }
         }
         if (best && restricted(tier[best])) {
+          # Of a restricted repository, a GitHub tool may read prose files, release notes, releases,
+          # and the lists of commits, branches, and tags: not one commit, an issue, or a pull request.
+          tool = ""
+          if (match(ENVIRON["GUARD_INPUT"], /"tool_name"[[:space:]]*:[[:space:]]*"[^"]*"/)) {
+            tool = substr(ENVIRON["GUARD_INPUT"], RSTART, RLENGTH - 1); sub(/^.*__/, "", tool)
+          }
+          reads = "^(get_file_contents|list_releases|get_latest_release|get_release_by_tag|list_commits"
+          reads = reads "|list_branches|list_tags|get_tag)$"
+          okpath = "^(" prose "[a-z0-9._-]*)?$|^(" seg "/)*" notes "$"
           if (tier[best] == "tainted" || blen > 0 || ENVIRON["GUARD_INPUT"] ~ /search/ \
-            || field["path"] !~ ("^(" prose "[a-z0-9._-]*)?$")) { print tier[best] " " pat[best]; exit }
+            || tool !~ reads || field["path"] !~ okpath) { print tier[best] " " pat[best]; exit }
         }
       }
       for (i = 1; i <= n; i++) {

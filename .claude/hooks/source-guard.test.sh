@@ -471,6 +471,20 @@ check 2 writer "$(fetch $raw/TASEmulators/desmume/master/desmume/src/changes.h)"
 check 2 writer "$(bash 'gh api repos/TASEmulators/desmume/git/trees/master?recursive=1')"
 check 2 writer "$(fetch https://github.com/TASEmulators/desmume/compare/a...b)"
 check 2 writer "$(fetch https://github.com/stenzek/duckstation/issues/1)"
+# A GitHub tool call on a restricted repository is held to the same list.
+tool_call() {
+  printf '{"tool_name":"mcp__plugin_github_github__%s",' "$1"
+  printf '"tool_input":{"owner":"%s","repo":"%s"%s}}' "$2" "$3" "${4:-}"
+}
+check 0 writer "$(tool_call list_releases stenzek duckstation)"
+check 0 writer "$(tool_call list_commits TASEmulators desmume)"
+check 0 writer "$(tool_call get_file_contents TASEmulators desmume ',"path":"desmume/ChangeLog"')"
+check 2 writer "$(tool_call get_file_contents TASEmulators desmume ',"path":"desmume/src/history.cpp"')"
+check 2 writer "$(tool_call get_commit TASEmulators desmume ',"sha":"b549f71"')"
+check 2 writer "$(tool_call issue_read stenzek duckstation ',"issue_number":1')"
+check 2 writer "$(tool_call pull_request_read stenzek duckstation ',"pullNumber":2')"
+check 0 writer "$(tool_call issue_read mgba-emu mgba ',"issue_number":1')"
+check 0 reader "$(tool_call get_commit TASEmulators desmume ',"sha":"b549f71"')"
 
 # No pattern holds a space or a "|", which would split its register line.
 special=$(grep -Ev '^[[:space:]]*(#|$)' "$register" | awk -F' [|] ' '$2 ~ /[ |]/' || true)
