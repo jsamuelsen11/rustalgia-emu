@@ -12,7 +12,7 @@ AI agents write the documents; the owner reviews and approves them.
 | `roadmap/` | What we plan to do, and in what order | [roadmap/README.md](roadmap/README.md) |
 | `glossary/` | What the documents mean by their terms of art | [glossary/README.md](glossary/README.md) |
 | `research/` | The conventions that every research note follows | [research/README.md](research/README.md) |
-| `research/emulators/` | Studies of existing emulators | |
+| `research/emulators/` | Studies of existing emulators | [research/emulators/README.md](research/emulators/README.md) |
 | `research/topics/` | Studies of hardware, techniques, platforms, and policy | [research/topics/README.md](research/topics/README.md) |
 | `research/spikes/` | Reports on throwaway experiments | |
 | `requirements/` | One requirement per file | |
