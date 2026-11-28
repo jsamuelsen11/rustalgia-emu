@@ -253,6 +253,17 @@ closed | devkitpro/libtonc | none shown | - | 2026-11-19 | metadata
 closed | devkitpro/buildscripts | none shown | toolchain build scripts | 2026-11-19 | metadata
 closed | aappleby/metroboy | none | gate-level simulation from die photographs | 2026-11-19 | README
 
+# Sources first cited by R1-30, the SameBoy study (2026-11-27).
+# Raw forms of the folders R1-10 walled. The high-level Super Game Boy model and the built-in borders
+# and logo are closed as a precaution. A file pattern has no tree form.
+walled | liji32/sameboy/master/ios | Expat plus app-store condition | same folder, raw | 2026-11-27 | listing
+walled | liji32/sameboy/master/hexfiend | not stated; excluded from Expat | same folder, raw | 2026-11-27 | listing
+closed | liji32/sameboy/blob/master/core/sgb | Expat | Super Game Boy software model; precaution | 2026-11-27 | listing
+closed | liji32/sameboy/master/core/sgb | Expat | same, raw | 2026-11-27 | listing
+closed | liji32/sameboy/tree/master/core/graphics | Expat | built-in borders and logo; precaution | 2026-11-27 | listing
+closed | liji32/sameboy/blob/master/core/graphics | Expat | same | 2026-11-27 | listing
+closed | liji32/sameboy/master/core/graphics | Expat | same, raw | 2026-11-27 | listing
+
 # Sources first cited by R1-11, the Game Boy Advance survey (2026-11-22).
 # Emulators read from prose only. GPL-2.0 licence files whose only "or later" is the licence's own appendix are
 # treated as stating no version, so those projects are walled.

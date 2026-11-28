@@ -11,7 +11,7 @@ This guide holds the conventions that every research note follows, whatever its 
 
 | Folder | Holds | Guide |
 |---|---|---|
-| `emulators/` | Studies of existing emulators | |
+| `emulators/` | Studies of existing emulators | [emulators/README.md](emulators/README.md) |
 | `topics/` | Studies of hardware, techniques, platforms, and policy | [topics/README.md](topics/README.md) |
 | `spikes/` | Reports on throwaway experiments | |
 
