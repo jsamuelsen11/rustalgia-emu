@@ -866,6 +866,68 @@ closed | www.onejailbreak.com | - | same site, www prefix | 2026-11-25 | wiki pa
 closed | atmosphere-nx/ | GPL-2.0, or later not stated | replaces Switch system software | 2026-11-19 | README
 closed | fail0verflow/mini | GPL-2.0 | "replacement for IOS" | 2026-11-19 | README
 
+# Sources first cited by R1-36, the Azahar study (2026-11-27).
+# Azahar's high-level kernel and services are replacement system software, closed by ADR 0006.
+# Its key, seed, ticket, and console-data files are closed as key hazards, and the rest as a precaution:
+# the high-level DSP, content decryption, server downloads, and the console link. No tree form for files.
+closed | azahar-emu/azahar/tree/master/src/core/hle | GPL-3.0+ | system software | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hle | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hle | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/tests/core/hle | GPL-3.0+ | system software | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/tests/core/hle | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/tests/core/hle | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/audio_core/hle | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/audio_core/hle | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/audio_core/hle | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/tests/audio_core/hle | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/tests/audio_core/hle | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/tests/audio_core/hle | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/core/hw/aes | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hw/aes | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hw/aes | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/core/hw/rsa | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hw/rsa | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hw/rsa | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hw/default_keys | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hw/default_keys | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hw/ecc | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hw/ecc | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/hw/unique_data | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/hw/unique_data | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/seed_db | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/seed_db | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/otp | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/otp | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/ticket | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/ticket | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/certificate | GPL-3.0+ | keys; not read | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/certificate | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/ncch_container | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/ncch_container | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/cia_container | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/cia_container | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/nus_download | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/nus_download | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/system_titles | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/system_titles | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/loader/artic | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/loader/artic | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/archive_artic | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/archive_artic | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/artic_cache | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/artic_cache | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/secure_value_backend_artic | GPL-3.0+ | Artic | 2026-11-27 | -
+closed | azahar-emu/azahar/master/src/core/file_sys/secure_value_backend_artic | GPL-3.0+ | raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/src/network/artic_base | GPL-3.0+ | precaution | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/network/artic_base | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/network/artic_base | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/tree/master/externals/open_source_archives | GPL-3.0+ | system data | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/externals/open_source_archives | GPL-3.0+ | same | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/externals/open_source_archives | GPL-3.0+ | same, raw | 2026-11-27 | listing
+closed | azahar-emu/azahar/blob/master/src/core/file_sys/plugin_3gx_bootloader | GPL-3.0+ | boot | 2026-11-27 | listing
+closed | azahar-emu/azahar/master/src/core/file_sys/plugin_3gx_bootloader | GPL-3.0+ | same, raw | 2026-11-27 | listing
+walled | merryhime/3ds-audio | not read | console audio tests; named, not opened | 2026-11-27 | Azahar test README
+
 # Sources first cited by R1-17, the GameCube, Wii, and Wii U survey (2026-11-25).
 open | tinob/ishiiruka | GPL-2.0-or-later by README | Dolphin fork; async shaders | 2026-11-25 | licence, README
 open | project-slippi/ishiiruka | GPL-2.0-or-later by README | Slippi's Melee fork | 2026-11-25 | licence, README
