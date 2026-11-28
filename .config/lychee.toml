@@ -73,4 +73,5 @@ exclude = [
   '^https?://(www\.)?rpcs3\.net/', # 403 Forbidden (Cloudflare challenge page) (2026-11-25)
   '^https?://git\.libretro\.com/', # 403 Forbidden to the link checker's agent (2026-11-26)
   '^https?://(www\.)?richwhitehouse\.com/', # 406 Not Acceptable to non-browser agents (Mod_Security) (2026-11-26)
+  '^https?://(www\.)?roudoudou\.com/', # host did not resolve; its name servers did not answer (2026-11-27)
 ]

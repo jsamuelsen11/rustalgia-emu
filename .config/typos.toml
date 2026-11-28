@@ -22,6 +22,8 @@ damon = "damon" # part of DamonPS2, an Android PS2 emulator, and its link labels
 Damon = "Damon" # the same name, capitalised
 Virtua = "Virtua" # Sega's Virtua Striker and Virtua Fighter arcade games
 Sord = "Sord" # Sord Computer, the Japanese maker of the M5 home computer
+Kernal = "Kernal" # Commodore's spelling of its KERNAL ROM, as in Kernal64 and Kernal.rom
+kernal = "kernal" # the same, in lower-case repository names
 
 [default.extend-identifiers]
 # Correctly spelled words that the checker splits into wrong parts. Each maps to itself.

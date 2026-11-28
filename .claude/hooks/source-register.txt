@@ -1712,7 +1712,7 @@ other | ftp.netbsd.org | - | package collection's copies of licence texts | 2026
 walled | simonowen/simcoupe | GPL-2.0, "or later" not stated | ships SAM ROMs by permission | 2026-11-26 | README
 walled | tursilion/classic99 | no licence file; README: restrictive | ships ROMs licensed by TI | 2026-11-26 | README
 walled | tursilion/classic99v4 | none detected | Classic99 version 4 | 2026-11-26 | README, metadata
-walled | dosbox-staging/dosbox-staging | NOASSERTION | DOS emulator; DOS and BIOS layers closed | 2026-11-26 | metadata
+open | dosbox-staging/dosbox-staging | GPL-2.0-or-later overall | parts walled; DOS, BIOS closed | 2026-11-26 | LICENSE
 walled | joncampbell123/dosbox-x | GPL-2.0, version not read | DOS and BIOS layers closed | 2026-11-26 | metadata
 # Closed: reimplementations of a home computer's firmware or system software (ADR 0006's closed test, by
 # analogy), and repositories holding the makers' firmware code. The sites serve the replacements themselves.
@@ -1846,6 +1846,7 @@ open | arts-union.ru | notice, no grant | the same, without www | 2026-11-26 | n
 open | atari800.github.io | none stated | site of a walled emulator | 2026-11-26 | home page
 open | 7800.8bitdev.org | none stated | 7800 wiki; some pages closed below | 2026-11-26 | Main Page, A7800 page
 open | spatula-city.org | "Free Software" | host of jzIntv's site; "~" path unmatchable | 2026-11-26 | jzIntv page
+walled | www.eonet.ne.jp/~showtime/quasi88 | fmgen part "only in freeware" | QUASI88 site and code | 2026-11-27 | note
 open | fms.komkon.org/colem | non-commercial terms | site of ColEm, a closed emulator | 2026-11-26 | home page
 open | libretro/jollycv | BSD-3-Clause | ColecoVision, CreatiVision, My Vision | 2026-11-26 | licence file, docs
 open | libretro/libretro-vecx | GPL-3.0 | vecx port; embedding not checked | 2026-11-26 | LICENSE.md, docs
@@ -1982,6 +1983,255 @@ walled | siliconpr0n.org | not determined | decap image archive | 2026-11-19 | r
 walled | www.siliconpr0n.org | not determined | same archive, www prefix | 2026-11-19 | refused access
 open | libretro/libretro-database | CC BY-SA 4.0 | hash catalogues; one way into GPLv3 | 2026-11-21 | README, LICENSE
 walled | mister-devel/ | per core | FPGA cores; licences and methods not surveyed | 2026-11-19 | documentation home
+
+# Sources first cited by R1-27, the home computers survey (2026-11-27).
+# Commodore 8-bit and Amiga emulators, their sites, and tests.
+open | vice-team/svn-mirror | GPL-2.0-or-later by site | VICE's git mirror; its ROMs closed | 2026-11-26 | site, manual
+open | vice-emu.sourceforge.io | GPL-2.0-or-later | VICE site and manual; prose | 2026-11-26 | copyright section, manual
+open | sourceforge.net/projects/vice-emu | GPLv2 per metadata; site: or later | VICE project page | 2026-11-26 | REST
+open | sourceforge.net/rest/p/vice-emu | GPLv2 per metadata | metadata of VICE | 2026-11-26 | REST
+open | vice-emu.pokefinder.org | none stated | VICE wiki; testbench results | 2026-11-26 | Testbench revision 6458
+walled | sourceforge.net/p/vice-emu/code/head/tree/testprogs | per program, not read | testbench | 2026-11-26 | wiki
+open | davidhorrocks/hoxs64 | GPL-3.0-or-later | ships Commodore ROMs, closed | 2026-11-26 | license.txt, README
+open | www.hoxs64.net | none stated | Hoxs64 site | 2026-11-26 | home page
+open | dirkwhoffmann/virtualc64 | GPL-3.0+; MPL-2.0 core; MIT CPU | open-roms closed | 2026-11-26 | LICENSE
+open | vc64web/virtualc64web | GPL-3.0 | web port of VirtualC64 | 2026-11-26 | licence metadata
+open | dirkwhoffmann/vamiga | GPL-3.0+, MPL-2.0 core, MIT CPU | Amiga emulator; AROS copy closed | 2026-11-26 | LICENSE
+open | vamigaweb/vamigaweb | GPL-3.0 | web port of vAmiga; AROS closed | 2026-11-26 | metadata, about page
+open | dirkwhoffmann.github.io | none stated | sites of vAmiga, VirtualC64, vAmigaTS | 2026-11-26 | pages
+open | vamigaweb.github.io | none stated | vAmigaWeb site | 2026-11-26 | about page
+open | abbruzze/kernal64 | MIT | Scala Commodore emulator; ships VICE's SCPU ROM, closed | 2026-11-26 | LICENSE, README
+open | tomharte/clk | MIT | Clock Signal, multi-machine | 2026-11-26 | LICENCE, README
+open | libretro/vice-libretro | bare GPL-2.0; VICE: or later | VICE 3.10 core; ROMs closed | 2026-11-26 | COPYING, docs
+open | sourceforge.net/projects/deniseemu | GPLv3 per metadata | Denise; code host not found | 2026-11-26 | REST, page
+open | sourceforge.net/rest/p/deniseemu | GPLv3 per metadata | metadata of Denise | 2026-11-26 | REST
+walled | tonioni/winuae | bare GPL-2.0 text | WinUAE; built-in AROS closed | 2026-11-26 | COPYING, README
+open | www.winuae.net | none stated | site of a walled emulator; prose | 2026-11-26 | features, release posts
+walled | frodesolheim/fs-uae | bare GPL-2.0 text; site: GPL | superset of WinUAE | 2026-11-26 | COPYING, site
+open | fs-uae.net | none stated | site of a walled emulator | 2026-11-26 | home, download
+walled | libretro/libretro-uae | bare GPL-2.0 text | PUAE; built-in AROS closed | 2026-11-26 | COPYING, README
+walled | blitterstudio/amiberry | GPL-3.0 over WinUAE's bare GPL-2.0 | unresolved mix | 2026-11-26 | LICENSE, README
+open | amiberry.com | none stated | site of a walled emulator | 2026-11-26 | home page
+walled | cebix/frodo4 | bare GPL-2.0 text | Frodo 4 | 2026-11-26 | COPYING, README
+open | frodo.cebix.net | none stated | Frodo site; links closed hosts | 2026-11-26 | home page
+open | cebix.net | none stated | Bauer's VIC-II article; real-C64 tests | 2026-11-26 | introduction
+walled | libretro/frodo-libretro | bare GPL-2.0 text | Frodo core | 2026-11-26 | COPYING, docs
+walled | thkattanek/emu64 | bare GPL-2.0 text | Emu64 | 2026-11-26 | LICENSE
+walled | petschau/winfellow | bare GPL-2.0 text | WinFellow | 2026-11-26 | licence metadata
+walled | istvan-v/plus4emu | bare GPL-2.0 text | Plus/4 emulator; last push 2020 | 2026-11-26 | metadata
+open | www.z64k.com | none | site of z64k, closed freeware; prose | 2026-11-26 | home page
+open | www.yace64.com | none | site of YACE64, closed freeware; prose | 2026-11-26 | home page
+walled | git.applefritter.com/apple-2-sw/prog8 | not evaluated | Lorenz suite text: public domain | 2026-11-26 | header
+closed | dirkwhoffmann/virtualc64ts | none detected | VirtualC64 test suite | 2026-11-27 | licence API, README
+closed | mister-devel/c64_mister | none detected | FPGA core | 2026-11-26 | licence metadata
+closed | mister-devel/minimig-aga_mister | none detected | FPGA core | 2026-11-26 | licence metadata
+closed | frodesolheim/capsimg | SPS licence, non-commercial | SPS IPF decoder source | 2026-11-26 | LICENCE.txt
+open | softpres.org | SPS licences for its library | SPS site; offers no games | 2026-11-26 | captures
+open | www.softpres.org | the same | www prefix | 2026-11-26 | captures
+other | ftp.fau.de/gentoo-portage/licenses | - | Gentoo licence texts | 2026-11-26 | Kryoflux-MAME
+# Makers, licensees, and press for the Commodore and Amiga lines.
+open | www.amigaforever.com | none stated | Cloanto product pages | 2026-11-26 | home, features, source code
+open | www.c64forever.com | none stated | Cloanto product pages; VICE fork sources | 2026-11-26 | features, source code
+open | www.hyperion-entertainment.com | all rights reserved | AmigaOS 4 licensee's news | 2026-11-26 | corporate news
+other | amiga-news.de | press | news site; reproduces Amiga Corporation's release | 2026-11-26 | AN-2026-08-00022
+open | amiga.com | none stated | Amiga Corporation, rights holder; logo page only | 2026-11-26 | home page
+other | retrogames.biz | none stated | licensed mini-machine maker | 2026-11-26 | product page
+other | packages.debian.org | - | Debian package index | 2026-11-26 | vice, spectrum-roms pages
+# Sinclair, Amstrad, Acorn, and other British and European machines.
+open | fuse-emulator.sourceforge.net | GPL-2.0-or-later | Fuse's site | 2026-11-26 | home page, Debian copyright
+open | sourceforge.net/projects/fuse-emulator | GPL-2.0-or-later | Fuse project page | 2026-11-26 | home page
+open | chernandezba/zesarux | GPL-3.0 | third-party ROMs closed; path unknown | 2026-11-26 | README, src/LICENSE
+open | specemu.zxe.io | none stated | SpecEmu site; closed freeware; prose | 2026-11-26 | home page
+open | www.spectaculator.com | none stated | site of a commercial closed emulator; prose | 2026-11-26 | home, docs
+open | www.retrovirtualmachine.org | none stated | site of a closed emulator; prose | 2026-11-26 | home, download
+open | mdf200.itch.io/cspect | none stated | page of a closed Next emulator | 2026-11-26 | page
+walled | r-lyeh/spectral | 0BSD file; README: proprietary, GPL parts | own ROMs closed | 2026-11-26 | LICENSE, README
+open | gasman/jsspeccy3 | GPL-3.0 | browser Spectrum emulator | 2026-11-26 | README, metadata
+open | libretro/fuse-libretro | GPL-3.0 | Fuse core; built-in ROMs closed, path unknown | 2026-11-26 | README, docs
+open | martiangirl/specide | GPL-3.0 by metadata | Spectrum emulator; archived | 2026-11-26 | metadata
+walled | mrkwatkins/emulatortestsuites | GPL-3.0 wrapper; mixed tests | bundles Amstrad ROMs | 2026-11-26 | README, docs
+open | mrkwatkins.github.io/emulatortestsuites | GPL-3.0 | documentation of the same | 2026-11-26 | docs 0.9.4
+walled | colinpitrat/caprice32 | GPL-2.0, "or later" not stated | CPC emulator | 2026-11-26 | README, COPYING.txt
+walled | libretro/libretro-cap32 | bare GPL-2.0 text in cap32/ | Caprice32 core | 2026-11-26 | file, README
+open | www.winape.net | none stated | site of a closed emulator; prose | 2026-11-26 | home, features
+open | roudoudou.com | none stated | ACE-DL site; closed freeware; prose | 2026-11-26 | page
+walled | rofl0r/arnold | bare GPL-2.0 text; README: under the GPL | mirror of Arnold | 2026-11-26 | LICENSE, README
+open | cngsoft.no-ip.org | GPL-3.0 | CPCEC family site; packages closed | 2026-11-26 | page
+open | libretro/libretro-crocods | MIT by metadata and docs | CPC core | 2026-11-26 | metadata, docs
+open | shaker.logonsystem.eu | CC, variant unstated | CPC CRTC tests; real-machine photos | 2026-11-26 | home page
+open | mattgodbolt/jsbeeb | GPL-3.0-or-later; VDFS ROM CC0 | ROM files closed; path unknown | 2026-11-26 | README
+walled | stardot/b-em | bare GPL-2.0 text | BBC Micro emulator | 2026-11-26 | COPYING, README
+open | b-em.bbcmicro.com | none stated | Sarah Walker's pages: B-em, Elkulator, Arculator | 2026-11-26 | pages
+walled | stardot/beebem-windows | GPL, version not stated | BeebEm; moved to Codeberg | 2026-11-26 | LICENSE
+walled | codeberg.org/chrisn/beebem-windows | not read; guard blocked | BeebEm's current home | 2026-11-26 | BeebEm site
+closed | www.mkw.me.uk/beebe | none | BeebEm site; a game, firmware; cut short | 2026-11-27 | page
+closed | mkw.me.uk/beebe | none stated | the same, no www | 2026-11-27 | page
+open | tom-seddon/b2 | GPL-3.0 for src/ | BBC emulator; etc/ and submodules walled | 2026-11-26 | README
+walled | tom-seddon/b2/blob/master/et | unresolved | bundled third-party files; cut short | 2026-11-26 | README
+walled | tom-seddon/b2/tree/master/et | unresolved | the same folder | 2026-11-26 | README
+walled | zoltanvb/b2-libretro | none detected; docs: GPL v3 | b2 core | 2026-11-26 | metadata, docs
+open | scarybeasts/beebjit | GPL-3.0 | BBC JIT emulator; roms/, datasheets/ closed; test/ walled | 2026-11-26 | COPYING
+walled | stardot/elkulator | GPL, no version, no COPYING | Electron emulator | 2026-11-26 | readme.txt
+open | elkulator.acornelectron.co.uk | none stated | Elkulator site | 2026-11-26 | page
+closed | tomharte/electrem | none detected | historical Electron emulator; archived | 2026-11-26 | metadata
+walled | sarah-walker-pcem/arculator | GPL-2.0, "or later" not stated | bans AI-assisted code | 2026-11-26 | README
+walled | septercius/rpcemu-dev | GPL-2.0 by metadata | macOS builds of RPCEmu | 2026-11-26 | metadata, README
+closed | www.marutan.net/rpcem | none stated | RPCEmu site; offers RISC OS bundles; cut short | 2026-11-27 | home page
+closed | marutan.net/rpcem | none stated | the same, no www | 2026-11-27 | home page
+closed | charlierobson/eightyone | none detected | ZX81 emulator; no licence, no README | 2026-11-27 | licence API
+walled | sourceforge.net/projects/eightyone-sinclair-emulator | GPLv2 (metadata) | EightyOne home | 2026-11-27 | REST
+walled | sourceforge.net/rest/p/eightyone-sinclair-emulator | GPLv2 (metadata) | its metadata | 2026-11-27 | REST
+walled | libretro/81-libretro | GPL-3.0 over GPLv2 | EightyOne core; adapts walled code | 2026-11-27 | README
+closed | sinclairql/sqlux | UQLX licence, caps fees | QL emulator; ships QL ROMs | 2026-11-26 | licence file, README
+open | www.6809.org.uk/xroar | GPL-3.0-or-later | XRoar site; BSDOS boot ROM closed | 2026-11-26 | home, features
+walled | pete-gordon/oricutron | bare GPL-2.0 text | Oric emulator | 2026-11-26 | LICENSE, README
+open | istvan-v/ep128emu | GPL-2.0-or-later | Enterprise, Spectrum, CPC, TVC | 2026-11-26 | README
+walled | lgblgblgb/xep128 | bare GPL-2.0 | archived; merged into Xemu | 2026-11-27 | metadata
+walled | amspirit.fr | not read; no answer | CPC emulator, Shaker seal | 2026-11-27 | Shaker data
+open | www.seasip.info/unix/joyce | none stated | JOYCE site; licence not found | 2026-11-26 | page
+# American and Japanese machines, tests, and the boundary.
+walled | applewin/applewin | bare GPL-2.0 text | Apple II emulator; ROM handling not read | 2026-11-26 | LICENSE, README
+walled | audetto/applewin | bare GPL-2.0 text; fork | AppleWin for Linux; libretro core | 2026-11-26 | metadata, README
+open | kegs.sourceforge.net | none stated | KEGS site and README; prose | 2026-11-27 | home page, README.kegs
+walled | kegs.sourceforge.net/kegs | licence not found | KEGS archives with sources; cut short | 2026-11-27 | home page
+open | sourceforge.net/rest/p/kegs | none in metadata | metadata of KEGS | 2026-11-26 | REST
+walled | digarok/gsplus | GPL-3.0 over KEGS, unlicensed | IIgs emulator | 2026-11-26 | LICENSE, README
+open | www.virtualii.com | none stated | site of Virtual ][, closed shareware | 2026-11-26 | home page
+open | whscullin/apple2js | MIT | web Apple II; may hold Apple ROMs (from memory) | 2026-11-26 | LICENSE, README
+open | ct6502/apple2ts | MIT by metadata | TypeScript Apple II and IIgs | 2026-11-26 | metadata, README
+open | samkusin/clemens_iigs | MIT | Apple IIgs emulator | 2026-11-26 | LICENSE.txt, README
+open | zellyn/a2audit | MIT | Apple II audit; may copy two ROM routines | 2026-11-26 | LICENSE.txt, README
+closed | tomcw/mb-audit | none detected | Mockingboard audit | 2026-11-26 | metadata
+open | applesaucefdc.com | none stated | WOZ and A2R specifications by Applesauce's maker | 2026-11-26 | WOZ 2.1 page
+open | hatari/hatari | GPL-2.0-or-later by README | mirror; EmuTOS in packages closed | 2026-11-26 | README
+open | framagit.org/hatari/hatari | GPL-2.0-or-later by README | official Hatari repository | 2026-11-26 | README
+open | www.hatari-emu.org | GPL per site | Hatari site and manual | 2026-11-26 | home, manual
+closed | sourceforge.net/projects/emuto | GPL-2.0 | EmuTOS project files; cut short | 2026-11-26 | Hatari emutos.txt
+closed | www.sourceforge.net/projects/emuto | GPL-2.0 | the same, www prefix | 2026-11-26 | Hatari emutos.txt
+open | sourceforge.net/rest/p/steemsse | none in metadata | metadata and blog of Steem SSE | 2026-11-26 | REST
+walled | sourceforge.net/projects/steemss | licence not found | Steem SSE files; cut short | 2026-11-26 | REST metadata
+walled | www.sourceforge.net/projects/steemss | licence not found | the same, www prefix | 2026-11-26 | REST metadata
+open | steemsse.sourceforge.io | not read; refused scripts | site of a walled emulator | 2026-11-26 | refusal
+open | aranym/aranym | GPL-2.0-or-later by README | Atari TT and Falcon virtual machine | 2026-11-26 | COPYING, README
+open | openmsx.org | GPL, version not stated | openMSX site and manual; prose | 2026-11-26 | features, setup guide
+open | www.yui.ne.jp/np2 | none stated | site of Neko Project II, walled | 2026-11-26 | home page
+walled | amethyst.yui.ne.jp/svn/pc98 | not read | Neko Project II source | 2026-11-26 | home page link
+walled | azo234/np2kai | MIT over Neko Project II, unlicensed | PC-98 emulator | 2026-11-26 | LICENSE, README
+closed | simk98/np21w | none found | Neko Project 21/W | 2026-11-26 | metadata, README
+open | takeda-toshiya.my.coocan.jp | GPL-2.0-or-later | CSCP site; CSCP walled: fmgen, NP21/W | 2026-11-27 | index.html
+walled | retropc.net/pi/xm6/xm6_ | terms inside archives, not read | XM6 binaries and source | 2026-11-26 | XM6 page
+closed | hissorii/px68k | none found | X68000 emulator from WinX68k and xkeropi | 2026-11-26 | metadata, README
+walled | libretro/px68k-libretro | bare GPL-2.0 text; parent has no licence | px68k core | 2026-11-26 | COPYING, README
+open | stdkmd.net/xeij | free of charge only | XEiJ site; prose; emulator closed | 2026-11-27 | license.htm
+walled | uraraworks/webx68k | GPL-2.0, version not stated | web X68000 player | 2026-11-26 | metadata, README.ja.md
+open | captainys/townsemu | BSD-3-Clause | Tsugaru, FM Towns and Marty | 2026-11-26 | LICENSE, README
+open | drhelius/geartowns | GPL-3.0 by metadata | FM Towns and Marty | 2026-11-26 | metadata, README
+open | barotto/test386.asm | GPL-3.0 | x86 CPU tester; never run on real hardware | 2026-11-26 | COPYING, README
+open | vcce/vcc | GPL-3.0 | Tandy CoCo 3 emulator | 2026-11-26 | license.txt, README
+walled | timothypmann/xtrs | Clarendon Hill notice plus MIT | TRS-80 emulator | 2026-11-26 | LICENSE, README
+open | 48k.ca | none stated | site of trs80gp, closed freeware | 2026-11-26 | trs80gp page
+open | harmlesslion.com | none stated | Classic99 author's site | 2026-11-26 | Classic99 page
+closed | rasmus-m/js99er-angular | none found | web TI-99/4A emulator | 2026-11-26 | metadata, README
+walled | eighttails/pc6001vx | LGPL-2.1; fmgen freeware only | built-in ROM closed | 2026-11-27 | README
+open | dp111/6502timing | GPL-3.0 | BBC 6502 timing tests; oracle not stated | 2026-11-26 | metadata, README
+open | 86box/86box | GPL-2.0-or-later by README | x86 PC emulator; user ROMs | 2026-11-26 | COPYING, README
+walled | sarah-walker-pcem/pcem | GPL v2.0 by README | x86 PC emulator | 2026-11-26 | COPYING, README
+walled | cebix/macemu | GPL, version not stated | Basilisk II and SheepShaver | 2026-11-26 | README
+walled | kanjitalk755/macemu | GPL, version not stated; fork | the same | 2026-11-26 | metadata
+open | www.gryphel.com | none stated | Mini vMac site; the emulator is GPL-2.0, walled | 2026-11-26 | licence page
+open | sourceforge.net/rest/p/dosbox | GPLv2 per metadata | metadata of DOSBox | 2026-11-26 | REST
+walled | sourceforge.net/projects/dosbo | GPLv2 per metadata | DOSBox files; DOS layer closed | 2026-11-26 | REST
+walled | www.sourceforge.net/projects/dosbo | GPLv2 per metadata | the same, www prefix | 2026-11-26 | REST
+other | www.law.cornell.edu | none checked | statutes and regulations | 2026-11-26 | 37 C.F.R. 201.40
+# R1-27: shipped ROMs, replacement firmware, and pages and sites that offer firmware, games, or ROM dumps.
+# Closed so that the guard blocks them; none was opened unless its line says so. Page patterns are cut short.
+closed | sourceforge.net/projects/vice-emu/file | GPL-2.0-or-later | files ship Commodore ROMs | 2026-11-26 | Debian
+closed | www.sourceforge.net/projects/vice-emu/file | GPL-2.0-or-later | www prefix | 2026-11-26 | Debian
+closed | sourceforge.net/projects/deniseemu/file | GPLv3 | builds with preinstalled AROS | 2026-11-26 | release notes
+closed | www.sourceforge.net/projects/deniseemu/file | GPLv3 | the same, www prefix | 2026-11-26 | release notes
+closed | sourceforge.net/projects/fuse-emulator/file | GPL-2.0-or-later | tarballs hold roms/ | 2026-11-26 | Debian
+closed | www.sourceforge.net/projects/fuse-emulator/file | GPL-2.0-or-later | www prefix | 2026-11-26 | Debian
+closed | sourceforge.net/p/fuse-emulator/fuse/ci/master/tree/rom | GPL-2.0+ | ROMs in source tree | 2026-11-26 | Debian
+closed | www.sourceforge.net/p/fuse-emulator/fuse/ci/master/tree/rom | GPL-2.0+ | www prefix | 2026-11-26 | Debian
+closed | download.abime.net/winuae/files/b/aros.ro | not read | WinUAE's AROS Kickstart package | 2026-11-26 | README
+closed | www.winuae.net/wantedbootro | none | page asking for boot ROM dumps | 2026-11-26 | site menu
+closed | winuae.net/wantedbootro | none | the same, no www | 2026-11-26 | site menu
+closed | mattgodbolt/jsbeeb/blob/main/roms-src/vdf | CC0 | replacement filing-system ROM | 2026-11-26 | README
+closed | mattgodbolt/jsbeeb/tree/main/roms-src/vdf | CC0 | the same | 2026-11-26 | README
+closed | mattgodbolt/jsbeeb/main/roms-src/vdf | CC0 | the same, raw form | 2026-11-26 | README
+closed | scarybeasts/beebjit/blob/master/rom | various | Acorn ROMs | 2026-11-26 | COPYING
+closed | scarybeasts/beebjit/tree/master/rom | various | the same | 2026-11-26 | COPYING
+closed | scarybeasts/beebjit/master/rom | various | the same, raw form | 2026-11-26 | COPYING
+closed | scarybeasts/beebjit/blob/master/datasheet | various | maker datasheets hosted by others | 2026-11-26 | COPYING
+closed | scarybeasts/beebjit/tree/master/datasheet | various | the same | 2026-11-26 | COPYING
+closed | scarybeasts/beebjit/master/datasheet | various | the same, raw form | 2026-11-26 | COPYING
+walled | scarybeasts/beebjit/blob/master/tes | own licences | test programs | 2026-11-26 | COPYING
+walled | scarybeasts/beebjit/tree/master/tes | own licences | the same | 2026-11-26 | COPYING
+walled | shaker.logonsystem.eu/shaker | CC, variant unstated | Shaker test disks; cut short | 2026-11-26 | home page
+walled | www.shaker.logonsystem.eu/shaker | the same | www prefix | 2026-11-26 | home page
+closed | uraraworks/webx68k/blob/master/public/syste | Sharp terms | IPL-ROM, Human68k, font ROM | 2026-11-26 | README
+closed | uraraworks/webx68k/tree/master/public/syste | Sharp release terms | the same | 2026-11-26 | README.ja.md
+closed | uraraworks/webx68k/master/public/syste | Sharp release terms | the same, raw form | 2026-11-26 | README.ja.md
+closed | uraraworks.github.io/webx6 | Sharp release terms | serves the IPL-ROM; cut short | 2026-11-26 | README.ja.md
+closed | retropc.net/pi/xm6/xm6_uti | not read | XM6 tool that builds substitute ROMs | 2026-11-26 | XM6 page
+closed | retropc.net/pi/xm6/index.ht | not read | XM6 page; links firmware; opened once | 2026-11-26 | page
+closed | www.retropc.net/pi/xm6/index.ht | not read | the same, www prefix | 2026-11-26 | page
+closed | kyouichisato.blogspot.com/2014/05/x68000ro | none | ROM extraction guide | 2026-11-26 | XM6 page link
+closed | ysflight.com/fm/towns/freetown | not read | FreeTOWNS replacement ROM | 2026-11-26 | Tsugaru README
+closed | www.ysflight.com/fm/towns/freetown | not read | the same, www prefix | 2026-11-26 | Tsugaru README
+closed | fms.komkon.org/fms | non-commercial | fMSX pages; link ROM files; opened once | 2026-11-26 | page
+closed | www.fms.komkon.org/fms | non-commercial | the same, www prefix | 2026-11-26 | home page
+closed | ppeccin/webmsx | none found | web MSX emulator; likely bundles ROMs | 2026-11-26 | README, metadata
+closed | webmsx.org | none | serves the emulator with system ROMs, by inference | 2026-11-26 | README
+closed | www.webmsx.org | none | the same, www prefix | 2026-11-26 | README
+closed | abdess/retroarch_system | none | firmware sets; linked by NP2kai | 2026-11-26 | NP2kai README
+closed | 86box/roms | none | BIOS ROM sets for 86Box, from memory; not opened | 2026-11-26 | from memory
+closed | bbc.xania.org | none | jsbeeb's site; serves Acorn ROMs and games | 2026-11-26 | jsbeeb README
+closed | bbc.godbolt.org | none | the same site's older address | 2026-11-26 | beebjit README
+closed | bbcmicro.co.uk | not read | catalogue of BBC games | 2026-11-26 | beebjit README
+closed | www.bbcmicro.co.uk | not read | the same, www prefix | 2026-11-26 | beebjit README
+closed | archi.medes.live | none read | serves RISC OS 2 and 3 ROMs and games; opened once | 2026-11-26 | home page
+closed | www.marutan.net/rpcemu/manual/romimag | none | ROM image page; opened once | 2026-11-26 | page
+closed | marutan.net/rpcemu/manual/romimag | none | the same, no www | 2026-11-26 | page
+closed | www.marutan.net/rpcemu/easystar | none | bundles with RISC OS ROM images | 2026-11-26 | page
+closed | marutan.net/rpcemu/easystar | none | the same, no www | 2026-11-26 | page
+closed | 4corn.co.uk | not read | RISC OS ROM image archive | 2026-11-26 | RPCEmu ROM page link
+closed | www.4corn.co.uk | not read | the same, www prefix | 2026-11-26 | RPCEmu ROM page link
+closed | riscosroms.110mb.com | not read | ROM host | 2026-11-26 | RPCEmu ROM page link
+closed | rolf.yuss.org | not read | ROM host | 2026-11-26 | RPCEmu ROM page link
+closed | dcmoto.free.fr | not read | Thomson software archive; opened once | 2026-11-26 | home page
+closed | enterpriseforever.com/letoltesek-downloads | not read | ROM packages | 2026-11-26 | ep128emu README
+closed | www.enterpriseforever.com/letoltesek-downloads | not read | the same, www prefix | 2026-11-26 | ep128emu README
+closed | cngsoft.no-ip.org/cpcec- | GPL-3.0 | packages bundling Amstrad and MSX firmware | 2026-11-26 | page
+closed | shadowmagic.org.uk/spectru | not read | Spectrum ROM image host; cut short | 2026-11-26 | Debian copyright
+closed | www.shadowmagic.org.uk/spectru | not read | the same, www prefix | 2026-11-26 | Debian copyright
+closed | wearmouth.demon.co.uk | not read | disassembly of the Spectrum ROM | 2026-11-26 | Debian copyright
+closed | worldofspectrum.net | not read | World of Spectrum; offers games | 2026-11-26 | Spectral README
+closed | www.worldofspectrum.net | not read | the same, www prefix | 2026-11-26 | Spectral README
+closed | vtrd.in | not read | TR-DOS software archive | 2026-11-26 | Spectral README
+closed | www.vtrd.in | not read | the same, www prefix | 2026-11-26 | Spectral README
+closed | cpc-power.com | not read | CPC software archive | 2026-11-26 | libretro-cap32 README
+closed | www.cpc-power.com | not read | the same, www prefix | 2026-11-26 | libretro-cap32 README
+closed | atarimania.com | not read | game and disk host linked by Steem SSE | 2026-11-26 | blog link
+closed | www.atarimania.com | not read | the same, www prefix | 2026-11-26 | blog link
+closed | zimmers.net/anonftp/pub/cb | not read | Commodore manuals, software; cut short | 2026-11-26 | Frodo links
+closed | www.zimmers.net/anonftp/pub/cb | not read | the same, www prefix | 2026-11-26 | Frodo links
+closed | lemon64.com | not read | C64 game site | 2026-11-26 | Frodo links
+closed | www.lemon64.com | not read | the same, www prefix | 2026-11-26 | Frodo links
+closed | gbamiga.elowar.com | not read | Gamebase Amiga launcher | 2026-11-26 | Wikipedia link
+closed | archtaurus/retropiebios | none | "Full BIOS collection", in Cloanto's 2023 notice | 2026-11-26 | github/dmca
+closed | amigasource/amigaos | none | notice: "pirate copy" of Amiga ROM and OS software | 2026-11-27 | github/dmca
+closed | stagas/amigaos | none | fork named in the same notice | 2026-11-26 | github/dmca
+closed | pusparajm/amigaos | none | fork named in the same notice | 2026-11-26 | github/dmca
+closed | montegobay/amigaos | none | fork named in the same notice | 2026-11-26 | github/dmca
+closed | tom-seddon/acorn_mos_disassembly | not read | MOS disassembly | 2026-11-26 | search result
+closed | archive.worldofdragon.org | not read | Dragon Archive; ROM dumps per XRoar | 2026-11-27 | XRoar home page
+closed | colorcomputerarchive.com | not read | ROM dumps, per XRoar | 2026-11-27 | XRoar home page
+closed | www.colorcomputerarchive.com | not read | the same, www prefix | 2026-11-27 | XRoar home page
+closed | p6ers.net/hashi/suidashi.htm | not read | PC-6001 ROM dumping guide; cut short | 2026-11-27 | PC6001VX README
+closed | www.p6ers.net/hashi/suidashi.htm | not read | the same, www prefix | 2026-11-27 | PC6001VX README
+closed | 000.la.coocan.jp/p6/basic.ht | not read | replacement BASIC ROM; cut short | 2026-11-27 | PC6001VX README
+closed | 000.la.coocan.jp/misc.ht | not read | the same ROM's author page; cut short | 2026-11-27 | PC6001VX README
 
 # Cross-system sources: closed tier.
 closed | bsnes.org | none read | not shown to be the bsnes project; its menu offers games | 2026-11-19 | home page
