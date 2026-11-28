@@ -1468,6 +1468,39 @@ closed | www.drhell.web.fc2.com/ps1/xebra2 | none | same archive, www prefix | 2
 closed | problemkaputt.de/psx.htm | not read | no$psx, proprietary; fetch refused | 2026-11-22 | user wiki (lead)
 closed | www.problemkaputt.de/psx.htm | not read | same page, www prefix | 2026-11-22 | user wiki (lead)
 
+# Sources first cited by R1-44, the PPSSPP study (2026-11-27).
+# PPSSPP's high-level kernel and system modules are replacement system software, closed by ADR 0006, with the
+# dialogs, the font library, and the bundled fonts and system files. Executable decryption and firmware and
+# package unpacking are closed as key hazards. Closed as a precaution, unread: the device folder behind the
+# modules, bar three open files, and notes on decryption, firmware boot, and patches. libkirk is closed above.
+closed | hrydgard/ppsspp/blob/master/core/hle | GPL-2.0+ | high-level kernel and modules | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/dialog | GPL-2.0+ | system dialogs, save encryption | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/font | GPL-2.0+ | system font library | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/assets/flash0 | not read | replacement system files | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/elf/prxdecrypter | GPL-2.0+ | decryption; keys | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/util/psarunpack | GPL-2.0+ | firmware unpacking; keys | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/util/pkgunpack | GPL-2.0+ | package unpacking; keys | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/util/kl4e | GPL-2.0+ | firmware format; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/filesystems/tlzrc | GPL-2.0+ | precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/core/hw | GPL-2.0+ | devices behind the modules; precaution | 2026-11-27 | listing
+open | hrydgard/ppsspp/blob/master/core/hw/display | GPL-2.0+ | display timing | 2026-11-27 | listing
+open | hrydgard/ppsspp/blob/master/core/hw/stereoresampler | GPL-2.0+ | host audio | 2026-11-27 | listing
+open | hrydgard/ppsspp/blob/master/core/hw/granularmixer | GPL-2.0+ | host audio | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/tools/savetool | GPL-2.0+ | save decryption tool; key hazard | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/tools/adhoc_decrypt | GPL-2.0+ | decryption; keys | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/unittest/testkirk | GPL-2.0+ | KIRK test; key hazard | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/uwp/libkirk_uwp | GPL-2.0+ | KIRK build folder; key hazard | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/ui/firmwarescreen | GPL-2.0+ | firmware boot; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/vshbootinvestigation | GPL-2.0+ | precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/psarfileformat | GPL-2.0+ | firmware note; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/pops | GPL-2.0+ | firmware note; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/dnas-patches | GPL-2.0+ | firmware note; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/adhoc-packet-decryption | GPL-2.0+ | precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/pkg_notes | GPL-2.0+ | firmware note; precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp/blob/master/docs/reverse-engineering | GPL-2.0+ | precaution | 2026-11-27 | listing
+closed | hrydgard/ppsspp-frametest-ci | none | GE frame dumps of games for CI | 2026-11-27 | metadata; licence null
+open | report.ppsspp.org | none stated | PPSSPP compatibility reports; oracle: players | 2026-11-27 | games page
+
 # Sources first cited by R1-20, the PSP and PlayStation Vita survey (2026-11-25).
 # Emulators read from prose and metadata only. Each high-level PSP operating system and each set of Vita system
 # modules reimplements system software, so it is closed inside every repository below, and the rest of each
