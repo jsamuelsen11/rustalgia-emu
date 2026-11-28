@@ -1846,6 +1846,7 @@ open | arts-union.ru | notice, no grant | the same, without www | 2026-11-26 | n
 open | atari800.github.io | none stated | site of a walled emulator | 2026-11-26 | home page
 open | 7800.8bitdev.org | none stated | 7800 wiki; some pages closed below | 2026-11-26 | Main Page, A7800 page
 open | spatula-city.org | "Free Software" | host of jzIntv's site; "~" path unmatchable | 2026-11-26 | jzIntv page
+walled | www.eonet.ne.jp/~showtime/quasi88 | fmgen part "only in freeware" | QUASI88 site and code | 2026-11-27 | note
 open | fms.komkon.org/colem | non-commercial terms | site of ColEm, a closed emulator | 2026-11-26 | home page
 open | libretro/jollycv | BSD-3-Clause | ColecoVision, CreatiVision, My Vision | 2026-11-26 | licence file, docs
 open | libretro/libretro-vecx | GPL-3.0 | vecx port; embedding not checked | 2026-11-26 | LICENSE.md, docs

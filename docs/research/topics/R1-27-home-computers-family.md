@@ -116,7 +116,7 @@ The owner decides.
     which stands in for a system ROM though drawn from a public-domain font.
   - The XEGS, C64 Games System, GX4000, CDTV, CD32, Zemmix, and Marty are modes of their hosts ([R1-09][r109-consoles]);
     the 5200 stays a console target in [R1-26][r126].
-  - A path holding "~", such as QUASI88's, gets no register line; the written rule covers it.
+  - A path holding "~", such as QUASI88's, gets a register line, now that patterns can hold "~" (#80).
 
 ### The emulators compared
 
