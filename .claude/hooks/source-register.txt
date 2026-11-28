@@ -491,6 +491,20 @@ closed | mgba-emu/mgba/blob/master/include/mgba/internal/gba/bios | MPL-2.0 | BI
 closed | mgba-emu/mgba/master/include/mgba/internal/gba/bios | MPL-2.0 | same, raw | 2026-11-27 | listing
 open | buildbot.mgba.io | none stated | build server of an open-tier emulator; logs, lists | 2026-11-27 | builder list
 
+# Closed after R1-32, as its pull request recommended (2026-11-27): places the study met and did not read.
+closed | mgba-emu/mgba/tree/master/cinema | MPL-2.0 | video logs may embed game graphics | 2026-11-27 | study
+closed | mgba-emu/mgba/blob/master/cinema | MPL-2.0 | same | 2026-11-27 | study
+closed | mgba-emu/mgba/master/cinema | MPL-2.0 | same, raw | 2026-11-27 | study
+closed | mgba-emu/mgba/tree/master/src/gba/cheats | MPL-2.0 | vendor cheat decoders; may hold seeds | 2026-11-27 | study
+closed | mgba-emu/mgba/blob/master/src/gba/cheats | MPL-2.0 | same | 2026-11-27 | study
+closed | mgba-emu/mgba/master/src/gba/cheats | MPL-2.0 | same, raw | 2026-11-27 | study
+closed | mgba-emu/mgba/blob/master/src/gba/cart/ereader | MPL-2.0 | e-Reader stand-in; precaution | 2026-11-27 | study
+closed | mgba-emu/mgba/master/src/gba/cart/ereader | MPL-2.0 | same, raw | 2026-11-27 | study
+closed | mgba-emu/mgba/blob/master/include/mgba/internal/gba/cart/ereader | MPL-2.0 | e-Reader | 2026-11-27 | study
+closed | mgba-emu/mgba/master/include/mgba/internal/gba/cart/ereader | MPL-2.0 | same, raw | 2026-11-27 | study
+closed | mgba-emu/suite/blob/master/src/bios-math | MIT | expected results of BIOS routines | 2026-11-27 | study
+closed | mgba-emu/suite/master/src/bios-math | MIT | same, raw | 2026-11-27 | study
+
 # Sources first cited by R1-16, the Nintendo 64 survey (2026-11-25).
 walled | project64/project64 | GPL-2.0, version unstated | bare licence text; Windows | 2026-11-25 | license.md, README
 walled | mupen64plus/mupen64plus-core | GPL-2.0, version unstated | holds a lock-out chip file | 2026-11-25 | LICENSES
@@ -928,6 +942,11 @@ closed | azahar-emu/azahar/blob/master/src/core/file_sys/plugin_3gx_bootloader |
 closed | azahar-emu/azahar/master/src/core/file_sys/plugin_3gx_bootloader | GPL-3.0+ | same, raw | 2026-11-27 | listing
 walled | merryhime/3ds-audio | not read | console audio tests; named, not opened | 2026-11-27 | Azahar test README
 
+# Closed after R1-36, as its pull request recommended (2026-11-27): a test with a note on getting DSP firmware.
+closed | azahar-emu/azahar/tree/master/src/tests/audio_core/lle | GPL-3.0+ | precaution | 2026-11-27 | study
+closed | azahar-emu/azahar/blob/master/src/tests/audio_core/lle | GPL-3.0+ | same | 2026-11-27 | study
+closed | azahar-emu/azahar/master/src/tests/audio_core/lle | GPL-3.0+ | same, raw | 2026-11-27 | study
+
 # Sources first cited by R1-17, the GameCube, Wii, and Wii U survey (2026-11-25).
 open | tinob/ishiiruka | GPL-2.0-or-later by README | Dolphin fork; async shaders | 2026-11-25 | licence, README
 open | project-slippi/ishiiruka | GPL-2.0-or-later by README | Slippi's Melee fork | 2026-11-25 | licence, README
@@ -1095,6 +1114,12 @@ closed | burhanr13/tanuki3ds/blob/master/tools/extract | GPL-3.0 | extraction to
 closed | burhanr13/tanuki3ds/master/tools/extract | GPL-3.0 | same, raw | 2026-11-27 | listing
 closed | burhanr13/tanuki3ds/master/tools/dumper | not read | same tool, raw | 2026-11-27 | listing
 walled | panda3ds-emu/panda3ds-games-list | not established | compatibility reports; unread | 2026-11-27 | README, FAQ
+
+# Closed after R1-37, as its pull request recommended (2026-11-27): stand-ins for system behaviour.
+closed | wheremyfoodat/panda3ds/blob/master/src/core/audio/null_core | GPL-3.0 | DSP stand-in | 2026-11-27 | study
+closed | wheremyfoodat/panda3ds/master/src/core/audio/null_core | GPL-3.0 | same, raw | 2026-11-27 | study
+closed | burhanr13/tanuki3ds/blob/master/src/3ds.c | GPL-3.0 | process set-up; system software | 2026-11-27 | study
+closed | burhanr13/tanuki3ds/master/src/3ds.c | GPL-3.0 | same, raw | 2026-11-27 | study
 
 # Sources first cited by R1-21, the PlayStation 3, 4, and 5 survey (2026-11-25).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
