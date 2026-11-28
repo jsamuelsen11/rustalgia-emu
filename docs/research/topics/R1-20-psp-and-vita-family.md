@@ -29,8 +29,9 @@ against PPSSPP's store apps.
 For Rustalgia, the PSP is well documented by hardware tests and runs at full speed without a recompiler on iOS,
 by PPSSPP's account, while the Vita has no hardware test suite,
 and no clean-room emulator beyond the experimental vitaslop runs games without Sony's modules.
-The note recommends, for the owner to decide, keeping the PPSSPP study ([R1-44][studies]) without its closed parts,
-decrypted input only, PPSSPP's hardware measurements and [vfpu-docs][vfpu-docs] as the oracles,
+The note recommends, for the owner to decide,
+keeping the PPSSPP study ([R1-44](../emulators/R1-44-ppsspp.md)) without its closed parts, decrypted input only,
+PPSSPP's hardware measurements and [vfpu-docs][vfpu-docs] as the oracles,
 and no Vita study until [R6-01][phase6] takes the Vita up.
 
 ## Scope
@@ -146,10 +147,15 @@ Closed repositories are named without links throughout.
   That page tells users to dump the modules with a named firmware dumping tool, which was not followed.
 - It has three CPU cores: an interpreter, an IR interpreter, and JITs for "x86 and ARM, 32-bit and 64-bit"
   ([PPSSPP FAQ][pp-faq]), and its development page adds RISC-V and LoongArch64 JITs ([PPSSPP, Introduction][pp-dev]).
+  The FAQ is out of date: the older x86-64 and ARM64 JITs were removed in October 2026,
+  and every native compiler is now a back end of the one intermediate representation
+  ([R1-44, "Processor and memory"](../emulators/R1-44-ppsspp.md#processor-and-memory); corrected 2026-11-27).
   Compiled blocks are left for thread switches, for interrupts fired by timed events, and for callbacks,
   and its function replacement hashes scanned functions, an idea it credits to early Dolphin
   ([PPSSPP, "Scheduling"][pp-sched]).
-- It renders through Vulkan, OpenGL, and D3D11, D3D9 having gone in 1.20, and in software ([README][ppsspp-readme]);
+- It renders through Vulkan, OpenGL, and D3D11, D3D9 having gone in 1.20, and in software ([README][ppsspp-readme]),
+  and since then through Metal, the only back end of its iOS and tvOS apps
+  ([R1-44, "Video"](../emulators/R1-44-ppsspp.md#video); corrected 2026-11-27);
   it adds texture upscaling and replacement, MSAA on Vulkan, rewind, save states, RetroAchievements,
   ad hoc and infrastructure play, and a debugger with GE and JIT viewers (same; FAQ).
 - Its own documents list what it does not model: CPU caches, colour depth below 32 bits, and accurate reverb,
@@ -459,7 +465,7 @@ It is not legal advice.
 
 | Suite | Tier | Oracle | Covers | Published emulator results |
 |---|---|---|---|---|
-| pspautotests | closed | a real PSP, "preferably" | system calls and APIs, image tests | none found |
+| pspautotests | closed | a real PSP, "preferably" | system calls and APIs, image tests | PPSSPP, 536 of 643 listed |
 | PPSSPP frame dumps | closed | a real PSP replaying each dump | GE rendering | PPSSPP software, 125 of 132 |
 | PPSSPP hardware pages | open | a PSP over PSPLink | CPU timing, GE arithmetic | PPSSPP, their basis |
 | vfpu-docs | open | a PSP, a test per statement | VFPU instructions | none found |
@@ -468,6 +474,9 @@ It is not legal advice.
 - `hrydgard/pspautotests` keeps expected output "preferably from a real PSP" and needs a PSP with custom firmware
   and PSPLink (its README; not linked because the repository is closed);
   PPSSPP's test script compares its own output with it ([PPSSPP, Introduction][pp-dev]).
+  The script lists 536 tests that pass and 107 that do not yet, and CI runs the passing list
+  ([R1-44, "Tests and published results"](../emulators/R1-44-ppsspp.md#tests-and-published-results);
+  corrected 2026-11-27).
   Its results are usable.
 - The GE result is the family's one published hardware comparison: about 170 experiments on a PSP,
   after which "the software renderer reproduces 125 of a set of 132 frame dumps from various games,
@@ -491,7 +500,7 @@ The options answer four separate questions, and the recommendation takes one ans
 
 ### Which emulators the family's studies cover
 
-- **What:** keep [R1-44][studies], [PPSSPP][ppsspp], alone; add a [Vita3K][vita3k] study;
+- **What:** keep [R1-44](../emulators/R1-44-ppsspp.md), [PPSSPP][ppsspp], alone; add a [Vita3K][vita3k] study;
   or add [JPCSP][jpcsp] for its low-level route.
 - **Costs:** a PPSSPP study must leave out its high-level operating system and KIRK engine, which are closed;
   Vita3K is walled, so its code needs a reader session, and much of what makes it work is closed system software;
@@ -574,7 +583,7 @@ The owner decides each of these; the pull request lists them.
 ## Open questions
 
 - Does [PPSSPP][ppsspp] hold key tables outside its KIRK folder, as memory suggests for its module decrypter?
-  [R1-44][studies], which reads its open code, would find the path for the register to close.
+  [R1-44](../emulators/R1-44-ppsspp.md), which reads its open code, would find the path for the register to close.
 - How does a Vita behave where no emulator documents it?
   A test suite would need homebrew on a console, which the Vita licence bars (inference); [R6-01][phase6] decides.
 
