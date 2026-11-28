@@ -578,6 +578,17 @@ closed | www.problemkaputt.de/gbatek-dsi-teak | notice, no grant | same pages, w
 closed | problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | BPTWL; firmware leaked | 2026-11-19 | search
 closed | www.problemkaputt.de/gbatek-dsi-i2c-device-4ah | notice | same page, www prefix | 2026-11-19 | search
 
+# Sources first cited by R1-33, the SkyEmu study (2026-11-27).
+# SkyEmu's bundled replacement BIOS images are closed by ADR 0006. A file pattern has no tree form.
+closed | skylersaleh/skyemu/tree/dev/src/freebios | MIT | bundled replacement DS BIOS | 2026-11-27 | listing
+closed | skylersaleh/skyemu/blob/dev/src/freebios | MIT | same | 2026-11-27 | listing
+closed | skylersaleh/skyemu/dev/src/freebios | MIT | same, raw | 2026-11-27 | listing
+closed | skylersaleh/skyemu/blob/dev/src/gba_bios | MIT | embedded replacement GBA BIOS | 2026-11-27 | listing
+closed | skylersaleh/skyemu/dev/src/gba_bios | MIT | same, raw | 2026-11-27 | listing
+open | skyemu.app | none stated | SkyEmu site; home redirects to the repository; results page read | 2026-11-27 | page
+closed | web.skyemu.app | MIT build | SkyEmu web build; embeds the replacement BIOS images | 2026-11-27 | README
+open | floooh/sokol | Zlib | application, graphics, and audio headers; not an emulator | 2026-11-27 | LICENSE, README
+
 # Sources first cited by R1-12, the Nintendo DS and DSi survey (2026-11-25).
 open | jaklyy/dualsoup | MPL-2.0 | cycle-accurate DS emulator, alpha | 2026-11-25 | licence file, README
 open | jessetg/melonds-ds | GPL-3.0 | libretro core on melonDS; its BIOS closed | 2026-11-25 | licence, README
