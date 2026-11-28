@@ -1279,6 +1279,23 @@ closed | psdevwiki.com/ps3/ps2_emulation | GFDL 1.2 | decrypted emulator files; 
 closed | www.psdevwiki.com/ps3/ps2_emulation | GFDL 1.2 | www prefix | 2026-11-25 | capture
 closed | emulation.gametechwiki.com/index.php/emulation_issues_and_roadblocks | none | names a leak | 2026-11-25 | raw
 
+# Sources first cited by R1-41, the PCSX-Redux study (2026-11-27).
+# Protective lines for places its prose links, none opened: generated documentation of the closed nugget, a
+# browser build that boots OpenBIOS, build downloads, a game decompilation, and converted maker libraries.
+# Two documentation pages are closed after being read: one embeds listings from nugget, the other holds game
+# cheat codes and addresses. Page patterns are cut short so that the page itself is blocked.
+closed | pcsx-redux.github.io/nugget | not read | generated documentation of the closed nugget | 2026-11-27 | link
+closed | tools.psx.dev/redux | not read | browser build of PCSX-Redux; boots OpenBIOS | 2026-11-27 | README
+closed | distrib.app/pub/org/pcsx-redux | not read | builds of a walled emulator | 2026-11-27 | README
+closed | www.distrib.app/pub/org/pcsx-redux | not read | the same, www prefix | 2026-11-27 | README
+closed | static.grumpycoder.net/pixel | not read | debugger build download | 2026-11-27 | docs link
+closed | foxdieteam/mgs_reversing | not read | game decompilation linked by the docs | 2026-11-27 | link
+closed | abelliqueux/nolibgs_hello_worlds | not read | docs: offers converted PsyQ libraries | 2026-11-27 | link
+walled | wurlyfox/crashutils | not evaluated | game disassembly guide linked by the docs | 2026-11-27 | link
+walled | ps1dev/standards | not evaluated | sample replacement standard linked by the docs | 2026-11-27 | link
+closed | pcsx-redux.consoledev.net/mips_ap | none stated | page embeds listings from nugget | 2026-11-27 | page
+closed | pcsx-redux.consoledev.net/lua/case-studie | none stated | game cheat codes and addresses | 2026-11-27 | page
+
 # PlayStation family: kits, emulators, and tests.
 open | spicyjpeg/ps1-bare-metal | MIT | origin of hardware facts not stated | 2026-11-19 | README
 open | jaczekanski/ps1-tests | MIT | links libpsxgte, said to hold lifted Sony code | 2026-11-20 | README, makefile
