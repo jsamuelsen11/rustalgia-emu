@@ -19,8 +19,9 @@
 # - In a repository, a restricted line still allows its prose: the bare repository page, the licence and README
 #   endpoints, and files named README, LICENSE, COPYING, CONTRIBUTING, CODE_OF_CONDUCT, or AI-POLICY.
 #   A line for a whole repository or owner also allows its release notes and metadata: a changelog file
-#   (CHANGELOG, CHANGES, NEWS, HISTORY, or release notes, bare or as .md, .txt, .rst, .markdown, or .adoc), the
-#   releases pages and endpoint, and the lists of commits, branches, and tags. One commit is not allowed, because
+#   (CHANGELOG, CHANGES, NEWS, HISTORY, or release notes, bare or as .md, .txt, .rst, .markdown, or .adoc), a file
+#   named AUTHORS, CONTRIBUTORS, CREDITS, THANKS, or TODO in the same forms, the releases pages and endpoint, and
+#   the lists of commits, branches, tags, and contributors. One commit is not allowed, because
 #   it comes with its diff. Cloning, archive and release downloads, and searches inside it are blocked.
 #   A GitHub tool call on such a repository may do the same and no more: an issue, a pull request, and one commit
 #   are blocked.
@@ -125,10 +126,11 @@ hit=$(
       proseread = "^(/(blob|raw|contents)(/" seg ")?|/" seg ")?/" prose "[a-z0-9._-]*" endc "|^/(license|readme)" endc
       bareread = "^" endc
       # Release notes and metadata of a whole repository: prose under the rule, with no code and no diff.
-      notes = "(changelog|changes|news|history|release[-_]?notes)(\\.(md|txt|rst|markdown|adoc))?"
+      notes = "(changelog|changes|news|history|release[-_]?notes|authors|contributors|credits|thanks|todo)"
+      notes = notes "(\\.(md|txt|rst|markdown|adoc))?"
       notesread = "^/blob/@/(" seg "/)*" notes endc
       relread = "^/releases(/latest|/tags?/" seg "|/[0-9]+)?" endc
-      apimeta = "^/(commits|branches|tags)" endc "|^/branches/" seg endc
+      apimeta = "^/(commits|branches|tags|contributors)" endc "|^/branches/" seg endc
       webmeta = "^/(commits|branches|tags)(/" seg ")?" endc
       # Every way to address a file by ref is rewritten to one form, "owner/repo/blob/@/path",
       # so that one line for a path closes it on every ref and in every form.
