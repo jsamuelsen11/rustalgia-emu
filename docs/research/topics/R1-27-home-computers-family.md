@@ -1,7 +1,7 @@
 ---
 title: "Home computers: family survey"
 roadmap_item: R1-27
-status: draft
+status: approved
 date: 2026-11-27
 ---
 
