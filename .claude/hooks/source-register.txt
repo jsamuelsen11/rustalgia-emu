@@ -480,6 +480,17 @@ closed | decompals/ultralib | none | decompilation of the maker's library | 2026
 closed | modernn64sdkarchives/n64sdkmod | none | the maker's kit repackaged | 2026-11-19 | README, N64brew page
 closed | crashoveride95/n64sdkmod | none | old address of the same | 2026-11-19 | redirect
 
+# Sources first cited by R1-32, the mGBA study (2026-11-27).
+# mGBA's built-in high-level BIOS is replacement system software, closed by ADR 0006.
+# A file pattern has no tree form.
+closed | mgba-emu/mgba/blob/master/src/gba/hle-bios | MPL-2.0 | built-in replacement BIOS | 2026-11-27 | listing
+closed | mgba-emu/mgba/master/src/gba/hle-bios | MPL-2.0 | same, raw | 2026-11-27 | listing
+closed | mgba-emu/mgba/blob/master/src/gba/bios | MPL-2.0 | BIOS calls | 2026-11-27 | listing
+closed | mgba-emu/mgba/master/src/gba/bios | MPL-2.0 | same, raw | 2026-11-27 | listing
+closed | mgba-emu/mgba/blob/master/include/mgba/internal/gba/bios | MPL-2.0 | BIOS calls | 2026-11-27 | listing
+closed | mgba-emu/mgba/master/include/mgba/internal/gba/bios | MPL-2.0 | same, raw | 2026-11-27 | listing
+open | buildbot.mgba.io | none stated | build server of an open-tier emulator; logs, lists | 2026-11-27 | builder list
+
 # Sources first cited by R1-16, the Nintendo 64 survey (2026-11-25).
 walled | project64/project64 | GPL-2.0, version unstated | bare licence text; Windows | 2026-11-25 | license.md, README
 walled | mupen64plus/mupen64plus-core | GPL-2.0, version unstated | holds a lock-out chip file | 2026-11-25 | LICENSES
