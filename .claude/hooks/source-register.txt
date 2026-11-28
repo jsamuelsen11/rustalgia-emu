@@ -1222,6 +1222,52 @@ open | old.hotchips.org | none stated | conference talks by maker engineers | 20
 open | emudev.org | none stated | community hub, a lead | 2026-11-19 | home page
 closed | cgi.cse.unsw.edu.au/~cs3231/doc/r3000.pdf | notices, no grant | IDT manual copy | 2026-11-19 | title pages
 
+# Sources first cited by R1-42, the PCSX2 study (2026-11-27).
+# High-level BIOS and IOP module code is replacement system software, closed by ADR 0006, in PCSX2 and in the
+# forks read for their ARM64 recompilers. Closed as a precaution, unread: BIOS image and kernel-structure
+# handling, the kit's debug protocol, disc and memory card authentication, arcade files, and a set-up guide.
+closed | pcsx2/pcsx2/blob/master/pcsx2/iopbios | GPL-3.0 | high-level IOP modules | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/iopmodulenames | GPL-3.0 | module names; precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/ps2/iop/psxbios | GPL-3.0 | high-level PS1 BIOS | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/ps2/biostools | GPL-3.0 | BIOS handling; precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/debugtools/biosdebugdata | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/rdebug | GPL-3.0 | kit protocol; precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/cdvd/cdvd.cpp | GPL-3.0 | disc keys; precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/cdvd/cdvd_internal.h | GPL-3.0 | same | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/sio/memcard/memorycardprotocol | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | pcsx2/pcsx2/blob/master/pcsx2/docs/configuration_guide | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/iopbios | GPL-3.0 | high-level IOP modules | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/iopmodulenames | GPL-3.0 | module names; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/ps2/iop/psxbios | GPL-3.0 | high-level PS1 BIOS | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/ps2/biostools | GPL-3.0 | BIOS handling; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/debugtools/biosdebugdata | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/rdebug | GPL-3.0 | kit protocol; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/cdvd/cdvd.cpp | GPL-3.0 | disc keys; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/cdvd/cdvd_internal.h | GPL-3.0 | same | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/sio/memcard/memorycardprotocol | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/docs/configuration_guide | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/arcade | GPL-3.0 | arcade keys; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2/imgui/fullscreenui_arcade | GPL-3.0 | same | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/pcsx2-qt/arcade | GPL-3.0 | same | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/common/arcade.h | GPL-3.0 | same | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/bin/resources/arcade | not read | arcade card data; precaution | 2026-11-27 | listing
+closed | armsx2/armsx2/blob/master/platforms/android/app/src/main/assets/arcade | not read | same | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/iopbios | GPL-3.0 | high-level IOP modules | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/ps2/iop/psxbios | GPL-3.0 | high-level PS1 BIOS | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/ps2/biostools | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/cdvd/cdvd.c | GPL-3.0 | disc keys; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/cdvd/cdvd_internal.h | GPL-3.0 | same | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/cdvd/mgdes | GPL-3.0 | keys; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/cdvd/cdvdnvram | GPL-3.0 | NVRAM; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/memorycardprotocol | GPL-3.0 | keys; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/pcsx2/docs/configuration_guide | GPL-3.0 | precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/tests/mg | GPL-3.0 | keys; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/tests/nvram | GPL-3.0 | NVRAM test; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/tests/mcdid | GPL-3.0 | card keys; precaution | 2026-11-27 | listing
+closed | libretro/parallel-ps2/blob/master/tests/biosver | GPL-3.0 | BIOS image test; precaution | 2026-11-27 | listing
+# Met by the study and not opened: PCSX2's patch collection, which has no licence.
+closed | pcsx2/pcsx2_patches | none found | game patches shipped with PCSX2; not opened | 2026-11-27 | licence 404
+
 # Sources first cited by R1-19, the PlayStation 2 survey (2026-11-25).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
 # Every replacement or high-level PS2 BIOS is closed wherever it sits; paths inside open repositories are not known.
