@@ -574,8 +574,9 @@ and closed apps of unknown origin; for Rustalgia this only confirms that those p
 
 ### Which emulators the studies cover
 
-- **What:** keep [R1-34 (melonDS) and R1-35 (DeSmuME)][studies] as planned,
-  and add [DualSOUP][dualsoup] to R1-34 as a contrast, or give no$gba, [NooDS][noods], or DualSOUP studies of their own.
+- **What:** keep [R1-34 (melonDS)](../emulators/R1-34-melonds.md) and [R1-35 (DeSmuME)](../emulators/R1-35-desmume.md)
+  as planned, and add [DualSOUP][dualsoup] to R1-34 as a contrast, or give no$gba, [NooDS][noods],
+  or DualSOUP studies of their own.
 - **Costs:** the closed no-licence emulator can only be observed;
   NooDS repeats DeSmuME's design space without published results; each extra study costs a note.
 - **Gains:** [melonDS][melonds] is the most accurate and most used engine,
@@ -733,7 +734,6 @@ Law, policy, and press:
 [readme]: ../../../README.md
 [register]: ../../../.claude/hooks/source-register.txt
 [surveys]: ../../roadmap/research.md#system-family-surveys
-[studies]: ../../roadmap/research.md#emulator-studies
 [phase2]: ../../roadmap/research.md#phase-2-cross-cutting-engineering
 [phase3]: ../../roadmap/research.md#phase-3-host-platforms
 [phase5]: ../../roadmap/research.md#phase-5-hands-on-spikes

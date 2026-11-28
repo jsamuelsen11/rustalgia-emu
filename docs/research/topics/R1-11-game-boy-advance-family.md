@@ -134,6 +134,8 @@ Features, from the README and FAQ: rewind, Lua scripting, cheat codes,
 GameShark and Action Replay snapshot import and export, patches, a command-line debugger, and a GDB stub.
 High-level mixing of the MP2k sound engine
 ("XQ audio") exists by the [0.10.0 changelog][mgba-0100], though the README still lists it as planned.
+The development version has since removed it pending a rewrite, as the mGBA study found
+([R1-32, "Audio"](../emulators/R1-32-mgba.md#audio); corrected 2026-11-27).
 For cartridge hardware it models tilt and gyro sensors, rumble, the real-time clock, the solar sensor,
 Game Boy Player rumble, the e-Reader, and the BattleChip Gate, and detects save types "even for flash memory size";
 Vast Fame's protected cartridges are supported, by a fix to that support in the [0.7.0 changelog][mgba-070].
@@ -585,7 +587,7 @@ This section builds on [R0-02](R0-02-legal-baseline.md) and is not legal advice.
   in a GBA counterpart of [R5-12](../../roadmap/research.md#phase-5-hands-on-spikes),
   which this note recommends adding to the roadmap.
 - Whether the mGBA suite's expectations, beyond the one commit [R0-05](R0-05-source-map.md) found matched to hardware,
-  were checked on a console: the mGBA study ([R1-32](../../roadmap/research.md#emulator-studies)) can read its history.
+  were checked on a console: the mGBA study ([R1-32](../emulators/R1-32-mgba.md)) can read its history.
 - Whether mGBA ships only an interpreter: the mGBA study, which may read its source.
 - How open-bus and prefetch details differ on the SP, Micro, and DS beyond GBATEK: console measurements,
   for which no roadmap item exists yet.

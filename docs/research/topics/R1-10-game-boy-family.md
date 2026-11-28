@@ -29,9 +29,9 @@ which no hardware test confirms.
 Difficulty sits in the video chip's variable drawing time, mid-line effects, revision differences,
 and the Super Game Boy's split between a Game Boy chip and a SNES program.
 
-The note recommends keeping SameBoy ([`R1-30`][studies]), narrowing Gambatte ([`R1-31`][studies]) to prose,
-a post-boot start with no boot ROM, selectable revisions modelled to the dot,
-and the [Mooneye Test Suite][mooneye] and other hardware-referenced suites as the oracle; the owner decides.
+The note recommends keeping SameBoy ([`R1-30`](../emulators/R1-30-sameboy.md)), narrowing Gambatte
+([`R1-31`](../emulators/R1-31-gambatte.md)) to prose, a post-boot start with no boot ROM, selectable revisions modelled
+to the dot, and the [Mooneye Test Suite][mooneye] and other hardware-referenced suites as the oracle; the owner decides.
 This note is not legal advice.
 
 ## Scope
@@ -552,8 +552,8 @@ the tier is this note's, by [ADR 0006][adr6]'s closed test
 
 ### Which emulators the studies cover
 
-- **What:** keep the roadmap's [SameBoy][sb] ([`R1-30`][studies])
-  and [Gambatte][gambatte-libretro] ([`R1-31`][studies]) studies,
+- **What:** keep the roadmap's [SameBoy][sb] ([`R1-30`](../emulators/R1-30-sameboy.md))
+  and [Gambatte][gambatte-libretro] ([`R1-31`](../emulators/R1-31-gambatte.md)) studies,
   and decide whether to add [docboy][docboy] or [Gearboy][gearboy].
 - **Costs:** Gambatte's origin is closed and its forks walled,
   so its study is prose only and its own hardware tests cannot be read; each added study costs a note.
@@ -633,7 +633,8 @@ The owner decides each of these; the pull request lists them.
 
 ## Implications for Rustalgia
 
-- The studies recommended above feed [`R1-30`][studies], [`R1-31`][studies], and a possible [docboy][docboy] study,
+- The studies recommended above feed [`R1-30`](../emulators/R1-30-sameboy.md),
+  [`R1-31`](../emulators/R1-31-gambatte.md), and a possible [docboy][docboy] study,
   and their evidence feeds [`R1-90`][synthesis].
 - A dot-level video chip and per-machine-cycle CPU, with selectable revisions, feed [`R2-01`][phase2],
   [`R2-03`][phase2], and [`R2-04`][phase2], and the quality targets in [`R6-02`][phase6].
@@ -743,7 +744,6 @@ Project documents:
 [roadmap]: ../../roadmap/research.md
 [guide]: ../README.md
 [surveys]: ../../roadmap/research.md#system-family-surveys
-[studies]: ../../roadmap/research.md#emulator-studies
 [synthesis]: ../../roadmap/research.md#landscape-synthesis
 [phase2]: ../../roadmap/research.md#phase-2-cross-cutting-engineering
 [phase3]: ../../roadmap/research.md#phase-3-host-platforms

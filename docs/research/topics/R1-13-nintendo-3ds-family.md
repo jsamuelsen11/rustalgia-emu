@@ -175,7 +175,9 @@ Its [AI policy][az-ai] says "Use of AI to rewrite incompatibly-licensed code for
 
 Techniques, from the README, [release notes][az-releases], and [libretro documentation][lr-azahar]: Dynarmic,
 through Azahar's own 0BSD fork, as the recompiler; FastInterp,
-a faster interpreter that replaced DynCom in 2127.0 for hosts without dynamic recompilation,
+a faster interpreter that the 2127.0 notes say replaces DynCom for hosts without dynamic recompilation,
+though DynCom is still built as the last fallback at the commit the Azahar study read
+([R1-36, "Processor"](../emulators/R1-36-azahar.md#processor); corrected 2026-11-27),
 which the notes say lets devices as old as an iPhone XS run at over 200% speed; OpenGL, Vulkan, and software renderers,
 up to 18 times the internal resolution ([2126.1][az-2126-1]), texture filters,
 and a Vulkan disk shader cache ([2125.0.1][az-2125-0-1]).
@@ -202,7 +204,7 @@ method names were changed to match Nintendo's from debug symbols found in a reta
 a contributor used a decompiler on a retail game to find a display-transfer behaviour,
 then confirmed it by hardware tests; and a decompiler plugin for the DSP's processor was written to study its firmware.
 Those parts are game-derived or firmware-derived,
-which the Azahar study ([R1-36](../../roadmap/research.md#emulator-studies)) has to weigh (inference).
+which the Azahar study ([R1-36](../emulators/R1-36-azahar.md)) has to weigh (inference).
 
 **Forks.**
 Each from its README or site, read as prose (observed):
@@ -551,7 +553,7 @@ This section builds on [R0-02](R0-02-legal-baseline.md) and is not legal advice.
 ### Which emulators the emulator studies cover
 
 - **What:** keep the roadmap's [Azahar][azahar] and [Panda3DS][panda3ds] studies
-  ([R1-36 and R1-37](../../roadmap/research.md#emulator-studies)),
+  ([R1-36](../emulators/R1-36-azahar.md) and [R1-37](../emulators/R1-37-panda3ds.md)),
   add [Tanuki3DS][tanuki] or [3Beans][3beans], or replace one.
 - **Costs:** in every high-level emulator, the kernel and services are closed, so a study reads only the CPU, GPU, DSP,
   scheduler, and frontend; Azahar also holds built-in keys at a path not yet known,
@@ -646,7 +648,7 @@ These are recommendations for the owner, who decides; the pull request lists the
 - Which [3dbrew][3dbrew-hub] service and kernel facts hold on a console: hardware tests on an owned, modified console,
   in a 3DS counterpart of [R5-12](../../roadmap/research.md#phase-5-hands-on-spikes), which no roadmap item provides.
 - Where in [Azahar][azahar]'s tree the built-in keys live, so that a closed line can name the path:
-  a statement from the project, or the Azahar study ([R1-36](../../roadmap/research.md#emulator-studies)) asking it.
+  a statement from the project, or the Azahar study ([R1-36](../emulators/R1-36-azahar.md)) asking it.
 - Whether 3Beans or Corgi3DS runs DS or GBA mode: running them, which needs boot ROMs the project may not obtain,
   or a statement from their authors.
 - How each title's boot logo is stored: 3dbrew's "NCCH" page documents content encryption and key slots,
