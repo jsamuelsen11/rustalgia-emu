@@ -718,7 +718,7 @@ Each item is a recommendation for the owner, who decides.
   The 2024 table ([ACCURACY.md at `e83ea6cf`][nba-acc]) does not state its revision;
   running both revisions would answer it.
 - Is the failing test of [issue 539][i539] the row that the 2024 table shows passing?
-  The mGBA study, [R1-32](../../roadmap/research.md#emulator-studies), reads that suite's video test list.
+  The mGBA study, [R1-32](R1-32-mgba.md), reads that suite's video test list.
 - Why are the cores single headers?
   No document or issue found says (searched: the README, the contributor and acknowledgment files,
   and the tracker by three keyword searches); only the author could answer.

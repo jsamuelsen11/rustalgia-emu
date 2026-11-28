@@ -476,7 +476,7 @@ It also tests the plain DMG, Color, and SGB platforms, not the Game Boy Player m
   This feeds [`R2-15`][phase2].
 - **For the failures above, Gambatte is not the source to learn from.**
   The corruption bug and Color sound timing are answered better by SameBoy, which is open tier
-  and passes those tests ([`R1-30`][studies]).
+  and passes those tests ([`R1-30`](R1-30-sameboy.md)).
   For register changes in the middle of a scanline, the table's full passes are docboy,
   which the [survey][survey-glance] records as open tier, and Beaten Dying Moon; SameBoy passes 15 of the 24
   ([shootout][shootout], counted by script).
