@@ -2,7 +2,7 @@
 title: PCSX-Redux
 subject: PCSX-Redux
 roadmap_item: R1-41
-status: draft
+status: approved
 date: 2026-11-27
 ---
 

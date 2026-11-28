@@ -2,7 +2,7 @@
 title: Play!
 subject: Play!
 roadmap_item: R1-43
-status: draft
+status: approved
 date: 2026-11-27
 ---
 

@@ -2,7 +2,7 @@
 title: PCSX2
 subject: PCSX2
 roadmap_item: R1-42
-status: draft
+status: approved
 date: 2026-11-27
 ---
 
