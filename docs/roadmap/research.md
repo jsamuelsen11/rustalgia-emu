@@ -152,12 +152,12 @@ Nintendo handhelds:
 
 PlayStation:
 
-- [ ] **R1-40** DuckStation.
+- [x] **R1-40** DuckStation.
       Documentation and behaviour only; its licence forbids derivatives.
-- [ ] **R1-41** PCSX-Redux.
-- [ ] **R1-42** PCSX2.
-- [ ] **R1-43** Play!.
-- [ ] **R1-44** PPSSPP.
+- [x] **R1-41** PCSX-Redux.
+- [x] **R1-42** PCSX2.
+- [x] **R1-43** Play!.
+- [x] **R1-44** PPSSPP.
 
 Other systems:
 
