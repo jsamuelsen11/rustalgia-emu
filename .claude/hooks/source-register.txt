@@ -1202,6 +1202,38 @@ closed | ds4user/ds4 | not read | Sony: DUALSHOCK 4 firmware copies | 2026-11-25
 closed | en.wikipedia.org/wiki/playstation_3_system_softwar | CC BY-SA 4.0 | mentions leaked PS3 kits | 2026-11-25 | raw
 closed | emulation.gametechwiki.com/index.php/rpcs | none named | RAP and cracked files from others | 2026-11-25 | raw
 
+# Sources first cited by R1-43, the Play! study (2026-11-27).
+# Play!'s high-level BIOS and system modules are replacement system software, closed by ADR 0006: the IOP
+# folder as a whole, with open lines for the files that model hardware, and the EE kernel and its helpers.
+# Arcade drivers, definitions, and NAND tools are closed as key and dongle hazards, and the rest as a precaution.
+closed | jpd002/play-/blob/master/source/iop | BSD-2 | high-level IOP BIOS, arcade | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_dmac.cpp | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_dmac.h | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_dmacchannel | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_intc | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_rootcounters | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_spu | BSD-2 | hardware model | 2026-11-27 | listing
+open | jpd002/play-/blob/master/source/iop/iop_subsystem | BSD-2 | hardware model | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/ee/ps2os | BSD-2 | high-level EE kernel | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/ee/ee_libmc2 | BSD-2 | high-level system library | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/ee/sif. | BSD-2 | SIF services; precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/sif | BSD-2 | module interfaces; precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/psx | BSD-2 | high-level PS1 BIOS | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/biosdebuginfoprovider | BSD-2 | precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/osstruct | BSD-2 | kernel helpers; precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/osvariablewrapper | BSD-2 | kernel helper; precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/source/ui_shared/arcadedrivers | BSD-2 | arcade keys | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/arcadedefs | BSD-2 | arcade dongles | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/tools/namcosys147nandtools | BSD-2 | arcade NAND; precaution | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/tools/psfplayer | BSD-2 | high-level BIOS | 2026-11-27 | listing
+closed | jpd002/play-/blob/master/tools/mcservtest | BSD-2 | module test; precaution | 2026-11-27 | listing
+open | jpd002/play--codegen | BSD-2-Clause | Play!'s recompiler library | 2026-11-27 | licence file
+open | jpd002/play--framework | BSD-2-Clause | Play!'s support library | 2026-11-27 | licence file, README
+open | jpd002/nuanceur | BSD-2-Clause | Play!'s shader generator | 2026-11-27 | licence file
+open | jpd002/play-compatibility | none | play reports as issues; oracle: players | 2026-11-27 | metadata
+walled | jpd002/playservices | none | the tracker's report tool; not evaluated | 2026-11-27 | metadata
+walled | di8ogfeynac21.cloudfront.net | none stated | purei.org's totals; not evaluated | 2026-11-27 | page script
+
 # PlayStation family: references and maker material, open tier.
 open | hitmen.c02.at/files/docs/psx | none; one text given away | Walker denies Sony documents | 2026-11-19 | intro
 closed | hitmen.c02.at/files/docs/psx/3467 | none | an R3000A maker manual hosted by others | 2026-11-19 | listing page
