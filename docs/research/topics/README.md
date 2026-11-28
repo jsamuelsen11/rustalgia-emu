@@ -43,6 +43,7 @@ One file for each item of the [research roadmap](../../roadmap/research.md) that
 | [R1-24](R1-24-xbox-family.md) | Which Xbox, Xbox 360, and later emulators matter, and the family's legal exposure and difficulty |
 | [R1-25](R1-25-arcade-family.md) | Which arcade emulators matter, how they work, and the family's legal exposure and difficulty |
 | [R1-26](R1-26-other-consoles-family.md) | Which other console and handheld emulators matter, and the family's legal exposure and difficulty |
+| [R1-27](R1-27-home-computers-family.md) | Which home computer emulators matter, and the family's legal exposure and difficulty |
 
 ## Conventions
 
