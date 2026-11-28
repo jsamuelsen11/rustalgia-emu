@@ -387,6 +387,15 @@ closed | ata4/angrylion-rdp-plus | old MAME non-commercial terms | fork of Angry
 closed | project64/angrylion-rdp | none shown | parent of the fork above | 2026-11-19 | licence metadata
 closed | dillonb/n64 | none | source of n64.readthedocs.io | 2026-11-19 | licence metadata
 
+# Sources first cited by R1-31, the Gambatte study (2026-11-27).
+open | gambatte.sourceforge.net | none stated | old project web page; prose; a 2012 capture | 2026-11-27 | capture
+open | gambatte.sourceforge.io | none stated | the same site's current address; redirects | 2026-11-27 | redirect
+walled | sourceforge.net/p/gambatte/code | GPLv2 per page | Gambatte's old source tree; not opened | 2026-11-27 | page
+walled | jgemu/gambatte | GPL-2.0, or later not stated | Gambatte JG; prose not read | 2026-11-27 | jgemu.gitlab.io
+open | tikevin83.github.io/gsr-automation-site | none stated | personal page on run replays; a lead | 2026-11-27 | page
+open | wiki.pokemonspeedruns.com | none stated | speedrunning community wiki; rules pages | 2026-11-27 | two pages
+other | repology.org | not stated on the page | packaging metadata; versions, licence fields | 2026-11-27 | API response
+
 # Sources first cited by R1-15, the NES and SNES survey (2026-11-22).
 # Some lines record sources that the survey's research read and evaluated but the note does not cite.
 # Emulators and frontends: read from prose and metadata only by the survey; tiers by ADR 0006.
