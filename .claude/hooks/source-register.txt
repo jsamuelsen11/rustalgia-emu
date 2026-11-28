@@ -1234,6 +1234,15 @@ open | jpd002/play-compatibility | none | play reports as issues; oracle: player
 walled | jpd002/playservices | none | the tracker's report tool; not evaluated | 2026-11-27 | metadata
 walled | di8ogfeynac21.cloudfront.net | none stated | purei.org's totals; not evaluated | 2026-11-27 | page script
 
+# Closed after R1-43, as its pull request recommended (2026-11-27): places the study met and did not read.
+closed | jpd002/play-/blob/master/source/ui_shared/arcadedefinition | BSD-2 | arcade; precaution | 2026-11-27 | study
+closed | jpd002/play-/blob/master/source/ui_shared/arcadeutils | BSD-2 | arcade; precaution | 2026-11-27 | study
+closed | jpd002/play-/blob/master/js/psfplayer_ | BSD-2 | front ends of the closed music player | 2026-11-27 | study
+closed | jpd002/play-/blob/master/tools/vutest/triacetest | BSD-2 | may hold a game's code | 2026-11-27 | study
+closed | jpd002/play-/blob/master/ee_functions.xml | BSD-2 | library routine patterns; precaution | 2026-11-27 | study
+closed | jpd002/play-/blob/master/source/mipsfunctionpatterndb | BSD-2 | same | 2026-11-27 | study
+closed | jpd002/play-/blob/master/gameconfig.xml | BSD-2 | per-game memory patches; counted, unread | 2026-11-27 | study
+
 # PlayStation family: references and maker material, open tier.
 open | hitmen.c02.at/files/docs/psx | none; one text given away | Walker denies Sony documents | 2026-11-19 | intro
 closed | hitmen.c02.at/files/docs/psx/3467 | none | an R3000A maker manual hosted by others | 2026-11-19 | listing page
@@ -1299,6 +1308,24 @@ closed | libretro/parallel-ps2/blob/master/tests/mcdid | GPL-3.0 | card keys; pr
 closed | libretro/parallel-ps2/blob/master/tests/biosver | GPL-3.0 | BIOS image test; precaution | 2026-11-27 | listing
 # Met by the study and not opened: PCSX2's patch collection, which has no licence.
 closed | pcsx2/pcsx2_patches | none found | game patches shipped with PCSX2; not opened | 2026-11-27 | licence 404
+
+# Closed after R1-42, as its pull request recommended (2026-11-27): places the study met and did not read.
+closed | pcsx2/pcsx2/blob/master/pcsx2/r5900opcodeimpl | GPL-3.0 | system-call handling; precaution | 2026-11-27 | study
+closed | pcsx2/pcsx2/blob/master/pcsx2/elfheader | GPL-3.0 | loader hooks; precaution | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/pcsx2/r5900opcodeimpl | GPL-3.0 | same as upstream | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/pcsx2/elfheader | GPL-3.0 | same as upstream | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/arcade | GPL-3.0 | arcade test data | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/catalog/fixtures/arcade | GPL-3.0 | same | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/catalog/fixtures/patches | GPL-3.0 | patches | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/recompilers/iop_irx_hle_tests | GPL-3.0 | - | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/recompilers/ee_rec_syscall_seam | GPL-3.0 | - | 2026-11-27 | study
+closed | armsx2/armsx2/blob/master/tests/ctest/core/recompilers/ee_rec_skipmpeg | GPL-3.0 | - | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/pcsx2/r5900opcodeimpl | GPL-3.0 | same as upstream | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/pcsx2/elfheader | GPL-3.0 | same as upstream | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/tests/fpaudit/hwcap | GPL-3.0 | capture tool; precaution | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/tests/fpaudit/hardware-captures | GPL-3.0 | captures | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/tests/patch | GPL-3.0 | game patches; precaution | 2026-11-27 | study
+closed | libretro/parallel-ps2/blob/master/tests/secondload | GPL-3.0 | program loader; precaution | 2026-11-27 | study
 
 # Sources first cited by R1-19, the PlayStation 2 survey (2026-11-25).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
@@ -1410,6 +1437,11 @@ closed | duckstation/chtdb | no grant on tables; scripts MIT | cheat and patch t
 closed | duckstation/dependencies | Personal Use License | dependency build scripts | 2026-11-27 | licence, README
 walled | codeberg.org/hueponik/goosestation | not read | core said to be based on DuckStation | 2026-11-27 | AUR listing
 
+# Closed after R1-40, as its pull request recommended (2026-11-27): places in SwanStation the study did not read.
+closed | libretro/swanstation/blob/main/src/core/psf_loader | GPL-3.0 | BIOS loader stand-in | 2026-11-27 | study
+closed | libretro/swanstation/blob/main/src/core/cheats | GPL-3.0 | code tables; precaution | 2026-11-27 | study
+closed | libretro/swanstation/blob/main/tests/guest | GPL-3.0 | BIOS-slot images | 2026-11-27 | study
+
 # Sources first cited by R1-18, the PlayStation 1 survey (2026-11-22).
 # The survey read every emulator from its prose and repository metadata only, whatever its tier.
 # An emulator that names the tainted reference as its only or main documentation is walled, whatever its licence,
@@ -1500,6 +1532,17 @@ closed | hrydgard/ppsspp/blob/master/docs/pkg_notes | GPL-2.0+ | firmware note; 
 closed | hrydgard/ppsspp/blob/master/docs/reverse-engineering | GPL-2.0+ | precaution | 2026-11-27 | listing
 closed | hrydgard/ppsspp-frametest-ci | none | GE frame dumps of games for CI | 2026-11-27 | metadata; licence null
 open | report.ppsspp.org | none stated | PPSSPP compatibility reports; oracle: players | 2026-11-27 | games page
+
+# Closed after R1-44, as its pull request recommended (2026-11-27). The two notes were read in part before
+# their nature was clear; the rest were not opened.
+closed | hrydgard/ppsspp/blob/master/docs/kernel-hle-review | GPL-2.0+ | closed kernel insides | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/docs/hlemodules | GPL-2.0+ | points to firmware disassembly | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/core/mips/mipsvfpuutils | GPL-2.0+ | precaution | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/core/mips/mecore.cpp | GPL-2.0+ | firmware set-up; precaution | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/unittest/testlzrc | GPL-2.0+ | precaution | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/unittest/testps1eboot | GPL-2.0+ | encrypted container test | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/tools/adhoc_recover | GPL-2.0+ | decryption tool; keys | 2026-11-27 | study
+closed | hrydgard/ppsspp/blob/master/tools/pkg.py | GPL-2.0+ | package format tool; precaution | 2026-11-27 | study
 
 # Sources first cited by R1-20, the PSP and PlayStation Vita survey (2026-11-25).
 # Emulators read from prose and metadata only. Each high-level PSP operating system and each set of Vita system

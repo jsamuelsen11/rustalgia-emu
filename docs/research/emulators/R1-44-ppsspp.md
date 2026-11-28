@@ -79,7 +79,8 @@ so nothing about system services may be taken from its closed parts.
     and L191-L198 and L213-L215; [`docs/pspautotests-hardware.md`][d-path] L32-L84, L103-L152, and L235-L313.
   - `docs/kernel-hle-review.md` L10-L104, which describes the inside of the closed kernel folder.
     Parts were read before that was plain; only classes of defect and one high-level point are kept.
-    It and `docs/HLEModules.md` are code spans because this note recommends that the owner close them.
+    It and `docs/HLEModules.md` are code spans: this note recommended closing them,
+    and the register closed them on 2026-11-27.
   - [`AGENTS.md`][pp-agents] L28-L37 and L237-L247; the test bodies of [`unittest/UnitTest.cpp`][c-unittest], L1-L5267,
     some of which are named for the key engine, a compression format, and a PlayStation 1 executable container;
     all of [`Core/Reporting.cpp`][c-reporting] but L60-L106, L386-L400, and L600-L636, where no hazard was seen;
